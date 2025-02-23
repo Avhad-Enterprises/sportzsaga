@@ -118,7 +118,7 @@
                             <div class="pd-20 card-box height-100-p">
                                 <div class="profile-photo">
                                     <a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
-                                    <img src="<?= $user['profile_img'] ?>" alt="" class="avatar-photo" />
+                                    <img src="<?= !empty($user['profile_img']) ? $user['profile_img'] : 'https://storage.googleapis.com/mkv_imagesbackend/imaages/usericon.jpg'; ?>" alt="" class="avatar-photo" />
                                     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
