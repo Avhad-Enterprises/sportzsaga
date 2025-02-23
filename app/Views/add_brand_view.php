@@ -105,7 +105,7 @@
                         <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
                             <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
                         </button>
-                        <h4 class="h4 mb-0">Add New Brand</h4>
+                        <h4 class="h4 mb-0">Add New Brand.</h4>
                     </div>
                 </div>
 
