@@ -415,6 +415,10 @@ $routes->post('purchase_orders/save', 'PurchaseOrderController::save');
 $routes->get('po_list_view', 'PurchaseOrderController::display');
 $routes->get('purchase-order/edit/(:num)', 'PurchaseOrderController::edit/$1');
 $routes->post('purchase_orders/update/(:num)', 'PurchaseOrderController::update/$1');
+$routes->get('po/exportpo', 'PurchaseOrderController::exportpo');
+$routes->get('purchaseorder/import', 'PurchaseOrderController::importCSV');
+$routes->post('purchaseorder/import', 'PurchaseOrderController::importCSV');
+$routes->get('purchase-order/delete/(:num)', 'PurchaseOrderController::delete/$1');
 
 //user access control
 $routes->get('permissions/fetchUsers', 'PermissionsController::fetchUsers');
