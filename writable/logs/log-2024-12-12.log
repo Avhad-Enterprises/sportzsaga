@@ -1,0 +1,612 @@
+INFO - 2024-12-12 10:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 10:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 10:13:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 10:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:40:23 --> Entering BlueDart management method
+ERROR - 2024-12-12 13:40:23 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'sportsaga_db' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sportsaga_db', 3306, '', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(304): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+#6 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'sportsaga_db' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(304): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+#5 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#6 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-12-12 13:40:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'sportsaga_db'
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `order_shipment`
+WHERE `shipment_status` = :shipment_status:', [...], false)
+ 3 APPPATH\Controllers\Ordermanagement.php(304): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 13:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:40:50 --> Entering BlueDart management method
+INFO - 2024-12-12 13:40:51 --> Fetched all pending shipments
+INFO - 2024-12-12 13:40:51 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 13:40:51 --> Rendering BlueDart view
+INFO - 2024-12-12 13:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 13:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:50:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 15:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:00:04 --> Entering BlueDart management method
+INFO - 2024-12-12 16:00:04 --> Fetched all pending shipments
+INFO - 2024-12-12 16:00:04 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:00:04 --> Rendering BlueDart view
+INFO - 2024-12-12 16:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:00:08 --> Entering BlueDart management method
+INFO - 2024-12-12 16:00:08 --> Fetched all pending shipments
+INFO - 2024-12-12 16:00:08 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:00:08 --> Rendering BlueDart view
+INFO - 2024-12-12 16:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:02:11 --> Entering BlueDart management method
+INFO - 2024-12-12 16:02:11 --> Fetched all pending shipments
+INFO - 2024-12-12 16:02:11 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:02:11 --> Rendering BlueDart view
+INFO - 2024-12-12 16:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:06:23 --> Entering BlueDart management method
+INFO - 2024-12-12 16:06:23 --> Fetched all pending shipments
+INFO - 2024-12-12 16:06:23 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:06:23 --> Rendering BlueDart view
+INFO - 2024-12-12 16:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:23:10 --> Entering BlueDart management method
+INFO - 2024-12-12 16:23:10 --> Fetched all pending shipments
+INFO - 2024-12-12 16:23:10 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:23:10 --> Rendering BlueDart view
+INFO - 2024-12-12 16:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:23:37 --> Entering BlueDart management method
+INFO - 2024-12-12 16:23:37 --> Fetched all pending shipments
+INFO - 2024-12-12 16:23:37 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:23:37 --> Rendering BlueDart view
+INFO - 2024-12-12 16:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:24:17 --> Entering BlueDart management method
+INFO - 2024-12-12 16:24:17 --> Fetched all pending shipments
+INFO - 2024-12-12 16:24:17 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:24:17 --> Rendering BlueDart view
+INFO - 2024-12-12 16:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:24:44 --> Entering BlueDart management method
+INFO - 2024-12-12 16:24:44 --> Fetched all pending shipments
+INFO - 2024-12-12 16:24:44 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:24:44 --> Rendering BlueDart view
+INFO - 2024-12-12 16:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:28:32 --> Entering BlueDart management method
+INFO - 2024-12-12 16:28:32 --> Fetched all pending shipments
+INFO - 2024-12-12 16:28:32 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 16:28:32 --> Rendering BlueDart view
+INFO - 2024-12-12 16:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:53:58 --> Starting fetchEmails method
+INFO - 2024-12-12 16:53:58 --> Starting email processing
+ERROR - 2024-12-12 16:53:59 --> mysqli_sql_exception: Table 'sportsaga_db.cs_mails' doesn't exist in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sportzsaga\app\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sportzsaga\app\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+#8 C:\xampp\htdocs\sportzsaga\app\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+#10 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+#11 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-12-12 16:53:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 6 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-12 16:53:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 8 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-12 16:53:59 --> [Caused by] mysqli_sql_exception: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 9 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 16:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:55:22 --> Starting fetchEmails method
+INFO - 2024-12-12 16:55:22 --> Starting email processing
+ERROR - 2024-12-12 16:55:23 --> mysqli_sql_exception: Table 'sportsaga_db.cs_mails' doesn't exist in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sportzsaga\app\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sportzsaga\app\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+#8 C:\xampp\htdocs\sportzsaga\app\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+#10 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+#11 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-12-12 16:55:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 6 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-12 16:55:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 8 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-12 16:55:24 --> [Caused by] mysqli_sql_exception: Table 'sportsaga_db.cs_mails' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = 10
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cs_mails`
+WHERE `msg_no` = :msg_no:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\ReplyModel.php(14): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Customerservice.php(230): App\Models\ReplyModel->checkExistingEmail(10)
+ 9 APPPATH\Controllers\Customerservice.php(28): App\Controllers\Customerservice->processNewEmails()
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 16:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:56:31 --> Starting fetchEmails method
+INFO - 2024-12-12 16:56:31 --> Starting email processing
+INFO - 2024-12-12 16:56:32 --> Email processing completed. Processed 0 new emails
+INFO - 2024-12-12 16:56:32 --> Fetching email threads
+INFO - 2024-12-12 16:56:32 --> Found 6 root emails
+INFO - 2024-12-12 16:56:32 --> Processed 6 email threads
+INFO - 2024-12-12 16:56:32 --> Retrieved 6 email threads
+INFO - 2024-12-12 16:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:57:33 --> Starting fetchEmails method
+INFO - 2024-12-12 16:57:33 --> Starting email processing
+INFO - 2024-12-12 16:57:34 --> Email processing completed. Processed 0 new emails
+INFO - 2024-12-12 16:57:34 --> Fetching email threads
+INFO - 2024-12-12 16:57:34 --> Found 6 root emails
+INFO - 2024-12-12 16:57:34 --> Processed 6 email threads
+INFO - 2024-12-12 16:57:34 --> Retrieved 6 email threads
+INFO - 2024-12-12 16:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:57:57 --> Starting fetchEmails method
+INFO - 2024-12-12 16:57:57 --> Starting email processing
+INFO - 2024-12-12 16:57:58 --> Email processing completed. Processed 0 new emails
+INFO - 2024-12-12 16:57:58 --> Fetching email threads
+INFO - 2024-12-12 16:57:58 --> Found 6 root emails
+INFO - 2024-12-12 16:57:58 --> Processed 6 email threads
+INFO - 2024-12-12 16:57:58 --> Retrieved 6 email threads
+INFO - 2024-12-12 16:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 16:59:44 --> Starting fetchEmails method
+INFO - 2024-12-12 16:59:44 --> Starting email processing
+INFO - 2024-12-12 16:59:45 --> Email processing completed. Processed 0 new emails
+INFO - 2024-12-12 16:59:45 --> Fetching email threads
+INFO - 2024-12-12 16:59:45 --> Found 6 root emails
+INFO - 2024-12-12 16:59:45 --> Processed 6 email threads
+INFO - 2024-12-12 16:59:45 --> Retrieved 6 email threads
+INFO - 2024-12-12 17:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:00:09 --> Starting fetchEmails method
+INFO - 2024-12-12 17:00:09 --> Starting email processing
+INFO - 2024-12-12 17:00:10 --> Email processing completed. Processed 0 new emails
+INFO - 2024-12-12 17:00:10 --> Fetching email threads
+INFO - 2024-12-12 17:00:10 --> Found 6 root emails
+INFO - 2024-12-12 17:00:10 --> Processed 6 email threads
+INFO - 2024-12-12 17:00:10 --> Retrieved 6 email threads
+INFO - 2024-12-12 17:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:00:15 --> Starting to fetch complete email thread for message number: 1
+INFO - 2024-12-12 17:00:15 --> Fetching complete thread for message: 1
+INFO - 2024-12-12 17:00:15 --> Found 2 messages in thread
+INFO - 2024-12-12 17:00:15 --> Found 2 messages in complete thread
+INFO - 2024-12-12 17:00:16 --> Email thread processing completed successfully
+INFO - 2024-12-12 17:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:04:20 --> Entering BlueDart management method
+INFO - 2024-12-12 17:04:20 --> Fetched all pending shipments
+INFO - 2024-12-12 17:04:20 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 17:04:20 --> Rendering BlueDart view
+INFO - 2024-12-12 17:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:39:25 --> Entering BlueDart management method
+INFO - 2024-12-12 17:39:25 --> Fetched all pending shipments
+INFO - 2024-12-12 17:39:25 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 17:39:25 --> Rendering BlueDart view
+INFO - 2024-12-12 17:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:41:15 --> Entering BlueDart management method
+INFO - 2024-12-12 17:41:15 --> Fetched all pending shipments
+INFO - 2024-12-12 17:41:15 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 17:41:15 --> Rendering BlueDart view
+INFO - 2024-12-12 17:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:41:59 --> Saving changes for BlueDart shipments
+INFO - 2024-12-12 17:41:59 --> Updated shipment ID: 4094
+INFO - 2024-12-12 17:41:59 --> Updated shipment ID: 4095
+INFO - 2024-12-12 17:41:59 --> Updated shipment ID: 4096
+INFO - 2024-12-12 17:41:59 --> Updated shipment ID: 4097
+INFO - 2024-12-12 17:41:59 --> Updated shipment ID: 4098
+INFO - 2024-12-12 17:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 17:42:01 --> Entering BlueDart management method
+INFO - 2024-12-12 17:42:01 --> Fetched all pending shipments
+INFO - 2024-12-12 17:42:01 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 17:42:01 --> Rendering BlueDart view
+INFO - 2024-12-12 18:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:13:18 --> Filtering BlueDart shipments
+INFO - 2024-12-12 18:13:18 --> Requested status filter: All
+INFO - 2024-12-12 18:13:18 --> Retrieved 0 orders for status: All
+INFO - 2024-12-12 18:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:13:19 --> Filtering BlueDart shipments
+INFO - 2024-12-12 18:13:19 --> Requested status filter: cancelled
+INFO - 2024-12-12 18:13:19 --> Retrieved 0 orders for status: cancelled
+INFO - 2024-12-12 18:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:17:38 --> Entering BlueDart management method
+INFO - 2024-12-12 18:17:38 --> Fetched all pending shipments
+INFO - 2024-12-12 18:17:38 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:17:38 --> Rendering BlueDart view
+INFO - 2024-12-12 18:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:21:51 --> Entering BlueDart management method
+INFO - 2024-12-12 18:21:51 --> Fetched all pending shipments
+INFO - 2024-12-12 18:21:51 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:21:51 --> Rendering BlueDart view
+INFO - 2024-12-12 18:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:36:00 --> Entering BlueDart management method
+INFO - 2024-12-12 18:36:00 --> Fetched all pending shipments
+INFO - 2024-12-12 18:36:00 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:36:00 --> Rendering BlueDart view
+INFO - 2024-12-12 18:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:36:56 --> Entering BlueDart management method
+INFO - 2024-12-12 18:36:56 --> Fetched all pending shipments
+INFO - 2024-12-12 18:36:56 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:36:56 --> Rendering BlueDart view
+INFO - 2024-12-12 18:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:40:56 --> Entering BlueDart management method
+INFO - 2024-12-12 18:40:56 --> Fetched all pending shipments
+INFO - 2024-12-12 18:40:56 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:40:56 --> Rendering BlueDart view
+INFO - 2024-12-12 18:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:41:06 --> Entering BlueDart management method
+INFO - 2024-12-12 18:41:06 --> Fetched all pending shipments
+INFO - 2024-12-12 18:41:06 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:41:06 --> Rendering BlueDart view
+INFO - 2024-12-12 18:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:46:24 --> Starting fetchEmails method
+INFO - 2024-12-12 18:46:24 --> Starting email processing
+INFO - 2024-12-12 18:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:47:52 --> Entering BlueDart management method
+INFO - 2024-12-12 18:47:53 --> Fetched all pending shipments
+INFO - 2024-12-12 18:47:53 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:47:53 --> Rendering BlueDart view
+ERROR - 2024-12-12 18:48:02 --> Error processing emails: imap_open(): Couldn't open stream {imap.hostinger.com:993/imap/ssl}INBOX
+INFO - 2024-12-12 18:48:02 --> Fetching email threads
+INFO - 2024-12-12 18:48:02 --> Found 6 root emails
+INFO - 2024-12-12 18:48:02 --> Processed 6 email threads
+INFO - 2024-12-12 18:48:02 --> Retrieved 6 email threads
+INFO - 2024-12-12 18:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:02 --> Starting fetchEmails method
+INFO - 2024-12-12 18:48:02 --> Starting email processing
+INFO - 2024-12-12 18:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:31 --> Entering BlueDart management method
+INFO - 2024-12-12 18:48:31 --> Fetched all pending shipments
+INFO - 2024-12-12 18:48:31 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:48:31 --> Rendering BlueDart view
+INFO - 2024-12-12 18:48:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:48:40 --> Entering BlueDart management method
+INFO - 2024-12-12 18:48:40 --> Fetched all pending shipments
+INFO - 2024-12-12 18:48:40 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:48:40 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 18:49:33 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 202.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-12 18:49:33 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 134.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-12 18:49:33 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 134.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-12 18:49:33 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 134.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-12 18:49:33 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 134.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-12 18:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:49:52 --> Entering BlueDart management method
+INFO - 2024-12-12 18:49:52 --> Fetched all pending shipments
+INFO - 2024-12-12 18:49:52 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 18:49:52 --> Rendering BlueDart view
+INFO - 2024-12-12 18:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 18:51:04 --> Saving changes for BlueDart shipments
+CRITICAL - 2024-12-12 18:51:04 --> ErrorException: Undefined array key "weight"
+in APPPATH\Controllers\Ordermanagement.php on line 720.
+ 1 APPPATH\Controllers\Ordermanagement.php(720): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "weight"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 720)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->saveChanges()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:18:57 --> Entering BlueDart management method
+INFO - 2024-12-12 19:18:57 --> Fetched all pending shipments
+INFO - 2024-12-12 19:18:57 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:18:57 --> Rendering BlueDart view
+INFO - 2024-12-12 19:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:20:09 --> Entering BlueDart management method
+INFO - 2024-12-12 19:20:09 --> Fetched all pending shipments
+INFO - 2024-12-12 19:20:09 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:20:09 --> Rendering BlueDart view
+INFO - 2024-12-12 19:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:20:38 --> Saving changes for BlueDart shipments
+CRITICAL - 2024-12-12 19:20:38 --> ErrorException: Undefined array key "length"
+in APPPATH\Controllers\Ordermanagement.php on line 759.
+ 1 APPPATH\Controllers\Ordermanagement.php(759): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "length"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 759)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->saveChanges()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:25:01 --> Entering BlueDart management method
+INFO - 2024-12-12 19:25:01 --> Fetched all pending shipments
+INFO - 2024-12-12 19:25:01 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:25:01 --> Rendering BlueDart view
+INFO - 2024-12-12 19:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:25:21 --> Saving changes for BlueDart shipments
+INFO - 2024-12-12 19:25:21 --> Updated shipment ID: 4094 with data: {"pickup_location":"C1","ProductCode":"A","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"","ProductType":"1","no_of_packages":"2","length":"[\"1\",\"1\"]","breadth":"[\"1\",\"1\"]","height":"[\"1\",\"1\"]","weight":"[\"1\",\"1\"]"}
+INFO - 2024-12-12 19:25:21 --> Updated shipment ID: 4095 with data: {"pickup_location":"C1","ProductCode":"A","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"","ProductType":"1","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"0"}
+INFO - 2024-12-12 19:25:21 --> Updated shipment ID: 4096 with data: {"pickup_location":"C1","ProductCode":"A","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"","ProductType":"1","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"0"}
+INFO - 2024-12-12 19:25:21 --> Updated shipment ID: 4097 with data: {"pickup_location":"C1","ProductCode":"A","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"","ProductType":"1","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"0"}
+INFO - 2024-12-12 19:25:21 --> Updated shipment ID: 4098 with data: {"pickup_location":"C1","ProductCode":"A","SubProductCode":"P","billing_address":"Pimplas nashik","billing_pincode":"422302","PickupDate":"","ProductType":"1","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"0"}
+INFO - 2024-12-12 19:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:25:23 --> Entering BlueDart management method
+INFO - 2024-12-12 19:25:23 --> Fetched all pending shipments
+INFO - 2024-12-12 19:25:23 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:25:23 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 19:25:23 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Views\bluedart_view.php on line 254.
+ 1 APPPATH\Views\bluedart_view.php(254): json_decode([...], true)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(377): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:28:45 --> Entering BlueDart management method
+INFO - 2024-12-12 19:28:45 --> Fetched all pending shipments
+INFO - 2024-12-12 19:28:45 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:28:45 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 19:28:45 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Views\bluedart_view.php on line 254.
+ 1 APPPATH\Views\bluedart_view.php(254): json_decode([...], true)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(380): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:28:47 --> Entering BlueDart management method
+INFO - 2024-12-12 19:28:47 --> Fetched all pending shipments
+INFO - 2024-12-12 19:28:47 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:28:47 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 19:28:47 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Views\bluedart_view.php on line 254.
+ 1 APPPATH\Views\bluedart_view.php(254): json_decode([...], true)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(380): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:28:48 --> Entering BlueDart management method
+INFO - 2024-12-12 19:28:49 --> Fetched all pending shipments
+INFO - 2024-12-12 19:28:49 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:28:49 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 19:28:49 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Views\bluedart_view.php on line 254.
+ 1 APPPATH\Views\bluedart_view.php(254): json_decode([...], true)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(380): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:30:21 --> Entering BlueDart management method
+INFO - 2024-12-12 19:30:21 --> Fetched all pending shipments
+INFO - 2024-12-12 19:30:21 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:30:21 --> Rendering BlueDart view
+CRITICAL - 2024-12-12 19:30:21 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Views\bluedart_view.php on line 280.
+ 1 APPPATH\Views\bluedart_view.php(280): json_decode([...], true)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(380): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-12 19:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 19:32:29 --> Entering BlueDart management method
+INFO - 2024-12-12 19:32:29 --> Fetched all pending shipments
+INFO - 2024-12-12 19:32:29 --> Fetched BlueDart orders: 0
+INFO - 2024-12-12 19:32:29 --> Rendering BlueDart view

@@ -1,0 +1,51 @@
+CRITICAL - 2024-08-03 04:17:35 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/edit_order_view.php on line 108.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Ordermanagement.php(119): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-03 05:23:07 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/edit_order_view.php on line 108.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Ordermanagement.php(119): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-03 10:59:03 --> ErrorException: Array to string conversion
+in APPPATH/Controllers/Ordermanagement.php on line 48.
+ 1 APPPATH/Controllers/Ordermanagement.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-03 11:45:01 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/edit_order_view.php on line 108.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Ordermanagement.php(160): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-03 11:48:10 --> BadMethodCallException: Call to undefined method App\Models\Ordermanagement_model::getOrderdetail
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Ordermanagement.php(153): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-03 11:48:31 --> BadMethodCallException: Call to undefined method App\Models\Ordermanagement_model::getOrderdetail
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Ordermanagement.php(153): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

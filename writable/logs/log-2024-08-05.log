@@ -1,0 +1,42 @@
+CRITICAL - 2024-08-05 16:41:57 --> TypeError: strpos(): Argument #1 ($haystack) must be of type string, CodeIgniter\Email\Email given
+in SYSTEMPATH/Email/Email.php on line 751.
+ 1 SYSTEMPATH/Email/Email.php(751): strpos()
+ 2 SYSTEMPATH/Email/Email.php(554): CodeIgniter\Email\Email->stringToArray()
+ 3 APPPATH/Controllers/Dashboard.php(172): CodeIgniter\Email\Email->setTo()
+ 4 APPPATH/Controllers/Dashboard.php(158): App\Controllers\Dashboard->sendOtpEmail()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminRegister()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-05 16:43:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "verify_otp_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Dashboard.php(210): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->verifyOtpView()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-05 16:44:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "verify_otp_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Dashboard.php(210): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->verifyOtpView()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-05 16:45:47 --> ErrorException: Undefined array key "token"
+in APPPATH/Controllers/Dashboard.php on line 194.
+ 1 APPPATH/Controllers/Dashboard.php(194): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->verifyOtp()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-05 16:47:03 --> ErrorException: Undefined array key "token"
+in APPPATH/Controllers/Dashboard.php on line 194.
+ 1 APPPATH/Controllers/Dashboard.php(194): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->verifyOtp()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

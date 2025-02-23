@@ -1,0 +1,252 @@
+INFO - 2024-10-22 13:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 13:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-22 14:13:23 --> [DEPRECATED] preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH/Controllers/Products.php on line 127.
+ 1 APPPATH/Controllers/Products.php(127): preg_replace('/[^0-9.]/', '', null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->importexceldata()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-22 14:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-22 14:16:56 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-10-22 14:16:56 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-10-22 14:16:56 --> Failed to send email for order number: #123456
+INFO - 2024-10-22 14:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:17:33 --> Entering BlueDart management method
+INFO - 2024-10-22 14:17:33 --> Fetched all pending shipments
+INFO - 2024-10-22 14:17:33 --> Fetched BlueDart orders: 1
+INFO - 2024-10-22 14:17:33 --> Rendering BlueDart view
+INFO - 2024-10-22 14:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:19:22 --> Entering BlueDart management method
+INFO - 2024-10-22 14:19:22 --> Fetched all pending shipments
+INFO - 2024-10-22 14:19:22 --> Fetched BlueDart orders: 1
+INFO - 2024-10-22 14:19:22 --> Rendering BlueDart view
+INFO - 2024-10-22 14:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:22:14 --> Entering BlueDart management method
+INFO - 2024-10-22 14:22:14 --> Fetched all pending shipments
+INFO - 2024-10-22 14:22:14 --> Fetched BlueDart orders: 1
+INFO - 2024-10-22 14:22:14 --> Rendering BlueDart view
+INFO - 2024-10-22 14:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 14:58:31 --> Entering BlueDart management method
+INFO - 2024-10-22 14:58:31 --> Fetched all pending shipments
+INFO - 2024-10-22 14:58:31 --> Fetched BlueDart orders: 1
+INFO - 2024-10-22 14:58:31 --> Rendering BlueDart view
+INFO - 2024-10-22 14:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 15:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 15:01:32 --> Entering BlueDart management method
+INFO - 2024-10-22 15:01:32 --> Fetched all pending shipments
+INFO - 2024-10-22 15:01:32 --> Fetched BlueDart orders: 1
+INFO - 2024-10-22 15:01:32 --> Rendering BlueDart view
+INFO - 2024-10-22 15:01:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 22:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-22 22:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

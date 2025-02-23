@@ -1,0 +1,220 @@
+CRITICAL - 2024-08-01 06:14:56 --> ErrorException: Undefined variable $posts
+in APPPATH/Views/main_blog_page_view.php on line 39.
+ 1 APPPATH/Views/main_blog_page_view.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(152): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 06:30:08 --> ErrorException: Undefined variable $posts
+in APPPATH/Views/main_blog_page_view.php on line 39.
+ 1 APPPATH/Views/main_blog_page_view.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(152): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 06:42:26 --> ErrorException: Undefined variable $posts
+in APPPATH/Views/main_blog_page_view.php on line 39.
+ 1 APPPATH/Views/main_blog_page_view.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(152): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 06:43:26 --> ParseError: Unmatched ')'
+in APPPATH/Views/main_blog_page_view.php on line 39.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(152): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 06:43:46 --> ErrorException: Undefined variable $posts
+in APPPATH/Views/main_blog_page_view.php on line 39.
+ 1 APPPATH/Views/main_blog_page_view.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(152): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 07:26:48 --> ParseError: syntax error, unexpected identifier "blog_title", expecting ")"
+in APPPATH/Views/view_all_blogs.php on line 35.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(179): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->view_all_blogs()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 12:51:42 --> ErrorException: Undefined variable $user_type
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 12:54:15 --> ErrorException: Undefined variable $user_type
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 12:58:31 --> ErrorException: Undefined variable $user_type
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 13:02:42 --> ErrorException: Undefined variable $user_type
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 13:09:01 --> ErrorException: Undefined variable $user_type
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 13:14:55 --> Error: Class "App\Controllers\invitationmodel" not found
+in APPPATH/Controllers/Dashboard.php on line 111.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 13:15:00 --> Error: Class "App\Controllers\invitationmodel" not found
+in APPPATH/Controllers/Dashboard.php on line 111.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 14:43:22 --> ErrorException: Cannot use App\Models\invitationmodel as invitationmodel because the name is already in use
+in APPPATH/Controllers/Registeredusers.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-08-01 15:03:10 --> ErrorException: Undefined variable $token
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(161): view()
+ 6 APPPATH/Controllers/Registeredusers.php(148): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:04:45 --> ErrorException: Undefined variable $token
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(161): view()
+ 6 APPPATH/Controllers/Registeredusers.php(148): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:10:28 --> ErrorException: Undefined variable $token
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(164): view()
+ 6 APPPATH/Controllers/Registeredusers.php(151): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:20:06 --> Error: Call to undefined function App\Controllers\ecxit()
+in APPPATH/Controllers/Dashboard.php on line 107.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:26:00 --> ErrorException: Undefined variable $token
+in APPPATH/Views/invitation_email.php on line 31.
+ 1 APPPATH/Views/invitation_email.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/invitation_email.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(160): view()
+ 6 APPPATH/Controllers/Registeredusers.php(147): App\Controllers\Registeredusers->sendInvitationEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:27:58 --> ErrorException: Undefined variable $invitation
+in APPPATH/Views/register_view.php on line 26.
+ 1 APPPATH/Views/register_view.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/register_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Dashboard.php(121): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:28:02 --> ErrorException: Undefined variable $invitation
+in APPPATH/Views/register_view.php on line 26.
+ 1 APPPATH/Views/register_view.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/register_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Dashboard.php(121): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-01 15:38:31 --> ErrorException: Undefined array key "expires_at"
+in APPPATH/Controllers/Dashboard.php on line 114.
+ 1 APPPATH/Controllers/Dashboard.php(114): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->adminsignup()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,746 @@
+INFO - 2024-06-16 07:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:22:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 08:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 09:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 10:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 10:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 10:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 10:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 11:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 11:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:15:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:48:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 12:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 13:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 13:44:49 --> ErrorException: Undefined variable $sections
+in APPPATH\Views\control_home_view.php on line 111.
+ 1 APPPATH\Views\control_home_view.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sections', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\control_home_view.php', 111)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\control_home_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('control_home_view', [], true)
+ 5 APPPATH\Controllers\Homecontrol.php(11): view('control_home_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:45:33 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Homecontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:45:49 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Homecontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:47:43 --> Error: Class "App\Controllers\SectionControlModel" not found
+in APPPATH\Controllers\Homecontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:49:40 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Homecontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:49:58 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Homecontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->homecontrol()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:52:52 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Admincontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admincontrol->sections()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admincontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:53:33 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Admincontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admincontrol->sections()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admincontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 13:53:41 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Controllers\Admincontrol.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admincontrol->sections()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admincontrol))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 13:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 13:55:19 --> Error: Class "App\Models\SectionControlModel" not found
+in APPPATH\Views\dripspot.php on line 2.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 4 APPPATH\Views\index.php(41): CodeIgniter\View\View->include('dripspot')
+ 5 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\index.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('index', [], true)
+ 8 APPPATH\Controllers\Home.php(28): view('index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 13:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:22:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 14:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 14:40:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 14:40:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:25 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 14:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 14:40:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 14:40:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 14:40:56 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 14:40:56 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 14:40:56 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 15:18:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:18:00 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:18:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:18:00 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 15:19:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:19:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:19:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:19:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = (NULL)' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 15:20:23 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:20:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:20:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:20:23 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 15:20:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:20:49 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:20:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:20:49 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('on')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'on\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 15:22:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:22:40 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:22:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:22:40 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 15:23:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:23:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:23:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:23:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 15:24:11 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 15:24:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 3 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:24:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 5 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 15:24:11 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 = :1:
+WHERE `id` = ('0')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = (\'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `section_controls` SET 1 = :1:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\controls_model.php(20): CodeIgniter\Database\BaseBuilder->update('1')
+ 6 APPPATH\Controllers\Homecontrol.php(39): App\Models\Controls_model->updatevisible('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Homecontrol->editcontrol('1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Homecontrol))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 15:28:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 15:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 16:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 16:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 16:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 16:45:02 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::addnewdripspot(), 0 passed in H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 677.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewdripspot()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 16:45:12 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::addnewdripspot(), 0 passed in H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 677.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewdripspot()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

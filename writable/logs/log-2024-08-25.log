@@ -1,0 +1,241 @@
+CRITICAL - 2024-08-25 10:53:10 --> ErrorException: Undefined variable $product
+in APPPATH/Views/products_view.php on line 281.
+ 1 APPPATH/Views/products_view.php(281): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(22): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->index()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-25 11:13:27 --> mysqli_sql_exception: Column 'inventory' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-25 11:13:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:13:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:13:27 --> [Caused by] mysqli_sql_exception: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-25 11:15:46 --> mysqli_sql_exception: Column 'inventory' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-25 11:15:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:15:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:15:46 --> [Caused by] mysqli_sql_exception: Column 'inventory' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-25 11:16:25 --> mysqli_sql_exception: Column 'tier_2' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-25 11:16:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:16:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:16:25 --> [Caused by] mysqli_sql_exception: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-25 11:17:35 --> mysqli_sql_exception: Column 'tier_2' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-25 11:17:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:17:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 11:17:35 --> [Caused by] mysqli_sql_exception: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(138): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(216): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 15:04:05 --> ErrorException: Undefined array key "product_id"
+in APPPATH/Views/view_collections_view.php on line 94.
+ 1 APPPATH/Views/view_collections_view.php(94): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_collections_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(426): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->collectionview()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 15:12:16 --> ErrorException: Undefined array key "product_id"
+in APPPATH/Views/view_collections_view.php on line 94.
+ 1 APPPATH/Views/view_collections_view.php(94): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_collections_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(426): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->collectionview()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 15:13:33 --> ErrorException: Undefined array key "product_id"
+in APPPATH/Views/view_collections_view.php on line 94.
+ 1 APPPATH/Views/view_collections_view.php(94): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_collections_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(426): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->collectionview()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 15:14:51 --> ErrorException: Undefined array key "product_id"
+in APPPATH/Views/view_collections_view.php on line 94.
+ 1 APPPATH/Views/view_collections_view.php(94): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_collections_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(426): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->collectionview()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:55:24 --> ParseError: syntax error, unexpected token "<", expecting end of file
+in APPPATH/Config/Routes.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(811): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,886 @@
+ERROR - 2024-08-07 06:05:42 --> mysqli_sql_exception: Column 'location' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/system/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/system/BaseModel.php(802): CodeIgniter\Model->doInsert()
+#6 /home/seotools/newdriphunter_depoly/system/Model.php(749): CodeIgniter\BaseModel->insert()
+#7 /home/seotools/newdriphunter_depoly/system/BaseModel.php(713): CodeIgniter\Model->insert()
+#8 /home/seotools/newdriphunter_depoly/app/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+#9 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+#10 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#11 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-08-07 06:05:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:05:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 7 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 8 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:05:42 --> [Caused by] mysqli_sql_exception: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 8 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 9 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 06:05:52 --> mysqli_sql_exception: Column 'location' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/system/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/system/BaseModel.php(802): CodeIgniter\Model->doInsert()
+#6 /home/seotools/newdriphunter_depoly/system/Model.php(749): CodeIgniter\BaseModel->insert()
+#7 /home/seotools/newdriphunter_depoly/system/BaseModel.php(713): CodeIgniter\Model->insert()
+#8 /home/seotools/newdriphunter_depoly/app/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+#9 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+#10 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#11 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-08-07 06:05:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:05:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 7 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 8 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:05:52 --> [Caused by] mysqli_sql_exception: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 8 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 9 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 06:06:27 --> mysqli_sql_exception: Column 'location' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/system/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/system/BaseModel.php(802): CodeIgniter\Model->doInsert()
+#6 /home/seotools/newdriphunter_depoly/system/Model.php(749): CodeIgniter\BaseModel->insert()
+#7 /home/seotools/newdriphunter_depoly/system/BaseModel.php(713): CodeIgniter\Model->insert()
+#8 /home/seotools/newdriphunter_depoly/app/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+#9 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+#10 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#11 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-08-07 06:06:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:06:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 7 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 8 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:06:27 --> [Caused by] mysqli_sql_exception: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 8 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 9 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:06:57 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(37): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 06:16:34 --> mysqli_sql_exception: Column 'location' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/system/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/system/BaseModel.php(802): CodeIgniter\Model->doInsert()
+#6 /home/seotools/newdriphunter_depoly/system/Model.php(749): CodeIgniter\BaseModel->insert()
+#7 /home/seotools/newdriphunter_depoly/system/BaseModel.php(713): CodeIgniter\Model->insert()
+#8 /home/seotools/newdriphunter_depoly/app/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+#9 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+#10 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#11 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-08-07 06:16:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:16:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 7 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 8 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:16:34 --> [Caused by] mysqli_sql_exception: Column 'location' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(802): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(749): CodeIgniter\BaseModel->insert()
+ 8 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->insert()
+ 9 APPPATH/Controllers/GoogleAuth.php(48): CodeIgniter\BaseModel->save()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 06:18:05 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(37): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 07:17:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 07:17:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 07:17:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 07:17:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 07:18:28 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 07:18:28 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 07:18:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 07:18:28 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 11:32:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 11:32:27 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:32:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:32:27 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 11:36:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 11:36:57 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:36:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:36:57 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 11:41:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 11:41:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:41:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:41:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:46:13 --> ErrorException: Undefined variable $newcollName
+in APPPATH/Controllers/Products.php on line 371.
+ 1 APPPATH/Controllers/Products.php(371): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 11:46:39 --> ErrorException: Undefined variable $newcollName
+in APPPATH/Controllers/Products.php on line 369.
+ 1 APPPATH/Controllers/Products.php(369): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:14:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:14:14 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:14:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:14:14 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:22:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(385): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:22:09 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(385): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:22:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(385): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:22:09 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(385): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:24:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:24:55 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:24:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:24:55 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '134 = :134:
+WHERE `collection_id` = ('Captain America Tshirts','Captain America ' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:26:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:26:26 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:26:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:26:26 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:26:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:26:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:26:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:26:44 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(382): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:30:24 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(381): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:30:24 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(381): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:30:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(381): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:30:24 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(381): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-07 12:36:11 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1 in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-07 12:36:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:36:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 12:36:11 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '135 = :135:
+WHERE `collection_id` = ('Aurous Sneakers','Aurous Sneakers','','Aur' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(100): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/Products.php(383): App\Models\Products_model->updatecollection()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->updatecollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

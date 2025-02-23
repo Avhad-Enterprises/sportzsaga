@@ -1,0 +1,2132 @@
+INFO - 2025-01-16 07:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 07:39:27 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 08:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 08:06:10 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:00:56 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:01:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:01:48 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-16 09:30:58 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:30:58 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:30:58 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:30:58 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:30:58 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:30:58 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:30:58 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-16 09:30:58 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-16 09:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-16 09:31:01 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:31:01 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:31:01 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:31:01 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:31:01 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:31:01 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:31:01 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-16 09:31:01 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-16 09:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:31:02 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-16 09:31:17 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:31:17 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 09:31:17 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:31:17 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 09:31:17 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:31:17 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 09:31:17 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-16 09:31:17 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-16 09:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:31:46 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:33:53 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:33:55 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:34:41 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:35:42 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:37:37 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:37:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:37:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:37:37 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:37:38 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:37:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:37:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:37:38 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:40:23 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:40:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:40:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:40:23 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:45:30 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:45:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:30 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:45:31 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:45:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:31 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:45:32 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:45:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:45:32 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:46:59 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:46:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:46:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:46:59 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:47:00 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:47:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:47:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:47:00 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 09:47:01 --> mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 09:47:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:47:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 09:47:01 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.product_collections' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/BundleController.php(410): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:51:22 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(251): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(596): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:51:36 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(251): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(596): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:52:09 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(251): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(596): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 09:58:02 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(251): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(596): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 09:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 09:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 10:03:32 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(251): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(596): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 10:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 10:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:13:53 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+in APPPATH/Controllers/BundleController.php on line 491.
+ 1 APPPATH/Controllers/BundleController.php(491): implode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->createcollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:18:42 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:15 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:16 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:17 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:17 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:17 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:20:18 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 562.
+ 1 APPPATH/Controllers/BundleController.php(562): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:22:01 --> ErrorException: Undefined variable $bundle
+in APPPATH/Controllers/BundleController.php on line 570.
+ 1 APPPATH/Controllers/BundleController.php(570): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:23:23 --> ErrorException: Undefined variable $db
+in APPPATH/Controllers/BundleController.php on line 568.
+ 1 APPPATH/Controllers/BundleController.php(568): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 11:25:08 --> mysqli_sql_exception: Unknown column 'selected_collections' in 'SET' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(812): CodeIgniter\BaseModel->update()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-01-16 11:25:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 4 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 5 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 11:25:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 6 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 7 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 11:25:08 --> [Caused by] mysqli_sql_exception: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 7 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 8 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 11:29:42 --> mysqli_sql_exception: Unknown column 'selected_collections' in 'SET' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(812): CodeIgniter\BaseModel->update()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-01-16 11:29:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 4 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 5 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 11:29:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 6 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 7 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 11:29:42 --> [Caused by] mysqli_sql_exception: Unknown column 'selected_collections' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(987): CodeIgniter\Model->doUpdate()
+ 7 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 8 APPPATH/Controllers/BundleController.php(547): CodeIgniter\Model->update()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->updateproductcollection()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:31:05 --> ErrorException: Undefined variable $selectedCollection
+in APPPATH/Views/edit_bundlecollection_view.php on line 206.
+ 1 APPPATH/Views/edit_bundlecollection_view.php(206): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BundleController.php(582): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:31:07 --> ErrorException: Undefined variable $selectedCollection
+in APPPATH/Views/edit_bundlecollection_view.php on line 206.
+ 1 APPPATH/Views/edit_bundlecollection_view.php(206): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BundleController.php(582): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:31:09 --> ErrorException: Undefined variable $selectedCollection
+in APPPATH/Views/edit_bundlecollection_view.php on line 206.
+ 1 APPPATH/Views/edit_bundlecollection_view.php(206): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BundleController.php(582): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:31:26 --> ErrorException: Array to string conversion
+in APPPATH/Views/footer_view.php on line 83.
+ 1 APPPATH/Views/footer_view.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/edit_bundlecollection_view.php(236): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/edit_bundlecollection_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/BundleController.php(582): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->editProductCollection()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:33:23 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+in APPPATH/Controllers/BundleController.php on line 491.
+ 1 APPPATH/Controllers/BundleController.php(491): implode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->createcollection()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:37:19 --> ErrorException: Undefined variable $products
+in APPPATH/Views/bundlecollection_view.php on line 168.
+ 1 APPPATH/Views/bundlecollection_view.php(168): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/bundlecollection_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BundleController.php(439): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 11:37:42 --> ErrorException: Undefined variable $products
+in APPPATH/Views/bundlecollection_view.php on line 168.
+ 1 APPPATH/Views/bundlecollection_view.php(168): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/bundlecollection_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BundleController.php(439): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 11:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 11:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:09:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-16 12:17:10 --> Data received for draft: {
+    "final_total_price": "8898.00",
+    "final_shipment_charges": "0.00",
+    "final_total_discount": "0.00",
+    "cgst": "503.66",
+    "sgst": "503.66",
+    "igst": "0.00",
+    "selected_products": [
+        "576",
+        "577"
+    ],
+    "modal_quantity": {
+        "576": "1",
+        "577": "1",
+        "578": "1",
+        "579": "1",
+        "580": "1",
+        "581": "1",
+        "582": "1",
+        "583": "1",
+        "584": "1",
+        "585": "1",
+        "586": "1",
+        "587": "1",
+        "588": "1",
+        "589": "1",
+        "590": "1",
+        "591": "1",
+        "592": "1",
+        "593": "1",
+        "594": "1",
+        "595": "1",
+        "596": "1",
+        "597": "1",
+        "598": "1",
+        "599": "1",
+        "600": "1",
+        "601": "1",
+        "602": "1",
+        "603": "1",
+        "604": "1",
+        "605": "1",
+        "606": "1",
+        "607": "1",
+        "608": "1",
+        "609": "1",
+        "610": "1",
+        "611": "1",
+        "612": "1",
+        "613": "1",
+        "614": "1",
+        "615": "1",
+        "616": "1",
+        "617": "1",
+        "618": "1",
+        "619": "1",
+        "620": "1",
+        "621": "1",
+        "622": "1",
+        "623": "1",
+        "624": "1",
+        "625": "1",
+        "626": "1",
+        "627": "1",
+        "628": "1",
+        "629": "1",
+        "630": "1",
+        "631": "1",
+        "632": "1",
+        "633": "1",
+        "634": "1",
+        "635": "1",
+        "636": "1",
+        "637": "1",
+        "638": "1",
+        "639": "1",
+        "640": "1",
+        "641": "1",
+        "642": "1",
+        "643": "1",
+        "644": "1",
+        "645": "1",
+        "646": "1",
+        "647": "1",
+        "648": "1",
+        "649": "1",
+        "650": "1",
+        "651": "1",
+        "652": "1",
+        "653": "1",
+        "654": "1",
+        "655": "1",
+        "656": "1",
+        "657": "1",
+        "658": "1",
+        "659": "1",
+        "660": "1",
+        "661": "1",
+        "662": "1",
+        "663": "1",
+        "664": "1",
+        "665": "1",
+        "666": "1",
+        "667": "1",
+        "668": "1",
+        "669": "1",
+        "670": "1",
+        "671": "1",
+        "672": "1",
+        "673": "1",
+        "674": "1",
+        "675": "1",
+        "676": "1",
+        "677": "1",
+        "678": "1",
+        "679": "1",
+        "680": "1",
+        "681": "1",
+        "682": "1",
+        "683": "1",
+        "684": "1",
+        "685": "1",
+        "686": "1",
+        "687": "1",
+        "689": "1",
+        "690": "1",
+        "691": "1",
+        "699": "1",
+        "700": "1",
+        "701": "1",
+        "707": "1",
+        "708": "1",
+        "709": "1",
+        "714": "1",
+        "715": "1",
+        "716": "1",
+        "717": "1",
+        "718": "1",
+        "719": "1",
+        "720": "1",
+        "721": "1",
+        "722": "1",
+        "723": "1",
+        "724": "1",
+        "725": "1",
+        "726": "1",
+        "727": "1",
+        "728": "1"
+    },
+    "product_discount": {
+        "576": "0",
+        "577": "0",
+        "578": "0",
+        "579": "0",
+        "580": "0",
+        "581": "0",
+        "582": "0",
+        "583": "0",
+        "584": "0",
+        "585": "0",
+        "586": "0",
+        "587": "0",
+        "588": "0",
+        "589": "0",
+        "590": "0",
+        "591": "0",
+        "592": "0",
+        "593": "0",
+        "594": "0",
+        "595": "0",
+        "596": "0",
+        "597": "0",
+        "598": "0",
+        "599": "0",
+        "600": "0",
+        "601": "0",
+        "602": "0",
+        "603": "0",
+        "604": "0",
+        "605": "0",
+        "606": "0",
+        "607": "0",
+        "608": "0",
+        "609": "0",
+        "610": "0",
+        "611": "0",
+        "612": "0",
+        "613": "0",
+        "614": "0",
+        "615": "0",
+        "616": "0",
+        "617": "0",
+        "618": "0",
+        "619": "0",
+        "620": "0",
+        "621": "0",
+        "622": "0",
+        "623": "0",
+        "624": "0",
+        "625": "0",
+        "626": "0",
+        "627": "0",
+        "628": "0",
+        "629": "0",
+        "630": "0",
+        "631": "0",
+        "632": "0",
+        "633": "0",
+        "634": "0",
+        "635": "0",
+        "636": "0",
+        "637": "0",
+        "638": "0",
+        "639": "0",
+        "640": "0",
+        "641": "0",
+        "642": "0",
+        "643": "0",
+        "644": "0",
+        "645": "0",
+        "646": "0",
+        "647": "0",
+        "648": "0",
+        "649": "0",
+        "650": "0",
+        "651": "0",
+        "652": "0",
+        "653": "0",
+        "654": "0",
+        "655": "0",
+        "656": "0",
+        "657": "0",
+        "658": "0",
+        "659": "0",
+        "660": "0",
+        "661": "0",
+        "662": "0",
+        "663": "0",
+        "664": "0",
+        "665": "0",
+        "666": "0",
+        "667": "0",
+        "668": "0",
+        "669": "0",
+        "670": "0",
+        "671": "0",
+        "672": "0",
+        "673": "0",
+        "674": "0",
+        "675": "0",
+        "676": "0",
+        "677": "0",
+        "678": "0",
+        "679": "0",
+        "680": "0",
+        "681": "0",
+        "682": "0",
+        "683": "0",
+        "684": "0",
+        "685": "0",
+        "686": "0",
+        "687": "0",
+        "689": "0",
+        "690": "0",
+        "691": "0",
+        "699": "0",
+        "700": "0",
+        "701": "0",
+        "707": "0",
+        "708": "0",
+        "709": "0",
+        "714": "0",
+        "715": "0",
+        "716": "0",
+        "717": "0",
+        "718": "0",
+        "719": "0",
+        "720": "0",
+        "721": "0",
+        "722": "0",
+        "723": "0",
+        "724": "0",
+        "725": "0",
+        "726": "0",
+        "727": "0",
+        "728": "0"
+    },
+    "discounted_price": {
+        "576": "0",
+        "577": "0",
+        "578": "0",
+        "579": "0",
+        "580": "0",
+        "581": "0",
+        "582": "0",
+        "583": "0",
+        "584": "0",
+        "585": "0",
+        "586": "0",
+        "587": "0",
+        "588": "0",
+        "589": "0",
+        "590": "0",
+        "591": "0",
+        "592": "0",
+        "593": "0",
+        "594": "0",
+        "595": "0",
+        "596": "0",
+        "597": "0",
+        "598": "0",
+        "599": "0",
+        "600": "0",
+        "601": "0",
+        "602": "0",
+        "603": "0",
+        "604": "0",
+        "605": "0",
+        "606": "0",
+        "607": "0",
+        "608": "0",
+        "609": "0",
+        "610": "0",
+        "611": "0",
+        "612": "0",
+        "613": "0",
+        "614": "0",
+        "615": "0",
+        "616": "0",
+        "617": "0",
+        "618": "0",
+        "619": "0",
+        "620": "0",
+        "621": "0",
+        "622": "0",
+        "623": "0",
+        "624": "0",
+        "625": "0",
+        "626": "0",
+        "627": "0",
+        "628": "0",
+        "629": "0",
+        "630": "0",
+        "631": "0",
+        "632": "0",
+        "633": "0",
+        "634": "0",
+        "635": "0",
+        "636": "0",
+        "637": "0",
+        "638": "0",
+        "639": "0",
+        "640": "0",
+        "641": "0",
+        "642": "0",
+        "643": "0",
+        "644": "0",
+        "645": "0",
+        "646": "0",
+        "647": "0",
+        "648": "0",
+        "649": "0",
+        "650": "0",
+        "651": "0",
+        "652": "0",
+        "653": "0",
+        "654": "0",
+        "655": "0",
+        "656": "0",
+        "657": "0",
+        "658": "0",
+        "659": "0",
+        "660": "0",
+        "661": "0",
+        "662": "0",
+        "663": "0",
+        "664": "0",
+        "665": "0",
+        "666": "0",
+        "667": "0",
+        "668": "0",
+        "669": "0",
+        "670": "0",
+        "671": "0",
+        "672": "0",
+        "673": "0",
+        "674": "0",
+        "675": "0",
+        "676": "0",
+        "677": "0",
+        "678": "0",
+        "679": "0",
+        "680": "0",
+        "681": "0",
+        "682": "0",
+        "683": "0",
+        "684": "0",
+        "685": "0",
+        "686": "0",
+        "687": "0",
+        "689": "0",
+        "690": "0",
+        "691": "0",
+        "699": "0",
+        "700": "0",
+        "701": "0",
+        "707": "0",
+        "708": "0",
+        "709": "0",
+        "714": "0",
+        "715": "0",
+        "716": "0",
+        "717": "0",
+        "718": "0",
+        "719": "0",
+        "720": "0",
+        "721": "0",
+        "722": "0",
+        "723": "0",
+        "724": "0",
+        "725": "0",
+        "726": "0",
+        "727": "0",
+        "728": "0"
+    },
+    "discount_amount": {
+        "576": "0",
+        "577": "0",
+        "578": "0",
+        "579": "0",
+        "580": "0",
+        "581": "0",
+        "582": "0",
+        "583": "0",
+        "584": "0",
+        "585": "0",
+        "586": "0",
+        "587": "0",
+        "588": "0",
+        "589": "0",
+        "590": "0",
+        "591": "0",
+        "592": "0",
+        "593": "0",
+        "594": "0",
+        "595": "0",
+        "596": "0",
+        "597": "0",
+        "598": "0",
+        "599": "0",
+        "600": "0",
+        "601": "0",
+        "602": "0",
+        "603": "0",
+        "604": "0",
+        "605": "0",
+        "606": "0",
+        "607": "0",
+        "608": "0",
+        "609": "0",
+        "610": "0",
+        "611": "0",
+        "612": "0",
+        "613": "0",
+        "614": "0",
+        "615": "0",
+        "616": "0",
+        "617": "0",
+        "618": "0",
+        "619": "0",
+        "620": "0",
+        "621": "0",
+        "622": "0",
+        "623": "0",
+        "624": "0",
+        "625": "0",
+        "626": "0",
+        "627": "0",
+        "628": "0",
+        "629": "0",
+        "630": "0",
+        "631": "0",
+        "632": "0",
+        "633": "0",
+        "634": "0",
+        "635": "0",
+        "636": "0",
+        "637": "0",
+        "638": "0",
+        "639": "0",
+        "640": "0",
+        "641": "0",
+        "642": "0",
+        "643": "0",
+        "644": "0",
+        "645": "0",
+        "646": "0",
+        "647": "0",
+        "648": "0",
+        "649": "0",
+        "650": "0",
+        "651": "0",
+        "652": "0",
+        "653": "0",
+        "654": "0",
+        "655": "0",
+        "656": "0",
+        "657": "0",
+        "658": "0",
+        "659": "0",
+        "660": "0",
+        "661": "0",
+        "662": "0",
+        "663": "0",
+        "664": "0",
+        "665": "0",
+        "666": "0",
+        "667": "0",
+        "668": "0",
+        "669": "0",
+        "670": "0",
+        "671": "0",
+        "672": "0",
+        "673": "0",
+        "674": "0",
+        "675": "0",
+        "676": "0",
+        "677": "0",
+        "678": "0",
+        "679": "0",
+        "680": "0",
+        "681": "0",
+        "682": "0",
+        "683": "0",
+        "684": "0",
+        "685": "0",
+        "686": "0",
+        "687": "0",
+        "689": "0",
+        "690": "0",
+        "691": "0",
+        "699": "0",
+        "700": "0",
+        "701": "0",
+        "707": "0",
+        "708": "0",
+        "709": "0",
+        "714": "0",
+        "715": "0",
+        "716": "0",
+        "717": "0",
+        "718": "0",
+        "719": "0",
+        "720": "0",
+        "721": "0",
+        "722": "0",
+        "723": "0",
+        "724": "0",
+        "725": "0",
+        "726": "0",
+        "727": "0",
+        "728": "0"
+    },
+    "discount_reason": "",
+    "currency": "inr",
+    "payment-method": "cash",
+    "ref_no": "",
+    "payment-status": "Pending",
+    "order-customer-name": "245",
+    "order-customer-phone": "9370407508",
+    "order-customer-email": "plzrvwhsnx5shv2@marketplace.amazon.in",
+    "pincode": "422009",
+    "order-city": "Nashik",
+    "order-state": "Maharashtra",
+    "country": "",
+    "address_information": "Avhad Enterprises Pathardi Rd, Sudarshan Colony, Indira Nagar, Nashik",
+    "order-customergstin": ""
+}
+INFO - 2025-01-16 12:17:10 --> Draft saved successfully for user ID: 245
+INFO - 2025-01-16 12:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 12:18:01 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH/Controllers/Ordermanagement.php on line 266.
+ 1 APPPATH/Controllers/Ordermanagement.php(266): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 12:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 12:19:09 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH/Controllers/Ordermanagement.php on line 546.
+ 1 APPPATH/Controllers/Ordermanagement.php(546): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->savedraftorder()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 12:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 12:33:19 --> Error: Call to undefined method CodeIgniter\HTTP\RedirectResponse::withsetJSON()
+in APPPATH/Controllers/Ordermanagement.php on line 241.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 12:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 12:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 13:07:52 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 13:07:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:07:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:07:52 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 13:10:19 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-16 13:10:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:10:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:10:19 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:15 --> Fetching order for invoice generation. Order ID: 110
+INFO - 2025-01-16 13:12:15 --> Order found. Decoding product details.
+INFO - 2025-01-16 13:12:15 --> Invoice data prepared. Generating PDF.
+INFO - 2025-01-16 13:12:15 --> Starting PDF invoice generation for Order ID: #100001
+INFO - 2025-01-16 13:12:16 --> PDF invoice successfully generated for Order ID: #100001
+INFO - 2025-01-16 13:12:16 --> PDF generated successfully for order ID: 110
+INFO - 2025-01-16 13:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:29 --> Entering BlueDart management method
+INFO - 2025-01-16 13:12:29 --> Fetched all pending shipments
+INFO - 2025-01-16 13:12:29 --> Fetched BlueDart orders: 6
+INFO - 2025-01-16 13:12:29 --> Rendering BlueDart view
+CRITICAL - 2025-01-16 13:12:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:12:37 --> Entering BlueDart management method
+INFO - 2025-01-16 13:12:37 --> Fetched all pending shipments
+INFO - 2025-01-16 13:12:37 --> Fetched BlueDart orders: 6
+INFO - 2025-01-16 13:12:37 --> Rendering BlueDart view
+CRITICAL - 2025-01-16 13:12:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:12:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:13:04 --> Entering BlueDart management method
+INFO - 2025-01-16 13:13:04 --> Fetched all pending shipments
+INFO - 2025-01-16 13:13:04 --> Fetched BlueDart orders: 6
+INFO - 2025-01-16 13:13:04 --> Rendering BlueDart view
+CRITICAL - 2025-01-16 13:13:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:13:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 13:54:11 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH/Models/GiftModel.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-01-16 13:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 13:54:19 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH/Models/GiftModel.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-01-16 13:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 13:56:13 --> mysqli_sql_exception: Table 'u541614220_sagadb.giftcards' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Models/GiftModel.php(30): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/Giftcard.php(13): App\Models\GiftModel->getAllGiftCards()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\Giftcard->giftcard_view()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-01-16 13:56:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.giftcards' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Models/GiftModel.php(30): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Giftcard.php(13): App\Models\GiftModel->getAllGiftCards()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Giftcard->giftcard_view()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:56:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.giftcards' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Models/GiftModel.php(30): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Giftcard.php(13): App\Models\GiftModel->getAllGiftCards()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Giftcard->giftcard_view()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 13:56:13 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.giftcards' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Models/GiftModel.php(30): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Giftcard.php(13): App\Models\GiftModel->getAllGiftCards()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Giftcard->giftcard_view()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 13:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 13:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-16 13:57:14 --> BadMethodCallException: Call to undefined method App\Models\Registerusers_model::showusers
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Giftcard.php(20): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Giftcard->view()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:24 --> Starting fetchEmails method
+INFO - 2025-01-16 15:23:24 --> Starting email processing
+INFO - 2025-01-16 15:23:25 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-16 15:23:25 --> Fetching email threads
+INFO - 2025-01-16 15:23:25 --> Found 6 root emails
+INFO - 2025-01-16 15:23:25 --> Processed 6 email threads
+INFO - 2025-01-16 15:23:25 --> Retrieved 6 email threads
+INFO - 2025-01-16 15:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-16 15:23:32 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 15:23:32 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-16 15:23:32 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 15:23:32 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-16 15:23:32 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 15:23:32 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-16 15:23:32 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-16 15:23:32 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-16 15:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:23:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-16 15:24:03 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-16 15:24:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-16 15:24:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-16 15:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-16 15:24:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 15:24:32 --> mysqli_sql_exception: Table 'u541614220_sagadb.warehouses' doesn't exist in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-16 15:24:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.warehouses' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:24:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sagadb.warehouses' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:24:32 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sagadb.warehouses' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 15:25:27 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-16 15:25:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:25:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:25:27 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-16 15:28:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 15:29:02 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-16 15:29:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:29:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:29:02 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-16 15:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-16 15:31:56 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-16 15:31:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:31:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-16 15:31:56 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

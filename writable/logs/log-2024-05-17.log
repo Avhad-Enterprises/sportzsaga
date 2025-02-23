@@ -1,0 +1,667 @@
+CRITICAL - 2024-05-17 07:31:35 --> ErrorException: Undefined variable $user
+in APPPATH\Views\addnew_blog_view.php on line 110.
+ 1 APPPATH\Views\addnew_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(22): view('addnew_blog_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewblog()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 12:43:05 --> ErrorException: Undefined variable $imagename
+in APPPATH\Controllers\Blogs.php on line 56.
+ 1 APPPATH\Controllers\Blogs.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 12:45:10 --> mysqli_sql_exception: Column 'main_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `bl...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bl...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bl...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bl...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(22): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(69): App\Models\Blogs_model->insertmyblogpost(Array)
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#11 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-05-17 12:45:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'main_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (:blog_title:, :blog_description:, :main_description:, :blog_image:, :blog_visibility:, :blog_tags:, :category:, :author_name:, :blog_metatitle:, :blog_metadescription:, :blog_metaurl:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\blogs_model.php(22): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->insertmyblogpost([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 12:45:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'main_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (\'digital marketing\', \'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\', NULL, \'1715949910_24a757b3346647c294ff.jpg\', \'public\', \'tag1,tag2,tag3,tag4,tags\', \'cat1\', \'Aditya Patil\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'streetwear-fashion\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (\'digital marketing\', \'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\', NULL, \'1715949910_24a757b3346647c294ff.jpg\', \'public\', \'tag1,tag2,tag3,tag4,tags\', \'cat1\', \'Aditya Patil\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'streetwear-fashion\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (:blog_title:, :blog_description:, :main_description:, :blog_image:, :blog_visibility:, :blog_tags:, :category:, :author_name:, :blog_metatitle:, :blog_metadescription:, :blog_metaurl:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\blogs_model.php(22): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->insertmyblogpost([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 12:45:10 --> [Caused by] mysqli_sql_exception: Column 'main_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (\'digital marketing\', \'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\', NULL, \'1715949910_24a757b3346647c294ff.jpg\', \'public\', \'tag1,tag2,tag3,tag4,tags\', \'cat1\', \'Aditya Patil\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'streetwear-fashion\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (\'digital marketing\', \'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\', NULL, \'1715949910_24a757b3346647c294ff.jpg\', \'public\', \'tag1,tag2,tag3,tag4,tags\', \'cat1\', \'Aditya Patil\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'streetwear-fashion\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (\'digital marketing\', \'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\', NULL, \'1715949910_24a757b3346647c294ff.jpg\', \'public\', \'tag1,tag2,tag3,tag4,tags\', \'cat1\', \'Aditya Patil\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'Explore the vibrant world of streetwear fashion with Mera Feilds\', \'streetwear-fashion\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`blog_title`, `blog_description`, `main_description`, `blog_image`, `blog_visibility`, `blog_tags`, `category`, `author_name`, `blog_metatitle`, `blog_metadescription`, `blog_metaurl`) VALUES (:blog_title:, :blog_description:, :main_description:, :blog_image:, :blog_visibility:, :blog_tags:, :category:, :author_name:, :blog_metatitle:, :blog_metadescription:, :blog_metaurl:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\blogs_model.php(22): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->insertmyblogpost([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:14:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_blog_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_blog_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:16:28 --> ErrorException: Undefined array key "blog_title"
+in APPPATH\Views\edit_blog_view.php on line 113.
+ 1 APPPATH\Views\edit_blog_view.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 113)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:16:48 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:18:00 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:18:20 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:18:48 --> ErrorException: Undefined variable $post
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:19:11 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:19:52 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\edit_blog_view.php on line 110.
+ 1 APPPATH\Views\edit_blog_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php', 110)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_blog_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_blog_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(79): view('edit_blog_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogs('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:28:21 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(128): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:28:38 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(128): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:30:40 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(127): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:33:50 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(126): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:40:01 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(124): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 13:40:10 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(28): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Blogs.php(124): App\Models\Blogs_model->updatablogsdata('00000249', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000249')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:00:10 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::deletestory
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(256): CodeIgniter\Model->__call('deletestory', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletestory('24')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 14:00:44 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `st...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `st...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `st...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `st...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(54): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(256): App\Models\Blogs_model->deletestory('24')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->deletestory('24')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-17 14:00:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `stories`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(54): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Blogs.php(256): App\Models\Blogs_model->deletestory('24')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletestory('24')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:00:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `stories`
+WHERE `id` = \'24\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `stories`
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `stories`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(54): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Blogs.php(256): App\Models\Blogs_model->deletestory('24')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletestory('24')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:00:44 --> [Caused by] mysqli_sql_exception: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `stories`
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `stories`
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `stories`
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `stories`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(54): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Blogs.php(256): App\Models\Blogs_model->deletestory('24')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletestory('24')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:15:35 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::getstorybyid
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(263): CodeIgniter\Model->__call('getstorybyid', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 14:16:05 --> mysqli_sql_exception: Unknown column 'story_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-17 14:16:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:16:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:16:05 --> [Caused by] mysqli_sql_exception: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 14:18:23 --> mysqli_sql_exception: Unknown column 'story_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-17 14:18:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:18:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:18:23 --> [Caused by] mysqli_sql_exception: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 14:18:25 --> mysqli_sql_exception: Unknown column 'story_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-17 14:18:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:18:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:18:25 --> [Caused by] mysqli_sql_exception: Unknown column 'story_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `story_id` = \'30\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `story_id` = :story_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\blogs_model.php(59): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Blogs.php(263): App\Models\Blogs_model->getstorybyid('30')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 14:20:01 --> ErrorException: Undefined array key "blog_title"
+in APPPATH\Views\edit_story_view.php on line 114.
+ 1 APPPATH\Views\edit_story_view.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_story_view.php', 114)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_story_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(264): view('edit_story_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editstories('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:01:24 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 277.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('37')
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-17 15:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 15:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 15:16:00 --> mysqli_sql_exception: Unknown column 'blog_title' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `stories...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `stories...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `stories...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `stories...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(65): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(287): App\Models\Blogs_model->updatenewstory('37', Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('37')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-17 15:16:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_title' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `stories` SET `blog_title` = :blog_title:, `blog_description` = :blog_description:, `main_description` = :main_description:, `blog_visibility` = :blog_visibility:, `blog_image` = :blog_image:
+WHERE `story_id` = :story_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(65): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(287): App\Models\Blogs_model->updatenewstory('37', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('37')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:16:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `stories` SET `blog_title` = NULL, `blog_description` = NULL, `main_description` = NULL, `blog_visibility` = \'private\', `blog_image` = NULL
+WHERE `story_id` = \'37\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `stories` SET `blog_title` = NULL, `blog_description` = NULL, `main_description` = NULL, `blog_visibility` = \'private\', `blog_image` = NULL
+WHERE `story_id` = \'37\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `stories` SET `blog_title` = :blog_title:, `blog_description` = :blog_description:, `main_description` = :main_description:, `blog_visibility` = :blog_visibility:, `blog_image` = :blog_image:
+WHERE `story_id` = :story_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(65): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(287): App\Models\Blogs_model->updatenewstory('37', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('37')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:16:00 --> [Caused by] mysqli_sql_exception: Unknown column 'blog_title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `stories` SET `blog_title` = NULL, `blog_description` = NULL, `main_description` = NULL, `blog_visibility` = \'private\', `blog_image` = NULL
+WHERE `story_id` = \'37\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `stories` SET `blog_title` = NULL, `blog_description` = NULL, `main_description` = NULL, `blog_visibility` = \'private\', `blog_image` = NULL
+WHERE `story_id` = \'37\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `stories` SET `blog_title` = NULL, `blog_description` = NULL, `main_description` = NULL, `blog_visibility` = \'private\', `blog_image` = NULL
+WHERE `story_id` = \'37\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `stories` SET `blog_title` = :blog_title:, `blog_description` = :blog_description:, `main_description` = :main_description:, `blog_visibility` = :blog_visibility:, `blog_image` = :blog_image:
+WHERE `story_id` = :story_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(65): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(287): App\Models\Blogs_model->updatenewstory('37', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('37')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:33:31 --> ParseError: syntax error, unexpected token "public"
+in APPPATH\Controllers\Blogs.php on line 302.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Blogs')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Blogs')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Blogs', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:33:33 --> ParseError: syntax error, unexpected token "public"
+in APPPATH\Controllers\Blogs.php on line 302.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Blogs')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Blogs')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Blogs', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:34:17 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 291.
+ 1 APPPATH\Controllers\Blogs.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:36:24 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 291.
+ 1 APPPATH\Controllers\Blogs.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:37:30 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 291.
+ 1 APPPATH\Controllers\Blogs.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:38:01 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 285.
+ 1 APPPATH\Controllers\Blogs.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-17 15:49:20 --> mysqli_sql_exception: Unknown column 'original_name' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `st...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(292): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-17 15:49:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'original_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (:original_name:, :file_name:)', [...], false)
+ 2 APPPATH\Controllers\Blogs.php(292): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:49:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'original_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (\'Rectangle-6415.jpg\', \'1715960960_386d53cbddd615af79e7.jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (\'Rectangle-6415.jpg\', \'1715960960_386d53cbddd615af79e7.jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (:original_name:, :file_name:)', [...], false)
+ 4 APPPATH\Controllers\Blogs.php(292): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 15:49:21 --> [Caused by] mysqli_sql_exception: Unknown column 'original_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (\'Rectangle-6415.jpg\', \'1715960960_386d53cbddd615af79e7.jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (\'Rectangle-6415.jpg\', \'1715960960_386d53cbddd615af79e7.jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (\'Rectangle-6415.jpg\', \'1715960960_386d53cbddd615af79e7.jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stories` (`original_name`, `file_name`) VALUES (:original_name:, :file_name:)', [...], false)
+ 5 APPPATH\Controllers\Blogs.php(292): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-17 16:26:16 --> ErrorException: Undefined variable $newcelebimage
+in APPPATH\Controllers\Blogs.php on line 387.
+ 1 APPPATH\Controllers\Blogs.php(387): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcelebimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 387)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatedripspot('45')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

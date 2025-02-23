@@ -1,0 +1,948 @@
+INFO - 2025-01-19 11:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:30:04 --> Starting email processing
+INFO - 2025-01-19 11:30:09 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:31:50 --> Starting email processing
+INFO - 2025-01-19 11:31:52 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:36:50 --> Starting email processing
+INFO - 2025-01-19 11:36:51 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:41:50 --> Starting email processing
+INFO - 2025-01-19 11:41:52 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:46:50 --> Starting email processing
+INFO - 2025-01-19 11:46:51 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:10 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:10 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:10 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:10 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:12 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:13 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:13 --> Successfully fetched agents list
+INFO - 2025-01-19 11:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:13 --> Fetching CS tags
+INFO - 2025-01-19 11:47:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:14 --> Agent updated for message 9 by user 
+INFO - 2025-01-19 11:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:17 --> Starting fetchEmails method
+INFO - 2025-01-19 11:47:17 --> Starting email processing
+INFO - 2025-01-19 11:47:18 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:47:18 --> Fetching email threads
+INFO - 2025-01-19 11:47:18 --> Found 6 root emails
+INFO - 2025-01-19 11:47:18 --> Processed 6 email threads
+INFO - 2025-01-19 11:47:18 --> Retrieved 6 email threads
+INFO - 2025-01-19 11:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:21 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:21 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:21 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:21 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:23 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:23 --> Successfully fetched agents list
+INFO - 2025-01-19 11:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:24 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:24 --> Fetching CS tags
+INFO - 2025-01-19 11:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:30 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:30 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:30 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:30 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:31 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:32 --> Successfully fetched agents list
+INFO - 2025-01-19 11:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:32 --> Fetching CS tags
+INFO - 2025-01-19 11:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:32 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:35 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:35 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:35 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:35 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:37 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:37 --> Successfully fetched agents list
+INFO - 2025-01-19 11:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:37 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:37 --> Fetching CS tags
+INFO - 2025-01-19 11:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:40 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:40 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:40 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:40 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:42 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:42 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:42 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:42 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:42 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:44 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:44 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:47:44 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:47:44 --> Found 2 messages in thread
+INFO - 2025-01-19 11:47:44 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:47:46 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:46 --> Successfully fetched agents list
+INFO - 2025-01-19 11:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:46 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:47:46 --> Fetching CS tags
+INFO - 2025-01-19 11:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:48:20 --> Starting fetchEmails method
+INFO - 2025-01-19 11:48:20 --> Starting email processing
+INFO - 2025-01-19 11:48:21 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:48:21 --> Fetching email threads
+INFO - 2025-01-19 11:48:21 --> Found 6 root emails
+INFO - 2025-01-19 11:48:21 --> Processed 6 email threads
+INFO - 2025-01-19 11:48:21 --> Retrieved 6 email threads
+INFO - 2025-01-19 11:49:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:49:16 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 11:49:16 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 11:49:16 --> Found 2 messages in thread
+INFO - 2025-01-19 11:49:16 --> Found 2 messages in complete thread
+INFO - 2025-01-19 11:49:18 --> Email thread processing completed successfully
+INFO - 2025-01-19 11:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:49:19 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 11:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:49:19 --> Successfully fetched agents list
+INFO - 2025-01-19 11:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:49:19 --> Fetching CS tags
+INFO - 2025-01-19 11:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:51:04 --> Starting fetchEmails method
+INFO - 2025-01-19 11:51:04 --> Starting email processing
+INFO - 2025-01-19 11:51:05 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:51:05 --> Fetching email threads
+INFO - 2025-01-19 11:51:05 --> Found 6 root emails
+INFO - 2025-01-19 11:51:05 --> Processed 6 email threads
+INFO - 2025-01-19 11:51:05 --> Retrieved 6 email threads
+INFO - 2025-01-19 11:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:52:59 --> Starting fetchEmails method
+INFO - 2025-01-19 11:52:59 --> Starting email processing
+INFO - 2025-01-19 11:53:01 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:53:01 --> Fetching email threads
+INFO - 2025-01-19 11:53:01 --> Found 6 root emails
+INFO - 2025-01-19 11:53:01 --> Processed 6 email threads
+INFO - 2025-01-19 11:53:01 --> Retrieved 6 email threads
+INFO - 2025-01-19 11:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:53:14 --> Starting fetchEmails method
+INFO - 2025-01-19 11:53:14 --> Starting email processing
+INFO - 2025-01-19 11:53:16 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 11:53:16 --> Fetching email threads
+INFO - 2025-01-19 11:53:16 --> Found 6 root emails
+INFO - 2025-01-19 11:53:16 --> Processed 6 email threads
+INFO - 2025-01-19 11:53:16 --> Retrieved 6 email threads
+INFO - 2025-01-19 11:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 11:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:39 --> Starting fetchEmails method
+INFO - 2025-01-19 12:04:39 --> Starting email processing
+INFO - 2025-01-19 12:04:40 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:04:40 --> Fetching email threads
+INFO - 2025-01-19 12:04:40 --> Found 6 root emails
+INFO - 2025-01-19 12:04:40 --> Processed 6 email threads
+INFO - 2025-01-19 12:04:40 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:43 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:04:43 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:04:43 --> Found 2 messages in thread
+INFO - 2025-01-19 12:04:43 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:04:45 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:46 --> Successfully fetched agents list
+INFO - 2025-01-19 12:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:46 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:46 --> Fetching CS tags
+INFO - 2025-01-19 12:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:54 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:04:54 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:04:54 --> Found 2 messages in thread
+INFO - 2025-01-19 12:04:54 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:04:56 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:57 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:57 --> Fetching CS tags
+INFO - 2025-01-19 12:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:57 --> Successfully fetched agents list
+INFO - 2025-01-19 12:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:04:58 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:04:58 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:04:58 --> Found 2 messages in thread
+INFO - 2025-01-19 12:04:58 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:04:59 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:05:00 --> Fetching CS tags
+INFO - 2025-01-19 12:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:05:00 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:05:00 --> Successfully fetched agents list
+INFO - 2025-01-19 12:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:05:43 --> Starting fetchEmails method
+INFO - 2025-01-19 12:05:43 --> Starting email processing
+INFO - 2025-01-19 12:05:44 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:05:44 --> Fetching email threads
+INFO - 2025-01-19 12:05:44 --> Found 6 root emails
+INFO - 2025-01-19 12:05:44 --> Processed 6 email threads
+INFO - 2025-01-19 12:05:44 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:06:18 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:06:18 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:06:18 --> Found 2 messages in thread
+INFO - 2025-01-19 12:06:18 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:06:21 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:06:21 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:06:21 --> Successfully fetched agents list
+INFO - 2025-01-19 12:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:06:21 --> Fetching CS tags
+INFO - 2025-01-19 12:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:07:40 --> Fetching macro content
+INFO - 2025-01-19 12:07:40 --> Macro content retrieved successfully
+INFO - 2025-01-19 12:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:07:44 --> Fetching macro content
+INFO - 2025-01-19 12:07:44 --> Macro content retrieved successfully
+INFO - 2025-01-19 12:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:17 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:11:17 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:11:17 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:17 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:18 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:18 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:11:18 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:11:18 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:18 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:20 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:22 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:11:22 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:11:22 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:22 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:24 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:24 --> Starting fetchEmails method
+INFO - 2025-01-19 12:11:24 --> Starting email processing
+INFO - 2025-01-19 12:11:26 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:11:26 --> Fetching email threads
+INFO - 2025-01-19 12:11:26 --> Found 6 root emails
+INFO - 2025-01-19 12:11:26 --> Processed 6 email threads
+INFO - 2025-01-19 12:11:26 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:28 --> Starting fetchEmails method
+INFO - 2025-01-19 12:11:28 --> Starting email processing
+INFO - 2025-01-19 12:11:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:11:30 --> Fetching email threads
+INFO - 2025-01-19 12:11:30 --> Found 6 root emails
+INFO - 2025-01-19 12:11:30 --> Processed 6 email threads
+INFO - 2025-01-19 12:11:30 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:36 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 12:11:36 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 12:11:36 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:36 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:38 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:38 --> Successfully fetched agents list
+INFO - 2025-01-19 12:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:38 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:38 --> Fetching CS tags
+INFO - 2025-01-19 12:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:50 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 12:11:50 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 12:11:50 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:50 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:52 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:53 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:53 --> Successfully fetched agents list
+INFO - 2025-01-19 12:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:53 --> Fetching CS tags
+INFO - 2025-01-19 12:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:57 --> Starting to fetch complete email thread for message number: 10
+INFO - 2025-01-19 12:11:57 --> Fetching complete thread for message: 10
+INFO - 2025-01-19 12:11:57 --> Found 2 messages in thread
+INFO - 2025-01-19 12:11:57 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:11:59 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:59 --> Successfully fetched agents list
+INFO - 2025-01-19 12:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:59 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:11:59 --> Fetching CS tags
+INFO - 2025-01-19 12:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:15 --> Starting fetchEmails method
+INFO - 2025-01-19 12:12:15 --> Starting email processing
+INFO - 2025-01-19 12:12:16 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:12:16 --> Fetching email threads
+INFO - 2025-01-19 12:12:16 --> Found 6 root emails
+INFO - 2025-01-19 12:12:16 --> Processed 6 email threads
+INFO - 2025-01-19 12:12:16 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:19 --> Starting to fetch complete email thread for message number: 7
+INFO - 2025-01-19 12:12:19 --> Fetching complete thread for message: 7
+INFO - 2025-01-19 12:12:19 --> Found 3 messages in thread
+INFO - 2025-01-19 12:12:19 --> Found 3 messages in complete thread
+INFO - 2025-01-19 12:12:22 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:22 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:22 --> Successfully fetched agents list
+INFO - 2025-01-19 12:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:22 --> Fetching CS tags
+INFO - 2025-01-19 12:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:26 --> Starting to fetch complete email thread for message number: 7
+INFO - 2025-01-19 12:12:26 --> Fetching complete thread for message: 7
+INFO - 2025-01-19 12:12:26 --> Found 3 messages in thread
+INFO - 2025-01-19 12:12:26 --> Found 3 messages in complete thread
+INFO - 2025-01-19 12:12:29 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:29 --> Successfully fetched agents list
+INFO - 2025-01-19 12:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:29 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:29 --> Fetching CS tags
+INFO - 2025-01-19 12:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:31 --> Agent updated for message 5 by user 201
+INFO - 2025-01-19 12:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:37 --> Agent updated for message 5 by user 201
+INFO - 2025-01-19 12:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:41 --> Agent updated for message 5 by user 201
+INFO - 2025-01-19 12:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:50 --> Agent updated for message 5 by user 201
+INFO - 2025-01-19 12:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:56 --> Starting to fetch complete email thread for message number: 7
+INFO - 2025-01-19 12:12:56 --> Fetching complete thread for message: 7
+INFO - 2025-01-19 12:12:56 --> Found 3 messages in thread
+INFO - 2025-01-19 12:12:56 --> Found 3 messages in complete thread
+INFO - 2025-01-19 12:12:59 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:12:59 --> Starting fetchEmails method
+INFO - 2025-01-19 12:12:59 --> Starting email processing
+INFO - 2025-01-19 12:13:01 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:13:01 --> Fetching email threads
+INFO - 2025-01-19 12:13:01 --> Found 6 root emails
+INFO - 2025-01-19 12:13:01 --> Processed 6 email threads
+INFO - 2025-01-19 12:13:01 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:05 --> Starting to fetch complete email thread for message number: 7
+INFO - 2025-01-19 12:13:05 --> Fetching complete thread for message: 7
+INFO - 2025-01-19 12:13:05 --> Found 3 messages in thread
+INFO - 2025-01-19 12:13:05 --> Found 3 messages in complete thread
+INFO - 2025-01-19 12:13:07 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:08 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:08 --> Successfully fetched agents list
+INFO - 2025-01-19 12:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:08 --> Fetching CS tags
+INFO - 2025-01-19 12:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:10 --> Starting fetchEmails method
+INFO - 2025-01-19 12:13:10 --> Starting email processing
+INFO - 2025-01-19 12:13:12 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:13:12 --> Fetching email threads
+INFO - 2025-01-19 12:13:12 --> Found 6 root emails
+INFO - 2025-01-19 12:13:12 --> Processed 6 email threads
+INFO - 2025-01-19 12:13:12 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:14 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:13:14 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:13:14 --> Found 2 messages in thread
+INFO - 2025-01-19 12:13:14 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:13:16 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:17 --> Successfully fetched agents list
+INFO - 2025-01-19 12:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:17 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:17 --> Fetching CS tags
+INFO - 2025-01-19 12:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:22 --> Starting fetchEmails method
+INFO - 2025-01-19 12:13:22 --> Starting email processing
+INFO - 2025-01-19 12:13:23 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:13:23 --> Fetching email threads
+INFO - 2025-01-19 12:13:23 --> Found 6 root emails
+INFO - 2025-01-19 12:13:23 --> Processed 6 email threads
+INFO - 2025-01-19 12:13:23 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:26 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:13:26 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:13:26 --> Found 2 messages in thread
+INFO - 2025-01-19 12:13:26 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:13:28 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:28 --> Successfully fetched agents list
+INFO - 2025-01-19 12:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:28 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:13:28 --> Fetching CS tags
+INFO - 2025-01-19 12:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:09 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:14:09 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:14:09 --> Found 2 messages in thread
+INFO - 2025-01-19 12:14:09 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:14:11 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:12 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:12 --> Successfully fetched agents list
+INFO - 2025-01-19 12:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:12 --> Fetching CS tags
+INFO - 2025-01-19 12:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:15 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:14:15 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:14:15 --> Found 2 messages in thread
+INFO - 2025-01-19 12:14:15 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:14:17 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:17 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:17 --> Successfully fetched agents list
+INFO - 2025-01-19 12:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:17 --> Fetching CS tags
+INFO - 2025-01-19 12:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:14:18 --> Starting fetchEmails method
+INFO - 2025-01-19 12:14:18 --> Starting email processing
+INFO - 2025-01-19 12:14:20 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:14:20 --> Fetching email threads
+INFO - 2025-01-19 12:14:20 --> Found 6 root emails
+INFO - 2025-01-19 12:14:20 --> Processed 6 email threads
+INFO - 2025-01-19 12:14:20 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:15:43 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:15:43 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:15:43 --> Found 2 messages in thread
+INFO - 2025-01-19 12:15:43 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:15:45 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:15:45 --> Successfully fetched agents list
+INFO - 2025-01-19 12:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:15:45 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:15:45 --> Fetching CS tags
+INFO - 2025-01-19 12:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:17:40 --> Starting fetchEmails method
+INFO - 2025-01-19 12:17:40 --> Starting email processing
+INFO - 2025-01-19 12:17:42 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:17:42 --> Fetching email threads
+INFO - 2025-01-19 12:17:42 --> Found 6 root emails
+INFO - 2025-01-19 12:17:42 --> Processed 6 email threads
+INFO - 2025-01-19 12:17:42 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:20:54 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-19 12:20:54 --> Fetching complete thread for message: 8
+INFO - 2025-01-19 12:20:54 --> Found 2 messages in thread
+INFO - 2025-01-19 12:20:54 --> Found 2 messages in complete thread
+INFO - 2025-01-19 12:20:56 --> Email thread processing completed successfully
+INFO - 2025-01-19 12:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:20:57 --> Successfully fetched agents list
+INFO - 2025-01-19 12:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:20:57 --> Successfully fetched macros for tags: 
+INFO - 2025-01-19 12:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:20:57 --> Fetching CS tags
+INFO - 2025-01-19 12:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:22:14 --> Starting fetchEmails method
+INFO - 2025-01-19 12:22:14 --> Starting email processing
+INFO - 2025-01-19 12:22:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:22:15 --> Fetching email threads
+INFO - 2025-01-19 12:22:15 --> Found 6 root emails
+INFO - 2025-01-19 12:22:15 --> Processed 6 email threads
+INFO - 2025-01-19 12:22:15 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:25:27 --> Starting fetchEmails method
+INFO - 2025-01-19 12:25:27 --> Starting email processing
+INFO - 2025-01-19 12:25:28 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:25:28 --> Fetching email threads
+INFO - 2025-01-19 12:25:28 --> Found 6 root emails
+INFO - 2025-01-19 12:25:28 --> Processed 6 email threads
+INFO - 2025-01-19 12:25:28 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:30:29 --> Starting email processing
+INFO - 2025-01-19 12:30:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:35:29 --> Starting email processing
+INFO - 2025-01-19 12:35:31 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:40:29 --> Starting email processing
+INFO - 2025-01-19 12:40:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:45:29 --> Starting email processing
+INFO - 2025-01-19 12:45:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:47:25 --> Starting fetchEmails method
+INFO - 2025-01-19 12:47:25 --> Starting email processing
+INFO - 2025-01-19 12:47:27 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:47:27 --> Fetching email threads
+INFO - 2025-01-19 12:47:27 --> Found 6 root emails
+INFO - 2025-01-19 12:47:27 --> Processed 6 email threads
+INFO - 2025-01-19 12:47:27 --> Retrieved 6 email threads
+INFO - 2025-01-19 12:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:52:28 --> Starting email processing
+INFO - 2025-01-19 12:52:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 12:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 12:57:28 --> Starting email processing
+INFO - 2025-01-19 12:57:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:02:28 --> Starting email processing
+INFO - 2025-01-19 13:02:30 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:08:15 --> Starting email processing
+INFO - 2025-01-19 13:08:17 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:13:15 --> Starting email processing
+INFO - 2025-01-19 13:13:17 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:16:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:16:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:19:07 --> Starting fetchEmails method
+INFO - 2025-01-19 13:19:07 --> Starting email processing
+INFO - 2025-01-19 13:19:08 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:19:08 --> Fetching email threads
+INFO - 2025-01-19 13:19:08 --> Found 6 root emails
+INFO - 2025-01-19 13:19:08 --> Processed 6 email threads
+INFO - 2025-01-19 13:19:08 --> Retrieved 6 email threads
+INFO - 2025-01-19 13:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:24:09 --> Starting email processing
+INFO - 2025-01-19 13:24:11 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 13:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:35:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 13:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 14:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-19 14:37:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 14:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-19 14:37:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-19 15:06:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-19 15:07:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-19 15:07:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:22:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:28:26 --> Entering BlueDart management method
+INFO - 2025-01-19 15:28:26 --> Fetched all pending shipments
+INFO - 2025-01-19 15:28:26 --> Fetched BlueDart orders: 6
+INFO - 2025-01-19 15:28:26 --> Rendering BlueDart view
+CRITICAL - 2025-01-19 15:28:26 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:28:36 --> Filtering BlueDart shipments
+INFO - 2025-01-19 15:28:36 --> Requested status filter: All
+INFO - 2025-01-19 15:28:36 --> Retrieved 7 orders for status: All
+INFO - 2025-01-19 15:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-19 15:45:30 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-19 15:45:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:45:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:45:30 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-19 15:45:40 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-19 15:45:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:45:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:45:40 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-19 15:46:38 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-19 15:46:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:46:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:46:38 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-19 15:48:04 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-19 15:48:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:48:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-19 15:48:04 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-19 15:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 15:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 16:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 17:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 17:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 18:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 22:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:00:28 --> Starting fetchEmails method
+INFO - 2025-01-19 23:00:28 --> Starting email processing
+INFO - 2025-01-19 23:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:00:33 --> Starting fetchEmails method
+INFO - 2025-01-19 23:00:33 --> Starting email processing
+INFO - 2025-01-19 23:00:33 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 23:00:33 --> Fetching email threads
+INFO - 2025-01-19 23:00:33 --> Found 6 root emails
+INFO - 2025-01-19 23:00:33 --> Processed 6 email threads
+INFO - 2025-01-19 23:00:33 --> Retrieved 6 email threads
+INFO - 2025-01-19 23:00:34 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 23:00:34 --> Fetching email threads
+INFO - 2025-01-19 23:00:34 --> Found 6 root emails
+INFO - 2025-01-19 23:00:34 --> Processed 6 email threads
+INFO - 2025-01-19 23:00:34 --> Retrieved 6 email threads
+INFO - 2025-01-19 23:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:05:35 --> Starting email processing
+INFO - 2025-01-19 23:05:37 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 23:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:10:35 --> Starting email processing
+INFO - 2025-01-19 23:10:37 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 23:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:33:42 --> Starting fetchEmails method
+INFO - 2025-01-19 23:33:42 --> Starting email processing
+INFO - 2025-01-19 23:33:44 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-19 23:33:44 --> Fetching email threads
+INFO - 2025-01-19 23:33:44 --> Found 6 root emails
+INFO - 2025-01-19 23:33:44 --> Processed 6 email threads
+INFO - 2025-01-19 23:33:44 --> Retrieved 6 email threads
+INFO - 2025-01-19 23:34:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-19 23:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

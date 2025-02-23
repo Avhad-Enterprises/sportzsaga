@@ -1,0 +1,424 @@
+INFO - 2024-12-15 10:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:10:19 --> Entering BlueDart management method
+INFO - 2024-12-15 10:10:19 --> Fetched all pending shipments
+INFO - 2024-12-15 10:10:19 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:10:19 --> Rendering BlueDart view
+INFO - 2024-12-15 10:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:12:30 --> Saving changes for BlueDart shipments
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4102 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"C","billing_address":"Pimplas nashik","billing_pincode":"422302","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"6466","no_of_packages":"2","length":"[\"12\",\"12\"]","breadth":"[\"12\",\"12\"]","height":"[\"12\",\"13\"]","weight":"[\"10\",\"10\"]"}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4103 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"","breadth":"","height":"","weight":""}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4104 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"","breadth":"","height":"","weight":""}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4105 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"","breadth":"","height":"","weight":""}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4106 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"","breadth":"","height":"","weight":""}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4107 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"Pimplas nashik","billing_pincode":"422302","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"","breadth":"","height":"","weight":""}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4110 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"C","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"6459","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4111 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"0"}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4112 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"200"}
+INFO - 2024-12-15 10:12:30 --> Updated shipment ID: 4114 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"0","breadth":"0","height":"0","weight":"200"}
+INFO - 2024-12-15 10:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:12:32 --> Entering BlueDart management method
+INFO - 2024-12-15 10:12:32 --> Fetched all pending shipments
+INFO - 2024-12-15 10:12:32 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:12:32 --> Rendering BlueDart view
+INFO - 2024-12-15 10:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:13:43 --> Saving changes for BlueDart shipments
+INFO - 2024-12-15 10:13:43 --> Updated shipment ID: 4102 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"C","billing_address":"Pimplas nashik","billing_pincode":"422302","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"6466","no_of_packages":"2","length":"[\"12\",\"12\"]","breadth":"[\"12\",\"12\"]","height":"[\"12\",\"13\"]","weight":"[\"10\",\"10\"]"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4103 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4104 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4105 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4106 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422009","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4107 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"Pimplas nashik","billing_pincode":"422302","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4110 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"C","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"6459","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"12"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4111 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"012","breadth":"012","height":"012","weight":"012"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4112 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"200"}
+INFO - 2024-12-15 10:13:44 --> Updated shipment ID: 4114 with data: {"pickup_location":"C1","ProductCode":"E","SubProductCode":"P","billing_address":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","billing_pincode":"422008","PickupDate":"2025-02-01T16:15","ProductType":"1","collectable_amount":"","no_of_packages":"1","length":"12","breadth":"12","height":"12","weight":"200"}
+INFO - 2024-12-15 10:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:13:45 --> Entering BlueDart management method
+INFO - 2024-12-15 10:13:45 --> Fetched all pending shipments
+INFO - 2024-12-15 10:13:45 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:13:45 --> Rendering BlueDart view
+INFO - 2024-12-15 10:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:14:24 --> Attempting to generate BlueDart waybill for selected shipments
+INFO - 2024-12-15 10:14:24 --> Attempting to generate BlueDart token
+INFO - 2024-12-15 10:14:24 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3MzQzMjQyNjUsImlhdCI6MTczNDIzNzg2NSwianRpIjoiOGE5NWZlMGQtMzJlYS00NWRhLWI2NGEtN2ZjZDc4N2YzY2FkIn0.uCsxhzvMyb_l36EH86kmSB7qWUFDpaKf2vTyCsRH-ac"}
+INFO - 2024-12-15 10:14:24 --> Token API HTTP Code: 200
+INFO - 2024-12-15 10:14:24 --> Token generated successfully
+INFO - 2024-12-15 10:14:24 --> Processing shipment ID: 4110
+INFO - 2024-12-15 10:14:25 --> Payload for shipment ID 4110: {"Request":{"Consignee":{"ConsigneeAddress1":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","ConsigneeAddress2":null,"ConsigneeAddress3":null,"ConsigneeEmailID":"avhadenterprisespc1@gmail.com","ConsigneeMobile":"9356459066","ConsigneeName":"Aditya Patil","ConsigneePincode":"422008","ConsigneeTelephone":""},"Returnadds":{"ReturnAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","ReturnAddress2":"Vahuli Post-Padgha","ReturnAddress3":"Mumbai, Maharashtra","ReturnContact":"Ronit Mehra","ReturnEmailID":"sportsaaga@gmail.com","ReturnMobile":"8591426598","ReturnPincode":"401208","ReturnTelephone":""},"Services":{"ActualWeight":"12","CollectableAmount":"6459","Commodity":{"CommodityDetail1":"5011100014","CommodityDetail2":"5011100014","CommodityDetail3":"5011100014"},"CreditReferenceNo":"#100022-a","CurrencyCode":"INR","DeclaredValue":4299,"Dimensions":[{"Length":"12","Breadth":"12","Height":"12","Count":1}],"ItemCount":2,"IsDedicatedDeliveryNetwork":false,"IsForcePickup":false,"IsPartialPickup":false,"IsReversePickup":false,"PDFOutputNotRequired":false,"OTPBasedDelivery":"0","PickupDate":"\/Date(1738406700000)\/","PickupTime":"1800","PieceCount":1,"ProductCode":"E","ProductType":"1","RegisterPickup":true,"SpecialInstruction":"","SubProductCode":"C","TotalCashPaytoCustomer":0,"itemdtl":[{"CGSTAmount":0,"SGSTAmount":0,"IGSTAmount":942.6428571428578,"InvoiceNumber":"#100022-a","ItemID":"576","ItemName":"Siscaa Season (A) (Leather) Cricket Bat","ItemValue":"4599","Itemquantity":1,"ProductDesc1":"Siscaa Season (A) (Leather) Cricket Bat","SKUNumber":"DSDAS76","SellerGSTNNumber":"","SellerName":"Ronit Mehra","TaxableAmount":4599,"TotalValue":4599,"countryOfOrigin":"IN","docType":"INV"},{"CGSTAmount":0,"SGSTAmount":0,"IGSTAmount":942.6428571428578,"InvoiceNumber":"#100022-a","ItemID":"577","ItemName":"Siscaa Season Cricket Bat (Leather) (A)","ItemValue":"4299","Itemquantity":1,"ProductDesc1":"Siscaa Season Cricket Bat (Leather) (A)","SKUNumber":"","SellerGSTNNumber":"","SellerName":"Ronit Mehra","TaxableAmount":4299,"TotalValue":4299,"countryOfOrigin":"IN","docType":"INV"}]},"Shipper":{"CustomerAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","CustomerAddress2":"Vahuli Post-Padgha","CustomerAddress3":"Mumbai, Maharashtra","CustomerEmailID":"sportsaaga@gmail.com","CustomerGSTNumber":"","CustomerMobile":"8591426598","CustomerCode":"469081","CustomerName":"Ronit Mehra","CustomerPincode":"401208","CustomerTelephone":"","OriginArea":"BOM","IsToPayCustomer":false,"Sender":"Ronit Mehra"}},"Profile":{"LoginID":"BOM16100","LicenceKey":"ivrh1ppfeiqukinsntpufekj66sqq3fs","Api_type":"S"}}
+INFO - 2024-12-15 10:14:25 --> API Response for shipment ID 4110: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":null,"AWBPrintContent":null,"AvailableAmountForBooking":0,"AvailableBalance":0,"CCRCRDREF":"#100022-a","ClusterCode":null,"DestinationArea":null,"DestinationLocation":null,"InvoicePrintContent":null,"IsError":true,"IsErrorInPU":false,"Status":[{"StatusCode":"InvalidPickupDate","StatusInformation":"Invalid Pickup Date. > 29\/12\/2024"}],"TokenNumber":null,"TransactionAmount":0}]}
+INFO - 2024-12-15 10:14:25 --> API HTTP Code for shipment ID 4110: 400
+INFO - 2024-12-15 10:14:25 --> Waybill generation process completed. Status: success, Message: Successfully generated 0 waybill(s)
+INFO - 2024-12-15 10:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:14:29 --> Entering BlueDart management method
+INFO - 2024-12-15 10:14:29 --> Fetched all pending shipments
+INFO - 2024-12-15 10:14:29 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:14:29 --> Rendering BlueDart view
+INFO - 2024-12-15 10:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:31:04 --> Attempting to generate BlueDart waybill for selected shipments
+INFO - 2024-12-15 10:31:04 --> Attempting to generate BlueDart token
+INFO - 2024-12-15 10:31:05 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3MzQzMjUyNjUsImlhdCI6MTczNDIzODg2NSwianRpIjoiYTlmNjc4YTMtY2M4OS00YTgyLTgwYmUtYWUzNTFiMmZiZjVmIn0.jO5pMqnpLrT4XWDJeLUTzxCJBOLxov6vHSlW1SidXNk"}
+INFO - 2024-12-15 10:31:05 --> Token API HTTP Code: 200
+INFO - 2024-12-15 10:31:05 --> Token generated successfully
+INFO - 2024-12-15 10:31:05 --> Processing shipment ID: 4110
+INFO - 2024-12-15 10:31:05 --> Payload for shipment ID 4110: {"Request":{"Consignee":{"ConsigneeAddress1":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","ConsigneeAddress2":null,"ConsigneeAddress3":null,"ConsigneeEmailID":"avhadenterprisespc1@gmail.com","ConsigneeMobile":"9356459066","ConsigneeName":"Aditya Patil","ConsigneePincode":"422008","ConsigneeTelephone":""},"Returnadds":{"ReturnAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","ReturnAddress2":"Vahuli Post-Padgha","ReturnAddress3":"Mumbai, Maharashtra","ReturnContact":"Ronit Mehra","ReturnEmailID":"sportsaaga@gmail.com","ReturnMobile":"8591426598","ReturnPincode":"401208","ReturnTelephone":""},"Services":{"ActualWeight":"12","CollectableAmount":"6459","Commodity":{"CommodityDetail1":"5011100014","CommodityDetail2":"5011100014","CommodityDetail3":"5011100014"},"CreditReferenceNo":"#100022-a","CurrencyCode":"INR","DeclaredValue":4299,"Dimensions":[{"Length":"12","Breadth":"12","Height":"12","Count":1}],"ItemCount":2,"IsDedicatedDeliveryNetwork":false,"IsForcePickup":false,"IsPartialPickup":false,"IsReversePickup":false,"PDFOutputNotRequired":false,"OTPBasedDelivery":"0","PickupDate":"\/Date(1738406700000)\/","PickupTime":"1800","PieceCount":1,"ProductCode":"E","ProductType":"1","RegisterPickup":true,"SpecialInstruction":"","SubProductCode":"C","TotalCashPaytoCustomer":0,"itemdtl":[{"CGSTAmount":0,"SGSTAmount":0,"IGSTAmount":942.6428571428578,"InvoiceNumber":"#100022-a","ItemID":"576","ItemName":"Siscaa Season (A) (Leather) Cricket Bat","ItemValue":"4599","Itemquantity":1,"ProductDesc1":"Siscaa Season (A) (Leather) Cricket Bat","SKUNumber":"DSDAS76","SellerGSTNNumber":"","SellerName":"Ronit Mehra","TaxableAmount":4599,"TotalValue":4599,"countryOfOrigin":"IN","docType":"INV"},{"CGSTAmount":0,"SGSTAmount":0,"IGSTAmount":942.6428571428578,"InvoiceNumber":"#100022-a","ItemID":"577","ItemName":"Siscaa Season Cricket Bat (Leather) (A)","ItemValue":"4299","Itemquantity":1,"ProductDesc1":"Siscaa Season Cricket Bat (Leather) (A)","SKUNumber":"","SellerGSTNNumber":"","SellerName":"Ronit Mehra","TaxableAmount":4299,"TotalValue":4299,"countryOfOrigin":"IN","docType":"INV"}]},"Shipper":{"CustomerAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","CustomerAddress2":"Vahuli Post-Padgha","CustomerAddress3":"Mumbai, Maharashtra","CustomerEmailID":"sportsaaga@gmail.com","CustomerGSTNumber":"","CustomerMobile":"8591426598","CustomerCode":"469081","CustomerName":"Ronit Mehra","CustomerPincode":"401208","CustomerTelephone":"","OriginArea":"BOM","IsToPayCustomer":false,"Sender":"Ronit Mehra"}},"Profile":{"LoginID":"BOM16100","LicenceKey":"ivrh1ppfeiqukinsntpufekj66sqq3fs","Api_type":"S"}}
+INFO - 2024-12-15 10:31:05 --> API Response for shipment ID 4110: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":null,"AWBPrintContent":null,"AvailableAmountForBooking":0,"AvailableBalance":0,"CCRCRDREF":"#100022-a","ClusterCode":null,"DestinationArea":null,"DestinationLocation":null,"InvoicePrintContent":null,"IsError":true,"IsErrorInPU":false,"Status":[{"StatusCode":"InvalidPickupDate","StatusInformation":"Invalid Pickup Date. > 29\/12\/2024"}],"TokenNumber":null,"TransactionAmount":0}]}
+INFO - 2024-12-15 10:31:05 --> API HTTP Code for shipment ID 4110: 400
+INFO - 2024-12-15 10:31:05 --> Processing shipment ID: 4112
+INFO - 2024-12-15 10:31:05 --> Payload for shipment ID 4112: {"Request":{"Consignee":{"ConsigneeAddress1":"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road","ConsigneeAddress2":null,"ConsigneeAddress3":null,"ConsigneeEmailID":"avhadenterprisespc1@gmail.com","ConsigneeMobile":"9356459066","ConsigneeName":"Aditya Patil","ConsigneePincode":"422008","ConsigneeTelephone":""},"Returnadds":{"ReturnAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","ReturnAddress2":"Vahuli Post-Padgha","ReturnAddress3":"Mumbai, Maharashtra","ReturnContact":"Ronit Mehra","ReturnEmailID":"sportsaaga@gmail.com","ReturnMobile":"8591426598","ReturnPincode":"401208","ReturnTelephone":""},"Services":{"ActualWeight":"200","CollectableAmount":0,"Commodity":{"CommodityDetail1":"5011100014","CommodityDetail2":"5011100014","CommodityDetail3":"5011100014"},"CreditReferenceNo":"#100024-a","CurrencyCode":"INR","DeclaredValue":4599,"Dimensions":[{"Length":"12","Breadth":"12","Height":"12","Count":1}],"ItemCount":1,"IsDedicatedDeliveryNetwork":false,"IsForcePickup":false,"IsPartialPickup":false,"IsReversePickup":false,"PDFOutputNotRequired":false,"OTPBasedDelivery":"0","PickupDate":"\/Date(1738406700000)\/","PickupTime":"1800","PieceCount":1,"ProductCode":"E","ProductType":"1","RegisterPickup":true,"SpecialInstruction":"","SubProductCode":"P","TotalCashPaytoCustomer":0,"itemdtl":[{"CGSTAmount":0,"SGSTAmount":0,"IGSTAmount":443.46428571428623,"InvoiceNumber":"#100024-a","ItemID":"576","ItemName":"Siscaa Season (A) (Leather) Cricket Bat","ItemValue":"4599","Itemquantity":1,"ProductDesc1":"Siscaa Season (A) (Leather) Cricket Bat","SKUNumber":"DSDAS76","SellerGSTNNumber":"","SellerName":"Ronit Mehra","TaxableAmount":4599,"TotalValue":4599,"countryOfOrigin":"IN","docType":"INV"}]},"Shipper":{"CustomerAddress1":"A2,unit no 1,2,4 Mumbai-Nasik Highway Village","CustomerAddress2":"Vahuli Post-Padgha","CustomerAddress3":"Mumbai, Maharashtra","CustomerEmailID":"sportsaaga@gmail.com","CustomerGSTNumber":"","CustomerMobile":"8591426598","CustomerCode":"469081","CustomerName":"Ronit Mehra","CustomerPincode":"401208","CustomerTelephone":"","OriginArea":"BOM","IsToPayCustomer":false,"Sender":"Ronit Mehra"}},"Profile":{"LoginID":"BOM16100","LicenceKey":"ivrh1ppfeiqukinsntpufekj66sqq3fs","Api_type":"S"}}
+INFO - 2024-12-15 10:31:06 --> API Response for shipment ID 4112: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":null,"AWBPrintContent":null,"AvailableAmountForBooking":0,"AvailableBalance":0,"CCRCRDREF":"#100024-a","ClusterCode":null,"DestinationArea":null,"DestinationLocation":null,"InvoicePrintContent":null,"IsError":true,"IsErrorInPU":false,"Status":[{"StatusCode":"InvalidPickupDate","StatusInformation":"Invalid Pickup Date. > 29\/12\/2024"}],"TokenNumber":null,"TransactionAmount":0}]}
+INFO - 2024-12-15 10:31:06 --> API HTTP Code for shipment ID 4112: 400
+INFO - 2024-12-15 10:31:06 --> Waybill generation process completed. Status: success, Message: Successfully generated 0 waybill(s)
+INFO - 2024-12-15 10:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:31:08 --> Entering BlueDart management method
+INFO - 2024-12-15 10:31:08 --> Fetched all pending shipments
+INFO - 2024-12-15 10:31:08 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:31:08 --> Rendering BlueDart view
+INFO - 2024-12-15 10:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:36:29 --> Entering BlueDart management method
+INFO - 2024-12-15 10:36:29 --> Fetched all pending shipments
+INFO - 2024-12-15 10:36:29 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:36:29 --> Rendering BlueDart view
+INFO - 2024-12-15 10:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:38:42 --> Entering BlueDart management method
+INFO - 2024-12-15 10:38:42 --> Fetched all pending shipments
+INFO - 2024-12-15 10:38:42 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:38:42 --> Rendering BlueDart view
+INFO - 2024-12-15 10:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:40:01 --> Entering BlueDart management method
+INFO - 2024-12-15 10:40:01 --> Fetched all pending shipments
+INFO - 2024-12-15 10:40:01 --> Fetched BlueDart orders: 8
+INFO - 2024-12-15 10:40:01 --> Rendering BlueDart view
+INFO - 2024-12-15 10:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:21 --> Attempting to cancel BlueDart request
+INFO - 2024-12-15 10:42:21 --> seller verified 152
+INFO - 2024-12-15 10:42:21 --> Attempting to generate BlueDart token
+INFO - 2024-12-15 10:42:21 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3MzQzMjU5NDIsImlhdCI6MTczNDIzOTU0MiwianRpIjoiNThmMTkyODgtNTMwNC00YWM3LWFlMzctNGQ1MzM1MjdmYmM4In0.t396HvTvLDOfa60UClR17W1bHP2QiHR9dgf_sxAxVbQ"}
+INFO - 2024-12-15 10:42:21 --> Token API HTTP Code: 200
+INFO - 2024-12-15 10:42:21 --> Token generated successfully
+INFO - 2024-12-15 10:42:21 --> Attempting to cancel waybill: 50910295774
+INFO - 2024-12-15 10:42:22 --> Cancel API Response for tracking ID 50910295774: {"CancelWaybillResult":{"AWBNo":"50910295774","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 50910295774 has been cancelled successfully"}]}}
+INFO - 2024-12-15 10:42:22 --> Cancel API HTTP Code for tracking ID 50910295774: 200
+INFO - 2024-12-15 10:42:22 --> Waybill cancelled successfully for tracking ID: 50910295774
+INFO - 2024-12-15 10:42:22 --> Attempting to cancel waybill: 50910295752
+INFO - 2024-12-15 10:42:23 --> Cancel API Response for tracking ID 50910295752: {"CancelWaybillResult":{"AWBNo":"50910295752","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 50910295752 has been cancelled successfully"}]}}
+INFO - 2024-12-15 10:42:23 --> Cancel API HTTP Code for tracking ID 50910295752: 200
+INFO - 2024-12-15 10:42:23 --> Waybill cancelled successfully for tracking ID: 50910295752
+INFO - 2024-12-15 10:42:23 --> Attempting to cancel waybill: 50910295785
+INFO - 2024-12-15 10:42:23 --> Cancel API Response for tracking ID 50910295785: {"CancelWaybillResult":{"AWBNo":"50910295785","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 50910295785 has been cancelled successfully"}]}}
+INFO - 2024-12-15 10:42:23 --> Cancel API HTTP Code for tracking ID 50910295785: 200
+INFO - 2024-12-15 10:42:23 --> Waybill cancelled successfully for tracking ID: 50910295785
+INFO - 2024-12-15 10:42:23 --> Attempting to cancel waybill: 50910295796
+INFO - 2024-12-15 10:42:24 --> Cancel API Response for tracking ID 50910295796: {"CancelWaybillResult":{"AWBNo":"50910295796","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 50910295796 has been cancelled successfully"}]}}
+INFO - 2024-12-15 10:42:24 --> Cancel API HTTP Code for tracking ID 50910295796: 200
+INFO - 2024-12-15 10:42:24 --> Waybill cancelled successfully for tracking ID: 50910295796
+INFO - 2024-12-15 10:42:24 --> Attempting to cancel waybill: 50910295800
+INFO - 2024-12-15 10:42:24 --> Cancel API Response for tracking ID 50910295800: {"CancelWaybillResult":{"AWBNo":"50910295800","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 50910295800 has been cancelled successfully"}]}}
+INFO - 2024-12-15 10:42:24 --> Cancel API HTTP Code for tracking ID 50910295800: 200
+INFO - 2024-12-15 10:42:24 --> Waybill cancelled successfully for tracking ID: 50910295800
+INFO - 2024-12-15 10:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:30 --> Entering BlueDart management method
+INFO - 2024-12-15 10:42:30 --> Fetched all pending shipments
+INFO - 2024-12-15 10:42:30 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 10:42:30 --> Rendering BlueDart view
+INFO - 2024-12-15 10:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:35 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:35 --> Requested status filter: All
+INFO - 2024-12-15 10:42:35 --> Retrieved 9 orders for status: All
+INFO - 2024-12-15 10:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:36 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:36 --> Requested status filter: cancelled
+INFO - 2024-12-15 10:42:36 --> Retrieved 6 orders for status: cancelled
+INFO - 2024-12-15 10:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:38 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:38 --> Requested status filter: All
+INFO - 2024-12-15 10:42:38 --> Retrieved 9 orders for status: All
+INFO - 2024-12-15 10:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:40 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:40 --> Requested status filter: Fulfilled
+INFO - 2024-12-15 10:42:40 --> Retrieved 3 orders for status: Fulfilled
+INFO - 2024-12-15 10:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:43 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:43 --> Requested status filter: delivered
+INFO - 2024-12-15 10:42:43 --> Retrieved 0 orders for status: delivered
+INFO - 2024-12-15 10:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:46 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:46 --> Requested status filter: returned
+INFO - 2024-12-15 10:42:46 --> Retrieved 0 orders for status: returned
+INFO - 2024-12-15 10:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:42:51 --> Filtering BlueDart shipments
+INFO - 2024-12-15 10:42:51 --> Requested status filter: Fulfilled
+INFO - 2024-12-15 10:42:51 --> Retrieved 3 orders for status: Fulfilled
+INFO - 2024-12-15 10:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 10:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-15 11:03:07 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\Ordermanagement.php on line 183.
+ 1 APPPATH\Controllers\Ordermanagement.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 183)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-15 11:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-15 11:03:46 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\Ordermanagement.php on line 183.
+ 1 APPPATH\Controllers\Ordermanagement.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 183)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-15 11:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 11:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 12:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-15 12:30:31 --> ErrorException: Undefined array key "hsn"
+in APPPATH\Views\add_order_view.php on line 281.
+ 1 APPPATH\Views\add_order_view.php(281): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "hsn"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\add_order_view.php', 281)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\add_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(87): view('add_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addneworder()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-15 12:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 12:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 12:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 12:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-15 13:00:26 --> mysqli_sql_exception: Column 'state' cannot be null in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-12-15 13:00:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(123): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-15 13:00:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Shantanu Sadafale\', \'9370407508\', \'shantanusadafale1404@gmail.com\', \'422101\', NULL, NULL, \'$2y$10$/CFCx6toWmcYg81hyKN7bej6OEG0/Vsb2e5e2Xec4hTEhtkBEJMdS\', NULL, \'2024-12-15 13:00:26\', \'2024-12-15 13:00:26\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Shantanu Sadafale\', \'9370407508\', \'shantanusadafale1404@gmail.com\', \'422101\', NULL, NULL, \'$2y$10$/CFCx6toWmcYg81hyKN7bej6OEG0/Vsb2e5e2Xec4hTEhtkBEJMdS\', NULL, \'2024-12-15 13:00:26\', \'2024-12-15 13:00:26\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(123): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-15 13:00:26 --> [Caused by] mysqli_sql_exception: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Shantanu Sadafale\', \'9370407508\', \'shantanusadafale1404@gmail.com\', \'422101\', NULL, NULL, \'$2y$10$/CFCx6toWmcYg81hyKN7bej6OEG0/Vsb2e5e2Xec4hTEhtkBEJMdS\', NULL, \'2024-12-15 13:00:26\', \'2024-12-15 13:00:26\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Shantanu Sadafale\', \'9370407508\', \'shantanusadafale1404@gmail.com\', \'422101\', NULL, NULL, \'$2y$10$/CFCx6toWmcYg81hyKN7bej6OEG0/Vsb2e5e2Xec4hTEhtkBEJMdS\', NULL, \'2024-12-15 13:00:26\', \'2024-12-15 13:00:26\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Shantanu Sadafale\', \'9370407508\', \'shantanusadafale1404@gmail.com\', \'422101\', NULL, NULL, \'$2y$10$/CFCx6toWmcYg81hyKN7bej6OEG0/Vsb2e5e2Xec4hTEhtkBEJMdS\', NULL, \'2024-12-15 13:00:26\', \'2024-12-15 13:00:26\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(123): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-15 13:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:12:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:17:46 --> Entering BlueDart management method
+INFO - 2024-12-15 13:17:46 --> Fetched all pending shipments
+INFO - 2024-12-15 13:17:46 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 13:17:46 --> Rendering BlueDart view
+INFO - 2024-12-15 13:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:18:05 --> Entering BlueDart management method
+INFO - 2024-12-15 13:18:06 --> Fetched all pending shipments
+INFO - 2024-12-15 13:18:06 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 13:18:06 --> Rendering BlueDart view
+INFO - 2024-12-15 13:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 13:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:02:12 --> Entering BlueDart management method
+INFO - 2024-12-15 15:02:12 --> Fetched all pending shipments
+INFO - 2024-12-15 15:02:12 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 15:02:12 --> Rendering BlueDart view
+INFO - 2024-12-15 15:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:03:01 --> Entering BlueDart management method
+INFO - 2024-12-15 15:03:01 --> Fetched all pending shipments
+INFO - 2024-12-15 15:03:01 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 15:03:01 --> Rendering BlueDart view
+INFO - 2024-12-15 15:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 15:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:44:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:48:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 16:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:36:03 --> sent order confirmation email to aditya@avhadenterprises.com
+INFO - 2024-12-15 17:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:39:13 --> Entering BlueDart management method
+INFO - 2024-12-15 17:39:13 --> Fetched all pending shipments
+INFO - 2024-12-15 17:39:13 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 17:39:13 --> Rendering BlueDart view
+INFO - 2024-12-15 17:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 17:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:35:32 --> sent order confirmation email to aditya@avhadenterprises.com
+INFO - 2024-12-15 18:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:37:20 --> Entering BlueDart management method
+INFO - 2024-12-15 18:37:20 --> Fetched all pending shipments
+INFO - 2024-12-15 18:37:20 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 18:37:20 --> Rendering BlueDart view
+INFO - 2024-12-15 18:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:38:37 --> Entering BlueDart management method
+INFO - 2024-12-15 18:38:37 --> Fetched all pending shipments
+INFO - 2024-12-15 18:38:37 --> Fetched BlueDart orders: 3
+INFO - 2024-12-15 18:38:37 --> Rendering BlueDart view
+INFO - 2024-12-15 18:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-15 18:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

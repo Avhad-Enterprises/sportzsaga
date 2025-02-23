@@ -1,0 +1,916 @@
+INFO - 2024-12-05 09:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:51:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 09:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:04 --> publishcollection method called
+INFO - 2024-12-05 10:06:04 --> Image uploaded: becoafis2.jpg
+INFO - 2024-12-05 10:06:04 --> Mobile image uploaded: becoafis3.jpg
+INFO - 2024-12-05 10:06:04 --> Collout image uploaded: shoe-1 (2).webp
+INFO - 2024-12-05 10:06:04 --> Select Method: automated
+INFO - 2024-12-05 10:06:04 --> Conditions: [{"field":"product_title","operator":"starts_with","value":"Siscaa Season (A) (Leather) Cricket Bat"}]
+INFO - 2024-12-05 10:06:04 --> Condition Type: all
+INFO - 2024-12-05 10:06:04 --> sortBy: [576]
+INFO - 2024-12-05 10:06:04 --> Product IDs: ["576"]
+INFO - 2024-12-05 10:06:04 --> Collection data: {"collection_title":"sdasdasd","product_ids":"576","sort_method":"[576]","select_method":"automated","collection_conditions":"{\"conditions\":[{\"field\":\"product_title\",\"operator\":\"starts_with\",\"value\":\"Siscaa Season (A) (Leather) Cricket Bat\"}],\"conditionType\":\"all\"}","collection_description":"gtrfgtretert","url":"sdasdasd","collection_pc_image":"becoafis2.jpg","collection_mob_image":"becoafis3.jpg","collection_type":"tshirts","meta_tag_title":"sdasdasd","coll_meta_tag_description":"gtrfgtretert","collection_visibility":"visibile","publish_date_and_time":"2024-12-05T11:05","end_date_and_time":"2024-12-10T11:05","recurrence":"monthly","publish_for":"241","collout_title":"megha","collout_image":"shoe-1 (2).webp","collout_link":"www.com"}
+INFO - 2024-12-05 10:06:04 --> Collection saved with ID: 151
+INFO - 2024-12-05 10:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 10:21:12 --> ErrorException: Undefined variable $users
+in APPPATH\Views\edit_collections_view.php on line 383.
+ 1 APPPATH\Views\edit_collections_view.php(383): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\edit_collections_view.php', 383)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\edit_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(683): view('edit_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editCollection('151')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 10:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:36 --> updateCollection method called for collection ID: 151
+INFO - 2024-12-05 10:23:36 --> New Collout image uploaded: 1733374416_6aedd2d2572522c5f791.jpg
+INFO - 2024-12-05 10:23:36 --> Select Method: automated
+INFO - 2024-12-05 10:23:36 --> Conditions: [{"field":"product_title","operator":"starts_with","value":"Siscaa Season (A) (Leather) Cricket Bat"}]
+INFO - 2024-12-05 10:23:36 --> Condition Type: all
+INFO - 2024-12-05 10:23:36 --> sortBy: [576]
+INFO - 2024-12-05 10:23:36 --> Product IDs: ["576"]
+INFO - 2024-12-05 10:23:36 --> Updated collection data: {"collection_title":"sdasdasd","product_ids":"576","sort_method":"[576]","select_method":"automated","collection_conditions":"{\"conditions\":[{\"field\":\"product_title\",\"operator\":\"starts_with\",\"value\":\"Siscaa Season (A) (Leather) Cricket Bat\"}],\"conditionType\":\"all\"}","collection_description":" gtrfgtretert","url":"sdasdasd","collection_pc_image":"becoafis2.jpg","collection_mob_image":"becoafis3.jpg","collection_type":"tshirts","meta_tag_title":"sdasdasd","coll_meta_tag_description":"gtrfgtretert","collection_visibility":"visibile","collout_title":"megha","collout_image":"1733374416_6aedd2d2572522c5f791.jpg","collout_link":"www.com","publish_date_and_time":"2024-12-05T11:05","end_date_and_time":"2024-12-10T11:05","recurrence":"monthly","publish_for":"241"}
+INFO - 2024-12-05 10:23:36 --> Collection updated successfully.
+INFO - 2024-12-05 10:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:51:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:51:38 --> Entering BlueDart management method
+INFO - 2024-12-05 10:51:38 --> Fetched all pending shipments
+INFO - 2024-12-05 10:51:38 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 10:51:38 --> Rendering BlueDart view
+INFO - 2024-12-05 10:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 10:56:00 --> mysqli_sql_exception: Column 'state' cannot be null in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-12-05 10:56:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 10:56:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$2iJeW2ESrEqPMLUi4rpfK.s/TTLeTDPIO/o3UjLbiQ0PTu0pTqKSO\', NULL, \'2024-12-05 10:56:00\', \'2024-12-05 10:56:00\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$2iJeW2ESrEqPMLUi4rpfK.s/TTLeTDPIO/o3UjLbiQ0PTu0pTqKSO\', NULL, \'2024-12-05 10:56:00\', \'2024-12-05 10:56:00\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 10:56:00 --> [Caused by] mysqli_sql_exception: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$2iJeW2ESrEqPMLUi4rpfK.s/TTLeTDPIO/o3UjLbiQ0PTu0pTqKSO\', NULL, \'2024-12-05 10:56:00\', \'2024-12-05 10:56:00\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$2iJeW2ESrEqPMLUi4rpfK.s/TTLeTDPIO/o3UjLbiQ0PTu0pTqKSO\', NULL, \'2024-12-05 10:56:00\', \'2024-12-05 10:56:00\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$2iJeW2ESrEqPMLUi4rpfK.s/TTLeTDPIO/o3UjLbiQ0PTu0pTqKSO\', NULL, \'2024-12-05 10:56:00\', \'2024-12-05 10:56:00\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 10:56:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 10:56:29 --> mysqli_sql_exception: Column 'state' cannot be null in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-12-05 10:56:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 10:56:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$5mDBl3ScWavGfMu./rOAWeoSdosnYPJ9Mj0yJH85MKWGK2YPP6F5W\', NULL, \'2024-12-05 10:56:29\', \'2024-12-05 10:56:29\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$5mDBl3ScWavGfMu./rOAWeoSdosnYPJ9Mj0yJH85MKWGK2YPP6F5W\', NULL, \'2024-12-05 10:56:29\', \'2024-12-05 10:56:29\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 10:56:29 --> [Caused by] mysqli_sql_exception: Column 'state' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$5mDBl3ScWavGfMu./rOAWeoSdosnYPJ9Mj0yJH85MKWGK2YPP6F5W\', NULL, \'2024-12-05 10:56:29\', \'2024-12-05 10:56:29\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$5mDBl3ScWavGfMu./rOAWeoSdosnYPJ9Mj0yJH85MKWGK2YPP6F5W\', NULL, \'2024-12-05 10:56:29\', \'2024-12-05 10:56:29\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (\'Sakshi Tajane\', \'9960144163\', \'megha@avhadenterprises.com\', \'422009\', NULL, NULL, \'$2y$10$5mDBl3ScWavGfMu./rOAWeoSdosnYPJ9Mj0yJH85MKWGK2YPP6F5W\', NULL, \'2024-12-05 10:56:29\', \'2024-12-05 10:56:29\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone_no`, `email`, `pincode`, `city`, `state`, `password`, `address_information`, `created_at`, `updated_at`) VALUES (:name:, :phone_no:, :email:, :pincode:, :city:, :state:, :password:, :address_information:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(99): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addnewcustomer()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 10:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 10:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 11:43:02 --> mysqli_sql_exception: Table 'u541614220_sportzsagadb.orders' doesn't exist in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+#6 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-05 11:43:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 2 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 4 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:02 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 5 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 11:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 11:43:32 --> mysqli_sql_exception: Table 'u541614220_sportzsagadb.orders' doesn't exist in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+#6 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-05 11:43:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 2 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 4 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:32 --> [Caused by] mysqli_sql_exception: Table 'u541614220_sportzsagadb.orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `orders`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 5 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 11:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 11:43:49 --> mysqli_sql_exception: Unknown table 'u541614220_sportzsagadb.orders' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`...', Array, false)
+#4 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+#6 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-05 11:43:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u541614220_sportzsagadb.orders'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 2 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u541614220_sportzsagadb.orders'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 4 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 11:43:49 --> [Caused by] mysqli_sql_exception: Unknown table 'u541614220_sportzsagadb.orders'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders`.*, `users`.`name` as `customer`
+FROM `order_management`
+LEFT JOIN `users` ON `users`.`user_id` = `orders`.`user_id`', [], false)
+ 5 APPPATH\Models\Ordermanagement_model.php(288): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Ordermanagement.php(46): App\Models\Ordermanagement_model->getOrdersWithCustomerInfo()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 11:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 11:46:26 --> Error: Class "App\Controllers\UserModel" not found
+in APPPATH\Controllers\Ordermanagement.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 11:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 11:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 11:56:41 --> ErrorException: Undefined array key "delivery_cost"
+in APPPATH\Controllers\Ordermanagement.php on line 46.
+ 1 APPPATH\Controllers\Ordermanagement.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "delivery_cost"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 11:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 11:57:36 --> ErrorException: Undefined array key "delivery_cost"
+in APPPATH\Views\ordermanagement_view.php on line 174.
+ 1 APPPATH\Views\ordermanagement_view.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "delivery_cost"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php', 174)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('ordermanagement_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(57): view('ordermanagement_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 12:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 12:00:59 --> ErrorException: Undefined array key "delivery_cost"
+in APPPATH\Controllers\Ordermanagement.php on line 46.
+ 1 APPPATH\Controllers\Ordermanagement.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "delivery_cost"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 12:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 12:01:21 --> ErrorException: Undefined array key "delivery_cost"
+in APPPATH\Views\ordermanagement_view.php on line 174.
+ 1 APPPATH\Views\ordermanagement_view.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "delivery_cost"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php', 174)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('ordermanagement_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(62): view('ordermanagement_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 12:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 12:01:57 --> ErrorException: Undefined array key "delivery_cost"
+in APPPATH\Views\ordermanagement_view.php on line 175.
+ 1 APPPATH\Views\ordermanagement_view.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "delivery_cost"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php', 175)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\ordermanagement_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('ordermanagement_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(62): view('ordermanagement_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 12:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 12:26:46 --> Error: Class "App\Controllers\UserModel" not found
+in APPPATH\Controllers\Ordermanagement.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 12:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 12:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:35:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 13:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:59:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:10:57 --> Entering BlueDart management method
+INFO - 2024-12-05 16:10:57 --> Fetched all pending shipments
+INFO - 2024-12-05 16:10:57 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:10:57 --> Rendering BlueDart view
+INFO - 2024-12-05 16:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-12-05 16:18:09 --> [DEPRECATED] explode(): Passing null to parameter #2 ($string) of type string is deprecated in APPPATH\Views\edit_order_view.php on line 222.
+ 1 APPPATH\Views\edit_order_view.php(222): explode(',', null)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(254): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('89')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 16:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:18:30 --> Entering BlueDart management method
+INFO - 2024-12-05 16:18:30 --> Fetched all pending shipments
+INFO - 2024-12-05 16:18:30 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:18:30 --> Rendering BlueDart view
+INFO - 2024-12-05 16:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:18:55 --> Saving changes for BlueDart shipments
+INFO - 2024-12-05 16:18:55 --> Updated shipment ID: 4094
+INFO - 2024-12-05 16:18:55 --> Updated shipment ID: 4095
+INFO - 2024-12-05 16:18:55 --> Updated shipment ID: 4096
+INFO - 2024-12-05 16:18:55 --> Updated shipment ID: 4097
+INFO - 2024-12-05 16:18:55 --> Updated shipment ID: 4098
+INFO - 2024-12-05 16:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:18:58 --> Entering BlueDart management method
+INFO - 2024-12-05 16:18:58 --> Fetched all pending shipments
+INFO - 2024-12-05 16:18:58 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:18:58 --> Rendering BlueDart view
+INFO - 2024-12-05 16:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:25:28 --> Entering BlueDart management method
+INFO - 2024-12-05 16:25:28 --> Fetched all pending shipments
+INFO - 2024-12-05 16:25:28 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:25:28 --> Rendering BlueDart view
+INFO - 2024-12-05 16:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:40:00 --> Entering BlueDart management method
+INFO - 2024-12-05 16:40:00 --> Fetched all pending shipments
+INFO - 2024-12-05 16:40:00 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:40:00 --> Rendering BlueDart view
+INFO - 2024-12-05 16:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:42:35 --> Entering BlueDart management method
+INFO - 2024-12-05 16:42:35 --> Fetched all pending shipments
+INFO - 2024-12-05 16:42:35 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:42:35 --> Rendering BlueDart view
+INFO - 2024-12-05 16:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:55:38 --> Entering BlueDart management method
+INFO - 2024-12-05 16:55:38 --> Fetched all pending shipments
+INFO - 2024-12-05 16:55:38 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:55:38 --> Rendering BlueDart view
+INFO - 2024-12-05 16:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:56:22 --> Saving changes for BlueDart shipments
+INFO - 2024-12-05 16:56:22 --> Updated shipment ID: 4094
+INFO - 2024-12-05 16:56:22 --> Updated shipment ID: 4095
+INFO - 2024-12-05 16:56:22 --> Updated shipment ID: 4096
+INFO - 2024-12-05 16:56:22 --> Updated shipment ID: 4097
+INFO - 2024-12-05 16:56:22 --> Updated shipment ID: 4098
+INFO - 2024-12-05 16:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 16:56:24 --> Entering BlueDart management method
+INFO - 2024-12-05 16:56:24 --> Fetched all pending shipments
+INFO - 2024-12-05 16:56:24 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 16:56:24 --> Rendering BlueDart view
+INFO - 2024-12-05 17:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:01:28 --> Entering BlueDart management method
+INFO - 2024-12-05 17:01:28 --> Fetched all pending shipments
+INFO - 2024-12-05 17:01:28 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:01:28 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:23 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:23 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:23 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:23 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:41 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:41 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:41 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:41 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:47 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:47 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:47 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:47 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:47 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:47 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:47 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:47 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:48 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:48 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:48 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:48 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:48 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:48 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:48 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:49 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:49 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:49 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:49 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:02:49 --> Entering BlueDart management method
+INFO - 2024-12-05 17:02:49 --> Fetched all pending shipments
+INFO - 2024-12-05 17:02:49 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:02:49 --> Rendering BlueDart view
+INFO - 2024-12-05 17:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:06:53 --> Entering BlueDart management method
+INFO - 2024-12-05 17:06:53 --> Fetched all pending shipments
+INFO - 2024-12-05 17:06:53 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:06:53 --> Rendering BlueDart view
+INFO - 2024-12-05 17:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:07:42 --> Entering BlueDart management method
+INFO - 2024-12-05 17:07:42 --> Fetched all pending shipments
+INFO - 2024-12-05 17:07:42 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:07:42 --> Rendering BlueDart view
+INFO - 2024-12-05 17:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:08:16 --> Entering BlueDart management method
+INFO - 2024-12-05 17:08:16 --> Fetched all pending shipments
+INFO - 2024-12-05 17:08:16 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:08:16 --> Rendering BlueDart view
+INFO - 2024-12-05 17:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:09:40 --> Entering BlueDart management method
+INFO - 2024-12-05 17:09:40 --> Fetched all pending shipments
+INFO - 2024-12-05 17:09:40 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:09:40 --> Rendering BlueDart view
+INFO - 2024-12-05 17:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:10:05 --> Entering BlueDart management method
+INFO - 2024-12-05 17:10:05 --> Fetched all pending shipments
+INFO - 2024-12-05 17:10:05 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:10:05 --> Rendering BlueDart view
+INFO - 2024-12-05 17:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:10:16 --> Entering BlueDart management method
+INFO - 2024-12-05 17:10:16 --> Fetched all pending shipments
+INFO - 2024-12-05 17:10:16 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:10:16 --> Rendering BlueDart view
+INFO - 2024-12-05 17:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:12:36 --> Entering BlueDart management method
+INFO - 2024-12-05 17:12:36 --> Fetched all pending shipments
+INFO - 2024-12-05 17:12:36 --> Fetched BlueDart orders: 0
+INFO - 2024-12-05 17:12:36 --> Rendering BlueDart view
+INFO - 2024-12-05 17:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:18:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:29:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:54:18 --> Error: Class "App\Controllers\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 67.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:57:40 --> Error: Class "Google\Cloud\Storage\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 68.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:08:44 --> Error: Class "Google\Cloud\Storage\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 68.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:23:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:44:17 --> ErrorException: Trait "App\Controllers\Google\Cloud\Storage\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 18:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:44:33 --> ErrorException: Trait "App\Controllers\Google\Cloud\Storage\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 18:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:44:34 --> ErrorException: Trait "App\Controllers\Google\Cloud\Storage\StorageClient" not found
+in APPPATH\Controllers\Blogs.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 18:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

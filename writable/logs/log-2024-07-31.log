@@ -1,0 +1,412 @@
+CRITICAL - 2024-07-31 05:22:55 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 05:29:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 05:41:20 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 05:41:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 06:53:57 --> ParseError: syntax error, unexpected token "else"
+in APPPATH/Controllers/Home.php on line 320.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 09:50:27 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 09:50:40 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 09:53:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_new_dripvision_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Blogs.php(1148): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->addnewdripvision()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-31 10:28:12 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-07-31 10:28:12 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36863962sm16619624f8f.108 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36863962sm16619624f8f.108 - gsmtp
+
+ERROR - 2024-07-31 10:28:12 --> Failed to send invitation email to avhad.millennium@gmail.com
+ERROR - 2024-07-31 10:52:38 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-07-31 10:52:38 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36861b54sm16598932f8f.95 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36861b54sm16598932f8f.95 - gsmtp
+
+ERROR - 2024-07-31 10:52:38 --> Failed to send invitation email to avhad.millennium@gmail.com
+ERROR - 2024-07-31 10:52:38 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36861b54sm16598932f8f.95 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36861b54sm16598932f8f.95 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Wed, 31 Jul 2024 10:52:38 +0000
+From: &quot;Aditya Patil&quot; &lt;awesomeboysboys@gmail.com&gt;
+Return-Path: &lt;awesomeboysboys@gmail.com&gt;
+To: avhad.millennium@gmail.com
+Subject: =?UTF-8?Q?You=20are=20invited!?=
+Reply-To: &lt;awesomeboysboys@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: awesomeboysboys@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;66aa1776adebe8.79106848@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>
+ERROR - 2024-07-31 10:53:32 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-07-31 10:53:32 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36857dc2sm16665201f8f.77 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36857dc2sm16665201f8f.77 - gsmtp
+
+ERROR - 2024-07-31 10:53:32 --> Failed to send invitation email to anuj@driphunter.in
+ERROR - 2024-07-31 10:53:32 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36857dc2sm16665201f8f.77 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36857dc2sm16665201f8f.77 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Wed, 31 Jul 2024 10:53:32 +0000
+From: &quot;Aditya Patil&quot; &lt;awesomeboysboys@gmail.com&gt;
+Return-Path: &lt;awesomeboysboys@gmail.com&gt;
+To: anuj@driphunter.in
+Subject: =?UTF-8?Q?You=20are=20invited!?=
+Reply-To: &lt;awesomeboysboys@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: awesomeboysboys@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;66aa17aca59d96.91374569@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>
+ERROR - 2024-07-31 10:55:29 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-07-31 10:55:29 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36858197sm17115764f8f.68 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36858197sm17115764f8f.68 - gsmtp
+
+ERROR - 2024-07-31 10:55:29 --> Failed to send invitation email to anuj@driphunter.in
+ERROR - 2024-07-31 10:55:29 --> 220 smtp.gmail.com ESMTP ffacd0b85a97d-36b36858197sm17115764f8f.68 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [2a01:4f8:190:72e5::2]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-36b36858197sm17115764f8f.68 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Wed, 31 Jul 2024 10:55:29 +0000
+From: &quot;Aditya Patil&quot; &lt;awesomeboysboys@gmail.com&gt;
+Return-Path: &lt;awesomeboysboys@gmail.com&gt;
+To: anuj@driphunter.in
+Subject: =?UTF-8?Q?You=20are=20invited!?=
+Reply-To: &lt;awesomeboysboys@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: awesomeboysboys@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;66aa1821a8ae71.34826093@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>
+CRITICAL - 2024-07-31 10:57:51 --> ErrorException: Undefined variable $stories
+in APPPATH/Views/index_footer_view.php on line 452.
+ 1 APPPATH/Views/index_footer_view.php(452): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index_footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/main_blog_page_view.php(180): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(152): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:57:54 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:58:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_new_dripvision_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Blogs.php(1148): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->addnewdripvision()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:59:00 --> ErrorException: Undefined variable $stories
+in APPPATH/Views/index_footer_view.php on line 452.
+ 1 APPPATH/Views/index_footer_view.php(452): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index_footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/main_blog_page_view.php(180): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(152): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:59:05 --> ErrorException: Undefined variable $stories
+in APPPATH/Views/index_footer_view.php on line 452.
+ 1 APPPATH/Views/index_footer_view.php(452): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index_footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/main_blog_page_view.php(180): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(152): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:59:10 --> ErrorException: Undefined variable $stories
+in APPPATH/Views/index_footer_view.php on line 452.
+ 1 APPPATH/Views/index_footer_view.php(452): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index_footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/main_blog_page_view.php(180): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(152): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 10:59:44 --> ErrorException: Undefined variable $stories
+in APPPATH/Views/index_footer_view.php on line 452.
+ 1 APPPATH/Views/index_footer_view.php(452): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index_footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/main_blog_page_view.php(180): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/main_blog_page_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(152): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:01:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_new_dripvision_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Blogs.php(1148): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->addnewdripvision()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:02:55 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:02:57 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:02:58 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:04:27 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 11:05:05 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 13:32:52 --> ParseError: syntax error, unexpected token "<"
+in APPPATH/Views/ordermanagement_view.php on line 154.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(16): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 13:33:21 --> ParseError: syntax error, unexpected token "<"
+in APPPATH/Views/ordermanagement_view.php on line 154.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(16): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 13:33:25 --> ParseError: syntax error, unexpected token "<"
+in APPPATH/Views/ordermanagement_view.php on line 154.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(16): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-31 14:05:48 --> Exception: Failed to parse time string (Aditya) at position 0 (A): The timezone could not be found in the database
+in APPPATH/Views/profile_view.php on line 351.
+ 1 APPPATH/Views/profile_view.php(351): DateTime->__construct()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/profile_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Dashboard.php(156): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

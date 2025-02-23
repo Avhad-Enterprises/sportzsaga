@@ -1,0 +1,409 @@
+CRITICAL - 2024-05-16 08:05:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dashboard_view', [], true)
+ 3 APPPATH\Controllers\Dashboard.php(10): view('dashboard_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 08:55:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "users_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 3 APPPATH\Controllers\Registeredusers.php(11): view('users_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 10:31:10 --> ErrorException: Undefined variable $records
+in APPPATH\Views\registered_users_view.php on line 165.
+ 1 APPPATH\Views\registered_users_view.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php', 165)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registered_users_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(13): view('registered_users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:12:42 --> ErrorException: Undefined variable $record
+in APPPATH\Views\registered_users_view.php on line 179.
+ 1 APPPATH\Views\registered_users_view.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $record', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php', 179)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registered_users_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(13): view('registered_users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:02:21 --> ErrorException: Undefined variable $users
+in APPPATH\Views\registered_users_view.php on line 151.
+ 1 APPPATH\Views\registered_users_view.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php', 151)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registered_users_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(20): view('registered_users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->deleteuser('35')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:03:03 --> ErrorException: Undefined variable $users
+in APPPATH\Views\registered_users_view.php on line 151.
+ 1 APPPATH\Views\registered_users_view.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php', 151)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registered_users_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(20): view('registered_users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->deleteuser('35')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:03:18 --> ErrorException: Undefined variable $users
+in APPPATH\Views\registered_users_view.php on line 151.
+ 1 APPPATH\Views\registered_users_view.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php', 151)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\registered_users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registered_users_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(20): view('registered_users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->deleteuser('35')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:27:34 --> BadMethodCallException: Call to undefined method App\Models\Registerusers_model::editusermodel
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Registeredusers.php(26): CodeIgniter\Model->__call('editusermodel', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->edituser('40')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:27:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_user_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_user_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_user_view', [], true)
+ 3 APPPATH\Controllers\Registeredusers.php(27): view('edit_user_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->edituser('40')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:00:37 --> ParseError: syntax error, unexpected end of file
+in APPPATH\Views\edit_user_view.php on line 157.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_user_view', [], true)
+ 3 APPPATH\Controllers\Registeredusers.php(27): view('edit_user_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->edituser('40')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:04:21 --> ErrorException: Undefined variable $record
+in APPPATH\Views\edit_user_view.php on line 115.
+ 1 APPPATH\Views\edit_user_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $record', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_user_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_user_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_user_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(27): view('edit_user_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->edituser('40')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:24:08 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Models\registerusers_model.php on line 30.
+ 1 APPPATH\Controllers\Registeredusers.php(46): App\Models\Registerusers_model->updateusermodel('40', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->updateuserdata('40')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:42:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Blogs_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Blogs_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Blogs_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(14): view('Blogs_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:43:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Blogs_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Blogs_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Blogs_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(14): view('Blogs_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:55:19 --> ErrorException: Undefined variable $user
+in APPPATH\Views\Blogs_view.php on line 145.
+ 1 APPPATH\Views\Blogs_view.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Blogs_view.php', 145)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Blogs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Blogs_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(14): view('Blogs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:04:11 --> CodeIgniter\Router\Exceptions\RouterException: The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\blogs/stories"
+in SYSTEMPATH\Router\Router.php on line 495.
+ 1 SYSTEMPATH\Router\Router.php(495): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\blogs/stories')
+ 2 SYSTEMPATH\Router\Router.php(202): CodeIgniter\Router\Router->checkRoutes('blogs/stories')
+ 3 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('blogs/stories')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:08:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Stories_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Stories_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:10:14 --> ErrorException: Undefined array key "user_id"
+in APPPATH\Views\Stories_view.php on line 147.
+ 1 APPPATH\Views\Stories_view.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php', 147)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:11:33 --> ErrorException: Undefined variable $stor
+in APPPATH\Views\Stories_view.php on line 149.
+ 1 APPPATH\Views\Stories_view.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $stor', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php', 149)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:11:51 --> ErrorException: Undefined variable $storiesy
+in APPPATH\Views\Stories_view.php on line 146.
+ 1 APPPATH\Views\Stories_view.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $storiesy', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php', 146)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:12:37 --> ErrorException: Undefined variable $storiesy
+in APPPATH\Views\Stories_view.php on line 146.
+ 1 APPPATH\Views\Stories_view.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $storiesy', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php', 146)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:12:53 --> ErrorException: Undefined array key "user_id"
+in APPPATH\Views\Stories_view.php on line 161.
+ 1 APPPATH\Views\Stories_view.php(161): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php', 161)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\Stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(21): view('Stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:16:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Dripspot_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Dripspot_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Dripspot_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(28): view('Dripspot_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripspot()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:18:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Dripspot_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Dripspot_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Dripspot_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(28): view('Dripspot_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripspot()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:22:45 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::dripvisionmodel
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(34): CodeIgniter\Model->__call('dripvisionmodel', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripvision()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:22:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Dripvision_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Dripvision_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Dripvision_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(35): view('Dripvision_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripvision()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 14:25:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Instagramposts_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Instagramposts_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Instagramposts_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(40): view('Instagramposts_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->instagramposts()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 15:50:39 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 15:52:19 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 15:53:12 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 15:54:03 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 16:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 16:04:22 --> ErrorException: Undefined array key "excel_file"
+in APPPATH\Controllers\Blogs.php on line 66.
+ 1 APPPATH\Controllers\Blogs.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "excel_file"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:05:21 --> ErrorException: Undefined array key "excel_file"
+in APPPATH\Controllers\Blogs.php on line 66.
+ 1 APPPATH\Controllers\Blogs.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "excel_file"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:05:47 --> ErrorException: Undefined array key "excel_file"
+in APPPATH\Controllers\Blogs.php on line 66.
+ 1 APPPATH\Controllers\Blogs.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "excel_file"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:07:19 --> ErrorException: Undefined array key "import_excel_file"
+in APPPATH\Controllers\Blogs.php on line 66.
+ 1 APPPATH\Controllers\Blogs.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "import_excel_file"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:12:03 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 68.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:12:15 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 68.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:13:09 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 73.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:13:34 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Blogs.php on line 73.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:19:59 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::insertblogsexcwldata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(120): CodeIgniter\Model->__call('insertblogsexcwldata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-16 16:20:51 --> mysqli_sql_exception: Column 'blog_comments' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `bl...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bl...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bl...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bl...', NULL, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 H:\Xampp\htdocs\newdriphunter\system\Model.php(361): CodeIgniter\Database\BaseBuilder->insertBatch(Array, NULL, 100)
+#6 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(919): CodeIgniter\Model->doInsertBatch(Array, NULL, 100, false)
+#7 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(22): CodeIgniter\BaseModel->insertBatch(Array)
+#8 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(120): App\Models\Blogs_model->insertblogsexcwldata(Array)
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#11 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-05-16 16:20:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'blog_comments' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 SYSTEMPATH\Model.php(361): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 4 SYSTEMPATH\BaseModel.php(919): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 5 APPPATH\Models\blogs_model.php(22): CodeIgniter\BaseModel->insertBatch([...])
+ 6 APPPATH\Controllers\Blogs.php(120): App\Models\Blogs_model->insertblogsexcwldata([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:20:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'blog_comments' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 SYSTEMPATH\Model.php(361): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 6 SYSTEMPATH\BaseModel.php(919): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 7 APPPATH\Models\blogs_model.php(22): CodeIgniter\BaseModel->insertBatch([...])
+ 8 APPPATH\Controllers\Blogs.php(120): App\Models\Blogs_model->insertblogsexcwldata([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:20:51 --> [Caused by] mysqli_sql_exception: Column 'blog_comments' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`author_name`, `blog_comments`, `blog_description`, `blog_image`, `blog_metadescription`, `blog_metatitle`, `blog_metaurl`, `blog_tags`, `blog_title`, `blog_visibility`, `category`, `main_description`)
+VALUES (\'Aditya Patil\',NULL,\'Explore the vibrant world of streetwear fashion with Mera Feilds. From graphic tees to sleek hoodies, our clothing embodies the spirit of the streets while empowering individuals to embrace their authenticity. Join the global community of streetwear enthusiasts and let your style speak volumes.\',\'The Power of Digital Marketing: A Must for Businesses Today\',\'streetwear-fashion\',\'Discover why digital marketing has become indispensable for businesses of all sizes in today\\\'s fast-paced digital age.\',\'option0\',\'option0\',\'Unleashing the Power of Digital Marketing: Why It\\\'s Essential for Businesses Today\',\'public\',\'2024-05-16 06:55:13\',\'<p>Streetwear clothing has evolved from its humble beginnings as an urban subculture to a global fashion phenomenon. Rooted in the streets and influenced by various cultural movements, streetwear embodies a unique blend of comfort, style, and self-expression. From graphic tees and hoodies to sneakers and accessories, this fashion genre has transcended boundaries, appealing to individuals from diverse backgrounds.</p>\\n\\n<p>At its core, streetwear reflects the ethos of the streets. It&#39;s more than just clothing; it&#39;s a form of art, a medium through which people express their individuality and connect with like-minded individuals. Mera Feilds, a brand synonymous with streetwear, understands this intrinsic connection and aims to empower individuals to embrace their authenticity through fashion.</p>\\n\\n<p>Mera Feilds doesn&#39;t just offer clothing; it offers a lifestyle. Each piece is meticulously designed to resonate with the spirit of the streets while incorporating elements of contemporary style. Whether it&#39;s a bold graphic tee inspired by urban graffiti or a sleek hoodie adorned with subtle branding, every garment tells a story.</p>\\n\\n<p>What sets streetwear apart is its inclusivity. It transcends traditional fashion norms, welcoming people of all ages, genders, and backgrounds. Whether you&#39;re a skateboarder in Los Angeles, a hip-hop enthusiast in Tokyo, or a graffiti artist in Berlin, streetwear speaks to you on a personal level.</p>\\n\\n<p>Moreover, streetwear has become a platform for social and cultural commentary. Brands like Mera Feilds use their influence to raise awareness about important issues, from sustainability to social justice. By aligning themselves with causes that resonate with their audience, these brands foster a sense of community and belonging among their customers.</p>\\n\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 SYSTEMPATH\Model.php(361): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 7 SYSTEMPATH\BaseModel.php(919): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 8 APPPATH\Models\blogs_model.php(22): CodeIgniter\BaseModel->insertBatch([...])
+ 9 APPPATH\Controllers\Blogs.php(120): App\Models\Blogs_model->insertblogsexcwldata([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->importexceldata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

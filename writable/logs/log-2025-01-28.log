@@ -1,0 +1,409 @@
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:52 --> Starting fetchEmails method
+INFO - 2025-01-28 09:42:52 --> Starting email processing
+INFO - 2025-01-28 09:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:54 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-28 09:42:54 --> Fetching email threads
+INFO - 2025-01-28 09:42:54 --> Found 6 root emails
+INFO - 2025-01-28 09:42:54 --> Processed 6 email threads
+INFO - 2025-01-28 09:42:54 --> Retrieved 6 email threads
+INFO - 2025-01-28 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-28 13:45:28 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-28 13:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:45:47 --> Starting fetchEmails method
+INFO - 2025-01-28 13:45:47 --> Starting email processing
+INFO - 2025-01-28 13:45:48 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-28 13:45:48 --> Fetching email threads
+INFO - 2025-01-28 13:45:48 --> Found 6 root emails
+INFO - 2025-01-28 13:45:48 --> Processed 6 email threads
+INFO - 2025-01-28 13:45:48 --> Retrieved 6 email threads
+INFO - 2025-01-28 13:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:45:54 --> Starting fetchEmails method
+INFO - 2025-01-28 13:45:54 --> Starting email processing
+INFO - 2025-01-28 13:45:56 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-28 13:45:56 --> Fetching email threads
+INFO - 2025-01-28 13:45:56 --> Found 6 root emails
+INFO - 2025-01-28 13:45:56 --> Processed 6 email threads
+INFO - 2025-01-28 13:45:56 --> Retrieved 6 email threads
+INFO - 2025-01-28 13:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 13:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-28 16:36:51 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-28 16:36:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-28 16:36:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-28 16:36:51 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-28 16:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:36:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-28 16:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

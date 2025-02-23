@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slick-slide {
+            padding: 0 10px;
+        }
+
+        .slick-list {
+            margin:10%;
+        }
+
+        .carousel-card {
+            position: relative;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin:5px;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .carousel-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;;
+        }
+
+        .carousel-card .post-details {
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .carousel-card .post-details p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .carousel-card .post-details p i {
+            margin-right: 5px;
+        }
+
+        .instagram-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #E1306C; 
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Instagram posts</h1>
+<div id="instagram-carousel" class="slick-slider"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    const accessToken = ''; // enter access token
+    const apiEndpoint = `https://graph.instagram.com/me/media?fields=id,media_url,permalink&access_token=${accessToken}`;
+
+    async function fetchInstagramPosts() {
+        try {
+            const response = await fetch(apiEndpoint);
+            const data = await response.json();
+
+            if (data.data && data.data.length > 0) {
+                const carouselContainer = document.getElementById('instagram-carousel');
+                const carouselSlides = [];
+
+                data.data.forEach(post => {
+                    const postCard = document.createElement('div');
+                    postCard.classList.add('carousel-card');
+
+                    const postLink = document.createElement('a');
+                    postLink.href = post.permalink;
+                    postLink.target = '_blank';
+
+                    const postImage = document.createElement('img');
+                    postImage.src = post.media_url;
+                    postImage.alt = 'Instagram Post';
+
+                    const instagramIcon = document.createElement('i');
+                    instagramIcon.classList.add('fab', 'fa-instagram', 'instagram-icon');
+
+                    const postDetails = document.createElement('div');
+                    postDetails.classList.add('post-details');
+
+                    const likesCount = document.createElement('p');
+                    likesCount.innerHTML = `<i class="fas fa-heart"></i> Likes: 0`; 
+
+                    const commentsCount = document.createElement('p');
+                    commentsCount.innerHTML = `<i class="fas fa-comment"></i> Comments: 0`;
+
+                    postDetails.appendChild(likesCount);
+                    postDetails.appendChild(commentsCount);
+
+                    postLink.appendChild(postImage);
+                    postCard.appendChild(postLink);
+                    postCard.appendChild(instagramIcon);
+                    postCard.appendChild(postDetails);
+
+                    carouselSlides.push(postCard);
+                });
+
+                $(carouselContainer).append(carouselSlides);
+
+                $(carouselContainer).slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    arrows: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            } else {
+                console.log('No posts found.');
+            }
+        } catch (error) {
+            console.error('Error fetching Instagram posts:', error);
+        }
+    }
+    fetchInstagramPosts();
+</script>
+</body>
+</html>

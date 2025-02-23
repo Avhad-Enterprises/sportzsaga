@@ -1,0 +1,4 @@
+[01-Aug-2024 14:43:22 UTC] PHP Fatal error:  Cannot use App\Models\invitationmodel as invitationmodel because the name is already in use in /home/seotools/newdriphunter_depoly/app/Controllers/Registeredusers.php on line 10
+[06-Aug-2024 11:03:57 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\Dashboard::profile() in /home/seotools/newdriphunter_depoly/app/Controllers/Dashboard.php on line 256
+[28-Aug-2024 20:46:36 Asia/Kolkata] PHP Fatal error:  Cannot use empty array elements in arrays in /home/seotools/newdriphunter_depoly/app/Controllers/Ordermanagement.php on line 402
+[29-Aug-2024 20:10:34 Asia/Kolkata] PHP Fatal error:  Cannot use App\Models\Cart_model as Cart_model because the name is already in use in /home/seotools/newdriphunter_depoly/app/Controllers/Registeredusers.php on line 16

@@ -1,0 +1,60 @@
+CRITICAL - 2024-08-12 07:22:54 --> ErrorException: Undefined variable $product
+in APPPATH/Views/addnew_products_view.php on line 163.
+ 1 APPPATH/Views/addnew_products_view.php(163): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/addnew_products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(143): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-12 09:50:47 --> ErrorException: Undefined variable $product
+in APPPATH/Views/collection_prod_sec.php on line 147.
+ 1 APPPATH/Views/collection_prod_sec.php(147): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/collection_prod_sec.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(426): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addproducts()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-12 10:28:04 --> BadMethodCallException: Call to undefined method App\Models\Products_model::deletecollectionproduct
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Products.php(432): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->deleteprod()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-12 10:39:34 --> ParseError: syntax error, unexpected identifier "collection", expecting ")"
+in APPPATH/Controllers/Products.php on line 439.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-12 15:50:05 --> ErrorException: Undefined variable $brands
+in APPPATH/Views/edit_products_view.php on line 410.
+ 1 APPPATH/Views/edit_products_view.php(410): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(215): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->editproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-12 15:50:52 --> ErrorException: Undefined variable $brands
+in APPPATH/Views/edit_products_view.php on line 410.
+ 1 APPPATH/Views/edit_products_view.php(410): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(215): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->editproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

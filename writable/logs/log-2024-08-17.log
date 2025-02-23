@@ -1,0 +1,24 @@
+CRITICAL - 2024-08-17 11:38:38 --> Error: Class "App\Controllers\discountcode" not found
+in APPPATH/Controllers/Home.php on line 327.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->discountcodegenerator()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-17 11:40:31 --> Error: Class "App\Controllers\discountcode" not found
+in APPPATH/Controllers/Home.php on line 327.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->discountcodegenerator()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-17 11:41:06 --> Error: Class "App\Controllers\discountcode" not found
+in APPPATH/Controllers/Home.php on line 327.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->discountcodegenerator()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-17 11:41:14 --> Error: Class "App\Controllers\discountcode" not found
+in APPPATH/Controllers/Home.php on line 327.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->discountcodegenerator()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,1095 @@
+CRITICAL - 2024-05-18 07:20:21 --> ErrorException: Undefined variable $newcelebimage
+in APPPATH\Controllers\Blogs.php on line 387.
+ 1 APPPATH\Controllers\Blogs.php(387): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcelebimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 387)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatedripspot('45')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 07:36:58 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::addnewdripspot
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(383): CodeIgniter\Model->__call('addnewdripspot', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmydripspot()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 07:56:01 --> ErrorException: Undefined variable $brands
+in APPPATH\Views\brand_view.php on line 160.
+ 1 APPPATH\Views\brand_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brands', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\brand_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\brand_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('brand_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(12): view('brand_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 07:56:15 --> ErrorException: Undefined variable $brands
+in APPPATH\Views\brand_view.php on line 160.
+ 1 APPPATH\Views\brand_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brands', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\brand_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\brand_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('brand_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(12): view('brand_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:08:36 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::getblogbyid
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(18): CodeIgniter\Model->__call('getblogbyid', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 08:17:22 --> mysqli_sql_exception: Unknown column 'blog_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-18 08:17:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:17:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:17:22 --> [Caused by] mysqli_sql_exception: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 08:18:07 --> mysqli_sql_exception: Unknown column 'blog_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-18 08:18:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:18:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:18:07 --> [Caused by] mysqli_sql_exception: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 08:18:30 --> mysqli_sql_exception: Unknown column 'blog_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-18 08:18:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:18:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:18:30 --> [Caused by] mysqli_sql_exception: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 08:19:05 --> mysqli_sql_exception: Unknown column 'blog_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-18 08:19:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:19:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:19:05 --> [Caused by] mysqli_sql_exception: Unknown column 'blog_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `blog_id` = \'7\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `blog_id` = :blog_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\brands_model.php(20): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Brands.php(18): App\Models\Brands_model->getbrandbyid('7')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:37:31 --> ErrorException: Undefined variable $drips
+in APPPATH\Views\edit_brand_view.php on line 126.
+ 1 APPPATH\Views\edit_brand_view.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $drips', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_brand_view.php', 126)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_brand_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_brand_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(19): view('edit_brand_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editbrand('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:41:53 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::updatetedbrand
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(40): CodeIgniter\Model->__call('updatetedbrand', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->updatetedbrand('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:48:13 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::deletebrandmodel
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(25): CodeIgniter\Model->__call('deletebrandmodel', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletebrand('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 08:56:20 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::publishnewbrand
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(39): CodeIgniter\Model->__call('publishnewbrand', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishbrand()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 09:51:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "category_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('category_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('category_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(83): view('category_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->category()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 09:52:56 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::getcategory
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(84): CodeIgniter\Model->__call('getcategory', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->category()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 09:57:37 --> ErrorException: Undefined array key "logo"
+in APPPATH\Views\category_view.php on line 165.
+ 1 APPPATH\Views\category_view.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "logo"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\category_view.php', 165)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\category_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('category_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(85): view('category_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->category()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 09:57:46 --> ErrorException: Undefined array key "brand_id"
+in APPPATH\Views\category_view.php on line 177.
+ 1 APPPATH\Views\category_view.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\category_view.php', 177)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\category_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('category_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(85): view('category_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->category()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:04:18 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `br...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `br...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `br...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `br...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:04:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:18 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:04:34 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `br...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `br...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `br...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `br...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:04:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:34 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:04:50 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `br...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `br...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `br...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `br...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:04:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:04:50 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:07:55 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `br...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `br...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `br...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `br...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:07:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:07:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:07:55 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `brands`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:09:20 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:09:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:09:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:09:20 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:09:48 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:09:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:09:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:09:48 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:10:36 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:10:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:10:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:10:36 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:12:03 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-18 10:12:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:12:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:12:03 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `dripspot`
+WHERE `cat_id` = \'5\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `dripspot`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 APPPATH\Models\brands_model.php(46): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Brands.php(91): App\Models\Brands_model->deletecat('5')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->deletecat('5')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-18 10:42:43 --> mysqli_sql_exception: Unknown column 'cat_id' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\brands_model.php(56): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(125): App\Models\Brands_model->updatetedcategory('6')
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-18 10:42:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\brands_model.php(56): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Brands.php(125): App\Models\Brands_model->updatetedcategory('6')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:42:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `cat_id` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `cat_id` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\brands_model.php(56): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Brands.php(125): App\Models\Brands_model->updatetedcategory('6')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:42:43 --> [Caused by] mysqli_sql_exception: Unknown column 'cat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `brands`
+WHERE `cat_id` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`
+WHERE `cat_id` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`
+WHERE `cat_id` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`
+WHERE `cat_id` = :cat_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\brands_model.php(56): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Brands.php(125): App\Models\Brands_model->updatetedcategory('6')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:44:31 --> ErrorException: Undefined array key "category_image"
+in APPPATH\Views\edit_category_view.php on line 119.
+ 1 APPPATH\Views\edit_category_view.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_image"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_category_view.php', 119)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_category_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_category_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(126): view('edit_category_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:44:55 --> ErrorException: Undefined array key "category_status"
+in APPPATH\Views\edit_category_view.php on line 128.
+ 1 APPPATH\Views\edit_category_view.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_status"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_category_view.php', 128)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_category_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_category_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(126): view('edit_category_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->editcategory('6')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:49:36 --> ErrorException: Undefined variable $updatecategoryimage
+in APPPATH\Controllers\Brands.php on line 143.
+ 1 APPPATH\Controllers\Brands.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updatecategoryimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishnewcategory('6')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 10:50:15 --> ErrorException: Undefined variable $updatecategoryimage
+in APPPATH\Controllers\Brands.php on line 143.
+ 1 APPPATH\Controllers\Brands.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updatecategoryimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishnewcategory('6')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:26:33 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsec
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(252): CodeIgniter\Model->__call('editblogsubsec', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:27:22 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:28:22 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:28:30 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:28:37 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:29:11 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:29:41 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php on line 253
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', '00000250', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:30:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "blog_imgsection_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('blog_imgsection_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:50:39 --> ErrorException: Undefined variable $subpost
+in APPPATH\Views\blog_imgsection_view.php on line 160.
+ 1 APPPATH\Views\blog_imgsection_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subpost', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:51:16 --> ErrorException: Undefined variable $subpost
+in APPPATH\Views\blog_imgsection_view.php on line 160.
+ 1 APPPATH\Views\blog_imgsection_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subpost', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 11:51:26 --> ErrorException: Undefined variable $subpost
+in APPPATH\Views\blog_imgsection_view.php on line 160.
+ 1 APPPATH\Views\blog_imgsection_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subpost', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(253): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000250')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 12:10:52 --> ErrorException: Undefined array key "drips"
+in APPPATH\Views\dripspot_view.php on line 169.
+ 1 APPPATH\Views\dripspot_view.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "drips"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_view.php', 169)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(361): view('dripspot_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripspot()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 12:19:06 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\dripspot_subsection_view.php on line 157.
+ 1 APPPATH\Views\dripspot_subsection_view.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_subsection_view.php', 157)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_subsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_subsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(369): view('dripspot_subsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripsubsection('47')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 12:19:23 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\dripspot_subsection_view.php on line 169.
+ 1 APPPATH\Views\dripspot_subsection_view.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_subsection_view.php', 169)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot_subsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_subsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(369): view('dripspot_subsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripsubsection('47')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:02:40 --> Error: Class "App\Controllers\Products_model" not found
+in APPPATH\Controllers\Products.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:04:06 --> CodeIgniter\Exceptions\ModelException: "App\Models\Products_model" model class does not specify a Primary Key.
+in SYSTEMPATH\Model.php on line 653.
+ 1 SYSTEMPATH\Model.php(653): CodeIgniter\Exceptions\ModelException::forNoPrimaryKey('App\\Models\\Products_model')
+ 2 SYSTEMPATH\Model.php(869): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Products.php(13): CodeIgniter\Model->__call('getBrands', [])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:07:51 --> BadMethodCallException: Call to undefined method App\Models\Products_model::getBrands
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(13): CodeIgniter\Model->__call('getBrands', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:10:45 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\products_view.php on line 160.
+ 1 APPPATH\Views\products_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(14): view('products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:33:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "addnew_products_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('addnew_products_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 3 APPPATH\Controllers\Products.php(19): view('addnew_products_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-18 13:38:54 --> ErrorException: Undefined variable $user
+in APPPATH\Views\addnew_products_view.php on line 114.
+ 1 APPPATH\Views\addnew_products_view.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 114)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(19): view('addnew_products_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

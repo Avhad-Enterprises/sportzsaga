@@ -1,0 +1,325 @@
+CRITICAL - 2024-08-29 13:16:38 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given
+in APPPATH/Controllers/Ordermanagement.php on line 390.
+ 1 APPPATH/Controllers/Ordermanagement.php(390): count()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 14:01:53 --> Error: Class "App\Controllers\Ordermanagement_model" not found
+in APPPATH/Controllers/Registeredusers.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 14:02:24 --> ParseError: syntax error, unexpected token "use", expecting "," or ";"
+in APPPATH/Controllers/Registeredusers.php on line 9.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 14:30:44 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH/BaseModel.php on line 970.
+ 1 SYSTEMPATH/BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+ 2 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/Ordermanagement.php(448): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 14:32:03 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH/BaseModel.php on line 970.
+ 1 SYSTEMPATH/BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+ 2 SYSTEMPATH/Model.php(812): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/Ordermanagement.php(448): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 15:56:55 --> ErrorException: Undefined variable $posts
+in APPPATH/Views/view_all_orders.php on line 111.
+ 1 APPPATH/Views/view_all_orders.php(111): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_all_orders.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(63): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->view_all_orders()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:19:40 --> ErrorException: Undefined variable $userId
+in APPPATH/Models/Ordermanagement_model.php on line 56.
+ 1 APPPATH/Models/Ordermanagement_model.php(56): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Registeredusers.php(56): App\Models\Ordermanagement_model->getorderinfo()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:26:48 --> ErrorException: Undefined array key "delivery_date"
+in APPPATH/Views/edit_user_view.php on line 468.
+ 1 APPPATH/Views/edit_user_view.php(468): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_user_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(58): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:30:13 --> ErrorException: Undefined array key "return_date"
+in APPPATH/Views/edit_user_view.php on line 495.
+ 1 APPPATH/Views/edit_user_view.php(495): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_user_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(58): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:30:57 --> ErrorException: Undefined array key "fulfillment_date"
+in APPPATH/Views/edit_user_view.php on line 441.
+ 1 APPPATH/Views/edit_user_view.php(441): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_user_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(58): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 17:15:26 --> ErrorException: Undefined variable $totalSellingPrice
+in APPPATH/Views/cart_view.php on line 180.
+ 1 APPPATH/Views/cart_view.php(180): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/cart_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Ordermanagement.php(273): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->cart()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 17:20:28 --> ErrorException: Undefined variable $platformFee
+in APPPATH/Views/cart_view.php on line 183.
+ 1 APPPATH/Views/cart_view.php(183): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/cart_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Ordermanagement.php(273): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->cart()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 17:24:14 --> ParseError: syntax error, unexpected token "&"
+in APPPATH/Views/cart_view.php on line 184.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(278): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->cart()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:00:52 --> Error: Class "App\Controllers\Cart_model" not found
+in APPPATH/Controllers/Registeredusers.php on line 33.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:12:37 --> ErrorException: Undefined variable $cartAbandonmentData
+in APPPATH/Controllers/Registeredusers.php on line 85.
+ 1 APPPATH/Controllers/Registeredusers.php(85): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:13:37 --> Error: Class "App\Controllers\Product_model" not found
+in APPPATH/Controllers/Registeredusers.php on line 36.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:14:03 --> ErrorException: Undefined array key "product_name"
+in APPPATH/Controllers/Registeredusers.php on line 75.
+ 1 APPPATH/Controllers/Registeredusers.php(75): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:14:51 --> ErrorException: Undefined array key "price"
+in APPPATH/Controllers/Registeredusers.php on line 78.
+ 1 APPPATH/Controllers/Registeredusers.php(78): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->edituser()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:45:36 --> ParseError: syntax error, unexpected token "<"
+in APPPATH/Views/cart_view.php on line 27.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(278): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->cart()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:47:11 --> ParseError: syntax error, unexpected variable "$customer", expecting "," or ";"
+in APPPATH/Views/cart_view.php on line 27.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(278): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->cart()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:52:12 --> ParseError: syntax error, unexpected token "return"
+in APPPATH/Controllers/Registeredusers.php on line 95.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:52:30 --> BadMethodCallException: Call to undefined method App\Models\Registerusers_model::getuserdetails
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Registeredusers.php(94): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:53:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_details_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Registeredusers.php(95): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 19:58:51 --> Error: Class "App\Controllers\Footer_model" not found
+in APPPATH/Controllers/Registeredusers.php on line 93.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 20:09:56 --> ErrorException: Undefined variable $cartModel
+in APPPATH/Controllers/Registeredusers.php on line 103.
+ 1 APPPATH/Controllers/Registeredusers.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 20:10:34 --> ErrorException: Cannot use App\Models\Cart_model as Cart_model because the name is already in use
+in APPPATH/Controllers/Registeredusers.php on line 16.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-08-29 20:11:12 --> ErrorException: Undefined variable $user_id
+in APPPATH/Controllers/Registeredusers.php on line 104.
+ 1 APPPATH/Controllers/Registeredusers.php(104): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 20:11:37 --> ErrorException: Undefined variable $users
+in APPPATH/Views/user_details_view.php on line 13.
+ 1 APPPATH/Views/user_details_view.php(13): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/user_details_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Registeredusers.php(117): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->user_details()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:23:22 --> Error: Class "Razorpay\Api\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:24:48 --> Error: Class "Razorpay\Api\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:32:16 --> Error: Class "Razorpay\Api\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:34:55 --> Error: Class "Razorpay\Api\src\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:35:56 --> Error: Class "Razorpay\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:36:50 --> Error: Class "App\Razorpay\Api\src\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:37:48 --> Error: Class "App\Razorpay\Api\src\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:38:12 --> Error: Class "App\Razorpay\Api\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:39:54 --> Error: Class "App\Razorpay\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:42:28 --> Error: Class "Razorpay\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:43:17 --> Error: Class "Razorpay\Api\BaseController" not found
+in APPPATH/Controllers/Ordermanagement.php on line 17.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(311): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 5 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 6 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:43:48 --> Error: Class "App\Razorpay\Api\BaseController" not found
+in APPPATH/Controllers/Ordermanagement.php on line 17.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(311): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 5 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 6 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:43:58 --> Error: Class "Razorpay\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 21:44:19 --> Error: Class "App\Razorpay\Api" not found
+in APPPATH/Controllers/Ordermanagement.php on line 400.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->place_order()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect requests containing /public/ to the root
+    RewriteCond %{REQUEST_URI} ^/public/ [NC]
+    RewriteRule ^public/(.*)$ /$1 [L,R=301]
+
+    # Redirects all requests to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

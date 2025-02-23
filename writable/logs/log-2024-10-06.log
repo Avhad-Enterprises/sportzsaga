@@ -1,0 +1,679 @@
+INFO - 2024-10-06 09:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 09:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:20:59 --> ErrorException: Undefined array key "publishing"
+in APPPATH\Views\collections_view.php on line 148.
+ 1 APPPATH\Views\collections_view.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "publishing"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\collections_view.php', 148)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(331): view('collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collections()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:40:31 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:40:32 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:40:32 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:41:01 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:41:01 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:41:01 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:44:09 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:44:09 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 10:44:09 --> Error: Object of class App\Models\Products_model could not be converted to string
+in APPPATH\Controllers\Products.php on line 425.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->getProductsByConditions()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 10:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:51:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 10:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 11:06:30 --> ErrorException: Undefined array key "collection_image"
+in APPPATH\Views\view_collections_view.php on line 35.
+ 1 APPPATH\Views\view_collections_view.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "collection_image"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_collections_view.php', 35)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(828): view('view_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collectionview('sweatshirt')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 11:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-06 11:10:20 --> mysqli_sql_exception: Table 'sportsaga_db.collection_products' doesn't exist in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\system\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 H:\Xampp\htdocs\sportzsaga\system\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+#6 H:\Xampp\htdocs\sportzsaga\app\Controllers\Products.php(820): CodeIgniter\BaseModel->paginate(20)
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Products->collectionview('sweatshirt')
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-10-06 11:10:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.collection_products' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = :collection_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Products.php(820): CodeIgniter\BaseModel->paginate(20)
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collectionview('sweatshirt')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 11:10:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.collection_products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = \'142\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = \'142\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = :collection_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\Products.php(820): CodeIgniter\BaseModel->paginate(20)
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collectionview('sweatshirt')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 11:10:20 --> [Caused by] mysqli_sql_exception: Table 'sportsaga_db.collection_products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = \'142\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = \'142\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = \'142\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `collection_products`
+WHERE `collection_id` = :collection_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Products.php(820): CodeIgniter\BaseModel->paginate(20)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collectionview('sweatshirt')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 11:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 11:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 11:13:37 --> ErrorException: Undefined array key "seller_id"
+in APPPATH\Controllers\Ordermanagement.php on line 126.
+ 1 APPPATH\Controllers\Ordermanagement.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "seller_id"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 12:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 12:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-06 13:44:16 --> mysqli_sql_exception: Unknown column 'seller_id' in 'field list' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+#9 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-10-06 13:44:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 13:44:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 13:44:16\', \'201\', \'aditya@avhadenterprises.com\', \'9356459066\', \'422008\', \'online\', 16200, \'unpaid\', \'Pending\', 1, NULL, \'standard\', \'2024-10-06 13:44:16\', \'2024-10-06 13:44:16\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 13:44:16\', \'201\', \'aditya@avhadenterprises.com\', \'9356459066\', \'422008\', \'online\', 16200, \'unpaid\', \'Pending\', 1, NULL, \'standard\', \'2024-10-06 13:44:16\', \'2024-10-06 13:44:16\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 13:44:16 --> [Caused by] mysqli_sql_exception: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 13:44:16\', \'201\', \'aditya@avhadenterprises.com\', \'9356459066\', \'422008\', \'online\', 16200, \'unpaid\', \'Pending\', 1, NULL, \'standard\', \'2024-10-06 13:44:16\', \'2024-10-06 13:44:16\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 13:44:16\', \'201\', \'aditya@avhadenterprises.com\', \'9356459066\', \'422008\', \'online\', 16200, \'unpaid\', \'Pending\', 1, NULL, \'standard\', \'2024-10-06 13:44:16\', \'2024-10-06 13:44:16\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 13:44:16\', \'201\', \'aditya@avhadenterprises.com\', \'9356459066\', \'422008\', \'online\', 16200, \'unpaid\', \'Pending\', 1, NULL, \'standard\', \'2024-10-06 13:44:16\', \'2024-10-06 13:44:16\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 13:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 13:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 14:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-06 15:38:25 --> mysqli_sql_exception: Unknown column 'seller_id' in 'field list' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+#9 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-10-06 15:38:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 15:38:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:38:25\', \'219\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:38:25\', \'2024-10-06 15:38:25\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:38:25\', \'219\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:38:25\', \'2024-10-06 15:38:25\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 15:38:25 --> [Caused by] mysqli_sql_exception: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:38:25\', \'219\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:38:25\', \'2024-10-06 15:38:25\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:38:25\', \'219\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:38:25\', \'2024-10-06 15:38:25\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123456\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'link\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:38:25\', \'219\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:38:25\', \'2024-10-06 15:38:25\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(164): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 15:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-06 15:46:33 --> mysqli_sql_exception: Unknown column 'seller_id' in 'field list' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\sportzsaga\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\sportzsaga\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(182): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+#9 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#10 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-10-06 15:46:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(182): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 15:46:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123457\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'cod\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:46:33\', \'{\\"id\\":\\"219\\",\\"name\\":\\"Aditya Patil\\",\\"email\\":\\"awesomeboysboys@gmail.com\\",\\"phone\\":\\"9356459066\\",\\"address\\":\\"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\\",\\"pincode\\":\\"422008\\"}\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:46:33\', \'2024-10-06 15:46:33\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123457\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'cod\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:46:33\', \'{\\"id\\":\\"219\\",\\"name\\":\\"Aditya Patil\\",\\"email\\":\\"awesomeboysboys@gmail.com\\",\\"phone\\":\\"9356459066\\",\\"address\\":\\"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\\",\\"pincode\\":\\"422008\\"}\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:46:33\', \'2024-10-06 15:46:33\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Ordermanagement.php(182): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 15:46:33 --> [Caused by] mysqli_sql_exception: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123457\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'cod\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:46:33\', \'{\\"id\\":\\"219\\",\\"name\\":\\"Aditya Patil\\",\\"email\\":\\"awesomeboysboys@gmail.com\\",\\"phone\\":\\"9356459066\\",\\"address\\":\\"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\\",\\"pincode\\":\\"422008\\"}\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:46:33\', \'2024-10-06 15:46:33\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123457\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'cod\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:46:33\', \'{\\"id\\":\\"219\\",\\"name\\":\\"Aditya Patil\\",\\"email\\":\\"awesomeboysboys@gmail.com\\",\\"phone\\":\\"9356459066\\",\\"address\\":\\"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\\",\\"pincode\\":\\"422008\\"}\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:46:33\', \'2024-10-06 15:46:33\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (\'#123457\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'1728119496_1f63008d731d161a49d2.png\', \'\', \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni x 1\', \'cod\', \'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\', \'2024-10-06 15:46:33\', \'{\\"id\\":\\"219\\",\\"name\\":\\"Aditya Patil\\",\\"email\\":\\"awesomeboysboys@gmail.com\\",\\"phone\\":\\"9356459066\\",\\"address\\":\\"House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\\",\\"pincode\\":\\"422008\\"}\', \'awesomeboysboys@gmail.com\', \'9356459066\', \'422008\', \'online\', 16200, \'Pending\', \'Pending\', 1, \'\', \'standard\', \'2024-10-06 15:46:33\', \'2024-10-06 15:46:33\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_management` (`order_number`, `product_name`, `order_product_image`, `seller_id`, `product_quantities`, `payment_method`, `customer_address`, `order_date`, `customer`, `customer_email`, `customer_phone`, `pincode`, `channel`, `total_amount`, `payment_status`, `fulfillment_status`, `item_count`, `tags`, `delivery_method`, `created_at`, `updated_at`) VALUES (:order_number:, :product_name:, :order_product_image:, :seller_id:, :product_quantities:, :payment_method:, :customer_address:, :order_date:, :customer:, :customer_email:, :customer_phone:, :pincode:, :channel:, :total_amount:, :payment_status:, :fulfillment_status:, :item_count:, :tags:, :delivery_method:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Ordermanagement.php(182): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 15:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 15:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-10-06 16:15:15 --> [DEPRECATED] Using ${var} in strings is deprecated, use {$var} instead in APPPATH\Views\edit_products_view.php on line 407.
+ 1 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\system\\Debug\\Exceptions.php')
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(234): view('edit_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('194')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-06 16:15:15 --> ErrorException: Undefined variable $tierId
+in APPPATH\Views\edit_products_view.php on line 407.
+ 1 APPPATH\Views\edit_products_view.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tierId', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php', 407)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(234): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('194')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-10-06 16:20:53 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:20:53 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:20:53 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:20:53 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:20:53 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-10-06 16:22:55 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:22:55 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:22:55 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:22:55 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-06 16:22:55 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\employee_logs_view.php on line 131.
+ 1 APPPATH\Views\employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\employee_logs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH\Controllers\Registeredusers.php(359): view('employee_logs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 16:25:54 --> ErrorException: Undefined array key "brand"
+in APPPATH\Views\view_products_view.php on line 81.
+ 1 APPPATH\Views\view_products_view.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_products_view.php', 81)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(333): view('view_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:30:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 16:30:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "navbar_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('navbar_view.php')
+ 2 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('navbar_view', null, true)
+ 3 APPPATH\Views\view_products_view.php(16): CodeIgniter\View\View->include('navbar_view')
+ 4 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_products_view.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 7 APPPATH\Controllers\Products.php(333): view('view_products_view', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-06 16:31:20 --> ErrorException: Undefined array key "brand"
+in APPPATH\Views\view_products_view.php on line 79.
+ 1 APPPATH\Views\view_products_view.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_products_view.php', 79)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\view_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(333): view('view_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-06 16:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 16:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-06 17:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

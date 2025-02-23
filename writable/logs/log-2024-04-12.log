@@ -1,0 +1,42 @@
+CRITICAL - 2024-04-12 15:37:00 --> ErrorException: Undefined variable $user_id
+in APPPATH\Views\users_view.php on line 76.
+ 1 APPPATH\Views\users_view.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_id', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 76)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-12 15:38:36 --> ErrorException: Undefined variable $user_id
+in APPPATH\Views\users_view.php on line 76.
+ 1 APPPATH\Views\users_view.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_id', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 76)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-12 15:47:24 --> ParseError: syntax error, unexpected token ")"
+in APPPATH\Views\users_view.php on line 77.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 3 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-12 15:47:42 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\users_view.php on line 73.
+ 1 APPPATH\Views\users_view.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,261 @@
+INFO - 2024-06-05 06:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 06:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 07:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 07:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 07:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 07:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-05 07:23:22 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(79): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('6')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-05 07:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 07:23:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 08:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-05 10:12:47 --> mysqli_sql_exception: Unknown column 'tags' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-06-05 10:12:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:12:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:12:47 --> [Caused by] mysqli_sql_exception: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT `tags`
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-05 10:13:23 --> mysqli_sql_exception: Unknown column 'tags' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-06-05 10:13:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:13:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:13:23 --> [Caused by] mysqli_sql_exception: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT `tags`
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-05 10:13:35 --> mysqli_sql_exception: Unknown column 'tags' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-06-05 10:13:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:13:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:13:35 --> [Caused by] mysqli_sql_exception: Unknown column 'tags' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT `tags`
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `tags`
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `tags`
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `tags`
+FROM `products`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Products.php(241): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:14:04 --> ErrorException: Undefined variable $tags
+in APPPATH\Views\addnew_collections_view.php on line 172.
+ 1 APPPATH\Views\addnew_collections_view.php(172): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tags', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 172)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(243): view('addnew_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:14:58 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\addnew_collections_view.php on line 194.
+ 1 APPPATH\Views\addnew_collections_view.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 194)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(243): view('addnew_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-05 10:34:07 --> mysqli_sql_exception: Unknown column 'image' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `co...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(271): App\Models\Products_model->insertcollection(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishcollection()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-05 10:34:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'image' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (:collection_title:, :collection_description:, :url:, :collection_conditions:, :manual_product_addition:, :meta_tag_title:, :coll_meta_tag_description:, :image:)', [...], false)
+ 2 APPPATH\Models\products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(271): App\Models\Products_model->insertcollection([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishcollection()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:34:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (\'T-shirt\', \'T-shirt\', \'collections-tshirts\', \'\', 0, \'T-shirt\', \'T-shirt\', \'tiger-jpg.jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (\'T-shirt\', \'T-shirt\', \'collections-tshirts\', \'\', 0, \'T-shirt\', \'T-shirt\', \'tiger-jpg.jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (:collection_title:, :collection_description:, :url:, :collection_conditions:, :manual_product_addition:, :meta_tag_title:, :coll_meta_tag_description:, :image:)', [...], false)
+ 4 APPPATH\Models\products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(271): App\Models\Products_model->insertcollection([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-05 10:34:07 --> [Caused by] mysqli_sql_exception: Unknown column 'image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (\'T-shirt\', \'T-shirt\', \'collections-tshirts\', \'\', 0, \'T-shirt\', \'T-shirt\', \'tiger-jpg.jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (\'T-shirt\', \'T-shirt\', \'collections-tshirts\', \'\', 0, \'T-shirt\', \'T-shirt\', \'tiger-jpg.jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (\'T-shirt\', \'T-shirt\', \'collections-tshirts\', \'\', 0, \'T-shirt\', \'T-shirt\', \'tiger-jpg.jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `collection` (`collection_title`, `collection_description`, `url`, `collection_conditions`, `manual_product_addition`, `meta_tag_title`, `coll_meta_tag_description`, `image`) VALUES (:collection_title:, :collection_description:, :url:, :collection_conditions:, :manual_product_addition:, :meta_tag_title:, :coll_meta_tag_description:, :image:)', [...], false)
+ 5 APPPATH\Models\products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(271): App\Models\Products_model->insertcollection([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishcollection()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-05 10:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 10:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 10:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-05 10:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

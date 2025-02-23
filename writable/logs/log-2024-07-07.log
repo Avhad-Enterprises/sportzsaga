@@ -1,0 +1,132 @@
+INFO - 2024-07-07 07:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-07 07:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-07 07:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-07 07:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-07 07:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-07 07:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-07 10:05:36 --> Error: Class "App\Models\Home_model" not found
+in APPPATH/Controllers/Home.php on line 21.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 10:05:55 --> Error: Class "App\Models\Home_model" not found
+in APPPATH/Controllers/Home.php on line 21.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 10:06:21 --> Error: Class "App\Models\SocialMediaLinks_model" not found
+in APPPATH/Controllers/Home.php on line 23.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 10:06:38 --> Error: Class "App\Models\SocialMediaLinks_model" not found
+in APPPATH/Controllers/Home.php on line 23.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 10:07:00 --> Error: Class "App\Models\Controls_model" not found
+in APPPATH/Controllers/Home.php on line 24.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:50:28 --> Error: Class "App\Models\Registerusers_model" not found
+in APPPATH/Controllers/Home.php on line 231.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->userlogin()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:51:38 --> Error: Class "App\Models\Blogs_model" not found
+in APPPATH/Controllers/Dashboard.php on line 72.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->admindashboard()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:51:52 --> Error: Class "App\Models\Products_model" not found
+in APPPATH/Controllers/Dashboard.php on line 73.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->admindashboard()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:52:08 --> Error: Class "App\Models\Ordermanagement_model" not found
+in APPPATH/Controllers/Dashboard.php on line 74.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->admindashboard()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:55:19 --> Error: Class "App\Models\blogs_model" not found
+in APPPATH/Controllers/Home.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:55:49 --> Error: Class "App\Models\blogs_model" not found
+in APPPATH/Controllers/Home.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:56:42 --> Error: Class "App\Models\Blogs_model" not found
+in APPPATH/Controllers/Dashboard.php on line 72.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->admindashboard()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 11:59:43 --> Error: Class "App\Models\Blogs_model" not found
+in APPPATH/Controllers/Blogs.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 12:04:44 --> Error: Class "App\Models\AdminModel" not found
+in APPPATH/Controllers/GenerateController.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GenerateController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 12:39:36 --> Error: Undefined constant "base_url"
+in APPPATH/Views/category.php on line 40.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 4 APPPATH/Views/index.php(20): CodeIgniter\View\View->include()
+ 5 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index.php')
+ 6 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 8 APPPATH/Controllers/Home.php(44): view()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 12:39:54 --> Error: Undefined constant "base_url"
+in APPPATH/Views/category.php on line 40.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 4 APPPATH/Views/index.php(20): CodeIgniter\View\View->include()
+ 5 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index.php')
+ 6 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 8 APPPATH/Controllers/Home.php(44): view()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-07 12:39:57 --> Error: Undefined constant "base_url"
+in APPPATH/Views/category.php on line 40.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 4 APPPATH/Views/index.php(20): CodeIgniter\View\View->include()
+ 5 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index.php')
+ 6 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 8 APPPATH/Controllers/Home.php(44): view()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

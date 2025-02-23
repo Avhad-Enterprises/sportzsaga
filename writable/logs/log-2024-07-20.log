@@ -1,0 +1,338 @@
+CRITICAL - 2024-07-20 08:57:09 --> Error: Class "App\Models\AdminModel" not found
+in APPPATH/Controllers/GenerateController.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GenerateController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 12:45:58 --> Error: Call to undefined method CodeIgniter\Session\Session::save()
+in APPPATH/Controllers/GoogleAuth.php on line 42.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 12:46:12 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(36): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 12:46:15 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(36): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:00:07 --> Error: Class "App\Models\UserModel" not found
+in APPPATH/Controllers/GoogleAuth.php on line 43.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:01:27 --> Error: Class "App\Controllers\Registerusers_model" not found
+in APPPATH/Controllers/GoogleAuth.php on line 43.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:01:42 --> Error: Class "App\Controllers\Registerusers_model" not found
+in APPPATH/Controllers/GoogleAuth.php on line 43.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:01:57 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(37): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:02:09 --> Error: Class "App\Controllers\registerusers_model" not found
+in APPPATH/Controllers/GoogleAuth.php on line 43.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:02:42 --> Error: Class "App\Models\registerusers_model" not found
+in APPPATH/Controllers/GoogleAuth.php on line 43.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 13:03:15 --> Google\Service\Exception: {
+  "error": {
+    "code": 401,
+    "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "errors": [
+      {
+        "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "domain": "global",
+        "reason": "unauthorized"
+      }
+    ],
+    "status": "UNAUTHENTICATED"
+  }
+}
+
+in VENDORPATH/google/apiclient/src/Http/REST.php on line 134.
+ 1 VENDORPATH/google/apiclient/src/Http/REST.php(107): Google\Http\REST::decodeHttpResponse()
+ 2 [internal function]: Google\Http\REST::doExecute()
+ 3 VENDORPATH/google/apiclient/src/Task/Runner.php(187): call_user_func_array()
+ 4 VENDORPATH/google/apiclient/src/Http/REST.php(66): Google\Task\Runner->run()
+ 5 VENDORPATH/google/apiclient/src/Client.php(961): Google\Http\REST::execute()
+ 6 VENDORPATH/google/apiclient/src/Service/Resource.php(238): Google\Client->execute()
+ 7 VENDORPATH/google/apiclient-services/src/Oauth2/Resource/Userinfo.php(43): Google\Service\Resource->call()
+ 8 APPPATH/Controllers/GoogleAuth.php(37): Google\Service\Oauth2\Resource\Userinfo->get()
+ 9 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:03:25 --> ErrorException: Undefined array key "meta_url"
+in APPPATH/Views/carousel_sub_view.php on line 6.
+ 1 APPPATH/Views/carousel_sub_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/carousel_sub_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/index.php(24): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(44): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:04:37 --> ErrorException: Undefined variable $meta_url
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:05:04 --> ErrorException: Undefined variable $blog_metaurl
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:06:03 --> ErrorException: Undefined variable $meta_url
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:09:24 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:15:15 --> ErrorException: Undefined variable $meta_url
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:16:06 --> ErrorException: Undefined variable $metaUrl
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:16:32 --> ErrorException: Undefined variable $id
+in APPPATH/Controllers/Home.php on line 146.
+ 1 APPPATH/Controllers/Home.php(146): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:16:34 --> ErrorException: Undefined variable $id
+in APPPATH/Controllers/Home.php on line 146.
+ 1 APPPATH/Controllers/Home.php(146): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:16:54 --> ErrorException: Undefined array key 0
+in APPPATH/Controllers/Home.php on line 152.
+ 1 APPPATH/Controllers/Home.php(152): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:18:03 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:18:24 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:18:52 --> ErrorException: Undefined variable $metaUrl
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:20:34 --> ErrorException: Undefined variable $metaUrl
+in APPPATH/Controllers/Home.php on line 139.
+ 1 APPPATH/Controllers/Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:20:47 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:21:34 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(163): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:22:12 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:27:13 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/main_blog_page_view.php on line 28.
+ 1 SYSTEMPATH/View/View.php(228): include()
+ 2 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Home.php(159): view()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:27:28 --> ErrorException: Undefined array key "blog_id"
+in APPPATH/Controllers/Home.php on line 146.
+ 1 APPPATH/Controllers/Home.php(146): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:27:48 --> ErrorException: Undefined array key "blog_title"
+in APPPATH/Controllers/Home.php on line 150.
+ 1 APPPATH/Controllers/Home.php(150): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->mainblogpage()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-20 15:33:35 --> ErrorException: Undefined variable $blog
+in APPPATH/Views/carousel_view.php on line 2.
+ 1 APPPATH/Views/carousel_view.php(2): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/carousel_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/index.php(20): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/index.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(44): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

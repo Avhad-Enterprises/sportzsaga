@@ -1,0 +1,15 @@
+CRITICAL - 2024-07-12 15:14:44 --> ErrorException: Undefined variable $footerLinks
+in APPPATH/Views/footer.php on line 41.
+ 1 APPPATH/Views/footer.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/footer.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/view_all_blogs.php(59): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/view_all_blogs.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Home.php(151): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->view_all_blogs()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

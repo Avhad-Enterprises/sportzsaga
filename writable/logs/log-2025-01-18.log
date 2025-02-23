@@ -1,0 +1,1007 @@
+INFO - 2025-01-18 10:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 11:47:35 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 11:47:35 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 11:47:35 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 11:47:35 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 11:47:35 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 11:47:35 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 11:47:35 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 11:47:35 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 11:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-18 11:48:43 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-18 11:48:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:48:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:48:43 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 11:49:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 11:49:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 11:49:06 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-18 11:49:12 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-18 11:49:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:49:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:49:12 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-18 11:49:53 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-18 11:49:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:49:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 11:49:53 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 11:49:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 11:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-18 16:25:55 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH/Controllers/Dashboard.php on line 545.
+ 1 APPPATH/Controllers/Dashboard.php(545): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 16:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-18 16:34:25 --> [DEPRECATED] DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/employee_logs_view.php on line 131.
+ 1 APPPATH/Views/employee_logs_view.php(131): DateTime->__construct(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Views/employee_logs_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('employee_logs_view', [], true)
+ 5 APPPATH/Controllers/Registeredusers.php(491): view('employee_logs_view', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->logs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Registeredusers))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 16:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:36 --> Starting fetchEmails method
+INFO - 2025-01-18 16:34:36 --> Starting email processing
+INFO - 2025-01-18 16:34:37 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 16:34:37 --> Fetching email threads
+INFO - 2025-01-18 16:34:37 --> Found 6 root emails
+INFO - 2025-01-18 16:34:37 --> Processed 6 email threads
+INFO - 2025-01-18 16:34:37 --> Retrieved 6 email threads
+INFO - 2025-01-18 16:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:37:45 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:37:45 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:37:45 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:37:45 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:37:45 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:37:45 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:37:45 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 16:37:45 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 16:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:17 --> Starting fetchEmails method
+INFO - 2025-01-18 16:40:17 --> Starting email processing
+INFO - 2025-01-18 16:40:18 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 16:40:18 --> Fetching email threads
+INFO - 2025-01-18 16:40:18 --> Found 6 root emails
+INFO - 2025-01-18 16:40:18 --> Processed 6 email threads
+INFO - 2025-01-18 16:40:18 --> Retrieved 6 email threads
+INFO - 2025-01-18 16:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:21 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-18 16:40:21 --> Fetching complete thread for message: 8
+INFO - 2025-01-18 16:40:21 --> Found 1 messages in thread
+INFO - 2025-01-18 16:40:21 --> Found 1 messages in complete thread
+INFO - 2025-01-18 16:40:31 --> Email thread processing completed successfully
+INFO - 2025-01-18 16:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:31 --> Successfully fetched agents list
+INFO - 2025-01-18 16:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:31 --> Successfully fetched macros for tags: 
+INFO - 2025-01-18 16:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:40:31 --> Fetching CS tags
+INFO - 2025-01-18 16:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:42:25 --> Fetching macro content
+INFO - 2025-01-18 16:42:25 --> Macro content retrieved successfully
+INFO - 2025-01-18 16:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:42:33 --> Fetching macro content
+INFO - 2025-01-18 16:42:33 --> Macro content retrieved successfully
+INFO - 2025-01-18 16:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:42:35 --> Fetching macro content
+INFO - 2025-01-18 16:42:35 --> Macro content retrieved successfully
+INFO - 2025-01-18 16:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:49:30 --> Data to Save: {"supplier_name":" Chaitanya","supplier_code":"M1324212","contact_person":"Megha ","email":"aditya@avhadenterprises.com","phone":"8421317839","alternate_phone":"1231324234324","address":"dsdsdf","city":"Nashik","state":"Maharashtra","postal_code":"422301","country":"India","bank_name":"bank of Maharashtra","account_number":"COKPT9867","ifsc_code":"COKPT986732","payment_terms":"online","attachments":"[\"1737199170_3da1d0db10c5d6b2c341.png\"]"}
+INFO - 2025-01-18 16:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:57:46 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:57:46 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:57:46 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:57:46 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:57:46 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:57:46 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:57:46 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 16:57:46 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 16:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 16:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:59:34 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:59:34 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:59:34 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:59:34 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:59:34 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:59:34 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:59:34 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 16:59:34 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 16:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:59:44 --> Checking permission: User ID: 201, Table: bundles, Action: edit
+DEBUG - 2025-01-18 16:59:44 --> Permission denied: User ID: 201, Table: bundles, Action: edit
+INFO - 2025-01-18 16:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:59:46 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:59:46 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 16:59:46 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:59:46 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 16:59:46 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:59:46 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 16:59:46 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 16:59:46 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 16:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 16:59:56 --> Checking permission: User ID: 201, Table: bundles, Action: edit
+DEBUG - 2025-01-18 16:59:56 --> Permission denied: User ID: 201, Table: bundles, Action: edit
+INFO - 2025-01-18 17:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 17:00:00 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 17:00:00 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 17:00:00 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 17:00:00 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 17:00:00 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 17:00:00 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 17:00:00 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 17:00:00 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 17:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 17:00:56 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 17:00:56 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 17:00:56 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 17:00:56 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 17:00:56 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 17:00:56 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 17:00:56 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 17:00:56 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 17:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:12:22 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Products.php on line 301.
+ 1 APPPATH/Controllers/Products.php(301): trim(null)
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:14:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:14:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:14:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:14:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-18 17:15:56 --> mysqli_sql_exception: Unknown column 'i.id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-01-18 17:15:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 4 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 17:15:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-18 17:15:56 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/InventoryController.php(179): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\InventoryController->inventoryList()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:16:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:24:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:24:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:24:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-18 17:25:51 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-18 17:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 17:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 18:50:09 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 18:50:09 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 18:50:09 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 18:50:09 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 18:50:09 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 18:50:09 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 18:50:09 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 18:50:09 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 18:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 18:50:19 --> Checking permission: User ID: 201, Table: bundles, Action: edit
+DEBUG - 2025-01-18 18:50:19 --> Permission denied: User ID: 201, Table: bundles, Action: edit
+INFO - 2025-01-18 18:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 18:50:30 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 18:50:30 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 18:50:30 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 18:50:30 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 18:50:30 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 18:50:30 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 18:50:30 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 18:50:30 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 18:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:52:06 --> Starting fetchEmails method
+INFO - 2025-01-18 18:52:06 --> Starting email processing
+INFO - 2025-01-18 18:52:07 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 18:52:07 --> Fetching email threads
+INFO - 2025-01-18 18:52:07 --> Found 6 root emails
+INFO - 2025-01-18 18:52:07 --> Processed 6 email threads
+INFO - 2025-01-18 18:52:07 --> Retrieved 6 email threads
+INFO - 2025-01-18 18:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:53:55 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-18 18:53:55 --> Fetching complete thread for message: 8
+INFO - 2025-01-18 18:53:55 --> Found 1 messages in thread
+INFO - 2025-01-18 18:53:55 --> Found 1 messages in complete thread
+INFO - 2025-01-18 18:53:56 --> Email thread processing completed successfully
+INFO - 2025-01-18 18:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:53:57 --> Successfully fetched agents list
+INFO - 2025-01-18 18:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:53:57 --> Successfully fetched macros for tags: 
+INFO - 2025-01-18 18:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:53:57 --> Fetching CS tags
+INFO - 2025-01-18 18:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:54:07 --> Agent updated for message 8 by user 201
+INFO - 2025-01-18 18:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:33 --> Starting sendReply process
+INFO - 2025-01-18 18:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:35 --> Starting to fetch complete email thread for message number: 8
+INFO - 2025-01-18 18:56:35 --> Fetching complete thread for message: 8
+INFO - 2025-01-18 18:56:35 --> Found 2 messages in thread
+INFO - 2025-01-18 18:56:35 --> Found 2 messages in complete thread
+INFO - 2025-01-18 18:56:37 --> Email thread processing completed successfully
+INFO - 2025-01-18 18:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:37 --> Successfully fetched agents list
+INFO - 2025-01-18 18:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:37 --> Successfully fetched macros for tags: 
+INFO - 2025-01-18 18:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:37 --> Fetching CS tags
+INFO - 2025-01-18 18:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 18:56:48 --> Starting fetchEmails method
+INFO - 2025-01-18 18:56:48 --> Starting email processing
+INFO - 2025-01-18 18:56:50 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 18:56:50 --> Fetching email threads
+INFO - 2025-01-18 18:56:50 --> Found 6 root emails
+INFO - 2025-01-18 18:56:50 --> Processed 6 email threads
+INFO - 2025-01-18 18:56:50 --> Retrieved 6 email threads
+INFO - 2025-01-18 19:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 19:01:50 --> Starting email processing
+INFO - 2025-01-18 19:01:51 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 19:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 19:06:51 --> Starting email processing
+INFO - 2025-01-18 19:06:52 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 19:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 19:11:51 --> Starting email processing
+INFO - 2025-01-18 19:11:52 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 19:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-18 19:15:31 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 19:15:31 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-18 19:15:31 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 19:15:31 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-18 19:15:31 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 19:15:31 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-18 19:15:31 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-18 19:15:31 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-18 19:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 19:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:06:50 --> Starting fetchEmails method
+INFO - 2025-01-18 21:06:50 --> Starting email processing
+INFO - 2025-01-18 21:06:51 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:06:51 --> Fetching email threads
+INFO - 2025-01-18 21:06:51 --> Found 6 root emails
+INFO - 2025-01-18 21:06:51 --> Processed 6 email threads
+INFO - 2025-01-18 21:06:51 --> Retrieved 6 email threads
+INFO - 2025-01-18 21:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:11:52 --> Starting email processing
+INFO - 2025-01-18 21:11:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:16:52 --> Starting email processing
+INFO - 2025-01-18 21:16:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:21:52 --> Starting email processing
+INFO - 2025-01-18 21:21:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:26:52 --> Starting email processing
+INFO - 2025-01-18 21:26:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:31:52 --> Starting email processing
+INFO - 2025-01-18 21:31:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:36:52 --> Starting email processing
+INFO - 2025-01-18 21:36:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:41:52 --> Starting email processing
+INFO - 2025-01-18 21:41:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:46:52 --> Starting email processing
+INFO - 2025-01-18 21:46:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:51:52 --> Starting email processing
+INFO - 2025-01-18 21:51:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 21:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 21:56:52 --> Starting email processing
+INFO - 2025-01-18 21:56:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 22:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 22:01:52 --> Starting email processing
+INFO - 2025-01-18 22:01:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 22:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 22:06:52 --> Starting email processing
+INFO - 2025-01-18 22:06:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 22:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 22:12:18 --> Starting email processing
+INFO - 2025-01-18 22:12:19 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-18 22:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-18 22:17:17 --> Starting email processing
+INFO - 2025-01-18 22:17:18 --> Email processing completed. Processed 0 new emails

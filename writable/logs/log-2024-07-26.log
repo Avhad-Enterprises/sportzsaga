@@ -1,0 +1,19 @@
+CRITICAL - 2024-07-26 05:41:19 --> Error: Class "App\Models\AdminModel" not found
+in APPPATH/Controllers/GenerateController.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GenerateController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-26 16:17:28 --> BadMethodCallException: Call to undefined method App\Models\Products_model::editcollectionprod
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Products.php(382): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addproducts()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-26 16:21:34 --> Error: Class "App\Models\CollectionProducts_model" not found
+in APPPATH/Controllers/Products.php on line 408.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addProductToCollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

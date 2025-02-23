@@ -1,0 +1,398 @@
+INFO - 2025-01-09 12:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 12:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 12:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 15:10:42 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-09 15:10:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:10:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:10:42 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 15:10:58 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-09 15:10:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:10:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:10:58 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 15:11:09 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-09 15:11:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:11:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:11:09 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 15:11:34 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-09 15:11:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:11:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:11:34 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-09 15:12:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\PurchaseOrderController::$supplierModel is deprecated in APPPATH/Controllers/PurchaseOrderController.php on line 22.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\PurchaseOrderController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-09 15:12:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\CatalogController::$permissionsModel is deprecated in APPPATH/Controllers/CatalogController.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(915): App\Controllers\CatalogController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-09 15:12:59 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:12:59 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:12:59 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:12:59 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:12:59 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:12:59 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:12:59 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-09 15:12:59 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-09 15:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 15:13:01 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 15:13:05 --> Error: Class "App\Models\ProductCollectionModel" not found
+in APPPATH/Controllers/BundleController.php on line 376.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\BundleController->viewcollection()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-09 15:13:09 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:13:09 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:13:09 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:13:09 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:13:09 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:13:09 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:13:09 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-09 15:13:09 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-09 15:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-09 15:13:21 --> Checking permission: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:13:21 --> Permission denied: User ID: 201, Table: bundles, Action: delete
+DEBUG - 2025-01-09 15:13:21 --> Checking permission: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:13:21 --> Permission denied: User ID: 201, Table: bundles, Action: import
+DEBUG - 2025-01-09 15:13:21 --> Checking permission: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:13:21 --> Permission denied: User ID: 201, Table: bundles, Action: export
+DEBUG - 2025-01-09 15:13:21 --> Checking permission: User ID: 201, Table: bundles, Action: logs
+DEBUG - 2025-01-09 15:13:21 --> Permission granted: User ID: 201, Table: bundles, Action: logs
+INFO - 2025-01-09 15:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:13 --> Entering BlueDart management method
+INFO - 2025-01-09 15:14:13 --> Fetched all pending shipments
+INFO - 2025-01-09 15:14:13 --> Fetched BlueDart orders: 6
+INFO - 2025-01-09 15:14:13 --> Rendering BlueDart view
+CRITICAL - 2025-01-09 15:14:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 15:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 15:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 15:37:10 --> mysqli_sql_exception: Unknown column 'session_id' in 'SELECT' in /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+#6 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/app/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+#7 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+#8 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#9 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u541614220/domains/avhadenterprises.com/public_html/admin/sportzsaga/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-01-09 15:37:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:37:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-09 15:37:10 --> [Caused by] mysqli_sql_exception: Unknown column 'session_id' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(638): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/AbandonedOrderController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\AbandonedOrderController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 16:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-09 16:58:11 --> Checking permission: User ID: 253, Table: bundles, Action: delete
+DEBUG - 2025-01-09 16:58:11 --> Permission denied: User ID: 253, Table: bundles, Action: delete
+DEBUG - 2025-01-09 16:58:11 --> Checking permission: User ID: 253, Table: bundles, Action: import
+DEBUG - 2025-01-09 16:58:11 --> Permission denied: User ID: 253, Table: bundles, Action: import
+DEBUG - 2025-01-09 16:58:11 --> Checking permission: User ID: 253, Table: bundles, Action: export
+DEBUG - 2025-01-09 16:58:11 --> Permission denied: User ID: 253, Table: bundles, Action: export
+DEBUG - 2025-01-09 16:58:11 --> Checking permission: User ID: 253, Table: bundles, Action: logs
+DEBUG - 2025-01-09 16:58:11 --> Permission denied: User ID: 253, Table: bundles, Action: logs
+INFO - 2025-01-09 16:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:20 --> Starting fetchEmails method
+INFO - 2025-01-09 16:58:20 --> Starting email processing
+INFO - 2025-01-09 16:58:21 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-09 16:58:21 --> Fetching email threads
+INFO - 2025-01-09 16:58:21 --> Found 6 root emails
+INFO - 2025-01-09 16:58:21 --> Processed 6 email threads
+INFO - 2025-01-09 16:58:21 --> Retrieved 6 email threads
+INFO - 2025-01-09 16:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:14 --> Starting fetchEmails method
+INFO - 2025-01-09 16:59:14 --> Starting email processing
+INFO - 2025-01-09 16:59:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-09 16:59:15 --> Fetching email threads
+INFO - 2025-01-09 16:59:15 --> Found 6 root emails
+INFO - 2025-01-09 16:59:15 --> Processed 6 email threads
+INFO - 2025-01-09 16:59:15 --> Retrieved 6 email threads
+INFO - 2025-01-09 16:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 16:59:18 --> Starting fetchEmails method
+INFO - 2025-01-09 16:59:18 --> Starting email processing
+INFO - 2025-01-09 16:59:22 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-09 16:59:22 --> Fetching email threads
+INFO - 2025-01-09 16:59:22 --> Found 6 root emails
+INFO - 2025-01-09 16:59:22 --> Processed 6 email threads
+INFO - 2025-01-09 16:59:22 --> Retrieved 6 email threads
+INFO - 2025-01-09 17:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

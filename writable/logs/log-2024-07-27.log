@@ -1,0 +1,64 @@
+CRITICAL - 2024-07-27 07:18:18 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 07:18:55 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 07:48:31 --> Error: Class "App\Models\InvitationModel" not found
+in APPPATH/Controllers/Registeredusers.php on line 141.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Registeredusers->sendInviteData()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 11:41:17 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 11:44:10 --> Error: Class "App\Models\Brands_model" not found
+in APPPATH/Controllers/Brands.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Brands->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 11:55:06 --> Error: Class "App\Models\Brands_model" not found
+in APPPATH/Controllers/Brands.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Brands->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 11:56:05 --> InvalidArgumentException: Invalid code
+in VENDORPATH/google/apiclient/src/Client.php on line 281.
+ 1 APPPATH/Controllers/GmailController.php(39): Google\Client->fetchAccessTokenWithAuthCode()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\GmailController->oauth2callback()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 12:02:12 --> Error: Class "App\Models\Brands_model" not found
+in APPPATH/Controllers/Brands.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Brands->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 12:02:38 --> Error: Class "App\Models\Brands_model" not found
+in APPPATH/Controllers/Brands.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Brands->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-27 12:02:42 --> Error: Class "App\Models\Brands_model" not found
+in APPPATH/Controllers/Brands.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Brands->index()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

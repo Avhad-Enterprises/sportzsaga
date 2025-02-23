@@ -1,0 +1,1675 @@
+INFO - 2024-11-05 12:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:11:16 --> Entering BlueDart management method
+INFO - 2024-11-05 12:11:16 --> Fetched all pending shipments
+INFO - 2024-11-05 12:11:16 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:11:16 --> Rendering BlueDart view
+INFO - 2024-11-05 12:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 12:13:47 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-05 12:13:47 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-11-05 12:13:47 --> Failed to send email for order number: #123457
+INFO - 2024-11-05 12:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:51 --> Entering BlueDart management method
+INFO - 2024-11-05 12:13:51 --> Fetched all pending shipments
+INFO - 2024-11-05 12:13:51 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:13:51 --> Rendering BlueDart view
+INFO - 2024-11-05 12:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:13:54 --> Entering BlueDart management method
+INFO - 2024-11-05 12:13:54 --> Fetched all pending shipments
+INFO - 2024-11-05 12:13:54 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:13:54 --> Rendering BlueDart view
+INFO - 2024-11-05 12:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:20 --> Entering BlueDart management method
+INFO - 2024-11-05 12:21:20 --> Fetched all pending shipments
+INFO - 2024-11-05 12:21:20 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:21:20 --> Rendering BlueDart view
+INFO - 2024-11-05 12:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:21:29 --> Entering BlueDart management method
+INFO - 2024-11-05 12:21:29 --> Fetched all pending shipments
+INFO - 2024-11-05 12:21:29 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:21:29 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 12:21:29 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 12:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:35:20 --> Entering BlueDart management method
+INFO - 2024-11-05 12:35:20 --> Fetched all pending shipments
+INFO - 2024-11-05 12:35:20 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:35:20 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 12:35:20 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 12:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:36:58 --> Entering BlueDart management method
+INFO - 2024-11-05 12:36:59 --> Fetched all pending shipments
+INFO - 2024-11-05 12:36:59 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:36:59 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 12:36:59 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 12:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 12:51:13 --> Entering BlueDart management method
+INFO - 2024-11-05 12:51:13 --> Fetched all pending shipments
+INFO - 2024-11-05 12:51:13 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 12:51:13 --> Rendering BlueDart view
+INFO - 2024-11-05 13:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:22:21 --> Entering BlueDart management method
+INFO - 2024-11-05 13:22:21 --> Fetched all pending shipments
+INFO - 2024-11-05 13:22:21 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:22:21 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 13:22:21 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:26:57 --> Entering BlueDart management method
+INFO - 2024-11-05 13:26:57 --> Fetched all pending shipments
+INFO - 2024-11-05 13:26:57 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:26:57 --> Rendering BlueDart view
+INFO - 2024-11-05 13:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:38:27 --> Entering BlueDart management method
+INFO - 2024-11-05 13:38:27 --> Fetched all pending shipments
+INFO - 2024-11-05 13:38:27 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:38:27 --> Rendering BlueDart view
+INFO - 2024-11-05 13:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 13:38:33 --> mysqli_sql_exception: Unknown column 'product_image' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 13:38:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:38:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:38:33 --> [Caused by] mysqli_sql_exception: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 13:39:45 --> mysqli_sql_exception: Unknown column 'product_image' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 13:39:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:39:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:39:45 --> [Caused by] mysqli_sql_exception: Unknown column 'product_image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_image`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,NULL,153,1,75,1)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 13:40:32 --> mysqli_sql_exception: Unknown column 'product_size' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 13:40:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:40:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:40:32 --> [Caused by] mysqli_sql_exception: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',NULL,153,1,75,1)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 13:41:19 --> mysqli_sql_exception: Duplicate entry '3064' for key 'PRIMARY' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 13:41:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '3064' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:41:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '3064' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 13:41:19 --> [Caused by] mysqli_sql_exception: Duplicate entry '3064' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `order_shipment_id`, `payment_method`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"pickup_location\\":\\"C1\\",\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#123457-a\',3064,\'link\',153,1,75,1)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(58): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1207): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:45:03 --> Entering BlueDart management method
+INFO - 2024-11-05 13:45:03 --> Fetched all pending shipments
+INFO - 2024-11-05 13:45:03 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:45:03 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 13:45:03 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:49:43 --> Entering BlueDart management method
+INFO - 2024-11-05 13:49:43 --> Fetched all pending shipments
+INFO - 2024-11-05 13:49:43 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:49:43 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 13:49:43 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 224.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:50:45 --> Entering BlueDart management method
+INFO - 2024-11-05 13:50:45 --> Fetched all pending shipments
+INFO - 2024-11-05 13:50:45 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:50:45 --> Rendering BlueDart view
+INFO - 2024-11-05 13:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:51:28 --> Entering BlueDart management method
+INFO - 2024-11-05 13:51:28 --> Fetched all pending shipments
+INFO - 2024-11-05 13:51:28 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:51:28 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 13:51:28 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 13:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:51:46 --> Entering BlueDart management method
+INFO - 2024-11-05 13:51:46 --> Fetched all pending shipments
+INFO - 2024-11-05 13:51:46 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:51:46 --> Rendering BlueDart view
+INFO - 2024-11-05 13:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 13:54:25 --> Entering BlueDart management method
+INFO - 2024-11-05 13:54:25 --> Fetched all pending shipments
+INFO - 2024-11-05 13:54:25 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 13:54:25 --> Rendering BlueDart view
+INFO - 2024-11-05 14:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 14:06:05 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-05 14:06:05 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-11-05 14:06:05 --> Failed to send email for order number: #123456
+INFO - 2024-11-05 14:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 14:27:16 --> mysqli_sql_exception: Unknown column 'channel' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 14:27:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:27:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:27:16 --> [Caused by] mysqli_sql_exception: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#393378\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 14:31:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 14:31:23 --> mysqli_sql_exception: Unknown column 'channel' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 14:31:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:31:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:31:23 --> [Caused by] mysqli_sql_exception: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#210564\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 14:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 14:31:44 --> mysqli_sql_exception: Unknown column 'channel' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 14:31:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:31:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:31:44 --> [Caused by] mysqli_sql_exception: Unknown column 'channel' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`channel`, `customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'online\',\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#665377\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 14:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 14:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 14:32:08 --> mysqli_sql_exception: Unknown column 'customer' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 14:32:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:32:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 14:32:08 --> [Caused by] mysqli_sql_exception: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#002182\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 14:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 15:09:39 --> mysqli_sql_exception: Unknown column 'customer' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 15:09:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 15:09:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 15:09:39 --> [Caused by] mysqli_sql_exception: Unknown column 'customer' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`customer`, `customer_address`, `customer_email`, `customer_phone`, `email_send`, `fulfillment_status`, `item_count`, `order_number`, `payment_method`, `payment_status`, `pincode`, `product_name`, `product_quantities`, `seller_id`, `tags`, `total_amount`)
+VALUES (\'Aditya Patil\',\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'aditya@avhadenterprises.com\',9356459066,\'yes\',\'Pending\',1,\'#728376\',\'link\',\'Pending\',422008,\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',\'COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins x 5\',153,\'order\',375)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(69): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1230): App\Models\Ordermanagement_model->InsertOrdersData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importOrdersData()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 15:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:11:56 --> Entering BlueDart management method
+INFO - 2024-11-05 15:11:56 --> Fetched all pending shipments
+INFO - 2024-11-05 15:11:56 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:11:56 --> Rendering BlueDart view
+INFO - 2024-11-05 15:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:05 --> Entering BlueDart management method
+INFO - 2024-11-05 15:12:05 --> Fetched all pending shipments
+INFO - 2024-11-05 15:12:05 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:12:05 --> Rendering BlueDart view
+INFO - 2024-11-05 15:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:44 --> Entering BlueDart management method
+INFO - 2024-11-05 15:12:44 --> Fetched all pending shipments
+INFO - 2024-11-05 15:12:44 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:12:44 --> Rendering BlueDart view
+INFO - 2024-11-05 15:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:12:58 --> Entering BlueDart management method
+INFO - 2024-11-05 15:12:58 --> Fetched all pending shipments
+INFO - 2024-11-05 15:12:58 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:12:58 --> Rendering BlueDart view
+INFO - 2024-11-05 15:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:13:36 --> Entering BlueDart management method
+INFO - 2024-11-05 15:13:36 --> Fetched all pending shipments
+INFO - 2024-11-05 15:13:36 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:13:36 --> Rendering BlueDart view
+INFO - 2024-11-05 15:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:18:48 --> Entering BlueDart management method
+INFO - 2024-11-05 15:18:48 --> Fetched all pending shipments
+INFO - 2024-11-05 15:18:48 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:18:48 --> Rendering BlueDart view
+INFO - 2024-11-05 15:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:41:09 --> Entering BlueDart management method
+INFO - 2024-11-05 15:41:09 --> Fetched all pending shipments
+INFO - 2024-11-05 15:41:09 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:41:09 --> Rendering BlueDart view
+INFO - 2024-11-05 15:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 15:42:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-05 15:42:17 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-11-05 15:42:17 --> Failed to send email for order number: #123456
+INFO - 2024-11-05 15:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:00 --> Entering BlueDart management method
+INFO - 2024-11-05 15:46:00 --> Fetched all pending shipments
+INFO - 2024-11-05 15:46:00 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:46:00 --> Rendering BlueDart view
+INFO - 2024-11-05 15:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:05 --> Entering BlueDart management method
+INFO - 2024-11-05 15:46:05 --> Fetched all pending shipments
+INFO - 2024-11-05 15:46:05 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:46:05 --> Rendering BlueDart view
+INFO - 2024-11-05 15:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:07 --> Entering BlueDart management method
+INFO - 2024-11-05 15:46:07 --> Fetched all pending shipments
+INFO - 2024-11-05 15:46:07 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:46:07 --> Rendering BlueDart view
+INFO - 2024-11-05 15:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:13 --> Entering BlueDart management method
+INFO - 2024-11-05 15:46:13 --> Fetched all pending shipments
+INFO - 2024-11-05 15:46:13 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:46:13 --> Rendering BlueDart view
+INFO - 2024-11-05 15:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:46:58 --> Entering BlueDart management method
+INFO - 2024-11-05 15:46:58 --> Fetched all pending shipments
+INFO - 2024-11-05 15:46:58 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:46:58 --> Rendering BlueDart view
+INFO - 2024-11-05 15:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:19 --> Entering BlueDart management method
+INFO - 2024-11-05 15:47:19 --> Fetched all pending shipments
+INFO - 2024-11-05 15:47:19 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:47:19 --> Rendering BlueDart view
+INFO - 2024-11-05 15:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:32 --> Entering BlueDart management method
+INFO - 2024-11-05 15:47:32 --> Fetched all pending shipments
+INFO - 2024-11-05 15:47:32 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:47:32 --> Rendering BlueDart view
+INFO - 2024-11-05 15:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:47:39 --> Entering BlueDart management method
+INFO - 2024-11-05 15:47:39 --> Fetched all pending shipments
+INFO - 2024-11-05 15:47:39 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:47:39 --> Rendering BlueDart view
+INFO - 2024-11-05 15:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:48:38 --> Entering BlueDart management method
+INFO - 2024-11-05 15:48:38 --> Fetched all pending shipments
+INFO - 2024-11-05 15:48:38 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:48:38 --> Rendering BlueDart view
+INFO - 2024-11-05 15:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:49:43 --> Entering BlueDart management method
+INFO - 2024-11-05 15:49:43 --> Fetched all pending shipments
+INFO - 2024-11-05 15:49:43 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:49:43 --> Rendering BlueDart view
+INFO - 2024-11-05 15:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:08 --> Entering BlueDart management method
+INFO - 2024-11-05 15:51:08 --> Fetched all pending shipments
+INFO - 2024-11-05 15:51:08 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:51:08 --> Rendering BlueDart view
+INFO - 2024-11-05 15:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:16 --> Entering BlueDart management method
+INFO - 2024-11-05 15:51:16 --> Fetched all pending shipments
+INFO - 2024-11-05 15:51:16 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:51:16 --> Rendering BlueDart view
+INFO - 2024-11-05 15:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 15:51:35 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-05 15:51:35 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-11-05 15:51:35 --> Failed to send email for order number: #123456
+INFO - 2024-11-05 15:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:51:44 --> Entering BlueDart management method
+INFO - 2024-11-05 15:51:44 --> Fetched all pending shipments
+INFO - 2024-11-05 15:51:44 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:51:44 --> Rendering BlueDart view
+INFO - 2024-11-05 15:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:58:38 --> Entering BlueDart management method
+INFO - 2024-11-05 15:58:38 --> Fetched all pending shipments
+INFO - 2024-11-05 15:58:38 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 15:58:38 --> Rendering BlueDart view
+INFO - 2024-11-05 15:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 15:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:11:27 --> Entering BlueDart management method
+INFO - 2024-11-05 16:11:27 --> Fetched all pending shipments
+INFO - 2024-11-05 16:11:27 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:11:27 --> Rendering BlueDart view
+INFO - 2024-11-05 16:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:13:16 --> Entering BlueDart management method
+INFO - 2024-11-05 16:13:16 --> Fetched all pending shipments
+INFO - 2024-11-05 16:13:16 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:13:16 --> Rendering BlueDart view
+INFO - 2024-11-05 16:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:14:20 --> Entering BlueDart management method
+INFO - 2024-11-05 16:14:20 --> Fetched all pending shipments
+INFO - 2024-11-05 16:14:20 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:14:20 --> Rendering BlueDart view
+INFO - 2024-11-05 16:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:33 --> Entering BlueDart management method
+INFO - 2024-11-05 16:17:33 --> Fetched all pending shipments
+INFO - 2024-11-05 16:17:33 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:17:33 --> Rendering BlueDart view
+INFO - 2024-11-05 16:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:36 --> Entering BlueDart management method
+INFO - 2024-11-05 16:17:36 --> Fetched all pending shipments
+INFO - 2024-11-05 16:17:36 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:17:36 --> Rendering BlueDart view
+INFO - 2024-11-05 16:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:17:51 --> Entering BlueDart management method
+INFO - 2024-11-05 16:17:51 --> Fetched all pending shipments
+INFO - 2024-11-05 16:17:51 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:17:51 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:17:51 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:38:44 --> Entering BlueDart management method
+INFO - 2024-11-05 16:38:45 --> Fetched all pending shipments
+INFO - 2024-11-05 16:38:45 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:38:45 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:38:45 --> TypeError: array_column(): Argument #1 ($array) must be of type array, null given
+in APPPATH\Views\bluedart_view.php on line 207.
+ 1 APPPATH\Views\bluedart_view.php(207): array_column(null, 'quantity')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:40:02 --> Entering BlueDart management method
+INFO - 2024-11-05 16:40:02 --> Fetched all pending shipments
+INFO - 2024-11-05 16:40:02 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:40:02 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:40:02 --> TypeError: array_column(): Argument #1 ($array) must be of type array, null given
+in APPPATH\Views\bluedart_view.php on line 207.
+ 1 APPPATH\Views\bluedart_view.php(207): array_column(null, 'quantity')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:41:11 --> Entering BlueDart management method
+INFO - 2024-11-05 16:41:11 --> Fetched all pending shipments
+INFO - 2024-11-05 16:41:11 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:41:11 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:41:11 --> TypeError: array_column(): Argument #1 ($array) must be of type array, null given
+in APPPATH\Views\bluedart_view.php on line 207.
+ 1 APPPATH\Views\bluedart_view.php(207): array_column(null, 'quantity')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:41:53 --> Entering BlueDart management method
+INFO - 2024-11-05 16:41:53 --> Fetched all pending shipments
+INFO - 2024-11-05 16:41:53 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:41:53 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:41:53 --> ErrorException: Undefined array key "product_size"
+in APPPATH\Views\bluedart_view.php on line 222.
+ 1 APPPATH\Views\bluedart_view.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_size"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 222)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:42:44 --> Entering BlueDart management method
+INFO - 2024-11-05 16:42:44 --> Fetched all pending shipments
+INFO - 2024-11-05 16:42:44 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:42:44 --> Rendering BlueDart view
+INFO - 2024-11-05 16:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:45:03 --> Entering BlueDart management method
+INFO - 2024-11-05 16:45:03 --> Fetched all pending shipments
+INFO - 2024-11-05 16:45:03 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:45:03 --> Rendering BlueDart view
+INFO - 2024-11-05 16:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:45:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 16:45:18 --> ErrorException: Array to string conversion
+in SYSTEMPATH\Database\BaseBuilder.php on line 2160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\system\\Database\\BaseBuilder.php', 2160)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2160): implode(',', [...])
+ 3 [internal function]: CodeIgniter\Database\BaseBuilder::CodeIgniter\Database\{closure}([...])
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2160): array_map(Object(Closure), [...])
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->formatValues([...])
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1794): CodeIgniter\Database\BaseBuilder->_insertBatch('`order_shipment`', [...], [...])
+ 7 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 8 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 9 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 16:46:11 --> ErrorException: Array to string conversion
+in SYSTEMPATH\Database\BaseBuilder.php on line 2160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\system\\Database\\BaseBuilder.php', 2160)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2160): implode(',', [...])
+ 3 [internal function]: CodeIgniter\Database\BaseBuilder::CodeIgniter\Database\{closure}([...])
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2160): array_map(Object(Closure), [...])
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->formatValues([...])
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1794): CodeIgniter\Database\BaseBuilder->_insertBatch('`order_shipment`', [...], [...])
+ 7 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 8 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 9 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 16:46:44 --> ErrorException: Array to string conversion
+in SYSTEMPATH\Database\BaseBuilder.php on line 2160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\system\\Database\\BaseBuilder.php', 2160)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2160): implode(',', [...])
+ 3 [internal function]: CodeIgniter\Database\BaseBuilder::CodeIgniter\Database\{closure}([...])
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2160): array_map(Object(Closure), [...])
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->formatValues([...])
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1794): CodeIgniter\Database\BaseBuilder->_insertBatch('`order_shipment`', [...], [...])
+ 7 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 8 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 9 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:48:04 --> Entering BlueDart management method
+INFO - 2024-11-05 16:48:04 --> Fetched all pending shipments
+INFO - 2024-11-05 16:48:04 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:48:04 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:48:04 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:48:23 --> Entering BlueDart management method
+INFO - 2024-11-05 16:48:23 --> Fetched all pending shipments
+INFO - 2024-11-05 16:48:23 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:48:23 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:48:23 --> ErrorException: Undefined array key "product_size"
+in APPPATH\Views\bluedart_view.php on line 222.
+ 1 APPPATH\Views\bluedart_view.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_size"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 222)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:49:01 --> Entering BlueDart management method
+INFO - 2024-11-05 16:49:01 --> Fetched all pending shipments
+INFO - 2024-11-05 16:49:01 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:49:01 --> Rendering BlueDart view
+INFO - 2024-11-05 16:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:49:52 --> Entering BlueDart management method
+INFO - 2024-11-05 16:49:52 --> Fetched all pending shipments
+INFO - 2024-11-05 16:49:52 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:49:52 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 16:49:52 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 16:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:50:14 --> Entering BlueDart management method
+INFO - 2024-11-05 16:50:14 --> Fetched all pending shipments
+INFO - 2024-11-05 16:50:14 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:50:14 --> Rendering BlueDart view
+INFO - 2024-11-05 16:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:54:07 --> Entering BlueDart management method
+INFO - 2024-11-05 16:54:07 --> Fetched all pending shipments
+INFO - 2024-11-05 16:54:07 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:54:07 --> Rendering BlueDart view
+INFO - 2024-11-05 16:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:56:33 --> Entering BlueDart management method
+INFO - 2024-11-05 16:56:33 --> Fetched all pending shipments
+INFO - 2024-11-05 16:56:33 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 16:56:33 --> Rendering BlueDart view
+INFO - 2024-11-05 17:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 17:03:28 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-05 17:03:28 --> 220 ESMTP smtp.hostinger.com
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.hostinger.com
+250-PIPELINING
+250-SIZE 48811212
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+Failed to authenticate password. Error: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+ERROR - 2024-11-05 17:03:28 --> Failed to send email for order number: #123457
+INFO - 2024-11-05 17:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:52 --> Entering BlueDart management method
+INFO - 2024-11-05 17:03:52 --> Fetched all pending shipments
+INFO - 2024-11-05 17:03:52 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:03:52 --> Rendering BlueDart view
+INFO - 2024-11-05 17:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:03:56 --> Entering BlueDart management method
+INFO - 2024-11-05 17:03:56 --> Fetched all pending shipments
+INFO - 2024-11-05 17:03:56 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:03:56 --> Rendering BlueDart view
+INFO - 2024-11-05 17:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:07:35 --> Saving changes for BlueDart shipments
+INFO - 2024-11-05 17:07:35 --> Updated shipment ID: 4068
+INFO - 2024-11-05 17:07:35 --> Updated shipment ID: 4070
+INFO - 2024-11-05 17:07:35 --> Updated shipment ID: 4071
+INFO - 2024-11-05 17:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:07:37 --> Entering BlueDart management method
+INFO - 2024-11-05 17:07:37 --> Fetched all pending shipments
+INFO - 2024-11-05 17:07:37 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:07:37 --> Rendering BlueDart view
+INFO - 2024-11-05 17:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:15 --> Entering BlueDart management method
+INFO - 2024-11-05 17:11:15 --> Fetched all pending shipments
+INFO - 2024-11-05 17:11:15 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:11:15 --> Rendering BlueDart view
+INFO - 2024-11-05 17:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:27 --> Entering BlueDart management method
+INFO - 2024-11-05 17:11:28 --> Fetched all pending shipments
+INFO - 2024-11-05 17:11:28 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:11:28 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:11:28 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:51 --> Entering BlueDart management method
+INFO - 2024-11-05 17:11:51 --> Fetched all pending shipments
+INFO - 2024-11-05 17:11:51 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:11:51 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:11:51 --> ErrorException: Undefined array key "product_size"
+in APPPATH\Views\bluedart_view.php on line 222.
+ 1 APPPATH\Views\bluedart_view.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_size"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 222)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:11:53 --> Entering BlueDart management method
+INFO - 2024-11-05 17:11:53 --> Fetched all pending shipments
+INFO - 2024-11-05 17:11:53 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:11:53 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:11:53 --> ErrorException: Undefined array key "product_size"
+in APPPATH\Views\bluedart_view.php on line 222.
+ 1 APPPATH\Views\bluedart_view.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_size"', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 222)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-05 17:13:55 --> mysqli_sql_exception: Unknown column 'product_size' in 'field list' in C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', NULL, false)
+#4 C:\xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\sportzsaga\app\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\sportzsaga\app\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData(Array)
+#7 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+#8 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+#9 C:\xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-11-05 17:13:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 17:13:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-05 17:13:55 --> [Caused by] mysqli_sql_exception: Unknown column 'product_size' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `order_shipment` (`billing_address`, `billing_customer_name`, `billing_email`, `billing_phone`, `billing_pincode`, `breadth`, `height`, `length`, `order_items`, `order_number`, `product_size`, `seller_id`, `shipping_is_billing`, `sub_total`, `weight`)
+VALUES (\'House No.5, Ballalshwar, Ashtavinayak Park, Kamatwade Road\',\'Aditya Patil\',\'aditya@avhadenterprises.com\',9356459066,422008,0,0,0,\'{\\"product_id\\":574,\\"product_title\\":\\"COIN upgrade - SISCAA legend SE To SISCAA Sure Slam Coins\\",\\"selling_price\\":75,\\"quantity\\":1,\\"sku\\":\\"SS565656\\",\\"hsn\\":123456}\',\'#805078\',\'Keep Empty\',153,1,75,1)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:15:35 --> Entering BlueDart management method
+INFO - 2024-11-05 17:15:35 --> Fetched all pending shipments
+INFO - 2024-11-05 17:15:35 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:15:35 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:15:35 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:15:56 --> Entering BlueDart management method
+INFO - 2024-11-05 17:15:56 --> Fetched all pending shipments
+INFO - 2024-11-05 17:15:56 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:15:56 --> Rendering BlueDart view
+INFO - 2024-11-05 17:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:18:01 --> Entering BlueDart management method
+INFO - 2024-11-05 17:18:01 --> Fetched all pending shipments
+INFO - 2024-11-05 17:18:01 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:18:01 --> Rendering BlueDart view
+INFO - 2024-11-05 17:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:19:12 --> Filtering BlueDart shipments
+INFO - 2024-11-05 17:19:12 --> Requested status filter: cancelled
+INFO - 2024-11-05 17:19:12 --> Retrieved 0 orders for status: cancelled
+INFO - 2024-11-05 17:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:19:14 --> Filtering BlueDart shipments
+INFO - 2024-11-05 17:19:14 --> Requested status filter: delivered
+INFO - 2024-11-05 17:19:14 --> Retrieved 0 orders for status: delivered
+INFO - 2024-11-05 17:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:19:16 --> Filtering BlueDart shipments
+INFO - 2024-11-05 17:19:16 --> Requested status filter: returned
+INFO - 2024-11-05 17:19:16 --> Retrieved 0 orders for status: returned
+INFO - 2024-11-05 17:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:19:18 --> Filtering BlueDart shipments
+INFO - 2024-11-05 17:19:18 --> Requested status filter: All
+INFO - 2024-11-05 17:19:18 --> Retrieved 0 orders for status: All
+INFO - 2024-11-05 17:19:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:19:19 --> Entering BlueDart management method
+INFO - 2024-11-05 17:19:19 --> Fetched all pending shipments
+INFO - 2024-11-05 17:19:19 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:19:19 --> Rendering BlueDart view
+INFO - 2024-11-05 17:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:20:26 --> Entering BlueDart management method
+INFO - 2024-11-05 17:20:26 --> Fetched all pending shipments
+INFO - 2024-11-05 17:20:26 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:20:26 --> Rendering BlueDart view
+INFO - 2024-11-05 17:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 17:21:16 --> ErrorException: Array to string conversion
+in SYSTEMPATH\Database\BaseBuilder.php on line 2160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\system\\Database\\BaseBuilder.php', 2160)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2160): implode(',', [...])
+ 3 [internal function]: CodeIgniter\Database\BaseBuilder::CodeIgniter\Database\{closure}([...])
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2160): array_map(Object(Closure), [...])
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->formatValues([...])
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1794): CodeIgniter\Database\BaseBuilder->_insertBatch('`order_shipment`', [...], [...])
+ 7 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 8 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 9 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:25:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 17:25:06 --> ErrorException: Array to string conversion
+in SYSTEMPATH\Database\BaseBuilder.php on line 2160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\system\\Database\\BaseBuilder.php', 2160)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2160): implode(',', [...])
+ 3 [internal function]: CodeIgniter\Database\BaseBuilder::CodeIgniter\Database\{closure}([...])
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2160): array_map(Object(Closure), [...])
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->formatValues([...])
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1794): CodeIgniter\Database\BaseBuilder->_insertBatch('`order_shipment`', [...], [...])
+ 7 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 8 APPPATH\Models\Ordermanagement_model.php(64): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 9 APPPATH\Controllers\Ordermanagement.php(1321): App\Models\Ordermanagement_model->InsertShipmentData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->importShipmentdata()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:26:24 --> Entering BlueDart management method
+INFO - 2024-11-05 17:26:24 --> Fetched all pending shipments
+INFO - 2024-11-05 17:26:24 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:26:24 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:26:24 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:29:39 --> Entering BlueDart management method
+INFO - 2024-11-05 17:29:39 --> Fetched all pending shipments
+INFO - 2024-11-05 17:29:39 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:29:39 --> Rendering BlueDart view
+CRITICAL - 2024-11-05 17:29:39 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\bluedart_view.php on line 219.
+ 1 APPPATH\Views\bluedart_view.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 219)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(339): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-11-05 17:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:34:32 --> Entering BlueDart management method
+INFO - 2024-11-05 17:34:32 --> Fetched all pending shipments
+INFO - 2024-11-05 17:34:32 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:34:32 --> Rendering BlueDart view
+INFO - 2024-11-05 17:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:35:09 --> Entering BlueDart management method
+INFO - 2024-11-05 17:35:09 --> Fetched all pending shipments
+INFO - 2024-11-05 17:35:09 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:35:09 --> Rendering BlueDart view
+INFO - 2024-11-05 17:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:37:17 --> Entering BlueDart management method
+INFO - 2024-11-05 17:37:17 --> Fetched all pending shipments
+INFO - 2024-11-05 17:37:17 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:37:17 --> Rendering BlueDart view
+INFO - 2024-11-05 17:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 17:37:46 --> Entering BlueDart management method
+INFO - 2024-11-05 17:37:46 --> Fetched all pending shipments
+INFO - 2024-11-05 17:37:46 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 17:37:46 --> Rendering BlueDart view
+INFO - 2024-11-05 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:33 --> Entering BlueDart management method
+INFO - 2024-11-05 18:12:33 --> Fetched all pending shipments
+INFO - 2024-11-05 18:12:33 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:12:33 --> Rendering BlueDart view
+INFO - 2024-11-05 18:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:12:37 --> Entering BlueDart management method
+INFO - 2024-11-05 18:12:37 --> Fetched all pending shipments
+INFO - 2024-11-05 18:12:37 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:12:37 --> Rendering BlueDart view
+INFO - 2024-11-05 18:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:31:10 --> Entering BlueDart management method
+INFO - 2024-11-05 18:31:10 --> Fetched all pending shipments
+INFO - 2024-11-05 18:31:10 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:31:10 --> Rendering BlueDart view
+INFO - 2024-11-05 18:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:10 --> Entering BlueDart management method
+INFO - 2024-11-05 18:33:10 --> Fetched all pending shipments
+INFO - 2024-11-05 18:33:10 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:33:10 --> Rendering BlueDart view
+INFO - 2024-11-05 18:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:33:19 --> Entering BlueDart management method
+INFO - 2024-11-05 18:33:19 --> Fetched all pending shipments
+INFO - 2024-11-05 18:33:19 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:33:19 --> Rendering BlueDart view
+INFO - 2024-11-05 18:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:34:02 --> Saving changes for BlueDart shipments
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4068
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4071
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4086
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4087
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4088
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4089
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4090
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4091
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4092
+INFO - 2024-11-05 18:34:03 --> Updated shipment ID: 4093
+INFO - 2024-11-05 18:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:34:04 --> Entering BlueDart management method
+INFO - 2024-11-05 18:34:04 --> Fetched all pending shipments
+INFO - 2024-11-05 18:34:04 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:34:04 --> Rendering BlueDart view
+INFO - 2024-11-05 18:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:35:23 --> Entering BlueDart management method
+INFO - 2024-11-05 18:35:23 --> Fetched all pending shipments
+INFO - 2024-11-05 18:35:23 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:35:23 --> Rendering BlueDart view
+INFO - 2024-11-05 18:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:16 --> Entering BlueDart management method
+INFO - 2024-11-05 18:39:16 --> Fetched all pending shipments
+INFO - 2024-11-05 18:39:16 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:39:16 --> Rendering BlueDart view
+INFO - 2024-11-05 18:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 18:39:21 --> Entering BlueDart management method
+INFO - 2024-11-05 18:39:21 --> Fetched all pending shipments
+INFO - 2024-11-05 18:39:21 --> Fetched BlueDart orders: 0
+INFO - 2024-11-05 18:39:21 --> Rendering BlueDart view

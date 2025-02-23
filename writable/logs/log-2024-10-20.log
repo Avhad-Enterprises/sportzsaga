@@ -1,0 +1,433 @@
+INFO - 2024-10-20 09:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:21:48 --> Entering BlueDart management method
+INFO - 2024-10-20 09:21:48 --> Fetched all pending shipments
+INFO - 2024-10-20 09:21:48 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 09:21:48 --> Rendering BlueDart view
+INFO - 2024-10-20 09:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:49:00 --> Entering BlueDart management method
+INFO - 2024-10-20 09:49:00 --> Fetched all pending shipments
+INFO - 2024-10-20 09:49:00 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 09:49:00 --> Rendering BlueDart view
+INFO - 2024-10-20 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:50:27 --> Attempting to cancel BlueDart request
+CRITICAL - 2024-10-20 09:50:27 --> Error: Call to undefined method CodeIgniter\Log\Logger::warn()
+in APPPATH\Controllers\Ordermanagement.php on line 862.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->cancelBluedartRequest()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 09:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:51:17 --> Entering BlueDart management method
+INFO - 2024-10-20 09:51:17 --> Fetched all pending shipments
+INFO - 2024-10-20 09:51:17 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 09:51:17 --> Rendering BlueDart view
+INFO - 2024-10-20 09:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:51:28 --> Attempting to cancel BlueDart request
+INFO - 2024-10-20 09:51:28 --> seller not Registered
+INFO - 2024-10-20 09:51:28 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 09:51:29 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0ODQ0ODgsImlhdCI6MTcyOTM5ODA4OCwianRpIjoiOTVkYWUxMmYtZDA5NS00MDExLWExMjctMDRjOGNkMDBlNDM4In0.GN0DdYwXVaUw8owyMNPu--rYYhl9zJXCcmRRKDw3FNA"}
+INFO - 2024-10-20 09:51:29 --> Token API HTTP Code: 200
+INFO - 2024-10-20 09:51:29 --> Token generated successfully
+INFO - 2024-10-20 09:51:29 --> Attempting to cancel waybill: 81202172704
+INFO - 2024-10-20 09:51:30 --> Cancel API Response for tracking ID 81202172704: {"CancelWaybillResult":{"AWBNo":"81202172704","CCRCRDREF":null,"IsError":false,"Status":[{"StatusCode":"Valid","StatusInformation":"Your registered shipment 81202172704 has been cancelled successfully"}]}}
+INFO - 2024-10-20 09:51:30 --> Cancel API HTTP Code for tracking ID 81202172704: 200
+INFO - 2024-10-20 09:51:30 --> Waybill cancelled successfully for tracking ID: 81202172704
+INFO - 2024-10-20 09:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:51:35 --> Entering BlueDart management method
+INFO - 2024-10-20 09:51:35 --> Fetched all pending shipments
+INFO - 2024-10-20 09:51:35 --> Fetched BlueDart orders: 0
+INFO - 2024-10-20 09:51:35 --> Rendering BlueDart view
+INFO - 2024-10-20 09:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:54:37 --> Entering BlueDart management method
+INFO - 2024-10-20 09:54:37 --> Fetched all pending shipments
+INFO - 2024-10-20 09:54:37 --> Fetched BlueDart orders: 0
+INFO - 2024-10-20 09:54:37 --> Rendering BlueDart view
+INFO - 2024-10-20 09:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:55:33 --> Entering BlueDart management method
+INFO - 2024-10-20 09:55:33 --> Fetched all pending shipments
+INFO - 2024-10-20 09:55:33 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 09:55:33 --> Rendering BlueDart view
+INFO - 2024-10-20 09:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 09:55:47 --> Attempting to cancel BlueDart request
+INFO - 2024-10-20 09:55:47 --> seller not Registered
+INFO - 2024-10-20 09:55:47 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 09:55:48 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0ODQ3NDcsImlhdCI6MTcyOTM5ODM0NywianRpIjoiM2E0MTZmYmUtODdjYy00YmVmLTljZTEtODhiMzcxNzRjMmFlIn0.UYFAxyZLoRwQFjwMuB61zpVEX1_SaLAcGDT5f-QYrJI"}
+INFO - 2024-10-20 09:55:48 --> Token API HTTP Code: 200
+INFO - 2024-10-20 09:55:48 --> Token generated successfully
+INFO - 2024-10-20 09:55:48 --> Attempting to cancel waybill: 81202172704
+INFO - 2024-10-20 09:55:49 --> Cancel API Response for tracking ID 81202172704: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":"81202172704","CCRCRDREF":null,"IsError":true,"Status":[{"StatusCode":"CancelFailure","StatusInformation":"Waybill Number has been already cancelled."}]}]}
+INFO - 2024-10-20 09:55:49 --> Cancel API HTTP Code for tracking ID 81202172704: 400
+ERROR - 2024-10-20 09:55:49 --> Failed to cancel waybill for tracking ID: 81202172704 | Error: Cancellation failed or unexpected response
+INFO - 2024-10-20 09:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:01:16 --> Entering BlueDart management method
+INFO - 2024-10-20 10:01:16 --> Fetched all pending shipments
+INFO - 2024-10-20 10:01:16 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:01:16 --> Rendering BlueDart view
+INFO - 2024-10-20 10:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:01:24 --> Attempting to cancel BlueDart request
+CRITICAL - 2024-10-20 10:01:24 --> ErrorException: Array to string conversion
+in APPPATH\Controllers\Ordermanagement.php on line 860.
+ 1 APPPATH\Controllers\Ordermanagement.php(860): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Controllers\\Ordermanagement.php', 860)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->cancelBluedartRequest()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 10:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:02:39 --> Entering BlueDart management method
+INFO - 2024-10-20 10:02:39 --> Fetched all pending shipments
+INFO - 2024-10-20 10:02:39 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:02:39 --> Rendering BlueDart view
+INFO - 2024-10-20 10:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:02:48 --> Attempting to cancel BlueDart request
+INFO - 2024-10-20 10:02:48 --> seller verified201
+INFO - 2024-10-20 10:02:48 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 10:02:49 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0ODUxNjgsImlhdCI6MTcyOTM5ODc2OCwianRpIjoiMGI3YzVhNzAtMGRlNC00YTg1LWJhNWUtNWNiYmEyZGU1OWY0In0.qx2oh2dx-q__rZh5taJaBbBJknRRUm6weRJxEDDOEMM"}
+INFO - 2024-10-20 10:02:49 --> Token API HTTP Code: 200
+INFO - 2024-10-20 10:02:49 --> Token generated successfully
+INFO - 2024-10-20 10:02:49 --> Attempting to cancel waybill: 81202172704
+INFO - 2024-10-20 10:02:50 --> Cancel API Response for tracking ID 81202172704: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":"81202172704","CCRCRDREF":null,"IsError":true,"Status":[{"StatusCode":"CancelFailure","StatusInformation":"Waybill Number has been already cancelled."}]}]}
+INFO - 2024-10-20 10:02:50 --> Cancel API HTTP Code for tracking ID 81202172704: 400
+ERROR - 2024-10-20 10:02:50 --> Failed to cancel waybill for tracking ID: 81202172704 | Error: Cancellation failed or unexpected response
+INFO - 2024-10-20 10:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:03:59 --> Entering BlueDart management method
+INFO - 2024-10-20 10:03:59 --> Fetched all pending shipments
+INFO - 2024-10-20 10:03:59 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:03:59 --> Rendering BlueDart view
+INFO - 2024-10-20 10:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:04:14 --> Attempting to cancel BlueDart request
+INFO - 2024-10-20 10:04:14 --> seller verified 201
+INFO - 2024-10-20 10:04:14 --> seller verified152
+INFO - 2024-10-20 10:04:14 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 10:04:15 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0ODUyNTUsImlhdCI6MTcyOTM5ODg1NSwianRpIjoiYzY4YmE4YWMtODFiNy00OGRlLTkxNTEtYzdiOTE4MWJkYzg2In0.xeRc9Vyu3FwuIHbVM-poJy4lHYXnxfuWHdFw_XI3nFE"}
+INFO - 2024-10-20 10:04:15 --> Token API HTTP Code: 200
+INFO - 2024-10-20 10:04:15 --> Token generated successfully
+INFO - 2024-10-20 10:04:15 --> Attempting to cancel waybill: 81202172704
+INFO - 2024-10-20 10:04:16 --> Cancel API Response for tracking ID 81202172704: {"status":400,"title":"Bad Request","error-response":[{"AWBNo":"81202172704","CCRCRDREF":null,"IsError":true,"Status":[{"StatusCode":"CancelFailure","StatusInformation":"Waybill Number has been already cancelled."}]}]}
+INFO - 2024-10-20 10:04:16 --> Cancel API HTTP Code for tracking ID 81202172704: 400
+ERROR - 2024-10-20 10:04:16 --> Failed to cancel waybill for tracking ID: 81202172704 | Error: Cancellation failed or unexpected response
+INFO - 2024-10-20 10:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:14:12 --> Entering BlueDart management method
+INFO - 2024-10-20 10:14:12 --> Fetched BlueDart orders: 3
+INFO - 2024-10-20 10:14:12 --> Rendering BlueDart view
+CRITICAL - 2024-10-20 10:14:12 --> ErrorException: Undefined variable $shipments
+in APPPATH\Views\bluedart_view.php on line 199.
+ 1 APPPATH\Views\bluedart_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $shipments', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 199)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(340): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 10:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:15:22 --> Entering BlueDart management method
+INFO - 2024-10-20 10:15:22 --> Seller Not Registered
+INFO - 2024-10-20 10:15:22 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:15:22 --> Rendering BlueDart view
+CRITICAL - 2024-10-20 10:15:22 --> ErrorException: foreach() argument must be of type array|object, string given
+in APPPATH\Views\bluedart_view.php on line 199.
+ 1 APPPATH\Views\bluedart_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php', 199)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\sportzsaga\\app\\Views\\bluedart_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('bluedart_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(338): view('bluedart_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->bluedart_management()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 10:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:16:14 --> Entering BlueDart management method
+INFO - 2024-10-20 10:16:14 --> Fetched all pending shipments
+INFO - 2024-10-20 10:16:14 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:16:14 --> Rendering BlueDart view
+INFO - 2024-10-20 10:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:16:44 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:16:44 --> Requested status filter: All
+INFO - 2024-10-20 10:16:44 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:16:48 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:16:48 --> Requested status filter: cancelled
+INFO - 2024-10-20 10:16:48 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 10:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:16:51 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:16:51 --> Requested status filter: delivered
+INFO - 2024-10-20 10:16:51 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 10:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:18:49 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:18:49 --> Requested status filter: cancelled
+INFO - 2024-10-20 10:18:49 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 10:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:32:24 --> Entering BlueDart management method
+INFO - 2024-10-20 10:32:24 --> Fetched all pending shipments
+INFO - 2024-10-20 10:32:24 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:32:24 --> Rendering BlueDart view
+INFO - 2024-10-20 10:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:32:43 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:32:43 --> Requested status filter: All
+INFO - 2024-10-20 10:32:43 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:32:55 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:32:55 --> Requested status filter: cancelled
+INFO - 2024-10-20 10:32:55 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 10:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:32:58 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:32:58 --> Requested status filter: delivered
+INFO - 2024-10-20 10:32:58 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 10:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:01 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:33:01 --> Requested status filter: returned
+INFO - 2024-10-20 10:33:01 --> Retrieved 0 orders for status: returned
+INFO - 2024-10-20 10:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:04 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:33:04 --> Requested status filter: All
+INFO - 2024-10-20 10:33:04 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:18 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:33:18 --> Requested status filter: delivered
+INFO - 2024-10-20 10:33:18 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 10:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:20 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:33:20 --> Requested status filter: All
+INFO - 2024-10-20 10:33:20 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:21 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:33:21 --> Requested status filter: Fulfilled
+INFO - 2024-10-20 10:33:21 --> Retrieved 1 orders for status: Fulfilled
+INFO - 2024-10-20 10:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:33:27 --> preparePrintLabels method called
+INFO - 2024-10-20 10:33:27 --> Preparing labels for tracking IDs: 81202172704
+CRITICAL - 2024-10-20 10:33:27 --> Error: Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Ordermanagement.php on line 800.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->preparePrintLabels()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 10:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:34:26 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:34:26 --> Requested status filter: All
+INFO - 2024-10-20 10:34:26 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:34:33 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:34:33 --> Requested status filter: cancelled
+INFO - 2024-10-20 10:34:33 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 10:34:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:34:44 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:34:44 --> Requested status filter: Fulfilled
+INFO - 2024-10-20 10:34:44 --> Retrieved 1 orders for status: Fulfilled
+INFO - 2024-10-20 10:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:35:00 --> preparePrintLabels method called
+INFO - 2024-10-20 10:35:00 --> Preparing labels for tracking IDs: 81202172704
+CRITICAL - 2024-10-20 10:35:00 --> Error: Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Ordermanagement.php on line 800.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->preparePrintLabels()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 10:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:48:45 --> Entering BlueDart management method
+INFO - 2024-10-20 10:48:45 --> Fetched all pending shipments
+INFO - 2024-10-20 10:48:45 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:48:45 --> Rendering BlueDart view
+INFO - 2024-10-20 10:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:55:17 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:55:17 --> Requested status filter: cancelled
+INFO - 2024-10-20 10:55:17 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 10:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:55:23 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:55:23 --> Requested status filter: All
+INFO - 2024-10-20 10:55:23 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 10:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:55:25 --> Filtering BlueDart shipments
+INFO - 2024-10-20 10:55:25 --> Requested status filter: Fulfilled
+INFO - 2024-10-20 10:55:25 --> Retrieved 1 orders for status: Fulfilled
+INFO - 2024-10-20 10:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:56:36 --> Entering BlueDart management method
+INFO - 2024-10-20 10:56:36 --> Fetched all pending shipments
+INFO - 2024-10-20 10:56:36 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 10:56:36 --> Rendering BlueDart view
+INFO - 2024-10-20 10:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 10:56:49 --> preparePrintLabels method called
+INFO - 2024-10-20 10:56:49 --> Preparing labels for tracking IDs: 81202172704
+CRITICAL - 2024-10-20 10:56:49 --> Error: Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Ordermanagement.php on line 800.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->preparePrintLabels()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 11:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:00:33 --> Entering BlueDart management method
+INFO - 2024-10-20 11:00:33 --> Fetched all pending shipments
+INFO - 2024-10-20 11:00:33 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:00:33 --> Rendering BlueDart view
+INFO - 2024-10-20 11:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:00:48 --> preparePrintLabels method called
+INFO - 2024-10-20 11:00:48 --> Preparing labels for tracking IDs: 81202172704
+CRITICAL - 2024-10-20 11:00:48 --> Error: Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Ordermanagement.php on line 800.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->preparePrintLabels()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-20 11:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:02:14 --> Entering BlueDart management method
+INFO - 2024-10-20 11:02:14 --> Fetched all pending shipments
+INFO - 2024-10-20 11:02:14 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:02:14 --> Rendering BlueDart view
+INFO - 2024-10-20 11:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:02:25 --> preparePrintLabels method called
+INFO - 2024-10-20 11:02:25 --> Preparing labels for tracking IDs: 81202172704
+INFO - 2024-10-20 11:02:25 --> Adding label for tracking ID: 81202172704
+INFO - 2024-10-20 11:02:25 --> Merged PDF created with 1 pages
+INFO - 2024-10-20 11:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:03:51 --> Entering BlueDart management method
+INFO - 2024-10-20 11:03:51 --> Fetched all pending shipments
+INFO - 2024-10-20 11:03:51 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:03:51 --> Rendering BlueDart view
+INFO - 2024-10-20 11:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:12:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:26:31 --> Entering BlueDart management method
+INFO - 2024-10-20 11:26:31 --> Fetched all pending shipments
+INFO - 2024-10-20 11:26:31 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:26:31 --> Rendering BlueDart view
+INFO - 2024-10-20 11:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:27:21 --> Entering BlueDart management method
+INFO - 2024-10-20 11:27:21 --> Fetched all pending shipments
+INFO - 2024-10-20 11:27:21 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:27:21 --> Rendering BlueDart view
+INFO - 2024-10-20 11:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:31:57 --> Entering BlueDart management method
+INFO - 2024-10-20 11:31:57 --> Fetched all pending shipments
+INFO - 2024-10-20 11:31:57 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:31:57 --> Rendering BlueDart view
+INFO - 2024-10-20 11:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:32:08 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:32:08 --> Requested status filter: All
+INFO - 2024-10-20 11:32:08 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 11:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:32:09 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:32:09 --> Requested status filter: cancelled
+INFO - 2024-10-20 11:32:09 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 11:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:32:12 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:32:12 --> Requested status filter: delivered
+INFO - 2024-10-20 11:32:12 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 11:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:32:13 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:32:13 --> Requested status filter: Fulfilled
+INFO - 2024-10-20 11:32:13 --> Retrieved 1 orders for status: Fulfilled
+INFO - 2024-10-20 11:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:32:59 --> Entering BlueDart track method
+INFO - 2024-10-20 11:32:59 --> Tracking by AWB number: 81202172704
+INFO - 2024-10-20 11:32:59 --> Fetching BlueDart tracking details for AWB: 81202172704
+INFO - 2024-10-20 11:32:59 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 11:33:01 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0OTA1ODAsImlhdCI6MTcyOTQwNDE4MCwianRpIjoiOTg1ZWJjMTEtNmI3MC00MDlmLTk3OTktZDNhZWM3YzExYzk1In0.uFmoxbYH_K4zCmxR2-aAV8VBKfKqeEoQAuNvYrr4pso"}
+INFO - 2024-10-20 11:33:01 --> Token API HTTP Code: 200
+INFO - 2024-10-20 11:33:01 --> Token generated successfully
+INFO - 2024-10-20 11:33:02 --> BlueDart tracking details fetched successfully
+INFO - 2024-10-20 11:33:02 --> Tracking results fetched successfully
+INFO - 2024-10-20 11:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:33:09 --> Entering BlueDart track method
+INFO - 2024-10-20 11:33:09 --> Tracking by order number: #123461
+INFO - 2024-10-20 11:33:09 --> Fetching BlueDart tracking details for AWB: 81202172704
+INFO - 2024-10-20 11:33:09 --> Attempting to generate BlueDart token
+INFO - 2024-10-20 11:33:10 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sIkNsaWVudFNlY3JldCI6ImM2blBPUDljZmgyN2xSbEEiLCJpc3MiOiJ1cm46XC9cL2FwaWdlZS1lZGdlLUpXVC1wb2xpY3ktdGVzdCIsIkNsaWVudElEIjoiSmpjMUFyMmxpcmZmYWNna0tMTFlPVHJ6OXZnUXFYOWQiLCJleHAiOjE3Mjk0OTA1ODksImlhdCI6MTcyOTQwNDE4OSwianRpIjoiMzIxOTZlMjYtMjk4NC00MjFjLWJlMWEtZTJiZDk2ZjJmNTI3In0.BqtKuKMWJda5QaJia_Uf6W_1GoHL9SBKQNJi0h3BNzM"}
+INFO - 2024-10-20 11:33:10 --> Token API HTTP Code: 200
+INFO - 2024-10-20 11:33:10 --> Token generated successfully
+INFO - 2024-10-20 11:33:10 --> BlueDart tracking details fetched successfully
+INFO - 2024-10-20 11:33:10 --> Tracking results fetched successfully
+INFO - 2024-10-20 11:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:49:35 --> Entering BlueDart management method
+INFO - 2024-10-20 11:49:35 --> Fetched all pending shipments
+INFO - 2024-10-20 11:49:35 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:49:35 --> Rendering BlueDart view
+INFO - 2024-10-20 11:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:49:48 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:49:48 --> Requested status filter: All
+INFO - 2024-10-20 11:49:48 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 11:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:56:15 --> Entering BlueDart management method
+INFO - 2024-10-20 11:56:15 --> Fetched all pending shipments
+INFO - 2024-10-20 11:56:15 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 11:56:15 --> Rendering BlueDart view
+INFO - 2024-10-20 11:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:56:27 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:56:27 --> Requested status filter: All
+INFO - 2024-10-20 11:56:27 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 11:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:56:31 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:56:31 --> Requested status filter: delivered
+INFO - 2024-10-20 11:56:31 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 11:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 11:56:33 --> Filtering BlueDart shipments
+INFO - 2024-10-20 11:56:33 --> Requested status filter: All
+INFO - 2024-10-20 11:56:33 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 12:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:03:30 --> Entering BlueDart management method
+INFO - 2024-10-20 12:03:30 --> Fetched all pending shipments
+INFO - 2024-10-20 12:03:30 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 12:03:30 --> Rendering BlueDart view
+INFO - 2024-10-20 12:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:03:41 --> Filtering BlueDart shipments
+INFO - 2024-10-20 12:03:41 --> Requested status filter: delivered
+INFO - 2024-10-20 12:03:41 --> Retrieved 0 orders for status: delivered
+INFO - 2024-10-20 12:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:03:44 --> Filtering BlueDart shipments
+INFO - 2024-10-20 12:03:44 --> Requested status filter: All
+INFO - 2024-10-20 12:03:44 --> Retrieved 2 orders for status: All
+INFO - 2024-10-20 12:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:03:56 --> Filtering BlueDart shipments
+INFO - 2024-10-20 12:03:56 --> Requested status filter: cancelled
+INFO - 2024-10-20 12:03:56 --> Retrieved 1 orders for status: cancelled
+INFO - 2024-10-20 12:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:18:24 --> Entering BlueDart management method
+INFO - 2024-10-20 12:18:24 --> Fetched all pending shipments
+INFO - 2024-10-20 12:18:24 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 12:18:24 --> Rendering BlueDart view
+INFO - 2024-10-20 12:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:18:34 --> preparePrintLabels method called
+INFO - 2024-10-20 12:18:34 --> Preparing labels for tracking IDs: 81202172704
+INFO - 2024-10-20 12:18:34 --> Adding label for tracking ID: 81202172704
+INFO - 2024-10-20 12:18:34 --> Merged PDF created with 1 pages
+INFO - 2024-10-20 12:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-20 12:19:16 --> Entering BlueDart management method
+INFO - 2024-10-20 12:19:16 --> Fetched all pending shipments
+INFO - 2024-10-20 12:19:16 --> Fetched BlueDart orders: 1
+INFO - 2024-10-20 12:19:16 --> Rendering BlueDart view

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "peak-tide-441609-r1",
+  "private_key_id": "4bfe8d6d311634c500d9ad562b373b364705faae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDEy5N+ZfovwAdI\nhS3zQewffRwAZ4JULAhfi1wexKIWHaV8cfJHNz1mWsUW68vviznaVw05x8vepKLp\njAIVE/YSf8s8eDEO0VfxKaAOWy3/DRwPlKw+cUJ/fxAihD2j9b4g704AxBCPzp4t\nR0oYZ0XpxW0qcH1SJLK+fip70gQEfs3ZdSLG9x5ZQvRhDo3KlHr+HD8lpiiUQZZg\n1mVz0Z8SJN/UI8MrOE4ucfOZvT4EtnYd4EnNrWyIZovJCYRPutq6eFWCtZWcXlvl\nXezk/R21MMvBcbteyiN66i3+1/mIawdEgW98d3h4sLGHKOZzXWIZeV2rz4eubWTg\ncY1AyHTJAgMBAAECggEAARv027MGckDJcNVeAFMOhNFcify2CRDc6hudls6VsqCM\nChIGkWWisud9vI+dV7R3zIJqi0dULeU+qZpweTtig9iC4nczoOskJgfGiB4u5FpL\nZZWHjQFwFh/+DQLdeBPVyeUtoDUlXaPqN1KP0hMO8OBt1AiTR88UXblHUwWsLnUv\nF4UkJJgiSTrxcfLxRlhCrbqvRYQBD7Im+bPGRHbQ4maYdzePvWnjjSvDqtBEAgUE\n+XPCO4gy1gKdCuDgoOL1fPGFyjW0CCQ4jGT6t4pniUv894RcsIbBeat+NJOvO0ys\nNlVlIppU+LvCv5YunpcWIAIUStv7CqGJjxqnwrHkKwKBgQDicUnb7FrjPbwUZjqH\nvYuNfSQatzGvqwjx+K/89wQmvhrxPC+yy7qaV+WOSRM+UAfkT4S9rHFVNLMyejON\n7ziAnM03++M5UJ4OhDBILbB+W//Xb5Is4uZKFxiTAGf4d4HGYBkf5RTmNOyarOcb\nacv/58ZHnUbgKS31yDk3czq+vwKBgQDee5rljNY4i4ZAu6+Ppo55nqwPz0AiGrPO\nlyRPwgKNxxjFVXEIa5tfjd5m1veWtJ/drLzeNQi0lBxsQa9g6/EESRdgFvCIX3Fv\nGr0j6bD7f4+QSbbBWG3W3J8jgx1lX/vNprrXqLH86JYNremOvztWHbDgMk4zNJu+\n42aXyKK2dwKBgQDJj84O1PSSEgG4psayzSXLa/kXTroLhFMSECuXIMmxMscItGpA\n3NfdSyAq5yEZ9mMP9zhRHY5EKgTYia4aSTYiRXDmxHAeNIR8p23S0diooXu6aLXU\n/qO+j5BwSYxCvx3lVuUGXwObZsC1bfLJlALiZ403cegE4KLohLFpikhgQQKBgQCK\nRbH4Nraw/+4Zb0xmcDKeXcI8NSd7yrKzk/XqZ/6kVPgNNNQCUraHBaoSqknIbUvq\nPsBHLhjR+jdMBOrVxu3NJwwTGU62wvLCBZFFr6jiNd5o45dkxOvHHOj+7i8n4Saj\nIpt/CwZL09XmfI7qu+lJ1Twnqrw1UN33HmeVsAmIcwKBgQC0TZGbPyrH28HMl7F5\nz/BzrmMSjIevAL/jtlAk1jXPkxtFw2/6ovpocX9JXiMR5fa/DPXoNp1ciRxwvXkw\n3NMUS5O1MGvuqDzQREzP/n9IcLdMMd5XZcgUqsBU+s6JLD/mwR24AT1prJ4VzZil\nZGyL2PQOMXcMMTK47kd7R8do7Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mkvfooterpages@peak-tide-441609-r1.iam.gserviceaccount.com",
+  "client_id": "104213721703927067402",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mkvfooterpages%40peak-tide-441609-r1.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

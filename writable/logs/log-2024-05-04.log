@@ -1,0 +1,183 @@
+ERROR - 2024-05-04 09:00:34 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'driphunter_db', 3306, '', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dr...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(108): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(315): App\Models\Blogs_model->publishdripspotmodel(Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->publishnewspot()
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dr...', Array, false)
+#3 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(108): CodeIgniter\Database\BaseBuilder->insert(Array)
+#4 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(315): App\Models\Blogs_model->publishdripspotmodel(Array)
+#5 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->publishnewspot()
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-04 09:00:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dripspot` (`name_of_the_celeb`, `date_of_upload`, `brand_name_1`, `article_name_1`, `price_1`, `brand_name_2`, `article_name_2`, `price_2`, `brand_name_3`, `article_name_3`, `price_3`, `brand_name_4`, `article_name_4`, `price_4`, `brand_name_5`, `article_name_5`, `price_5`) VALUES (:name_of_the_celeb:, :date_of_upload:, :brand_name_1:, :article_name_1:, :price_1:, :brand_name_2:, :article_name_2:, :price_2:, :brand_name_3:, :article_name_3:, :price_3:, :brand_name_4:, :article_name_4:, :price_4:, :brand_name_5:, :article_name_5:, :price_5:)', [...], false)
+ 3 APPPATH\Models\blogs_model.php(108): CodeIgniter\Database\BaseBuilder->insert([...])
+ 4 APPPATH\Controllers\Blogs.php(315): App\Models\Blogs_model->publishdripspotmodel([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishnewspot()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-04 09:00:44 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'driphunter_db', 3306, '', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\driphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(15): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(12): App\Models\Blogs_model->getposts()
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->index()
+#9 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 H:\Xampp\htdocs\driphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#4 H:\Xampp\htdocs\driphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#5 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(15): CodeIgniter\BaseModel->findAll()
+#6 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(12): App\Models\Blogs_model->getposts()
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->index()
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#9 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-05-04 09:00:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`', [], false)
+ 3 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\blogs_model.php(15): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Blogs.php(12): App\Models\Blogs_model->getposts()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-04 09:00:50 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'driphunter_db', 3306, '', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+#4 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+#5 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-04 09:00:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `dripspot`', [], false)
+ 3 APPPATH\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-04 09:03:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'driphunter_db', 3306, '', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+#4 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+#5 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-04 09:03:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `dripspot`', [], false)
+ 3 APPPATH\Models\blogs_model.php(85): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Blogs.php(199): App\Models\Blogs_model->dripspotmodel()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->adddripspot()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-04 11:20:47 --> ErrorException: Undefined array key "user_id"
+in APPPATH\Views\masters_view.php on line 64.
+ 1 APPPATH\Views\masters_view.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\masters_view.php', 64)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\masters_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('masters_view', [], true)
+ 5 APPPATH\Controllers\Masters.php(13): view('masters_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Masters->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masters))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-04 11:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-04 11:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-04 11:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-04 11:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-04 11:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-04 11:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-04 12:10:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_brand_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_brand_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_brand_view', [], true)
+ 3 APPPATH\Controllers\Masters.php(40): view('edit_brand_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Masters->editbrand('4')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masters))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

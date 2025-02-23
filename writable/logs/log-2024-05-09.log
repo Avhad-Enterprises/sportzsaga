@@ -1,0 +1,326 @@
+CRITICAL - 2024-05-09 14:41:20 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:43:09 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:46:03 --> Error: Class "App\Controllers\Home_model" not found
+in APPPATH\Controllers\Home.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:48:03 --> BadMethodCallException: Call to undefined method App\Models\Home_model::getposts
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Home.php(12): CodeIgniter\Model->__call('getposts', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:48:21 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:48:36 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:49:18 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:49:41 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:50:26 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:51:27 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:51:39 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:52:00 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:52:08 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:54:36 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:54:59 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:55:42 --> ErrorException: Undefined variable $blog
+in APPPATH\Views\explore_homepage.php on line 35.
+ 1 APPPATH\Views\explore_homepage.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 35)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 14:56:19 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 15:00:58 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 15:17:28 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 15:57:46 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:00:36 --> ErrorException: Undefined variable $post
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:01:12 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:08:19 --> ErrorException: Undefined variable $blogs
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogs', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:17:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:17:48 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:18:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:22:46 --> ErrorException: Undefined variable $post
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:23:17 --> ErrorException: Undefined variable $post
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:23:53 --> ErrorException: Undefined variable $post
+in APPPATH\Views\explore_homepage.php on line 33.
+ 1 APPPATH\Views\explore_homepage.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('explore_homepage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:26:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:27:31 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:30:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 16:32:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "main-g-image (4).png"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('main-g-image (4).png')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('main-g-image (4).png')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

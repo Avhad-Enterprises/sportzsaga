@@ -1,0 +1,108 @@
+CRITICAL - 2024-08-14 05:39:49 --> CodeIgniter\Filters\Exceptions\FilterException: "sessiontimeout" filter must have a matching alias defined.
+in SYSTEMPATH/Filters/Filters.php on line 580.
+ 1 SYSTEMPATH/Filters/Filters.php(580): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH/Filters/Filters.php(264): CodeIgniter\Filters\Filters->processAliasesToClass()
+ 3 SYSTEMPATH/Filters/Filters.php(172): CodeIgniter\Filters\Filters->initialize()
+ 4 SYSTEMPATH/CodeIgniter.php(475): CodeIgniter\Filters\Filters->run()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 05:41:22 --> Error: Class "App\Filters\SessionTimeout" not found
+in SYSTEMPATH/Filters/Filters.php on line 175.
+ 1 SYSTEMPATH/CodeIgniter.php(475): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 05:41:45 --> Error: Class "App\AuthFilter\SessionTimeout" not found
+in SYSTEMPATH/Filters/Filters.php on line 175.
+ 1 SYSTEMPATH/CodeIgniter.php(475): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-14 08:44:13 --> mysqli_sql_exception: Column 'tier_3' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-14 08:44:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_3' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 08:44:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_3' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 08:44:13 --> [Caused by] mysqli_sql_exception: Column 'tier_3' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-14 08:46:30 --> mysqli_sql_exception: Column 'tier_2' cannot be null in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-14 08:46:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 08:46:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-14 08:46:30 --> [Caused by] mysqli_sql_exception: Column 'tier_2' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(67): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Products.php(209): App\Models\Products_model->addnewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

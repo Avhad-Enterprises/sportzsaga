@@ -1,0 +1,237 @@
+INFO - 2025-01-07 13:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:46:08 --> Starting fetchEmails method
+INFO - 2025-01-07 13:46:08 --> Starting email processing
+INFO - 2025-01-07 13:46:09 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 13:46:09 --> Fetching email threads
+INFO - 2025-01-07 13:46:09 --> Found 6 root emails
+INFO - 2025-01-07 13:46:09 --> Processed 6 email threads
+INFO - 2025-01-07 13:46:09 --> Retrieved 6 email threads
+INFO - 2025-01-07 13:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:26 --> Starting fetchEmails method
+INFO - 2025-01-07 13:47:26 --> Starting email processing
+INFO - 2025-01-07 13:47:27 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 13:47:27 --> Fetching email threads
+INFO - 2025-01-07 13:47:27 --> Found 6 root emails
+INFO - 2025-01-07 13:47:27 --> Processed 6 email threads
+INFO - 2025-01-07 13:47:27 --> Retrieved 6 email threads
+INFO - 2025-01-07 13:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:34 --> Starting to fetch complete email thread for message number: 1
+INFO - 2025-01-07 13:47:34 --> Fetching complete thread for message: 1
+INFO - 2025-01-07 13:47:34 --> Found 2 messages in thread
+INFO - 2025-01-07 13:47:34 --> Found 2 messages in complete thread
+INFO - 2025-01-07 13:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:36 --> Email thread processing completed successfully
+INFO - 2025-01-07 13:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:37 --> Successfully fetched macros for tags: 
+INFO - 2025-01-07 13:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:37 --> Successfully fetched agents list
+INFO - 2025-01-07 13:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:37 --> Fetching CS tags
+INFO - 2025-01-07 13:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:54:52 --> Starting fetchEmails method
+INFO - 2025-01-07 13:54:52 --> Starting email processing
+INFO - 2025-01-07 13:54:53 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 13:54:53 --> Fetching email threads
+INFO - 2025-01-07 13:54:53 --> Found 6 root emails
+INFO - 2025-01-07 13:54:53 --> Processed 6 email threads
+INFO - 2025-01-07 13:54:53 --> Retrieved 6 email threads
+INFO - 2025-01-07 14:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 14:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:05:11 --> Starting fetchEmails method
+INFO - 2025-01-07 15:05:11 --> Starting email processing
+INFO - 2025-01-07 15:05:13 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:05:13 --> Fetching email threads
+INFO - 2025-01-07 15:05:13 --> Found 6 root emails
+INFO - 2025-01-07 15:05:13 --> Processed 6 email threads
+INFO - 2025-01-07 15:05:13 --> Retrieved 6 email threads
+INFO - 2025-01-07 15:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:10:14 --> Starting email processing
+INFO - 2025-01-07 15:10:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:15:14 --> Starting email processing
+INFO - 2025-01-07 15:15:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:20:13 --> Starting email processing
+INFO - 2025-01-07 15:20:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:25:39 --> Starting email processing
+INFO - 2025-01-07 15:25:40 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:30:13 --> Starting email processing
+INFO - 2025-01-07 15:30:16 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:35:14 --> Starting email processing
+INFO - 2025-01-07 15:35:15 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:40:38 --> Starting email processing
+INFO - 2025-01-07 15:40:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:45:38 --> Starting email processing
+INFO - 2025-01-07 15:45:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:50:37 --> Starting email processing
+INFO - 2025-01-07 15:50:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 15:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 15:55:38 --> Starting email processing
+INFO - 2025-01-07 15:55:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:00:38 --> Starting email processing
+INFO - 2025-01-07 16:00:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:05:38 --> Starting email processing
+INFO - 2025-01-07 16:05:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:10:38 --> Starting email processing
+INFO - 2025-01-07 16:10:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:15:37 --> Starting email processing
+INFO - 2025-01-07 16:15:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:20:37 --> Starting email processing
+INFO - 2025-01-07 16:20:40 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:25:37 --> Starting email processing
+INFO - 2025-01-07 16:25:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:30:38 --> Starting email processing
+INFO - 2025-01-07 16:30:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:35:38 --> Starting email processing
+INFO - 2025-01-07 16:35:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:40:37 --> Starting email processing
+INFO - 2025-01-07 16:40:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:45:37 --> Starting email processing
+INFO - 2025-01-07 16:45:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:50:37 --> Starting email processing
+INFO - 2025-01-07 16:50:38 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 16:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 16:55:38 --> Starting email processing
+INFO - 2025-01-07 16:55:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:00:38 --> Starting email processing
+INFO - 2025-01-07 17:00:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:05:37 --> Starting email processing
+INFO - 2025-01-07 17:05:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:10:37 --> Starting email processing
+INFO - 2025-01-07 17:10:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:15:37 --> Starting email processing
+INFO - 2025-01-07 17:15:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:20:37 --> Starting email processing
+INFO - 2025-01-07 17:20:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:25:37 --> Starting email processing
+INFO - 2025-01-07 17:25:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:30:38 --> Starting email processing
+INFO - 2025-01-07 17:30:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:35:37 --> Starting email processing
+INFO - 2025-01-07 17:35:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:40:37 --> Starting email processing
+INFO - 2025-01-07 17:40:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:45:37 --> Starting email processing
+INFO - 2025-01-07 17:45:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:50:38 --> Starting email processing
+INFO - 2025-01-07 17:50:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 17:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 17:55:37 --> Starting email processing
+INFO - 2025-01-07 17:55:38 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:00:38 --> Starting email processing
+INFO - 2025-01-07 18:00:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:05:37 --> Starting email processing
+INFO - 2025-01-07 18:05:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:10:37 --> Starting email processing
+INFO - 2025-01-07 18:10:38 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:15:37 --> Starting email processing
+INFO - 2025-01-07 18:15:40 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:20:38 --> Starting email processing
+INFO - 2025-01-07 18:20:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:25:37 --> Starting email processing
+INFO - 2025-01-07 18:25:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:30:37 --> Starting email processing
+INFO - 2025-01-07 18:30:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:35:38 --> Starting email processing
+INFO - 2025-01-07 18:35:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:40:38 --> Starting email processing
+INFO - 2025-01-07 18:40:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:45:37 --> Starting email processing
+INFO - 2025-01-07 18:45:39 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-07 18:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:47:01 --> Starting to fetch complete email thread for message number: 1
+INFO - 2025-01-07 18:47:01 --> Fetching complete thread for message: 1
+INFO - 2025-01-07 18:47:01 --> Found 2 messages in thread
+INFO - 2025-01-07 18:47:01 --> Found 2 messages in complete thread
+INFO - 2025-01-07 18:47:03 --> Email thread processing completed successfully
+INFO - 2025-01-07 18:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:47:03 --> Successfully fetched agents list
+INFO - 2025-01-07 18:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:47:03 --> Successfully fetched macros for tags: 
+INFO - 2025-01-07 18:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 18:47:03 --> Fetching CS tags
+INFO - 2025-01-07 18:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

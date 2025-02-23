@@ -1,0 +1,1268 @@
+CRITICAL - 2024-05-02 06:57:51 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::addnewsubblog(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 06:58:27 --> ErrorException: Array to string conversion
+in APPPATH\Controllers\Blogs.php on line 32.
+ 1 APPPATH\Controllers\Blogs.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'H:\\Xampp\\htdocs\\driphunter\\app\\Controllers\\Blogs.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 06:59:51 --> ErrorException: Array to string conversion
+in APPPATH\Controllers\Blogs.php on line 29.
+ 1 APPPATH\Controllers\Blogs.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'H:\\Xampp\\htdocs\\driphunter\\app\\Controllers\\Blogs.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:03:50 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::insertData
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(35): CodeIgniter\Model->__call('insertData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 07:06:13 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `bl...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bl...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bl...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bl...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\driphunter\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\driphunter\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(21): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData(Array)
+#9 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+#10 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#11 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-05-02 07:06:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`title`, `description`) VALUES (:title:, :description:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\blogs_model.php(21): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:06:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`title`, `description`) VALUES (\'tirle\', \'sample                 \')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`title`, `description`) VALUES (\'tirle\', \'sample                 \')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`title`, `description`) VALUES (:title:, :description:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\blogs_model.php(21): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:06:13 --> [Caused by] mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `blogs` (`title`, `description`) VALUES (\'tirle\', \'sample                 \')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blogs` (`title`, `description`) VALUES (\'tirle\', \'sample                 \')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blogs` (`title`, `description`) VALUES (\'tirle\', \'sample                 \')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blogs` (`title`, `description`) VALUES (:title:, :description:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\blogs_model.php(21): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 07:09:48 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `bl...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bl...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bl...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bl...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData(Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 07:09:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (:title:, :description:, :file:)', [...], false)
+ 2 APPPATH\Models\blogs_model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:09:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (\'adffas\', \'aaerag\\r\\n                                                                    \', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (\'adffas\', \'aaerag\\r\\n                                                                    \', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (:title:, :description:, :file:)', [...], false)
+ 4 APPPATH\Models\blogs_model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:09:48 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (\'adffas\', \'aaerag\\r\\n                                                                    \', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (\'adffas\', \'aaerag\\r\\n                                                                    \', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (\'adffas\', \'aaerag\\r\\n                                                                    \', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `blog_subsection` (`title`, `description`, `file`) VALUES (:title:, :description:, :file:)', [...], false)
+ 5 APPPATH\Models\blogs_model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Blogs.php(35): App\Models\Blogs_model->insertData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewsubblog()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:17:35 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php on line 63
+in SYSTEMPATH\Common.php on line 1166.
+ 1 APPPATH\Controllers\Blogs.php(63): view('blogimgsection_view', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogsubsections('0')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:20:08 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "(:num)"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('blogs/editblogsubsection/(:num)')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('blogs/editblogsubsection/(:num)')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:20:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "(:num)"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('blogs/editblogsubsection/(:num)')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('blogs/editblogsubsection/(:num)')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 07:46:35 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1 in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 07:46:35 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 3 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:46:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET 8 = :8:')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET 8 = :8:')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 5 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:46:35 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET 8 = :8:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET 8 = :8:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET 8 = :8:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 6 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 07:46:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1 in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 07:46:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 3 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:46:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET 8 = :8:')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET 8 = :8:')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 5 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 07:46:42 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '8 = :8:' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET 8 = :8:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET 8 = :8:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET 8 = :8:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET 8 = :8:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update('8')
+ 6 APPPATH\Controllers\Blogs.php(69): App\Models\Blogs_model->editblogsubsection('8')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:11:35 --> ErrorException: Undefined variable $record
+in APPPATH\Views\section_edit_view.php on line 37.
+ 1 APPPATH\Views\section_edit_view.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $record', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 37)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:13:37 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 37.
+ 1 APPPATH\Views\section_edit_view.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 37)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:13:44 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 37.
+ 1 APPPATH\Views\section_edit_view.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 37)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:14:30 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 37.
+ 1 APPPATH\Views\section_edit_view.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 37)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:14:35 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 37.
+ 1 APPPATH\Views\section_edit_view.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 37)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:15:25 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:15:45 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:16:26 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:19:48 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:20:12 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:20:32 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:21:10 --> ErrorException: Undefined variable $blogsection
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogsection', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:24:16 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:24:24 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:24:44 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:24:50 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('9')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:24:55 --> ErrorException: Undefined variable $blog_subsec
+in APPPATH\Views\section_edit_view.php on line 30.
+ 1 APPPATH\Views\section_edit_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog_subsec', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\section_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('section_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(70): view('section_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('9')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:38:46 --> ErrorException: Undefined variable $id
+in APPPATH\Controllers\Blogs.php on line 88.
+ 1 APPPATH\Controllers\Blogs.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'H:\\Xampp\\htdocs\\driphunter\\app\\Controllers\\Blogs.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateblogsubsection('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:39:54 --> ErrorException: Undefined variable $id
+in APPPATH\Controllers\Blogs.php on line 88.
+ 1 APPPATH\Controllers\Blogs.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'H:\\Xampp\\htdocs\\driphunter\\app\\Controllers\\Blogs.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateblogsubsection('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:40:14 --> ErrorException: Undefined variable $bsec_id
+in APPPATH\Controllers\Blogs.php on line 88.
+ 1 APPPATH\Controllers\Blogs.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bsec_id', 'H:\\Xampp\\htdocs\\driphunter\\app\\Controllers\\Blogs.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateblogsubsection('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:54:23 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::editblogsub(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 92.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogsub()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 08:57:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Model->update('8')
+ 5 APPPATH\Controllers\Blogs.php(86): App\Models\Blogs_model->updatesubData('8', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateblogsubsection('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 09:00:29 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Model->update('8')
+ 5 APPPATH\Controllers\Blogs.php(90): App\Models\Blogs_model->updatesubData('8', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateblogsubsection('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:19:45 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 970.
+ 1 SYSTEMPATH\BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Blogs.php(71): CodeIgniter\Model->update('2', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatemyblogdata('2')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:20:05 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::updateblogdata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(71): CodeIgniter\Model->__call('updateblogdata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatemyblogdata('2')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:20:27 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\blogs_model.php(36): CodeIgniter\Model->update('2')
+ 5 APPPATH\Controllers\Blogs.php(71): App\Models\Blogs_model->updateblogdata('2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatemyblogdata('2')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-02 10:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-02 10:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-02 10:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-02 10:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-02 10:36:16 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:37:36 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:38:04 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:38:42 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:43:56 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:44:23 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:44:33 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:44:56 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:45:19 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:45:23 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:46:29 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:46:38 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:49:27 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:49:33 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:49:41 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:51:14 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:51:18 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::deletesection(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesection()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-02 10:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-02 11:09:44 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::updateblogsubsectiondata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(34): CodeIgniter\Model->__call('updateblogsubsectiondata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:11:46 --> mysqli_sql_exception: Illegal parameter data types int and row for operation '=' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `bl...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `bl...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `bl...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `bl...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata(Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:11:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:11:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:11:46 --> [Caused by] mysqli_sql_exception: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:12:48 --> mysqli_sql_exception: Illegal parameter data types int and row for operation '=' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `bl...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `bl...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `bl...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `bl...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata(Array, '12')
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:12:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 3 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...], '12')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:12:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 5 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...], '12')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:12:48 --> [Caused by] mysqli_sql_exception: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = (\'new section \',\'\\r\\n                                                                    \',\'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `blog_subsection`
+WHERE `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->delete([...])
+ 6 APPPATH\Controllers\Blogs.php(34): App\Models\Blogs_model->updateblogsubsectiondata([...], '12')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('12')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:14:22 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(112): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:16:04 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(112): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:16:45 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(112): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:18:05 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(112): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:18:11 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(112): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:19:32 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(92): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:19:39 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(92): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:20:10 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(87): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:20:34 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(87): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:20:46 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(87): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:21:03 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsection
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(87): CodeIgniter\Model->__call('editblogsubsection', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsec('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:22:59 --> mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:22:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:22:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:22:59 --> [Caused by] mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(47): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:23:06 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsec
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(80): CodeIgniter\Model->__call('editblogsubsec', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogsubsections('0')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:23:11 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsec
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(80): CodeIgniter\Model->__call('editblogsubsec', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogsubsections('0')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:23:15 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::editblogsubsec
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(80): CodeIgniter\Model->__call('editblogsubsec', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editblogsubsections('2')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:24:37 --> mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:24:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:24:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:24:37 --> [Caused by] mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:25:47 --> mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:25:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:25:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:25:47 --> [Caused by] mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:26:25 --> mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:26:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:26:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:26:25 --> [Caused by] mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:27:09 --> mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:27:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:27:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:27:09 --> [Caused by] mysqli_sql_exception: Duplicate entry '13' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('13', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:27:23 --> mysqli_sql_exception: Duplicate entry '15' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('15', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('15')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:27:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '15' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('15', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:27:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '15' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'15\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'15\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('15', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:27:23 --> [Caused by] mysqli_sql_exception: Duplicate entry '15' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'15\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'15\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'15\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('15', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 11:46:20 --> mysqli_sql_exception: Duplicate entry '16' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('16', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('16')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 11:46:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '16' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('16', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('16')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:46:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '16' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('16', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('16')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 11:46:20 --> [Caused by] mysqli_sql_exception: Duplicate entry '16' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(109): App\Models\Blogs_model->updateblogsubsectiondata('16', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatesebsectiondata('16')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 13:00:46 --> mysqli_sql_exception: Duplicate entry '17' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 13:00:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:00:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:00:46 --> [Caused by] mysqli_sql_exception: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-02 13:00:54 --> mysqli_sql_exception: Duplicate entry '17' for key 'PRIMARY' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_su...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_su...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_su...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_su...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', Array)
+#6 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+#7 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-02 13:00:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 2 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:00:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 4 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:00:54 --> [Caused by] mysqli_sql_exception: Duplicate entry '17' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_subsection` SET `bsec_id` = \'17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_subsection` SET `bsec_id` = \'17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_subsection` SET `bsec_id` = :bsec_id:', [...], false)
+ 5 APPPATH\Models\blogs_model.php(53): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Blogs.php(75): App\Models\Blogs_model->updateblogsubsectiondata('17', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addblogsubdata('17')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:28:54 --> ErrorException: Undefined variable $post
+in APPPATH\Views\addnewpost_view.php on line 38.
+ 1 APPPATH\Views\addnewpost_view.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewpost_view.php', 38)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewpost_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnewpost_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(95): view('addnewpost_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewpost()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 13:30:31 --> ErrorException: Undefined variable $posts
+in APPPATH\Views\addnewpost_view.php on line 30.
+ 1 APPPATH\Views\addnewpost_view.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewpost_view.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewpost_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnewpost_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(95): view('addnewpost_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewpost()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 16:00:14 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::publishnewstory(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 154.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishnewstory()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 16:01:30 --> ArgumentCountError: Too few arguments to function App\Controllers\Blogs::publishnewstory(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Blogs.php on line 154.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishnewstory()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 16:21:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\blogs_model.php(70): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Blogs.php(185): App\Models\Blogs_model->deletestory('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletemystory('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

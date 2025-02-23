@@ -1,0 +1,259 @@
+INFO - 2024-06-09 06:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:02:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:16:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 07:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 08:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 08:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-09 09:16:39 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 09:17:33 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 09:17:44 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 09:19:17 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 09:19:21 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 09:20:44 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-09 09:20:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "whatsapp_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('whatsapp_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('whatsapp_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(710): view('whatsapp_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->whatsapp()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-09 09:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 10:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-09 12:02:29 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:17:56 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:18:01 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:22:55 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:23:58 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-09 12:36:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 12:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-09 12:40:15 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:40:26 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:40:31 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:40:32 --> [DEPRECATED] http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php on line 53.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php(53): http_build_query([...], null, '&')
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(185): Facebook\Http\RequestBodyUrlEncoded->getBody()
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(204): Facebook\FacebookClient->prepareRequestMessage(Object(Facebook\FacebookRequest))
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 6 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-09 12:40:32 --> ErrorException: Undefined array key 1
+in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php on line 108.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\Http\\GraphRawResponse.php', 108)
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(130): Facebook\Http\GraphRawResponse->setHttpResponseCodeFromHeader('HTTP/2 400 ')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(64): Facebook\Http\GraphRawResponse->setHeadersFromString('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AsoWET33AQ9hDEEPesEQC2S
+x-fb-trace-id: AeA3MmZe/Hg
+x-fb-rev: 1014085198
+x-fb-debug: T7Ok2zkbe0leGmPLpI267b99h5wKV5eklZpsORVRQmnpwMPNNgrj8Zu5nwPRBdTYddkQhmB4OmpzPgx2TEguzw==
+content-length: 152
+date: Sun, 09 Jun 2024 12:40:31 GMT
+proxy-status: http_request_error; e_proxy="AcK92y4tEbv40shiKoXTGjWQr3cUO2sXwVAn_U9ixfkL266agZKAs1Yeu8ZjaXi8wZlEi-TiuceJFZfoFaw"; e_fb_binaryversion="AcJD08UYs5euAwSLhHHjX-PYvwqALLZDas3sha89LWDLRCZTRUfsPtZ8DKMyAhRATWJG3AjVQm73Lu-4kBl2d7QmvALb3_7PfVc"; e_fb_httpversion="AcILJcER3ci1VEOD8GX34ZZTioe8RlSzcvQMP6S8IDd_MHg_LxtjN4_-r8ct"; e_fb_responsebytes="AcLfg0w3JVov2ZMmaKDFej9dsY2Jf4a--3fvEWRVCZTFqqICTgT415_DyOCA"; e_fb_requesttime="AcI8-Fmj_OSBQZSBZbi8iIqjoItIPR2MnVELm1uqoG97pfIy1Zh3nGS4Yn426ZeWRQ3EXCkxbQ"; e_fb_requesthandler="AcJrKeSvPfupYD_FfcTBRya73DytLRvM-6nfZdu__y64qJowQu_eTsNe7v4GcO2jwAuqiwHixVk"; e_fb_hostheader="AcKXebSVYH1Kd5rxVcoUpSosqa8GipzQqT454eJNrmtBolJLoNqhQYBpahnBU03spImS7C7yjlP5C876"; e_fb_requestsequencenumber="AcKOfVN_0iFupKPf13nbe_8hN4IvULGz_mYG-Afx0REetBzE1FGzWk3BqaF_"; e_upip="AcLLW0bq4W6JR5lxJmayM7wEzdYXqzpS5l-cYNcC2Xp43rCSo-lH6fyLP2SMQw8msrRj4DDk91EtXYF-pymm5RKe0SFbo_5L"; e_fb_builduser="AcIuD_HJ3UVB3NWZwvcIUkc1DVi070dAKixCeS60CWFV_Nbpqix8LbIMFQbLA_-WMCM"; e_fb_vipport="AcJx8AeUGU4P0z3lf3MEQzksMIc6Ht-JzuWk0XzkkE-pW7zvsZZO5zBixQjW"; e_clientaddr="AcJq43L-OTdANA7WQXh2YeJyxWb3v8VG8-1wTysja0sIWYYxQy8kC1Ha1zPwrZDBisSV4efxdTUAjGB2OQeebFILtNfITftbAt4tPp_u7Be7fRMc"; e_fb_vipaddr="AcJ5Z8F21vSxGHzeDAeWqhJPb19uyjD2nRUbDHDlhdFZkXBnleQEs1p6o6VpenNT3l2IjmA2GwK3Ra5pOpqP-4XKSKN1AxsF"; e_fb_configversion="AcI_APSIDmoNceUazyO6LcH06ampCdwMuIZl9vXCMY4BygjFQzuKtBFkjq-FAQ", http_request_error; e_proxy="AcJWoQJdkWtQzQDj_FLA8SyXhqEVsTQcHJBQUgxmTtagi9ZJelW3ULdG9Ibm6KCXAGBFLnWxa5vcmNc"; e_fb_binaryversion="AcIKYqXF9-zmSUJ9ApNchaD6_Pl2OSD1sAkxYUftyb-P8cc6b_dAoZCh8ZKY7JWlvYAsveLe2_ukELYN8965Bee-42AfpiKP7-4"; e_fb_httpversion="AcLtQ1ehjK4_96xVjvqK46BaP4cLL0eFpMLtXFC5EVBLHMy7caycFcbu6yY_"; e_fb_responsebytes="AcIPU5mTupJ4BABvah2QG7YX7Ebs0xYQ7DaQmOkpNHP_tCta6W6SpZD-2ZC9"; e_fb_requesttime="AcLZzGXltcyEW2oBPpcRVT6UCRBGSzUvHBI_xwUkLjwP3m5KhtuxWg3OpNtfFQo2nIkx-IGkLg"; e_fb_requesthandler="AcLAl5VrhHBGcjHGf1S45KSYYhftFjzoe8Vi7suzT6yZj9QXKCiXZh4q6LR8jKI9hUkH8ReHuDc"; e_fb_hostheader="AcKHSRFIhh2qBrVbZYEqLZ_VUK_6JCK-3lQ4d0UUCw5iQNmCsDAvcJQAW_URR3M0mIRNfwU99_UeNr9y"; e_fb_requestsequencenumber="AcJ3Q-5tVWyf5QS3G7ihKojh26a9paqbFn2FpEWRFrdkU7l2QJd9yeyc_A"; e_upip="AcKGt6A8Oxy6IfMTHEO4oyo230YoYXAFW1V05171l5HmEIVQmXk6cObvWYiQtKrNvuGZXQempbMdq_u6ayos9Z1-AqM1y6DG"; e_fb_builduser="AcJGM66xYlP9FHwWbi5ko_Tg9ACPqBejD7mzPMpzx4lV6NVHULB9v_J61XGsIkRDlMY"; e_fb_vipport="AcIbGkImqhBk239L1sjOFiHTHDe1hw0gxL5V0cvJvo83D4MhFjrZP3Y_mwg4"; e_clientaddr="AcIS7feJFV1wNJGpZpifJva4fuDiy24u9QMrwS6h6wDSEoSK8XOATA7arBmjRnyPqZ1-PuHUjUhXTO9Z"; e_fb_vipaddr="AcIwvED9c7J9etI5YnpnDoidb19BvG4-ikBn5vvq3EDXbSsoZAfiWGH5lnHxy8VVWo6O26RmKA"; e_fb_configversion="AcI8mPDQY0VNxzx1CSEDYgv7JN2Ixqb3_UtmKakVTiJU01rj8Q-Ub3oyTBsPRg"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=26, rtx=0, c=10, mss=1392, tbw=3557, tp=-1, tpl=-1, uplat=207, ullat=0
+alt-svc: h3=":443"; ma=86400')
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\HttpClients\FacebookCurlHttpClient.php(91): Facebook\Http\GraphRawResponse->__construct('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AsoWET33AQ9hDEEPesEQC2S
+x-fb-trace-id: AeA3MmZe/Hg
+x-fb-rev: 1014085198
+x-fb-debug: T7Ok2zkbe0leGmPLpI267b99h5wKV5eklZpsORVRQmnpwMPNNgrj8Zu5nwPRBdTYddkQhmB4OmpzPgx2TEguzw==
+content-length: 152
+date: Sun, 09 Jun 2024 12:40:31 GMT
+proxy-status: http_request_error; e_proxy="AcK92y4tEbv40shiKoXTGjWQr3cUO2sXwVAn_U9ixfkL266agZKAs1Yeu8ZjaXi8wZlEi-TiuceJFZfoFaw"; e_fb_binaryversion="AcJD08UYs5euAwSLhHHjX-PYvwqALLZDas3sha89LWDLRCZTRUfsPtZ8DKMyAhRATWJG3AjVQm73Lu-4kBl2d7QmvALb3_7PfVc"; e_fb_httpversion="AcILJcER3ci1VEOD8GX34ZZTioe8RlSzcvQMP6S8IDd_MHg_LxtjN4_-r8ct"; e_fb_responsebytes="AcLfg0w3JVov2ZMmaKDFej9dsY2Jf4a--3fvEWRVCZTFqqICTgT415_DyOCA"; e_fb_requesttime="AcI8-Fmj_OSBQZSBZbi8iIqjoItIPR2MnVELm1uqoG97pfIy1Zh3nGS4Yn426ZeWRQ3EXCkxbQ"; e_fb_requesthandler="AcJrKeSvPfupYD_FfcTBRya73DytLRvM-6nfZdu__y64qJowQu_eTsNe7v4GcO2jwAuqiwHixVk"; e_fb_hostheader="AcKXebSVYH1Kd5rxVcoUpSosqa8GipzQqT454eJNrmtBolJLoNqhQYBpahnBU03spImS7C7yjlP5C876"; e_fb_requestsequencenumber="AcKOfVN_0iFupKPf13nbe_8hN4IvULGz_mYG-Afx0REetBzE1FGzWk3BqaF_"; e_upip="AcLLW0bq4W6JR5lxJmayM7wEzdYXqzpS5l-cYNcC2Xp43rCSo-lH6fyLP2SMQw8msrRj4DDk91EtXYF-pymm5RKe0SFbo_5L"; e_fb_builduser="AcIuD_HJ3UVB3NWZwvcIUkc1DVi070dAKixCeS60CWFV_Nbpqix8LbIMFQbLA_-WMCM"; e_fb_vipport="AcJx8AeUGU4P0z3lf3MEQzksMIc6Ht-JzuWk0XzkkE-pW7zvsZZO5zBixQjW"; e_clientaddr="AcJq43L-OTdANA7WQXh2YeJyxWb3v8VG8-1wTysja0sIWYYxQy8kC1Ha1zPwrZDBisSV4efxdTUAjGB2OQeebFILtNfITftbAt4tPp_u7Be7fRMc"; e_fb_vipaddr="AcJ5Z8F21vSxGHzeDAeWqhJPb19uyjD2nRUbDHDlhdFZkXBnleQEs1p6o6VpenNT3l2IjmA2GwK3Ra5pOpqP-4XKSKN1AxsF"; e_fb_configversion="AcI_APSIDmoNceUazyO6LcH06ampCdwMuIZl9vXCMY4BygjFQzuKtBFkjq-FAQ", http_request_error; e_proxy="AcJWoQJdkWtQzQDj_FLA8SyXhqEVsTQcHJBQUgxmTtagi9ZJelW3ULdG9Ibm6KCXAGBFLnWxa5vcmNc"; e_fb_binaryversion="AcIKYqXF9-zmSUJ9ApNchaD6_Pl2OSD1sAkxYUftyb-P8cc6b_dAoZCh8ZKY7JWlvYAsveLe2_ukELYN8965Bee-42AfpiKP7-4"; e_fb_httpversion="AcLtQ1ehjK4_96xVjvqK46BaP4cLL0eFpMLtXFC5EVBLHMy7caycFcbu6yY_"; e_fb_responsebytes="AcIPU5mTupJ4BABvah2QG7YX7Ebs0xYQ7DaQmOkpNHP_tCta6W6SpZD-2ZC9"; e_fb_requesttime="AcLZzGXltcyEW2oBPpcRVT6UCRBGSzUvHBI_xwUkLjwP3m5KhtuxWg3OpNtfFQo2nIkx-IGkLg"; e_fb_requesthandler="AcLAl5VrhHBGcjHGf1S45KSYYhftFjzoe8Vi7suzT6yZj9QXKCiXZh4q6LR8jKI9hUkH8ReHuDc"; e_fb_hostheader="AcKHSRFIhh2qBrVbZYEqLZ_VUK_6JCK-3lQ4d0UUCw5iQNmCsDAvcJQAW_URR3M0mIRNfwU99_UeNr9y"; e_fb_requestsequencenumber="AcJ3Q-5tVWyf5QS3G7ihKojh26a9paqbFn2FpEWRFrdkU7l2QJd9yeyc_A"; e_upip="AcKGt6A8Oxy6IfMTHEO4oyo230YoYXAFW1V05171l5HmEIVQmXk6cObvWYiQtKrNvuGZXQempbMdq_u6ayos9Z1-AqM1y6DG"; e_fb_builduser="AcJGM66xYlP9FHwWbi5ko_Tg9ACPqBejD7mzPMpzx4lV6NVHULB9v_J61XGsIkRDlMY"; e_fb_vipport="AcIbGkImqhBk239L1sjOFiHTHDe1hw0gxL5V0cvJvo83D4MhFjrZP3Y_mwg4"; e_clientaddr="AcIS7feJFV1wNJGpZpifJva4fuDiy24u9QMrwS6h6wDSEoSK8XOATA7arBmjRnyPqZ1-PuHUjUhXTO9Z"; e_fb_vipaddr="AcIwvED9c7J9etI5YnpnDoidb19BvG4-ikBn5vvq3EDXbSsoZAfiWGH5lnHxy8VVWo6O26RmKA"; e_fb_configversion="AcI8mPDQY0VNxzx1CSEDYgv7JN2Ixqb3_UtmKakVTiJU01rj8Q-Ub3oyTBsPRg"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=26, rtx=0, c=10, mss=1392, tbw=3557, tp=-1, tpl=-1, uplat=207, ullat=0
+alt-svc: h3=":443"; ma=86400', '{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace_id":"AsoWET33AQ9hDEEPesEQC2S"}}')
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(216): Facebook\HttpClients\FacebookCurlHttpClient->send('https://graph.facebook.com/v12.0/me/media', 'POST', 'image_url=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F06%2F12%2F00%2F18%2F240_F_612001823_TkzT0xmIgagoDCyQ0yuJYEGu8j6VNVYT.jpg&caption=sample&access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD&appsecret_proof=c30909a35eabc0298ccf71489c55cf6edd36783687a561a1ef52cca3e6321367', [...], 60)
+ 6 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 7 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 8 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:40:35 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-09 12:40:39 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-09 13:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-09 13:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

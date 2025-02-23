@@ -1,0 +1,205 @@
+ERROR - 2024-08-27 09:51:03 --> Error connecting to the database: mysqli_sql_exception: Too many connections in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(184): mysqli->real_connect()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/blogs_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Home->index()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Too many connections in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/seotools/newdriphunter_depoly/app/Models/blogs_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/seotools/newdriphunter_depoly/app/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+#5 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Home->index()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-08-27 09:51:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Too many connections
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/blogs_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-27 17:13:06 --> Error connecting to the database: mysqli_sql_exception: Too many connections in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(184): mysqli->real_connect()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/blogs_model.php(111): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Home->index()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Too many connections in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/seotools/newdriphunter_depoly/app/Models/blogs_model.php(111): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/seotools/newdriphunter_depoly/app/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+#5 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Home->index()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-08-27 17:13:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Too many connections
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/blogs_model.php(111): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Home.php(30): App\Models\Blogs_model->getdripspots()
+ 5 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->index()
+ 6 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:07:23 --> ErrorException: Undefined array key "xs_inventory"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:08:38 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:09:13 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:15:59 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:18:25 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:19:16 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 300.
+ 1 APPPATH/Controllers/Products.php(300): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:23:03 --> ErrorException: Undefined array key "xs"
+in APPPATH/Controllers/Products.php on line 302.
+ 1 APPPATH/Controllers/Products.php(302): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-27 18:31:16 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/Products_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Products.php(298): App\Models\Products_model->getSizesInventory()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-27 18:31:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/Products_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Products.php(298): App\Models\Products_model->getSizesInventory()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:31:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/Products_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Products.php(298): App\Models\Products_model->getSizesInventory()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 18:31:16 --> [Caused by] mysqli_sql_exception: Unknown column 'id' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Products_model.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Products.php(298): App\Models\Products_model->getSizesInventory()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->viewproduct()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 19:17:02 --> ParseError: syntax error, unexpected variable "$routes"
+in APPPATH/Config/Routes.php on line 291.
+ 1 SYSTEMPATH/CodeIgniter.php(811): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 22:16:29 --> ParseError: syntax error, unexpected identifier "address_information", expecting "]"
+in APPPATH/Views/add_to_cart.php on line 26.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Ordermanagement.php(258): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->add_to_cart()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 22:16:47 --> ErrorException: Undefined variable $user
+in APPPATH/Views/add_to_cart.php on line 23.
+ 1 APPPATH/Views/add_to_cart.php(23): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/add_to_cart.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Ordermanagement.php(258): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->add_to_cart()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-27 22:17:12 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH/Views/add_to_cart.php on line 17.
+ 1 APPPATH/Views/add_to_cart.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/add_to_cart.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Ordermanagement.php(258): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Ordermanagement->add_to_cart()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

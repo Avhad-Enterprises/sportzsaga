@@ -1,0 +1,14 @@
+CRITICAL - 2024-05-12 11:29:26 --> Error: Call to a member function getResult() on array
+in APPPATH\Views\carousel_view.php on line 8.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('carousel_view', null, true)
+ 4 APPPATH\Views\explore_homepage.php(11): CodeIgniter\View\View->include('carousel_view')
+ 5 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter2\\app\\Views\\explore_homepage.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('explore_homepage', [], true)
+ 8 APPPATH\Controllers\Home.php(13): view('explore_homepage', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

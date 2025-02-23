@@ -1,0 +1,675 @@
+CRITICAL - 2024-05-24 07:04:37 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 214.
+ 1 APPPATH\Controllers\Products.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 214)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('13')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-24 07:04:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '13 = :13:
+WHERE `product_id` = ('Captain America T-shirt','tshirt','Nike','52...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(48): CodeIgniter\Database\BaseBuilder->update('13')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(230): App\Models\Products_model->updateproductdata(Array, '13')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('13')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-24 07:04:52 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '13 = :13:
+WHERE `product_id` = ('Captain America T-shirt','tshirt','Nike','52...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\products_model.php(48): CodeIgniter\Database\BaseBuilder->update('13')
+ 3 APPPATH\Controllers\Products.php(230): App\Models\Products_model->updateproductdata([...], '13')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('13')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 07:04:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '13 = :13:
+WHERE `product_id` = ('Captain America T-shirt','tshirt','Nike','52...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = (\'Captain America T-shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'images.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'123456\',\'2024-05-22\',\'no\',\'aqww\',\'tag1,captain\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = (\'Captain America T-shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'images.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'123456\',\'2024-05-22\',\'no\',\'aqww\',\'tag1,captain\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\products_model.php(48): CodeIgniter\Database\BaseBuilder->update('13')
+ 5 APPPATH\Controllers\Products.php(230): App\Models\Products_model->updateproductdata([...], '13')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('13')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 07:04:52 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '13 = :13:
+WHERE `product_id` = ('Captain America T-shirt','tshirt','Nike','52...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = (\'Captain America T-shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'images.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'123456\',\'2024-05-22\',\'no\',\'aqww\',\'tag1,captain\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = (\'Captain America T-shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'images.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'123456\',\'2024-05-22\',\'no\',\'aqww\',\'tag1,captain\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = (\'Captain America T-shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'images.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'123456\',\'2024-05-22\',\'no\',\'aqww\',\'tag1,captain\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 13 = :13:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\products_model.php(48): CodeIgniter\Database\BaseBuilder->update('13')
+ 6 APPPATH\Controllers\Products.php(230): App\Models\Products_model->updateproductdata([...], '13')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('13')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 07:38:13 --> ErrorException: Undefined variable $40
+in APPPATH\Controllers\Ordermanagement.php on line 32.
+ 1 APPPATH\Controllers\Ordermanagement.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $40', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Ordermanagement.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 07:43:43 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "public/ordermanagement" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 62.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(62): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('public/ordermanagement')
+ 2 SYSTEMPATH\Common.php(864): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Ordermanagement.php(52): redirect('public/ordermanagement')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->publishorder()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 07:49:20 --> ErrorException: Undefined array key "products"
+in APPPATH\Views\ordermanagement_view.php on line 164.
+ 1 APPPATH\Views\ordermanagement_view.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "products"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\ordermanagement_view.php', 164)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\ordermanagement_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('ordermanagement_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(16): view('ordermanagement_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:30:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_order_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_order_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 3 APPPATH\Controllers\Ordermanagement.php(59): view('edit_order_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:30:43 --> ErrorException: Undefined variable $order
+in APPPATH\Views\edit_order_view.php on line 112.
+ 1 APPPATH\Views\edit_order_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $order', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(59): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:31:37 --> ErrorException: Undefined variable $users
+in APPPATH\Views\edit_order_view.php on line 119.
+ 1 APPPATH\Views\edit_order_view.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php', 119)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(59): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:31:55 --> ErrorException: Undefined array key "product"
+in APPPATH\Views\edit_order_view.php on line 144.
+ 1 APPPATH\Views\edit_order_view.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php', 144)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(63): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:32:07 --> ErrorException: Undefined array key "product"
+in APPPATH\Views\edit_order_view.php on line 144.
+ 1 APPPATH\Views\edit_order_view.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php', 144)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(63): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:33:53 --> ErrorException: Undefined variable $orders
+in APPPATH\Views\edit_order_view.php on line 112.
+ 1 APPPATH\Views\edit_order_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orders', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_order_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 5 APPPATH\Controllers\Ordermanagement.php(65): view('edit_order_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:34:20 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(65): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:34:51 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 120.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(65): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:39:33 --> ErrorException: Undefined array key "order"
+in APPPATH\Controllers\Ordermanagement.php on line 66.
+ 1 APPPATH\Controllers\Ordermanagement.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "order"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Ordermanagement.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:39:40 --> ErrorException: Undefined array key "order"
+in APPPATH\Controllers\Ordermanagement.php on line 66.
+ 1 APPPATH\Controllers\Ordermanagement.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "order"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Ordermanagement.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:40:44 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 120.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:42:06 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:42:09 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:43:21 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:52:34 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000005')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:54:06 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(72): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('00000006')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 12:24:12 --> ErrorException: Undefined variable $post
+in APPPATH\Views\login.php on line 53.
+ 1 APPPATH\Views\login.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php', 53)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('login', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 12:38:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "blogsubsection_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('blogsubsection_view.php')
+ 2 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('blogsubsection_view', null, true)
+ 3 APPPATH\Views\login.php(44): CodeIgniter\View\View->include('blogsubsection_view')
+ 4 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 7 APPPATH\Controllers\Home.php(13): view('login', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 13:09:02 --> ErrorException: Undefined array key "image"
+in APPPATH\Views\carousel_sub_view.php on line 7.
+ 1 APPPATH\Views\carousel_sub_view.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_sub_view.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_sub_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('carousel_sub_view', null, true)
+ 5 APPPATH\Views\login.php(44): CodeIgniter\View\View->include('carousel_sub_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(13): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 13:10:13 --> ErrorException: Undefined array key "date_of_upload"
+in APPPATH\Views\carousel_sub_view.php on line 20.
+ 1 APPPATH\Views\carousel_sub_view.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "date_of_upload"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_sub_view.php', 20)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_sub_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('carousel_sub_view', null, true)
+ 5 APPPATH\Views\login.php(44): CodeIgniter\View\View->include('carousel_sub_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(13): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-24 13:22:26 --> mysqli_sql_exception: Unknown column 'date_of_upload' in 'order clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(3, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\home_model.php(20): CodeIgniter\BaseModel->findAll(3)
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Home.php(12): App\Models\Home_model->getposts(3)
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Home->index()
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-24 13:22:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(3, 0)
+ 4 APPPATH\Models\home_model.php(20): CodeIgniter\BaseModel->findAll(3)
+ 5 APPPATH\Controllers\Home.php(12): App\Models\Home_model->getposts(3)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 13:22:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(3, 0)
+ 6 APPPATH\Models\home_model.php(20): CodeIgniter\BaseModel->findAll(3)
+ 7 APPPATH\Controllers\Home.php(12): App\Models\Home_model->getposts(3)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 13:22:26 --> [Caused by] mysqli_sql_exception: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(3, 0)
+ 7 APPPATH\Models\home_model.php(20): CodeIgniter\BaseModel->findAll(3)
+ 8 APPPATH\Controllers\Home.php(12): App\Models\Home_model->getposts(3)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 14:09:57 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\story_view.php on line 6.
+ 1 APPPATH\Views\story_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('story_view', null, true)
+ 5 APPPATH\Views\login.php(49): CodeIgniter\View\View->include('story_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(16): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 14:10:28 --> ErrorException: Undefined array key "main_story_content	"
+in APPPATH\Views\story_view.php on line 10.
+ 1 APPPATH\Views\story_view.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "main_story_content	"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php', 10)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('story_view', null, true)
+ 5 APPPATH\Views\login.php(49): CodeIgniter\View\View->include('story_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(16): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 14:18:44 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 380.
+ 1 APPPATH\Controllers\Blogs.php(380): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 380)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 14:18:53 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 380.
+ 1 APPPATH\Controllers\Blogs.php(380): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 380)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 15:47:40 --> ErrorException: Undefined array key "main_story_content"
+in APPPATH\Views\dripspot.php on line 8.
+ 1 APPPATH\Views\dripspot.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "main_story_content"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php', 8)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 5 APPPATH\Views\login.php(53): CodeIgniter\View\View->include('dripspot')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(19): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 15:48:48 --> ErrorException: Undefined array key "main_story_content"
+in APPPATH\Views\dripspot.php on line 8.
+ 1 APPPATH\Views\dripspot.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "main_story_content"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php', 8)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 5 APPPATH\Views\login.php(53): CodeIgniter\View\View->include('dripspot')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(19): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 15:49:25 --> ErrorException: Undefined array key "main_story_content"
+in APPPATH\Views\dripspot.php on line 8.
+ 1 APPPATH\Views\dripspot.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "main_story_content"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php', 8)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 5 APPPATH\Views\login.php(53): CodeIgniter\View\View->include('dripspot')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(19): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 15:51:40 --> ErrorException: Undefined array key "main_story_content"
+in APPPATH\Views\dripspot.php on line 7.
+ 1 APPPATH\Views\dripspot.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "main_story_content"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 5 APPPATH\Views\login.php(53): CodeIgniter\View\View->include('dripspot')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(19): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 15:59:37 --> ErrorException: Undefined array key "blog_title"
+in APPPATH\Views\carousel_view.php on line 6.
+ 1 APPPATH\Views\carousel_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\carousel_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('carousel_view', null, true)
+ 5 APPPATH\Views\login.php(38): CodeIgniter\View\View->include('carousel_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(19): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:08:08 --> ErrorException: Undefined array key "name_of_the_celeb	"
+in APPPATH\Views\dripspot.php on line 70.
+ 1 APPPATH\Views\dripspot.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name_of_the_celeb	"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php', 70)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\dripspot.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('dripspot', null, true)
+ 5 APPPATH\Views\login.php(53): CodeIgniter\View\View->include('dripspot')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 9 APPPATH\Controllers\Home.php(21): view('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-24 16:13:31 --> mysqli_sql_exception: Unknown column 'date_of_upload' in 'order clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Home->index()
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-24 16:13:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 4 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 5 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:13:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 6 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 7 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:13:31 --> [Caused by] mysqli_sql_exception: Unknown column 'date_of_upload' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `date_of_upload` DESC
+ LIMIT 4', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 7 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 8 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-24 16:13:57 --> mysqli_sql_exception: Unknown column 'id' in 'order clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+#6 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+#7 H:\Xampp\htdocs\newdriphunter\app\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Home->index()
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-24 16:13:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 4 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 5 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:13:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 6 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 7 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:13:57 --> [Caused by] mysqli_sql_exception: Unknown column 'id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `id` DESC
+ LIMIT 4', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(4, 0)
+ 7 APPPATH\Models\blogs_model.php(21): CodeIgniter\BaseModel->findAll(4)
+ 8 APPPATH\Controllers\Home.php(14): App\Models\Blogs_model->getdrips(4)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 16:16:30 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::getdrips
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Home.php(14): CodeIgniter\Model->__call('getdrips', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

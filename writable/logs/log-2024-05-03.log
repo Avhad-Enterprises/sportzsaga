@@ -1,0 +1,341 @@
+CRITICAL - 2024-05-03 07:04:02 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::getediablestorydata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(185): CodeIgniter\Model->__call('getediablestorydata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-03 07:04:48 --> mysqli_sql_exception: Unknown column 'stories' in 'where clause' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\driphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(75): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(185): App\Models\Blogs_model->getediablestorydata('4')
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+#9 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-03 07:04:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'stories' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `stories` = :stories:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\blogs_model.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Blogs.php(185): App\Models\Blogs_model->getediablestorydata('4')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 07:04:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'stories' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `stories` = \'4\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `stories` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `stories` = :stories:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\blogs_model.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Blogs.php(185): App\Models\Blogs_model->getediablestorydata('4')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 07:04:48 --> [Caused by] mysqli_sql_exception: Unknown column 'stories' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+WHERE `stories` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `stories` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `stories` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `stories` = :stories:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\blogs_model.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Blogs.php(185): App\Models\Blogs_model->getediablestorydata('4')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 07:05:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "editmystory_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('editmystory_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editmystory_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(186): view('editmystory_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 07:19:16 --> ErrorException: Undefined variable $stories
+in APPPATH\Views\editmystory_view.php on line 31.
+ 1 APPPATH\Views\editmystory_view.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $stories', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\editmystory_view.php', 31)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\editmystory_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editmystory_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(186): view('editmystory_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 07:19:43 --> ErrorException: Undefined variable $stories
+in APPPATH\Views\editmystory_view.php on line 31.
+ 1 APPPATH\Views\editmystory_view.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $stories', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\editmystory_view.php', 31)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\editmystory_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editmystory_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(186): view('editmystory_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmystory('4')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:08:53 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '1')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:09:08 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '8')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('8')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('8')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:12:29 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '8')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('8')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('8')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:12:35 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '1')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:14:25 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '1')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:14:32 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH\Views\dripspot_edit_view.php on line 29.
+ 1 APPPATH\Views\dripspot_edit_view.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\dripspot_edit_view.php', 29)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\dripspot_edit_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_edit_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(206): view('dripspot_edit_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-03 08:15:11 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\driphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\driphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\driphunter\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\driphunter\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\driphunter\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php(91): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+#8 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+#9 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#10 H:\Xampp\htdocs\driphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\driphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-03 08:15:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `id` = :id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\blogs_model.php(91): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:15:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `id` = :id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\blogs_model.php(91): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:15:11 --> [Caused by] mysqli_sql_exception: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `blogs`
+WHERE `id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+WHERE `id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+WHERE `id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+WHERE `id` = :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\blogs_model.php(91): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:18:37 --> ParseError: syntax error, unexpected token "}", expecting ";"
+in APPPATH\Models\blogs_model.php on line 93.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\driphunter\\app\\Models\\Blogs_model.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Blogs_model')
+ 3 APPPATH\Controllers\Blogs.php(204): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Blogs_model')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:18:53 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::getResultArray()
+in APPPATH\Models\blogs_model.php on line 91.
+ 1 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:24:38 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '1')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:25:42 --> TypeError: CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in H:\Xampp\htdocs\driphunter\app\Models\blogs_model.php on line 91
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 APPPATH\Models\blogs_model.php(91): CodeIgniter\Database\BaseBuilder->get('id', '1')
+ 2 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:33:13 --> ArgumentCountError: Too few arguments to function App\Models\Blogs_model::editdripmodel(), 1 passed in H:\Xampp\htdocs\driphunter\app\Controllers\Blogs.php on line 205 and exactly 2 expected
+in APPPATH\Models\blogs_model.php on line 89.
+ 1 APPPATH\Controllers\Blogs.php(205): App\Models\Blogs_model->editdripmodel('1')
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('1')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:44:08 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\dripspot_edit_view.php on line 30.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_edit_view', [], true)
+ 4 APPPATH\Controllers\Blogs.php(206): view('dripspot_edit_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('9')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 08:45:28 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\dripspot_edit_view.php on line 30.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dripspot_edit_view', [], true)
+ 4 APPPATH\Controllers\Blogs.php(206): view('dripspot_edit_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editdripspot('9')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 10:56:47 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::publishmynewdripspot
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(255): CodeIgniter\Model->__call('publishmynewdripspot', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishdripspot('1')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 11:04:14 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::deletedripspot
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(264): CodeIgniter\Model->__call('deletedripspot', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletedripspot('1')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 11:04:50 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::deletedripspotmodel
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(264): CodeIgniter\Model->__call('deletedripspotmodel', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletedripspot('1')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-03 11:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-03 11:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-03 11:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-03 11:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-03 11:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-03 13:34:29 --> ErrorException: Undefined variable $drips
+in APPPATH\Views\addnewdripspot_view.php on line 28.
+ 1 APPPATH\Views\addnewdripspot_view.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $drips', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewdripspot_view.php', 28)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewdripspot_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnewdripspot_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(270): view('addnewdripspot_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewdripspot()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 13:37:07 --> ErrorException: Undefined variable $dripspot
+in APPPATH\Views\addnewdripspot_view.php on line 27.
+ 1 APPPATH\Views\addnewdripspot_view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dripspot', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewdripspot_view.php', 27)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\addnewdripspot_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnewdripspot_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(270): view('addnewdripspot_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->addnewdripspot()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-03 14:11:40 --> BadMethodCallException: Call to undefined method App\Models\Blogs_model::publishdripspot
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Blogs.php(320): CodeIgniter\Model->__call('publishdripspot', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishnewdripspot()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

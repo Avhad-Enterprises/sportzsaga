@@ -1,0 +1,152 @@
+CRITICAL - 2024-04-13 07:24:39 --> ErrorException: Undefined variable $user
+in APPPATH\Views\users_view.php on line 78.
+ 1 APPPATH\Views\users_view.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 78)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 08:23:54 --> ErrorException: Undefined variable $userId
+in APPPATH\Views\users_view.php on line 82.
+ 1 APPPATH\Views\users_view.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userId', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 82)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 08:24:15 --> ErrorException: Undefined variable $userId
+in APPPATH\Views\users_view.php on line 82.
+ 1 APPPATH\Views\users_view.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userId', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 82)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 08:24:41 --> ErrorException: Undefined variable $userId
+in APPPATH\Views\users_view.php on line 82.
+ 1 APPPATH\Views\users_view.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userId', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 82)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 08:35:21 --> ErrorException: Undefined variable $row
+in APPPATH\Views\users_view.php on line 78.
+ 1 APPPATH\Views\users_view.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 78)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Users.php(12): view('users_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:14:13 --> ArgumentCountError: Too few arguments to function App\Controllers\Delete::index(), 0 passed in H:\Xampp\htdocs\driphunter\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\Delete.php on line 8.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:36:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "users.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users', [], true)
+ 3 APPPATH\Controllers\Delete.php(12): view('users')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:36:42 --> ErrorException: Undefined variable $records
+in APPPATH\Views\users_view.php on line 74.
+ 1 APPPATH\Views\users_view.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Delete.php(12): view('users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:37:10 --> ErrorException: Undefined variable $records
+in APPPATH\Views\users_view.php on line 74.
+ 1 APPPATH\Views\users_view.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Delete.php(12): view('users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:38:15 --> ErrorException: Undefined variable $records
+in APPPATH\Views\users_view.php on line 74.
+ 1 APPPATH\Views\users_view.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Delete.php(12): view('users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:38:20 --> ErrorException: Undefined variable $records
+in APPPATH\Views\users_view.php on line 74.
+ 1 APPPATH\Views\users_view.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Delete.php(12): view('users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:41:11 --> ErrorException: Undefined variable $records
+in APPPATH\Views\users_view.php on line 74.
+ 1 APPPATH\Views\users_view.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $records', 'H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\driphunter\\app\\Views\\users_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('users_view', [], true)
+ 5 APPPATH\Controllers\Delete.php(12): view('users_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Delete->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Delete))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 11:51:47 --> ErrorException: Cannot redeclare App\Controllers\Users::index()
+in APPPATH\Controllers\Delete.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-13 11:52:48 --> ErrorException: Cannot redeclare App\Controllers\Users::index()
+in APPPATH\Controllers\Delete.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-13 12:25:27 --> Error: Call to a member function model() on null
+in APPPATH\Models\userslist_model.php on line 17.
+ 1 APPPATH\Controllers\Users.php(11): App\Models\Userslist_model->getuserslist()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 12:25:47 --> Error: Call to a member function model() on null
+in APPPATH\Models\userslist_model.php on line 17.
+ 1 APPPATH\Controllers\Users.php(11): App\Models\Userslist_model->getuserslist()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 12:25:51 --> Error: Call to a member function model() on null
+in APPPATH\Models\userslist_model.php on line 17.
+ 1 APPPATH\Controllers\Users.php(11): App\Models\Userslist_model->getuserslist()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->index()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

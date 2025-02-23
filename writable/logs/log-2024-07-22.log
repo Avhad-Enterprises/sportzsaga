@@ -1,0 +1,84 @@
+CRITICAL - 2024-07-22 06:26:52 --> ParseError: syntax error, unexpected token "{", expecting "("
+in APPPATH/Controllers/Home.php on line 188.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:30:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "more_celeb_view.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(193): view()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:36:06 --> ErrorException: Undefined variable $dripspot
+in APPPATH/Views/more_celeb_view.php on line 14.
+ 1 APPPATH/Views/more_celeb_view.php(14): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/more_celeb_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(193): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:36:33 --> Error: Call to a member function paginate() on array
+in APPPATH/Controllers/Home.php on line 196.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:43:21 --> Error: Call to a member function paginate() on array
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:54:40 --> Error: Call to a member function paginate() on array
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 06:55:58 --> Error: Call to a member function paginate() on array
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 07:04:14 --> Error: Class "App\Controllers\dripspot_model" not found
+in APPPATH/Controllers/Home.php on line 194.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 07:04:59 --> Error: Class "App\Models\dripspot_model" not found
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 07:05:31 --> Error: Class "App\Models\dripspot_model" not found
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 07:06:20 --> Error: Class "App\Models\dripspot_model" not found
+in APPPATH/Controllers/Home.php on line 195.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-22 07:07:42 --> BadMethodCallException: Call to undefined method App\Models\Dripspot_model::getdripspotsdata
+in SYSTEMPATH/Model.php on line 879.
+ 1 APPPATH/Controllers/Home.php(196): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Home->dripspot()
+ 3 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

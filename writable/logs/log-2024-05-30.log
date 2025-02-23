@@ -1,0 +1,266 @@
+INFO - 2024-05-30 06:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 06:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 06:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 07:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 07:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 07:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 07:48:45 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 381.
+ 1 APPPATH\Controllers\Blogs.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:50:20 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 379.
+ 1 APPPATH\Controllers\Blogs.php(379): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 379)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:51:22 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 381.
+ 1 APPPATH\Controllers\Blogs.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:52:09 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 383.
+ 1 APPPATH\Controllers\Blogs.php(383): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 383)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:53:25 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 381.
+ 1 APPPATH\Controllers\Blogs.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:53:34 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 387.
+ 1 APPPATH\Controllers\Blogs.php(387): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 387)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:53:53 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 387.
+ 1 APPPATH\Controllers\Blogs.php(387): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 387)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:54:52 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 387.
+ 1 APPPATH\Controllers\Blogs.php(387): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 387)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('41')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:55:54 --> ErrorException: Undefined variable $newcontent
+in APPPATH\Controllers\Blogs.php on line 381.
+ 1 APPPATH\Controllers\Blogs.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('41')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 07:58:20 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 379.
+ 1 APPPATH\Controllers\Blogs.php(379): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 379)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('41')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 08:01:55 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 379.
+ 1 APPPATH\Controllers\Blogs.php(379): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 379)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updatestory('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 08:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 08:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:26:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 09:32:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "termsandconditions.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('termsandconditions.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('termsandconditions', [], true)
+ 3 APPPATH\Controllers\Home.php(40): view('termsandconditions')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->termsandconditions()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 09:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:50:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 09:58:31 --> BadMethodCallException: Call to undefined method App\Models\Brands_model::getStory
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Home.php(119): CodeIgniter\Model->__call('getStory', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->getStory('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 10:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:24:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 13:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-30 15:39:05 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Kumar`, `surmai` `jain`.`jpeg`)
+VALUES ('0000-00-00','Akshay Kumar','surmai ...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `dr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `dr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `dr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dr...', NULL, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 H:\Xampp\htdocs\newdriphunter\app\Models\blogs_model.php(95): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 H:\Xampp\htdocs\newdriphunter\app\Controllers\Blogs.php(537): App\Models\Blogs_model->insertdripexcwldata(Array)
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Blogs->dripdataimport()
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-05-30 15:39:05 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Kumar`, `surmai` `jain`.`jpeg`)
+VALUES ('0000-00-00','Akshay Kumar','surmai ...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')', null, false)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 3 APPPATH\Models\blogs_model.php(95): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 4 APPPATH\Controllers\Blogs.php(537): App\Models\Blogs_model->insertdripexcwldata([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripdataimport()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 15:39:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Kumar`, `surmai` `jain`.`jpeg`)
+VALUES ('0000-00-00','Akshay Kumar','surmai ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')', null, false)
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 5 APPPATH\Models\blogs_model.php(95): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 6 APPPATH\Controllers\Blogs.php(537): App\Models\Blogs_model->insertdripexcwldata([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripdataimport()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 15:39:05 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`Kumar`, `surmai` `jain`.`jpeg`)
+VALUES ('0000-00-00','Akshay Kumar','surmai ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1803): CodeIgniter\Database\BaseConnection->query('INSERT INTO `dripspot` (`0000-00-00`, `Akshay` `Kumar`, `surmai` `jain`.`jpeg`)
+VALUES (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\'), (\'0000-00-00\',\'Akshay Kumar\',\'surmai jain.jpeg\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2192): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Models\blogs_model.php(95): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 APPPATH\Controllers\Blogs.php(537): App\Models\Blogs_model->insertdripexcwldata([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->dripdataimport()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 15:45:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:47:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 15:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 16:19:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

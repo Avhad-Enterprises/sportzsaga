@@ -1,0 +1,870 @@
+CRITICAL - 2024-05-22 08:36:53 --> ErrorException: Undefined variable $newimage3
+in APPPATH\Controllers\Products.php on line 146.
+ 1 APPPATH\Controllers\Products.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage3', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 146)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 08:38:21 --> ErrorException: Undefined variable $newimage3
+in APPPATH\Controllers\Products.php on line 146.
+ 1 APPPATH\Controllers\Products.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage3', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 146)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 08:38:42 --> ErrorException: Undefined variable $newimage3
+in APPPATH\Controllers\Products.php on line 146.
+ 1 APPPATH\Controllers\Products.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage3', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 146)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:01:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(663): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(236): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Exporttoexcel.php(15): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Exporttoexcel->index()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Exporttoexcel))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:47:20 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 195.
+ 1 APPPATH\Controllers\Products.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 195)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:47:35 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:47:35 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:47:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:47:35 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:50:08 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 178.
+ 1 APPPATH\Controllers\Products.php(178): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 178)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:53:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:53:09 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:53:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:53:09 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:57:15 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:57:15 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:57:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:57:15 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:57:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:57:58 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:57:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:57:58 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:58:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:58:40 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:58:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:58:40 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('The Modern Soul Avenger Men Hoodie Printed S...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'The Modern Soul Avenger Men Hoodie Printed Sweatshirt\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 09:59:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('Avenger Men Hoodie','Avenger Men Hoodie','Th...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(211): App\Models\Products_model->updateproductdata(Array, '15')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-22 09:59:52 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('Avenger Men Hoodie','Avenger Men Hoodie','Th...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 3 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:59:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('Avenger Men Hoodie','Avenger Men Hoodie','Th...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'Avenger Men Hoodie\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'Avenger Men Hoodie\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 5 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 09:59:52 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '15 = :15:
+WHERE `product_id` = ('Avenger Men Hoodie','Avenger Men Hoodie','Th...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'Avenger Men Hoodie\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'Avenger Men Hoodie\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = (\'Avenger Men Hoodie\',\'Avenger Men Hoodie\',\'The Modern Soul\',\'123456\',\'Fabric: Polyester Blend\\r\\nPattern: Hooded Sweatshirt Hoodie | Style: Printed Hoodie\\r\\nPocket: Front Pocket\\r\\nThese Hoodies for men are warn and comfortable\\r\\nAge Range Description: Adult; Closure Type: Pull On; Size Name: Xl\',\'Active\',\'399\',\'399\',\'399\',\'123456\',\'100\',\'Sweatshirt\',\'Nike\',\'100\',\'images-2.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'avenger-men-hoodie\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'avenger,hoodie,Sweatshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 15 = :15:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('15')
+ 6 APPPATH\Controllers\Products.php(211): App\Models\Products_model->updateproductdata([...], '15')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('15')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 10:47:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_collections_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_collections_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 3 APPPATH\Controllers\Products.php(242): view('edit_collections_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editcollection('2')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 10:48:37 --> ErrorException: Undefined variable $collection
+in APPPATH\Views\edit_collections_view.php on line 112.
+ 1 APPPATH\Views\edit_collections_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $collection', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(242): view('edit_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editcollection('2')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 10:50:36 --> ErrorException: Undefined array key ""
+in APPPATH\Views\edit_collections_view.php on line 117.
+ 1 APPPATH\Views\edit_collections_view.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php', 117)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(242): view('edit_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editcollection('2')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 10:54:13 --> ErrorException: Undefined array key ""
+in APPPATH\Views\edit_collections_view.php on line 137.
+ 1 APPPATH\Views\edit_collections_view.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php', 137)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(242): view('edit_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editcollection('2')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 10:54:31 --> ErrorException: Undefined array key ""
+in APPPATH\Views\edit_collections_view.php on line 137.
+ 1 APPPATH\Views\edit_collections_view.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php', 137)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(242): view('edit_collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editcollection('2')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 11:29:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "ordermanagement_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ordermanagement_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('ordermanagement_view', [], true)
+ 3 APPPATH\Controllers\Ordermanagement.php(14): view('ordermanagement_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 11:50:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_order_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_order_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_order_view', [], true)
+ 3 APPPATH\Controllers\Ordermanagement.php(19): view('add_order_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->addneworder()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 12:21:04 --> ErrorException: Undefined variable $brands
+in APPPATH\Views\addnew_products_view.php on line 133.
+ 1 APPPATH\Views\addnew_products_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brands', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 133)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(68): view('addnew_products_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 12:21:38 --> ErrorException: Undefined variable $brands
+in APPPATH\Views\addnew_products_view.php on line 133.
+ 1 APPPATH\Views\addnew_products_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brands', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 133)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(68): view('addnew_products_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 12:23:47 --> ErrorException: Undefined variable $updatelogoename
+in APPPATH\Controllers\Brands.php on line 73.
+ 1 APPPATH\Controllers\Brands.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updatelogoename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 73)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->updatetedbrand('9')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 13:40:35 --> ErrorException: Undefined array key "tier_value"
+in APPPATH\Views\addnew_products_view.php on line 337.
+ 1 APPPATH\Views\addnew_products_view.php(337): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_value"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 337)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 13:42:04 --> ErrorException: Undefined array key "tier_value"
+in APPPATH\Views\addnew_products_view.php on line 337.
+ 1 APPPATH\Views\addnew_products_view.php(337): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_value"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 337)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 13:42:35 --> ErrorException: Undefined array key "tier_value"
+in APPPATH\Views\addnew_products_view.php on line 337.
+ 1 APPPATH\Views\addnew_products_view.php(337): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_value"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 337)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 13:42:57 --> ErrorException: Undefined array key "tier_value"
+in APPPATH\Views\addnew_products_view.php on line 337.
+ 1 APPPATH\Views\addnew_products_view.php(337): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_value"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 337)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:00:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "tier1_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tier1_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier1_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(159): view('tier1_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier1()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:01:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "tier1_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tier1_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier1_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(159): view('tier1_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier1()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:04:21 --> ErrorException: Undefined array key "tier-name	"
+in APPPATH\Views\tier1_view.php on line 159.
+ 1 APPPATH\Views\tier1_view.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier-name	"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier1_view.php', 159)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier1_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier1_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(159): view('tier1_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier1()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:06:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_tier1_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_tier1_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_tier1_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(164): view('add_tier1_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier1()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:06:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_tier1_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_tier1_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_tier1_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(164): view('add_tier1_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier1()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:41:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "tier2_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tier2_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier2_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(185): view('tier2_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier2()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 15:45:52 --> mysqli_sql_exception: Column 'tier_value' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ti...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\newdriphunter\app\Models\tier2_model.php(21): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model(Array)
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#11 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-05-22 15:45:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:45:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:45:52 --> [Caused by] mysqli_sql_exception: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:46:03 --> ErrorException: Undefined array key "tier-name"
+in APPPATH\Views\tier2_view.php on line 159.
+ 1 APPPATH\Views\tier2_view.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier-name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier2_view.php', 159)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier2_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier2_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(185): view('tier2_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier2()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:46:08 --> ErrorException: Undefined array key "tier-name"
+in APPPATH\Views\tier2_view.php on line 159.
+ 1 APPPATH\Views\tier2_view.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier-name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier2_view.php', 159)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier2_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier2_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(185): view('tier2_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier2()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-22 15:46:28 --> mysqli_sql_exception: Column 'tier_value' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ti...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 H:\Xampp\htdocs\newdriphunter\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 H:\Xampp\htdocs\newdriphunter\app\Models\tier2_model.php(21): CodeIgniter\Model->insert(Array)
+#8 H:\Xampp\htdocs\newdriphunter\app\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model(Array)
+#9 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+#10 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+#11 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-05-22 15:46:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:46:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:46:28 --> [Caused by] mysqli_sql_exception: Column 'tier_value' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tier_2` (`tier_value`) VALUES (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tier_2` (`tier_value`) VALUES (:tier_value:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\tier2_model.php(21): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Brands.php(197): App\Models\Tier2_model->publishtier2model([...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:47:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_tier2_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_tier2_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_tier2_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(190): view('add_tier2_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier2()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:52:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "tier3_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tier3_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier3_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(211): view('tier3_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier3()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:53:26 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\tier3_view.php on line 159.
+ 1 APPPATH\Views\tier3_view.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier3_view.php', 159)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\tier3_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier3_view', [], true)
+ 5 APPPATH\Controllers\Brands.php(211): view('tier3_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier3()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:55:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_tier3_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_tier3_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_tier3_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(216): view('add_tier3_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier3()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 15:59:04 --> BadMethodCallException: Call to undefined method App\Models\tier3_model::publishtier3model
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Brands.php(228): CodeIgniter\Model->__call('publishtier3model', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishtier3()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:01:39 --> ErrorException: Array to string conversion
+in APPPATH\Controllers\Brands.php on line 228.
+ 1 APPPATH\Controllers\Brands.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 228)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishtier3()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:06:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "tier4_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tier4_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('tier4_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(239): view('tier4_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->tier4()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:07:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "add_tier4_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('add_tier4_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('add_tier4_view', [], true)
+ 3 APPPATH\Controllers\Brands.php(244): view('add_tier4_view')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->addtier4()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:10:08 --> ErrorException: Undefined array key "tier-name"
+in APPPATH\Views\addnew_products_view.php on line 326.
+ 1 APPPATH\Views\addnew_products_view.php(326): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier-name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 326)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:10:14 --> ErrorException: Undefined array key "tier-name"
+in APPPATH\Views\addnew_products_view.php on line 326.
+ 1 APPPATH\Views\addnew_products_view.php(326): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier-name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 326)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:10:58 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\addnew_products_view.php on line 315.
+ 1 APPPATH\Views\addnew_products_view.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 315)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:11:14 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\addnew_products_view.php on line 315.
+ 1 APPPATH\Views\addnew_products_view.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 315)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:11:53 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\addnew_products_view.php on line 315.
+ 1 APPPATH\Views\addnew_products_view.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 315)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:12:15 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\addnew_products_view.php on line 315.
+ 1 APPPATH\Views\addnew_products_view.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 315)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 16:13:06 --> ErrorException: Undefined array key "tier_name"
+in APPPATH\Views\addnew_products_view.php on line 315.
+ 1 APPPATH\Views\addnew_products_view.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tier_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php', 315)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(80): view('addnew_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

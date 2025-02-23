@@ -1,0 +1,1290 @@
+CRITICAL - 2024-05-21 07:04:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "edit_products_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_products_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 3 APPPATH\Controllers\Products.php(87): view('edit_products_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 07:08:09 --> ErrorException: Undefined variable $product
+in APPPATH\Views\edit_products_view.php on line 112.
+ 1 APPPATH\Views\edit_products_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(87): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 07:26:27 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\edit_products_view.php on line 113.
+ 1 APPPATH\Views\edit_products_view.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 113)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(87): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 07:26:47 --> ErrorException: Undefined array key "product_name"
+in APPPATH\Views\edit_products_view.php on line 116.
+ 1 APPPATH\Views\edit_products_view.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 116)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(87): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 07:28:17 --> ErrorException: Undefined variable $product
+in APPPATH\Views\edit_products_view.php on line 112.
+ 1 APPPATH\Views\edit_products_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(87): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 08:07:10 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 63.
+ 1 APPPATH\Controllers\Products.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 63)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 10:23:40 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 63.
+ 1 APPPATH\Controllers\Products.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 63)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 11:43:50 --> mysqli_sql_exception: Unknown column 'product_name' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(70): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 11:43:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:43:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:43:50 --> [Caused by] mysqli_sql_exception: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 11:44:20 --> mysqli_sql_exception: Unknown column 'product_name' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(70): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 11:44:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:44:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:44:20 --> [Caused by] mysqli_sql_exception: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `second_name`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_name:, :second_name:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 11:49:07 --> mysqli_sql_exception: Unknown column 'brand_name' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(70): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 11:49:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'brand_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:49:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'brand_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:49:07 --> [Caused by] mysqli_sql_exception: Unknown column 'brand_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand_name`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand_name:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 11:51:49 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(70): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 11:51:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:51:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:51:49 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 11:52:11 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(70): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 11:52:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:52:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 11:52:11 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (\'tshirt\', \'tshirt\', \'marvel\', \'526355\', NULL, \'Category-1\', \'100\', \'100\', \'100\', \'123\', \'10\', \'shirt\', \'sample\', \'100\', \'Kith 2.jpg\', \'Channel-1\', \'clothing\', \'topwear\', \'tshirt\', \'printed-tshirt\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(70): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 12:22:57 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\edit_products_view.php on line 113.
+ 1 APPPATH\Views\edit_products_view.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 113)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(79): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('7')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-21 12:46:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\edit_products_view.php on line 304.
+ 1 APPPATH\Views\edit_products_view.php(304): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(79): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-21 12:47:59 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\edit_products_view.php on line 304.
+ 1 APPPATH\Views\edit_products_view.php(304): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(79): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('9')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:15:18 --> ErrorException: Undefined array key "preorder-date"
+in APPPATH\Views\edit_products_view.php on line 304.
+ 1 APPPATH\Views\edit_products_view.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preorder-date"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 304)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(85): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:20:25 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 114.
+ 1 APPPATH\Controllers\Products.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 114)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:22:01 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 99.
+ 1 APPPATH\Controllers\Products.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:22:46 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 100.
+ 1 APPPATH\Controllers\Products.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 100)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:22:54 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:23:22 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 13:23:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 13:23:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:23:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:23:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 13:24:29 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 13:24:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:24:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:24:29 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 13:24:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 13:24:40 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:24:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:24:40 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('sweetshirt','tshirt','Nike','526355',NULL,''...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'sweetshirt\',\'tshirt\',\'Nike\',\'526355\',NULL,\'\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',\'\',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:32:16 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:32:47 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:54:20 --> ErrorException: Undefined variable $post
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 13:58:17 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\blog_imgsection_view.php on line 160.
+ 1 APPPATH\Views\blog_imgsection_view.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 160)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:00:01 --> ErrorException: Undefined variable $section
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $section', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:00:13 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:00:30 --> ErrorException: Undefined array key "val"
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "val"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:00:37 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\blog_imgsection_view.php on line 121.
+ 1 APPPATH\Views\blog_imgsection_view.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(255): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->blogsubsection('00000257')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:20:12 --> ErrorException: Undefined variable $product
+in APPPATH\Views\edit_products_view.php on line 112.
+ 1 APPPATH\Views\edit_products_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(85): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:21:07 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\edit_products_view.php on line 113.
+ 1 APPPATH\Views\edit_products_view.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php', 113)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(85): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:23:02 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:26:46 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 14:27:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 14:27:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:27:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:27:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 14:28:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 14:28:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:28:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 14:28:08 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,'526355',NULL,NULL,NULL,NULL,N...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (NULL,NULL,NULL,\'526355\',NULL,NULL,NULL,NULL,NULL,\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'tiger-jpg.jpg\',NULL,NULL,NULL,NULL,NULL,\'asef-awef\',\'0000-00-00\',NULL,NULL,\'aqww\',NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:37:50 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:38:43 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 117.
+ 1 APPPATH\Controllers\Products.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 117)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 15:41:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(133): App\Models\Products_model->updatemodel(Array, '11')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 15:41:26 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 3 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:41:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'Privilege NYC 12.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'Privilege NYC 12.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 5 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:41:26 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '11 = :11:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'Privilege NYC 12.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'Privilege NYC 12.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'10\',\'shirt\',\'sample\',\'100\',\'Privilege NYC 12.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 11 = :11:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('11')
+ 6 APPPATH\Controllers\Products.php(133): App\Models\Products_model->updatemodel([...], '11')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('11')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:52:48 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 114.
+ 1 APPPATH\Controllers\Products.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 114)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:53:35 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 115.
+ 1 APPPATH\Controllers\Products.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 115)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:54:08 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 115.
+ 1 APPPATH\Controllers\Products.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 115)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:55:31 --> ErrorException: Undefined variable $updateimagename
+in APPPATH\Controllers\Blogs.php on line 123.
+ 1 APPPATH\Controllers\Blogs.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updateimagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 123)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editmyblog('00000257')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 15:57:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updatemodel(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 15:57:59 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updatemodel([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:57:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updatemodel([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:57:59 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updatemodel([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 15:59:31 --> BadMethodCallException: Call to undefined method App\Models\Products_model::updatemodel
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(131): CodeIgniter\Model->__call('updatemodel', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 16:00:18 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updateproductdata(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 16:00:18 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:00:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:00:18 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'FAWEF\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 16:01:41 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updateproductdata(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 16:01:41 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:01:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:01:41 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'\',\'awfwef\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 16:01:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updateproductdata(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 16:01:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:01:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:01:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'0000-00-00\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 16:02:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updateproductdata(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 16:02:00 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:02:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:02:00 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-21 16:02:23 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(131): App\Models\Products_model->updateproductdata(Array, '14')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-21 16:02:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 3 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:02:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 5 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:02:23 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '14 = :14:
+WHERE `product_id` = ('shirt','tshirt','Nike','526355','A t-shirt i...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = (\'shirt\',\'tshirt\',\'Nike\',\'526355\',\'A t-shirt is a type of shirt that is typically made of comfortable materials such as cotton and is worn on the upper body. They are commonly worn as casual wear and can come in various styles and designs.\',\'Active\',\'100\',\'100\',\'100\',\'123\',\'100\',\'shirt\',\'Nike\',\'100\',\'SABIT 1.jpg\',\'Channel-1\',\'clothing\',\'topwear\',\'tshirt\',\'printed-tshirt\',\'asef-awef\',\'ajhcbjahbef\',\'2024-05-22\',\'awfwef\',\'aqww\',\'tag1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 14 = :14:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(43): CodeIgniter\Database\BaseBuilder->update('14')
+ 6 APPPATH\Controllers\Products.php(131): App\Models\Products_model->updateproductdata([...], '14')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('14')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:05:22 --> BadMethodCallException: Call to undefined method App\Models\Products_model::getcollectionsdata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(139): CodeIgniter\Model->__call('getcollectionsdata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collections()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:06:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "collections_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('collections_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('collections_view', [], true)
+ 3 APPPATH\Controllers\Products.php(140): view('collections_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collections()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:12:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:14:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:14:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:14:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:15:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-21 16:18:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2763.
+ 1 APPPATH\Models\Products_model.php(54): CodeIgniter\Database\BaseBuilder->delete()
+ 2 APPPATH\Controllers\Products.php(146): App\Models\Products_model->deletecollection('1')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->deletecollection('1')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

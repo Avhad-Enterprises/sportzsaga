@@ -1,0 +1,1077 @@
+INFO - 2024-06-11 06:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 07:21:34 --> ErrorException: Undefined variable $pager
+in APPPATH\Views\all_blogs_view.php on line 120.
+ 1 APPPATH\Views\all_blogs_view.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php', 120)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('all_blogs_view', [], true)
+ 5 APPPATH\Controllers\Home.php(131): view('all_blogs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 07:22:25 --> ErrorException: Undefined variable $pager
+in APPPATH\Views\all_blogs_view.php on line 120.
+ 1 APPPATH\Views\all_blogs_view.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php', 120)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('all_blogs_view', [], true)
+ 5 APPPATH\Controllers\Home.php(131): view('all_blogs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-11 07:28:29 --> mysqli_sql_exception: Unknown column 'visibility' in 'where clause' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\system\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Home.php(106): CodeIgniter\Model->countAllResults()
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-11 07:28:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'visibility' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = :visibility:', [...], false)
+ 2 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Home.php(106): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 07:28:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'visibility' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = \'public\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = \'public\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = :visibility:', [...], false)
+ 4 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Home.php(106): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 07:28:29 --> [Caused by] mysqli_sql_exception: Unknown column 'visibility' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = \'public\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = \'public\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = \'public\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `blogs`
+WHERE `visibility` = :visibility:', [...], false)
+ 5 SYSTEMPATH\Model.php(625): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Home.php(106): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 07:32:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "CodeIgniter\Pager\Views\page_num_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('CodeIgniter\\Pager\\Views\\page_num_view.php')
+ 2 SYSTEMPATH\Pager\Pager.php(128): CodeIgniter\View\View->render('CodeIgniter\\Pager\\Views\\page_num_view')
+ 3 SYSTEMPATH\Pager\Pager.php(112): CodeIgniter\Pager\Pager->displayLinks('default', 'default_full')
+ 4 APPPATH\Controllers\Home.php(113): CodeIgniter\Pager\Pager->makeLinks(1, 3, 27)
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 07:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-11 07:59:05 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 08:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 08:16:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "editsubsection_view.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('editsubsection_view.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 3 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:17:54 --> ErrorException: Array to string conversion
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:19:15 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:19:34 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:21:53 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:22:31 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:22:47 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:23:38 --> ErrorException: Undefined variable $secid
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $secid', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:23:51 --> ErrorException: Undefined variable $secid
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $secid', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:25:00 --> ErrorException: Undefined array key "sec_title"
+in APPPATH\Views\editsubsection_view.php on line 115.
+ 1 APPPATH\Views\editsubsection_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:25:39 --> ErrorException: Undefined array key "sec_title"
+in APPPATH\Views\editsubsection_view.php on line 115.
+ 1 APPPATH\Views\editsubsection_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:28:01 --> ErrorException: Undefined array key "sec_title"
+in APPPATH\Views\editsubsection_view.php on line 115.
+ 1 APPPATH\Views\editsubsection_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:29:30 --> ErrorException: Undefined array key "sec_title"
+in APPPATH\Views\editsubsection_view.php on line 115.
+ 1 APPPATH\Views\editsubsection_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(290): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:31:24 --> ErrorException: Undefined array key "sec_title"
+in APPPATH\Views\editsubsection_view.php on line 115.
+ 1 APPPATH\Views\editsubsection_view.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_title"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 115)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(290): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('15')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:36:56 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(287): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('39')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:38:36 --> ErrorException: Undefined array key "sec_id"
+in APPPATH\Views\editsubsection_view.php on line 112.
+ 1 APPPATH\Views\editsubsection_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\editsubsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('editsubsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(288): view('editsubsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->editsubsection('30')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:44:20 --> ErrorException: Undefined variable $imagename
+in APPPATH\Controllers\Blogs.php on line 312.
+ 1 APPPATH\Controllers\Blogs.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:45:53 --> ErrorException: Undefined variable $imagename
+in APPPATH\Controllers\Blogs.php on line 312.
+ 1 APPPATH\Controllers\Blogs.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:48:06 --> ErrorException: Undefined variable $subsecs
+in APPPATH\Controllers\Blogs.php on line 306.
+ 1 APPPATH\Controllers\Blogs.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subsecs', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 306)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:52:42 --> ErrorException: Undefined variable $30
+in APPPATH\Controllers\Blogs.php on line 296.
+ 1 APPPATH\Controllers\Blogs.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $30', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 08:52:54 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 309.
+ 1 APPPATH\Controllers\Blogs.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:50:49 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 309.
+ 1 APPPATH\Controllers\Blogs.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:52:02 --> ErrorException: Undefined array key "sec_image"
+in APPPATH\Controllers\Blogs.php on line 309.
+ 1 APPPATH\Controllers\Blogs.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_image"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:53:48 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Blogs.php on line 309.
+ 1 APPPATH\Controllers\Blogs.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:55:07 --> ErrorException: Undefined array key "sec_image"
+in APPPATH\Controllers\Blogs.php on line 309.
+ 1 APPPATH\Controllers\Blogs.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sec_image"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:55:26 --> ErrorException: Undefined variable $imagename
+in APPPATH\Controllers\Blogs.php on line 312.
+ 1 APPPATH\Controllers\Blogs.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 09:56:23 --> ErrorException: Undefined variable $imagename
+in APPPATH\Controllers\Blogs.php on line 312.
+ 1 APPPATH\Controllers\Blogs.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->updateSubsection('30')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 10:13:29 --> ErrorException: Undefined variable $selblogid
+in APPPATH\Views\blog_imgsection_view.php on line 122.
+ 1 APPPATH\Views\blog_imgsection_view.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $selblogid', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php', 122)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\blog_imgsection_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('blog_imgsection_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(289): view('blog_imgsection_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->deletesubsection('24')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:24:03 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:24:07 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:24:12 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:24:12 --> [DEPRECATED] http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php on line 53.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php(53): http_build_query([...], null, '&')
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(185): Facebook\Http\RequestBodyUrlEncoded->getBody()
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(204): Facebook\FacebookClient->prepareRequestMessage(Object(Facebook\FacebookRequest))
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 6 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 10:24:13 --> ErrorException: Undefined array key 1
+in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php on line 108.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\Http\\GraphRawResponse.php', 108)
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(130): Facebook\Http\GraphRawResponse->setHttpResponseCodeFromHeader('HTTP/2 400 ')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(64): Facebook\Http\GraphRawResponse->setHeadersFromString('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AnIkv1tcys1XyUtmt2keooU
+x-fb-trace-id: BWV4oYU+TAM
+x-fb-rev: 1014122433
+x-fb-debug: 41kMcHohx0HRIrt5NZX4ST4LNAKoOVtDzJZ2HzkagPgl8zALu4EmlaYsCAMV+joLfl1DfMLoQ09+0B1umncZ0A==
+content-length: 152
+date: Tue, 11 Jun 2024 10:24:13 GMT
+proxy-status: http_request_error; e_proxy="AcJmzyyFNQvd68IpELokPAtQbEyUS2tkKbz11mcFfX_HkuINrOz0eyNGElp5kYbw9ObakhHBjsjf8Ur8mTIU"; e_fb_binaryversion="AcI8kDpx3p2IraCbwya6W3wD6hC9T1O-zB60Hd9-_1uzim51gcl1zuf6eeiHic_h2kJkPFJaEjEz4p8m2vgsBVlXJUXlo3QGgQ4"; e_fb_httpversion="AcLNThbj1Ijz-bArd5Suk4x4P4xgdXl-OkYTUzVOMMn-qFEIZcz5v0p98q8f"; e_fb_responsebytes="AcL9egd29W2vhNH11YfhqgMGYRk-27E-RNMOFl0UZQuJojif50dCJ8XuDkua"; e_fb_requesttime="AcIDWAtdDXXR9Uj0VmRx_4ZrL_ibQP5Gmmpz-uVn1jzgByjr9JI6VOZxm5aHPNaWalvu91Neqw"; e_fb_requesthandler="AcLB1Oaha9yLjasDjEIcPpR7Z4geanlOEN_JxX-pJyWOdl1x5ygs495rlJmZo-6z0W4Jx3r0Oss"; e_fb_hostheader="AcIAbZ4GastNO1BimG2hzkkwOVtufCyoHOY7IUxVtiqqMkCFCYA6SwII1E2RdxhWYj8RPo1agP-W4b4o"; e_fb_requestsequencenumber="AcLf4h8ZG2JqMFCqHL30HmnI56rVSrUldygcs2JRKhV-JJfI5qSCODXc1RmN"; e_upip="AcKy0WVWXBfs8F-t15PX4xopb5RjotLKazAHvgU1YOV-4m1797RHahWyFfbx4U_g4hlRp4d_68JkiiULO7iFUHpw5gYlOZ-1SQ"; e_fb_builduser="AcIMvD6oIsbAtGu00590iS5nCu7y2PQJU1ANhffqy-oPzQAHLsPmMyaC-QjnF6gfUWQ"; e_fb_vipport="AcLCWPpnq2BF0tFevRtAffNoVvw0HOHLrsTwYYd0dD_SjAJp_ONc1ahdsS6M"; e_clientaddr="AcJ26N3KTyHAoYrxoKT6AAxEhaCYSrysroRgEYFns9xyqGhIaHmSfpRKsz2-lAtIOPiUDsf7cAU1steLRyXLAZqPgfJctLM64xisz2WedjHEBk-lng"; e_fb_vipaddr="AcIZQbG9yG0VuI0xLQWSmFfvVNhyPARZxDR91V2iYFCC_IJDMMT9Lwk_3kM0NoWWDxH866F9w6gsDlT_NWvu910nUWasUt7U"; e_fb_configversion="AcKRRJw4gYCIDRq6z5fdxvjD6oNZyOwiZD9b1_fiRy_Z6Fya33Lm-6U3SgIb6A", http_request_error; e_proxy="AcI6B_uuDy6MIspVkXy8eXtz4Zcn1fg8T_9HPe74Bxmm8OKszMaYwor2H9WI_a2LXg0e4v5yq72Qx34"; e_fb_binaryversion="AcIRQ5uDL1hyUNocrxe7jT-nHjdBmEOBk04y9ussNqPnLakJFzAH0PLyYp0szSxYrp65orumM9qDEryi8px8XHwiTCBUzVC7_wU"; e_fb_httpversion="AcJnRuKwcOXqgrmskXjXrKr1UE92srDUFhd3G4rLNiftJKmTVt379bSaPyTM"; e_fb_responsebytes="AcKhJYRJg2KLbY5JDATOLf43m1fTPh4sqp29T72Zi9VMvmLGCQj-zulyR5Jz"; e_fb_requesttime="AcIvXnv-S4bOad6KZhqJF1gayrJS5Sw9T_V2VEpJLv6lGabcwbTWr-oJNCGwXmXqWGWsQ5E8RA"; e_fb_requesthandler="AcJWV0X0s3CPTkT2_qJPZqJCFqcPW_LrjMFF54Pa85-_2yg5npXM3yN233d_bAqem224yecPe3g"; e_fb_hostheader="AcItLDdyzzZBx__pBG9S8NUDmdscIh1x7KwakJI6_QxNMNcRIKw3KCjDiNwVE9K-L5Q_QgV5kkfmUPrX"; e_fb_requestsequencenumber="AcJ3HrwGplDO06gzeqfLgiMOnDd7VCdY0kU1QOQQntfX_puRGgUzHRXCCw"; e_upip="AcId9mm0xTjSbfxiTSObCWP3Gk0pm1W0OyTTDSim-oJz4t4Y83Qo8QuSar57Gynjbds1plsDN9bDCibI8rcX9ickkg6Z7NpC"; e_fb_builduser="AcJCoQYdO-VWvyrURq7oK8N6xwgdtf8pPBU_i-hDnz21uMjVJHnfcLMddmX51SgVd8I"; e_fb_vipport="AcIFl4ggbhhl_Y25RvC4D5YA0uKVL23lUlS91BOAVy2_YJfIEDY5Kji6DwsW"; e_clientaddr="AcLRiij_gTllG_SsRW6kpkg7uTSFfVKA0z0EhmhSsNJB6rH0nYxnNdtumz6pU4NUp-HVSYJ-ylK5QUeTwA"; e_fb_vipaddr="AcJge50fXspyb2kg8ExOOFWXv2B-AjnrAZpKL0P7LYALgK6BekgCaja1WBVpREODoMljBwWaX20"; e_fb_configversion="AcLXFtd5jXMLcDuFeOqI4Bc9ZB_uOEZECOawQ_03Ke71HtPHU_UP3ieO-hKmdw"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=15, rtx=0, c=10, mss=1392, tbw=3552, tp=-1, tpl=-1, uplat=224, ullat=0
+alt-svc: h3=":443"; ma=86400')
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\HttpClients\FacebookCurlHttpClient.php(91): Facebook\Http\GraphRawResponse->__construct('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AnIkv1tcys1XyUtmt2keooU
+x-fb-trace-id: BWV4oYU+TAM
+x-fb-rev: 1014122433
+x-fb-debug: 41kMcHohx0HRIrt5NZX4ST4LNAKoOVtDzJZ2HzkagPgl8zALu4EmlaYsCAMV+joLfl1DfMLoQ09+0B1umncZ0A==
+content-length: 152
+date: Tue, 11 Jun 2024 10:24:13 GMT
+proxy-status: http_request_error; e_proxy="AcJmzyyFNQvd68IpELokPAtQbEyUS2tkKbz11mcFfX_HkuINrOz0eyNGElp5kYbw9ObakhHBjsjf8Ur8mTIU"; e_fb_binaryversion="AcI8kDpx3p2IraCbwya6W3wD6hC9T1O-zB60Hd9-_1uzim51gcl1zuf6eeiHic_h2kJkPFJaEjEz4p8m2vgsBVlXJUXlo3QGgQ4"; e_fb_httpversion="AcLNThbj1Ijz-bArd5Suk4x4P4xgdXl-OkYTUzVOMMn-qFEIZcz5v0p98q8f"; e_fb_responsebytes="AcL9egd29W2vhNH11YfhqgMGYRk-27E-RNMOFl0UZQuJojif50dCJ8XuDkua"; e_fb_requesttime="AcIDWAtdDXXR9Uj0VmRx_4ZrL_ibQP5Gmmpz-uVn1jzgByjr9JI6VOZxm5aHPNaWalvu91Neqw"; e_fb_requesthandler="AcLB1Oaha9yLjasDjEIcPpR7Z4geanlOEN_JxX-pJyWOdl1x5ygs495rlJmZo-6z0W4Jx3r0Oss"; e_fb_hostheader="AcIAbZ4GastNO1BimG2hzkkwOVtufCyoHOY7IUxVtiqqMkCFCYA6SwII1E2RdxhWYj8RPo1agP-W4b4o"; e_fb_requestsequencenumber="AcLf4h8ZG2JqMFCqHL30HmnI56rVSrUldygcs2JRKhV-JJfI5qSCODXc1RmN"; e_upip="AcKy0WVWXBfs8F-t15PX4xopb5RjotLKazAHvgU1YOV-4m1797RHahWyFfbx4U_g4hlRp4d_68JkiiULO7iFUHpw5gYlOZ-1SQ"; e_fb_builduser="AcIMvD6oIsbAtGu00590iS5nCu7y2PQJU1ANhffqy-oPzQAHLsPmMyaC-QjnF6gfUWQ"; e_fb_vipport="AcLCWPpnq2BF0tFevRtAffNoVvw0HOHLrsTwYYd0dD_SjAJp_ONc1ahdsS6M"; e_clientaddr="AcJ26N3KTyHAoYrxoKT6AAxEhaCYSrysroRgEYFns9xyqGhIaHmSfpRKsz2-lAtIOPiUDsf7cAU1steLRyXLAZqPgfJctLM64xisz2WedjHEBk-lng"; e_fb_vipaddr="AcIZQbG9yG0VuI0xLQWSmFfvVNhyPARZxDR91V2iYFCC_IJDMMT9Lwk_3kM0NoWWDxH866F9w6gsDlT_NWvu910nUWasUt7U"; e_fb_configversion="AcKRRJw4gYCIDRq6z5fdxvjD6oNZyOwiZD9b1_fiRy_Z6Fya33Lm-6U3SgIb6A", http_request_error; e_proxy="AcI6B_uuDy6MIspVkXy8eXtz4Zcn1fg8T_9HPe74Bxmm8OKszMaYwor2H9WI_a2LXg0e4v5yq72Qx34"; e_fb_binaryversion="AcIRQ5uDL1hyUNocrxe7jT-nHjdBmEOBk04y9ussNqPnLakJFzAH0PLyYp0szSxYrp65orumM9qDEryi8px8XHwiTCBUzVC7_wU"; e_fb_httpversion="AcJnRuKwcOXqgrmskXjXrKr1UE92srDUFhd3G4rLNiftJKmTVt379bSaPyTM"; e_fb_responsebytes="AcKhJYRJg2KLbY5JDATOLf43m1fTPh4sqp29T72Zi9VMvmLGCQj-zulyR5Jz"; e_fb_requesttime="AcIvXnv-S4bOad6KZhqJF1gayrJS5Sw9T_V2VEpJLv6lGabcwbTWr-oJNCGwXmXqWGWsQ5E8RA"; e_fb_requesthandler="AcJWV0X0s3CPTkT2_qJPZqJCFqcPW_LrjMFF54Pa85-_2yg5npXM3yN233d_bAqem224yecPe3g"; e_fb_hostheader="AcItLDdyzzZBx__pBG9S8NUDmdscIh1x7KwakJI6_QxNMNcRIKw3KCjDiNwVE9K-L5Q_QgV5kkfmUPrX"; e_fb_requestsequencenumber="AcJ3HrwGplDO06gzeqfLgiMOnDd7VCdY0kU1QOQQntfX_puRGgUzHRXCCw"; e_upip="AcId9mm0xTjSbfxiTSObCWP3Gk0pm1W0OyTTDSim-oJz4t4Y83Qo8QuSar57Gynjbds1plsDN9bDCibI8rcX9ickkg6Z7NpC"; e_fb_builduser="AcJCoQYdO-VWvyrURq7oK8N6xwgdtf8pPBU_i-hDnz21uMjVJHnfcLMddmX51SgVd8I"; e_fb_vipport="AcIFl4ggbhhl_Y25RvC4D5YA0uKVL23lUlS91BOAVy2_YJfIEDY5Kji6DwsW"; e_clientaddr="AcLRiij_gTllG_SsRW6kpkg7uTSFfVKA0z0EhmhSsNJB6rH0nYxnNdtumz6pU4NUp-HVSYJ-ylK5QUeTwA"; e_fb_vipaddr="AcJge50fXspyb2kg8ExOOFWXv2B-AjnrAZpKL0P7LYALgK6BekgCaja1WBVpREODoMljBwWaX20"; e_fb_configversion="AcLXFtd5jXMLcDuFeOqI4Bc9ZB_uOEZECOawQ_03Ke71HtPHU_UP3ieO-hKmdw"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=15, rtx=0, c=10, mss=1392, tbw=3552, tp=-1, tpl=-1, uplat=224, ullat=0
+alt-svc: h3=":443"; ma=86400', '{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace_id":"AnIkv1tcys1XyUtmt2keooU"}}')
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(216): Facebook\HttpClients\FacebookCurlHttpClient->send('https://graph.facebook.com/v12.0/me/media', 'POST', 'image_url=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F06%2F12%2F00%2F18%2F240_F_612001823_TkzT0xmIgagoDCyQ0yuJYEGu8j6VNVYT.jpg&caption=sample&access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD&appsecret_proof=c30909a35eabc0298ccf71489c55cf6edd36783687a561a1ef52cca3e6321367', [...], 60)
+ 6 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 7 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 8 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:25:36 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:25:36 --> [DEPRECATED] http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php on line 53.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php(53): http_build_query([...], null, '&')
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(185): Facebook\Http\RequestBodyUrlEncoded->getBody()
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(204): Facebook\FacebookClient->prepareRequestMessage(Object(Facebook\FacebookRequest))
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 6 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 10:25:37 --> ErrorException: Undefined array key 1
+in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php on line 108.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\Http\\GraphRawResponse.php', 108)
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(130): Facebook\Http\GraphRawResponse->setHttpResponseCodeFromHeader('HTTP/2 400 ')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(64): Facebook\Http\GraphRawResponse->setHeadersFromString('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: A5rOs8IWtY-JixHQgF60bFy
+x-fb-trace-id: E5wbux6Q9/1
+x-fb-rev: 1014122433
+x-fb-debug: 3Vbz0cZvO2Wf1Pe1lsb2vIuC1PZKLP7ZTUmoE8/qYbo4sn09c44dDPYlpM6H4jGZwuscl5uxcjP8MQTv10ZPQA==
+content-length: 152
+date: Tue, 11 Jun 2024 10:25:37 GMT
+proxy-status: http_request_error; e_proxy="AcLFrh6iFG7bizF6hLoNzVEvh0g9cR6OGAQigaWqHQBdoFqsO7QeEUatc07SkEFsTsWtuXfrsXYkEBV41etL"; e_fb_binaryversion="AcLSWVR3m-5E_6njNvIpgqaZm2LNPAMmDuZLQTg-gbP4X-yIYE5s-fK0X5Kl3RzERhqViVxtUTUEzyFw5OwUuQ39B_u753wSdFw"; e_fb_httpversion="AcJRzQ7XwCAT9lPeJ0gpA4TU3aHFPjcqtNjLIzclLaZK7RZcdByOKfa_S1CP"; e_fb_responsebytes="AcI8WfnnFl7BKvr5zBk60mGyPEygHhme9ZvMF8awEMQmUyMzTWNy7crm8jUa"; e_fb_requesttime="AcKwgOqe7CUWh2D030uP7Lg5CS1U90UX73M-smJM9pNUZ3XjlceL6ST0AeRJkjWCU8Dgugs5dA"; e_fb_requesthandler="AcKUdEEwGU6OfVxDMdmvSeg9ThJtFRcVRVundRKchoiSIdyoJZ0NRJEL5H2NYDiAkvPsYQ0oxR0"; e_fb_hostheader="AcLJ6D7oboDr0ZU3lIIZvDuDpX7hB0AoCdkbgvu5bFWHd_RbZrpqy-AERGIzyxtQGMCa7Vt4jr_9hRG4"; e_fb_requestsequencenumber="AcIwdiItTvsDaLvcQ9V2_PZ2H9VmvQg4dzNr5CW_tYHdWggBeWRGSbKTU3q8"; e_upip="AcLrE67IQnd5sqWJ-RYKNfnT_0ZB4TVO_SA21AgU8BKQm6JiK4yq90s3gZpeKX6kjqdkHSWGmEVWwTYZeGdFoC1I4N7SULi4mg"; e_fb_builduser="AcKGuhPplToGm5e8euNXNZK0pbXDza7v3fTuvcmmJApQOMXyhp0icpcvJAyGXky88fg"; e_fb_vipport="AcIh4grRosaGHL843hwzpW-KW_KaC_SnpJ7v4LVEPBljvV-4pD86W339wMve"; e_clientaddr="AcKehpD_Bs3tL1N6S5P_OSzd7GuuMfRwL3ZZwAr05VCQoHiyeT7WGZPx-ayP1FN9W1ksnDbxpqo8y8PZqgnxmhtPyntmfyHCNcjHLskYNEYBTJ4ZHA"; e_fb_vipaddr="AcIQ50JOZSBFmUUq2P2eTBoK2QDpTxZsApgPUV4Dw8S0lFVGvhYk2Q6WjIU-qqhcoGIazkM-lDI9Ng3uzh9GS4r8uJBxBaN7"; e_fb_configversion="AcK6DBkQhk3OfzSHPA2N8lyMrgZWrzne12vC07dnYnogffYQPxjYg4R3DtTjyg", http_request_error; e_proxy="AcJFMwd5dBrJ72Qobr9VCjDJQT3mennu3Q5FyHO-dNzOUp0qJ80748Ekl00LeNPoYHnnfFG3HSJk-Ys"; e_fb_binaryversion="AcKj4JrpNrhgLdiG7g9YWw_pd0hMfWP_GY7dJf72bHIeIN7RS_l1Xyt23UGiZcc7lnCdNbTkw-6StLCOReEUbfteq_tMCVnRW-c"; e_fb_httpversion="AcJOjn6tm7RXB-cm4Q_gBVyi8KiNh4ikkSwdVzDehuSGZtfA3qixXL8KSP5G"; e_fb_responsebytes="AcK2MRI6G9DldDH7m-elrnjxGUjdYqd_QX5-e-Ii7xxBLYMRZMQBBJnI3M8v"; e_fb_requesttime="AcI88KfQcmSIfktV_RrnzBPEFHAg-yvOvhEddnk_q8mFrCJPwJh4jZ5LQN3ecpoJx0XDAFHgcg"; e_fb_requesthandler="AcK2ddwdpIYhIWFzQ0osNGWHE9Q32-DjhmtW_sesARIEkcqUz97gGw1Nsl9PBWdCsQm7A6L_Wt8"; e_fb_hostheader="AcI_jO0AGpdIr5dYo0JrSRL0UXl86ItUzvT43AbsRG3GBBmrbvJ7y7aWdHfBgd73RBu_mGbBpZjeC3XM"; e_fb_requestsequencenumber="AcJPnpxPx6QydNFd7_G8hMwCc5QhgQXJtr27ndw_Ki8y2Fr9mxqhDuYNYA"; e_upip="AcLYEAwcrPZSmMTbMwvHnY8NbTdKOD9DQ0p8IPeLVXXO4gTSYpbnHQs8rcyx193gujyo8zj9BXo_Ey1NyDXWbweoKaHVKKdL"; e_fb_builduser="AcKQQpddOKOlIuF1pT-RjCcC9l36Nx7BHaXW9xw77p78gp_eYS9tCilSGv8MO971TeQ"; e_fb_vipport="AcL51xhkJXCnw3sEI12dGrAUJJK0aYqB116n7wPEymRGOHa3N5-iKR22f-Q1"; e_clientaddr="AcJpf-_mLo9on1HbTgfTllXb5rJkWWl5Q_99zVbJpp6abliNtpWkNAnRGjCAvbCipUYPzZPeOKHcPH5Iaw"; e_fb_vipaddr="AcKKwgYMoqOUPX9yYw4_ePyb1HFENTO5eu1kp927ZvYrcdeFjyJ9h0Cm6Xjtx-0Oua5Ml-00"; e_fb_configversion="AcIJ5MXZ81OhvfZ5ihBvA10LoxXWcH-uhRXxNek8kqHUtddEWNPCgkRuq_p8oQ"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=32, rtx=0, c=10, mss=1392, tbw=3554, tp=-1, tpl=-1, uplat=191, ullat=0
+alt-svc: h3=":443"; ma=86400')
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\HttpClients\FacebookCurlHttpClient.php(91): Facebook\Http\GraphRawResponse->__construct('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: A5rOs8IWtY-JixHQgF60bFy
+x-fb-trace-id: E5wbux6Q9/1
+x-fb-rev: 1014122433
+x-fb-debug: 3Vbz0cZvO2Wf1Pe1lsb2vIuC1PZKLP7ZTUmoE8/qYbo4sn09c44dDPYlpM6H4jGZwuscl5uxcjP8MQTv10ZPQA==
+content-length: 152
+date: Tue, 11 Jun 2024 10:25:37 GMT
+proxy-status: http_request_error; e_proxy="AcLFrh6iFG7bizF6hLoNzVEvh0g9cR6OGAQigaWqHQBdoFqsO7QeEUatc07SkEFsTsWtuXfrsXYkEBV41etL"; e_fb_binaryversion="AcLSWVR3m-5E_6njNvIpgqaZm2LNPAMmDuZLQTg-gbP4X-yIYE5s-fK0X5Kl3RzERhqViVxtUTUEzyFw5OwUuQ39B_u753wSdFw"; e_fb_httpversion="AcJRzQ7XwCAT9lPeJ0gpA4TU3aHFPjcqtNjLIzclLaZK7RZcdByOKfa_S1CP"; e_fb_responsebytes="AcI8WfnnFl7BKvr5zBk60mGyPEygHhme9ZvMF8awEMQmUyMzTWNy7crm8jUa"; e_fb_requesttime="AcKwgOqe7CUWh2D030uP7Lg5CS1U90UX73M-smJM9pNUZ3XjlceL6ST0AeRJkjWCU8Dgugs5dA"; e_fb_requesthandler="AcKUdEEwGU6OfVxDMdmvSeg9ThJtFRcVRVundRKchoiSIdyoJZ0NRJEL5H2NYDiAkvPsYQ0oxR0"; e_fb_hostheader="AcLJ6D7oboDr0ZU3lIIZvDuDpX7hB0AoCdkbgvu5bFWHd_RbZrpqy-AERGIzyxtQGMCa7Vt4jr_9hRG4"; e_fb_requestsequencenumber="AcIwdiItTvsDaLvcQ9V2_PZ2H9VmvQg4dzNr5CW_tYHdWggBeWRGSbKTU3q8"; e_upip="AcLrE67IQnd5sqWJ-RYKNfnT_0ZB4TVO_SA21AgU8BKQm6JiK4yq90s3gZpeKX6kjqdkHSWGmEVWwTYZeGdFoC1I4N7SULi4mg"; e_fb_builduser="AcKGuhPplToGm5e8euNXNZK0pbXDza7v3fTuvcmmJApQOMXyhp0icpcvJAyGXky88fg"; e_fb_vipport="AcIh4grRosaGHL843hwzpW-KW_KaC_SnpJ7v4LVEPBljvV-4pD86W339wMve"; e_clientaddr="AcKehpD_Bs3tL1N6S5P_OSzd7GuuMfRwL3ZZwAr05VCQoHiyeT7WGZPx-ayP1FN9W1ksnDbxpqo8y8PZqgnxmhtPyntmfyHCNcjHLskYNEYBTJ4ZHA"; e_fb_vipaddr="AcIQ50JOZSBFmUUq2P2eTBoK2QDpTxZsApgPUV4Dw8S0lFVGvhYk2Q6WjIU-qqhcoGIazkM-lDI9Ng3uzh9GS4r8uJBxBaN7"; e_fb_configversion="AcK6DBkQhk3OfzSHPA2N8lyMrgZWrzne12vC07dnYnogffYQPxjYg4R3DtTjyg", http_request_error; e_proxy="AcJFMwd5dBrJ72Qobr9VCjDJQT3mennu3Q5FyHO-dNzOUp0qJ80748Ekl00LeNPoYHnnfFG3HSJk-Ys"; e_fb_binaryversion="AcKj4JrpNrhgLdiG7g9YWw_pd0hMfWP_GY7dJf72bHIeIN7RS_l1Xyt23UGiZcc7lnCdNbTkw-6StLCOReEUbfteq_tMCVnRW-c"; e_fb_httpversion="AcJOjn6tm7RXB-cm4Q_gBVyi8KiNh4ikkSwdVzDehuSGZtfA3qixXL8KSP5G"; e_fb_responsebytes="AcK2MRI6G9DldDH7m-elrnjxGUjdYqd_QX5-e-Ii7xxBLYMRZMQBBJnI3M8v"; e_fb_requesttime="AcI88KfQcmSIfktV_RrnzBPEFHAg-yvOvhEddnk_q8mFrCJPwJh4jZ5LQN3ecpoJx0XDAFHgcg"; e_fb_requesthandler="AcK2ddwdpIYhIWFzQ0osNGWHE9Q32-DjhmtW_sesARIEkcqUz97gGw1Nsl9PBWdCsQm7A6L_Wt8"; e_fb_hostheader="AcI_jO0AGpdIr5dYo0JrSRL0UXl86ItUzvT43AbsRG3GBBmrbvJ7y7aWdHfBgd73RBu_mGbBpZjeC3XM"; e_fb_requestsequencenumber="AcJPnpxPx6QydNFd7_G8hMwCc5QhgQXJtr27ndw_Ki8y2Fr9mxqhDuYNYA"; e_upip="AcLYEAwcrPZSmMTbMwvHnY8NbTdKOD9DQ0p8IPeLVXXO4gTSYpbnHQs8rcyx193gujyo8zj9BXo_Ey1NyDXWbweoKaHVKKdL"; e_fb_builduser="AcKQQpddOKOlIuF1pT-RjCcC9l36Nx7BHaXW9xw77p78gp_eYS9tCilSGv8MO971TeQ"; e_fb_vipport="AcL51xhkJXCnw3sEI12dGrAUJJK0aYqB116n7wPEymRGOHa3N5-iKR22f-Q1"; e_clientaddr="AcJpf-_mLo9on1HbTgfTllXb5rJkWWl5Q_99zVbJpp6abliNtpWkNAnRGjCAvbCipUYPzZPeOKHcPH5Iaw"; e_fb_vipaddr="AcKKwgYMoqOUPX9yYw4_ePyb1HFENTO5eu1kp927ZvYrcdeFjyJ9h0Cm6Xjtx-0Oua5Ml-00"; e_fb_configversion="AcIJ5MXZ81OhvfZ5ihBvA10LoxXWcH-uhRXxNek8kqHUtddEWNPCgkRuq_p8oQ"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=32, rtx=0, c=10, mss=1392, tbw=3554, tp=-1, tpl=-1, uplat=191, ullat=0
+alt-svc: h3=":443"; ma=86400', '{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace_id":"A5rOs8IWtY-JixHQgF60bFy"}}')
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(216): Facebook\HttpClients\FacebookCurlHttpClient->send('https://graph.facebook.com/v12.0/me/media', 'POST', 'image_url=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F06%2F12%2F00%2F18%2F240_F_612001823_TkzT0xmIgagoDCyQ0yuJYEGu8j6VNVYT.jpg&caption=sample&access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD&appsecret_proof=c30909a35eabc0298ccf71489c55cf6edd36783687a561a1ef52cca3e6321367', [...], 60)
+ 6 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 7 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 8 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 10:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 10:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-11 10:45:41 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:45:41 --> [DEPRECATED] http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php on line 53.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php(53): http_build_query([...], null, '&')
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(185): Facebook\Http\RequestBodyUrlEncoded->getBody()
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(204): Facebook\FacebookClient->prepareRequestMessage(Object(Facebook\FacebookRequest))
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 6 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 10:45:41 --> ErrorException: Undefined array key 1
+in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php on line 108.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\Http\\GraphRawResponse.php', 108)
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(130): Facebook\Http\GraphRawResponse->setHttpResponseCodeFromHeader('HTTP/2 400 ')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(64): Facebook\Http\GraphRawResponse->setHeadersFromString('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AgfRitPD24otd_tPXI3gfIh
+x-fb-trace-id: G5wJLMrC9z8
+x-fb-rev: 1014123394
+x-fb-debug: JO0QtCxvZ6Rxp3l47+Fs+016xbBXvQoKa5PURC5Bp32+Limeawjx+0pK/BEpYfkFHedVhNM4o1PjQZTZ/oRZVQ==
+content-length: 152
+date: Tue, 11 Jun 2024 10:45:41 GMT
+proxy-status: http_request_error; e_proxy="AcICTTevCOB0iR1fVCpicGs_ussj3vqHQIV1eP_f3TsbQke_6b9UZTpPCoW9BKJ6xTcCxw2o-zco75_MZP8"; e_fb_binaryversion="AcKYt8Z6wdxr63UxmlEobBB70HKC6aGRyTtlk4_AfdeDdqvyqS9hzB8WP1BFYskLQx7IpDDJrl6wuqWgKr6MbJeJrMivkg4qFBM"; e_fb_httpversion="AcJh6IJsjFlCtb_NvzcXYvLwqbWAaqGgMrroQeMephB6Zg-QfrK7FfjOOU3R"; e_fb_responsebytes="AcI7cj6b1KGNSzKDHqfVxY_Xf0kq_dvbs52rgyQh0m3tGzxR79O_UgG6rxBf"; e_fb_requesttime="AcJFcoY5UQmUc5OuyE666eThJXE_YLrnaA0XYHAKuuD7rZdtSQLhEqAOLe-gW78ojDGuDZqm7w"; e_fb_requesthandler="AcIi8Mx2gREdjUI7myKvi-o0hzfOhHikoq3IwL_WItY67t-OnT1GzbZO1u0SmsaeCfZvPmicj48"; e_fb_hostheader="AcJjm-hpzLL-WulU1ohzFZEex1OtFuKIZsrB5crfIth2fyK1AOPnGYugLm0iaEhRwxrO19Uluisn4VGg"; e_fb_requestsequencenumber="AcJabEzbU1sjxAwxOL7sfeT5ZwuQSO6LQ3fNOMFycrLypwVa-0GdfZJTzT3ooQ"; e_upip="AcJ-uBSOT7JZ7JDNjmT4LAjiMOV--JGw2tE4O1qkAC1FOCf-JLohYotMW1xWzAKl0lXrrNAZkJxXKPDiz--0L09F2VewKxYp"; e_fb_builduser="AcI6fl0RPyug02hDwuyMUvAIyIv5C-W9mMA5bleoNlgIQ9-eoSVVRJTc38X5zrzpx2Q"; e_fb_vipport="AcKymUg74m_8YPaJXqhVJkdrSv9C3Cmu7gSlD5BrCgJmilE0oyghG5rnSsZQ"; e_clientaddr="AcJE9SWPnjxM1O6RDb33IK3GIcBhZhhZZ0Sm3h-TXAXaOQjMEXUZ-9daNzSQU0jtQjBEoeLKZc55eCYdtfT5vYGW2DtASeNjvzi5GViQnWval5tB"; e_fb_vipaddr="AcItxElVlFtKBG9oucsw4TIBUjGtxmzSYuJwl9kVwIGnDapBgizP3pqs1JaEXoOD-RePLdUBTGrXlMyPmgu8tNhfPknvdCt_"; e_fb_configversion="AcLYL6cCC2Ua8Zvisv-K5_DuemmN0ZtsocyV70bsGeX5CiX7O39702nM1N18Vg", http_request_error; e_proxy="AcL3mRnmIdwCPhRZ6e6BvPFihhjnewMqXFgpOjafb2Aiepu_abut9-LtZuJaLvxv-TmyIYmD7-gsBrM"; e_fb_binaryversion="AcL_QClFqQ3T-pSW93yFnN99O9hmaWXZ9cP8tvppkkHHmwPb9SwmqQpRi2kNhwVaZlkjivpxfrynNs3ixBBERm8Ax1NoBNCez3k"; e_fb_httpversion="AcIhBrOjzewMyFRzHhO3k9FsjZJOWGgarkemJkr_bBkD-mCoZXqVXxe9ZMw_"; e_fb_responsebytes="AcJnoAYp72wbkhTg6Qn3_kPDUjItm-TQ2XNK9yIw8_u2NdQEAVTrevQJICAK"; e_fb_requesttime="AcKEmabZ3zRjlqyi3nQ87_sbKz85jU8VYhW0PXLubylpfIyVDz5TPt38YsDVX4iGvmvOjDp5qQ"; e_fb_requesthandler="AcI1gsF-lOud3AkKZSdb_brYriPNZu2bghGx8clWIOoLoINRPiTQd134z_H5UrC8sqLhvCHbVf4"; e_fb_hostheader="AcLwwf1WjJagBj2b4BxxUDPdIhw-EqyJxjBJMjDN-E9fNSF_70-29ILHuCH_RTVMBEHg_Zvt5_0MkWc3"; e_fb_requestsequencenumber="AcKa3NEH35QrXKJfMdVzkBT22WXuilTyjHinzaRj1X79s2iZOsikEC8dcw"; e_upip="AcLxktB5I6evRmYylN7TqU6iALaOApvPEgQdYQB-cc4ypq5Rp4TOEkW8Ov3WsW17GDLBzdyYt5KzwED5-iXV_m4x8XW68_si"; e_fb_builduser="AcI5BjOhufILOIayy5P7cml9JlafCrEO8T0y_QtFAZpyP7bgBYWHTrocXgm56ud_Lcg"; e_fb_vipport="AcLl-AZinPQho-O3N-hgkhsXZM6iw-G2lOLrdeC18Qu8v7jDBhpH3k4ERhsa"; e_clientaddr="AcLTczGJZgk8QkIooaWhy2eu-83iskp0TN5lZfHGScs3UNj1b-DIsh8fHs5aSAcEldt61Quw5yzq1kuD-g"; e_fb_vipaddr="AcIUQdo3sYKjeiC4HbUfoRd9JszRmF6lEIBX9eHPf5wM9-JpBc0iQMaBGTGuXeFfQG8A3DQ6"; e_fb_configversion="AcJhqo_tOP1Kt3LbW3DgOaYVkhWPBJJApwmU5yOSYTzANbv1B9uV1meRaeT9Og"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=30, rtx=0, c=10, mss=1392, tbw=3554, tp=-1, tpl=-1, uplat=188, ullat=0
+alt-svc: h3=":443"; ma=86400')
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\HttpClients\FacebookCurlHttpClient.php(91): Facebook\Http\GraphRawResponse->__construct('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AgfRitPD24otd_tPXI3gfIh
+x-fb-trace-id: G5wJLMrC9z8
+x-fb-rev: 1014123394
+x-fb-debug: JO0QtCxvZ6Rxp3l47+Fs+016xbBXvQoKa5PURC5Bp32+Limeawjx+0pK/BEpYfkFHedVhNM4o1PjQZTZ/oRZVQ==
+content-length: 152
+date: Tue, 11 Jun 2024 10:45:41 GMT
+proxy-status: http_request_error; e_proxy="AcICTTevCOB0iR1fVCpicGs_ussj3vqHQIV1eP_f3TsbQke_6b9UZTpPCoW9BKJ6xTcCxw2o-zco75_MZP8"; e_fb_binaryversion="AcKYt8Z6wdxr63UxmlEobBB70HKC6aGRyTtlk4_AfdeDdqvyqS9hzB8WP1BFYskLQx7IpDDJrl6wuqWgKr6MbJeJrMivkg4qFBM"; e_fb_httpversion="AcJh6IJsjFlCtb_NvzcXYvLwqbWAaqGgMrroQeMephB6Zg-QfrK7FfjOOU3R"; e_fb_responsebytes="AcI7cj6b1KGNSzKDHqfVxY_Xf0kq_dvbs52rgyQh0m3tGzxR79O_UgG6rxBf"; e_fb_requesttime="AcJFcoY5UQmUc5OuyE666eThJXE_YLrnaA0XYHAKuuD7rZdtSQLhEqAOLe-gW78ojDGuDZqm7w"; e_fb_requesthandler="AcIi8Mx2gREdjUI7myKvi-o0hzfOhHikoq3IwL_WItY67t-OnT1GzbZO1u0SmsaeCfZvPmicj48"; e_fb_hostheader="AcJjm-hpzLL-WulU1ohzFZEex1OtFuKIZsrB5crfIth2fyK1AOPnGYugLm0iaEhRwxrO19Uluisn4VGg"; e_fb_requestsequencenumber="AcJabEzbU1sjxAwxOL7sfeT5ZwuQSO6LQ3fNOMFycrLypwVa-0GdfZJTzT3ooQ"; e_upip="AcJ-uBSOT7JZ7JDNjmT4LAjiMOV--JGw2tE4O1qkAC1FOCf-JLohYotMW1xWzAKl0lXrrNAZkJxXKPDiz--0L09F2VewKxYp"; e_fb_builduser="AcI6fl0RPyug02hDwuyMUvAIyIv5C-W9mMA5bleoNlgIQ9-eoSVVRJTc38X5zrzpx2Q"; e_fb_vipport="AcKymUg74m_8YPaJXqhVJkdrSv9C3Cmu7gSlD5BrCgJmilE0oyghG5rnSsZQ"; e_clientaddr="AcJE9SWPnjxM1O6RDb33IK3GIcBhZhhZZ0Sm3h-TXAXaOQjMEXUZ-9daNzSQU0jtQjBEoeLKZc55eCYdtfT5vYGW2DtASeNjvzi5GViQnWval5tB"; e_fb_vipaddr="AcItxElVlFtKBG9oucsw4TIBUjGtxmzSYuJwl9kVwIGnDapBgizP3pqs1JaEXoOD-RePLdUBTGrXlMyPmgu8tNhfPknvdCt_"; e_fb_configversion="AcLYL6cCC2Ua8Zvisv-K5_DuemmN0ZtsocyV70bsGeX5CiX7O39702nM1N18Vg", http_request_error; e_proxy="AcL3mRnmIdwCPhRZ6e6BvPFihhjnewMqXFgpOjafb2Aiepu_abut9-LtZuJaLvxv-TmyIYmD7-gsBrM"; e_fb_binaryversion="AcL_QClFqQ3T-pSW93yFnN99O9hmaWXZ9cP8tvppkkHHmwPb9SwmqQpRi2kNhwVaZlkjivpxfrynNs3ixBBERm8Ax1NoBNCez3k"; e_fb_httpversion="AcIhBrOjzewMyFRzHhO3k9FsjZJOWGgarkemJkr_bBkD-mCoZXqVXxe9ZMw_"; e_fb_responsebytes="AcJnoAYp72wbkhTg6Qn3_kPDUjItm-TQ2XNK9yIw8_u2NdQEAVTrevQJICAK"; e_fb_requesttime="AcKEmabZ3zRjlqyi3nQ87_sbKz85jU8VYhW0PXLubylpfIyVDz5TPt38YsDVX4iGvmvOjDp5qQ"; e_fb_requesthandler="AcI1gsF-lOud3AkKZSdb_brYriPNZu2bghGx8clWIOoLoINRPiTQd134z_H5UrC8sqLhvCHbVf4"; e_fb_hostheader="AcLwwf1WjJagBj2b4BxxUDPdIhw-EqyJxjBJMjDN-E9fNSF_70-29ILHuCH_RTVMBEHg_Zvt5_0MkWc3"; e_fb_requestsequencenumber="AcKa3NEH35QrXKJfMdVzkBT22WXuilTyjHinzaRj1X79s2iZOsikEC8dcw"; e_upip="AcLxktB5I6evRmYylN7TqU6iALaOApvPEgQdYQB-cc4ypq5Rp4TOEkW8Ov3WsW17GDLBzdyYt5KzwED5-iXV_m4x8XW68_si"; e_fb_builduser="AcI5BjOhufILOIayy5P7cml9JlafCrEO8T0y_QtFAZpyP7bgBYWHTrocXgm56ud_Lcg"; e_fb_vipport="AcLl-AZinPQho-O3N-hgkhsXZM6iw-G2lOLrdeC18Qu8v7jDBhpH3k4ERhsa"; e_clientaddr="AcLTczGJZgk8QkIooaWhy2eu-83iskp0TN5lZfHGScs3UNj1b-DIsh8fHs5aSAcEldt61Quw5yzq1kuD-g"; e_fb_vipaddr="AcIUQdo3sYKjeiC4HbUfoRd9JszRmF6lEIBX9eHPf5wM9-JpBc0iQMaBGTGuXeFfQG8A3DQ6"; e_fb_configversion="AcJhqo_tOP1Kt3LbW3DgOaYVkhWPBJJApwmU5yOSYTzANbv1B9uV1meRaeT9Og"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=30, rtx=0, c=10, mss=1392, tbw=3554, tp=-1, tpl=-1, uplat=188, ullat=0
+alt-svc: h3=":443"; ma=86400', '{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace_id":"AgfRitPD24otd_tPXI3gfIh"}}')
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(216): Facebook\HttpClients\FacebookCurlHttpClient->send('https://graph.facebook.com/v12.0/me/media', 'POST', 'image_url=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F06%2F12%2F00%2F18%2F240_F_612001823_TkzT0xmIgagoDCyQ0yuJYEGu8j6VNVYT.jpg&caption=sample&access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD&appsecret_proof=c30909a35eabc0298ccf71489c55cf6edd36783687a561a1ef52cca3e6321367', [...], 60)
+ 6 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 7 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 8 APPPATH\Controllers\Instagramnew.php(59): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:48:36 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:48:39 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-11 10:48:45 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:48:46 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:50:05 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:50:08 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 10:50:13 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 10:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-11 10:50:34 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 11:47:45 --> ParseError: syntax error, unexpected token "try"
+in APPPATH\Controllers\Instagramnew.php on line 49.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Instagramnew.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Instagramnew')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Instagramnew')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Instagramnew', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-11 11:48:19 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 11:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 11:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 11:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 11:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 11:53:28 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 186.
+ 1 APPPATH\Controllers\Products.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 186)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-11 12:19:13 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(216): App\Models\Products_model->updateproductdata(Array, '17')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-11 12:19:13 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 3 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:19:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 5 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:19:13 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 6 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-11 12:20:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(216): App\Models\Products_model->updateproductdata(Array, '17')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-11 12:20:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 3 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:20:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 5 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:20:25 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '17 = :17:
+WHERE `product_id` = ('Downshifter 13 Running Shoes','Downshifter 1...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = (\'Downshifter 13 Running Shoes\',\'Downshifter 13 Running Shoes\',\'Nikron\',\'526355\',\'Wipe with a clean, dry cloth when needed\\r\\nUpper material: Textile upper\\r\\nWhether one is excitedly starting one’s running journey or an expert eager to switch up their pace, the Downshifter 13 is down for the ride. With a new, soft, upper and uncompromised cushion and durability, it helps one find that extra gear or simply take that expectant first stride toward meeting your mileage needs.\\r\\nNew sandwich mesh is soft and comfortable to the touch and offers a high level of breathability. An updated internal fit band offers great wrap around the midfoot for support and security. It’s more noticeable to the naked eye than it was in the Downshifter 12.\\r\\nRegular Fit\\r\\n6-month warranty against manufacturing defects\\r\\nPackage contains: 1 pair of shoes\\r\\nRubber sole\',\'Active\',\'2999\',\'1899\',\'1599\',\'123\',\'1000\',\'Shoe\',\'Nike\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'nike-downshifter-13-running-shoes\',\'0000-00-00\',\'\',\'no\',\'Downshifter 13 Running Shoes\',\'nike,shoe\',\'vanilla clothing 2.jpeg\',\'vanilla clothing 3.jpeg\',\'vanilla clothing 6.jpeg\',\'vanilla clothing 4.jpeg\',NULL,NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 17 = :17:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('17')
+ 6 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '17')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('17')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-11 12:20:56 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('16')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(216): App\Models\Products_model->updateproductdata(Array, '16')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-11 12:20:56 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('16')
+ 3 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:20:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('16')
+ 5 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:20:56 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\products_model.php(53): CodeIgniter\Database\BaseBuilder->update('16')
+ 6 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:23:57 --> BadMethodCallException: Call to undefined method App\Models\Products_model::updateproductdata
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(216): CodeIgniter\Model->__call('updateproductdata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:24:09 --> TypeError: CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1804.
+ 1 SYSTEMPATH\BaseModel.php(956): CodeIgniter\BaseModel->transformDataToArray('16', 'update')
+ 2 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], '16')
+ 3 APPPATH\Controllers\Products.php(216): CodeIgniter\Model->update([...], '16')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-11 12:26:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1 in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(32): CodeIgniter\Database\BaseBuilder->update('16')
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(216): App\Models\Products_model->updateproductdata(Array, '16')
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-11 12:26:17 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\products_model.php(32): CodeIgniter\Database\BaseBuilder->update('16')
+ 3 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:26:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\products_model.php(32): CodeIgniter\Database\BaseBuilder->update('16')
+ 5 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 12:26:17 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '16 = :16:
+WHERE `product_id` = ('ROCKET BOOST 2.0','ROCKET BOOST 2.0','Nikron...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = (\'ROCKET BOOST 2.0\',\'ROCKET BOOST 2.0\',\'Nikron\',\'526355\',\'The ROCKET BOOST 2.0 black sneakers for men are designed to help you reach your full potential. With their innovative features and technologies, these sneakers will give you the edge you need to perform at your best, whether you\\\'re running, jumping, or simply living your life to the fullest.\',\'Active\',\'1999\',\'1499\',\'1299\',\'123\',\'1000\',\'Shoe\',\'Nikron\',\'100\',\'Channel-2\',\'\',\'\',\'\',\'\',\'rocket-boost-2-0\',\'0000-00-00\',\'\',\'no\',\'The Modern Soul\',\'shoe,nikron\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 2 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 4 .jpg\',\'Greyhound Shoes 5 .jpg\',\'Greyhound Shoes 1 .jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET 16 = :16:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\products_model.php(32): CodeIgniter\Database\BaseBuilder->update('16')
+ 6 APPPATH\Controllers\Products.php(216): App\Models\Products_model->updateproductdata([...], '16')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('16')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 12:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 12:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:07:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 13:42:36 --> BadMethodCallException: Call to undefined method App\Models\Products_model::getproductstags
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(245): CodeIgniter\Model->__call('getproductstags', [])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 13:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 13:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 14:16:23 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\edit_order_view.php on line 113.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_order_view', [], true)
+ 4 APPPATH\Controllers\Ordermanagement.php(79): view('edit_order_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Ordermanagement->editorder('6')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ordermanagement))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 14:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 14:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 15:44:30 --> BadMethodCallException: Call to undefined method App\Models\Tier1_model::updatetier1model
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Tiers.php(53): CodeIgniter\Model->__call('updatetier1model', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Tiers->updatetier_1('34')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tiers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 15:57:40 --> ErrorException: Undefined variable $tier3
+in APPPATH\Views\edit_tier3_view.php on line 112.
+ 1 APPPATH\Views\edit_tier3_view.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tier3', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_tier3_view.php', 112)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\edit_tier3_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_tier3_view', [], true)
+ 5 APPPATH\Controllers\Tiers.php(104): view('edit_tier3_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Tiers->edittier_3('8')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tiers))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 15:58:34 --> BadMethodCallException: Call to undefined method App\Models\Tier2_model::gettier3data
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Tiers.php(103): CodeIgniter\Model->__call('gettier3data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Tiers->edittier_3('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tiers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 15:58:44 --> BadMethodCallException: Call to undefined method App\Models\Tier2_model::gettier3data
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Tiers.php(103): CodeIgniter\Model->__call('gettier3data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Tiers->edittier_3('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tiers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-11 15:59:18 --> BadMethodCallException: Call to undefined method App\Models\Tier2_model::gettier3data
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Tiers.php(103): CodeIgniter\Model->__call('gettier3data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Tiers->edittier_3('8')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tiers))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-11 16:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 16:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

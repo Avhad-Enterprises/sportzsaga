@@ -1,0 +1,753 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<?php
+
+
+// Email account configuration
+$hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+$username = 'tajanemegha92@gmail.com'; // Replace with your Gmail address
+$appPassword = 'mlgb wife wdjc trgl'; // Replace with your app-specific password
+
+// Open an IMAP connection
+$inbox = @imap_open($hostname, $username, $appPassword);
+
+// Check for errors
+if (!$inbox) {
+    echo 'Cannot connect to Gmail: ' . imap_last_error();
+    exit;
+}
+
+// Handle email deletion request
+if (isset($_POST['delete_id'])) {
+    $deleteId = (int)$_POST['delete_id'];
+    if (imap_delete($inbox, $deleteId)) {
+        imap_expunge($inbox); // Remove marked messages
+        $successMessage = "Email deleted successfully.";
+    } else {
+        $successMessage = "Failed to delete email.";
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_id'])) {
+    $reply_id = intval($_POST['reply_id']);
+    $macro_reply = $_POST['macro_reply'];
+
+    // Check if $emailsByDate is defined and is an array
+    if (isset($emailsByDate) && is_array($emailsByDate)) {
+        $emailFound = false;
+        foreach ($emailsByDate as $date => $emails) {
+            foreach ($emails as $email) {
+                if ($email['id'] === $reply_id) {
+                    $to = $email['from']; // The sender's email address
+                    $subject = "Re: " . $email['subject'];
+                    $headers = "From: tajanemegha92@gmail.com";
+
+                    // Send the macro reply email
+                    if (mail($to, $subject, $macro_reply, $headers)) {
+                        $successMessage = "Reply sent successfully.";
+                    } else {
+                        $successMessage = "Failed to send reply.";
+                    }
+
+                    $emailFound = true;
+                    break 2; // Break out of both foreach loops
+                }
+            }
+        }
+
+        if (!$emailFound) {
+            $successMessage = "Email not found.";
+        }
+    } else {
+        $successMessage = "No emails available for reply.";
+    }
+}
+
+
+
+
+if (isset($_FILES['macro_file']) && $_FILES['macro_file']['error'] === UPLOAD_ERR_OK) {
+    $fileTmpPath = $_FILES['macro_file']['tmp_name'];
+    $fileName = $_FILES['macro_file']['name'];
+    $fileSize = $_FILES['macro_file']['size'];
+    $fileType = $_FILES['macro_file']['type'];
+
+    // Define the allowed file types
+    $allowedFileTypes = [
+        'text/plain',  // for .txt files
+        'application/pdf', // for .pdf files
+        'application/msword', // for .doc files
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' // for .docx files
+    ];
+
+    // Check if the file type is allowed
+    if (in_array($fileType, $allowedFileTypes)) {
+        // Check if the file is a text file
+        if ($fileType === 'text/plain') {
+            // Read the file contents for text files
+            $fileContents = file_get_contents($fileTmpPath);
+            // Split the file contents by line
+            $newMacroReplies = explode("\n", trim($fileContents));
+
+            // Merge the new macro replies with existing ones
+            $macroReplies = array_merge($macroReplies, array_map('trim', $newMacroReplies));
+            $successMessage = "Macro replies updated successfully.";
+        } else {
+            // Handle other file types (e.g., PDF, DOC) here
+            // For example, save the file or perform other actions
+            // You may need libraries for parsing DOC or PDF files
+            $destination = 'uploads/' . $fileName;
+            if (move_uploaded_file($fileTmpPath, $destination)) {
+                $successMessage = "File uploaded successfully. Please process it manually.";
+            } else {
+                $successMessage = "Failed to upload the file.";
+            }
+        }
+    } 
+} 
+
+
+
+// Define macro replies
+$macroReplies = [
+   
+"Greetings
+
+Hi [Customer first name],
+
+Thank you for contacting us.
+
+Please can I take your order number so that I can help with this
+
+Best regards,
+[Current agent first name]
+Driphunter Customer Service Team
+
+
+
+End ticket",
+
+"Hi [Customer first name],
+
+Thank you for reaching out to Driphunter! We are pleased to inform you that your issue has been resolved and your ticket is now closed.
+
+If you have any other questions or need further assistance, please feel free to contact us.
+
+Best regards,
+[Current agent first name]
+Driphunter Customer Service Team"
+
+];
+
+// Get the total number of emails in the inbox
+$totalEmails = imap_num_msg($inbox);
+
+// Set a limit to the number of emails to fetch
+$limit = 20; // Fetch only the most recent 20 emails
+
+// Calculate the starting email index based on the limit
+$start = $totalEmails > $limit ? $totalEmails - $limit + 1 : 1;
+
+// Helper function to decode the body based on encoding
+function decodeBody($body, $encoding) {
+    if ($encoding == 3) { // Base64
+        return base64_decode($body);
+    } elseif ($encoding == 4) { // Quoted-printable
+        return quoted_printable_decode($body);
+    } else {
+        return $body;
+    }
+}
+
+// Check if there are any emails
+if ($totalEmails === 0) {
+    echo 'No emails found.';
+} else {
+    $emailsByDate = [];
+    for ($i = $totalEmails; $i >= $start; $i--) {
+        $header = imap_headerinfo($inbox, $i);
+        $subject = isset($header->subject) ? imap_utf8($header->subject) : "(No Subject)";
+        $from = isset($header->from[0]) ? $header->from[0]->mailbox . '@' . $header->from[0]->host : "(Unknown Sender)";
+        $fromName = isset($header->from[0]->personal) ? imap_utf8($header->from[0]->personal) : $from;
+        $date = date('Y-m-d', strtotime($header->date));
+
+        // Fetch the structure of the email
+        $structure = imap_fetchstructure($inbox, $i);
+        $body = '';
+
+        // Extract the appropriate part of the email body
+        if (isset($structure->parts) && is_array($structure->parts)) {
+            foreach ($structure->parts as $partNumber => $part) {
+                if ($part->type == 0 && in_array($part->subtype, ['PLAIN', 'HTML'])) {
+                    $body = decodeBody(imap_fetchbody($inbox, $i, $partNumber + 1), $part->encoding);
+                    if ($part->subtype == 'PLAIN') {
+                        $body = nl2br(htmlspecialchars($body)); // Convert to HTML-safe format
+                    }
+                    break; // We found the text part, exit the loop
+                }
+            }
+        } else {
+            $body = decodeBody(imap_fetchbody($inbox, $i, 1), $structure->encoding);
+            $body = nl2br(htmlspecialchars($body));
+        }
+
+        // Determine read/unread status
+        $isUnread = ($header->Unseen == 'U');
+
+        $emailsByDate[$date][] = [
+            'subject' => $subject,
+            'from' => $fromName,
+            'body' => $body,
+            'id' => $i,
+            'date' => $date,
+            'isUnread' => $isUnread
+        ];
+    }
+
+    echo "<div class='email-client'>";
+
+
+echo "<div class='email-options'>";
+echo "<div class='button-cardbox'>"; 
+
+echo "<button class='option-button' onclick=\"filterEmails('inbox')\">Inbox</button>";
+echo "<button class='option-button' onclick=\"filterEmails('read')\">Read</button>";
+echo "<button class='option-button' onclick=\"filterEmails('unread')\">Unread</button>";
+
+echo "</div>"; 
+
+
+echo "<div class='button-cardbox'>";
+echo "<form method='post' enctype='multipart/form-data' class='macro-upload-form'>";
+echo "<input type='file' name='macro_file' accept='.txt' required />";
+echo "<button type='submit' class='option-button'>Upload Macro Replies</button>";
+echo "</form>";
+echo "</div>"; 
+
+echo "<div class='button-cardbox'>";
+echo "<form method='post' class='assign-task-form'>";
+echo "<label for='assigned_user'>Assign Task to:</label>";
+echo "<select name='assigned_user' id='assigned_user' required>";
+
+echo "<option value='user1'>User 1</option>";
+echo "<option value='user2'>User 2</option>";
+echo "<option value='user3'>User 3</option>";
+echo "</select>";
+echo "</form>";
+echo "</div>"; 
+
+echo "<div id='user-profile' class='user-profile-card'></div>";
+
+echo "</div>";
+    echo "<div class='email-list'>";
+    foreach ($emailsByDate as $date => $emails) {
+        foreach ($emails as $email) {
+            $unreadClass = $email['isUnread'] ? 'unread' : 'read'; 
+            echo "<div class='email-item card-box $unreadClass' onclick=\"showEmail('email-{$email['id']}')\" data-category='$unreadClass'>";
+            echo "<div class='email-info'>";
+            echo "<div class='email-star' onclick=\"toggleStar(event, {$email['id']})\"><i class='far fa-star' id='star-{$email['id']}'></i></div>";
+            echo "<div>";
+            echo "<div class='email-date'><strong>{$email['date']}</strong></div>";
+            echo "<div class='email-subject' id='subject-{$email['id']}'>{$email['subject']}</div>";
+            echo "<div class='email-from'>{$email['from']}</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "<div id='email-{$email['id']}' class='email-body' style='display:none;'>";
+            echo "<h2>{$email['subject']}</h2>";
+            echo "<h4>From: {$email['from']}</h4>";
+            echo "<div class='email-content'>{$email['body']}</div>";
+            echo "<form method='post' action=''>";
+            echo "<input type='hidden' name='reply_id' value='{$email['id']}' />";
+            echo "<select name='macro_reply' required>";
+            foreach ($macroReplies as $reply) {
+                echo "<option value='" . htmlspecialchars($reply) . "'>$reply</option>";
+            }
+            echo "</select>";
+            echo "<button type='submit' class='reply-button'><i class='fas fa-reply'></i> Reply</button>";
+            echo "</form>";
+            echo "<form method='post' action='' onsubmit=\"return confirm('Are you sure you want to delete this email?');\">";
+            echo "<input type='hidden' name='delete_id' value='{$email['id']}' />";
+            echo "<button type='submit' class='delete-button'><i class='fas fa-trash'></i> Delete</button>";
+            echo "</form>";
+            echo "</div>";
+        }
+    }
+            echo "</div>";
+            echo "<div class='email-display'>";
+            echo "<div id='email-display-content'></div>";
+            echo "</div>";
+
+            
+            echo "<div class='email-sidebar'>";
+            echo "<div class='bottom-sidebar-content'>"; 
+            echo "<h3>Other Messages</h3>";
+            echo "<div class='button-cardbox'>";
+            echo "<button class='option-button' onclick=\"window.open('https://www.instagram.com/youraccount', '_blank')\">Instagram Messages</button>";
+            echo "<button class='option-button' onclick=\"filterEmails('Live Messages')\">Live Messages</button>";
+            echo "</div>";
+
+            // Add New button with a redirect link
+            echo "<div class='button-cardbox'>";
+            echo "<a href='public/addnew_macrorply_view.php' class='option-button'>Add New</a>";
+            echo "</div>";
+            echo "</div>"; 
+            echo "</div>"; 
+
+            
+                
+                echo "<div class='Macro Reply'>";
+
+                echo "</div>";
+                    echo "</div>";
+
+        
+        
+       
+    }
+    // Close the IMAP connection
+    imap_close($inbox);
+    ?>
+
+
+
+
+    <script>
+    document.getElementById('assigned_user').addEventListener('change', function() {
+        var selectedUser = this.value;
+        var userProfileSection = document.getElementById('user-profile');
+
+        // Clear previous profile data
+        userProfileSection.innerHTML = '';
+
+        // Replace with actual AJAX call to fetch user data from your database
+        var userProfiles = {
+            'user1': {
+                'name': 'John',
+                'image': 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAmwMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAQMEAgUH/8QAKhABAAIBAgQGAgIDAAAAAAAAAAECAxExBBIhUTJBYXGBkRRCE2IiUlP/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APuIAAAAAAAAAAAAAAAAAAAAAAAAAA4teI9ZcTe0gtmTmjuo113AX6x3Szpi0x5yC8Vxk/2dxMTsCQAAAAAAAAAFV767bJyW8o+VYAAAAAACa2mqAF9Zi0awlRW3LK+NgAAAAAAEWnSJlKvLO0ArAABRxV+WkVjewOcvEztj6eqn+S+/PP24FRbTiL1nrOserXjvGSvNH089Zw9uXJHaekorcAAsxT5SrTWdLQC8IAAAAAFOTxLlN/HIOQAGXjPFX2amfjK9K38o6AygKgmvij3Q7xV5slY9QbwEUABfXaEuaeGHQAAAACrJH+S1xljpqCoABFoi0TE9YlLi+WlOlrRr2jqDLlw2p101r3VNf5VO1vpH5GKf0n6gGetLXnSsTLZhxRjj+07uI4nHG1bfUOq8RjnvHvALQ1idpifYAB1SNbAtjZIAAAAAInrGiQFFo0nRC69eaPVReeSsz2Bn4jNpPJT5lmPcUABAAHeLLOOe9fOG6sxasTGzzmrhLa1mvbqitC3HXSvu5pXrrK0AAAAAAAABXnx/yUmsdJnzWAPIyY7Y7aXjRw9i1a3jS0RMerNk4KszrS019NwYBovweWu3Lb5c/jZv+c/cKKRfHC5p/XT3lbTgZ/e/xAMcdZ0jdu4Ph701tfpr5NGLDjxeCvXv5rECOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k='
+            },
+            'user2': {
+                'name': 'Rashmi',
+                'image': 'data:image/png;base64,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'
+            },
+            'user3': {
+                'name': 'Alexa',
+                'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFVHR62PqqslJrmbNHhwiH3Cmb99-h10mi6g&s'
+            }
+        };
+
+        if (selectedUser in userProfiles) {
+            var profile = userProfiles[selectedUser];
+            userProfileSection.innerHTML = `
+                <div class="user-profile">
+                    <img src="${profile.image}" alt="${profile.name}">
+                    <p><strong>${profile.name}</strong></p>
+                    
+                </div>
+            `;
+        }
+    });
+    function showEmail(id) {
+        // Hide all other email bodies
+        var emailBodies = document.getElementsByClassName('email-body');
+        for (var i = 0; i < emailBodies.length; i++) {
+            emailBodies[i].style.display = 'none';
+        }
+        // Show the selected email body
+        var emailDiv = document.getElementById(id);
+        var displayDiv = document.getElementById('email-display-content');
+        displayDiv.innerHTML = emailDiv.innerHTML;
+
+        // Reset the color of all subjects
+        var subjects = document.getElementsByClassName('email-subject');
+        for (var j = 0; j < subjects.length; j++) {
+            subjects[j].style.color = '';
+        }
+        // Set the color of the selected subject
+        var selectedSubject = document.getElementById('subject-' + id.split('-')[1]);
+        if (selectedSubject) {
+            selectedSubject.style.color = 'blue';
+        }
+    }
+    
+    function replyToEmail(emailId) {
+    var replyText = prompt("Enter your reply:");
+    if (replyText) {
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = ""; // This should be the URL for handling replies
+
+        var inputEmailId = document.createElement("input");
+        inputEmailId.type = "hidden";
+        inputEmailId.name = "reply_id";
+        inputEmailId.value = emailId;
+        form.appendChild(inputEmailId);
+
+        var inputReply = document.createElement("input");
+        inputReply.type = "hidden";
+        inputReply.name = "macro_reply";
+        inputReply.value = replyText;
+        form.appendChild(inputReply);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
+
+    // Function to toggle star
+    function toggleStar(event, emailId) {
+        event.stopPropagation();
+        var starIcon = document.getElementById('star-' + emailId);
+        if (starIcon.classList.contains('far')) {
+            starIcon.classList.remove('far');
+            starIcon.classList.add('fas');
+        } else {
+            starIcon.classList.remove('fas');
+            starIcon.classList.add('far');
+        }
+    }
+
+    // Function to filter emails
+    function filterEmails(category) {
+        var emailItems = document.getElementsByClassName('email-item');
+        for (var i = 0; i < emailItems.length; i++) {
+            var itemCategory = emailItems[i].getAttribute('data-category');
+            if (category === 'inbox' || itemCategory === category) {
+                emailItems[i].style.display = 'block';
+            } else {
+                emailItems[i].style.display = 'none';
+            }
+        }
+    }
+    function hideSuccessMessage(messageId) {
+        setTimeout(function() {
+            var messageElement = document.getElementById('success-message-' + messageId);
+            if (messageElement) {
+                messageElement.style.opacity = '0';
+                setTimeout(function() {
+                    if (messageElement) {
+                        messageElement.remove(); // Remove the element from the DOM after fade-out
+                    }
+                }, 500); // Delay to allow for fade-out effect
+            }
+        }, 3000); // 3 seconds
+    }
+
+
+
+    // Check if there is a success message to display
+    document.addEventListener('DOMContentLoaded', function() {
+        var successMessages = document.querySelectorAll('.floating-message');
+        successMessages.forEach(function(message) {
+            var messageId = message.id.split('-').pop();
+            hideSuccessMessage(messageId);
+        });
+    });
+
+    </script>
+
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+
+.email-client {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Email Options Sidebar */
+.email-options {
+    background-color: #fff;
+    width: 15%; /* Adjusted width for better layout */
+    min-width: 200px;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-cardbox {
+    border: 1px solid #ccc; /* Border for the cardbox */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the cardbox */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a card effect */
+    display: inline-block; /* Make the cardbox only as wide as its content */
+    margin-bottom: 15px; /* Add gap between card boxes */
+}
+
+.option-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-right: 5px; /* Small gap between buttons */
+    cursor: pointer;
+}
+
+.option-button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.email-list {
+    background-color: #fff;
+    width: 30%;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 500px;
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for the card */
+}
+
+/* Email Display */
+.email-display {
+    background-color: #fff;
+    width: 55%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 500px;
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for the card */
+}
+
+/* Email Item */
+.email-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 8px; /* Rounded corners for email items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Shadow effect for email items */
+}
+
+.email-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Email Info */
+.email-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.email-star {
+    width: 24px;
+    margin-right: 10px;
+    color: yellow;
+}
+
+.email-star i {
+    font-size: 18px;
+    color: #ddd;
+    transition: color 0.2s ease;
+}
+
+.email-star i.starred {
+    color: #FFD700;
+}
+
+.email-date {
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+}
+
+.email-subject {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.email-from {
+    font-size: 12px;
+    color: #666;
+}
+
+.email-body {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fefefe;
+    margin: 20px 0;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+
+.unread .email-subject {
+    font-weight: bold;
+}
+
+.read .email-subject {
+    font-weight: normal;
+}
+
+
+.macro-upload-form {
+    margin-top: 10px;
+}
+
+.macro-upload-form input[type="file"] {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.macro-upload-form button {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.task-form input, .task-form select, .task-form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.task-list {
+    width: 300px;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.user-profile-card {
+    position: fixed; /* Fixes the position relative to the viewport */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    width: 100px; /* Set the desired width of the profile card */
+    padding: 15px; /* Add some padding inside the card */
+    background-color: #fff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
+    border-radius: 8px; /* Optional: rounded corners */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+
+.user-profile-card .user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-profile-card .user-profile p {
+    margin: 5px 0;
+}
+
+.email-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content to the bottom */
+    height: 100%; /* Full height of the parent container */
+    padding: 15px; /* Add some padding */
+    border-left: 1px solid #ccc; /* Optional: a border to separate the sidebar */
+    background-color: #f9f9f9; /* Optional: background color */
+}
+
+.email-sidebar h3 {
+    margin-bottom: 10px; /* Space between the heading and buttons */
+}
+
+.button-cardbox {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+
+.email-sidebar p {
+    margin: 5px 0;
+}
+
+.social-media-options {
+    margin-top: 20px;
+}
+
+.social-media-options .option-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.option-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-bottom: 15px; 
+    border-radius: 5px;
+}
+.option-button:hover {
+    background-color: #f9f9f9;
+}
+
+
+    </style>

@@ -1,0 +1,1064 @@
+CRITICAL - 2024-05-19 10:21:26 --> CodeIgniter\Database\Exceptions\DataException: There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\BaseModel.php(768): CodeIgniter\BaseModel->transformDataToArray(null, 'insert')
+ 3 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert(null, true)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Model->insert()
+ 5 APPPATH\Controllers\Products.php(39): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:26:56 --> CodeIgniter\Database\Exceptions\DataException: There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 1778.
+ 1 SYSTEMPATH\BaseModel.php(1778): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\BaseModel.php(768): CodeIgniter\BaseModel->transformDataToArray(null, 'insert')
+ 3 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert(null, true)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Model->insert()
+ 5 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 10:28:01 --> mysqli_sql_exception: Column 'product_tags' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(43): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 10:28:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:01 --> [Caused by] mysqli_sql_exception: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 10:28:20 --> mysqli_sql_exception: Column 'product_tags' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(43): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 10:28:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:20 --> [Caused by] mysqli_sql_exception: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 10:28:35 --> mysqli_sql_exception: Column 'product_tags' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(43): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 10:28:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:35 --> [Caused by] mysqli_sql_exception: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 10:28:50 --> mysqli_sql_exception: Column 'product_tags' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(43): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 10:28:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:28:50 --> [Caused by] mysqli_sql_exception: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(43): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 10:29:39 --> mysqli_sql_exception: Column 'product_tags' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(42): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 10:29:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(42): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:29:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(42): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:29:39 --> [Caused by] mysqli_sql_exception: Column 'product_tags' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (\'shirt\', \'                            asd\', \'Category-1\', NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_status`, `product_tags`, `other_image_1`) VALUES (:product_title:, :product_description:, :product_status:, :product_tags:, :other_image_1:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(42): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:34:00 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Products.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:34:20 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Products.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:34:38 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Products.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:35:13 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\Products.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:36:18 --> ErrorException: Undefined variable $originalName
+in APPPATH\Controllers\Products.php on line 47.
+ 1 APPPATH\Controllers\Products.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $originalName', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:36:38 --> ErrorException: Undefined variable $originalName
+in APPPATH\Controllers\Products.php on line 47.
+ 1 APPPATH\Controllers\Products.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $originalName', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:37:03 --> ErrorException: Undefined variable $productimg
+in APPPATH\Controllers\Products.php on line 47.
+ 1 APPPATH\Controllers\Products.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productimg', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:37:59 --> ErrorException: Undefined variable $productimg
+in APPPATH\Controllers\Products.php on line 47.
+ 1 APPPATH\Controllers\Products.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productimg', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:39:10 --> ErrorException: Undefined variable $productimg
+in APPPATH\Controllers\Products.php on line 47.
+ 1 APPPATH\Controllers\Products.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productimg', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:40:37 --> ErrorException: Undefined variable $productimg
+in APPPATH\Controllers\Products.php on line 42.
+ 1 APPPATH\Controllers\Products.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productimg', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 10:57:52 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 43.
+ 1 APPPATH\Controllers\Products.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 11:06:29 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 42.
+ 1 APPPATH\Controllers\Products.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:17:56 --> ErrorException: Undefined array key "blog_id"
+in APPPATH\Views\products_view.php on line 177.
+ 1 APPPATH\Views\products_view.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php', 177)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(14): view('products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:29:02 --> mysqli_sql_exception: Unknown column 'product_name' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:29:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_name:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_name:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:02 --> [Caused by] mysqli_sql_exception: Unknown column 'product_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_name`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_name:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:29:22 --> mysqli_sql_exception: Unknown column 'product_price' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:29:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_price' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:22 --> [Caused by] mysqli_sql_exception: Unknown column 'product_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `product_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :product_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:29:38 --> mysqli_sql_exception: Unknown column 'product_quantity' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:29:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_quantity' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'product_quantity' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:29:38 --> [Caused by] mysqli_sql_exception: Unknown column 'product_quantity' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `product_quantity`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :product_quantity:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:30:00 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:30:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:30:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:30:00 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:31:13 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:31:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:13 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:31:25 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:31:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:25 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:31:47 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:31:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:31:47 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:38:06 --> ErrorException: Undefined variable $newimage
+in APPPATH\Controllers\Products.php on line 52.
+ 1 APPPATH\Controllers\Products.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Products.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:39:33 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:39:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:39:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:39:33 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:41:39 --> mysqli_sql_exception: Column 'product_description' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(55): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:41:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:41:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:41:39 --> [Caused by] mysqli_sql_exception: Column 'product_description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', NULL, NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(55): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:44:03 --> mysqli_sql_exception: Column 'cost_price' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(57): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:44:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:44:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:44:03 --> [Caused by] mysqli_sql_exception: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 12:44:27 --> mysqli_sql_exception: Column 'cost_price' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(57): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 12:44:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:44:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 12:44:27 --> [Caused by] mysqli_sql_exception: Column 'cost_price' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (\'awef\', \'asiudhcsaibcvjlsbhjcv\', NULL, NULL, NULL, NULL, \'no-name (1).jpg\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `product_description`, `cost_price`, `inventory`, `product_status`, `product_tags`, `product_image`) VALUES (:product_title:, :product_description:, :cost_price:, :inventory:, :product_status:, :product_tags:, :product_image:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(57): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 13:06:02 --> mysqli_sql_exception: Unknown column 'tier_4' in 'field list' in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(78): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 13:06:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tier_4' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tier_4' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:02 --> [Caused by] mysqli_sql_exception: Unknown column 'tier_4' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 13:06:43 --> mysqli_sql_exception: Column 'tier_1' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(78): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 13:06:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:43 --> [Caused by] mysqli_sql_exception: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-19 13:06:54 --> mysqli_sql_exception: Column 'tier_1' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(78): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-19 13:06:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 2 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 4 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:06:54 --> [Caused by] mysqli_sql_exception: Column 'tier_1' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (\'awef\', \'awef\', \'asiudhcsaibcvjlsbhjcv\', \'Category-1\', \'100\', \'100\', \'100\', \'awef\', \'wfe\', \'10\', \'100gram\', \'aweff\', \'shirt\', \'Nike\', \'Category-1\', \'Category-1\', \'Channel-1\', \'no-name (1).jpg\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `barcode`, `inventory`, `weight`, `product_tags`, `collection`, `vendor`, `product_type`, `product_category`, `sales_channel`, `product_image`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `buyer`, `preorder_tag`, `preorder_date`, `delist`, `tags_code`, `url`) VALUES (:product_title:, :secondary_title:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :barcode:, :inventory:, :weight:, :product_tags:, :collection:, :vendor:, :product_type:, :product_category:, :sales_channel:, :product_image:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :buyer:, :preorder_tag:, :preorder_date:, :delist:, :tags_code:, :url:)', [...], false)
+ 5 APPPATH\Models\Products_model.php(32): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(78): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishproduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:23:24 --> ErrorException: Undefined variable $post
+in APPPATH\Views\products_view.php on line 163.
+ 1 APPPATH\Views\products_view.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php', 163)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(14): view('products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:23:37 --> ErrorException: Undefined array key "blog_image"
+in APPPATH\Views\products_view.php on line 163.
+ 1 APPPATH\Views\products_view.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "blog_image"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php', 163)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(14): view('products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:24:34 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "no-name (1).jpg"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('uploads/no-name (1).jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('uploads/no-name (1).jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:24:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "no-name (1).jpg"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('uploads/no-name (1).jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('uploads/no-name (1).jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:24:52 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "uploadsno-name (1).jpg"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('uploadsno-name (1).jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('uploadsno-name (1).jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 13:24:53 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "uploadsno-name (1).jpg"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('uploadsno-name (1).jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('uploadsno-name (1).jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 15:37:07 --> ErrorException: Undefined variable $originalName
+in APPPATH\Controllers\Blogs.php on line 69.
+ 1 APPPATH\Controllers\Blogs.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $originalName', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 15:38:46 --> ErrorException: Undefined variable $originalName
+in APPPATH\Controllers\Blogs.php on line 69.
+ 1 APPPATH\Controllers\Blogs.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $originalName', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 15:39:15 --> ErrorException: Undefined variable $blogorimage
+in APPPATH\Controllers\Blogs.php on line 69.
+ 1 APPPATH\Controllers\Blogs.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogorimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 15:40:43 --> ErrorException: Undefined variable $blogorimage
+in APPPATH\Controllers\Blogs.php on line 56.
+ 1 APPPATH\Controllers\Blogs.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blogorimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmyblog()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-19 16:02:21 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\login.php on line 123.
+ 1 APPPATH\Views\login.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php', 123)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\login.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 5 APPPATH\Controllers\Home.php(13): view('login', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

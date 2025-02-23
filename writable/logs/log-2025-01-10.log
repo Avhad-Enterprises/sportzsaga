@@ -1,0 +1,221 @@
+INFO - 2025-01-10 09:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:05 --> Starting fetchEmails method
+INFO - 2025-01-10 09:44:05 --> Starting email processing
+INFO - 2025-01-10 09:44:07 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-10 09:44:07 --> Fetching email threads
+INFO - 2025-01-10 09:44:07 --> Found 6 root emails
+INFO - 2025-01-10 09:44:07 --> Processed 6 email threads
+INFO - 2025-01-10 09:44:07 --> Retrieved 6 email threads
+INFO - 2025-01-10 09:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:15 --> Starting to fetch complete email thread for message number: 1
+INFO - 2025-01-10 09:44:15 --> Fetching complete thread for message: 1
+INFO - 2025-01-10 09:44:15 --> Found 2 messages in thread
+INFO - 2025-01-10 09:44:15 --> Found 2 messages in complete thread
+INFO - 2025-01-10 09:44:16 --> Email thread processing completed successfully
+INFO - 2025-01-10 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:17 --> Successfully fetched agents list
+INFO - 2025-01-10 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:17 --> Successfully fetched macros for tags: 
+INFO - 2025-01-10 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:44:17 --> Fetching CS tags
+INFO - 2025-01-10 09:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:45:46 --> Fetching macro content
+INFO - 2025-01-10 09:45:46 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:45:48 --> Fetching macro content
+INFO - 2025-01-10 09:45:48 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:45:53 --> Fetching macro content
+INFO - 2025-01-10 09:45:53 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:46:24 --> Fetching macro content
+INFO - 2025-01-10 09:46:24 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:48:57 --> Starting macro save process
+INFO - 2025-01-10 09:48:57 --> Macro saved successfully
+INFO - 2025-01-10 09:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:49:08 --> Fetching macro content
+INFO - 2025-01-10 09:49:08 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:49:10 --> Fetching macro content
+INFO - 2025-01-10 09:49:10 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:49:12 --> Fetching macro content
+INFO - 2025-01-10 09:49:12 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:49:14 --> Fetching macro content
+INFO - 2025-01-10 09:49:14 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:49:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:49:16 --> Starting fetchEmails method
+INFO - 2025-01-10 09:49:16 --> Starting email processing
+INFO - 2025-01-10 09:49:21 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-10 09:49:21 --> Fetching email threads
+INFO - 2025-01-10 09:49:21 --> Found 6 root emails
+INFO - 2025-01-10 09:49:21 --> Processed 6 email threads
+INFO - 2025-01-10 09:49:21 --> Retrieved 6 email threads
+INFO - 2025-01-10 09:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:25 --> Starting to fetch complete email thread for message number: 5
+INFO - 2025-01-10 09:50:25 --> Fetching complete thread for message: 5
+INFO - 2025-01-10 09:50:25 --> Found 2 messages in thread
+INFO - 2025-01-10 09:50:25 --> Found 2 messages in complete thread
+INFO - 2025-01-10 09:50:27 --> Email thread processing completed successfully
+INFO - 2025-01-10 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:27 --> Successfully fetched agents list
+INFO - 2025-01-10 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:27 --> Successfully fetched macros for tags: 
+INFO - 2025-01-10 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:27 --> Fetching CS tags
+INFO - 2025-01-10 09:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:31 --> Fetching macro content
+INFO - 2025-01-10 09:50:31 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:45 --> Fetching macro content
+INFO - 2025-01-10 09:50:45 --> Macro content retrieved successfully
+INFO - 2025-01-10 09:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:55 --> Agent updated for message 4 by user 201
+INFO - 2025-01-10 09:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:50:58 --> Starting fetchEmails method
+INFO - 2025-01-10 09:50:58 --> Starting email processing
+INFO - 2025-01-10 09:50:59 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-10 09:50:59 --> Fetching email threads
+INFO - 2025-01-10 09:50:59 --> Found 6 root emails
+INFO - 2025-01-10 09:50:59 --> Processed 6 email threads
+INFO - 2025-01-10 09:50:59 --> Retrieved 6 email threads
+INFO - 2025-01-10 09:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:03 --> Starting fetchEmails method
+INFO - 2025-01-10 09:51:03 --> Starting email processing
+INFO - 2025-01-10 09:51:04 --> Email processing completed. Processed 0 new emails
+INFO - 2025-01-10 09:51:04 --> Fetching email threads
+INFO - 2025-01-10 09:51:04 --> Found 6 root emails
+INFO - 2025-01-10 09:51:04 --> Processed 6 email threads
+INFO - 2025-01-10 09:51:04 --> Retrieved 6 email threads
+INFO - 2025-01-10 09:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 09:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:11:45 --> Fetching order for invoice generation. Order ID: 110
+INFO - 2025-01-10 10:11:45 --> Order found. Decoding product details.
+INFO - 2025-01-10 10:11:45 --> Invoice data prepared. Generating PDF.
+INFO - 2025-01-10 10:11:45 --> Starting PDF invoice generation for Order ID: #100001
+INFO - 2025-01-10 10:11:46 --> PDF invoice successfully generated for Order ID: #100001
+INFO - 2025-01-10 10:11:46 --> PDF generated successfully for order ID: 110
+INFO - 2025-01-10 10:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:12:00 --> Fetching order for invoice generation. Order ID: 116
+INFO - 2025-01-10 10:12:00 --> Order found. Decoding product details.
+INFO - 2025-01-10 10:12:00 --> Invoice data prepared. Generating PDF.
+INFO - 2025-01-10 10:12:00 --> Starting PDF invoice generation for Order ID: #100007
+INFO - 2025-01-10 10:12:01 --> PDF invoice successfully generated for Order ID: #100007
+INFO - 2025-01-10 10:12:01 --> PDF generated successfully for order ID: 116
+INFO - 2025-01-10 10:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:14:41 --> Entering BlueDart management method
+INFO - 2025-01-10 10:14:41 --> Fetched all pending shipments
+INFO - 2025-01-10 10:14:41 --> Fetched BlueDart orders: 6
+INFO - 2025-01-10 10:14:41 --> Rendering BlueDart view
+CRITICAL - 2025-01-10 10:14:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-10 10:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:22:42 --> Entering BlueDart management method
+INFO - 2025-01-10 10:22:42 --> Fetched all pending shipments
+INFO - 2025-01-10 10:22:42 --> Fetched BlueDart orders: 6
+INFO - 2025-01-10 10:22:42 --> Rendering BlueDart view
+CRITICAL - 2025-01-10 10:22:42 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "shoe-1 (2).webp"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-10 10:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:22 --> Filtering BlueDart shipments
+INFO - 2025-01-10 10:25:22 --> Requested status filter: All
+INFO - 2025-01-10 10:25:22 --> Retrieved 7 orders for status: All
+INFO - 2025-01-10 10:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:25 --> Filtering BlueDart shipments
+INFO - 2025-01-10 10:25:25 --> Requested status filter: cancelled
+INFO - 2025-01-10 10:25:25 --> Retrieved 1 orders for status: cancelled
+INFO - 2025-01-10 10:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:27 --> Filtering BlueDart shipments
+INFO - 2025-01-10 10:25:27 --> Requested status filter: delivered
+INFO - 2025-01-10 10:25:27 --> Retrieved 0 orders for status: delivered
+INFO - 2025-01-10 10:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:29 --> Filtering BlueDart shipments
+INFO - 2025-01-10 10:25:29 --> Requested status filter: returned
+INFO - 2025-01-10 10:25:29 --> Retrieved 0 orders for status: returned
+INFO - 2025-01-10 10:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:30 --> Filtering BlueDart shipments
+INFO - 2025-01-10 10:25:30 --> Requested status filter: Fulfilled
+INFO - 2025-01-10 10:25:30 --> Retrieved 6 orders for status: Fulfilled
+INFO - 2025-01-10 10:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:39 --> preparePrintLabels method called
+INFO - 2025-01-10 10:25:39 --> Preparing labels for tracking IDs: 50910295774
+INFO - 2025-01-10 10:25:40 --> Adding label for tracking ID: 50910295774
+INFO - 2025-01-10 10:25:40 --> Merged PDF created with 1 pages
+INFO - 2025-01-10 10:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:25:52 --> preparePrintLabels method called
+INFO - 2025-01-10 10:25:52 --> Preparing labels for tracking IDs: 50910295774, 50910295752, 50910295785
+INFO - 2025-01-10 10:25:52 --> Adding label for tracking ID: 50910295774
+INFO - 2025-01-10 10:25:52 --> Adding label for tracking ID: 50910295752
+INFO - 2025-01-10 10:25:52 --> Adding label for tracking ID: 50910295785
+INFO - 2025-01-10 10:25:52 --> Merged PDF created with 3 pages
+INFO - 2025-01-10 10:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:26:13 --> Entering BlueDart track method
+INFO - 2025-01-10 10:26:13 --> Tracking by order number: #100014
+INFO - 2025-01-10 10:26:13 --> Fetching BlueDart tracking details for AWB: 
+INFO - 2025-01-10 10:26:13 --> Attempting to generate BlueDart token
+INFO - 2025-01-10 10:26:13 --> Token API Response: {"JWTToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJhdWQiOlsiYXVkaWVuY2UxIiwiYXVkaWVuY2UyIl0sImlzcyI6InVybjpcL1wvYXBpZ2VlLWVkZ2UtSldULXBvbGljeS10ZXN0IiwiZXhwIjoxNzM2NTcxMzczLCJpYXQiOjE3MzY0ODQ5NzMsImp0aSI6ImUyYTQxY2I4LTIwNmEtNGE2My1hODgwLTgxYTFjMjdiN2VmNSJ9.ZbDDEJpDcgPmjErBd8vGlqt6A8a-I2lJlbbNshVcfl0"}
+INFO - 2025-01-10 10:26:13 --> Token API HTTP Code: 200
+INFO - 2025-01-10 10:26:13 --> Token generated successfully
+ERROR - 2025-01-10 10:26:13 --> Error in BlueDart tracking: simplexml_load_string(): Entity: line 2: parser error : Start tag expected, '&lt;' not found
+INFO - 2025-01-10 10:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 10:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:51:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

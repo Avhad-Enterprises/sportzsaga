@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .invoice-container{
+            font-family: sans-serif;
+            max-width: 1400px;
+        }
+        h2{
+            text-align: center;
+            color: rgb(159, 94, 245);
+        }
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .invoice-header img {
+            object-fit: contain;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .text-right{
+            text-align: right;
+        }
+        table{
+            width: 100%;
+        }
+        th, .total{
+            font-weight: 600;
+            background-color: rgb(159, 94, 245);
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+        }
+        td{
+            padding: 7px;
+        }
+        .summary{
+            justify-content: flex-end
+        }
+        .stamp {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .summary .title{            
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <div>
+                <h1>SPORTZ SAGA ENTERPRISE</h1>
+                <p>Phone no.: 8591426598</p>
+                <p>Email: sportsaaga@gmail.com</p>
+                <p>GSTIN: 27FXLPM5458K1ZN</p>
+                <p>State: 27-Maharashtra</p>
+            </div>
+            <img src="https://storage.googleapis.com/mkv_imagesbackend/blogs/main_images/sagalogo.png" alt="SportzSaga Logo" />
+        </div>
+        <hr>
+        <div class="invoice-body">
+            <h2>Tax Invoice</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Bill To</h3>
+                    <strong>Customer Name</strong>
+                    <p>Customer Address</p>
+                    <p>Customer Phone</p>
+                    <p>GSTIN Number(if exist)</p>
+                    <p>State</p>
+                </div>
+                <div class="col">
+                    <h3>Ship To</h3>
+                    <strong>Customer Name</strong>
+                    <p>Customer Address</p>
+                    <p>Customer Phone</p>
+                    <p>GSTIN Number(if exist)</p>
+                    <p>State</p>
+                </div>
+                <div class="col text-right">
+                    <h3>Invoice Details</h3>
+                    <strong>Invoice No</strong>
+                    <p>Date</p>
+                    <p>Place of Supply</p>
+                </div>
+            </div>
+            <br>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item name</th>
+                        <th>HSN/SAC</th>
+                        <th>Quantity</th>
+                        <th>Price/Unit</th>
+                        <th>Discount</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[serial no.]</td>
+                        <td><strong>[product_title]</strong></td>
+                        <td>[hsn]</td>
+                        <td>[quantity]</td>
+                        <td>₹[selling_price]</td>
+                        <td>₹[discount]</td>
+                        <td>₹[discounted_price]</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <br>
+
+            <div class="total-section">
+                <div class="row">
+                    <div class="col">
+                        <p><strong>Invoice Amount In Words</strong></p>
+                        <p>[Invoice Amount In Words]</p>
+                        <br>
+                        <p><strong>Terms And Conditions</strong></p>
+                        <p>Thanks for doing business with us!</p>                
+                    </div>
+                    <div class="col summary row">
+                        <div class="col title">
+                            <p>Sub Total</p>
+                            <p>Discount</p>
+                            <p>Total GST</p>
+                            <p>Shipping Charge</p>
+                            <p class="total"><strong>Total</strong></p>
+                            <p>Received</p>
+                            <p>Balance</p>
+                            <p>You Saved</p>
+                        </div>
+                        <div class="col text-right">
+                            <p>₹[Sub Total]</p>
+                            <p>₹[total_discount]</p>
+                            <p>₹[Total GST]</p>
+                            <p>₹[shipping_amount]</p>
+                            <p class="total"><strong>₹[total_amount]</strong></p>
+                            <p>₹[Received]</p>
+                            <p>₹[Balance]</p>
+                            <p>₹[You Saved]</p>
+                        </div>              
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="invoice-footer">
+            <center>For: SPORTZ SAGA ENTERPRISE</center>            
+            <div class="stamp" style="background-image: url(images/tick.png);">
+                <center >
+                    <p><strong>SPORTZSAGA ENTERPRISE</strong></p>
+                </center>
+            </div>
+            <center>Best Regards, Team SportzSaga</center>
+        </div>
+    </div>
+</body>
+</html>

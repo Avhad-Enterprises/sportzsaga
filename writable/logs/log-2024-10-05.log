@@ -1,0 +1,864 @@
+INFO - 2024-10-05 08:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:35:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:36:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 08:37:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Rectangle 6864 (1).png"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 08:37:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Rectangle 6864 (2).png"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 08:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 08:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 09:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 09:13:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Rectangle 6864 (1).png"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 09:13:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Rectangle 6864 (2).png"
+in SYSTEMPATH/Router/Router.php on line 704.
+ 1 SYSTEMPATH/Router/Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(825): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 09:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 09:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 10:51:23 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: YES) in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'sportsaga_db', 3306, '', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\app\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\sportzsaga\app\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: YES) in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 H:\Xampp\htdocs\sportzsaga\app\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+#4 H:\Xampp\htdocs\sportzsaga\app\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+#5 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-10-05 10:51:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 3 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 10:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 10:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:04:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 11:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:01:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:19:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 12:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:00:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:06:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 13:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 14:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 15:00:15 --> mysqli_sql_exception: Unknown column 'xs' in 'field list' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `xs`, `s...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `xs`, `s...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `xs`, `s...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `xs`, `s...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\app\Models\Products_model.php(107): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\sportzsaga\app\Controllers\Products.php(305): App\Models\Products_model->getSizesInventory('194')
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion...')
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-05 15:00:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'xs' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Products.php(305): App\Models\Products_model->getSizesInventory('194')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:00:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'xs' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = \'194\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = \'194\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Products.php(305): App\Models\Products_model->getSizesInventory('194')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:00:16 --> [Caused by] mysqli_sql_exception: Unknown column 'xs' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = \'194\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = \'194\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = \'194\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`
+FROM `products`
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Products.php(305): App\Models\Products_model->getSizesInventory('194')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:01:02 --> BadMethodCallException: Call to undefined method App\Models\Products_model::getSizesInventory
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(305): CodeIgniter\Model->__call('getSizesInventory', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:03:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:07:35 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Products.php on line 302.
+ 1 APPPATH\Controllers\Products.php(302): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Controllers\\Products.php', 302)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:07:49 --> ErrorException: Undefined array key 1
+in APPPATH\Controllers\Products.php on line 302.
+ 1 APPPATH\Controllers\Products.php(302): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Controllers\\Products.php', 302)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:10:02 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Products.php on line 303.
+ 1 APPPATH\Controllers\Products.php(303): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Controllers\\Products.php', 303)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:15:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 15:24:40 --> mysqli_sql_exception: Table 'sportsaga_db.category_trio' doesn't exist in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\app\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\sportzsaga\app\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-05 15:24:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 2 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:24:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 4 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:24:40 --> [Caused by] mysqli_sql_exception: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 5 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:24:42 --> BadMethodCallException: Call to undefined method App\Models\tiersmodel::gesttier2data
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(310): CodeIgniter\Model->__call('gesttier2data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('voxati-men-s-denim-jacket')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:24:46 --> BadMethodCallException: Call to undefined method App\Models\tiersmodel::gesttier2data
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Products.php(310): CodeIgniter\Model->__call('gesttier2data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:28:26 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 25.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:29:42 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 25.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:30:56 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 25.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:34:02 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 25.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:34:18 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 26.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 15:35:09 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\sportzsaga\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 H:\Xampp\htdocs\sportzsaga\app\Models\tiersmodel.php(25): CodeIgniter\BaseModel->findAll()
+#7 H:\Xampp\htdocs\sportzsaga\app\Controllers\Products.php(308): App\Models\tiersmodel->gesttier1data('45')
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion...')
+#9 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#10 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-10-05 15:35:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tier_1`
+WHERE `id` = :id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\tiersmodel.php(25): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Products.php(308): App\Models\tiersmodel->gesttier1data('45')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:35:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tier_1`
+WHERE `id` = \'45\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tier_1`
+WHERE `id` = \'45\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tier_1`
+WHERE `id` = :id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\tiersmodel.php(25): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Products.php(308): App\Models\tiersmodel->gesttier1data('45')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 15:35:09 --> [Caused by] mysqli_sql_exception: Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `tier_1`
+WHERE `id` = \'45\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tier_1`
+WHERE `id` = \'45\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tier_1`
+WHERE `id` = \'45\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tier_1`
+WHERE `id` = :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\tiersmodel.php(25): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Products.php(308): App\Models\tiersmodel->gesttier1data('45')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:35:32 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\view_products_view.php on line 31.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('view_products_view', [], true)
+ 4 APPPATH\Controllers\Products.php(319): view('view_products_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->viewproduct('siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:43:36 --> ErrorException: Undefined array key "vendor"
+in APPPATH\Views\edit_products_view.php on line 404.
+ 1 APPPATH\Views\edit_products_view.php(404): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "vendor"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php', 404)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(220): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('194')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:45:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 15:50:45 --> ErrorException: Undefined array key "meta_tag_description	"
+in APPPATH\Views\edit_products_view.php on line 301.
+ 1 APPPATH\Views\edit_products_view.php(301): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "meta_tag_description	"', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php', 301)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\edit_products_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('edit_products_view', [], true)
+ 5 APPPATH\Controllers\Products.php(220): view('edit_products_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->editproduct('194')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 15:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:56:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 15:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 16:00:12 --> mysqli_sql_exception: Table 'sportsaga_db.category_trio' doesn't exist in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\app\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+#5 H:\Xampp\htdocs\sportzsaga\app\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-05 16:00:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 2 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 16:00:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 4 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 16:00:12 --> [Caused by] mysqli_sql_exception: Table 'sportsaga_db.category_trio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = 1
+ORDER BY `trio_order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category_trio`
+WHERE `trio_visibility` = :trio_visibility:
+ORDER BY `trio_order` ASC', [...], false)
+ 5 APPPATH\Models\CarouselModel.php(182): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(35): App\Models\CarouselModel->getcategorytrio()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 16:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:12:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 16:17:19 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('admin_products/updateproduct/Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('admin_products/updateproduct/Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 16:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:22:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-05 16:22:06 --> mysqli_sql_exception: Unknown column 'seller_id' in 'field list' in H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\sportzsaga\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 H:\Xampp\htdocs\sportzsaga\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 H:\Xampp\htdocs\sportzsaga\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 H:\Xampp\htdocs\sportzsaga\app\Models\Products_model.php(124): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 H:\Xampp\htdocs\sportzsaga\app\Controllers\Products.php(288): App\Models\Products_model->updateproductdata(Array, '194')
+#6 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(943): App\Controllers\Products->updateproduct('194')
+#7 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\sportzsaga\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\sportzsaga\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-05 16:22:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `seller_id` = :seller_id:, `product_title` = :product_title:, `secondary_title` = :secondary_title:, `barcode` = :barcode:, `product_description` = :product_description:, `product_status` = :product_status:, `cost_price` = :cost_price:, `selling_price` = :selling_price:, `compare_at_price` = :compare_at_price:, `sku` = :sku:, `inventory` = :inventory:, `weight` = :weight:, `sales_channel` = :sales_channel:, `tier_1` = :tier_1:, `tier_2` = :tier_2:, `tier_3` = :tier_3:, `tier_4` = :tier_4:, `url` = :url:, `product_tags` = :product_tags:, `meta_tag_title` = :meta_tag_title:, `meta_tag_description` = :meta_tag_description:, `product_image` = :product_image:, `other_image_1` = :other_image_1:, `other_image_2` = :other_image_2:, `other_image_3` = :other_image_3:, `other_image_4` = :other_image_4:, `other_image_5` = :other_image_5:
+WHERE `product_id` = :product_id:', [...], false)
+ 2 APPPATH\Models\Products_model.php(124): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Products.php(288): App\Models\Products_model->updateproductdata([...], '194')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('194')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 16:22:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `seller_id` = NULL, `product_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `secondary_title` = \'Siscaa\', `barcode` = \'123456\', `product_description` = \'                                        \', `product_status` = \'active\', `cost_price` = \'9749\', `selling_price` = \'16200\', `compare_at_price` = \'9749\', `sku` = \'SS121212\', `inventory` = \'100\', `weight` = \'\', `sales_channel` = \'online-store\', `tier_1` = \'\', `tier_2` = NULL, `tier_3` = NULL, `tier_4` = NULL, `url` = \'siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni\', `product_tags` = \'Carrom Board,Siscaa Champion Fighter,Siscaa\', `meta_tag_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `meta_tag_description` = \'Siscaa CHAMPION FIGHTER is known for Best Professional Carrom Board for practice, big size wooden Carrom Board at rate. The frame of CHAMPION FIGHTER Carrom Board is rounded to avoid transport damage .The playing surface is 29 X 29 inches with English Bir\', `product_image` = \'1728119496_1f63008d731d161a49d2.png\', `other_image_1` = \'1728119496_e55691833d675fd14421.jpeg\', `other_image_2` = \'1728119496_3dae92a603765e4ec170.png\', `other_image_3` = \'1728119496_0691839a3e607cc593c2.png\', `other_image_4` = \'1728119496_ac04fac350c131eaa0d3.png\', `other_image_5` = \'1728119496_a13e05e1c333e951c5cb.jpeg\'
+WHERE `product_id` = \'194\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `seller_id` = NULL, `product_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `secondary_title` = \'Siscaa\', `barcode` = \'123456\', `product_description` = \'                                        \', `product_status` = \'active\', `cost_price` = \'9749\', `selling_price` = \'16200\', `compare_at_price` = \'9749\', `sku` = \'SS121212\', `inventory` = \'100\', `weight` = \'\', `sales_channel` = \'online-store\', `tier_1` = \'\', `tier_2` = NULL, `tier_3` = NULL, `tier_4` = NULL, `url` = \'siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni\', `product_tags` = \'Carrom Board,Siscaa Champion Fighter,Siscaa\', `meta_tag_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `meta_tag_description` = \'Siscaa CHAMPION FIGHTER is known for Best Professional Carrom Board for practice, big size wooden Carrom Board at rate. The frame of CHAMPION FIGHTER Carrom Board is rounded to avoid transport damage .The playing surface is 29 X 29 inches with English Bir\', `product_image` = \'1728119496_1f63008d731d161a49d2.png\', `other_image_1` = \'1728119496_e55691833d675fd14421.jpeg\', `other_image_2` = \'1728119496_3dae92a603765e4ec170.png\', `other_image_3` = \'1728119496_0691839a3e607cc593c2.png\', `other_image_4` = \'1728119496_ac04fac350c131eaa0d3.png\', `other_image_5` = \'1728119496_a13e05e1c333e951c5cb.jpeg\'
+WHERE `product_id` = \'194\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `seller_id` = :seller_id:, `product_title` = :product_title:, `secondary_title` = :secondary_title:, `barcode` = :barcode:, `product_description` = :product_description:, `product_status` = :product_status:, `cost_price` = :cost_price:, `selling_price` = :selling_price:, `compare_at_price` = :compare_at_price:, `sku` = :sku:, `inventory` = :inventory:, `weight` = :weight:, `sales_channel` = :sales_channel:, `tier_1` = :tier_1:, `tier_2` = :tier_2:, `tier_3` = :tier_3:, `tier_4` = :tier_4:, `url` = :url:, `product_tags` = :product_tags:, `meta_tag_title` = :meta_tag_title:, `meta_tag_description` = :meta_tag_description:, `product_image` = :product_image:, `other_image_1` = :other_image_1:, `other_image_2` = :other_image_2:, `other_image_3` = :other_image_3:, `other_image_4` = :other_image_4:, `other_image_5` = :other_image_5:
+WHERE `product_id` = :product_id:', [...], false)
+ 4 APPPATH\Models\Products_model.php(124): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Products.php(288): App\Models\Products_model->updateproductdata([...], '194')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('194')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-05 16:22:06 --> [Caused by] mysqli_sql_exception: Unknown column 'seller_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `products` SET `seller_id` = NULL, `product_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `secondary_title` = \'Siscaa\', `barcode` = \'123456\', `product_description` = \'                                        \', `product_status` = \'active\', `cost_price` = \'9749\', `selling_price` = \'16200\', `compare_at_price` = \'9749\', `sku` = \'SS121212\', `inventory` = \'100\', `weight` = \'\', `sales_channel` = \'online-store\', `tier_1` = \'\', `tier_2` = NULL, `tier_3` = NULL, `tier_4` = NULL, `url` = \'siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni\', `product_tags` = \'Carrom Board,Siscaa Champion Fighter,Siscaa\', `meta_tag_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `meta_tag_description` = \'Siscaa CHAMPION FIGHTER is known for Best Professional Carrom Board for practice, big size wooden Carrom Board at rate. The frame of CHAMPION FIGHTER Carrom Board is rounded to avoid transport damage .The playing surface is 29 X 29 inches with English Bir\', `product_image` = \'1728119496_1f63008d731d161a49d2.png\', `other_image_1` = \'1728119496_e55691833d675fd14421.jpeg\', `other_image_2` = \'1728119496_3dae92a603765e4ec170.png\', `other_image_3` = \'1728119496_0691839a3e607cc593c2.png\', `other_image_4` = \'1728119496_ac04fac350c131eaa0d3.png\', `other_image_5` = \'1728119496_a13e05e1c333e951c5cb.jpeg\'
+WHERE `product_id` = \'194\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `seller_id` = NULL, `product_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `secondary_title` = \'Siscaa\', `barcode` = \'123456\', `product_description` = \'                                        \', `product_status` = \'active\', `cost_price` = \'9749\', `selling_price` = \'16200\', `compare_at_price` = \'9749\', `sku` = \'SS121212\', `inventory` = \'100\', `weight` = \'\', `sales_channel` = \'online-store\', `tier_1` = \'\', `tier_2` = NULL, `tier_3` = NULL, `tier_4` = NULL, `url` = \'siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni\', `product_tags` = \'Carrom Board,Siscaa Champion Fighter,Siscaa\', `meta_tag_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `meta_tag_description` = \'Siscaa CHAMPION FIGHTER is known for Best Professional Carrom Board for practice, big size wooden Carrom Board at rate. The frame of CHAMPION FIGHTER Carrom Board is rounded to avoid transport damage .The playing surface is 29 X 29 inches with English Bir\', `product_image` = \'1728119496_1f63008d731d161a49d2.png\', `other_image_1` = \'1728119496_e55691833d675fd14421.jpeg\', `other_image_2` = \'1728119496_3dae92a603765e4ec170.png\', `other_image_3` = \'1728119496_0691839a3e607cc593c2.png\', `other_image_4` = \'1728119496_ac04fac350c131eaa0d3.png\', `other_image_5` = \'1728119496_a13e05e1c333e951c5cb.jpeg\'
+WHERE `product_id` = \'194\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `seller_id` = NULL, `product_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `secondary_title` = \'Siscaa\', `barcode` = \'123456\', `product_description` = \'                                        \', `product_status` = \'active\', `cost_price` = \'9749\', `selling_price` = \'16200\', `compare_at_price` = \'9749\', `sku` = \'SS121212\', `inventory` = \'100\', `weight` = \'\', `sales_channel` = \'online-store\', `tier_1` = \'\', `tier_2` = NULL, `tier_3` = NULL, `tier_4` = NULL, `url` = \'siscaa-champion-fighter-english-birch-ply-black-carrom-board-with-coin-and-geni\', `product_tags` = \'Carrom Board,Siscaa Champion Fighter,Siscaa\', `meta_tag_title` = \'Siscaa Champion Fighter, English Birch Ply Black Carrom Board with Coin and Geni\', `meta_tag_description` = \'Siscaa CHAMPION FIGHTER is known for Best Professional Carrom Board for practice, big size wooden Carrom Board at rate. The frame of CHAMPION FIGHTER Carrom Board is rounded to avoid transport damage .The playing surface is 29 X 29 inches with English Bir\', `product_image` = \'1728119496_1f63008d731d161a49d2.png\', `other_image_1` = \'1728119496_e55691833d675fd14421.jpeg\', `other_image_2` = \'1728119496_3dae92a603765e4ec170.png\', `other_image_3` = \'1728119496_0691839a3e607cc593c2.png\', `other_image_4` = \'1728119496_ac04fac350c131eaa0d3.png\', `other_image_5` = \'1728119496_a13e05e1c333e951c5cb.jpeg\'
+WHERE `product_id` = \'194\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `seller_id` = :seller_id:, `product_title` = :product_title:, `secondary_title` = :secondary_title:, `barcode` = :barcode:, `product_description` = :product_description:, `product_status` = :product_status:, `cost_price` = :cost_price:, `selling_price` = :selling_price:, `compare_at_price` = :compare_at_price:, `sku` = :sku:, `inventory` = :inventory:, `weight` = :weight:, `sales_channel` = :sales_channel:, `tier_1` = :tier_1:, `tier_2` = :tier_2:, `tier_3` = :tier_3:, `tier_4` = :tier_4:, `url` = :url:, `product_tags` = :product_tags:, `meta_tag_title` = :meta_tag_title:, `meta_tag_description` = :meta_tag_description:, `product_image` = :product_image:, `other_image_1` = :other_image_1:, `other_image_2` = :other_image_2:, `other_image_3` = :other_image_3:, `other_image_4` = :other_image_4:, `other_image_5` = :other_image_5:
+WHERE `product_id` = :product_id:', [...], false)
+ 5 APPPATH\Models\Products_model.php(124): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Products.php(288): App\Models\Products_model->updateproductdata([...], '194')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->updateproduct('194')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 16:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:23:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:24:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:30:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-05 16:54:42 --> ErrorException: Undefined variable $cartCount
+in APPPATH\Views\navbar_view.php on line 64.
+ 1 APPPATH\Views\navbar_view.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cartCount', 'H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\navbar_view.php', 64)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\navbar_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('navbar_view', null, true)
+ 5 APPPATH\Views\drip_homepage.php(8): CodeIgniter\View\View->include('navbar_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\sportzsaga\\app\\Views\\drip_homepage.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('drip_homepage', [], true)
+ 9 APPPATH\Controllers\Home.php(29): view('drip_homepage')
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-05 16:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 16:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 17:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-05 18:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

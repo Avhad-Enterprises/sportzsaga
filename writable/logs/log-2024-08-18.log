@@ -1,0 +1,22 @@
+CRITICAL - 2024-08-18 06:24:44 --> ErrorException: Undefined variable $adminType
+in APPPATH/Views/addnew_products_view.php on line 506.
+ 1 APPPATH/Views/addnew_products_view.php(506): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/addnew_products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(143): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 06:57:46 --> ErrorException: Undefined variable $adminType
+in APPPATH/Views/addnew_products_view.php on line 516.
+ 1 APPPATH/Views/addnew_products_view.php(516): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/addnew_products_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Products.php(143): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Products->addnewproducts()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

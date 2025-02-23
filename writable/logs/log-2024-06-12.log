@@ -1,0 +1,647 @@
+INFO - 2024-06-12 07:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:19:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:24:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 07:28:18 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Sam & Marshall 4 .jpgStyle-1.jpg"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('uploads/Sam & Marshall 4 .jpgStyle-1.jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('uploads/Sam & Marshall 4 .jpgStyle-1.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 07:28:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 07:34:45 --> ErrorException: Undefined variable $story
+in APPPATH\Views\story_view.php on line 86.
+ 1 APPPATH\Views\story_view.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $story', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php', 86)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('story_view', null, true)
+ 5 APPPATH\Views\index.php(37): CodeIgniter\View\View->include('story_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\index.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('index', [], true)
+ 9 APPPATH\Controllers\Home.php(28): view('index', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 07:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 07:34:58 --> ErrorException: Array to string conversion
+in APPPATH\Views\story_view.php on line 86.
+ 1 APPPATH\Views\story_view.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php', 86)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('story_view', null, true)
+ 5 APPPATH\Views\index.php(37): CodeIgniter\View\View->include('story_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\index.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('index', [], true)
+ 9 APPPATH\Controllers\Home.php(28): view('index', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 07:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 07:35:23 --> ErrorException: Undefined array key "user_name"
+in APPPATH\Views\story_view.php on line 86.
+ 1 APPPATH\Views\story_view.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_name"', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php', 86)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\story_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('story_view', null, true)
+ 5 APPPATH\Views\index.php(37): CodeIgniter\View\View->include('story_view')
+ 6 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\index.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('index', [], true)
+ 9 APPPATH\Controllers\Home.php(28): view('index', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index('$1')
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 07:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 07:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 08:06:46 --> ErrorException: Undefined variable $pager
+in APPPATH\Views\all_blogs_view.php on line 118.
+ 1 APPPATH\Views\all_blogs_view.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\all_blogs_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('all_blogs_view', [], true)
+ 5 APPPATH\Controllers\Home.php(92): view('all_blogs_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->allblogs()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 08:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 08:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 08:29:25 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 08:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 09:35:10 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 09:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 09:35:24 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:36:07 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 09:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 09:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 09:36:18 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:36:19 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:39:14 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:39:19 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 09:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 09:40:28 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:40:31 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 09:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-12 09:41:27 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:41:30 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:42:10 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:42:14 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:42:27 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:42:36 --> [DEPRECATED] Facebook\FacebookApp implements the Serializable interface, which is deprecated. Implement __serialize() and __unserialize() instead (or in addition, if support for old PHP versions is necessary) in VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookApp.php on line 28.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\FacebookApp.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('H:\\Xampp\\htdocs\\newdriphunter\\vendor\\composer/../facebook/graph-sdk/src/Facebook/FacebookApp.php')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(145): CodeIgniter\Autoloader\Autoloader->loadClassmap('Facebook\\FacebookApp')
+ 4 APPPATH\Controllers\Instagramnew.php(24): Facebook\Facebook->__construct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Instagramnew->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-06-12 09:42:36 --> [DEPRECATED] http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php on line 53.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\RequestBodyUrlEncoded.php(53): http_build_query([...], null, '&')
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(185): Facebook\Http\RequestBodyUrlEncoded->getBody()
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(204): Facebook\FacebookClient->prepareRequestMessage(Object(Facebook\FacebookRequest))
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 6 APPPATH\Controllers\Instagramnew.php(61): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 09:42:37 --> ErrorException: Undefined array key 1
+in VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php on line 108.
+ 1 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'H:\\Xampp\\htdocs\\newdriphunter\\vendor\\facebook\\graph-sdk\\src\\Facebook\\Http\\GraphRawResponse.php', 108)
+ 2 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(130): Facebook\Http\GraphRawResponse->setHttpResponseCodeFromHeader('HTTP/2 400 ')
+ 3 VENDORPATH\facebook\graph-sdk\src\Facebook\Http\GraphRawResponse.php(64): Facebook\Http\GraphRawResponse->setHeadersFromString('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AhnvZLt4KfPYoamfRlRA96f
+x-fb-trace-id: DeihZRb+VhO
+x-fb-rev: 1014156118
+x-fb-debug: GQa9SboJhucekRhoqk2FowXbZp5QVDug+RYbjEqpnMYEOUfCUXcxpLL4uHMsWe5K0EtnrU4cfIc2k31LDVlOcg==
+content-length: 152
+date: Wed, 12 Jun 2024 09:42:37 GMT
+proxy-status: http_request_error; e_proxy="AcI_RT6MOE7a_TVL-D54He49L1ZPPYgQk3NEU65_HafwdAkyayO4R-fQNOnwA0E82Jnm97GGM-gPUSuumQE"; e_fb_binaryversion="AcK3ZTELROYz_kV9wPGeWRi0u-MVS4OVK-ssrvZEGDW6Ku8rrlE2JQqmmTPZnYzZsXrEGgAtTxsJKcOnIPhICI42EhfvZyOnjYE"; e_fb_httpversion="AcLH0tD3QYyVSYXGNYcFEgqbuQ9GX54Z_Y5oLmhAZ5fuPPX__cBeBc9ZnGeD"; e_fb_responsebytes="AcKyDMNBhmTCHqcMliIzmoyUKDiC7hVg9glfWETcqLHleNM9aUJe5DxPPuXX"; e_fb_requesttime="AcKMmXhWXbdAGavbLMdR5tM6KmZOJ6Yo6yXwuWlO5igS12-ZuA4XsCJnvL60VRx1qXtMQcy4zw"; e_fb_requesthandler="AcLiT88t2ZkycHfaqhKxeW77ekLMTU7Q9Pfp7UnFxPFsxACArxHLhmcK_KEzbsJ5ncpyXpxLikw"; e_fb_hostheader="AcKLsGf2YjfEA5BhJmldsaknh_JJ8eaj7rhoU_nWivILIYHc932JOXB9qqrgxLqGMQBGx9EYclkXENx0"; e_fb_requestsequencenumber="AcLgy8xXrv_A9CVx7IgnftJJNbs5qUUTMKdHTTQMAbnM3MTw-U2x9TWapD-Y"; e_upip="AcJHfVYgi4vgZlCRsZplvbHf5gINwG-fqMj8NMt2h9tUeaVoSMKkM26CdVhDZ416pJ3wOHGknCcsDTtjFka2esY9xNi_7PLa"; e_fb_builduser="AcLgkK6W8HMMLiSbB_OK-8sWDYnzl2F66GSmYQAIPEw7IHShRQKdUVoMQ1zlKqagMg8"; e_fb_vipport="AcL_D199FzVKKzAKxBH0-BZ0e0AumSueoDbzacPHfGgLKeF73JCZBFAuT6ys"; e_clientaddr="AcLk5dDIL_8GVReIlsI25PcpgROc_Of4z8qMC9PCYhxXwBFHdRTkmpTr6J7XAa3jTk5JB9303vECg67NsO6TF_nw9JQh479FDU4jFetJMe37eyY"; e_fb_vipaddr="AcJGViLbJg7NGcegpZd5MRAELlCoGp_1j3Tckemr8S9O3q_dYBUGtBgkj7Fby57SvfyziUgpViO8gta3ovfNiEbbrjRyqzdQ"; e_fb_configversion="AcKy2hwLEbH6iEkzc0dilz2C4b_DN9bK5gYav6jacJ3Z0BI-jdVKiBqLJY0c6Q", http_request_error; e_proxy="AcLEneQ65152SB6GOi5R50m7mr-HAtPRzeXe9KN5IqiQKrjgyZ2O4rR4XvrPMJyLn9_HILRX4FS2mw4"; e_fb_binaryversion="AcLa7kw98CQO7gFYPswryQJZTzvVPdQ3b-lMnFxEyAQZs5PZ5fDjo2PGSG1GRsWAZ0J1mNki9e6sVxFNaiD5iSCO6684nyCGFQU"; e_fb_httpversion="AcIpMnaWm_b8zT9dtrllrsRlarQQ86aVh1k50XnKxGsh5T-QGytmaYbZupY3"; e_fb_responsebytes="AcKQE5KADv6SKZtZ9Syxz79OWuvm9LCJ9BWN0XzIJBZCuK87bJkgAjnNRuHu"; e_fb_requesttime="AcJrfldbR373bEMARD_7AkrP7SZQoND_pHeP5DV21Q8Uqk4UNZsZLG1919rbBja_OJYlkpMi0g"; e_fb_requesthandler="AcIfmO1sTdmkR-moKM5r-7SFsVWDKoX4L8_Q6z_C_0hvosbsGodqhAOFkzJGTATvKbUJgKOOC7I"; e_fb_hostheader="AcKRawVzxGH3wbl1fiVMmpOuzlhyQQcfUq19p9f-zplRi_xlmZHuIDK-6jwVt5N5KEe4ETfUNP0yd8kH"; e_fb_requestsequencenumber="AcLg_g6ZYjpa8ZnpSKBCOZVkkVap8tg8kWksxAVyPVNuCDhDK_1csDXMrg"; e_upip="AcLlfdOxEQ86NIzHKuLM6TKP8uv8aG5_kI_A_RHDcjpaIdA9WSU4SxwvHO-i6lQGugoLr9kubYQZj89VJtmRRDwRW-Vgvpr7"; e_fb_builduser="AcJ3E2K5jrYy-pVnb9WNRqRfHp_tBHBfZH8CBgQw0avWKXzZhBI_7NdAvT_WwXsTefg"; e_fb_vipport="AcJnDoN5h58ALJwLvJguoABGpz_loePhzj5Y2F_hWmtJ9lunMMWsSenCrJb7"; e_clientaddr="AcLLwOTng97DA8hFBUse-orimgg2kv3CT3E5blNlmigvTujzMgav2GvUoHkwlX0iDibiYiHo3tcH2_qp8A"; e_fb_vipaddr="AcJc40dUJV9pD6ej2o_xZd5O9s-GLQ5yNheyNoTL4_M6FZnSKH2kyMDS0A0sPh7s0M2gkCbB"; e_fb_configversion="AcIwRqKMWTvoX3tdlWGbEQmVwub0kJ1EIZRMokTMPhKaDy-DXk_owEvg8olN8Q"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=25, rtx=0, c=10, mss=1392, tbw=3557, tp=-1, tpl=-1, uplat=210, ullat=0
+alt-svc: h3=":443"; ma=86400')
+ 4 VENDORPATH\facebook\graph-sdk\src\Facebook\HttpClients\FacebookCurlHttpClient.php(91): Facebook\Http\GraphRawResponse->__construct('HTTP/2 400 
+vary: Origin
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-type: application/json; charset=UTF-8
+www-authenticate: OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token - Cannot parse access token"
+strict-transport-security: max-age=15552000; preload
+pragma: no-cache
+cache-control: no-store
+expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AhnvZLt4KfPYoamfRlRA96f
+x-fb-trace-id: DeihZRb+VhO
+x-fb-rev: 1014156118
+x-fb-debug: GQa9SboJhucekRhoqk2FowXbZp5QVDug+RYbjEqpnMYEOUfCUXcxpLL4uHMsWe5K0EtnrU4cfIc2k31LDVlOcg==
+content-length: 152
+date: Wed, 12 Jun 2024 09:42:37 GMT
+proxy-status: http_request_error; e_proxy="AcI_RT6MOE7a_TVL-D54He49L1ZPPYgQk3NEU65_HafwdAkyayO4R-fQNOnwA0E82Jnm97GGM-gPUSuumQE"; e_fb_binaryversion="AcK3ZTELROYz_kV9wPGeWRi0u-MVS4OVK-ssrvZEGDW6Ku8rrlE2JQqmmTPZnYzZsXrEGgAtTxsJKcOnIPhICI42EhfvZyOnjYE"; e_fb_httpversion="AcLH0tD3QYyVSYXGNYcFEgqbuQ9GX54Z_Y5oLmhAZ5fuPPX__cBeBc9ZnGeD"; e_fb_responsebytes="AcKyDMNBhmTCHqcMliIzmoyUKDiC7hVg9glfWETcqLHleNM9aUJe5DxPPuXX"; e_fb_requesttime="AcKMmXhWXbdAGavbLMdR5tM6KmZOJ6Yo6yXwuWlO5igS12-ZuA4XsCJnvL60VRx1qXtMQcy4zw"; e_fb_requesthandler="AcLiT88t2ZkycHfaqhKxeW77ekLMTU7Q9Pfp7UnFxPFsxACArxHLhmcK_KEzbsJ5ncpyXpxLikw"; e_fb_hostheader="AcKLsGf2YjfEA5BhJmldsaknh_JJ8eaj7rhoU_nWivILIYHc932JOXB9qqrgxLqGMQBGx9EYclkXENx0"; e_fb_requestsequencenumber="AcLgy8xXrv_A9CVx7IgnftJJNbs5qUUTMKdHTTQMAbnM3MTw-U2x9TWapD-Y"; e_upip="AcJHfVYgi4vgZlCRsZplvbHf5gINwG-fqMj8NMt2h9tUeaVoSMKkM26CdVhDZ416pJ3wOHGknCcsDTtjFka2esY9xNi_7PLa"; e_fb_builduser="AcLgkK6W8HMMLiSbB_OK-8sWDYnzl2F66GSmYQAIPEw7IHShRQKdUVoMQ1zlKqagMg8"; e_fb_vipport="AcL_D199FzVKKzAKxBH0-BZ0e0AumSueoDbzacPHfGgLKeF73JCZBFAuT6ys"; e_clientaddr="AcLk5dDIL_8GVReIlsI25PcpgROc_Of4z8qMC9PCYhxXwBFHdRTkmpTr6J7XAa3jTk5JB9303vECg67NsO6TF_nw9JQh479FDU4jFetJMe37eyY"; e_fb_vipaddr="AcJGViLbJg7NGcegpZd5MRAELlCoGp_1j3Tckemr8S9O3q_dYBUGtBgkj7Fby57SvfyziUgpViO8gta3ovfNiEbbrjRyqzdQ"; e_fb_configversion="AcKy2hwLEbH6iEkzc0dilz2C4b_DN9bK5gYav6jacJ3Z0BI-jdVKiBqLJY0c6Q", http_request_error; e_proxy="AcLEneQ65152SB6GOi5R50m7mr-HAtPRzeXe9KN5IqiQKrjgyZ2O4rR4XvrPMJyLn9_HILRX4FS2mw4"; e_fb_binaryversion="AcLa7kw98CQO7gFYPswryQJZTzvVPdQ3b-lMnFxEyAQZs5PZ5fDjo2PGSG1GRsWAZ0J1mNki9e6sVxFNaiD5iSCO6684nyCGFQU"; e_fb_httpversion="AcIpMnaWm_b8zT9dtrllrsRlarQQ86aVh1k50XnKxGsh5T-QGytmaYbZupY3"; e_fb_responsebytes="AcKQE5KADv6SKZtZ9Syxz79OWuvm9LCJ9BWN0XzIJBZCuK87bJkgAjnNRuHu"; e_fb_requesttime="AcJrfldbR373bEMARD_7AkrP7SZQoND_pHeP5DV21Q8Uqk4UNZsZLG1919rbBja_OJYlkpMi0g"; e_fb_requesthandler="AcIfmO1sTdmkR-moKM5r-7SFsVWDKoX4L8_Q6z_C_0hvosbsGodqhAOFkzJGTATvKbUJgKOOC7I"; e_fb_hostheader="AcKRawVzxGH3wbl1fiVMmpOuzlhyQQcfUq19p9f-zplRi_xlmZHuIDK-6jwVt5N5KEe4ETfUNP0yd8kH"; e_fb_requestsequencenumber="AcLg_g6ZYjpa8ZnpSKBCOZVkkVap8tg8kWksxAVyPVNuCDhDK_1csDXMrg"; e_upip="AcLlfdOxEQ86NIzHKuLM6TKP8uv8aG5_kI_A_RHDcjpaIdA9WSU4SxwvHO-i6lQGugoLr9kubYQZj89VJtmRRDwRW-Vgvpr7"; e_fb_builduser="AcJ3E2K5jrYy-pVnb9WNRqRfHp_tBHBfZH8CBgQw0avWKXzZhBI_7NdAvT_WwXsTefg"; e_fb_vipport="AcJnDoN5h58ALJwLvJguoABGpz_loePhzj5Y2F_hWmtJ9lunMMWsSenCrJb7"; e_clientaddr="AcLLwOTng97DA8hFBUse-orimgg2kv3CT3E5blNlmigvTujzMgav2GvUoHkwlX0iDibiYiHo3tcH2_qp8A"; e_fb_vipaddr="AcJc40dUJV9pD6ej2o_xZd5O9s-GLQ5yNheyNoTL4_M6FZnSKH2kyMDS0A0sPh7s0M2gkCbB"; e_fb_configversion="AcIwRqKMWTvoX3tdlWGbEQmVwub0kJ1EIZRMokTMPhKaDy-DXk_owEvg8olN8Q"
+x-fb-connection-quality: EXCELLENT; q=0.9, rtt=25, rtx=0, c=10, mss=1392, tbw=3557, tp=-1, tpl=-1, uplat=210, ullat=0
+alt-svc: h3=":443"; ma=86400', '{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace_id":"AhnvZLt4KfPYoamfRlRA96f"}}')
+ 5 VENDORPATH\facebook\graph-sdk\src\Facebook\FacebookClient.php(216): Facebook\HttpClients\FacebookCurlHttpClient->send('https://graph.facebook.com/v12.0/me/media', 'POST', 'image_url=https%3A%2F%2Fc4.wallpaperflare.com%2Fwallpaper%2F410%2F867%2F750%2Fvector-forest-sunset-forest-sunset-forest-wallpaper-preview.jpg&caption=sample&access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD&appsecret_proof=c30909a35eabc0298ccf71489c55cf6edd36783687a561a1ef52cca3e6321367', [...], 60)
+ 6 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+ 7 VENDORPATH\facebook\graph-sdk\src\Facebook\Facebook.php(360): Facebook\Facebook->sendRequest('POST', '/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD', null, 'v12.0')
+ 8 APPPATH\Controllers\Instagramnew.php(61): Facebook\Facebook->post('/me/media', [...], 'IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Instagramnew->publishnewpost()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instagramnew))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:17:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('instagram/<')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('instagram/<')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:17:25 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('instagram/<')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('instagram/<')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:23:55 --> GuzzleHttp\Exception\ClientException: Client error: `POST https://graph.instagram.com/_aditya_patil___/media` resulted in a `400 Bad Request` response:
+{"error":{"message":"Unsupported post request. Object with ID '_aditya_patil___' does not exist, cannot be loaded due to (truncated...)
+
+in VENDORPATH\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113.
+ 1 VENDORPATH\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), null, [], null)
+ 2 VENDORPATH\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+ 3 VENDORPATH\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), null)
+ 4 VENDORPATH\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+ 5 VENDORPATH\guzzlehttp\promises\src\Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+ 6 VENDORPATH\guzzlehttp\promises\src\Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+ 7 VENDORPATH\guzzlehttp\promises\src\Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+ 8 VENDORPATH\guzzlehttp\promises\src\Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+ 9 VENDORPATH\guzzlehttp\promises\src\Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+10 VENDORPATH\guzzlehttp\guzzle\src\Client.php(189): GuzzleHttp\Promise\Promise->wait()
+11 VENDORPATH\guzzlehttp\guzzle\src\ClientTrait.php(95): GuzzleHttp\Client->request('POST', 'https://graph.instagram.com/_aditya_patil___/media', [...])
+12 APPPATH\Models\InstagramModel.php(19): GuzzleHttp\Client->post('https://graph.instagram.com/_aditya_patil___/media', [...])
+13 APPPATH\Controllers\InstagramController.php(35): App\Models\InstagramModel->uploadMedia('https://c4.wallpaperflare.com/wallpaper/547/636/889/iron-man-tony-stark-movies-marvel-cinematic-universe-wallpaper-preview.jpg', 'sample')
+14 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\InstagramController->postToInstagram()
+15 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstagramController))
+16 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:25:14 --> GuzzleHttp\Exception\ClientException: Client error: `POST https://graph.instagram.com/_aditya_patil___/media` resulted in a `400 Bad Request` response:
+{"error":{"message":"Unsupported post request. Object with ID '_aditya_patil___' does not exist, cannot be loaded due to (truncated...)
+
+in VENDORPATH\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113.
+ 1 VENDORPATH\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), null, [], null)
+ 2 VENDORPATH\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+ 3 VENDORPATH\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), null)
+ 4 VENDORPATH\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+ 5 VENDORPATH\guzzlehttp\promises\src\Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+ 6 VENDORPATH\guzzlehttp\promises\src\Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+ 7 VENDORPATH\guzzlehttp\promises\src\Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+ 8 VENDORPATH\guzzlehttp\promises\src\Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+ 9 VENDORPATH\guzzlehttp\promises\src\Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+10 VENDORPATH\guzzlehttp\guzzle\src\Client.php(189): GuzzleHttp\Promise\Promise->wait()
+11 VENDORPATH\guzzlehttp\guzzle\src\ClientTrait.php(95): GuzzleHttp\Client->request('POST', 'https://graph.instagram.com/_aditya_patil___/media', [...])
+12 APPPATH\Models\InstagramModel.php(19): GuzzleHttp\Client->post('https://graph.instagram.com/_aditya_patil___/media', [...])
+13 APPPATH\Controllers\InstagramController.php(35): App\Models\InstagramModel->uploadMedia('https://c4.wallpaperflare.com/wallpaper/547/636/889/iron-man-tony-stark-movies-marvel-cinematic-universe-wallpaper-preview.jpg', 'sample')
+14 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\InstagramController->postToInstagram()
+15 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstagramController))
+16 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:31:05 --> GuzzleHttp\Exception\ClientException: Client error: `GET https://graph.facebook.com/v12.0/me/accounts?access_token=IGQWRNa2JjRG1RRlRLVHZAxOTl1TGp2VHdRZA2laczZACY00zUVFMTTd1MVFXRlV2ZAUdIUVhQQXNvTzRydGNTR3JOZAEl4YU1mTm1oX3NDZA25RR05oYUN2WDFZAZA0NfekN0MzQ1TWl4M1lLOW43MlYwdGlwbDN2WTJaSWMZD` resulted in a `400 Bad Request` response:
+{"error":{"message":"Invalid OAuth access token - Cannot parse access token","type":"OAuthException","code":190,"fbtrace (truncated...)
+
+in VENDORPATH\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113.
+ 1 VENDORPATH\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), null, [], null)
+ 2 VENDORPATH\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+ 3 VENDORPATH\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), null)
+ 4 VENDORPATH\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+ 5 VENDORPATH\guzzlehttp\promises\src\Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+ 6 VENDORPATH\guzzlehttp\promises\src\Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+ 7 VENDORPATH\guzzlehttp\promises\src\Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+ 8 VENDORPATH\guzzlehttp\promises\src\Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+ 9 VENDORPATH\guzzlehttp\promises\src\Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+10 VENDORPATH\guzzlehttp\guzzle\src\Client.php(189): GuzzleHttp\Promise\Promise->wait()
+11 VENDORPATH\guzzlehttp\guzzle\src\ClientTrait.php(44): GuzzleHttp\Client->request('GET', 'https://graph.facebook.com/v12.0/me/accounts', [...])
+12 APPPATH\Models\InstagramModel.php(17): GuzzleHttp\Client->get('https://graph.facebook.com/v12.0/me/accounts', [...])
+13 APPPATH\Models\InstagramModel.php(39): App\Models\InstagramModel->getInstagramAccountId()
+14 APPPATH\Controllers\InstagramController.php(35): App\Models\InstagramModel->uploadMedia('https://c4.wallpaperflare.com/wallpaper/547/636/889/iron-man-tony-stark-movies-marvel-cinematic-universe-wallpaper-preview.jpg', 'sample')
+15 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\InstagramController->postToInstagram()
+16 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstagramController))
+17 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 10:33:46 --> GuzzleHttp\Exception\ServerException: Server error: `POST https://graph.instagram.com/6300034297/media` resulted in a `500 Internal Server Error` response:
+{"error":{"message":"An unexpected error has occurred. Please retry your request later.","type":"OAuthException","is_tra (truncated...)
+
+in VENDORPATH\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113.
+ 1 VENDORPATH\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), null, [], null)
+ 2 VENDORPATH\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+ 3 VENDORPATH\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), null)
+ 4 VENDORPATH\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+ 5 VENDORPATH\guzzlehttp\promises\src\Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+ 6 VENDORPATH\guzzlehttp\promises\src\Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+ 7 VENDORPATH\guzzlehttp\promises\src\Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+ 8 VENDORPATH\guzzlehttp\promises\src\Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+ 9 VENDORPATH\guzzlehttp\promises\src\Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+10 VENDORPATH\guzzlehttp\guzzle\src\Client.php(189): GuzzleHttp\Promise\Promise->wait()
+11 VENDORPATH\guzzlehttp\guzzle\src\ClientTrait.php(95): GuzzleHttp\Client->request('POST', 'https://graph.instagram.com/6300034297/media', [...])
+12 APPPATH\Models\InstagramModel.php(19): GuzzleHttp\Client->post('https://graph.instagram.com/6300034297/media', [...])
+13 APPPATH\Controllers\InstagramController.php(35): App\Models\InstagramModel->uploadMedia('https://c4.wallpaperflare.com/wallpaper/547/636/889/iron-man-tony-stark-movies-marvel-cinematic-universe-wallpaper-preview.jpg', 'sample')
+14 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\InstagramController->postToInstagram()
+15 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstagramController))
+16 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 11:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 11:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 11:41:28 --> ErrorException: Undefined variable $updatelogoename
+in APPPATH\Controllers\Brands.php on line 73.
+ 1 APPPATH\Controllers\Brands.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updatelogoename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 73)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->updatetedbrand('10')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 11:55:41 --> ErrorException: Undefined variable $story
+in APPPATH\Views\stories_view.php on line 156.
+ 1 APPPATH\Views\stories_view.php(156): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $story', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\stories_view.php', 156)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\stories_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('stories_view', [], true)
+ 5 APPPATH\Controllers\Blogs.php(369): view('stories_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->stories()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 11:57:20 --> ErrorException: Undefined variable $newstorycontent
+in APPPATH\Controllers\Blogs.php on line 514.
+ 1 APPPATH\Controllers\Blogs.php(514): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newstorycontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 514)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmystory()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:00:50 --> ErrorException: Undefined variable $newstorycontent
+in APPPATH\Controllers\Blogs.php on line 514.
+ 1 APPPATH\Controllers\Blogs.php(514): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newstorycontent', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 514)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmystory()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:05:06 --> ErrorException: Undefined variable $logoename
+in APPPATH\Controllers\Brands.php on line 36.
+ 1 APPPATH\Controllers\Brands.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logoename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishbrand()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:05:13 --> ErrorException: Undefined variable $logoename
+in APPPATH\Controllers\Brands.php on line 36.
+ 1 APPPATH\Controllers\Brands.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logoename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishbrand()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:07:36 --> ErrorException: Undefined variable $updatelogoename
+in APPPATH\Controllers\Brands.php on line 73.
+ 1 APPPATH\Controllers\Brands.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $updatelogoename', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 73)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->updatetedbrand('9')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:13:41 --> ErrorException: Undefined variable $categoryimage
+in APPPATH\Controllers\Brands.php on line 122.
+ 1 APPPATH\Controllers\Brands.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoryimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Brands.php', 122)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Brands->publishcategory()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Brands))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 12:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 12:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 12:44:49 --> ErrorException: Undefined variable $newcelebimage
+in APPPATH\Controllers\Blogs.php on line 702.
+ 1 APPPATH\Controllers\Blogs.php(702): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcelebimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 702)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmydripspot()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 12:55:04 --> ErrorException: Undefined variable $newcelebimage
+in APPPATH\Controllers\Blogs.php on line 702.
+ 1 APPPATH\Controllers\Blogs.php(702): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newcelebimage', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Controllers\\Blogs.php', 702)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Blogs->publishmydripspot()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blogs))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 12:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 12:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 13:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-12 15:43:26 --> ErrorException: Undefined variable $post
+in APPPATH\Views\collections_view.php on line 165.
+ 1 APPPATH\Views\collections_view.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\collections_view.php', 165)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(232): view('collections_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->collections()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:55:48 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:56:09 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:56:39 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:57:03 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:57:17 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 15:58:31 --> ErrorException: Undefined variable $products
+in APPPATH\Views\addnew_collections_view.php on line 142.
+ 1 APPPATH\Views\addnew_collections_view.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php', 142)
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\Xampp\\htdocs\\newdriphunter\\app\\Views\\addnew_collections_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('addnew_collections_view', [], true)
+ 5 APPPATH\Controllers\Products.php(246): view('addnew_collections_view')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->addnewcollection()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-12 16:08:13 --> mysqli_sql_exception: Column 'tier_2' cannot be null in H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 H:\Xampp\htdocs\newdriphunter\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 H:\Xampp\htdocs\newdriphunter\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 H:\Xampp\htdocs\newdriphunter\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 H:\Xampp\htdocs\newdriphunter\app\Models\products_model.php(47): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 H:\Xampp\htdocs\newdriphunter\app\Controllers\Products.php(144): App\Models\Products_model->addnewproduct(Array)
+#6 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+#7 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 H:\Xampp\htdocs\newdriphunter\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 H:\Xampp\htdocs\newdriphunter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-12 16:08:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :url:, :delist:, :preorder_date:, :preorder_tag:, :buyer:, :product_tags:, :meta_tag_title:, :meta_tag_description:, :meta_tag_image:, :other_image_1:, :other_image_2:, :other_image_3:, :other_image_4:, :other_image_5:)', [...], false)
+ 2 APPPATH\Models\products_model.php(47): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Products.php(144): App\Models\Products_model->addnewproduct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 16:08:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'tier_2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (\'The Aurous Blaze Laceup Sneakers\', \'The Aurous Blaze Laceup Sneakers\', \'9\', \'526355\', \'Let your love your color come to the surface with these sneakers that feature some of the most complimenting hues.\\r\\nThis pair of sneakers is the epitome of class and durability because they are built using premium-grade upper material, have machine-stitching with no loose ends, and have a super-comforting insole\', \'Active\', \'2599\', \'1999\', \'1588\', \'122\', \'1000\', \'Shoe\', \'Nike\', \'100\', \'The aurous 1.jpg\', \'\', \'Footwear\', NULL, NULL, NULL, \'the-aurous-blaze-laceup-sneakers\', \'awefawef\', \'\', \'no\', \'The Modern Soul\', \'Sneakers,shoes,The Aurous\', \'\', \'\', NULL, \'The aurous 4.jpg\', \'The aurous 5.jpg\', \'The aurous 2.jpg\', \'The aurous 6.jpg\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (\'The Aurous Blaze Laceup Sneakers\', \'The Aurous Blaze Laceup Sneakers\', \'9\', \'526355\', \'Let your love your color come to the surface with these sneakers that feature some of the most complimenting hues.\\r\\nThis pair of sneakers is the epitome of class and durability because they are built using premium-grade upper material, have machine-stitching with no loose ends, and have a super-comforting insole\', \'Active\', \'2599\', \'1999\', \'1588\', \'122\', \'1000\', \'Shoe\', \'Nike\', \'100\', \'The aurous 1.jpg\', \'\', \'Footwear\', NULL, NULL, NULL, \'the-aurous-blaze-laceup-sneakers\', \'awefawef\', \'\', \'no\', \'The Modern Soul\', \'Sneakers,shoes,The Aurous\', \'\', \'\', NULL, \'The aurous 4.jpg\', \'The aurous 5.jpg\', \'The aurous 2.jpg\', \'The aurous 6.jpg\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :url:, :delist:, :preorder_date:, :preorder_tag:, :buyer:, :product_tags:, :meta_tag_title:, :meta_tag_description:, :meta_tag_image:, :other_image_1:, :other_image_2:, :other_image_3:, :other_image_4:, :other_image_5:)', [...], false)
+ 4 APPPATH\Models\products_model.php(47): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Products.php(144): App\Models\Products_model->addnewproduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-12 16:08:13 --> [Caused by] mysqli_sql_exception: Column 'tier_2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (\'The Aurous Blaze Laceup Sneakers\', \'The Aurous Blaze Laceup Sneakers\', \'9\', \'526355\', \'Let your love your color come to the surface with these sneakers that feature some of the most complimenting hues.\\r\\nThis pair of sneakers is the epitome of class and durability because they are built using premium-grade upper material, have machine-stitching with no loose ends, and have a super-comforting insole\', \'Active\', \'2599\', \'1999\', \'1588\', \'122\', \'1000\', \'Shoe\', \'Nike\', \'100\', \'The aurous 1.jpg\', \'\', \'Footwear\', NULL, NULL, NULL, \'the-aurous-blaze-laceup-sneakers\', \'awefawef\', \'\', \'no\', \'The Modern Soul\', \'Sneakers,shoes,The Aurous\', \'\', \'\', NULL, \'The aurous 4.jpg\', \'The aurous 5.jpg\', \'The aurous 2.jpg\', \'The aurous 6.jpg\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (\'The Aurous Blaze Laceup Sneakers\', \'The Aurous Blaze Laceup Sneakers\', \'9\', \'526355\', \'Let your love your color come to the surface with these sneakers that feature some of the most complimenting hues.\\r\\nThis pair of sneakers is the epitome of class and durability because they are built using premium-grade upper material, have machine-stitching with no loose ends, and have a super-comforting insole\', \'Active\', \'2599\', \'1999\', \'1588\', \'122\', \'1000\', \'Shoe\', \'Nike\', \'100\', \'The aurous 1.jpg\', \'\', \'Footwear\', NULL, NULL, NULL, \'the-aurous-blaze-laceup-sneakers\', \'awefawef\', \'\', \'no\', \'The Modern Soul\', \'Sneakers,shoes,The Aurous\', \'\', \'\', NULL, \'The aurous 4.jpg\', \'The aurous 5.jpg\', \'The aurous 2.jpg\', \'The aurous 6.jpg\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (\'The Aurous Blaze Laceup Sneakers\', \'The Aurous Blaze Laceup Sneakers\', \'9\', \'526355\', \'Let your love your color come to the surface with these sneakers that feature some of the most complimenting hues.\\r\\nThis pair of sneakers is the epitome of class and durability because they are built using premium-grade upper material, have machine-stitching with no loose ends, and have a super-comforting insole\', \'Active\', \'2599\', \'1999\', \'1588\', \'122\', \'1000\', \'Shoe\', \'Nike\', \'100\', \'The aurous 1.jpg\', \'\', \'Footwear\', NULL, NULL, NULL, \'the-aurous-blaze-laceup-sneakers\', \'awefawef\', \'\', \'no\', \'The Modern Soul\', \'Sneakers,shoes,The Aurous\', \'\', \'\', NULL, \'The aurous 4.jpg\', \'The aurous 5.jpg\', \'The aurous 2.jpg\', \'The aurous 6.jpg\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product_title`, `secondary_title`, `brand`, `barcode`, `product_description`, `product_status`, `cost_price`, `selling_price`, `compare_at_price`, `sku`, `inventory`, `collection`, `vendor`, `weight`, `product_image`, `sales_channel`, `tier_1`, `tier_2`, `tier_3`, `tier_4`, `url`, `delist`, `preorder_date`, `preorder_tag`, `buyer`, `product_tags`, `meta_tag_title`, `meta_tag_description`, `meta_tag_image`, `other_image_1`, `other_image_2`, `other_image_3`, `other_image_4`, `other_image_5`) VALUES (:product_title:, :secondary_title:, :brand:, :barcode:, :product_description:, :product_status:, :cost_price:, :selling_price:, :compare_at_price:, :sku:, :inventory:, :collection:, :vendor:, :weight:, :product_image:, :sales_channel:, :tier_1:, :tier_2:, :tier_3:, :tier_4:, :url:, :delist:, :preorder_date:, :preorder_tag:, :buyer:, :product_tags:, :meta_tag_title:, :meta_tag_description:, :meta_tag_image:, :other_image_1:, :other_image_2:, :other_image_3:, :other_image_4:, :other_image_5:)', [...], false)
+ 5 APPPATH\Models\products_model.php(47): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Products.php(144): App\Models\Products_model->addnewproduct([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Products->publishProduct()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-12 16:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

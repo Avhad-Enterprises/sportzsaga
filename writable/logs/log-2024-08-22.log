@@ -1,0 +1,119 @@
+CRITICAL - 2024-08-22 16:48:11 --> ErrorException: Undefined variable $post
+in APPPATH/Views/footer_view.php on line 1338.
+ 1 APPPATH/Views/footer_view.php(1338): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/footer_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(469): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/blogs_view.php(249): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/blogs_view.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Blogs.php(38): view()
+10 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->index()
+11 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 16:48:52 --> ErrorException: Undefined array key "title"
+in APPPATH/Views/edit_blog_view.php on line 120.
+ 1 APPPATH/Views/edit_blog_view.php(120): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/seotools/newdriphunter_depoly/app/Views/edit_blog_view.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Blogs.php(134): view()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->editblogs()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 17:43:19 --> Error: Class "App\Controllers\Users_model" not found
+in APPPATH/Controllers/Dashboard.php on line 282.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 17:43:42 --> TypeError: strpos(): Argument #1 ($haystack) must be of type string, CodeIgniter\Email\Email given
+in SYSTEMPATH/Email/Email.php on line 751.
+ 1 SYSTEMPATH/Email/Email.php(751): strpos()
+ 2 SYSTEMPATH/Email/Email.php(554): CodeIgniter\Email\Email->stringToArray()
+ 3 APPPATH/Controllers/Dashboard.php(321): CodeIgniter\Email\Email->setTo()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 17:49:02 --> TypeError: strpos(): Argument #1 ($haystack) must be of type string, CodeIgniter\Email\Email given
+in SYSTEMPATH/Email/Email.php on line 751.
+ 1 SYSTEMPATH/Email/Email.php(751): strpos()
+ 2 SYSTEMPATH/Email/Email.php(554): CodeIgniter\Email\Email->stringToArray()
+ 3 APPPATH/Controllers/Dashboard.php(321): CodeIgniter\Email\Email->setTo()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 17:49:30 --> TypeError: strpos(): Argument #1 ($haystack) must be of type string, CodeIgniter\Email\Email given
+in SYSTEMPATH/Email/Email.php on line 751.
+ 1 SYSTEMPATH/Email/Email.php(751): strpos()
+ 2 SYSTEMPATH/Email/Email.php(554): CodeIgniter\Email\Email->stringToArray()
+ 3 APPPATH/Controllers/Dashboard.php(321): CodeIgniter\Email\Email->setTo()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 17:50:14 --> Error: Class "App\Controllers\Users_model" not found
+in APPPATH/Controllers/Dashboard.php on line 282.
+ 1 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Dashboard->addtasks()
+ 2 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-22 20:42:47 --> mysqli_sql_exception: Unknown column 'visibility' in 'field list' in /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/seotools/newdriphunter_depoly/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/seotools/newdriphunter_depoly/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/seotools/newdriphunter_depoly/system/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+#4 /home/seotools/newdriphunter_depoly/app/Models/blogs_model.php(244): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/seotools/newdriphunter_depoly/app/Controllers/Blogs.php(774): App\Models\Blogs_model->publishnewdripspot()
+#6 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(943): App\Controllers\Blogs->publishdripspot()
+#7 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+#8 /home/seotools/newdriphunter_depoly/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/seotools/public_html/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-22 20:42:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'visibility' in 'field list'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/blogs_model.php(244): CodeIgniter\Database\BaseBuilder->insert()
+ 3 APPPATH/Controllers/Blogs.php(774): App\Models\Blogs_model->publishnewdripspot()
+ 4 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->publishdripspot()
+ 5 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 20:42:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'visibility' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/blogs_model.php(244): CodeIgniter\Database\BaseBuilder->insert()
+ 5 APPPATH/Controllers/Blogs.php(774): App\Models\Blogs_model->publishnewdripspot()
+ 6 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->publishdripspot()
+ 7 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 20:42:47 --> [Caused by] mysqli_sql_exception: Unknown column 'visibility' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/blogs_model.php(244): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH/Controllers/Blogs.php(774): App\Models\Blogs_model->publishnewdripspot()
+ 7 SYSTEMPATH/CodeIgniter.php(943): App\Controllers\Blogs->publishdripspot()
+ 8 SYSTEMPATH/CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 20:47:21 --> ParseError: syntax error, unexpected identifier "is_default", expecting "]"
+in APPPATH/Controllers/Blogs.php on line 747.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(901): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
