@@ -504,5 +504,5 @@ $routes->post('marquee-bottom-text/save', 'Store::saveBottomText');
 $routes->post('save-email-popup', 'EmailPopupController::save');
 $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
-$routes->delete('marquee-text/delete-marquee(:num)', 'Store::delete_marquee/$1');
-$routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::update/$1');
+$routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
+$routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');
