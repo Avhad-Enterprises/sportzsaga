@@ -5963,3 +5963,63 @@ INFO - 2025-02-23 18:57:20 --> Email processing completed. Processed 0 new email
 INFO - 2025-02-23 18:57:20 --> Fetching email threads
 INFO - 2025-02-23 18:57:20 --> Found 8 root emails
 INFO - 2025-02-23 18:57:20 --> Retrieved 8 email threads
+INFO - 2025-02-23 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-23 18:57:48 --> Starting tracking details update process
+INFO - 2025-02-23 18:57:48 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-02-23 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-02-23 18:57:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-02-23 18:57:48 --> Starting fetchEmails method
+INFO - 2025-02-23 18:57:48 --> Starting email processing
+INFO - 2025-02-23 18:57:49 --> Email processing completed. Processed 0 new emails
+INFO - 2025-02-23 18:57:49 --> Fetching email threads
+INFO - 2025-02-23 18:57:49 --> Found 8 root emails
+INFO - 2025-02-23 18:57:49 --> Retrieved 8 email threads
+INFO - 2025-02-23 18:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-02-23 18:58:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-02-23 18:58:58 --> Starting fetchEmails method
+INFO - 2025-02-23 18:58:58 --> Starting email processing
+INFO - 2025-02-23 18:58:59 --> Email processing completed. Processed 0 new emails
+INFO - 2025-02-23 18:58:59 --> Fetching email threads
+INFO - 2025-02-23 18:58:59 --> Found 8 root emails
+INFO - 2025-02-23 18:58:59 --> Retrieved 8 email threads
+INFO - 2025-02-23 18:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-23 18:58:59 --> Starting tracking details update process
+INFO - 2025-02-23 18:58:59 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-02-23 18:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-23 18:59:58 --> Starting tracking details update process
+INFO - 2025-02-23 18:59:58 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-02-23 18:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-02-23 18:59:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-02-23 18:59:58 --> Starting fetchEmails method
+INFO - 2025-02-23 18:59:58 --> Starting email processing
+INFO - 2025-02-23 18:59:59 --> Email processing completed. Processed 0 new emails
+INFO - 2025-02-23 18:59:59 --> Fetching email threads
+INFO - 2025-02-23 18:59:59 --> Found 8 root emails
+INFO - 2025-02-23 18:59:59 --> Retrieved 8 email threads
+INFO - 2025-02-23 19:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-23 19:00:58 --> Starting tracking details update process
+INFO - 2025-02-23 19:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-02-23 19:00:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-02-23 19:00:58 --> Starting fetchEmails method
+INFO - 2025-02-23 19:00:58 --> Starting email processing
+INFO - 2025-02-23 19:00:58 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-02-23 19:00:59 --> Email processing completed. Processed 0 new emails
+INFO - 2025-02-23 19:00:59 --> Fetching email threads
+INFO - 2025-02-23 19:00:59 --> Found 8 root emails
+INFO - 2025-02-23 19:00:59 --> Retrieved 8 email threads

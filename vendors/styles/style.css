@@ -774,7 +774,7 @@ p {
     font-weight: 400;
     padding: .657rem 1rem;
     letter-spacing: 0;
-    width: 500px;
+    /* width: 500px; */
     text-wrap: auto;
     color: #444;
     font-family: 'Inter', sans-serif;
