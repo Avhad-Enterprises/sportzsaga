@@ -110,17 +110,43 @@
                             <div class="col-md-8">
 
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Customer</p>
+                                    <p class="text-blue">
+                                        Customer
+                                        <span class="badge 
+                                                <?php
+                                                if ($user['account_status'] === 'active') {
+                                                    echo 'badge-success';
+                                                } elseif ($user['account_status'] === 'inactive') {
+                                                    echo 'badge-warning';
+                                                } elseif ($user['account_status'] === 'suspended') {
+                                                    echo 'badge-danger';
+                                                } else {
+                                                    echo 'badge-secondary';
+                                                }
+                                                ?>">
+                                            <?= ucfirst($user['account_status']) ?>
+                                        </span>
+                                    </p>
+
 
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="">Risk Profile</label>
-                                                <?php if ($user['risk_profile'] === 'No'): ?>
-                                                    <span class="badge badge-pill" data-bgcolor="#28a745" data-color="#ffffff"><?= $user['risk_profile'] ?></span>
-                                                <?php else: ?>
-                                                    <span class="badge badge-pill" data-bgcolor="#DA1614" data-color="#ffffff"><?= $user['risk_profile'] ?></span>
-                                                <?php endif; ?>
+                                                <?php
+
+                                                $riskProfile = !empty($user['risk_profile']) ? $user['risk_profile'] : 'Low';
+
+                                                $badgeClass = 'badge-success';
+                                                if ($riskProfile === 'High') {
+                                                    $badgeClass = 'badge-danger';
+                                                } elseif ($riskProfile === 'Medium') {
+                                                    $badgeClass = 'badge-warning';
+                                                }
+                                                ?>
+                                                <span class="badge badge-pill <?= $badgeClass ?>">
+                                                    <?= ucfirst($riskProfile) ?>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -163,14 +189,13 @@
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label>Account Status</label>
-                                                <select class="form-control" name="account_status" required>
-                                                    <option value="">Select Account Status</option>
-                                                    <option value="active" <?= $user['account_status'] == 'active' ? 'selected' : '' ?>>Active</option>
-                                                    <option value="inactive" <?= $user['account_status'] == 'inactive' ? 'selected' : '' ?>>Inactive</option>
-                                                </select>
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">This field can't be empty</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <label for="" class="form-label">Referral ID
+                                                        (<a href="<?= base_url() ?>admin_users/referral-history/<?= $user['user_id'] ?>">History</a>)
+                                                    </label>
+                                                    <div class="pointer" data-toggle="modal" data-target="#referralPointsModal">Set</div>
+                                                </div>
+                                                <input type="text" class="form-control" id="" value="<?= $user['referral_id'] ?>" placeholder="Referral ID" readonly>
                                             </div>
                                         </div>
                                     </div>
