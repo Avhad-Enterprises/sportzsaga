@@ -94,76 +94,52 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Export Datatable Start -->
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="title mb-10">
-                            <p>
-                                <a href="<?= base_url() ?>registeredusers/edituser/<?= $user_id ?>" class="px-2">
-                                    <i class="fa-solid fa-arrow-left"></i>
+                <?php foreach ($loyalty_point as $point) : ?>
+                    <form action="<?= base_url('admin_users/UpdateLoyaltyPointValue/1') ?>" method="post" enctype="multipart/form-data">
+                        <div class="mb-10 d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="<?= base_url() ?>registeredusers">
+                                    <i class="fa-solid fa-arrow-left px-3"></i>
                                 </a>
-                                Back
-                            </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="pd-20 card-box mb-30">
+                                    <div class="form-group">
+                                        <label for="loyalty_point_value" class="form-label">Loyalty Point Value (GBP)</label>
+                                        <input type="number" step="0.01" name="loyalty_point_value" id="loyalty_point_value" value="<?= $point['loyalty_point_value'] ?>" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expiry_period" class="form-label">Point Expiry Period (Days)</label>
+                                        <input type="number" name="expiry_period" id="expiry_period" class="form-control" value="<?= $point['point_expiry_period'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="min_points_to_redeem" class="form-label">Minimum Points to Redeem</label>
+                                        <input type="number" name="min_points_to_redeem" id="min_points_to_redeem" value="<?= $point['min_points_for_redemption'] ?>" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="max_discount_percentage" class="form-label">Max Discount (%)</label>
+                                        <input type="number" step="0.01" name="max_discount_percentage" id="max_discount_percentage" value="<?= $point['max_discount_percentage'] ?>" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-dark btn-lg" id="submitButton">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Order History</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Order Date</th>
-                                    <th>Product Name</th>
-                                    <th>Quantity</th>
-                                    <th>Size</th>
-                                    <th>Total Amount</th>
-                                    <th>Payment Method</th>
-                                    <th>Customer Address</th>
-                                    <th>Payment Status</th>
-                                    <th>Fulfillment Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($orders)): ?>
-                                    <?php foreach ($orders as $order): ?>
-                                        <tr>
-                                            <td><a class="b_line" href="<?= base_url(); ?>ordermanagement/editorder/<?= $order['order_id'] ?>"><?= $order['order_number'] ?></a></td>
-                                            <td><?= date('d M Y H:i A', strtotime($order['order_date'])) ?></td>
-                                            <td><?= esc($order['product_name']) ?></td>
-                                            <td><?= esc($order['product_quantities']) ?></td>
-                                            <td><?= esc($order['product_size']) ?></td>
-                                            <td><?= esc($order['total_amount']) ?></td>
-                                            <td><?= esc($order['payment_method']) ?></td>
-                                            <td><?= esc($order['customer_address']) ?></td>
-                                            <td><?= esc($order['payment_status']) ?></td>
-                                            <td><?= esc($order['fulfillment_status']) ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <tr>
-                                        <td colspan="10" class="text-center">No orders found.</td>
-                                    </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    </form>
+                <?php endforeach; ?>
 
-
-                <!-- Export Datatable End -->
             </div>
         </div>
     </div>
 
+    <!-- Footer View Start -->
+    <?= $this->include('footer_view') ?>
+    <!-- Footer View End -->
 </body>
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
 
 </html>

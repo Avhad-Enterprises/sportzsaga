@@ -170,7 +170,7 @@
                                         </li>
                                         <li>
                                             <span>Address:</span>
-                                            <?= $user['address_information']; ?>
+                                            <?= $user['address_one']; ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -304,7 +304,7 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Address</label>
-                                                                        <textarea class="form-control" name="address_information"><?= set_value('address_information', $user['address_information']) ?></textarea>
+                                                                        <textarea class="form-control" name="address_information"><?= set_value('address_one', $user['address_one']) ?></textarea>
                                                                     </div>
                                                                     <div class="form-group mb-0">
                                                                         <input type="submit" class="btn btn-primary" value="Update Information" />

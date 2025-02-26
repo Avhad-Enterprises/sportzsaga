@@ -94,76 +94,66 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Export Datatable Start -->
 
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title mb-10">
                             <p>
-                                <a href="<?= base_url() ?>registeredusers/edituser/<?= $user_id ?>" class="px-2">
+                                <a href="<?= base_url() ?>registeredusers/edituser/<?= $userid ?>" class="px-2">
                                     <i class="fa-solid fa-arrow-left"></i>
                                 </a>
-                                Back
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Order History</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Order Date</th>
-                                    <th>Product Name</th>
-                                    <th>Quantity</th>
-                                    <th>Size</th>
-                                    <th>Total Amount</th>
-                                    <th>Payment Method</th>
-                                    <th>Customer Address</th>
-                                    <th>Payment Status</th>
-                                    <th>Fulfillment Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($orders)): ?>
-                                    <?php foreach ($orders as $order): ?>
+                <?php if (!empty($referralHistory)): ?>
+                    <?php $firstReferral = $referralHistory[0]; ?>
+                    <div class="card-box mb-30">
+                        <div class="pd-20">
+                            <h4 class="text-blue h4">Referral History</h4>
+                        </div>
+                        <div class="pb-20">
+                            <table class="table hover table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Referrals</th>
+                                        <th>Status</th>
+                                        <th>Reward Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($referralHistory as $referrals): ?>
                                         <tr>
-                                            <td><a class="b_line" href="<?= base_url(); ?>ordermanagement/editorder/<?= $order['order_id'] ?>"><?= $order['order_number'] ?></a></td>
-                                            <td><?= date('d M Y H:i A', strtotime($order['order_date'])) ?></td>
-                                            <td><?= esc($order['product_name']) ?></td>
-                                            <td><?= esc($order['product_quantities']) ?></td>
-                                            <td><?= esc($order['product_size']) ?></td>
-                                            <td><?= esc($order['total_amount']) ?></td>
-                                            <td><?= esc($order['payment_method']) ?></td>
-                                            <td><?= esc($order['customer_address']) ?></td>
-                                            <td><?= esc($order['payment_status']) ?></td>
-                                            <td><?= esc($order['fulfillment_status']) ?></td>
+                                            <td><?= $referrals['referrer_id'] ?></td>
+                                            <td><?= $referrals['referee_id'] ?></td>
+                                            <td><?= ucfirst($referrals['status']) ?></td>
+                                            <td><?= $referrals['reward_points'] ?></td>
                                         </tr>
                                     <?php endforeach; ?>
-                                <?php else: ?>
-                                    <tr>
-                                        <td colspan="10" class="text-center">No orders found.</td>
-                                    </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                <?php else: ?>
+                    <div class="card-box mb-30">
+                        <div class="pd-20">
+                            <h4 class="text-blue h4">Referral History</h4>
+                        </div>
+                        <div class="pb-20">
+                            <p class="px-5">No referral history available.</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-
-                <!-- Export Datatable End -->
             </div>
         </div>
     </div>
 
+    <!-- Footer View Start -->
+    <?= $this->include('footer_view') ?>
+    <!-- Footer View End -->
 </body>
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
 
 </html>

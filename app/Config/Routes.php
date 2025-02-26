@@ -40,6 +40,12 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('users/view_all_orders/(:num)', 'Registeredusers::view_all_orders/$1');
    $routes->get('edit/user/(:num)', 'Registeredusers::user_details/$1');
 
+   // Loyality Points
+   $routes->get('registeredusers/loyality_points_history/(:num)', 'Registeredusers::loyality_points_history/$1');
+   $routes->get('registeredusers/referral-history/(:num)', 'Registeredusers::referral_history/$1');
+   $routes->post('registeredusers/updateRefpoints', 'Registeredusers::updateRefpoints');
+   $routes->get('registeredusers/SetLoyaltyPointValue', 'Registeredusers::SetLoyaltyPointValue');
+
    // Users
    $routes->get('registeredusers/edituser/(:num)', 'Registeredusers::edituser/$1');
    $routes->post('registeredusers/updateuserdata/(:num)', 'Registeredusers::updateuserdata/$1');

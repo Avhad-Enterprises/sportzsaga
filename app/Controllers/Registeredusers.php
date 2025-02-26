@@ -14,6 +14,9 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Google\Cloud\Storage\StorageClient;
+use App\Models\loyalitypointsvalues;
+use App\Models\referralpointsconfigmodel;
+use App\Models\referralmodel;
 
 class Registeredusers extends BaseController
 {
@@ -113,6 +116,14 @@ class Registeredusers extends BaseController
         $orderModel = new Ordermanagement_model();
         $cartModel = new Cart_model();
         $productModel = new Products_model();
+
+        // Load referral points configuration
+        $referralPointsModel = new ReferralPointsConfigModel();
+        $data['referralConfig'] = $referralPointsModel->getReferralPointsConfig();
+
+        $modelloyality = new loyalitypointsvalues();
+        $loyaltyPoint = $modelloyality->getLoyaltyPointValue();
+        $data['loyalty_point_value'] = $loyaltyPoint ? $loyaltyPoint['loyalty_point_value'] : 0;
 
         // Fetch user details
         $data['users'] = $model->editusermodel($id);
@@ -571,7 +582,7 @@ class Registeredusers extends BaseController
 
     public function updatePassword($token)
     {
-        $model = new Registerusers_model(); 
+        $model = new Registerusers_model();
 
         $newPassword = $this->request->getPost('new_password');
         $confirmPassword = $this->request->getPost('confirm_password');
@@ -592,5 +603,48 @@ class Registeredusers extends BaseController
         ]);
 
         return redirect()->to('/admin')->with('msg', 'Password updated successfully. You can now log in with your new password.');
+    }
+
+    public function loyality_points_history($id)
+    {
+        $model = new loyalitypointsvalues();
+        $data['pointshistory'] = $model->getPointsHistory($id);
+        $data['userid'] = $id;
+        return view('loyalty_points_history_view', $data);
+    }
+
+    public function referral_history($id)
+    {
+        $model = new referralmodel();
+        $data['referralhistory'] = $model->getReferralHistory($id);
+        $data['userid'] = $id;
+        return view('referral_history_view', $data);
+    }
+
+    public function updateRefpoints()
+    {
+        $request = $this->request->getPost();
+        $model = new referralpointsconfigmodel();
+
+        $adminUserId = session()->get('user_id');
+
+        $data = [
+            'points_for_referrer' => (int) $request['points_for_referrer'],
+            'points_for_referred' => (int) $request['points_for_referred'],
+            'updated_by' => $adminUserId,
+        ];
+
+        if ($model->updateReferralPointsConfig($data)) {
+            return redirect()->back()->with('success', 'Referral points updated successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to update referral points.');
+        }
+    }
+
+    public function SetLoyaltyPointValue()
+    {
+        $model = new loyalitypointsvalues();
+        $data['loyalty_point'] = $model->GetLoyalityPointData();
+        return view('points_form_view', $data);
     }
 }

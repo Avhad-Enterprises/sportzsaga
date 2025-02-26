@@ -94,76 +94,84 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Export Datatable Start -->
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="title mb-10">
-                            <p>
-                                <a href="<?= base_url() ?>registeredusers/edituser/<?= $user_id ?>" class="px-2">
-                                    <i class="fa-solid fa-arrow-left"></i>
-                                </a>
-                                Back
-                            </p>
+                <?php if (!empty($pointshistory)): ?>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="title mb-10">
+                                    <p>
+                                        <a href="<?= base_url() ?>registeredusers/edituser/<?= $userid ?>" class="px-2">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </a>
+                                        Back
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Order History</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Order Date</th>
-                                    <th>Product Name</th>
-                                    <th>Quantity</th>
-                                    <th>Size</th>
-                                    <th>Total Amount</th>
-                                    <th>Payment Method</th>
-                                    <th>Customer Address</th>
-                                    <th>Payment Status</th>
-                                    <th>Fulfillment Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($orders)): ?>
-                                    <?php foreach ($orders as $order): ?>
+                    <div class="card-box mb-30">
+                        <div class="pd-20">
+                            <h4 class="text-blue h4">Points History</h4>
+                        </div>
+                        <div class="pb-20">
+                            <table class="table hover table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Points</th>
+                                        <th>Type</th>
+                                        <th>Order Number</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($pointshistory as $history): ?>
                                         <tr>
-                                            <td><a class="b_line" href="<?= base_url(); ?>ordermanagement/editorder/<?= $order['order_id'] ?>"><?= $order['order_number'] ?></a></td>
-                                            <td><?= date('d M Y H:i A', strtotime($order['order_date'])) ?></td>
-                                            <td><?= esc($order['product_name']) ?></td>
-                                            <td><?= esc($order['product_quantities']) ?></td>
-                                            <td><?= esc($order['product_size']) ?></td>
-                                            <td><?= esc($order['total_amount']) ?></td>
-                                            <td><?= esc($order['payment_method']) ?></td>
-                                            <td><?= esc($order['customer_address']) ?></td>
-                                            <td><?= esc($order['payment_status']) ?></td>
-                                            <td><?= esc($order['fulfillment_status']) ?></td>
+                                            <td><?= esc($history['points']) ?></td>
+                                            <td><?= esc(ucfirst($history['type'])) ?></td>
+                                            <td><?= esc($history['order_no']) ?></td>
+                                            <td><?= esc($history['description']) ?></td>
+                                            <td><?= date('j M Y, g:i A', strtotime($history['created_at'])) ?></td>
                                         </tr>
                                     <?php endforeach; ?>
-                                <?php else: ?>
-                                    <tr>
-                                        <td colspan="10" class="text-center">No orders found.</td>
-                                    </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                <?php else: ?>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="title mb-10">
+                                    <p>
+                                        <a href="<?= base_url() ?>admin_users" class="px-2">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </a>
+                                        Back
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-box mb-30">
+                        <div class="pd-20">
+                            <h4 class="text-blue h4">Points History</h4>
+                        </div>
+                        <div class="pb-20">
+                            <p class="px-5">No points history available.</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-
-                <!-- Export Datatable End -->
             </div>
         </div>
     </div>
 
+    <!-- Footer View Start -->
+    <?= $this->include('footer_view') ?>
+    <!-- Footer View End -->
 </body>
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
 
 </html>
