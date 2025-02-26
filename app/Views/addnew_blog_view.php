@@ -2,6 +2,32 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
+<style>
+    .serp-preview {
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .serp-url {
+        color: #1a0dab;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .serp-title {
+        color: #1a0dab;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .serp-description {
+        color: #4d5156;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+</style>
 
 <body>
 
@@ -36,57 +62,43 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i
-                                class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i
-                                class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
-                                aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i
-                                class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i
-                                class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -110,424 +122,389 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Header Section -->
-                <div class="clearfix mb-3">
-                    <div class="pull-left d-flex align-items-center">
-                        <!-- Back Button -->
-                        <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
-                            <i class="fa fa-arrow-left"></i>
-                        </button>
-                        <h4 class="h4 mb-0">Add New Blog</h4>
-                    </div>
-                </div>
+                <!-- Default Basic Forms Start -->
 
-                <!-- Blog Form -->
-                <form id="newblogform" method="post" action="<?= base_url() ?>blogs/publishmyblog"
-                    enctype="multipart/form-data" class="needs-validation" novalidate>
+                <form id="NewEditblogform" method="post" action="<?= base_url() ?>blogs/publishmyblog" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <div class="mb-3 d-flex justify-content-between">
+                        <a href="<?= base_url('admin-services') ?>"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                        <button value="submit" class="btn btn-primary btn-lg">
+                            Publish
+                        </button>
+                    </div>
                     <div class="row">
-                        <!-- Left Section -->
                         <div class="col-md-8">
-                            <!-- Blog Details -->
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Blog Details</p>
+                                <p class="text-blue">Blog </p>
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" name="blog-title" type="text"
-                                        placeholder="Enter Blog Title" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Blogs Quote</label>
-                                    <input class="form-control" name="blog-quote" type="text" placeholder="Enter quote"
-                                        required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
+                                    <input class="form-control" name="blog-title" type="text" placeholder="Johnny Brown" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This feild can't be Empty
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" name="blog-description"
-                                        placeholder="Enter Blog Description" required></textarea>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
+                                    <textarea class="form-control resizable-textarea" name="blog-description" maxlength="150" required></textarea>
+                                    <small>Max 150 Characters</small>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This feild can't be Empty
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Main Content</label>
-                                    <textarea id="editor" name="blog-main-content"></textarea>
+                                <div id="main-content-container">
+                                    <label>Content</label>
+                                    <textarea class="form-control resizable-textarea editor" id="editor" name="blog-main-content"></textarea>
                                 </div>
                             </div>
 
-                            <!-- Blog Subsections -->
                             <div class="pd-20 card-box mb-30">
                                 <p class="text-blue mb-30">Blog Subsections</p>
                                 <div id="sections-container">
                                     <div class="form-section" id="section-1">
                                         <div class="form-group">
-                                            <label>Section Title</label>
-                                            <input class="form-control" type="text" name="section_title[]"
-                                                placeholder="Section Title">
+                                            <label>Title</label>
+                                            <input class="form-control" type="text" name="section_title[]" placeholder="Title">
                                         </div>
+
                                         <div class="form-group">
-                                            <label>Section Description</label>
+                                            <label>Description</label>
                                             <textarea class="form-control" name="section_description[]"></textarea>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Section Image</label>
-                                            <input type="file" class="form-control" name="section_image[]">
+                                            <input type="file" class="form-control-file form-control height-auto" name="section_image[]">
+                                            <i>
+                                                <p style="font-size: 12px; margin-left:10px; margin-top:5px">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</p>
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" id="add-section-btn" class="btn btn-primary">+ Add
-                                    Section</button>
+
+                                <button type="button" id="add-section-btn" class="btn btn-primary">+ Add Section</button>
+
                             </div>
 
-                            <!-- Meta Fields -->
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue mb-30">Meta Fields</p>
-                                <div class="form-group">
-                                    <label>Meta Title</label>
-                                    <input type="text" class="form-control" name="blog-meta-title"
-                                        placeholder="Meta Title" required>
+                                <p class="text-blue mb-30">Add Meta Fields</p>
+                                <!-- Meta Title -->
+                                <div class="mb-3">
+                                    <label for="meta-title" class="form-label">Meta Title</label>
+                                    <input type="text" class="form-control" id="meta-title" name="blog-meta-title" placeholder="Keep it concise (around 50-60 characters) to ensure it displays properly in search engine results." required>
+                                    <div id="blogpost-error-7" class="blogpost-error"></div>
                                     <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
+                                    <div class="invalid-feedback">This field can't be empty</div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Meta Description</label>
-                                    <textarea class="form-control" name="blog-meta-description"
-                                        placeholder="Meta Description" required></textarea>
+                                <!-- Meta Description -->
+                                <div class="mb-3">
+                                    <label for="meta-description" class="form-label">Meta Description</label>
+                                    <input type="text" class="form-control" id="meta-description" name="blog-meta-description" placeholder="Include your target keyword naturally and keep the length under 160 characters." required>
+                                    <div id="blogpost-error-8" class="blogpost-error"></div>
                                     <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
+                                    <div class="invalid-feedback">This field can't be empty</div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Meta URL</label>
-                                    <input type="text" class="form-control" name="blog-meta-url" placeholder="Meta URL"
-                                        required>
+                                <!-- Meta URL -->
+                                <div class="mb-3">
+                                    <label for="meta-url" class="form-label">Meta URL</label>
+                                    <input type="text" class="form-control" id="meta-url" name="blog-meta-url" placeholder="https://www.example.com/sample-title" required>
+                                    <div id="blogpost-error-9" class="blogpost-error"></div>
                                     <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
+                                    <div class="invalid-feedback">This field can't be empty</div>
+                                </div>
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue mb-30">SERP Preview</p>
+                                <div id="serp-preview" class="serp-preview">
+                                    <a href="#" id="serp-url" class="serp-url">https://www.driphunter.in/sample-title</a>
+                                    <h3 id="serp-title" class="serp-title">Sample Meta Title</h3>
+                                    <p id="serp-description" class="serp-description">Sample Meta Description goes here. It includes your target keyword naturally and is under 160 characters.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Right Section -->
                         <div class="col">
-                            <!-- Blog Images -->
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue mb-30">Blog Images</p>
+                                <p class="text-blue mb-30">Visibility & Category</p>
                                 <div class="form-group">
-                                    <label>Featured Image</label>
-                                    <input type="file" class="form-control" name="blog-main-image" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Mobile Image</label>
-                                    <input type="file" class="form-control" name="blog-mobile-image" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
-                                </div>
-                            </div>
-
-                            <!-- Category & Visibility -->
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue mb-30">Category and Visibility</p>
-                                <div class="form-group">
-                                    <label>Category</label>
-                                    <select class="form-control" name="blog-category" required>
-                                        <option value="">Select Category</option>
-                                        <?php foreach ($sheader as $sheaders): ?>
-                                            <option value="<?= $sheaders['data_filter']; ?>"><?= $sheaders['label']; ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Visibility</label>
-                                    <select class="form-control" name="blog-visibility" required>
+                                    <label for="blog-visibility">Visibility</label>
+                                    <select class=" custom-select2 form-control" id="blog-visibility" name="blog-visibility" style="width: 100%; height: 38px" required>
                                         <option value="">Select Visibility</option>
                                         <option value="active">Active</option>
                                         <option value="draft">Draft</option>
                                     </select>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be empty.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="publish_date_and_time">Publish Date and Time</label>
-                                    <input type="datetime-local" name="publish_date_and_time" id="publish_date_and_time"
-                                        class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="end_date_and_time">End Date and Time</label>
-                                    <input type="datetime-local" name="end_date_and_time" id="end_date_and_time"
-                                        class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="recurrence">Recurrence</label>
-                                    <select name="recurrence" id="recurrence" class="form-control">
-                                        <option value="">Select Recurrence</option>
-                                        <option value="monthly">Monthly</option>
-                                        <option value="weekly">Weekly</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="yearly">Yearly</option>
-                                        <option value="none">None</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="publish_for">Publish For</label>
-                                    <select name="publish_for" id="publish_for" class="form-control">
-                                        <option value="">Select User</option>
-                                        <?php foreach ($users as $user): ?>
-                                            <option value="<?= $user['user_id']; ?>"><?= $user['name']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This field can't be empty.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Tags</p>
-                                <div class="mb-20">
-                                    <label>Add Tags</label>
-                                    <!-- Dropdown for selecting tags with reduced size -->
-                                    <select id="product-tags" name="product-tags[] " multiple="multiple"
-                                        class="form-control custom-dropdown">
-                                        <?php foreach ($tags as $tag): ?>
-                                            <option value="<?= $tag['tag_name']; ?>"><?= $tag['tag_name']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <small id="tag-error" class="text-danger"></small>
-                                    <!-- (+) Icon to open the modal -->
-                                    <button type="button" class="btn btn-sm btn-primary" id="add-tag-btn"
-                                        data-toggle="modal" data-target="#tagModal">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
+                                <p class="text-blue">Main Blog PC Image</p>
+                                <div class="form-group">
+                                    <input type="file" name="blog-pc-image" class="form-control-file form-control height-auto" onchange="previewpcImage(event)" required>
+                                    <div id="pc-image-error" class="text-danger" style="font-size: 12px; margin-top: 5px;"></div>
+                                    <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 1330 x 800 px.</small>
+                                    <div id="pcimage-preview-container">
+                                        <img id="pc-image-preview" src="#" alt="PC Image Preview" style="display: none;">
+                                        <button type="button" id="pc-image-remove-btn" onclick="removepcImage()" style="position: absolute; top: 5px; right: 5px; border: none; background: transparent; cursor: pointer; display: none;">
+                                            <i class="fa-solid fa-circle-xmark" style="color: #000;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This field can't be empty
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Author Details -->
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue">Main Blog Mobile Image</p>
+                                <div class="form-group">
+                                    <input type="file" name="blog-mobile-image" class="form-control-file form-control height-auto" onchange="previewmobileImage(event)" required>
+                                    <div id="mobile-image-error" class="text-danger" style="font-size: 12px; margin-top: 5px;"></div>
+                                    <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 800 x 800 px.</small>
+                                    <div id="mobileimage-preview-container">
+                                        <img id="mobile-image-preview" src="#" alt="Mobile Image Preview" style="display: none;">
+                                        <button type="button" id="mobile-image-remove-btn" onclick="removemobieImage()" style="position: absolute; top: 5px; right: 5px; border: none; background: transparent; cursor: pointer; display: none;">
+                                            <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This field can't be empty
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <div class="form-group">
+                                    <div class="">
+                                        <div class="">
+                                            <h5 class="h5">Add Tags</h5>
+                                            <p>
+                                                Press Enter to Seprate
+                                            </p>
+                                            <input type="text" name="blog-tags" data-role="tagsinput" required />
+                                        </div>
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This feild can't be Empty
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="pd-20 card-box mb-30">
                                 <p class="text-blue mb-30">Author</p>
                                 <div class="form-group">
-                                    <label>Author Name</label>
-                                    <input type="text" class="form-control" name="blog-author-name"
-                                        placeholder="Author Name">
+                                    <label>Enter Name</label>
+                                    <input class="form-control" name="blog-author-name" type="text" placeholder="Enter Your Name/Author Name">
                                 </div>
                             </div>
 
                         </div>
-
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-lg">Publish</button>
                     </div>
                 </form>
 
-
-                <div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="tagModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="tagModalLabel">Add New Tag</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="tag-form">
-                                    <div class="form-group">
-                                        <label for="tag_name">Tag Name</label>
-                                        <input type="text" id="tag_name" class="form-control" placeholder="Enter tag name">
-                                    </div>
-                                    <small id="tag-modal-error" class="text-danger"></small>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" id="save-tag-btn" class="btn btn-primary">Save Tag</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
-    <!-- Page Main Content End -->
+        <!-- Page Main Content End -->
 
+        <!-- Footer View Start -->
+        <?= $this->include('footer_view') ?>
+        <!-- Footer View End -->
 
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
-
-    <!-- Include Select2 CSS and JS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const form = document.getElementById("newblogform");
-            const inputs = form.querySelectorAll(
-                "input:not([type='hidden']):not([type='button']):not([type='submit']):not([disabled]), textarea:not([disabled]), select:not([disabled])"
-            );
-
-            // Log all inputs for debugging
-            console.log(
-                "Inputs found:",
-                Array.from(inputs).map((input) => input.name || input.id)
-            );
-
-            inputs.forEach((input, index) => {
-                input.addEventListener("keydown", function(e) {
-                    if (e.key === "Enter") {
-                        if (input.tagName.toLowerCase() === "textarea") {
-                            // For textarea, add a new line instead of moving to the next field
-                            e.preventDefault();
-                            const cursorPosition = this.selectionStart;
-                            const textBefore = this.value.substring(0, cursorPosition);
-                            const textAfter = this.value.substring(cursorPosition);
-                            this.value = textBefore + "\n" + textAfter;
-                            this.selectionStart = this.selectionEnd = cursorPosition + 1;
-                        } else {
-                            // For other inputs, move to the next field
-                            e.preventDefault();
-                            let nextInput = inputs[index + 1];
-                            while (nextInput && (nextInput.disabled || nextInput.hidden)) {
-                                index++;
-                                nextInput = inputs[index + 1];
-                            }
-
-                            if (nextInput) {
-                                console.log(`Moving to next input: ${nextInput.name || nextInput.id}`);
-                                nextInput.focus();
-                            } else {
-                                console.log("No more inputs to navigate to.");
-                            }
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            // Initialize Select2 for tags
-            $('#product-tags').select2({
-                placeholder: 'Select Tags',
-                allowClear: true
-            });
-
-            // Handle saving new tags
-            $('#save-tag-btn').on('click', function(e) {
-                e.preventDefault();
-                const tagName = $('#tag_name').val().trim();
-
-                if (tagName) {
-                    $.ajax({
-                        url: '<?= base_url('Tags/save') ?>',
-                        type: 'POST',
-                        data: {
-                            tag_name: tagName
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                // Add new tag to the dropdown
-                                const newOption = new Option(tagName, tagName, false, true);
-                                $('#product-tags').append(newOption).trigger('change');
-                                $('#tag_name').val('');
-                                $('#tagModal').modal('hide');
-                            } else {
-                                $('#tag-modal-error').text(response.message);
-                            }
-                        },
-                        error: function() {
-                            $('#tag-modal-error').text('An error occurred. Please try again.');
-                        }
-                    });
-                } else {
-                    $('#tag-modal-error').text('Tag name cannot be empty.');
-                }
-            });
-        });
-    </script>
-
-    <script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sectionsContainer = document.getElementById('sections-container');
+        const addSectionBtn = document.getElementById('add-section-btn');
         let sectionCount = 1;
 
-        // Function to add a new section
-        document.getElementById('add-section-btn').addEventListener('click', function() {
-            sectionCount++;
-            const sectionsContainer = document.getElementById('sections-container');
-
-            // Create a new section card
-            const newSection = document.createElement('div');
-            newSection.classList.add('form-section', 'card', 'mb-3', 'p-3');
-            newSection.id = `section-${sectionCount}`;
-
-            // Close button for the section
-            newSection.innerHTML = `
-            <button type="button" onclick="removeSection(${sectionCount})" 
-                    style="position: absolute; top: 10px; right: 10px; border: none; background: transparent; cursor: pointer;">
-                <i class="fa fa-times-circle" style="color: #ff0000;"></i>
-            </button>
-            <div class="form-group">
-                <label>Title</label>
-                <input class="form-control" type="text" name="section_title[]" placeholder="Title">
-                <p class="error-message" style="color: black; font-size: 12px; display: none;"></p>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <div id="editor-${sectionCount}" class="quill-editor"></div>
-                <input type="hidden" name="section_description[]"/>
-                <p class="error-message" style="color: black; font-size: 12px; display: none;"></p>
-            </div>
-          <div class="form-group" style="border: 2px solid #ccc; padding: 15px; border-radius: 8px;">
-    <label>Section Image</label>
-    <input type="file" class="form-control-file" name="section_image[]" onchange="previewSectionImage(event, ${sectionCount})">
-    <p class="error-message" style="color: black; font-size: 12px;">Formats: JPG, PNG, JPEG, WEBP, Recommended Size: 720x560px.</p>
-    <div id="image-preview-container-${sectionCount}" style="position: relative; display: none;">
-        <img id="image-preview-${sectionCount}" src="#" alt="Image Preview" style="width: 100%; max-width: 500px;">
-        <button type="button" onclick="removeSectionImage(${sectionCount})" 
-                style="position: absolute; top: 5px; right: 5px; border: none; background: transparent; cursor: pointer;">
-            <i class="fa fa-times-circle" style="color: #ffffff;"></i>
-        </button>
-    </div>
-            </div>`;
-
-            // Append new section
-            sectionsContainer.appendChild(newSection);
-
-            // Initialize Quill editor for the new section
-            new Quill(`#editor-${sectionCount}`, {
-                theme: 'snow'
-            });
-        });
-
-        // Function to remove a section
-        function removeSection(sectionId) {
-            const sectionToRemove = document.getElementById(`section-${sectionId}`);
-            if (sectionToRemove) {
-                sectionToRemove.remove();
+        addSectionBtn.addEventListener('click', function() {
+            if (sectionCount >= 10) {
+                alert('You can only add up to 10 sections.');
+                return;
             }
+
+            sectionCount++;
+            const newSection = document.createElement('div');
+            newSection.classList.add('form-section');
+            newSection.id = 'section-' + sectionCount;
+            newSection.innerHTML = `
+                <div class="form-group">
+                    <label>Title ${sectionCount}</label>
+                    <input class="form-control" type="text" name="section_title[]" placeholder="Title ${sectionCount}">
+                    <i>
+                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">Max 70 chars, Min 10 chars, Exclude %, &, $, Avoid 'Free', 'Sale', 'Best'</p>
+                    </i>
+                </div>
+
+                <div class="form-group">
+                    <label>Description ${sectionCount}</label>
+                    <textarea class="form-control" name="section_description[]"></textarea>
+                    <i>
+                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">No contact info, Exclude emails, phones, links</p>
+                    </i>
+                </div>
+
+                <div class="form-group">
+                    <label>Section Image ${sectionCount}</label>
+                    <input type="file" class="form-control-file form-control height-auto" name="section_image[]">
+                    <i>
+                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</p>
+                    </i>
+                </div>
+            `;
+            sectionsContainer.appendChild(newSection);
+        });
+    });
+</script>
+
+<script>
+    function previewpcImage(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        const errorContainer = document.getElementById('pc-image-error');
+
+        errorContainer.textContent = "";
+
+        if (file.size > 1024 * 1024) {
+            errorContainer.textContent = "Desktop Image must be under 1 MB.";
+            event.target.value = "";
+            return;
         }
-    </script>
 
+        reader.onload = function() {
+            const img = new Image();
+            img.src = reader.result;
 
+            img.onload = function() {
+                if (img.width !== 1330 || img.height !== 800) {
+                    errorContainer.textContent = "Desktop Image must be 1330 width x height 800 pixels.";
+                    event.target.value = "";
+                    return;
+                }
 
-    <script>
-        function goBack() {
-            // Redirects to the previous page in browser history
-            window.history.back();
+                const imagePreview = document.getElementById('pc-image-preview');
+                const imageRemoveBtn = document.getElementById('pc-image-remove-btn');
+                imagePreview.src = img.src;
+                imagePreview.style.display = 'block';
+                imageRemoveBtn.style.display = 'block';
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function removepcImage() {
+        const imagePreview = document.getElementById('pc-image-preview');
+        const imageRemoveBtn = document.getElementById('pc-image-remove-btn');
+        const fileInput = document.querySelector('input[name="blog-pc-image"]');
+        const errorContainer = document.getElementById('pc-image-error');
+
+        imagePreview.src = '#';
+        imagePreview.style.display = 'none';
+        imageRemoveBtn.style.display = 'none';
+        fileInput.value = '';
+        errorContainer.textContent = "";
+    }
+
+    function previewmobileImage(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        const errorContainer = document.getElementById('mobile-image-error');
+
+        errorContainer.textContent = "";
+
+        if (file.size > 1024 * 1024) {
+            errorContainer.textContent = "Mobile Image must be under 1 MB.";
+            event.target.value = "";
+            return;
         }
-    </script>
+
+        reader.onload = function() {
+            const img = new Image();
+            img.src = reader.result;
+
+            img.onload = function() {
+                if (img.width !== 800 || img.height !== 800) {
+                    errorContainer.textContent = "Mobile Image must be 800 width x height 800 pixels.";
+                    event.target.value = "";
+                    return;
+                }
+
+                const imagePreview = document.getElementById('mobile-image-preview');
+                const imageRemoveBtn = document.getElementById('mobile-image-remove-btn');
+                imagePreview.src = img.src;
+                imagePreview.style.display = 'block';
+                imageRemoveBtn.style.display = 'block';
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function removemobieImage() {
+        const imagePreview = document.getElementById('mobile-image-preview');
+        const imageRemoveBtn = document.getElementById('mobile-image-remove-btn');
+        const fileInput = document.querySelector('input[name="blog-mobile-image"]');
+        const errorContainer = document.getElementById('mobile-image-error');
+
+        imagePreview.src = '#';
+        imagePreview.style.display = 'none';
+        imageRemoveBtn.style.display = 'none';
+        fileInput.value = '';
+        errorContainer.textContent = "";
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const titleInput = document.querySelector('input[name="blog-title"]');
+        const metaUrlInput = document.querySelector('input[name="blog-meta-url"]');
+        const serpUrl = document.getElementById('serp-url'); // Optional: For displaying in SERP preview
+
+        function generateSlug(title) {
+            return title
+                .toLowerCase() // Convert to lowercase
+                .trim() // Remove leading/trailing spaces
+                .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
+                .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
+        }
+
+        titleInput.addEventListener('input', function() {
+            if (titleInput.value.trim() !== "") {
+                const slug = generateSlug(titleInput.value);
+                metaUrlInput.value = `https://www.sprotzsaga.in/${slug}`;
+
+                if (serpUrl) {
+                    serpUrl.textContent = metaUrlInput.value; // Update SERP preview if needed
+                }
+            } else {
+                metaUrlInput.value = ""; // Clear URL if title is empty
+                if (serpUrl) {
+                    serpUrl.textContent = "";
+                }
+            }
+        });
+    });
+</script>
 
 
-    </html>
+</html>

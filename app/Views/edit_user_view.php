@@ -459,19 +459,19 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label>Notes</label>
                                         <input class="form-control" name="notes" value="<?= $user['notes'] ?>" type="text" />
                                         <div class="valid-feedback">Looks good!</div>
                                         <div class="invalid-feedback">This field can't be empty</div>
                                     </div>
-                                    
+
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Change Password</p>
-                                
+
                                     <div class="form-group">
                                         <label>Current Password</label>
                                         <div class="input-group">
@@ -481,7 +481,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                     <div id="new-password-fields" style="display:none;">
                                         <div class="form-group">
                                             <label>New Password</label>
@@ -496,7 +496,16 @@
                                             <div class="invalid-feedback">This field can't be empty</div>
                                         </div>
                                     </div>
-                                    
+
+                                </div>
+
+                                <div class="pd-20 card-box mb-30">
+                                    <div class="form-group">
+                                        <p class="text-blue">Tags</p>
+                                        <div class="mb-20">
+                                            <input type="text" class="form-control" value="<?= $user['tags'] ?>" data-role="tagsinput" id="user_tags" name="user_tags" />
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>

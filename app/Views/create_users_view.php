@@ -122,7 +122,7 @@
                     enctype="multipart/form-data" class="needs-validation" novalidate>
 
                     <div class="mb-3 d-flex justify-content-end">
-                            <!-- Back Button -->
+                        <!-- Back Button -->
                         <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
                             <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
                         </button>
@@ -135,7 +135,7 @@
                         <!-- Personal Information -->
                         <div class="col-md-8 d-flex align-items-stretch">
                             <div class="card-box pd-20 mb-30 w-100">
-                            <h5 class="section-title mb-4">Personal Information</h5>
+                                <h5 class="section-title mb-4">Personal Information</h5>
 
                                 <div class="form-group">
                                     <label for="profile_image">Upload Profile Image</label>
@@ -180,10 +180,6 @@
                                     <label for="dob">Date of Birth</label>
                                     <input type="date" name="user_dob" class="form-control" required>
                                     <div class="invalid-feedback">Date of Birth is required.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tags">Tags</label>
-                                    <input type="text" name="user_tags" class="form-control" placeholder="Tags">
                                 </div>
                             </div>
                         </div>
@@ -238,15 +234,18 @@
                                     <input type="text" name="user_landmark" class="form-control"
                                         placeholder="Enter Landmark">
                                 </div>
+                                <div class="form-group">
+                                    <p class="text-blue">Tags</p>
+                                    <div class="mb-20">
+                                        <input type="text" class="form-control" data-role="tagsinput" id="user_tags" name="user_tags" placeholder="Tags" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-
-
-                    <!-- Order & Activity Details -->
-                    <!--  <div class="col-12">
+                        <!-- Order & Activity Details -->
+                        <!--  <div class="col-12">
                             <div class="card-box pd-20 mb-30">
                                 <h4 class="section-title">Order & Activity Details</h4>
                                 <div class="row">
@@ -334,11 +333,11 @@
 <?= $this->include('footer_view') ?>
 <!-- Footer View End -->
 
-    <script>
-        function goBack() {
-            // Redirects to the previous page in browser history
-            window.history.back();
-        }
-    </script>
+<script>
+    function goBack() {
+        // Redirects to the previous page in browser history
+        window.history.back();
+    }
+</script>
 
 </html>

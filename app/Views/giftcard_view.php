@@ -1,4 +1,3 @@
-
 <!-- Head View Start -->
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
@@ -109,7 +108,7 @@
                                         <a href="http://localhost/sportzsaga/dashboard">Home</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                    Gift Card
+                                        Gift Card
                                     </li>
                                 </ol>
                             </nav>
@@ -120,7 +119,7 @@
                                     Add New
                                 </a>
                             </div>
-                            <div class="dropdown">
+                            <!-- <div class="dropdown">
                                 <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>importfromexcel" role="button">
                                     Import
                                 </a>
@@ -129,56 +128,56 @@
                                 <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>exporttoexcel" role="button">
                                     Export To Excel
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="card-box mb-30">
-    <div class="pd-20">
-        <h4 class="text-blue h4">Gift Card Table</h4>
-    </div>
-    <div class="pb-20">
-        <table class="table hover multiple-select-row data-table-export">
-            <thead>
-                <tr>
-                    <th class="table-plus">Gift Card ID</th>
-                    <th>Gift Card Code</th>
-                    <th>Creation Date</th>
-                    <th>Expiration Date</th>
-                    <th>Initial Value</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($giftcards as $giftCard) : ?>
-                <tr>
-                    <td><?= $giftCard['gift_card_id'] ?></td>
-                    <td><?= $giftCard['gift_card_code'] ?></td>
-                    <td><?= $giftCard['creation_date'] ?></td>
-                    <td><?= $giftCard['expiration_date'] ?></td>
-                    <td><?= $giftCard['initial_value'] ?></td>
-                    <td>
-                        <div class="dropdown">
-                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                <i class="dw dw-more"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                             
-                                <a class="dropdown-item" href="<?= base_url() ?>giftcard/edit_giftcard_view/<?= $giftCard['gift_card_id'] ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                <a class="dropdown-item" href="<?= base_url() ?>giftcard/delete_gift_card/<?= $giftCard['gift_card_id'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</div>
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Gift Card Table</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover multiple-select-row data-table-export">
+                            <thead>
+                                <tr>
+                                    <th class="table-plus">Gift Card ID</th>
+                                    <th>Gift Card Code</th>
+                                    <th>Creation Date</th>
+                                    <th>Expiration Date</th>
+                                    <th>Initial Value</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($giftcards as $giftCard) : ?>
+                                    <tr>
+                                        <td><?= $giftCard['gift_card_id'] ?></td>
+                                        <td><?= $giftCard['gift_card_code'] ?></td>
+                                        <td><?= $giftCard['creation_date'] ?></td>
+                                        <td><?= $giftCard['expiration_date'] ?></td>
+                                        <td><?= $giftCard['initial_value'] ?></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                                    <i class="dw dw-more"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
+                                                    <a class="dropdown-item" href="<?= base_url() ?>giftcard/edit_giftcard_view/<?= $giftCard['gift_card_id'] ?>"><i class="dw dw-edit2"></i> Edit</a>
+                                                    <a class="dropdown-item" href="<?= base_url() ?>giftcard/delete_gift_card/<?= $giftCard['gift_card_id'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Footer View Start -->
+                <?= $this->include('footer_view') ?>
+                <!-- Footer View End -->
 </body>
 
 </html>

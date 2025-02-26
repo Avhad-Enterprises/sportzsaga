@@ -111,40 +111,41 @@
 
 
 <script>
-    function fetchTrackingUpdates() {
-        fetch("<?= base_url('update-tracking'); ?>")
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    console.log("Tracking updated", data.updated_shipments);
+  function fetchTrackingUpdates() {
+    fetch("<?= base_url('update-tracking'); ?>")
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          console.log("Tracking updated", data.updated_shipments);
 
-                    // Refresh the tracking details on the page
-                    
-                }
-            })
-            .catch(error => console.error("Error fetching tracking updates:", error));
-    }
-    function fetchEmails() {
-        fetch("<?= base_url('fetchEmails'); ?>")
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    console.log("mails updated");
+          // Refresh the tracking details on the page
 
-                    // Refresh the tracking details on the page
-                    
-                }
-            })
-            .catch(error => console.error("Error fetching tracking updates:", error));
-    }
+        }
+      })
+      .catch(error => console.error("Error fetching tracking updates:", error));
+  }
+
+  function fetchEmails() {
+    fetch("<?= base_url('fetchEmails'); ?>")
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          console.log("mails updated");
+
+          // Refresh the tracking details on the page
+
+        }
+      })
+      .catch(error => console.error("Error fetching tracking updates:", error));
+  }
 
 
 
-    // Start auto-fetch every 30 seconds
-    setInterval(() => {
-        fetchTrackingUpdates();
-        fetchEmails();
-    }, 30000);
+  // Start auto-fetch every 30 seconds
+  setInterval(() => {
+    fetchTrackingUpdates();
+    fetchEmails();
+  }, 30000);
 </script>
 
 <!-- Include Quill Editor -->
@@ -1911,53 +1912,6 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-
-    const blogTitleInput = document.querySelector('input[name="blog-title"]');
-    const blogDescriptionInput = document.querySelector('textarea[name="blog-description"]');
-    const metaTitleInput = document.querySelector('input[name="blog-meta-title"]');
-    const metaDescriptionInput = document.querySelector('input[name="blog-meta-description"]');
-    const metaUrlInput = document.querySelector('input[name="blog-meta-url"]');
-
-    function generateSlug(text) {
-      return text
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-    }
-
-    blogTitleInput.addEventListener('input', function() {
-      const title = blogTitleInput.value;
-      metaTitleInput.value = title;
-      metaUrlInput.value = generateSlug(title);
-    });
-
-    blogDescriptionInput.addEventListener('input', function() {
-      const description = blogDescriptionInput.value;
-      metaDescriptionInput.value = description;
-    });
-  });
-</script>
-
-<script>
-  document.getElementById('meta-title').addEventListener('input', function() {
-    document.getElementById('serp-title').textContent = this.value || 'Sample Meta Title';
-  });
-
-  document.getElementById('meta-description').addEventListener('input', function() {
-    document.getElementById('serp-description').textContent = this.value || 'Sample Meta Description goes here. It includes your target keyword naturally and is under 160 characters.';
-  });
-
-  const urlPrefix = "https://www.driphunter.in/";
-
-  document.getElementById('meta-url').addEventListener('input', function() {
-    const userUrl = this.value || 'sample-title';
-    document.getElementById('serp-url').textContent = urlPrefix + userUrl;
-    document.getElementById('serp-url').href = urlPrefix + userUrl;
-  });
-</script>
-
-<script>
   function dripspotpreviewImagemobile(event) {
     var reader = new FileReader();
     var imagePreview = document.getElementById('dripspot-image-preview-mobile');
@@ -1973,6 +1927,32 @@
   }
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const titleInput = document.querySelector("input[name='blog-title']");
+    const metaUrlInput = document.querySelector("input[name='blog-meta-url']");
+
+    function generateSlug(text) {
+      return text
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9\-]/g, "")
+        .replace(/-+/g, "-");
+    }
+
+    titleInput.addEventListener("input", function() {
+      let title = titleInput.value;
+
+      if (title.length > 0) {
+        let slug = generateSlug(title);
+        metaUrlInput.value = slug;
+      } else {
+        metaUrlInput.value = "";
+      }
+    });
+  });
+</script>
 
 
 <script>
@@ -2164,4 +2144,49 @@
     };
     reader.readAsDataURL(event.target.files[0]);
   }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const fileInput = document.getElementById("profile-picture");
+    const errorMessage = document.getElementById("error-message");
+    const form = document.getElementById("profile-picture-form");
+
+    fileInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+
+        img.onload = function() {
+          // Validate Dimensions
+          if (img.width !== 300 || img.height !== 300) {
+            errorMessage.innerText = "Image must be exactly 300 x 300 pixels.";
+            fileInput.value = ""; // Clear file input
+            return;
+          }
+
+          // Validate File Size (1 MB Max)
+          if (file.size > 1048576) {
+            errorMessage.innerText = "File size must be under 1 MB.";
+            fileInput.value = ""; // Clear file input
+            return;
+          }
+
+          // Clear error if everything is valid
+          errorMessage.innerText = "";
+        };
+      };
+    });
+
+    form.addEventListener("submit", function(event) {
+      if (errorMessage.innerText !== "") {
+        event.preventDefault(); // Prevent form submission if error exists
+      }
+    });
+  });
 </script>
