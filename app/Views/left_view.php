@@ -89,6 +89,7 @@
                                 <li><a href="<?= base_url(); ?>pincode-mapping">Pincode Mapping</a></li>
                                 <li><a href="<?= base_url(); ?>collections">Collections</a></li>
                                 <li><a href="<?= base_url(); ?>catalog_view">Catalogs </a></li>
+                                <li><a href="<?= base_url(); ?>relatedproduct_table_view">Realeted</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

@@ -171,6 +171,22 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('companies/deletecompany/(:num)', 'CatalogController::deletecompany/$1');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
+
+   //related products
+   $routes->get('addnew_related_product', 'RelatedproductController::index');
+   $routes->get('admin-products/getDistinctFieldValues', 'RelatedproductController::getDistinctFieldValues');
+   $routes->post('admin-products/getProductsByConditions', 'RelatedproductController::getProductsByConditions');
+   $routes->get('admin-products/getSelectedProducts/(:num)', 'RelatedproductController::getSelectedProducts/$1');
+   $routes->post('admin-products/getProductsByIds', 'RelatedproductController::getProductsByIds');
+   $routes->get('admin-products/getConditions/(:num)', 'RelatedproductController::getConditions/$1');
+   $routes->get('getAllProducts', 'RelatedproductController::getAllProducts');
+   $routes->post('admin-products/getFilteredProducts/(:num)', 'RelatedproductController::getFilteredProducts/$1');
+   $routes->post('admin-products/saveRelatedProducts', 'RelatedproductController::saveRelatedProducts');
+   $routes->post('getProductsByTags', 'RelatedproductController::getProductsByTags');
+   $routes->get('relatedproduct_table_view', 'RelatedproductController::tableview');
+   $routes->get('admin-products/deleterelatedproduct/(:num)', 'RelatedproductController::deleteRelatedProduct/$1');
+   $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
+   $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
 });
 
 // Admin Dashboard Controller;
