@@ -16,18 +16,25 @@ class BlogSettingsController extends BaseController
         // Fetch settings from the blog_settings table
         $settings = $blogSettingsModel->find(1); // Assuming there's a single row for blog settings with ID=1
 
-        // Fetch all available blogs
+        // Convert comma-separated string to array (Ensure no empty values)
+        $selectedBlogIds = array_filter(explode(',', $settings['blogs'] ?? ''));
+
+        // Fetch **all blogs** from the table (to display in dropdown)
         $blogsModel = new Blogs_model();
-        $blogs = $blogsModel->findAll();
+        $allBlogs = $blogsModel->findAll(); // ✅ Fetch all blogs
+
+        // Fetch **only selected blogs** (for displaying in the sortable list)
+        $selectedBlogs = !empty($selectedBlogIds) ? $blogsModel->whereIn('blog_id', $selectedBlogIds)->findAll() : [];
 
         // Fetch all available tags
         $tagsModel = new TagModel();
         $tags = $tagsModel->findAll();
 
         return view('admin/blog_settings', [
-            'settings' => $settings, // Pass saved settings
-            'blogs' => $blogs,       // Pass all blogs
-            'tags' => $tags,         // Pass all tags
+            'settings' => $settings,        // Pass saved settings
+            'blogs' => $allBlogs,           // ✅ Pass all blogs for dropdown
+            'selectedBlogs' => $selectedBlogs, // ✅ Pass selected blogs for sortable list
+            'tags' => $tags,                // Pass all tags
         ]);
     }
 
@@ -37,19 +44,18 @@ class BlogSettingsController extends BaseController
         $model = new BlogSettingsModel();
 
         try {
-            // Log incoming data for debugging
             log_message('debug', 'POST Data: ' . json_encode($this->request->getPost()));
 
-            // Retrieve ordered data from the request
-            $blogsOrder = $this->request->getPost('blogs') ?? '';
-            $tagsOrder = $this->request->getPost('popular_tags') ?? '';
-            $postsOrder = $this->request->getPost('popular_posts') ?? '';
+            // Retrieve and filter unique IDs
+            $blogsOrder = array_unique(array_filter(explode(',', $this->request->getPost('blogs') ?? '')));
+            $tagsOrder = array_unique(array_filter(explode(',', $this->request->getPost('popular_tags') ?? '')));
+            $postsOrder = array_unique(array_filter(explode(',', $this->request->getPost('popular_posts') ?? '')));
 
             $data = [
                 'blogs_title' => $this->request->getPost('blogs_title') ?? '',
-                'blogs' => $blogsOrder, // Save blogs order as a comma-separated string
-                'popular_tags' => $tagsOrder, // Save tags order as a comma-separated string
-                'popular_posts' => $postsOrder, // Save popular posts order as a comma-separated string
+                'blogs' => implode(',', $blogsOrder),
+                'popular_tags' => implode(',', $tagsOrder),
+                'popular_posts' => implode(',', $postsOrder),
                 'meta_title' => $this->request->getPost('meta_title') ?? '',
             ];
 
@@ -64,6 +70,8 @@ class BlogSettingsController extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'An error occurred: ' . $e->getMessage()]);
         }
     }
+
+
 
 
 
@@ -112,4 +120,7 @@ class BlogSettingsController extends BaseController
 
         throw new \CodeIgniter\Exceptions\PageNotFoundException();
     }
+
+
+
 }

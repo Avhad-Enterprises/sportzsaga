@@ -510,68 +510,60 @@
                 </li>
 
 
-                <!-------------------------------------------------------------------------------------------- Product in Home page--------------------------------------------------------------------------------->
+                <!-------------------------------------------------------------- Product in Home page--------------------------------------------------------------------------------->
 
+                <form id="homeproduct-form">
+                    <!-- Product Section -->
+                    <li id="web-home" style="display: none;" class="web-section dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon bi bi-box"></span>
+                            <span class="mtext">Product Section</span>
+                        </a>
+                        <ul class="submenu">
+                            <div class="ImageUploadBox">
+                                <div class="form-group">
+                                    <label for="fav_product">Favorite Products</label>
+                                    <div class="dropdown">
+                                        <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                            id="favProductsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Select Favorite Products
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="favProductsDropdown">
+                                            <?php
+                                            // Convert the comma-separated product IDs into an array
+                                            $selectedProducts = explode(',', $selectedProducts ?? '');
 
-                <!-- Product Section -->
-                <li id="web-home" class="web-section dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-list"></span>
-                        <span class="mtext">Product Section</span>
-                    </a>
-                    <ul class="submenu">
-                        <form id="homeproduct-form">
-                            <!-- Product Section -->
-                            <li id="web-home" style="display: none;" class="web-section dropdown">
-                                <a href="javascript:;" class="dropdown-toggle">
-                                    <span class="micon bi bi-box"></span>
-                                    <span class="mtext">Product Section</span>
-                                </a>
-                                <ul class="submenu">
-                                    <div class="ImageUploadBox">
-                                        <div class="form-group">
-                                            <label for="fav_product">Favorite Products</label>
-                                            <div class="dropdown">
-                                                <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
-                                                    id="favProductsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    Select Favorite Products
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="favProductsDropdown">
-                                                    <?php
-                                                    // Convert the comma-separated product IDs into an array
-                                                    $selectedProducts = explode(',', $selectedProducts ?? '');
-
-                                                    // Iterate through all available products to generate the checkboxes
-                                                    foreach ($availableProducts as $product): ?>
-                                                        <div class="dropdown-item">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input product-checkbox"
-                                                                    id="product_<?= $product['product_id'] ?>"
-                                                                    data-id="<?= $product['product_id'] ?>"
-                                                                    data-title="<?= $product['product_title'] ?>"
-                                                                    <?= in_array($product['product_id'], $selectedProducts) ? 'checked' : '' ?>>
-                                                                <label class="custom-control-label"
-                                                                    for="product_<?= $product['product_id'] ?>">
-                                                                    <?= $product['product_title'] ?>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    <?php endforeach; ?>
+                                            // Iterate through all available products to generate the checkboxes
+                                            foreach ($availableProducts as $product): ?>
+                                                <div class="dropdown-item">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input product-checkbox"
+                                                            id="product_<?= $product['product_id'] ?>"
+                                                            data-id="<?= $product['product_id'] ?>"
+                                                            data-title="<?= $product['product_title'] ?>"
+                                                            <?= in_array($product['product_id'], $selectedProducts) ? 'checked' : '' ?>>
+                                                        <label class="custom-control-label"
+                                                            for="product_<?= $product['product_id'] ?>">
+                                                            <?= $product['product_title'] ?>
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
-                                        <!-- Display Selected Products -->
-                                        <ul class="sortable-list" id="favProductsList"></ul>
-                                        <!-- Hidden Input to Store Selected Product IDs -->
-                                        <input type="hidden" name="fav_product" id="fav_product_input"
-                                            value="<?= isset($selectedProducts) ? implode(',', $selectedProducts) : '' ?>">
                                     </div>
-                                </ul>
-                            </li>
-                        </form>
-                    </ul>
-                </li>
+                                </div>
+                                <!-- Display Selected Products -->
+                                <ul class="sortable-list" id="favProductsList"></ul>
+                                <!-- Hidden Input to Store Selected Product IDs -->
+                                <input type="hidden" name="fav_product" id="fav_product_input"
+                                    value="<?= isset($selectedProducts) ? implode(',', $selectedProducts) : '' ?>">
+                            </div>
+                        </ul>
+                    </li>
+                </form>
+
+
 
                 <!--------------------------------------------------------------------------------------- Blogs in Home page--------------------------------------------------------------------------------->
 
@@ -679,8 +671,7 @@
                                                         <small>Formats: JPG, PNG, JPEG, (WEBP), Max-size: 400 KB,
                                                             Recommended Dimensions: 1755 x 726px.</small>
                                                         <div class="preview-container">
-                                                            <img src="<?= ($item['image']) ?>"
-                                                                class="img-preview" />
+                                                            <img src="<?= ($item['image']) ?>" class="img-preview" />
                                                         </div>
                                                     </div>
 
@@ -690,8 +681,7 @@
                                                         <small>Formats: JPG, PNG, JPEG, (WEBP), Max-size: 400 KB,
                                                             Recommended Dimensions: 91 x 677px.</small>
                                                         <div class="preview-container">
-                                                            <img src="<?= ($item['image_mobile']) ?>"
-                                                                class="img-preview" />
+                                                            <img src="<?= ($item['image_mobile']) ?>" class="img-preview" />
                                                         </div>
                                                     </div>
 
@@ -715,9 +705,9 @@
                     </a>
                     <ul class="submenu child">
                         <div class="ImageUploadBox">
-                            <?php foreach ($dataimages as $dataimage) : ?>
-                                <form id="homeImageForm" method="post" enctype="multipart/form-data">
-                                    <!-- Image 1 -->
+                            <?php foreach ($dataimages as $dataimage): ?>
+                            <form id="homeImageForm" method="post" enctype="multipart/form-data">
+                                <!-- Image 1 -->
                                     <div class="form-group">
                                         <label for="image_title1">Image Title 1</label>
                                         <input type="text" name="image_title1" id="image_title1" class="form-control"
@@ -779,7 +769,16 @@
                     </ul>
                 </li>
 
-                <!---------------------------------------------------------------------- All Blogs Form ----------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+                <!-------------------------------------------------------------------------------------------------- All Blogs Form -------------------------------------------------------------------->
+
 
                 <!-- Blogs Section -->
                 <li id="web-blogs" class="web-section dropdown">
@@ -788,8 +787,8 @@
                         <span class="mtext">Blogs Section</span>
                     </a>
                     <ul class="submenu">
-                        <form id="blog-settings-form">
-                            <div class="ImageUploadBox">
+                        <div class="ImageUploadBox">
+                            <form id="blog-settings-form">
                                 <!-- Blogs Title -->
                                 <div class="form-group">
                                     <label for="blogs_title">Blogs Section Title</label>
@@ -806,6 +805,7 @@
                                             aria-expanded="false">
                                             Select Blogs
                                         </button>
+
                                         <div class="dropdown-menu" aria-labelledby="blogsDropdown">
                                             <?php foreach ($blogs as $blog): ?>
                                                 <div class="dropdown-item">
@@ -883,12 +883,18 @@
                                     <input type="text" name="meta_title" id="meta_title" class="form-control"
                                         value="<?= esc($settings['meta_title'] ?? '') ?>">
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </ul>
                 </li>
 
-                <!----------------------------------------------------------------------------------------- Single blog Form -------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------- Single blog Form -------------------------------------------------------------------------------------->
 
                 <!-- Blogs Section -->
                 <li id="web-singleblog" style="display: none;" class="web-section dropdown">
@@ -918,7 +924,7 @@
                                             <?php
                                             $selectedRelatedBlogs = explode(',', $page_data['related_blogs'] ?? '');
                                             foreach ($blogs as $blog):
-                                            ?>
+                                                ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox"
@@ -952,7 +958,7 @@
                                             <?php
                                             $selectedTags = explode(',', $page_data['tags'] ?? '');
                                             foreach ($tags as $tag):
-                                            ?>
+                                                ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input tag1-checkbox"
@@ -983,7 +989,7 @@
                                             <?php
                                             $selectedPopularPosts = explode(',', $page_data['popular_posts'] ?? '');
                                             foreach ($blogs as $blog):
-                                            ?>
+                                                ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox"
@@ -1042,7 +1048,7 @@
                                                 $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
                                                 foreach ($products as $Product):
                                                     $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
-                                                ?>
+                                                    ?>
                                                     <div class="dropdown-item">
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox"
@@ -1073,7 +1079,7 @@
                                                     <button class="btn btn-danger btn-sm remove-item"
                                                         data-id="<?= $Product['product_id'] ?>">Delete</button>
                                                 </li>
-                                        <?php endif;
+                                            <?php endif;
                                         endforeach; ?>
                                     </ul>
                                     <input type="hidden" name="fav_product" id="fav_blogs_input"
@@ -1355,7 +1361,7 @@
                                                                 value="<?= isset($specificItems[$subtype]) ? $specificItems[$subtype] : '' ?>">
                                                         </div>
                                                     </div>
-                                                <?php $counter++;
+                                                    <?php $counter++;
                                                 endforeach; ?>
                                             </div>
 
@@ -1432,7 +1438,7 @@
                                     // Ensure the value is JSON before decoding
                                     $iconData = is_string($about[$iconKey] ?? null) ? json_decode($about[$iconKey], true) : ($about[$iconKey] ?? []);
                                     if (!empty($iconData) || $i == 1):
-                                ?>
+                                        ?>
                                         <div class="iconsubsection mb-4">
                                             <div class="form-group">
                                                 <div class="d-flex justify-content-between align-items-baseline">
@@ -1463,7 +1469,7 @@
                                             </div>
                                             <hr>
                                         </div>
-                                <?php
+                                        <?php
                                     endif;
                                 endfor;
                                 ?>
@@ -1779,7 +1785,7 @@
                                             <?php
                                             $selectedBlogs = explode(',', $about['blogs'] ?? '');
                                             foreach ($blogs as $blog):
-                                            ?>
+                                                ?>
                                                 <div class="dropdown-item search-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input blog-checkbox"
@@ -2038,7 +2044,7 @@
                                         <?php
                                         $selectedr_product = explode(',', $search['r_products'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input r_product-checkbox"
@@ -2091,7 +2097,7 @@
                                         <?php
                                         $selectedt_product = explode(',', $search['t_products'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input t_product-checkbox"
@@ -2144,7 +2150,7 @@
                                         <?php
                                         $selectedm_product = explode(',', $search['m_products'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input m_product-checkbox"
@@ -2197,7 +2203,7 @@
                                         <?php
                                         $selecteds_blog = explode(',', $search['s_blogs'] ?? '');
                                         foreach ($blogs as $blog):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input s_blog-checkbox"
@@ -2341,7 +2347,7 @@
                                         <?php
                                         $selectedcm_product = explode(',', $cart_page['cm_products'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input cm_product-checkbox"
@@ -3083,7 +3089,7 @@
                                         <?php
                                         $selectederror_product = explode(',', $error['error_products'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox"
@@ -3277,7 +3283,8 @@
                                 <!-- Title -->
                                 <div class="form-group">
                                     <label for="policy_name">Name</label>
-                                    <input type="text" name="policy_name" id="policy_name" class="form-control" placeholder="Enter policy">
+                                    <input type="text" name="policy_name" id="policy_name" class="form-control"
+                                        placeholder="Enter policy">
                                 </div>
                                 <div class="form-group">
                                     <label for="policy_description">About Description</label>
@@ -3287,7 +3294,10 @@
 
                                 <div class="form-group">
                                     <label for="policy_link">Link</label>
-                                    <input type="text" name="policy_link" id="policy_link" class="form-control validate-required" data-error-message-required="Link is required." placeholder="Enter Link" readonly>
+                                    <input type="text" name="policy_link" id="policy_link"
+                                        class="form-control validate-required"
+                                        data-error-message-required="Link is required." placeholder="Enter Link"
+                                        readonly>
                                 </div>
 
                                 <!-- Submit Button -->
@@ -3296,18 +3306,22 @@
                         </div>
                         <!-- List of Policies -->
                         <div class="policiesBoxContainer" id="policiesBoxContainer">
-                            <?php foreach ($policies as $policy) : ?>
+                            <?php foreach ($policies as $policy): ?>
                                 <div class="PoliciesBox" id="policyBox-<?= $policy['id'] ?>" data-id="<?= $policy['id'] ?>">
 
                                     <div class="CarouselHeader">
-                                        <div class="handle" id="handle">☰ <?= (strlen($policy['policy_name']) > 6) ? substr($policy['policy_name'], 0, 6) . '...' : $policy['policy_name'] ?></div>
+                                        <div class="handle" id="handle">☰
+                                            <?= (strlen($policy['policy_name']) > 6) ? substr($policy['policy_name'], 0, 6) . '...' : $policy['policy_name'] ?>
+                                        </div>
                                         <div class="actions">
                                             <!-- Expand/Collapse Icon -->
-                                            <button type="button" class="btn btn-link" style="margin-top: 0;" onclick="toggleEditFormPolicy(<?= $policy['id'] ?>)">
+                                            <button type="button" class="btn btn-link" style="margin-top: 0;"
+                                                onclick="toggleEditFormPolicy(<?= $policy['id'] ?>)">
                                                 <i id="chevron-<?= $policy['id'] ?>" class="fas fa-chevron-down"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <a href="javascript:void(0);" onclick="deletePolicy(<?= $policy['id'] ?>)" class="" style="color: red; padding: 0;">
+                                            <a href="javascript:void(0);" onclick="deletePolicy(<?= $policy['id'] ?>)"
+                                                class="" style="color: red; padding: 0;">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </div>
@@ -3315,26 +3329,32 @@
 
                                     <!-- Collapsible Edit Form -->
                                     <div class="edit-form" id="editPolicyForm-<?= $policy['id'] ?>" style="display:none;">
-                                        <form id="editNewPolicyForm-<?= $policy['id'] ?>" method="post" enctype="multipart/form-data">
+                                        <form id="editNewPolicyForm-<?= $policy['id'] ?>" method="post"
+                                            enctype="multipart/form-data">
                                             <h6 class="mt-3">Edit Policy</h6>
                                             <hr class="mt-1">
 
                                             <!-- Title -->
                                             <div class="form-group">
                                                 <label for="policy_name">Name</label>
-                                                <input type="text" name="policy_name" value="<?= $policy['policy_name'] ?>" id="policy_name" class="form-control" placeholder="Enter policy name">
+                                                <input type="text" name="policy_name" value="<?= $policy['policy_name'] ?>"
+                                                    id="policy_name" class="form-control" placeholder="Enter policy name">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="policy_description">About Description</label>
-                                                <div class="quill-editor" data-target="policy_description"><?= $policy['policy_description'] ?></div>
-                                                <input type="hidden" value="<?= $policy['policy_description'] ?>" name="policy_description" id="policy_description">
+                                                <div class="quill-editor" data-target="policy_description">
+                                                    <?= $policy['policy_description'] ?>
+                                                </div>
+                                                <input type="hidden" value="<?= $policy['policy_description'] ?>"
+                                                    name="policy_description" id="policy_description">
                                             </div>
 
                                             <!-- Link -->
                                             <div class="form-group">
                                                 <label for="policy_link">Link</label>
-                                                <input type="text" name="policy_link" value="<?= $policy['policy_link'] ?>" id="policy_link" class="form-control" placeholder="Enter Link">
+                                                <input type="text" name="policy_link" value="<?= $policy['policy_link'] ?>"
+                                                    id="policy_link" class="form-control" placeholder="Enter Link">
                                             </div>
 
                                             <!-- Submit Button -->
@@ -3360,33 +3380,43 @@
                             <div class="ImageUploadBox">
                                 <div class="form-group">
                                     <label for="title">Title</label>
-                                    <input type="text" name="title" id="title" value="<?= $product_setting['title'] ?>" class="form-control" required>
+                                    <input type="text" name="title" id="title" value="<?= $product_setting['title'] ?>"
+                                        class="form-control" required>
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="Description">Description</label>
-                                    <input type="text" name="Description" id="Description" value="<?= $product_setting['Description'] ?>" class="form-control" required>
+                                    <input type="text" name="Description" id="Description"
+                                        value="<?= $product_setting['Description'] ?>" class="form-control" required>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <button type="button" id="showProductBtn" class="btn btn-secondary">Select Products</button>
+                                    <button type="button" id="showProductBtn" class="btn btn-secondary">Select
+                                        Products</button>
                                 </div>
 
 
                                 <!-- Product Dropdown with Search Bar -->
-                                <div id="productCheckboxContainer" class="form-group" style="display: none; margin-top: 10px;">
+                                <div id="productCheckboxContainer" class="form-group"
+                                    style="display: none; margin-top: 10px;">
                                     <label>Select Products:</label>
-                                    <input type="text" id="productSearch" class="form-control" placeholder="Search products...">
+                                    <input type="text" id="productSearch" class="form-control"
+                                        placeholder="Search products...">
                                     <div id="productList">
                                         <?php
                                         $selectedproducts = explode(',', $product_setting['product_id'] ?? '');
                                         foreach ($products as $product):
-                                        ?>
+                                            ?>
                                             <div class="product-item">
-                                                <input type="checkbox" class="product-checkbox" id="product-<?= $product['product_id'] ?>" value="<?= $product['product_id'] ?>" data-title="<?= $product['product_title'] ?>" <?= in_array($product['product_id'], $selectedproducts) ? 'checked' : '' ?>>
-                                                <label for="product-<?= $product['product_id'] ?>"><?= $product['product_title'] ?></label>
+                                                <input type="checkbox" class="product-checkbox"
+                                                    id="product-<?= $product['product_id'] ?>"
+                                                    value="<?= $product['product_id'] ?>"
+                                                    data-title="<?= $product['product_title'] ?>"
+                                                    <?= in_array($product['product_id'], $selectedproducts) ? 'checked' : '' ?>>
+                                                <label
+                                                    for="product-<?= $product['product_id'] ?>"><?= $product['product_title'] ?></label>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -3397,22 +3427,30 @@
 
 
                                 <div class="form-group">
-                                    <button type="button" id="showbundletBtn" class="btn btn-secondary">Select bundle</button>
+                                    <button type="button" id="showbundletBtn" class="btn btn-secondary">Select
+                                        bundle</button>
                                 </div>
 
 
                                 <!-- Bundle Dropdown with Search Bar -->
-                                <div id="bundleCheckboxContainer" class="form-group" style="display: none; margin-top: 10px;">
+                                <div id="bundleCheckboxContainer" class="form-group"
+                                    style="display: none; margin-top: 10px;">
                                     <label>Select bundle:</label>
-                                    <input type="text" id="bundleSearch" class="form-control" placeholder="Search bundles...">
+                                    <input type="text" id="bundleSearch" class="form-control"
+                                        placeholder="Search bundles...">
                                     <div id="bundleList">
                                         <?php
                                         $selectedbundle = explode(',', $product_setting['bundle_id'] ?? '');
                                         foreach ($bundles as $bundle):
-                                        ?>
+                                            ?>
                                             <div class="bundle-item">
-                                                <input type="checkbox" class="bundle-checkbox" id="bundle-<?= $bundle['bundle_id'] ?>" value="<?= $bundle['bundle_id'] ?>" data-title="<?= $bundle['bundle_name'] ?>" <?= in_array($bundle['bundle_id'], $selectedbundle) ? 'checked' : '' ?>>
-                                                <label for="bundle-<?= $bundle['bundle_id'] ?>"><?= $bundle['bundle_name'] ?></label>
+                                                <input type="checkbox" class="bundle-checkbox"
+                                                    id="bundle-<?= $bundle['bundle_id'] ?>"
+                                                    value="<?= $bundle['bundle_id'] ?>"
+                                                    data-title="<?= $bundle['bundle_name'] ?>"
+                                                    <?= in_array($bundle['bundle_id'], $selectedbundle) ? 'checked' : '' ?>>
+                                                <label
+                                                    for="bundle-<?= $bundle['bundle_id'] ?>"><?= $bundle['bundle_name'] ?></label>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -3448,21 +3486,25 @@
                                 </div>
 
                                 <!-- The form is initially hidden -->
-                                <form id="addmarqueeText" method="post" enctype="multipart/form-data" style="display: none;">
+                                <form id="addmarqueeText" method="post" enctype="multipart/form-data"
+                                    style="display: none;">
                                     <hr class="mt-1">
                                     <div id="marqueeTextContainer">
                                         <div class="text-media-group">
                                             <div class="form-group">
                                                 <label for="marqueeText">Enter text</label>
-                                                <input type="text" name="marqueeText" class="form-control" placeholder="Enter text" required>
+                                                <input type="text" name="marqueeText" class="form-control"
+                                                    placeholder="Enter text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueeText_link">Link</label>
-                                                <input type="url" name="marqueeText_link" class="form-control" placeholder="Enter Link">
+                                                <input type="url" name="marqueeText_link" class="form-control"
+                                                    placeholder="Enter Link">
                                             </div>
                                             <div class="form-group">
                                                 <label for="text_visibility">Visibility</label>
-                                                <select name="text_visibility" id="text_visibility" class="form-control">
+                                                <select name="text_visibility" id="text_visibility"
+                                                    class="form-control">
                                                     <option value="1">Active</option>
                                                     <option value="0">Draft</option>
                                                 </select>
@@ -3475,18 +3517,21 @@
 
                                 <div class="textBoxContainer" id="textBoxContainer">
                                     <?php if (!empty($marqueeTexts)): // Assuming $marqueeTexts is an array of records fetched from the database 
-                                    ?>
+                                            ?>
                                         <?php foreach ($marqueeTexts as $text): ?>
                                             <div class="textBox" data-id="<?= $text['id']; ?>">
                                                 <div class="CarouselHeader">
-                                                    <div class="handle">☰<?= (strlen($text['marqueeText']) > 6) ? substr($text['marqueeText'], 0, 6) . '...' : $text['marqueeText'] ?></div>
+                                                    <div class="handle">
+                                                        ☰<?= (strlen($text['marqueeText']) > 6) ? substr($text['marqueeText'], 0, 6) . '...' : $text['marqueeText'] ?>
+                                                    </div>
                                                     <div class="actions">
                                                         <!-- Expand/Collapse Icon -->
                                                         <button type="button" class="btn btn-link" style="margin-top: 0;">
                                                             <i id="chevron--<?= $text['id'] ?>" class="fas fa-chevron-down"></i>
                                                         </button>
                                                         <!-- Delete Button -->
-                                                        <a href="javascript:void(0);" class="delete-button" data-id="<?= $text['id']; ?>" style="color: red; padding: 0;">
+                                                        <a href="javascript:void(0);" class="delete-button"
+                                                            data-id="<?= $text['id']; ?>" style="color: red; padding: 0;">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>
@@ -3494,14 +3539,19 @@
 
                                                 <!-- Collapsible Edit Form -->
                                                 <div class="edit-form" style="display: none;">
-                                                    <form id="edittextForm-<?= $text['id']; ?>" method="post" enctype="multipart/form-data">
+                                                    <form id="edittextForm-<?= $text['id']; ?>" method="post"
+                                                        enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="marqueeText">Enter text</label>
-                                                            <input type="text" name="marqueeText" class="form-control" placeholder="Enter text" value="<?= htmlspecialchars($text['marqueeText']); ?>" required>
+                                                            <input type="text" name="marqueeText" class="form-control"
+                                                                placeholder="Enter text"
+                                                                value="<?= htmlspecialchars($text['marqueeText']); ?>" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="marqueeText_link">Link</label>
-                                                            <input type="url" name="marqueeText_link" class="form-control" placeholder="Enter Link" value="<?= htmlspecialchars($text['marqueeText_link']); ?>">
+                                                            <input type="url" name="marqueeText_link" class="form-control"
+                                                                placeholder="Enter Link"
+                                                                value="<?= htmlspecialchars($text['marqueeText_link']); ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="text_visibility">Visibility</label>
@@ -3536,27 +3586,36 @@
                                         <div class="text-media-group">
                                             <div class="form-group">
                                                 <label for="marqueebottomText1">Enter text 1</label>
-                                                <input type="text" name="marqueebottomText1" class="form-control" value="<?= $marqueebottomText['marqueebottomText1'] ?>" placeholder="Enter text" required>
+                                                <input type="text" name="marqueebottomText1" class="form-control"
+                                                    value="<?= $marqueebottomText['marqueebottomText1'] ?>"
+                                                    placeholder="Enter text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription1">Description 1</label>
-                                                <textarea class="form-control" name="marqueebottomDescription1" id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription1'] ?>"</textarea>
+                                                <textarea class="form-control" name="marqueebottomDescription1"
+                                                    id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription1'] ?>"</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomText2">Enter text 2</label>
-                                                <input type="text" name="marqueebottomText2" class="form-control" value="<?= $marqueebottomText['marqueebottomText2'] ?>" placeholder="Enter text" required>
+                                                <input type="text" name="marqueebottomText2" class="form-control"
+                                                    value="<?= $marqueebottomText['marqueebottomText2'] ?>"
+                                                    placeholder="Enter text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription2">Description2</label>
-                                                <textarea class="form-control" name="marqueebottomDescription2" id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription2'] ?>"</textarea>
+                                                <textarea class="form-control" name="marqueebottomDescription2"
+                                                    id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription2'] ?>"</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomText3">Enter text 3</label>
-                                                <input type="text" name="marqueebottomText3" class="form-control" value="<?= $marqueebottomText['marqueebottomText3'] ?>" placeholder="Enter text" required>
+                                                <input type="text" name="marqueebottomText3" class="form-control"
+                                                    value="<?= $marqueebottomText['marqueebottomText3'] ?>"
+                                                    placeholder="Enter text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription3">Description 3</label>
-                                                <textarea class="form-control" name="marqueebottomDescription3" id="marqueebottomDescription3">value="<?= $marqueebottomText['marqueebottomDescription3'] ?>"</textarea>
+                                                <textarea class="form-control" name="marqueebottomDescription3"
+                                                    id="marqueebottomDescription3">value="<?= $marqueebottomText['marqueebottomDescription3'] ?>"</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -3585,32 +3644,40 @@
                                 <!-- Image Upload -->
                                 <div class="form-group">
                                     <label for="Email_POP_UP_Image">Image</label>
-                                    <input type="file" name="Email_POP_UP_Image" id="Email_POP_UP_Image" class="form-control" accept="image/*">
+                                    <input type="file" name="Email_POP_UP_Image" id="Email_POP_UP_Image"
+                                        class="form-control" accept="image/*">
                                     <br>
                                     <?php if (!empty($email_pop_up['email_pop_up_image'])): ?>
-                                        <img id="previewImage" src="<?= $email_pop_up['email_pop_up_image'] ?>" alt="Image Preview" style="max-width: 150px; margin-top: 10px; display: ;">
+                                        <img id="previewImage" src="<?= $email_pop_up['email_pop_up_image'] ?>"
+                                            alt="Image Preview" style="max-width: 150px; margin-top: 10px; display: ;">
                                     <?php endif; ?>
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="Email_POP_UP_mail_Title">Title</label>
-                                    <input type="text" name="Email_POP_UP_mail_Title" id="Email_POP_UP_mail_Title" value="<?= $email_pop_up['email_pop_up_mail_title'] ?>" class="form-control" placeholder="Enter Name">
+                                    <input type="text" name="Email_POP_UP_mail_Title" id="Email_POP_UP_mail_Title"
+                                        value="<?= $email_pop_up['email_pop_up_mail_title'] ?>" class="form-control"
+                                        placeholder="Enter Name">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="Email_POP_UP_mail_text">Short Description</label>
-                                    <textarea class="form-control" name="Email_POP_UP_mail_text" id="Email_POP_UP_mail_text"><?= $email_pop_up['email_pop_up_mail_text'] ?></textarea>
+                                    <textarea class="form-control" name="Email_POP_UP_mail_text"
+                                        id="Email_POP_UP_mail_text"><?= $email_pop_up['email_pop_up_mail_text'] ?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="Email_POP_UP_mail_linktext">link text</label>
-                                    <input type="text" name="Email_POP_UP_mail_linktext" id="Email_POP_UP_mail_linktext" value="<?= $email_pop_up['email_pop_up_mail_linktext'] ?>" class="form-control" placeholder="Enter Name">
+                                    <input type="text" name="Email_POP_UP_mail_linktext" id="Email_POP_UP_mail_linktext"
+                                        value="<?= $email_pop_up['email_pop_up_mail_linktext'] ?>" class="form-control"
+                                        placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="Email_POP_UP_description">Link Description </label>
                                     <div class="quill-editor" data-target="Email_POP_UP_description"></div>
-                                    <input type="hidden" value="<?= $email_pop_up['email_pop_up_description'] ?>" name="Email_POP_UP_description" id="Email_POP_UP_description">
+                                    <input type="hidden" value="<?= $email_pop_up['email_pop_up_description'] ?>"
+                                        name="Email_POP_UP_description" id="Email_POP_UP_description">
                                 </div>
                             </form>
                         </div>
@@ -3632,7 +3699,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Initialize Select2 for all select elements with the 'select2' class
         $('.select2').select2({
             placeholder: "Select an option",
