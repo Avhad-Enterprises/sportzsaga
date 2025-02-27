@@ -317,7 +317,7 @@
                                 <tr>
                                     <th class="dt-body-center">
                                         <div class="dt-checkbox">
-                                            <input type="checkbox" name="select_all_emails" value="1" id="select-all-emails">
+                                            <input type="checkbox" id="select-all-emails">
                                             <span class="dt-checkbox-label"></span>
                                         </div>
                                     </th>
@@ -326,6 +326,7 @@
                                     <th>Customer Details</th>
                                     <th>Assigned User</th>
                                     <th>Status</th>
+                                    <th>Action</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -334,7 +335,7 @@
                                         <tr id="conversation-<?= esc($conversation['id']) ?>">  <!-- Unique ID for each row -->
                                             <td class="dt-body-center">
                                                 <div class="dt-checkbox">
-                                                    <input type="checkbox" class="email-checkbox" name="selected_emails[]" value="">
+                                                    <input type="checkbox" class="email-checkbox" name="selected_emails[]" value="<?= esc($conversation['id']) ?>">
                                                     <span class="dt-checkbox-label"></span>
                                                 </div>
                                             </td>
@@ -390,9 +391,24 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-pill <?= $conversation['status'] === 'new' ? 'badge-danger' : 'badge-success' ?>">
-                                                    <?= esc(ucfirst($conversation['status'])) ?>
-                                                </span>
+                                                <select class="status-dropdown form-control" data-id="<?= esc($conversation['id']) ?>">
+                                                    <option value="new" <?= $conversation['status'] === 'new' ? 'selected' : '' ?>>New</option>
+                                                    <option value="processing" <?= $conversation['status'] === 'processing' ? 'selected' : '' ?>>Processing</option>
+                                                    <option value="resolved" <?= $conversation['status'] === 'resolved' ? 'selected' : '' ?>>Resolved</option>
+                                                    <option value="active" <?= $conversation['status'] === 'active' ? 'selected' : '' ?>>Active</option>
+                                                    <option value="unresolved" <?= $conversation['status'] === 'unresolved' ? 'selected' : '' ?>>Unresolved</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <?php if (empty($conversation['ticket_no'])): ?>
+                                                    <a class="btn btn-primary btn-sm create-ticket" data-id="<?= esc($conversation['id']) ?>">Create Ticket</a>
+                                                <?php else: ?>
+                                                    <?php if ($conversation['ticket_status'] === 'opened'): ?>
+                                                        <a class="btn btn-danger btn-sm close-ticket" data-id="<?= esc($conversation['id']) ?>">Close Ticket</a>
+                                                    <?php else: ?>
+                                                        <a class="btn btn-success btn-sm open-ticket" data-id="<?= esc($conversation['id']) ?>">Reopen Ticket</a>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -506,6 +522,76 @@ function timeAgo($timestamp) {
     return 'just now';
 }
 ?>
+
+
+
+<script>
+$(document).ready(function () {
+    // Select/Deselect All
+    $("#select-all-emails").change(function () {
+        $(".email-checkbox").prop("checked", $(this).prop("checked"));
+    });
+
+    function getSelectedIds() {
+        let selectedIds = [];
+        $(".email-checkbox:checked").each(function () {
+            selectedIds.push($(this).val());
+        });
+        return selectedIds;
+    }
+
+    function performBulkAction(action, button) {
+        let selectedIds = getSelectedIds();
+        let clickedId = $(button).data("id");
+
+        if (selectedIds.length === 0) {
+            selectedIds = [clickedId]; // If no checkboxes selected, perform action only for clicked row
+        }
+
+        if (action === "create" || action === "close" || action === "open") {
+            let url = "<?= base_url() ?>" + action + "Ticket";  // Fix: Properly concatenate base_url()
+
+            $.post(url, { conversation_ids: selectedIds }, function (response) {
+                if (response.status === "success") {
+                    location.reload();
+                } else {
+                    alert(response.message);
+                }
+            }, "json");
+        } else {
+            $.post("<?= base_url('updateStatus') ?>", { conversation_ids: selectedIds, status: action }, function (response) {
+                if (response.status === "success") {
+                    location.reload();
+                } else {
+                    alert(response.message);
+                }
+            }, "json");
+        }
+    }
+
+    // Change Status
+    $(".status-dropdown").change(function () {
+        let action = $(this).val();
+        performBulkAction(action, this);
+    });
+
+    // Create Ticket
+    $(".create-ticket").click(function () {
+        performBulkAction("create", this);
+    });
+
+    // Close Ticket
+    $(".close-ticket").click(function () {
+        performBulkAction("close", this);
+    });
+
+    // Open Ticket
+    $(".open-ticket").click(function () {
+        performBulkAction("open", this);
+    });
+});
+
+</script>
 
 <script>
 $(document).ready(function () {
