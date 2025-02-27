@@ -539,25 +539,29 @@
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="favProductsDropdown">
                                                     <?php
-                                                    // Convert the comma-separated product IDs into an array
-                                                    $selectedProducts = explode(',', $selectedProducts ?? '');
+                                                    // Ensure selectedProducts contains only valid product IDs
+                                                    $selectedProducts = array_filter(explode(',', $selectedProducts ?? ''), function ($id) {
+                                                        return !empty($id) && is_numeric($id);
+                                                    });
+                                                    ?>
 
-                                                    // Iterate through all available products to generate the checkboxes
-                                                    foreach ($availableProducts as $product): ?>
-                                                        <div class="dropdown-item">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input product-checkbox"
-                                                                    id="product_<?= $product['product_id'] ?>"
-                                                                    data-id="<?= $product['product_id'] ?>"
-                                                                    data-title="<?= $product['product_title'] ?>"
-                                                                    <?= in_array($product['product_id'], $selectedProducts) ? 'checked' : '' ?>>
-                                                                <label class="custom-control-label"
-                                                                    for="product_<?= $product['product_id'] ?>">
-                                                                    <?= $product['product_title'] ?>
-                                                                </label>
+                                                    <?php foreach ($availableProducts as $product): ?>
+                                                        <?php if (in_array($product['product_id'], $selectedProducts)): ?>
+                                                            <div class="dropdown-item">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input product-checkbox"
+                                                                        id="product_<?= $product['product_id'] ?>"
+                                                                        data-id="<?= $product['product_id'] ?>"
+                                                                        data-title="<?= $product['product_title'] ?>"
+                                                                        <?= in_array($product['product_id'], $selectedProducts) ? 'checked' : '' ?>>
+                                                                    <label class="custom-control-label" for="product_<?= $product['product_id'] ?>">
+                                                                        <?= $product['product_title'] ?>
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        <?php endif; ?>
                                                     <?php endforeach; ?>
+
                                                 </div>
                                             </div>
                                         </div>

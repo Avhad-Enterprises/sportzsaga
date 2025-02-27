@@ -1220,56 +1220,53 @@
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
-            const selectedItems = [];
+            const selectedItems = new Set(); // Use Set to prevent duplicates
             const listContainer = document.getElementById(listId);
 
-            // Clear the list container
+            // Clear existing list
             listContainer.innerHTML = '';
 
-            // Iterate through checkboxes
             document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
                 if (checkbox.checked) {
                     const title = checkbox.getAttribute('data-title');
                     const id = checkbox.getAttribute('data-id');
 
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
+                    // Prevent duplicate entries
+                    if (!selectedItems.has(id)) {
+                        selectedItems.add(id);
 
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
+                        // Create list item
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
 
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
+                        // Add title
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
 
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
+                        // Add delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', () => {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateSelections(listId, inputId, checkboxClass);
+                        });
 
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
+                        listItem.appendChild(deleteButton);
 
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
-                    selectedItems.push(id);
+                        // Append to list
+                        listContainer.appendChild(listItem);
+                    }
                 }
             });
 
             // Update hidden input value
-            document.getElementById(inputId).value = selectedItems.join(',');
+            document.getElementById(inputId).value = Array.from(selectedItems).join(',');
         }
+
 
         // Initialize sortable for drag-and-drop
         function initializeSortable(listId, inputId) {
