@@ -565,16 +565,16 @@
 
 
 
-                <!--------------------------------------------------------------------------------------- Blogs in Home page--------------------------------------------------------------------------------->
+                <!-------------------------------------------------------------- Blogs in Home page--------------------------------------------------------------------------------->
 
-                <!-- Blog Section -->
-                <li id="web-home" style="display: none;" class="web-section dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-list"></span>
-                        <span class="mtext">Blog Section</span>
-                    </a>
-                    <ul class="submenu">
-                        <form id="homeblog-form">
+                <form id="homeblog-form">
+                    <!-- Blog Section -->
+                    <li id="web-home" style="display: none;" class="web-section dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon bi bi-pencil"></span>
+                            <span class="mtext">Blog Section</span>
+                        </a>
+                        <ul class="submenu">
                             <div class="ImageUploadBox">
                                 <div class="form-group">
                                     <label for="fav_blog">Favorite Blogs</label>
@@ -611,9 +611,10 @@
                                 <input type="hidden" name="fav_blog" id="fav_blog_input"
                                     value="<?= implode(',', $selectedBlogs ?? []) ?>">
                             </div>
-                        </form>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                </form>
+
 
                 <!-------------------------------------------------------------- home_carousel2--------------------------------------------------------------------------------->
 
@@ -894,17 +895,16 @@
 
 
 
-<!----------------------------------------------------------------------------------------- Single blog Form -------------------------------------------------------------------------------------->
+                <!----------------------------------------------------------------------------------------------------- Single blog Form ------------------------------------------------------------------------------------->
 
-                <!-- Blogs Section -->
                 <li id="web-singleblog" style="display: none;" class="web-section dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-list"></span>
                         <span class="mtext">Blogs Section</span>
                     </a>
                     <ul class="submenu">
-                        <form id="singleblog-form">
-                            <div class="ImageUploadBox">
+                        <div class="ImageUploadBox">
+                            <form id="singleblog-form">
                                 <div>
                                     <label for="page_title">Page Title</label>
                                     <input type="text" id="page_title" name="page_title"
@@ -945,16 +945,17 @@
                                 <input type="hidden" name="related_blogs" id="related_blogs_input"
                                     value="<?= $page_data['related_blogs'] ?? '' ?>">
 
+
                                 <!-- Tags Section -->
                                 <div class="form-group">
                                     <label for="tags">Tags</label>
                                     <div class="dropdown">
                                         <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
-                                            id="tagsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            id="tagsDropdownsingle" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Select Tags
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="tagsDropdown">
+                                        <div class="dropdown-menu" aria-labelledby="tagsDropdownsingle">
                                             <?php
                                             $selectedTags = explode(',', $page_data['tags'] ?? '');
                                             foreach ($tags as $tag):
@@ -972,20 +973,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="sortable-list" id="tagsList"></ul>
-                                <input type="hidden" name="tags" id="tags_input"
+                                <ul class="sortable-list" id="tagsListsingle"></ul>
+                                <input type="hidden" name="tags" id="tags_input_single"
                                     value="<?= $page_data['tags'] ?? '' ?>">
+
+
 
                                 <!-- Popular Posts -->
                                 <div class="form-group">
                                     <label for="popular_posts">Popular Posts</label>
                                     <div class="dropdown">
                                         <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
-                                            id="popularPostsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            id="popularPostsDropdownsingle" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Select Popular Posts
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="popularPostsDropdown">
+                                        <div class="dropdown-menu" aria-labelledby="popularPostsDropdownsingle">
                                             <?php
                                             $selectedPopularPosts = explode(',', $page_data['popular_posts'] ?? '');
                                             foreach ($blogs as $blog):
@@ -1006,13 +1009,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="sortable-list" id="popularPostsList"></ul>
-                                <input type="hidden" name="popular_posts" id="popular_posts_input"
+                                <ul class="sortable-list" id="popularPostsListsingle"></ul>
+                                <input type="hidden" name="popular_posts" id="popular_posts_input_single"
                                     value="<?= $page_data['popular_posts'] ?? '' ?>">
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </ul>
                 </li>
+
 
 
                 <!----------------------------------------------------------------collection form ---------------------------------------------------------------->

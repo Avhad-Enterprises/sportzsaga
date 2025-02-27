@@ -741,105 +741,37 @@
 
 
 
-<!---------------------------------------------------------------------------------------------Single blog-------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------Single blog------------------------------------------------------------------------------------------->
     <script>
-        // Function to handle checkbox changes
-        function updateSelections(listId, inputId, checkboxClass) {
-            const selectedItems = [];
-            const listContainer = document.getElementById(listId);
-
-            // Clear the list container
-            listContainer.innerHTML = '';
-
-            // Iterate through checkboxes
-            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
-                if (checkbox.checked) {
-                    const title = checkbox.getAttribute('data-title');
-                    const id = checkbox.getAttribute('data-id');
-
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
-
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
-
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
-
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
-
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
-
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
-                    selectedItems.push(id);
-                }
-            });
-
-            // Update hidden input value
-            document.getElementById(inputId).value = selectedItems.join(',');
-        }
-
-        // Initialize sortable for drag-and-drop
-        function initializeSortable(listId, inputId) {
-            new Sortable(document.getElementById(listId), {
-                animation: 150,
-                onEnd: function () {
-                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
-                    document.getElementById(inputId).value = orderedIds.join(',');
-                }
-            });
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sortable lists
             initializeSortable('relatedBlogsList', 'related_blogs_input');
-            initializeSortable('tagsList', 'tags_input');
-            initializeSortable('popularPostsList', 'popular_posts_input');
+            initializeSortable('tagsListsingle', 'tags_input_single');
+            initializeSortable('popularPostsListsingle', 'popular_posts_input_single');
 
-            // Initialize selections on page load
-            updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
-            updateSelections('tagsList', 'tags_input', 'tag1-checkbox');
-            updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
+            // Load existing selections from backend
+            loadExistingSelections('related_blogs_input', 'relatedBlogsList', 'related-blog-checkbox');
+            loadExistingSelections('tags_input_single', 'tagsListsingle', 'tag1-checkbox'); // Fixed class name
+            loadExistingSelections('popular_posts_input_single', 'popularPostsListsingle', 'popular-post-checkbox');
 
             // Event listeners for checkbox changes
-            document.querySelectorAll('.related-blog-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox'));
-            });
-
-            document.querySelectorAll('.tag1-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => {
-                    updateSelections('tagsList', 'tags_input', 'tag1-checkbox');
-                });
-            });
-
-            document.querySelectorAll('.popular-post-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox'));
+            document.addEventListener('change', function (event) {
+                if (event.target.classList.contains('related-blog-checkbox')) {
+                    updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
+                }
+                if (event.target.classList.contains('tag1-checkbox')) {  // Fixed class name
+                    updateSelections('tagsListsingle', 'tags_input_single', 'tag1-checkbox');
+                }
+                if (event.target.classList.contains('popular-post-checkbox')) {
+                    updateSelections('popularPostsListsingle', 'popular_posts_input_single', 'popular-post-checkbox');
+                }
             });
 
             // AJAX Form Submission
             document.getElementById('updatesingleblog').addEventListener('click', function () {
-                // Gather form data
                 const form = document.getElementById('singleblog-form');
                 const formData = new FormData(form);
 
-                // AJAX request to insert the data
                 fetch('<?= base_url('admin/single_blog/store') ?>', {
                     method: 'POST',
                     body: formData,
@@ -847,13 +779,7 @@
                         'X-Requested-With': 'XMLHttpRequest',
                     },
                 })
-
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
+                    .then(response => response.json())
                     .then(data => {
                         if (data.success) {
                             alert('Data saved successfully!');
@@ -867,14 +793,117 @@
                     });
             });
         });
+
+        /**
+         * Updates the list of selected checkboxes and hidden input field.
+         */
+        function updateSelections(listId, inputId, checkboxClass) {
+            const selectedItems = new Set();
+            const listContainer = document.getElementById(listId);
+            listContainer.innerHTML = '';
+
+            document.querySelectorAll(`.${checkboxClass}:checked`).forEach(checkbox => {
+                const title = checkbox.getAttribute('data-title');
+                const id = checkbox.getAttribute('data-id');
+
+                if (!selectedItems.has(id)) {
+                    selectedItems.add(id);
+
+                    if (!document.querySelector(`#${listId} [data-id="${id}"]`)) {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
+
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', () => {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateHiddenInput(inputId);
+                        });
+
+                        listItem.appendChild(deleteButton);
+                        listContainer.appendChild(listItem);
+                    }
+                }
+            });
+
+            updateHiddenInput(inputId);
+        }
+
+        /**
+         * Loads the previously selected values from the hidden input field and displays them.
+         */
+        function loadExistingSelections(inputId, listId, checkboxClass) {
+            const listContainer = document.getElementById(listId);
+            const inputElement = document.getElementById(inputId);
+            if (!inputElement) return;
+
+            const selectedValues = inputElement.value.split(',').filter(id => id.trim() !== '');
+
+            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
+                const id = checkbox.getAttribute('data-id');
+                const title = checkbox.getAttribute('data-title');
+
+                if (selectedValues.includes(id)) {
+                    checkbox.checked = true;
+
+                    if (!document.querySelector(`#${listId} [data-id="${id}"]`)) {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
+
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', function () {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateHiddenInput(inputId);
+                        });
+
+                        listItem.appendChild(deleteButton);
+                        listContainer.appendChild(listItem);
+                    }
+                }
+            });
+
+            updateHiddenInput(inputId);
+        }
+
+        /**
+         * Updates the hidden input field based on the selected items.
+         */
+        function updateHiddenInput(inputId) {
+            const inputElement = document.getElementById(inputId);
+            const listContainer = inputElement.previousElementSibling; // Get the associated list
+            const selectedIds = Array.from(listContainer.children).map(item => item.getAttribute('data-id'));
+            inputElement.value = selectedIds.join(',');
+        }
+
+        /**
+         * Initializes sortable functionality for drag-and-drop.
+         */
+        function initializeSortable(listId, inputId) {
+            new Sortable(document.getElementById(listId), {
+                animation: 150,
+                onEnd: function () {
+                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
+                    document.getElementById(inputId).value = orderedIds.join(',');
+                }
+            });
+        }
+
     </script>
-
-
-
-
-
-
-
 
 
     <!-----------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------->
@@ -1413,7 +1442,6 @@
 
 
     <!------------------------------------------------------------------------------Home page Blogs---------------------------------------------------------------------------->
-
     <script>
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
@@ -1469,7 +1497,6 @@
 
 
         let sortableInitialized = false;
-
         function initializeSortable(listId, inputId) {
             if (!sortableInitialized) {
                 new Sortable(document.getElementById(listId), {
@@ -1537,6 +1564,7 @@
             const form = document.getElementById('carousel2AddForm');
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         });
+
     </script>
 
     <!--home-->
@@ -1547,7 +1575,7 @@
             var formData = new FormData(this); // Create FormData object from the form
 
             $.ajax({
-                url: '<?= site_url('home-image/save-home-image') ?>', // URL for the POST request
+                url: '<?= site_url('home-image/save') ?>', // URL for the POST request
                 type: 'POST', // Use POST method for sending data
                 data: formData, // Send the FormData object (which includes the form fields and files)
                 processData: false, // Don't let jQuery process the data
@@ -1560,6 +1588,12 @@
             });
         });
     </script>
+
+
+
+
+
+
 
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
