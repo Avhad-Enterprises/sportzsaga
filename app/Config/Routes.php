@@ -243,6 +243,15 @@ $routes->post('sendReply', 'Customerservice::sendReply');
 $routes->post('checkNewMessages', 'Customerservice::checkNewMessages');
 $routes->get('getCSTags', 'Customerservice::getCSTags');
 $routes->post('saveMacro', 'Customerservice::saveMacro');
+$routes->post('createTicket', 'Customerservice::createTicket');
+$routes->post('closeTicket', 'Customerservice::closeTicket');
+$routes->post('openTicket', 'Customerservice::openTicket');
+$routes->post('updateStatus', 'Customerservice::updateStatus');
+$routes->post('updateTags', 'Customerservice::updateTags');
+$routes->post('createView', 'Customerservice::createView');
+$routes->get('applyView/(:num)', 'Customerservice::applyView/$1');
+$routes->post('updateView', 'Customerservice::updateView');
+$routes->post('deleteView', 'Customerservice::deleteView');
 
 // Genrate Controller
 $routes->get('generate_report', 'GenerateController::index');
