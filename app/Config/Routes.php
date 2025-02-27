@@ -491,7 +491,7 @@ $routes->post('header/update_page/(:num)', 'HeaderController::update_page/$1');
 $routes->get('header/get_items/(:segment)', 'HeaderController::get_items/$1');
 $routes->delete('header/delete_page/(:num)', 'HeaderController::delete_page/$1');
 
-//blog Ui
+//All blog
 $routes->post('admin/blog_settings/save', 'BlogSettingsController::save');
 
 //singleblog 

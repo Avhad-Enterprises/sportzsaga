@@ -183,10 +183,12 @@
                             page</button>
                     </div>
                     <div id="web-product" class="web-section" style="display: none;">
-                        <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product page</button>
+                        <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product
+                            page</button>
                     </div>
                     <div id="web-Email_POP_UP" class="web-section" style="display: none;">
-                        <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email POP UP page</button>
+                        <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email POP
+                            UP page</button>
                     </div>
                 </div>
 
@@ -499,15 +501,13 @@
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/"
-                                frameborder="0" class="preview-iframe"></iframe>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
                         <div class="preview mobile-view" style="height: 700px;">
                             <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/"
-                                frameborder="0" class="preview-iframe"></iframe>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
@@ -516,15 +516,15 @@
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/page/privacy-policy"
-                                frameborder="0" class="preview-iframe"></iframe>
+                            <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
                         <div class="preview mobile-view" style="height: 700px;">
                             <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/page/privacy-policy"
-                                frameborder="0" class="preview-iframe"></iframe>
+                            <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
@@ -556,14 +556,21 @@
 
 
 
-    <!------------------ALL blog------------------>
+
+
+
+
+
+
+
+    <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Initialize sortable for blogs
             new Sortable(document.getElementById('blogs-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Blogs reordered");
                 }
             });
@@ -572,7 +579,7 @@
             new Sortable(document.getElementById('tags-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Tags reordered");
                 }
             });
@@ -581,7 +588,7 @@
             new Sortable(document.getElementById('posts-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Posts reordered");
                 }
             });
@@ -591,62 +598,137 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-
     <script>
         function showToast(message, type) {
             alert(`${type.toUpperCase()}: ${message}`);
         }
+
     </script>
 
     <script>
-        const updateBlogBtn = document.getElementById("updateblogpage");
+        document.addEventListener("DOMContentLoaded", function () {
 
-        updateBlogBtn.addEventListener("click", function(e) {
-            e.preventDefault();
+            function updateSelections(listId, inputId, checkboxClass) {
+                const selectedItems = new Set(); // Ensure unique selections
+                const listContainer = document.getElementById(listId);
+                listContainer.innerHTML = ''; // Clear previous selections
 
-            const formData = new FormData();
+                document.querySelectorAll(`.${checkboxClass}:checked`).forEach(checkbox => {
+                    const title = checkbox.getAttribute('data-title');
+                    const id = checkbox.getAttribute('data-id');
 
-            // Blogs
-            const selectedBlogs = [];
-            document.querySelectorAll("#blogs-list .blog-checkbox:checked").forEach((checkbox) => {
-                selectedBlogs.push(checkbox.value);
+                    if (!selectedItems.has(id)) { // Prevent duplicates
+                        selectedItems.add(id);
+
+                        // Ensure item does not exist in the list already
+                        if (!document.querySelector(`#${listId} [data-id="${id}"]`)) {
+                            const listItem = document.createElement('li');
+                            listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                            listItem.setAttribute('data-id', id);
+
+                            const itemTitle = document.createElement('span');
+                            itemTitle.textContent = title;
+                            listItem.appendChild(itemTitle);
+
+                            const deleteButton = document.createElement('button');
+                            deleteButton.textContent = 'Delete';
+                            deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                            deleteButton.addEventListener('click', () => {
+                                checkbox.checked = false; // Uncheck
+                                listContainer.removeChild(listItem); // Remove from UI
+                                updateSelections(listId, inputId, checkboxClass);
+                            });
+
+                            listItem.appendChild(deleteButton);
+                            listContainer.appendChild(listItem);
+                        }
+                    }
+                });
+
+                // Save selected blog IDs in the hidden input field
+                document.getElementById(inputId).value = Array.from(selectedItems).join(',');
+            }
+
+
+            let sortableInstances = {};
+
+            function initializeSortable(listId, inputId) {
+                if (!sortableInstances[listId]) { // Check if already initialized
+                    sortableInstances[listId] = new Sortable(document.getElementById(listId), {
+                        animation: 150,
+                        ghostClass: 'sortable-ghost',
+                        onEnd: function () {
+                            const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
+                            document.getElementById(inputId).value = orderedIds.join(',');
+                        }
+                    });
+                }
+            }
+
+            // Initialize sortable on page load
+            initializeSortable('blogsList', 'blogs_input');
+            initializeSortable('tagsList', 'tags_input');
+            initializeSortable('popularPostsList', 'popular_posts_input');
+
+            // Update selections on page load
+            updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
+            updateSelections('tagsList', 'tags_input', 'tag-checkbox');
+            updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
+
+            document.addEventListener('change', function (event) {
+                if (event.target.classList.contains('blog-checkbox')) {
+                    updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
+                }
             });
-            formData.append("blogs", selectedBlogs.join(","));
 
-            // Tags
-            const selectedTags = [];
-            document.querySelectorAll("#tags-list .tag-checkbox:checked").forEach((checkbox) => {
-                selectedTags.push(checkbox.value);
+
+
+            document.querySelectorAll('.tag-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', () => updateSelections('tagsList', 'tags_input', 'tag-checkbox'));
             });
-            formData.append("popular_tags", selectedTags.join(","));
 
-            // Popular Posts
-            const selectedPopularPosts = [];
-            document.querySelectorAll("#posts-list .post-checkbox:checked").forEach((checkbox) => {
-                selectedPopularPosts.push(checkbox.value);
+            document.querySelectorAll('.popular-post-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', () => updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox'));
             });
-            formData.append("popular_posts", selectedPopularPosts.join(","));
 
-            // Other fields
-            formData.append("blogs_title", document.getElementById("blogs_title").value);
-            formData.append("meta_title", document.getElementById("meta_title").value);
+            // Function to show toast messages
+            function showToast(message, type) {
+                alert(`${type.toUpperCase()}: ${message}`);
+            }
 
-            fetch("<?= base_url('admin/blog_settings/save') ?>", {
+            // Form submission with correct hidden input values
+            const updateBlogBtn = document.getElementById("updateblogpage");
+            updateBlogBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData();
+
+                // Get selected values from hidden inputs
+                formData.append("blogs", document.getElementById("blogs_input").value);
+                formData.append("popular_tags", document.getElementById("tags_input").value);
+                formData.append("popular_posts", document.getElementById("popular_posts_input").value);
+
+                // Other form fields
+                formData.append("blogs_title", document.getElementById("blogs_title").value);
+                formData.append("meta_title", document.getElementById("meta_title").value);
+
+                fetch("<?= base_url('admin/blog_settings/save') ?>", {
                     method: "POST",
                     body: formData,
                 })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        showToast(data.message, "success");
-                    } else {
-                        showToast(data.message, "error");
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                    showToast("An error occurred. Please try again.", "error");
-                });
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            showToast(data.message, "success");
+                        } else {
+                            showToast(data.message, "error");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        showToast("An error occurred. Please try again.", "error");
+                    });
+            });
         });
     </script>
 
@@ -659,8 +741,7 @@
 
 
 
-
-    <!------------------Single blog------------------>
+<!---------------------------------------------------------------------------------------------Single blog-------------------------------------------------------------------------------------->
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
@@ -719,7 +800,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -753,19 +834,19 @@
             });
 
             // AJAX Form Submission
-            document.getElementById('updatesingleblog').addEventListener('click', function() {
+            document.getElementById('updatesingleblog').addEventListener('click', function () {
                 // Gather form data
                 const form = document.getElementById('singleblog-form');
                 const formData = new FormData(form);
 
                 // AJAX request to insert the data
                 fetch('<?= base_url('admin/single_blog/store') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
 
                     .then(response => {
                         if (!response.ok) {
@@ -796,7 +877,7 @@
 
 
 
-    <!------------------Collection------------------>
+    <!-----------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------->
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
@@ -855,7 +936,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -875,19 +956,19 @@
             });
 
             // AJAX Form Submission for Collection
-            document.getElementById('updatecollection').addEventListener('click', function() {
+            document.getElementById('updatecollection').addEventListener('click', function () {
                 // Gather form data
                 const form = document.getElementById('collection-form');
                 const formData = new FormData(form);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('admin/collection/saveCollection') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
 
                     .then(response => {
                         if (!response.ok) {
@@ -921,7 +1002,7 @@
                     const reader = new FileReader();
 
                     // Load the file and set it as the `src` of the img tag
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         previewElement.src = e.target.result;
                         previewElement.style.display = 'block'; // Show the image preview
                     };
@@ -931,11 +1012,11 @@
             }
 
             // Event listeners for image inputs
-            document.getElementById('image1').addEventListener('change', function() {
+            document.getElementById('image1').addEventListener('change', function () {
                 previewImage(this, 'image1-preview');
             });
 
-            document.getElementById('image2').addEventListener('change', function() {
+            document.getElementById('image2').addEventListener('change', function () {
                 previewImage(this, 'image2-preview');
             });
         });
@@ -965,7 +1046,7 @@
 
     <script>
         // Save Logo
-        $('#homeLogoForm').on('submit', function(e) {
+        $('#homeLogoForm').on('submit', function (e) {
             e.preventDefault(); // Prevent default form submission
             var formData = new FormData(this);
             $.ajax({
@@ -974,7 +1055,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function(response) {
+                success: function (response) {
                     if (response.status === 'success') {
                         alert(response.message); // Show success message
                         location.reload(); // Reload the page
@@ -982,7 +1063,7 @@
                         alert(response.message); // Show error message
                     }
                 },
-                error: function() {
+                error: function () {
                     alert('Error saving logo.');
                 }
             });
@@ -997,7 +1078,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function(response) {
+                success: function (response) {
                     if (response.status === 'success') {
                         alert(response.message); // Show success message
                         location.reload(); // Reload the page
@@ -1005,7 +1086,7 @@
                         alert(response.message); // Show error message
                     }
                 },
-                error: function() {
+                error: function () {
                     alert('Error updating logo.');
                 }
             });
@@ -1026,7 +1107,7 @@
                         "<?= csrf_token() ?>": "<?= csrf_hash() ?>" // ✅ CSRF token (if enabled)
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -1034,7 +1115,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert('Error deleting logo.');
                     }
                 });
@@ -1063,7 +1144,7 @@
         }
 
         // Toggle Add Form
-        document.getElementById("togglelogoFormButton").addEventListener("click", function() {
+        document.getElementById("togglelogoFormButton").addEventListener("click", function () {
             const addForm = document.getElementById("logoAddForm");
             if (addForm.style.display === "none") {
                 addForm.style.display = "block";
@@ -1077,7 +1158,7 @@
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     document.getElementById(`previewLogo-${logoId}`).src = e.target.result;
                 };
                 reader.readAsDataURL(file);
@@ -1144,7 +1225,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1164,19 +1245,19 @@
             });
 
             // AJAX Form Submission for Collections
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_collection', document.getElementById('fav_collection_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('collection/saveCollection') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1201,9 +1282,9 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Open the collection form when "Add Collection" is clicked
-            $('#openCollectionForm').click(function(e) {
+            $('#openCollectionForm').click(function (e) {
                 e.preventDefault(); // Prevent default navigation
                 $('#collectionAddForm').show(); // Show the collection form
             });
@@ -1272,7 +1353,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1292,19 +1373,19 @@
             });
 
             // AJAX Form Submission for Products
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_product', document.getElementById('fav_product_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('product/saveProduct') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1325,6 +1406,8 @@
             });
         });
     </script>
+
+
 
     <!------------------------------------------------------------------------------Home page Blogs---------------------------------------------------------------------------->
 
@@ -1388,7 +1471,7 @@
             if (!sortableInitialized) {
                 new Sortable(document.getElementById(listId), {
                     animation: 150,
-                    onEnd: function() {
+                    onEnd: function () {
                         const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                         document.getElementById(inputId).value = orderedIds.join(',');
                     }
@@ -1411,19 +1494,19 @@
             });
 
             // AJAX Form Submission for Blogs
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_blog', document.getElementById('fav_blog_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('blog/saveBlog') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1447,7 +1530,7 @@
 
 
     <script>
-        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function () {
             const form = document.getElementById('carousel2AddForm');
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         });
@@ -1455,7 +1538,7 @@
 
     <!--home-->
     <script>
-        $('#homeImageForm').on('submit', function(e) {
+        $('#homeImageForm').on('submit', function (e) {
             e.preventDefault(); // Prevent the default form submission
 
             var formData = new FormData(this); // Create FormData object from the form
@@ -1466,7 +1549,7 @@
                 data: formData, // Send the FormData object (which includes the form fields and files)
                 processData: false, // Don't let jQuery process the data
                 contentType: false, // Don't set a content type because FormData does this automatically
-                success: function(response) {
+                success: function (response) {
                     console.log('Success Response:', response); // Log the response from the server
                     alert('Data updated successfully!'); // Show success message
                 },
@@ -1478,7 +1561,7 @@
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let fieldCounter = 0;
@@ -1489,7 +1572,7 @@
             const pageAddForm = document.getElementById("pageAddForm");
 
             if (toggleAddPageButton && pageAddForm) {
-                toggleAddPageButton.addEventListener("click", function() {
+                toggleAddPageButton.addEventListener("click", function () {
                     pageAddForm.style.display = (pageAddForm.style.display === "none" || pageAddForm.style.display === "") ?
                         "block" : "none";
                 });
@@ -1503,13 +1586,13 @@
             const selectedPageTypesContainer = document.getElementById("selectedPageTypesContainer");
             const selectedPageTypes = document.getElementById("selectedPageTypes");
 
-            togglePageTypeDropdown.addEventListener("click", function() {
+            togglePageTypeDropdown.addEventListener("click", function () {
                 pageTypeCheckboxDropdown.style.display = (pageTypeCheckboxDropdown.style.display === "none" || pageTypeCheckboxDropdown.style.display === "") ?
                     "block" : "none";
             });
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const value = this.value;
                     if (this.checked) {
                         selectedPages[value] = value;
@@ -1529,7 +1612,7 @@
                     itemDiv.classList.add("selected-item");
                     itemDiv.innerHTML = `${selectedPages[page]} <button data-value="${page}">&times;</button>`;
 
-                    itemDiv.querySelector("button").addEventListener("click", function() {
+                    itemDiv.querySelector("button").addEventListener("click", function () {
                         const value = this.getAttribute("data-value");
                         delete selectedPages[value];
                         document.querySelector(`.page-type-checkbox[value="${value}"]`).checked = false;
@@ -1555,7 +1638,7 @@
             }
 
             if (toggleSubtypeButton) {
-                toggleSubtypeButton.addEventListener("click", function() {
+                toggleSubtypeButton.addEventListener("click", function () {
                     if (Object.keys(selectedPages).length > 0) {
                         console.warn("Toggle button is disabled because Page Type is selected.");
                         return;
@@ -1600,12 +1683,12 @@
 
                     let selectedItems = {};
 
-                    newToggleDropdown.addEventListener("click", function() {
+                    newToggleDropdown.addEventListener("click", function () {
                         newCheckboxDropdown.style.display = (newCheckboxDropdown.style.display === "none" || newCheckboxDropdown.style.display === "") ?
                             "block" : "none";
                     });
 
-                    newSubtypeSelect.addEventListener("change", function() {
+                    newSubtypeSelect.addEventListener("change", function () {
                         const selectedValue = newSubtypeSelect.value;
                         if (!selectedValue) return;
 
@@ -1631,7 +1714,7 @@
                                     });
 
                                     document.querySelectorAll(`#checkboxDropdown_${fieldCounter} .specific-item-checkbox`).forEach(checkbox => {
-                                        checkbox.addEventListener("change", function() {
+                                        checkbox.addEventListener("change", function () {
                                             if (this.checked) {
                                                 selectedItems[this.value] = this.getAttribute("data-name");
                                             } else {
@@ -1657,7 +1740,7 @@
                             itemDiv.classList.add("selected-item");
                             itemDiv.innerHTML = `${selectedItems[id]} <button data-id="${id}">&times;</button>`;
 
-                            itemDiv.querySelector("button").addEventListener("click", function() {
+                            itemDiv.querySelector("button").addEventListener("click", function () {
                                 delete selectedItems[this.getAttribute("data-id")];
                                 updateSelectedItemsDisplay();
                             });
@@ -1669,15 +1752,15 @@
             }
             const apiBaseUrl = "<?= base_url('header/delete_page/') ?>";
 
-            window.deletePage = function(pageId) {
+            window.deletePage = function (pageId) {
                 if (!confirm("Are you sure you want to delete this page?")) return;
 
                 fetch(`${apiBaseUrl}${pageId}`, {
-                        method: "DELETE",
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    })
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1697,7 +1780,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let selectedPages = {};
@@ -1705,7 +1788,7 @@
             let itemDataMap = {}; // ✅ Store item ID-to-Title mapping
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const value = this.value;
                     selectedPages[value] = this.checked ? value : delete selectedPages[value];
                     updateSelectedPagesDisplay();
@@ -1725,7 +1808,7 @@
 
             // **Handle Subtype Change**
             document.querySelectorAll(".subtype-select").forEach(select => {
-                select.addEventListener("change", function() {
+                select.addEventListener("change", function () {
                     const fieldId = this.id.split("_")[1];
                     fetchSubtypeItems(fieldId, this.value);
                 });
@@ -1758,7 +1841,7 @@
 
             function attachCheckboxListeners(fieldId) {
                 document.querySelectorAll(`#checkboxDropdown_${fieldId} .specific-item-checkbox`).forEach(checkbox => {
-                    checkbox.addEventListener("change", function() {
+                    checkbox.addEventListener("change", function () {
                         updateSelectedItems(fieldId);
                     });
                 });
@@ -1796,7 +1879,7 @@
 
             function attachRemoveButtons(fieldId) {
                 document.querySelectorAll(`#selectedItemsContainer_${fieldId} .remove-item-btn`).forEach(button => {
-                    button.addEventListener("click", function() {
+                    button.addEventListener("click", function () {
                         const itemId = this.dataset.id;
                         document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`).checked = false;
                         updateSelectedItems(fieldId);
@@ -1845,7 +1928,7 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
-        document.getElementById("web_section").addEventListener("change", function() {
+        document.getElementById("web_section").addEventListener("change", function () {
             const selectedSection = this.value; // Get selected value
             const sections = document.querySelectorAll(".web-section"); // Select all sections
 
@@ -1861,7 +1944,7 @@
 
     <script>
         document.querySelectorAll('.element-select').forEach(select => {
-            select.addEventListener('change', function() {
+            select.addEventListener('change', function () {
                 let wrapper = this.closest('.form-group').nextElementSibling;
 
                 wrapper.querySelector('.product-wrapper').style.display = 'none';
@@ -1876,7 +1959,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Configuration for Quill editor
             const quillConfig = {
                 theme: 'snow',
@@ -1908,7 +1991,7 @@
                     const quill = new Quill(editorElement, quillConfig);
 
                     // Sync Quill content to hidden input
-                    quill.on('text-change', function() {
+                    quill.on('text-change', function () {
                         targetInput.value = quill.root.innerHTML;
                     });
 
@@ -1922,7 +2005,7 @@
             });
 
             document.querySelectorAll('.file-preview').forEach((fileInput) => {
-                fileInput.addEventListener('change', function(event) {
+                fileInput.addEventListener('change', function (event) {
                     const input = event.target;
                     const previewContainerId = input.id + '_preview';
                     const previewContainer = document.getElementById(previewContainerId);
@@ -1953,7 +2036,7 @@
 
                         // Set image source using FileReader
                         const reader = new FileReader();
-                        reader.onload = function(e) {
+                        reader.onload = function (e) {
                             img.src = e.target.result;
                         };
                         reader.readAsDataURL(file);
@@ -2028,7 +2111,7 @@
 
             // Handle checkbox selection
             blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const blogId = this.dataset.id;
                     const blogTitle = this.dataset.title;
 
@@ -2060,7 +2143,7 @@
         `;
 
                 // Remove blog on click
-                blogBox.querySelector(".remove-blog").addEventListener("click", function() {
+                blogBox.querySelector(".remove-blog").addEventListener("click", function () {
                     blogBox.remove();
                     document.getElementById(`blog_${blogId}`).checked = false;
                 });
@@ -2090,7 +2173,7 @@
 
             // Handle checkbox selection
             r_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const r_productId = this.dataset.id;
                     const r_productTitle = this.dataset.title;
 
@@ -2122,7 +2205,7 @@
         `;
 
                 // Remove r_product on click
-                r_productBox.querySelector(".remove-r_product").addEventListener("click", function() {
+                r_productBox.querySelector(".remove-r_product").addEventListener("click", function () {
                     r_productBox.remove();
                     document.getElementById(`r_product_${r_productId}`).checked = false;
                 });
@@ -2152,7 +2235,7 @@
 
             // Handle checkbox selection
             t_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const t_productId = this.dataset.id;
                     const t_productTitle = this.dataset.title;
 
@@ -2184,7 +2267,7 @@
         `;
 
                 // Remove t_product on click
-                t_productBox.querySelector(".remove-t_product").addEventListener("click", function() {
+                t_productBox.querySelector(".remove-t_product").addEventListener("click", function () {
                     t_productBox.remove();
                     document.getElementById(`t_product_${t_productId}`).checked = false;
                 });
@@ -2214,7 +2297,7 @@
 
             // Handle checkbox selection
             m_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const m_productId = this.dataset.id;
                     const m_productTitle = this.dataset.title;
 
@@ -2246,7 +2329,7 @@
         `;
 
                 // Remove m_product on click
-                m_productBox.querySelector(".remove-m_product").addEventListener("click", function() {
+                m_productBox.querySelector(".remove-m_product").addEventListener("click", function () {
                     m_productBox.remove();
                     document.getElementById(`m_product_${m_productId}`).checked = false;
                 });
@@ -2277,7 +2360,7 @@
 
             // Handle checkbox selection
             s_blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const s_blogId = this.dataset.id;
                     const s_blogTitle = this.dataset.title;
 
@@ -2309,7 +2392,7 @@
         `;
 
                 // Remove s_blog on click
-                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function() {
+                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function () {
                     s_blogBox.remove();
                     document.getElementById(`s_blog_${s_blogId}`).checked = false;
                 });
@@ -2340,7 +2423,7 @@
 
             // Handle checkbox selection
             cm_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const cm_productId = this.dataset.id;
                     const cm_productTitle = this.dataset.title;
 
@@ -2372,7 +2455,7 @@
         `;
 
                 // Remove cm_product on click
-                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function() {
+                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function () {
                     cm_productBox.remove();
                     document.getElementById(`cm_product_${cm_productId}`).checked = false;
                 });
@@ -2402,7 +2485,7 @@
 
             // Handle checkbox selection
             error_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const error_productId = this.dataset.id;
                     const error_productTitle = this.dataset.title;
 
@@ -2434,7 +2517,7 @@
         `;
 
                 // Remove error_product on click
-                error_productBox.querySelector(".remove-error_product").addEventListener("click", function() {
+                error_productBox.querySelector(".remove-error_product").addEventListener("click", function () {
                     error_productBox.remove();
                     document.getElementById(`error_product_${error_productId}`).checked = false;
                 });
@@ -2508,7 +2591,7 @@
 
 
             // Update form submission
-            updateaboutBtn.addEventListener("click", function(e) {
+            updateaboutBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2556,12 +2639,12 @@
                 updateaboutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_about') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2585,7 +2668,7 @@
 
             // Update form submission
 
-            updatecontactBtn.addEventListener("click", function(e) {
+            updatecontactBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2632,12 +2715,12 @@
                 updatecontactBtn.innerHTML = "Updating...";
 
                 fetch("<?= base_url('online_store/update_contact') ?>", {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest",
-                        },
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -2659,7 +2742,7 @@
 
 
             // Update form submission
-            updatesearchBtn.addEventListener("click", function(e) {
+            updatesearchBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2696,12 +2779,12 @@
                 updatesearchBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_search') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2722,7 +2805,7 @@
             });
 
             // Update form submission
-            updatewishlistBtn.addEventListener("click", function(e) {
+            updatewishlistBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2736,12 +2819,12 @@
                 updatewishlistBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_wishlist') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2763,7 +2846,7 @@
 
 
             // Update form submission
-            updatecartBtn.addEventListener("click", function(e) {
+            updatecartBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2795,12 +2878,12 @@
                 updatecartBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_cart') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2821,7 +2904,7 @@
             });
 
             // Update form submission
-            updatecheckoutBtn.addEventListener("click", function(e) {
+            updatecheckoutBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2837,12 +2920,12 @@
                 updatecheckoutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_checkout') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2864,7 +2947,7 @@
 
 
             // Update form submission
-            updatetrackingBtn.addEventListener("click", function(e) {
+            updatetrackingBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2915,12 +2998,12 @@
                 updatetrackingBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_tracking') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2942,7 +3025,7 @@
 
 
             // Update form submission
-            update404Btn.addEventListener("click", function(e) {
+            update404Btn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3014,12 +3097,12 @@
                 update404Btn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_404') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3058,7 +3141,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const maxSubsections = 5; // Maximum allowed subsections
             const iconsContainer = document.querySelector('.icons');
             const addIconBtn = document.querySelector('.addicon');
@@ -3090,7 +3173,7 @@
             }
 
             // Add new subsection
-            addIconBtn.addEventListener('click', function(e) {
+            addIconBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 const currentSubsections = document.querySelectorAll('.iconsubsection').length;
 
@@ -3108,7 +3191,7 @@
             });
 
             // Remove subsection
-            iconsContainer.addEventListener('click', function(e) {
+            iconsContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('removeicon')) {
                     e.preventDefault();
                     const subsection = e.target.closest('.iconsubsection');
@@ -3142,7 +3225,7 @@
                         }
 
                         const reader = new FileReader();
-                        reader.onload = function(e) {
+                        reader.onload = function (e) {
                             const img = document.createElement('img');
                             img.src = e.target.result;
                             img.classList.add('img-fluid', 'img-thumbnail');
@@ -3172,9 +3255,9 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
 
-            document.getElementById("toggleteamsFormButton").addEventListener("click", function() {
+            document.getElementById("toggleteamsFormButton").addEventListener("click", function () {
                 const form = document.getElementById("AddteamsForm");
                 form.style.display = form.style.display === "none" ? "block" : "none";
             });
@@ -3183,11 +3266,11 @@
             const imgInput = document.getElementById('member_pic');
             const newImgPreview = document.getElementById('preview_member_pic');
 
-            imgInput.addEventListener('change', function() {
+            imgInput.addEventListener('change', function () {
                 const file = this.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         newImgPreview.src = e.target.result;
                         newImgPreview.style.display = 'block';
                     };
@@ -3213,11 +3296,11 @@
                     }
 
                     // Handle new image preview
-                    imgInput.addEventListener("change", function() {
+                    imgInput.addEventListener("change", function () {
                         const file = this.files[0];
                         if (file) {
                             const reader = new FileReader();
-                            reader.onload = function(e) {
+                            reader.onload = function (e) {
                                 previewImg.src = e.target.result;
                                 previewImg.style.display = 'block';
                             };
@@ -3239,14 +3322,14 @@
             // For the add form
             const addImgInput = document.getElementById('member_pic');
             if (addImgInput) {
-                addImgInput.addEventListener('change', async function() {
+                addImgInput.addEventListener('change', async function () {
                     await validateImageInput(this);
                 });
             }
 
             // For all edit forms
             document.querySelectorAll("input[type='file'][id^='member_pic']").forEach((imgInput) => {
-                imgInput.addEventListener('change', async function() {
+                imgInput.addEventListener('change', async function () {
                     await validateImageInput(this);
                 });
             });
@@ -3279,12 +3362,12 @@
                 img.src = URL.createObjectURL(file);
 
                 return new Promise((resolve) => {
-                    img.onload = function() {
+                    img.onload = function () {
                         URL.revokeObjectURL(this.src);
                         resolve(true);
                     };
 
-                    img.onerror = function() {
+                    img.onerror = function () {
                         displayError($(inputElement), 'Invalid image file');
                         URL.revokeObjectURL(this.src);
                         resolve(false);
@@ -3345,7 +3428,7 @@
                 return isValid;
             }
 
-            addBtn.addEventListener("click", function(e) {
+            addBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
@@ -3356,12 +3439,12 @@
                     addBtn.innerHTML = "Updating...";
 
                     fetch("<?= base_url('online_store/add_members') ?>", {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "X-Requested-With": "XMLHttpRequest"
-                            },
-                        })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                    })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.success) {
@@ -3389,7 +3472,7 @@
             editForms.forEach((form) => {
                 const editBtn = form.querySelector("#editmembersBtn");
 
-                editBtn.addEventListener("click", function(e) {
+                editBtn.addEventListener("click", function (e) {
                     e.preventDefault();
 
                     if (validateForm(form)) {
@@ -3399,12 +3482,12 @@
                         editBtn.innerHTML = "Updating...";
 
                         fetch("<?= base_url('online_store/edit_members') ?>", {
-                                method: "POST",
-                                body: formData,
-                                headers: {
-                                    "X-Requested-With": "XMLHttpRequest"
-                                },
-                            })
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            },
+                        })
                             .then((response) => response.json())
                             .then((data) => {
                                 if (data.success) {
@@ -3434,7 +3517,7 @@
                 Sortable.create(container, {
                     handle: ".handle",
                     animation: 150,
-                    onEnd: function(evt) {
+                    onEnd: function (evt) {
                         // Get the new order of IDs
                         const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
 
@@ -3445,15 +3528,15 @@
 
             function updateAwardOrder(orderedIds) {
                 fetch("<?= base_url('online_store/update_members_order') ?>", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "X-Requested-With": "XMLHttpRequest",
-                        },
-                        body: JSON.stringify({
-                            order: orderedIds
-                        }),
-                    })
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                    body: JSON.stringify({
+                        order: orderedIds
+                    }),
+                })
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
@@ -3490,8 +3573,8 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $("#addFooterdata").submit(function(event) {
+        $(document).ready(function () {
+            $("#addFooterdata").submit(function (event) {
                 event.preventDefault(); // Prevent default form submission
 
                 var formData = new FormData(this);
@@ -3504,7 +3587,7 @@
                     contentType: false, // Prevent jQuery from setting content-type
                     processData: false, // Prevent automatic data processing
                     dataType: "json", // Expect JSON response
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -3512,7 +3595,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert('An error occurred while updating the footer.');
                     }
                 });
@@ -3521,13 +3604,13 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const policyPlusButton = document.getElementById('policyplus');
             const addPolicyForm = document.getElementById('AddNewPolicyForm');
             const editPolicyForm = document.getElementById('EditPolicyForm');
 
             // Handle the add button click to toggle the Add Policy form
-            policyPlusButton.addEventListener('click', function() {
+            policyPlusButton.addEventListener('click', function () {
                 if (addPolicyForm.style.display === 'none' || addPolicyForm.style.display === '') {
                     addPolicyForm.style.display = 'block'; // Show the Add Policy form
                     editPolicyForm.style.display = 'none'; // Hide the Edit Policy form
@@ -3537,7 +3620,7 @@
             });
 
             // Handle form submission for Add form
-            $('#addpolicy').on('submit', function(e) {
+            $('#addpolicy').on('submit', function (e) {
                 e.preventDefault();
 
                 const formData = {
@@ -3551,7 +3634,7 @@
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh to reflect changes
@@ -3559,7 +3642,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     },
@@ -3568,7 +3651,7 @@
 
             const baseUrl = "<?= base_url() ?>";
 
-            $('form[id^="editNewPolicyForm"]').on('submit', function(e) {
+            $('form[id^="editNewPolicyForm"]').on('submit', function (e) {
                 e.preventDefault();
 
                 const policyId = $(this).attr('id').split('-')[1];
@@ -3588,7 +3671,7 @@
                     processData: false,
                     contentType: false,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh the page to show updated data
@@ -3596,7 +3679,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     }
@@ -3639,7 +3722,7 @@
                     data: {
                         policy_id: policyId
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             // Remove the policy from the DOM if deletion is successful
                             $('#policyBox-' + policyId).remove();
@@ -3648,7 +3731,7 @@
                             alert("Failed to delete the policy.");
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert("An error occurred while deleting the policy.");
                     }
                 });
@@ -3659,7 +3742,7 @@
 
     <script>
         // Automatically generate the link based on policy name input
-        document.getElementById('policy_name').addEventListener('input', function() {
+        document.getElementById('policy_name').addEventListener('input', function () {
             var policyName = this.value;
             var generatedLink = policyName.trim().toLowerCase().replace(/\s+/g, '-');
             document.getElementById('policy_link').value = generatedLink;
@@ -3668,7 +3751,7 @@
 
     <!--chaitanya product-->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Elements for products
             const showProductBtn = document.getElementById("showProductBtn");
             const productCheckboxContainer = document.getElementById("productCheckboxContainer");
@@ -3685,27 +3768,27 @@
 
 
             // Show/Hide product list
-            showProductBtn.addEventListener("click", function() {
+            showProductBtn.addEventListener("click", function () {
                 const isVisible = productCheckboxContainer.style.display === "block";
                 productCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Show/Hide bundle list
-            showBundleBtn.addEventListener("click", function() {
+            showBundleBtn.addEventListener("click", function () {
                 const isVisible = bundleCheckboxContainer.style.display === "block";
                 bundleCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Add/remove selected products dynamically
-            productCheckboxContainer.addEventListener("change", function(e) {
+            productCheckboxContainer.addEventListener("change", function (e) {
                 handleSelection(e, "product-checkbox", selectedProductsContainer);
             });
 
 
             // Add/remove selected bundles dynamically
-            bundleCheckboxContainer.addEventListener("change", function(e) {
+            bundleCheckboxContainer.addEventListener("change", function (e) {
                 handleSelection(e, "bundle-checkbox", selectedBundlesContainer);
             });
 
@@ -3757,7 +3840,7 @@
 
 
                     // Add delete functionality
-                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function() {
+                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function () {
                         itemElement.remove();
                         checkbox.checked = false; // Uncheck the checkbox
                     });
@@ -3766,7 +3849,7 @@
 
 
             // Handle save button click event
-            updateproductpage.addEventListener("click", function(e) {
+            updateproductpage.addEventListener("click", function (e) {
                 e.preventDefault(); // Prevent form submission
 
 
@@ -3797,12 +3880,12 @@
 
                 // Send the AJAX request
                 fetch('<?= base_url('product-settings/save') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3880,7 +3963,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const viewTypeSelect = document.getElementById('viewType');
             const sortSelectContainer = document.getElementById('sortSelectContainer');
             const postSelectContainer = document.getElementById('postSelectContainer');
@@ -3933,7 +4016,7 @@
             }
 
             // Handle view type changes
-            viewTypeSelect.addEventListener('change', function() {
+            viewTypeSelect.addEventListener('change', function () {
                 updateContainers(this.value);
                 // Reset selections when view type changes
                 postCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -3942,7 +4025,7 @@
             });
 
             // Handle post selection
-            document.querySelector('.dropdown-menu').addEventListener('change', function(e) {
+            document.querySelector('.dropdown-menu').addEventListener('change', function (e) {
                 if (e.target.classList.contains('post-checkbox')) {
                     if (viewTypeSelect.value === 'single') {
                         // For single view, uncheck all other checkboxes
@@ -3993,8 +4076,8 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            $('#updateEmail_POP_UPpage').click(function(e) {
+        $(document).ready(function () {
+            $('#updateEmail_POP_UPpage').click(function (e) {
                 e.preventDefault();
 
 
@@ -4020,10 +4103,10 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         alert(response.message);
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         alert('An error occurred: ' + xhr.status + ' ' + error);
                     }
                 });
@@ -4035,13 +4118,13 @@
 
 
     <script>
-        document.getElementById('Email_POP_UP_Image').addEventListener('change', function(event) {
+        document.getElementById('Email_POP_UP_Image').addEventListener('change', function (event) {
             let file = event.target.files[0];
 
 
             if (file) {
                 let reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     let preview = document.getElementById('previewImage');
                     preview.src = e.target.result;
                     preview.style.display = "block"; // Show the preview
@@ -4053,23 +4136,23 @@
 
     <!--marquee chaitanya-->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Toggle form visibility on button click
-            document.getElementById("toggleTextFormButton").addEventListener("click", function() {
+            document.getElementById("toggleTextFormButton").addEventListener("click", function () {
                 var form = document.getElementById("addmarqueeText");
                 form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
             });
 
             // Handle form submission with AJAX
-            document.getElementById("addmarqueeText").addEventListener("submit", function(e) {
+            document.getElementById("addmarqueeText").addEventListener("submit", function (e) {
                 e.preventDefault(); // Prevent form from submitting traditionally
 
                 let formData = new FormData(this);
 
                 fetch("<?= site_url('marquee-text/save-marquee') ?>", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4089,10 +4172,10 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Toggle edit form visibility
             document.querySelectorAll(".actions button").forEach((button) => {
-                button.addEventListener("click", function() {
+                button.addEventListener("click", function () {
                     const editForm = this.closest(".textBox").querySelector(".edit-form");
                     const chevron = this.querySelector("#chevron");
 
@@ -4130,14 +4213,14 @@
 
             // Handle delete button
             document.querySelectorAll(".actions a").forEach((deleteButton) => {
-                deleteButton.addEventListener("click", function() {
+                deleteButton.addEventListener("click", function () {
                     const textBox = this.closest(".textBox");
                     const textId = textBox.getAttribute("data-id");
 
                     if (confirm("Are you sure you want to delete this text?")) {
                         fetch(`<?= site_url('marquee-text/delete-marquee') ?>/${textId}`, {
-                                method: "DELETE"
-                            })
+                            method: "DELETE"
+                        })
                             .then(response => response.json())
                             .then(data => {
                                 if (data.status === "success") {
@@ -4160,16 +4243,16 @@
 
     <script>
         document.querySelectorAll("[id^='edittextForm-']").forEach(form => {
-            form.addEventListener("submit", function(e) {
+            form.addEventListener("submit", function (e) {
                 e.preventDefault(); // Prevent default form submission
 
                 let formData = new FormData(this);
                 let recordId = this.id.split('-')[1]; // Extract the record ID from the form's ID
 
                 fetch(`<?= site_url('marquee-text/UpdateMarquee/') ?>${recordId}`, {
-                        method: "POST",
-                        body: formData
-                    })
+                    method: "POST",
+                    body: formData
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4189,8 +4272,8 @@
 
 
     <script>
-        $(document).ready(function() {
-            $("#addmarqueebottomText").on("submit", function(e) {
+        $(document).ready(function () {
+            $("#addmarqueebottomText").on("submit", function (e) {
                 e.preventDefault();
 
                 $.ajax({
@@ -4200,7 +4283,7 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === "success") {
                             alert(response.message);
                             location.reload();
@@ -4208,7 +4291,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert("An error occurred while saving the data.");
                     }
                 });

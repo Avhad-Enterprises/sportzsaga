@@ -570,21 +570,21 @@ class Store extends BaseController
 
             // Data to update footer
             $data = [
-                'footer_image'    => $imagePaths['footer_image'] ?? '',
-                'footer_email'    => $request->getPost('Footer_mail') ?? '',
-                'footer_hours'    => $request->getPost('Footer_Hours') ?? '',
-                'footer_name'     => $request->getPost('Footer_payment') ?? '',
-                'facebook'        => $facebook,
-                'instagram'       => $instagram,
-                'twitter'         => $twitter,
-                'youtube'         => $youtube,
+                'footer_image' => $imagePaths['footer_image'] ?? '',
+                'footer_email' => $request->getPost('Footer_mail') ?? '',
+                'footer_hours' => $request->getPost('Footer_Hours') ?? '',
+                'footer_name' => $request->getPost('Footer_payment') ?? '',
+                'facebook' => $facebook,
+                'instagram' => $instagram,
+                'twitter' => $twitter,
+                'youtube' => $youtube,
                 'footer_payment_image1' => $paymentImagePaths['footer_payment_image1'] ?? '',
                 'footer_payment_image2' => $paymentImagePaths['footer_payment_image2'] ?? '',
                 'footer_payment_image3' => $paymentImagePaths['footer_payment_image3'] ?? '',
-                'footer_payment_link1'  => $paymentLinks[0] ?? '',
-                'footer_payment_link2'  => $paymentLinks[1] ?? '',
-                'footer_payment_link3'  => $paymentLinks[2] ?? '',
-                'updated_at'      => date('Y-m-d H:i:s')
+                'footer_payment_link1' => $paymentLinks[0] ?? '',
+                'footer_payment_link2' => $paymentLinks[1] ?? '',
+                'footer_payment_link3' => $paymentLinks[2] ?? '',
+                'updated_at' => date('Y-m-d H:i:s')
             ];
 
             // Update the footer data in the model
@@ -1454,7 +1454,7 @@ class Store extends BaseController
         }
     }
 
-    
+
     //<!------------------------------------------------------------------------------------Home Collection------------------------------------------------------------------------------------------------------------>
     public function saveCollection()
     {
@@ -1505,8 +1505,7 @@ class Store extends BaseController
         ]);
     }
 
-    //<!------------------------------------------------------------------------------------Home Collection------------------------------------------------------------------------------------------------------------>
-
+    //<!------------------------------------------------------------------------------------Home Products------------------------------------------------------------------------------------------------------------>
     public function saveProduct()
     {
         if ($this->request->isAJAX()) {
@@ -1555,6 +1554,10 @@ class Store extends BaseController
             'message' => 'Invalid request.',
         ]);
     }
+
+
+
+
 
     //<!------------------------------------------------------------------------------------Home Blogs------------------------------------------------------------------------------------------------------------>
     public function saveBlog()
