@@ -10,6 +10,7 @@ use App\Models\Controls_model;
 use App\Models\TagModel;
 use App\Models\Registerusers_model;
 use Google\Cloud\Storage\StorageClient;
+use App\Models\CategoryModel;
 
 class Blogs extends BaseController
 {
@@ -46,6 +47,8 @@ class Blogs extends BaseController
         $tagModel = new TagModel();       // Load the TagModel to fetch tags
         $userModel = new Registerusers_model();    // Load the UsersModel to fetch users
         $controlmodel = new Controls_model();
+        $catmodel = new CategoryModel();
+        $data['categories'] = $catmodel->getAllCategories();
 
         $data['image'] = $model->getallimages();
         $data['sheader'] = $controlmodel->getMenusecondaryLinks();
@@ -57,6 +60,33 @@ class Blogs extends BaseController
         $data['users'] = $userModel->findAll(); // Fetch all users from the users table
 
         return view('addnew_blog_view', $data);
+    }
+
+    public function addCategory()
+    {
+        $categoryModel = new CategoryModel();
+
+        $categoryName = $this->request->getPost('category_name');
+        $categoryValue = $this->request->getPost('category_value');
+
+        // Validate input
+        if (!$categoryName || !$categoryValue) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Invalid input.']);
+        }
+
+        // Save to database
+        $data = [
+            'category_name' => $categoryName,
+            'category_value' => $categoryValue,
+        ];
+
+        $insertId = $categoryModel->insert($data);
+
+        if ($insertId) {
+            return $this->response->setJSON(['success' => true, 'id' => $insertId, 'name' => $categoryName, 'value' => $categoryValue]);
+        } else {
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to add category.']);
+        }
     }
 
     public function publishmyblog()
@@ -93,7 +123,7 @@ class Blogs extends BaseController
             'author_name' => $this->request->getPost('blog-author-name'),
             'blog_metatitle' => $this->request->getPost('blog-meta-title'),
             'blog_metadescription' => $this->request->getPost('blog-meta-description'),
-            'blog_metaurl' => $metaUrl, // Auto-generated URL
+            'blog_metaurl' => $metaUrl,
             'blog_image' => $newblogimg,
             'blog_mobile_image' => $newblogmobileimg,
             'publish_date_and_time' => $this->request->getPost('publish_date_and_time'),
@@ -101,6 +131,7 @@ class Blogs extends BaseController
             'recurrence' => $this->request->getPost('recurrence'),
             'publish_for' => $this->request->getPost('publish_for'),
             'blog_quote' => $this->request->getPost('blog-quote'),
+            'category' => $this->request->getPost('blog_category'),
         ];
 
         // Handle blog subsections
@@ -160,6 +191,8 @@ class Blogs extends BaseController
     {
         $model = new blogs_model();
         $data['posts'] = $model->getblogbyid($blog_id);
+        $catmodel = new CategoryModel();
+        $data['categories'] = $catmodel->getAllCategories();
         return view('edit_blog_view', $data);
     }
 

@@ -62,6 +62,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('blogs/publishmyblog', 'Blogs::publishmyblog');
    $routes->get('blogs/editblogs/(:num)', 'Blogs::editblogs/$1');
    $routes->post('blogs/editmyblog/(:num)', 'Blogs::editmyblog/$1');
+   $routes->post('blogs/add-category', 'Blogs::addCategory');
 
    // Empolyee's Login/signup Controller;
    $routes->get('sendinvite', 'Registeredusers::sendinvite');

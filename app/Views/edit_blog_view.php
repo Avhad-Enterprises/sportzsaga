@@ -1,7 +1,3 @@
-<h1>Hello</h1>
-<!DOCTYPE html>
-<html>
-
 <head>
     <!-- Head View Start -->
     <?= $this->include('head_view') ?>
@@ -267,6 +263,25 @@
                                         </div>
                                         <div class="invalid-feedback">
                                             This field can't be empty.
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="service_category">Category:</label>
+                                        <div class="input-group">
+                                            <select class="form-control" name="blog_category" id="service_category">
+                                                <option value="">Select Category--</option>
+                                                <?php foreach ($categories as $category): ?>
+                                                    <option value="<?= $category['category_value'] ?>"
+                                                        <?= ($post['category'] == $category['category_value']) ? 'selected' : '' ?>>
+                                                        <?= $category['category_name'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#categoryModal">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

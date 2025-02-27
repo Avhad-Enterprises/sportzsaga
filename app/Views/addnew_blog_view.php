@@ -126,7 +126,7 @@
 
                 <form id="NewEditblogform" method="post" action="<?= base_url() ?>blogs/publishmyblog" enctype="multipart/form-data" class="needs-validation" novalidate>
                     <div class="mb-3 d-flex justify-content-between">
-                        <a href="<?= base_url('admin-services') ?>"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                        <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
                         <button value="submit" class="btn btn-primary btn-lg">
                             Publish
                         </button>
@@ -245,6 +245,22 @@
                                         This field can't be empty.
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <p class="text-blue mb-30">Category</p>
+                                    <div class="input-group">
+                                        <select class="custom-select2 form-control" name="blog_category" id="service_category">
+                                            <option value="">Select Category--</option>
+                                            <?php foreach ($categories as $category): ?>
+                                                <option value="<?= $category['category_value'] ?>"><?= $category['category_name'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#categoryModal">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="pd-20 card-box mb-30">
@@ -322,6 +338,70 @@
                         </div>
                     </div>
                 </form>
+
+                <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="categoryModalLabel">Add New Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="categoryForm">
+                                    <div class="form-group">
+                                        <label for="category_name">Category Name:</label>
+                                        <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Enter Category Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category_value">Category Value:</label>
+                                        <input type="text" class="form-control" id="category_value" name="category_value" placeholder="Enter Category Value">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="saveCategoryBtn">Save Category</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById('saveCategoryBtn').addEventListener('click', function() {
+                        var categoryName = document.getElementById('category_name').value;
+                        var categoryValue = document.getElementById('category_value').value;
+
+                        if (categoryName && categoryValue) {
+                            $.ajax({
+                                url: "<?= base_url('blogs/add-category') ?>",
+                                method: "POST",
+                                data: {
+                                    category_name: categoryName,
+                                    category_value: categoryValue
+                                },
+                                success: function(response) {
+                                    if (response.success) {
+                                        var newOption = new Option(response.name, response.value);
+                                        document.getElementById('service_category').add(newOption);
+                                        document.getElementById('service_category').value = response.value;
+
+                                        $('#categoryModal').modal('hide');
+                                        document.getElementById('categoryForm').reset();
+                                    } else {
+                                        alert(response.message);
+                                    }
+                                },
+                                error: function() {
+                                    alert('An error occurred while adding the category.');
+                                }
+                            });
+                        } else {
+                            alert("Please fill in both fields.");
+                        }
+                    });
+                </script>
 
             </div>
         </div>
@@ -506,5 +586,12 @@
     });
 </script>
 
+<!-- Footer View End -->
+<script>
+    function goBack() {
+        // Redirects to the previous page in browser history
+        window.history.back();
+    }
+</script>
 
 </html>
