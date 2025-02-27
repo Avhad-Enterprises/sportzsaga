@@ -67,8 +67,15 @@ class Store extends BaseController
         $data['footer_data'] = $modal->getAllfooter();
         $data['pages'] = $modal->getpages();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
+
         $data['availableProducts'] = $modal->getAllAvailableProducts();
         $data['selectedProducts'] = $modal->getHomeProductIds();
+
+        // echo '<pre>';
+        // print_r($data['availableProducts']);
+        // echo '</pre>';
+        // die();
+
         $data['selectedBlogs'] = $modal->getHomeBlogIds();
         $data['carousel2'] = $modal->getAllCarousel2();
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
