@@ -1,14 +1,11 @@
 <!-- Full Page Loader -->
 <div id="loaderOverlay" class="loader-overlay" style="display: none;">
-    <div class="dot-spinner">
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
-        <div class="dot-spinner__dot"></div>
+    <div class="loadingspinner">
+        <div id="square1"></div>
+        <div id="square2"></div>
+        <div id="square3"></div>
+        <div id="square4"></div>
+        <div id="square5"></div>
     </div>
 </div>
 
@@ -118,7 +115,7 @@
 
                                 <!-- Add Form -->
                                 <div class="ImageUploadBox" id="carouselAddForm" style="display: none;">
-                                    <form action="<?= base_url('online_store/add_new_carousel') ?>" id="carouselForm"
+                                    <form action="<?= base_url('online_store/add_new_carousel') ?>" id="carouselAddNewForm"
                                         method="post" enctype="multipart/form-data">
 
                                         <!-- Title -->
@@ -195,7 +192,7 @@
                                         </div>
 
                                         <!-- Submit Button -->
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button type="submit" class="btn btn-primary" id="submitBtn">Add</button>
                                     </form>
                                 </div>
 
@@ -228,8 +225,7 @@
                                             <!-- Collapsible Edit Form -->
                                             <div class="carousel-edit-form" id="editForm-<?= $carousel['id'] ?>"
                                                 style="display:none;">
-                                                <form
-                                                    action="<?= base_url('online_store/update_carousel/' . $carousel['id']) ?>"
+                                                <form action="<?= base_url('online_store/update_carousel/' . $carousel['id']) ?>"
                                                     id="carouselEditForm" class="validate-form" method="post"
                                                     enctype="multipart/form-data">
                                                     <input type="hidden" name="carousel_id" value="<?= $carousel['id'] ?>">
@@ -258,10 +254,10 @@
                                                     <div class="form-group">
                                                         <label for="select_link_<?= $carousel['id'] ?>">Select Field</label>
                                                         <select class="custom-select2 form-control select_link" id="select_link_<?= $carousel['id'] ?>"
-                                                            name="select_link" style="width: 100%; height: 38px">
+                                                                name="select_link" style="width: 100%; height: 38px">
                                                             <option value="">Select</option>
-                                                            <option value="product" <?= ($carousel['selection_type'] != null) ? 'selected' : '' ?>>Product</option>
-                                                            <option value="collection" <?= ($carousel['selection_type'] != null) ? 'selected' : '' ?>>Collection</option>
+                                                            <option value="product" <?= ($carousel['selection_type'] == 'product') ? 'selected' : '' ?>>Product</option>
+                                                            <option value="collection" <?= ($carousel['selection_type'] == 'collection') ? 'selected' : '' ?>>Collection</option>
                                                         </select>
                                                     </div>
 

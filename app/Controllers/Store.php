@@ -241,26 +241,12 @@ class Store extends BaseController
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
-        log_message('info', 'Carousel data prepared: ' . json_encode($carouselData));
-
-        // Insert Data into Database
         $carouselModel = new onlinestoremodal();
-        if ($carouselModel->insert($carouselData)) {
-            log_message('info', 'Carousel data saved to the database.');
-            $session->setFlashdata('toast', [
-                'type' => 'success',
-                'message' => 'Carousel added successfully!',
-            ]);
+        if ($carouselModel->insert($carouselData, false)) { // Using false prevents re-insertion
+            return redirect()->back()->with('success', 'Carousel added successfully!');
         } else {
-            log_message('error', 'Failed to save carousel data to the database: ' . json_encode($carouselModel->errors()));
-            $session->setFlashdata('toast', [
-                'type' => 'error',
-                'message' => 'Failed to save carousel data.',
-            ]);
+            return redirect()->back()->with('error', 'Failed to save carousel data.');
         }
-
-        log_message('info', 'addcarousel method completed.');
-        return redirect()->back();
     }
 
     public function update_carousel($id)
@@ -318,10 +304,23 @@ class Store extends BaseController
             ]);
         }
 
+        // Handle selection logic: If product is selected, collection should be NULL, and vice versa.
+        $selectionType = $this->request->getPost('select_link');
+        $productId = $this->request->getPost('selected_product') ?: null;
+        $collectionId = $this->request->getPost('selected_collection') ?: null;
+
+        if ($selectionType === 'product') {
+            $collectionId = null; // Reset collection_id if product is selected
+        } elseif ($selectionType === 'collection') {
+            $productId = null; // Reset product_id if collection is selected
+        }
+
         $updateData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
-            'link' => $this->request->getPost('carousel_link'),
+            'selection_type' => $selectionType,
+            'product_id' => $productId,
+            'collection_id' => $collectionId,
             'image' => $carouselImageUrl,
             'image_mobile' => $mobileImageUrl,
             'visibility' => $this->request->getPost('carousel_visibility'),
@@ -329,18 +328,12 @@ class Store extends BaseController
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
+        // Update data in database
         if ($carouselModel->update($id, $updateData)) {
-            return $this->response->setJSON([
-                'success' => true,
-                'message' => 'Carousel updated successfully!',
-                'updatedTitle' => mb_strimwidth($updateData['title'], 0, 6, '...'),
-            ]);
+            return redirect()->back()->with('success', 'Carousel updated successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to update carousel data.');
         }
-
-        return $this->response->setJSON([
-            'success' => false,
-            'message' => 'Failed to update carousel.',
-        ]);
     }
 
     public function delete_carousel($id)

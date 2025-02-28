@@ -501,6 +501,8 @@
     <!-- Footer View End -->
 
 
+    <!----------------------------------------------------------------------------------------Add New Carousel------------------------------------------------------------------------------------------------->
+
     <script>
         $(document).ready(function() {
             // Hide both fields initially
@@ -524,6 +526,65 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function() {
+            $('.select_link').on('change', function() {
+                let id = $(this).attr('id').split('_')[2]; // Extracts the ID dynamically
+                let selectedValue = $(this).val();
+
+                if (selectedValue === 'product') {
+                    $('#ShowProductField_' + id).fadeIn();
+                    $('#ShowCollectionField_' + id).hide();
+                } else if (selectedValue === 'collection') {
+                    $('#ShowCollectionField_' + id).fadeIn();
+                    $('#ShowProductField_' + id).hide();
+                } else {
+                    $('#ShowProductField_' + id).hide();
+                    $('#ShowCollectionField_' + id).hide();
+                }
+            });
+
+            // Run this function on page load to display correct fields
+            $('.select_link').each(function() {
+                $(this).trigger('change');
+            });
+        });
+    </script>
+
+    <script>
+        // Initialize the FormValidator
+        new FormValidator('#carouselAddNewForm', {
+            onSuccess: (form) => {
+                // Show the loader
+                document.getElementById('loaderOverlay').style.display = 'flex';
+
+                // Submit the form programmatically
+                form.submit();
+            },
+        });
+    </script>
+
+    <script>
+        // Initialize the FormValidator
+        new FormValidator('#carouselEditForm', {
+            onSuccess: (form) => {
+                // Show the loader
+                document.getElementById('loaderOverlay').style.display = 'flex';
+
+                // Submit the form programmatically
+                form.submit();
+            },
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#carouselAddNewForm').on('submit', function() {
+                $('#submitBtn').prop('disabled', true); // Disable button to prevent double submission
+            });
+        });
+    </script>
+    
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -3889,35 +3950,6 @@
             loadPreviouslySelectedItems();
         });
     </script>
-
-
-    <script>
-        // Initialize the FormValidator
-        new FormValidator('#carouselForm', {
-            onSuccess: (form) => {
-                // Show the loader
-                document.getElementById('loaderOverlay').style.display = 'flex';
-
-                // Submit the form programmatically
-                form.submit();
-            },
-        });
-    </script>
-
-    <script>
-        // Initialize the FormValidator
-        new FormValidator('#carouselEditForm', {
-            onSuccess: (form) => {
-                // Show the loader
-                document.getElementById('loaderOverlay').style.display = 'flex';
-
-                // Submit the form programmatically
-                form.submit();
-            },
-        });
-    </script>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const viewTypeSelect = document.getElementById('viewType');
