@@ -23,12 +23,12 @@ class AbandonedOrderController extends BaseController
     // Display Abandoned Orders
     public function index()
     {
-        $cartItems = $this->Cart_model->select('session_id')->distinct()->findAll();
+        $cartItems = $this->Cart_model->select('guest_id')->distinct()->findAll();
 
         $uniqueSessionItems = [];
 
         foreach ($cartItems as $item) {
-            $cartDetails = $this->Cart_model->where('session_id', $item['session_id'])->first();
+            $cartDetails = $this->Cart_model->where('guest_id', $item['guest_id'])->first();
 
             if ($cartDetails) {
                 $product = $this->Products_model->find($cartDetails['product_id']);
@@ -64,7 +64,7 @@ class AbandonedOrderController extends BaseController
     
             // If no email is found, check if it's a session-based cart
             if (!$email) {
-                $cart = $cartModel->where('session_id', $id)->first();
+                $cart = $cartModel->where('guest_id', $id)->first();
                 if ($cart && isset($cart['email'])) {
                     $email = $cart['email'];
                 }
@@ -136,12 +136,12 @@ class AbandonedOrderController extends BaseController
     // Helper function to send email to a specific user or session
     private function sendEmailToUserOrSession($userIdOrSessionId)
     {
-        // First, check if it's a user_id or session_id, and fetch the user accordingly
+        // First, check if it's a user_id or guest_id, and fetch the user accordingly
         $user = $this->Registerusers_model->where('user_id', $userIdOrSessionId)->first();
     
         if (!$user) {
-            // If not found by user_id, try session_id
-            $user = $this->Cart_model->where('session_id', $userIdOrSessionId)->first();
+            // If not found by user_id, try guest_id
+            $user = $this->Cart_model->where('guest_id', $userIdOrSessionId)->first();
         }
     
         // If the user or session exists, and email is available
@@ -197,7 +197,7 @@ class AbandonedOrderController extends BaseController
 
                 $user = $this->Registerusers_model->where('user_id', $userId)->first();
                 if (!$user) {
-                    $user = $this->Cart_model->where('session_id', $userId)->first();
+                    $user = $this->Cart_model->where('guest_id', $userId)->first();
                 }
 
                 if ($user && isset($user['email']) && filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
@@ -256,7 +256,7 @@ class AbandonedOrderController extends BaseController
         if (!$customer && !empty($cartItems)) {
             // Use cart table data to create a "guest" customer profile
             $customer = [
-                'id' => $id, // Use session_id as fallback
+                'id' => $id, // Use guest_id as fallback
                 'name' => $cartItems[0]['fullName'] ?? 'Guest',
                 'phone_no' => $cartItems[0]['phone'] ?? '',
                 'email' => $cartItems[0]['email'] ?? '',
@@ -274,8 +274,8 @@ class AbandonedOrderController extends BaseController
         $data = [
             'customer' => $customer,
             'cartItems' => $cartItems,
-            'cartCount' => $cartCount, // Pass cart count to the view
-            'footerLinks' => $footerLinks, // Pass footer links to the view
+            'cartCount' => $cartCount,
+            'footerLinks' => $footerLinks,
         ];
     
         return view('edit_cart_view', $data);
@@ -300,7 +300,7 @@ class AbandonedOrderController extends BaseController
             $userModel->update($id, $customerData); // Update registered user details
         } else {
             // If no registered user, update session-based cart data
-            $cartModel->where('session_id', $id)->set($customerData)->update();
+            $cartModel->where('guest_id', $id)->set($customerData)->update();
         }
 
         // Update cart items

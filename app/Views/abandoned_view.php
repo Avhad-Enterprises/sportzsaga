@@ -188,9 +188,6 @@
                                         <th>Product Image</th>
                                         <th>Product Name</th>
                                         <th>Quantity</th>
-                                        <th>Size</th>
-                                        <th>User Type</th>
-                                        <th>Total Amount</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -220,7 +217,7 @@
 
                                                 <td>
                                                     <?php if (!empty($item['product_image'])): ?>
-                                                        <img src="<?= base_url('uploads/' . $item['product_image']) ?>"
+                                                        <img src="<?= $item['product_image'] ?>"
                                                             alt="<?= $item['product_name'] ?>" width="50" height="50">
                                                     <?php else: ?>
                                                         No Image
@@ -228,9 +225,6 @@
                                                 </td>
                                                 <td><?= $item['product_name'] ?></td>
                                                 <td><?= $item['quantity'] ?></td>
-                                                <td><?= $item['size'] ?></td>
-                                                <td><?= $item['user_type'] ?></td>
-                                                <td>Rs.<?= $item['total_amont'] ?></td>
                                                 <td>
                                                     <a href="<?= base_url('abandoned-orders/send-email/' . ($item['user_id'] ?? $item['session_id'])) ?>"
                                                         class="btn btn-primary btn-sm"
