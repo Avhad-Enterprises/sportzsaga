@@ -200,13 +200,13 @@ class onlinestoremodal extends Model
     {
         $result = $this->db->table('home_product')
             ->select('product_id')
-            ->where('id', 1) // Assuming you always fetch the record with ID 1
+            ->where('id', 1)
             ->get()
             ->getRowArray();
 
-        return $result['product_id'] ?? ''; // Return the product IDs as a comma-separated string
+        return $result['product_id'] ?? '';
     }
-
+    
     public function getHomeBlogIds()
     {
         $row = $this->db->table('home_blog')->where('id', 1)->get()->getRowArray();

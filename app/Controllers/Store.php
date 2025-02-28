@@ -1505,6 +1505,8 @@ class Store extends BaseController
         ]);
     }
 
+
+    
     //<!------------------------------------------------------------------------------------Home Products------------------------------------------------------------------------------------------------------------>
     public function saveProduct()
     {
@@ -1554,6 +1556,7 @@ class Store extends BaseController
             'message' => 'Invalid request.',
         ]);
     }
+
 
 
 
