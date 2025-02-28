@@ -40,6 +40,8 @@ class Store extends BaseController
         $modal = new onlinestoremodal();
         $homeImageModel = new HomeImageModel();
 
+        $data['mewproducts'] = $modal->GetallProductsData();
+
         $data['about'] = $modal->getabout();
         $data['tags'] = $modal->getTags();
         $data['products'] = $modal->getproduct();
@@ -67,22 +69,13 @@ class Store extends BaseController
         $data['footer_data'] = $modal->getAllfooter();
         $data['pages'] = $modal->getpages();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
-
         $data['availableProducts'] = $modal->getAllAvailableProducts();
         $data['selectedProducts'] = $modal->getHomeProductIds();
-
-        // echo '<pre>';
-        // print_r($data['availableProducts']);
-        // echo '</pre>';
-        // die();
-
         $data['selectedBlogs'] = $modal->getHomeBlogIds();
         $data['carousel2'] = $modal->getAllCarousel2();
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
         $data['marqueebottomText'] = $modal->getAllmarqueebottomText();
         $data['email_pop_up'] = $modal->getAllEmail_POP_UP();
-
-        // Fetch available collections and selected collections
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['selectedCollections'] = $modal->getHomeCollectionIds();
 
@@ -117,7 +110,6 @@ class Store extends BaseController
             $data['posts'] = [];
             log_message('error', 'Instagram API Error: ' . print_r($responseData, true));
         }
-
 
         $headerFirstModel = new HeaderFirstModel();
         $headerSecondModel = new HeaderSecondModel();
@@ -239,7 +231,9 @@ class Store extends BaseController
         $carouselData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
-            'link' => $this->request->getPost('carousel_link'),
+            'selection_type' => $this->request->getPost('select_link'),
+            'product_id' => $this->request->getPost('selected_product') ?: null,
+            'collection_id' => $this->request->getPost('selected_collection') ?: null,
             'image' => $carouselImageUrl,
             'image_mobile' => $mobileImageUrl,
             'visibility' => $this->request->getPost('carousel_visibility') == '1' ? 1 : 0,

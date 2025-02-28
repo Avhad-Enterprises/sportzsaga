@@ -501,13 +501,28 @@
     <!-- Footer View End -->
 
 
+    <script>
+        $(document).ready(function() {
+            // Hide both fields initially
+            $('#ShowProductField, #ShowCollectionField').hide();
 
+            // Show the appropriate field when the user selects a value
+            $('#select_link').on('change', function() {
+                let selectedValue = $(this).val();
 
-
-
-
-
-
+                if (selectedValue === 'product') {
+                    $('#ShowProductField').fadeIn();
+                    $('#ShowCollectionField').hide();
+                } else if (selectedValue === 'collection') {
+                    $('#ShowCollectionField').fadeIn();
+                    $('#ShowProductField').hide();
+                } else {
+                    // Hide both if nothing is selected
+                    $('#ShowProductField, #ShowCollectionField').hide();
+                }
+            });
+        });
+    </script>
 
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
@@ -785,7 +800,7 @@
                 const formData = new FormData(form);
 
                 // AJAX request to insert the data
-                fetch('<?= base_url('admin/single_blog/store') ?>', {
+                fetch('<?php echo base_url('admin/single_blog/store'); ?>', {
                         method: 'POST',
                         body: formData,
                         headers: {

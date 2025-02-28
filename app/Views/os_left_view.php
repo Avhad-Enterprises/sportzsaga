@@ -124,7 +124,7 @@
                                         <!-- Title -->
                                         <div class="form-group">
                                             <label for="carousel_title">Title</label>
-                                            <input type="text" id="carousel_title" name="carousel_title"
+                                            <input type="text" class="form-control" id="carousel_title" name="carousel_title"
                                                 placeholder="Enter Title"
                                                 data-error-message-required="Username is required." />
                                         </div>
@@ -132,21 +132,46 @@
                                         <!-- Top Text -->
                                         <div class="form-group">
                                             <label for="carousel_top_text">Description</label>
-                                            <textarea class="resizable-textarea" name="carousel_description"
+                                            <textarea class="resizable-textarea" class="form-control" name="carousel_description"
                                                 id="carousel_description"></textarea>
                                         </div>
 
-                                        <!-- Link -->
+                                        <!-- Select Field (Dropdown) -->
                                         <div class="form-group">
-                                            <label for="carousel_link">Link</label>
-                                            <input type="text" name="carousel_link" id="carousel_link"
-                                                placeholder="Enter Link">
+                                            <label for="select_link">Select Field</label>
+                                            <select class="custom-select2 form-control" id="select_link" name="select_link" style="width: 100%; height: 38px">
+                                                <option value="">Select</option>
+                                                <option value="product">Product</option>
+                                                <option value="collection">Collection</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Product Field (Hidden by Default) -->
+                                        <div class="form-group" id="ShowProductField" style="display: none;">
+                                            <label for="carousel_product">Product</label>
+                                            <select class="custom-select2 form-control" id="selected_product" name="selected_product" style="width: 100%; height: 38px">
+                                                <option value="">Select a Product</option>
+                                                <?php foreach ($mewproducts as $mewproduct): ?>
+                                                    <option value="<?php echo $mewproduct['product_id']; ?>"><?php echo $mewproduct['product_title']; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+
+                                        <!-- Collection Field (Hidden by Default) -->
+                                        <div class="form-group" id="ShowCollectionField" style="display: none;">
+                                            <label for="carousel_collection">Collection</label>
+                                            <select class="custom-select2 form-control" id="selected_collection" name="selected_collection" style="width: 100%; height: 38px">
+                                                <option value="">Select a Collection</option>
+                                                <?php foreach ($collections as $collection): ?>
+                                                    <option value="<?php echo $collection['collection_id']; ?>"><?php echo $collection['collection_title']; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
 
                                         <!-- Image -->
                                         <div class="form-group">
                                             <label for="carousel_image">Banner Image</label>
-                                            <input type="file" id="carousel_image" name="carousel_image">
+                                            <input type="file" id="carousel_image" class="form-control" name="carousel_image">
                                             <small>Formats:JPG, PNG, JPEG, (WEBP), Max-size: 400 KB, Recommended
                                                 Dimensions:1342 x 534 px.</small>
                                         </div>
@@ -154,7 +179,7 @@
                                         <!-- Mobile Image -->
                                         <div class="form-group">
                                             <label for="carousel_image">Banner Image Mobile</label>
-                                            <input type="file" id="carousel_image_mobile"
+                                            <input type="file" class="form-control" id="carousel_image_mobile"
                                                 name="carousel_image_mobile" />
                                             <small>Formats: JPG, PNG, JPEG, (WEBP), Max-size: 400 KB, Recommended
                                                 Dimensions: 430 x 278 px.</small>
@@ -163,7 +188,7 @@
                                         <!-- Visibility -->
                                         <div class="form-group">
                                             <label for="carousel_visibility">Visibility</label>
-                                            <select name="carousel_visibility" id="carousel_visibility">
+                                            <select name="carousel_visibility" class="form-control" id="carousel_visibility">
                                                 <option value="1">Active</option>
                                                 <option value="0">Draft</option>
                                             </select>
@@ -229,14 +254,47 @@
                                                             data-error-message-required="Description is required."><?= $carousel['description'] ?></textarea>
                                                     </div>
 
-                                                    <!-- Link -->
+                                                    <!-- Select Field (Dropdown) -->
                                                     <div class="form-group">
-                                                        <label for="carousel_link_<?= $carousel['id'] ?>">Link:</label>
-                                                        <input type="text" name="carousel_link"
-                                                            id="carousel_link_<?= $carousel['id'] ?>"
-                                                            class="form-control validate-required"
-                                                            data-error-message-required="Link is required."
-                                                            value="<?= $carousel['link'] ?>">
+                                                        <label for="select_link_<?= $carousel['id'] ?>">Select Field</label>
+                                                        <select class="custom-select2 form-control select_link" id="select_link_<?= $carousel['id'] ?>"
+                                                            name="select_link" style="width: 100%; height: 38px">
+                                                            <option value="">Select</option>
+                                                            <option value="product" <?= ($carousel['selection_type'] != null) ? 'selected' : '' ?>>Product</option>
+                                                            <option value="collection" <?= ($carousel['selection_type'] != null) ? 'selected' : '' ?>>Collection</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <!-- Product Field (Hidden by Default) -->
+                                                    <div class="form-group productField" id="ShowProductField_<?= $carousel['id'] ?>"
+                                                        style="<?= ($carousel['product_id'] != null) ? 'display:block;' : 'display:none;' ?>">
+                                                        <label for="selected_product_<?= $carousel['id'] ?>">Product</label>
+                                                        <select class="custom-select2 form-control" id="selected_product_<?= $carousel['id'] ?>"
+                                                            name="selected_product" style="width: 100%; height: 38px">
+                                                            <option value="">Select a Product</option>
+                                                            <?php foreach ($mewproducts as $mewproduct): ?>
+                                                                <option value="<?= $mewproduct['product_id']; ?>"
+                                                                    <?= ($carousel['product_id'] == $mewproduct['product_id']) ? 'selected' : '' ?>>
+                                                                    <?= esc($mewproduct['product_title']); ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+
+                                                    <!-- Collection Field (Hidden by Default) -->
+                                                    <div class="form-group collectionField" id="ShowCollectionField_<?= $carousel['id'] ?>"
+                                                        style="<?= ($carousel['collection_id'] != null) ? 'display:block;' : 'display:none;' ?>">
+                                                        <label for="selected_collection_<?= $carousel['id'] ?>">Collection</label>
+                                                        <select class="custom-select2 form-control" id="selected_collection_<?= $carousel['id'] ?>"
+                                                            name="selected_collection" style="width: 100%; height: 38px">
+                                                            <option value="">Select a Collection</option>
+                                                            <?php foreach ($collections as $collection): ?>
+                                                                <option value="<?= $collection['collection_id']; ?>"
+                                                                    <?= ($carousel['collection_id'] == $collection['collection_id']) ? 'selected' : '' ?>>
+                                                                    <?= esc($collection['collection_title']); ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
+                                                        </select>
                                                     </div>
 
                                                     <!-- Banner Image -->
@@ -1202,6 +1260,7 @@
                                 <button type="submit" class="btn btn-primary">Add Page</button>
                             </form>
                         </div>
+
 
                         <!-- List of Added Pages -->
                         <div class="PageBoxContainer" id="pageBoxContainer">
@@ -3326,7 +3385,6 @@
                                             enctype="multipart/form-data">
                                             <h6 class="mt-3">Edit Policy</h6>
                                             <hr class="mt-1">
-
                                             <!-- Title -->
                                             <div class="form-group">
                                                 <label for="policy_name">Name</label>
