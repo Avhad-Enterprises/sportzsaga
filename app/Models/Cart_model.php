@@ -8,7 +8,7 @@ class Cart_model extends Model
 {
     protected $table = 'cart';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['user_id', 'product_id', 'session_id', 'quantity', 'size', 'created_at', 'updated_at', 'user_type'];
+    protected $allowedFields = ['user_id', 'product_id', 'guest_id', 'quantity', 'size', 'created_at', 'updated_at', 'user_type'];
     protected $useTimestamps = true;
 
     public function addToCart($userId, $productId, $quantity)
@@ -43,7 +43,7 @@ class Cart_model extends Model
     {
         return $this->select('cart.*, products.*')
             ->join('products', 'cart.product_id = products.product_id')
-            ->where('cart.session_id', $user_id)
+            ->where('cart.guest_id', $user_id)
             ->findAll();
     }
 

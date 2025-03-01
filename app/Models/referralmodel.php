@@ -25,10 +25,13 @@ class referralmodel extends Model
             ->getResultArray();
     }
 
-    public function getReferralHistory($refereeId)
+    public function getReferralHistory($referrerId)
     {
         return $this->db->table('referrals')
-            ->where('referrer_id', $refereeId)
+            ->select('referrals.*, referrer.name as referrer_name, referee.name as referee_name')
+            ->join('users as referrer', 'referrals.referrer_id = referrer.user_id', 'left')
+            ->join('users as referee', 'referrals.referee_id = referee.user_id', 'left')
+            ->where('referrals.referrer_id', $referrerId)
             ->get()
             ->getResultArray();
     }

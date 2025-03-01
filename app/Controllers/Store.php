@@ -23,6 +23,7 @@ class Store extends BaseController
 {
     protected $aboutModel;
     protected $logoModel;
+    
     public function __construct()
     {
         $this->aboutModel = new onlinestoremodal();

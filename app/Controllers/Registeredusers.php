@@ -158,9 +158,9 @@ class Registeredusers extends BaseController
         $cartItems = $cartModel->where('user_id', $id)->findAll();
         $cartAbandonmentData = [];
 
-        // Initialize Google Cloud Storage if product images are stored there
+        // Google Cloud Storage setup
         $storage = new \Google\Cloud\Storage\StorageClient([
-            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Adjust the path to your key file
+            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
             'projectId' => 'peak-tide-441609-r1',
         ]);
         $bucketName = 'mkv_imagesbackend';
@@ -169,15 +169,21 @@ class Registeredusers extends BaseController
         foreach ($cartItems as $cartItem) {
             $product = $productModel->find($cartItem['product_id']);
             if ($product) {
-                $productImagePath = $product['product_image'];
+                $productImagePath = $product['product_image'] ?? '';
 
-                // If using Google Cloud Storage, generate the public URL
+                // Check if product image is stored in Google Cloud Storage
                 if (!empty($productImagePath)) {
-                    $productImagePath = sprintf(
-                        'https://storage.googleapis.com/%s/%s',
-                        $bucketName,
-                        $productImagePath
-                    );
+                    if (strpos($productImagePath, 'https://') === false) {
+                        // Assume it's stored in GCS (convert to full public URL)
+                        $productImagePath = sprintf(
+                            'https://storage.googleapis.com/%s/%s',
+                            $bucketName,
+                            $productImagePath
+                        );
+                    }
+                } else {
+                    // Set default placeholder image if product image is missing
+                    $productImagePath = base_url('assets/images/default-product.jpg');
                 }
 
                 $cartAbandonmentData[] = [
@@ -185,7 +191,7 @@ class Registeredusers extends BaseController
                     'quantity' => $cartItem['quantity'],
                     'added_on' => $cartItem['created_at'],
                     'product_price' => $product['cost_price'],
-                    'product_image' => $productImagePath,
+                    'product_image' => $productImagePath, // Corrected Image Path
                 ];
             }
         }
@@ -197,7 +203,6 @@ class Registeredusers extends BaseController
 
         return view('edit_user_view', $data);
     }
-
 
     public function importfromexcel()
     {
@@ -616,7 +621,7 @@ class Registeredusers extends BaseController
     public function referral_history($id)
     {
         $model = new referralmodel();
-        $data['referralhistory'] = $model->getReferralHistory($id);
+        $data['referralHistory'] = $model->getReferralHistory($id);
         $data['userid'] = $id;
         return view('referral_history_view', $data);
     }
