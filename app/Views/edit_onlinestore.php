@@ -121,9 +121,6 @@
                             <option value="contact">Contact</option>
                             <option value="search">Search</option>
                             <option value="cart">Cart Page</option>
-                            <option value="account">User Account Details</option>
-                            <option value="address">User Address</option>
-                            <option value="wishlist">Wishlist</option>
                             <option value="order">User Orders</option>
                             <option value="checkout">User Checkout Page</option>
                             <option value="tracking">User Tracking Page</option>
@@ -360,57 +357,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="web-account" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/details" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/details" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div id="web-address" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/addresses" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/addresses" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div id="web-order" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/order-history" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/order-history" frameborder="0"
-                                class="preview-iframe"></iframe>
-                        </div>
-                    </div>
-                </div>
                 <div id="web-checkout" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
@@ -555,13 +501,28 @@
     <!-- Footer View End -->
 
 
+    <script>
+        $(document).ready(function () {
+            // Hide both fields initially
+            $('#ShowProductField, #ShowCollectionField').hide();
 
+            // Show the appropriate field when the user selects a value
+            $('#select_link').on('change', function () {
+                let selectedValue = $(this).val();
 
-
-
-
-
-
+                if (selectedValue === 'product') {
+                    $('#ShowProductField').fadeIn();
+                    $('#ShowCollectionField').hide();
+                } else if (selectedValue === 'collection') {
+                    $('#ShowCollectionField').fadeIn();
+                    $('#ShowProductField').hide();
+                } else {
+                    // Hide both if nothing is selected
+                    $('#ShowProductField, #ShowCollectionField').hide();
+                }
+            });
+        });
+    </script>
 
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
@@ -602,7 +563,6 @@
         function showToast(message, type) {
             alert(`${type.toUpperCase()}: ${message}`);
         }
-
     </script>
 
     <script>
@@ -906,7 +866,8 @@
     </script>
 
 
-    <!-----------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------->
+
+    <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
@@ -1054,23 +1015,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!------------------------------------------------------------------------------Home page logo---------------------------------------------------------------------------->
 
     <script>
@@ -1195,59 +1139,58 @@
         }
     </script>
 
+
+
+
     <!------------------------------------------------------------------------------Home page Collection---------------------------------------------------------------------------->
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
-            const selectedItems = [];
+            const selectedItems = new Set(); // Use Set to prevent duplicates
             const listContainer = document.getElementById(listId);
 
-            // Clear the list container
+            // Clear existing list
             listContainer.innerHTML = '';
 
-            // Iterate through checkboxes
             document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
                 if (checkbox.checked) {
                     const title = checkbox.getAttribute('data-title');
                     const id = checkbox.getAttribute('data-id');
 
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
+                    // Prevent duplicate entries
+                    if (!selectedItems.has(id)) {
+                        selectedItems.add(id);
 
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
+                        // Create list item
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
 
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
+                        // Add title
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
 
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
+                        // Add delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', () => {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateSelections(listId, inputId, checkboxClass);
+                        });
 
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
+                        listItem.appendChild(deleteButton);
 
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
-                    selectedItems.push(id);
+                        // Append to list
+                        listContainer.appendChild(listItem);
+                    }
                 }
             });
 
             // Update hidden input value
-            document.getElementById(inputId).value = selectedItems.join(',');
+            document.getElementById(inputId).value = Array.from(selectedItems).join(',');
         }
 
         // Initialize sortable for drag-and-drop
@@ -1323,65 +1266,58 @@
 
 
 
-
-
-    <!------------------------------------------------------------------------------Home page Product---------------------------------------------------------------------------->
-
     <!------------------------------------------------------------------------------Home page Product---------------------------------------------------------------------------->
 
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
-            const selectedItems = [];
+            const selectedItems = new Set(); // Use Set to prevent duplicates
             const listContainer = document.getElementById(listId);
 
-            // Clear the list container
+            // Clear existing list
             listContainer.innerHTML = '';
 
-            // Iterate through checkboxes
             document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
                 if (checkbox.checked) {
                     const title = checkbox.getAttribute('data-title');
                     const id = checkbox.getAttribute('data-id');
 
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
+                    // Prevent duplicate entries
+                    if (!selectedItems.has(id)) {
+                        selectedItems.add(id);
 
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
+                        // Create list item
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
 
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
+                        // Add title
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
 
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
+                        // Add delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', () => {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateSelections(listId, inputId, checkboxClass);
+                        });
 
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
+                        listItem.appendChild(deleteButton);
 
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
-                    selectedItems.push(id);
+                        // Append to list
+                        listContainer.appendChild(listItem);
+                    }
                 }
             });
 
             // Update hidden input value
-            document.getElementById(inputId).value = selectedItems.join(',');
+            document.getElementById(inputId).value = Array.from(selectedItems).join(',');
         }
+
 
         // Initialize sortable for drag-and-drop
         function initializeSortable(listId, inputId) {
@@ -4338,6 +4274,5 @@
             });
         });
     </script>
-
 
 </body>

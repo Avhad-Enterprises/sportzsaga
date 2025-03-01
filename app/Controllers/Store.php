@@ -40,6 +40,8 @@ class Store extends BaseController
         $modal = new onlinestoremodal();
         $homeImageModel = new HomeImageModel();
 
+        $data['mewproducts'] = $modal->GetallProductsData();
+
         $data['about'] = $modal->getabout();
         $data['tags'] = $modal->getTags();
         $data['products'] = $modal->getproduct();
@@ -74,10 +76,9 @@ class Store extends BaseController
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
         $data['marqueebottomText'] = $modal->getAllmarqueebottomText();
         $data['email_pop_up'] = $modal->getAllEmail_POP_UP();
-
-        // Fetch available collections and selected collections
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['selectedCollections'] = $modal->getHomeCollectionIds();
+        
 
         // Fetch Instagram posts
         $accessToken = 'IGQWRPTVE0S2lUS3BpYWhNekZAvbnppeGh6OWFXT1F0VTR6Tld2UGduV0UyYU9tQjAtejY5WWxLQTZAaa3N1cmVwel9jX1FoNWFESk9zbm4yMnE2TWhJYzFrWW9PVnBpcmswb3JJVnNKY3hsUUJUTE9JbXpLLU1LTEEZD';
@@ -110,7 +111,6 @@ class Store extends BaseController
             $data['posts'] = [];
             log_message('error', 'Instagram API Error: ' . print_r($responseData, true));
         }
-
 
         $headerFirstModel = new HeaderFirstModel();
         $headerSecondModel = new HeaderSecondModel();
@@ -232,7 +232,9 @@ class Store extends BaseController
         $carouselData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
-            'link' => $this->request->getPost('carousel_link'),
+            'selection_type' => $this->request->getPost('select_link'),
+            'product_id' => $this->request->getPost('selected_product') ?: null,
+            'collection_id' => $this->request->getPost('selected_collection') ?: null,
             'image' => $carouselImageUrl,
             'image_mobile' => $mobileImageUrl,
             'visibility' => $this->request->getPost('carousel_visibility') == '1' ? 1 : 0,

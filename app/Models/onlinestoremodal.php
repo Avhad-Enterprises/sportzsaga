@@ -8,7 +8,7 @@ class onlinestoremodal extends Model
 {
     protected $table = 'carousels';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'description', 'link', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at'];
+    protected $allowedFields = ['title', 'description', 'selection_type','product_id','collection_id','image', 'image_mobile', 'visibility', 'created_at', 'updated_at'];
     protected $useTimestamps = true;
 
     public function getabout()
@@ -73,7 +73,6 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('collection')->where('collection_visibility', 'visibile')->get()->getResultArray();
     }
-
 
     public function updateContact($data)
     {
