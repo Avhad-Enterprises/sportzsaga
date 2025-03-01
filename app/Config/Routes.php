@@ -529,3 +529,16 @@ $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
 $routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');
+
+
+
+//Homeproductsection 
+$routes->get('online_store/fetch_products', 'Store::fetch_products');
+$routes->get('online_store/fetch_collections', 'Store::fetch_collections');
+$routes->post('online_store/add_new_product', 'Store::add_new_product'); // ✅ Change from GET to POST
+$routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
+$routes->post('online_store/delete_product/(:num)', 'Store::delete_product/$1');
+
+
+//home image
+$routes->post('online_store/save', 'Store::save');

@@ -501,15 +501,13 @@
     <!-- Footer View End -->
 
 
-    <!----------------------------------------------------------------------------------------Add New Carousel------------------------------------------------------------------------------------------------->
-
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Hide both fields initially
             $('#ShowProductField, #ShowCollectionField').hide();
 
             // Show the appropriate field when the user selects a value
-            $('#select_link').on('change', function() {
+            $('#select_link').on('change', function () {
                 let selectedValue = $(this).val();
 
                 if (selectedValue === 'product') {
@@ -526,73 +524,14 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function() {
-            $('.select_link').on('change', function() {
-                let id = $(this).attr('id').split('_')[2]; // Extracts the ID dynamically
-                let selectedValue = $(this).val();
-
-                if (selectedValue === 'product') {
-                    $('#ShowProductField_' + id).fadeIn();
-                    $('#ShowCollectionField_' + id).hide();
-                } else if (selectedValue === 'collection') {
-                    $('#ShowCollectionField_' + id).fadeIn();
-                    $('#ShowProductField_' + id).hide();
-                } else {
-                    $('#ShowProductField_' + id).hide();
-                    $('#ShowCollectionField_' + id).hide();
-                }
-            });
-
-            // Run this function on page load to display correct fields
-            $('.select_link').each(function() {
-                $(this).trigger('change');
-            });
-        });
-    </script>
-
-    <script>
-        // Initialize the FormValidator
-        new FormValidator('#carouselAddNewForm', {
-            onSuccess: (form) => {
-                // Show the loader
-                document.getElementById('loaderOverlay').style.display = 'flex';
-
-                // Submit the form programmatically
-                form.submit();
-            },
-        });
-    </script>
-
-    <script>
-        // Initialize the FormValidator
-        new FormValidator('#carouselEditForm', {
-            onSuccess: (form) => {
-                // Show the loader
-                document.getElementById('loaderOverlay').style.display = 'flex';
-
-                // Submit the form programmatically
-                form.submit();
-            },
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#carouselAddNewForm').on('submit', function() {
-                $('#submitBtn').prop('disabled', true); // Disable button to prevent double submission
-            });
-        });
-    </script>
-    
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Initialize sortable for blogs
             new Sortable(document.getElementById('blogs-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Blogs reordered");
                 }
             });
@@ -601,7 +540,7 @@
             new Sortable(document.getElementById('tags-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Tags reordered");
                 }
             });
@@ -610,7 +549,7 @@
             new Sortable(document.getElementById('posts-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Posts reordered");
                 }
             });
@@ -627,7 +566,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
 
             function updateSelections(listId, inputId, checkboxClass) {
                 const selectedItems = new Set(); // Ensure unique selections
@@ -678,7 +617,7 @@
                     sortableInstances[listId] = new Sortable(document.getElementById(listId), {
                         animation: 150,
                         ghostClass: 'sortable-ghost',
-                        onEnd: function() {
+                        onEnd: function () {
                             const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                             document.getElementById(inputId).value = orderedIds.join(',');
                         }
@@ -696,7 +635,7 @@
             updateSelections('tagsList', 'tags_input', 'tag-checkbox');
             updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
 
-            document.addEventListener('change', function(event) {
+            document.addEventListener('change', function (event) {
                 if (event.target.classList.contains('blog-checkbox')) {
                     updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
                 }
@@ -719,7 +658,7 @@
 
             // Form submission with correct hidden input values
             const updateBlogBtn = document.getElementById("updateblogpage");
-            updateBlogBtn.addEventListener("click", function(e) {
+            updateBlogBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -734,9 +673,9 @@
                 formData.append("meta_title", document.getElementById("meta_title").value);
 
                 fetch("<?= base_url('admin/blog_settings/save') ?>", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -762,119 +701,45 @@
 
 
 
-    <!---------------------------------------------------------------------------------------------Single blog-------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------Single blog------------------------------------------------------------------------------------------->
     <script>
-        // Function to handle checkbox changes
-        function updateSelections(listId, inputId, checkboxClass) {
-            const selectedItems = [];
-            const listContainer = document.getElementById(listId);
-
-            // Clear the list container
-            listContainer.innerHTML = '';
-
-            // Iterate through checkboxes
-            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
-                if (checkbox.checked) {
-                    const title = checkbox.getAttribute('data-title');
-                    const id = checkbox.getAttribute('data-id');
-
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
-
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
-
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
-
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
-
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
-
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
-                    selectedItems.push(id);
-                }
-            });
-
-            // Update hidden input value
-            document.getElementById(inputId).value = selectedItems.join(',');
-        }
-
-        // Initialize sortable for drag-and-drop
-        function initializeSortable(listId, inputId) {
-            new Sortable(document.getElementById(listId), {
-                animation: 150,
-                onEnd: function() {
-                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
-                    document.getElementById(inputId).value = orderedIds.join(',');
-                }
-            });
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sortable lists
             initializeSortable('relatedBlogsList', 'related_blogs_input');
-            initializeSortable('tagsList', 'tags_input');
-            initializeSortable('popularPostsList', 'popular_posts_input');
+            initializeSortable('tagsListsingle', 'tags_input_single');
+            initializeSortable('popularPostsListsingle', 'popular_posts_input_single');
 
-            // Initialize selections on page load
-            updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
-            updateSelections('tagsList', 'tags_input', 'tag1-checkbox');
-            updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
+            // Load existing selections from backend
+            loadExistingSelections('related_blogs_input', 'relatedBlogsList', 'related-blog-checkbox');
+            loadExistingSelections('tags_input_single', 'tagsListsingle', 'tag1-checkbox'); // Fixed class name
+            loadExistingSelections('popular_posts_input_single', 'popularPostsListsingle', 'popular-post-checkbox');
 
             // Event listeners for checkbox changes
-            document.querySelectorAll('.related-blog-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox'));
-            });
-
-            document.querySelectorAll('.tag1-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => {
-                    updateSelections('tagsList', 'tags_input', 'tag1-checkbox');
-                });
-            });
-
-            document.querySelectorAll('.popular-post-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox'));
+            document.addEventListener('change', function (event) {
+                if (event.target.classList.contains('related-blog-checkbox')) {
+                    updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
+                }
+                if (event.target.classList.contains('tag1-checkbox')) {  // Fixed class name
+                    updateSelections('tagsListsingle', 'tags_input_single', 'tag1-checkbox');
+                }
+                if (event.target.classList.contains('popular-post-checkbox')) {
+                    updateSelections('popularPostsListsingle', 'popular_posts_input_single', 'popular-post-checkbox');
+                }
             });
 
             // AJAX Form Submission
-            document.getElementById('updatesingleblog').addEventListener('click', function() {
-                // Gather form data
+            document.getElementById('updatesingleblog').addEventListener('click', function () {
                 const form = document.getElementById('singleblog-form');
                 const formData = new FormData(form);
 
-                // AJAX request to insert the data
-                fetch('<?php echo base_url('admin/single_blog/store'); ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
-
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
+                fetch('<?= base_url('admin/single_blog/store') ?>', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
+                    .then(response => response.json())
                     .then(data => {
                         if (data.success) {
                             alert('Data saved successfully!');
@@ -888,17 +753,121 @@
                     });
             });
         });
+
+        /**
+         * Updates the list of selected checkboxes and hidden input field.
+         */
+        function updateSelections(listId, inputId, checkboxClass) {
+            const selectedItems = new Set();
+            const listContainer = document.getElementById(listId);
+            listContainer.innerHTML = '';
+
+            document.querySelectorAll(`.${checkboxClass}:checked`).forEach(checkbox => {
+                const title = checkbox.getAttribute('data-title');
+                const id = checkbox.getAttribute('data-id');
+
+                if (!selectedItems.has(id)) {
+                    selectedItems.add(id);
+
+                    if (!document.querySelector(`#${listId} [data-id="${id}"]`)) {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
+
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', () => {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateHiddenInput(inputId);
+                        });
+
+                        listItem.appendChild(deleteButton);
+                        listContainer.appendChild(listItem);
+                    }
+                }
+            });
+
+            updateHiddenInput(inputId);
+        }
+
+        /**
+         * Loads the previously selected values from the hidden input field and displays them.
+         */
+        function loadExistingSelections(inputId, listId, checkboxClass) {
+            const listContainer = document.getElementById(listId);
+            const inputElement = document.getElementById(inputId);
+            if (!inputElement) return;
+
+            const selectedValues = inputElement.value.split(',').filter(id => id.trim() !== '');
+
+            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
+                const id = checkbox.getAttribute('data-id');
+                const title = checkbox.getAttribute('data-title');
+
+                if (selectedValues.includes(id)) {
+                    checkbox.checked = true;
+
+                    if (!document.querySelector(`#${listId} [data-id="${id}"]`)) {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
+
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', function () {
+                            checkbox.checked = false;
+                            listContainer.removeChild(listItem);
+                            updateHiddenInput(inputId);
+                        });
+
+                        listItem.appendChild(deleteButton);
+                        listContainer.appendChild(listItem);
+                    }
+                }
+            });
+
+            updateHiddenInput(inputId);
+        }
+
+        /**
+         * Updates the hidden input field based on the selected items.
+         */
+        function updateHiddenInput(inputId) {
+            const inputElement = document.getElementById(inputId);
+            const listContainer = inputElement.previousElementSibling; // Get the associated list
+            const selectedIds = Array.from(listContainer.children).map(item => item.getAttribute('data-id'));
+            inputElement.value = selectedIds.join(',');
+        }
+
+        /**
+         * Initializes sortable functionality for drag-and-drop.
+         */
+        function initializeSortable(listId, inputId) {
+            new Sortable(document.getElementById(listId), {
+                animation: 150,
+                onEnd: function () {
+                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
+                    document.getElementById(inputId).value = orderedIds.join(',');
+                }
+            });
+        }
+
     </script>
 
 
 
-
-
-
-
-
-
-    <!-----------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
@@ -957,7 +926,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -977,19 +946,19 @@
             });
 
             // AJAX Form Submission for Collection
-            document.getElementById('updatecollection').addEventListener('click', function() {
+            document.getElementById('updatecollection').addEventListener('click', function () {
                 // Gather form data
                 const form = document.getElementById('collection-form');
                 const formData = new FormData(form);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('admin/collection/saveCollection') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
 
                     .then(response => {
                         if (!response.ok) {
@@ -1023,7 +992,7 @@
                     const reader = new FileReader();
 
                     // Load the file and set it as the `src` of the img tag
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         previewElement.src = e.target.result;
                         previewElement.style.display = 'block'; // Show the image preview
                     };
@@ -1033,11 +1002,11 @@
             }
 
             // Event listeners for image inputs
-            document.getElementById('image1').addEventListener('change', function() {
+            document.getElementById('image1').addEventListener('change', function () {
                 previewImage(this, 'image1-preview');
             });
 
-            document.getElementById('image2').addEventListener('change', function() {
+            document.getElementById('image2').addEventListener('change', function () {
                 previewImage(this, 'image2-preview');
             });
         });
@@ -1046,28 +1015,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!------------------------------------------------------------------------------Home page logo---------------------------------------------------------------------------->
 
     <script>
         // Save Logo
-        $('#homeLogoForm').on('submit', function(e) {
+        $('#homeLogoForm').on('submit', function (e) {
             e.preventDefault(); // Prevent default form submission
             var formData = new FormData(this);
             $.ajax({
@@ -1076,7 +1028,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function(response) {
+                success: function (response) {
                     if (response.status === 'success') {
                         alert(response.message); // Show success message
                         location.reload(); // Reload the page
@@ -1084,30 +1036,30 @@
                         alert(response.message); // Show error message
                     }
                 },
-                error: function() {
+                error: function () {
                     alert('Error saving logo.');
                 }
             });
         });
 
-        // Update Logo
         function updateLogo(logoId) {
-            var formData = new FormData($('#editLogoForm-' + logoId)[0]);
+            var formData = new FormData($('#editLogoForm-' + logoId)[0]); // Collect form data
+
             $.ajax({
-                url: "<?= base_url('home/editLogo') ?>", // Adjusted for CodeIgniter 4
+                url: "<?= base_url('home/editLogo') ?>",
                 type: 'POST',
                 data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
+                processData: false, // Prevent jQuery from converting to query string
+                contentType: false, // Ensure form data is sent correctly
+                success: function (response) {
                     if (response.status === 'success') {
-                        alert(response.message); // Show success message
-                        location.reload(); // Reload the page
+                        alert(response.message);
+                        location.reload();
                     } else {
-                        alert(response.message); // Show error message
+                        alert(response.message);
                     }
                 },
-                error: function() {
+                error: function () {
                     alert('Error updating logo.');
                 }
             });
@@ -1128,7 +1080,7 @@
                         "<?= csrf_token() ?>": "<?= csrf_hash() ?>" // ✅ CSRF token (if enabled)
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -1136,7 +1088,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert('Error deleting logo.');
                     }
                 });
@@ -1165,7 +1117,7 @@
         }
 
         // Toggle Add Form
-        document.getElementById("togglelogoFormButton").addEventListener("click", function() {
+        document.getElementById("togglelogoFormButton").addEventListener("click", function () {
             const addForm = document.getElementById("logoAddForm");
             if (addForm.style.display === "none") {
                 addForm.style.display = "block";
@@ -1179,13 +1131,16 @@
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     document.getElementById(`previewLogo-${logoId}`).src = e.target.result;
                 };
                 reader.readAsDataURL(file);
             }
         }
     </script>
+
+
+
 
     <!------------------------------------------------------------------------------Home page Collection---------------------------------------------------------------------------->
     <script>
@@ -1242,7 +1197,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1262,19 +1217,19 @@
             });
 
             // AJAX Form Submission for Collections
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_collection', document.getElementById('fav_collection_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('collection/saveCollection') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1299,16 +1254,14 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Open the collection form when "Add Collection" is clicked
-            $('#openCollectionForm').click(function(e) {
+            $('#openCollectionForm').click(function (e) {
                 e.preventDefault(); // Prevent default navigation
                 $('#collectionAddForm').show(); // Show the collection form
             });
         });
     </script>
-
-
 
 
 
@@ -1370,7 +1323,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function() {
+                onEnd: function () {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1390,19 +1343,19 @@
             });
 
             // AJAX Form Submission for Products
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_product', document.getElementById('fav_product_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('product/saveProduct') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1426,8 +1379,8 @@
 
 
 
-    <!------------------------------------------------------------------------------Home page Blogs---------------------------------------------------------------------------->
 
+    <!------------------------------------------------------------------------------Home page Blogs---------------------------------------------------------------------------->
     <script>
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
@@ -1483,12 +1436,11 @@
 
 
         let sortableInitialized = false;
-
         function initializeSortable(listId, inputId) {
             if (!sortableInitialized) {
                 new Sortable(document.getElementById(listId), {
                     animation: 150,
-                    onEnd: function() {
+                    onEnd: function () {
                         const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                         document.getElementById(inputId).value = orderedIds.join(',');
                     }
@@ -1511,19 +1463,19 @@
             });
 
             // AJAX Form Submission for Blogs
-            document.getElementById('updatehomepage').addEventListener('click', function() {
+            document.getElementById('updatehomepage').addEventListener('click', function () {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_blog', document.getElementById('fav_blog_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('blog/saveBlog') ?>', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                    })
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1547,38 +1499,18 @@
 
 
     <script>
-        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function () {
             const form = document.getElementById('carousel2AddForm');
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         });
     </script>
 
-    <!--home-->
-    <script>
-        $('#homeImageForm').on('submit', function(e) {
-            e.preventDefault(); // Prevent the default form submission
 
-            var formData = new FormData(this); // Create FormData object from the form
-
-            $.ajax({
-                url: '<?= site_url('home-image/save-home-image') ?>', // URL for the POST request
-                type: 'POST', // Use POST method for sending data
-                data: formData, // Send the FormData object (which includes the form fields and files)
-                processData: false, // Don't let jQuery process the data
-                contentType: false, // Don't set a content type because FormData does this automatically
-                success: function(response) {
-                    console.log('Success Response:', response); // Log the response from the server
-                    alert('Data updated successfully!'); // Show success message
-                },
-
-            });
-        });
-    </script>
 
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let fieldCounter = 0;
@@ -1589,7 +1521,7 @@
             const pageAddForm = document.getElementById("pageAddForm");
 
             if (toggleAddPageButton && pageAddForm) {
-                toggleAddPageButton.addEventListener("click", function() {
+                toggleAddPageButton.addEventListener("click", function () {
                     pageAddForm.style.display = (pageAddForm.style.display === "none" || pageAddForm.style.display === "") ?
                         "block" : "none";
                 });
@@ -1603,13 +1535,13 @@
             const selectedPageTypesContainer = document.getElementById("selectedPageTypesContainer");
             const selectedPageTypes = document.getElementById("selectedPageTypes");
 
-            togglePageTypeDropdown.addEventListener("click", function() {
+            togglePageTypeDropdown.addEventListener("click", function () {
                 pageTypeCheckboxDropdown.style.display = (pageTypeCheckboxDropdown.style.display === "none" || pageTypeCheckboxDropdown.style.display === "") ?
                     "block" : "none";
             });
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const value = this.value;
                     if (this.checked) {
                         selectedPages[value] = value;
@@ -1629,7 +1561,7 @@
                     itemDiv.classList.add("selected-item");
                     itemDiv.innerHTML = `${selectedPages[page]} <button data-value="${page}">&times;</button>`;
 
-                    itemDiv.querySelector("button").addEventListener("click", function() {
+                    itemDiv.querySelector("button").addEventListener("click", function () {
                         const value = this.getAttribute("data-value");
                         delete selectedPages[value];
                         document.querySelector(`.page-type-checkbox[value="${value}"]`).checked = false;
@@ -1655,7 +1587,7 @@
             }
 
             if (toggleSubtypeButton) {
-                toggleSubtypeButton.addEventListener("click", function() {
+                toggleSubtypeButton.addEventListener("click", function () {
                     if (Object.keys(selectedPages).length > 0) {
                         console.warn("Toggle button is disabled because Page Type is selected.");
                         return;
@@ -1700,12 +1632,12 @@
 
                     let selectedItems = {};
 
-                    newToggleDropdown.addEventListener("click", function() {
+                    newToggleDropdown.addEventListener("click", function () {
                         newCheckboxDropdown.style.display = (newCheckboxDropdown.style.display === "none" || newCheckboxDropdown.style.display === "") ?
                             "block" : "none";
                     });
 
-                    newSubtypeSelect.addEventListener("change", function() {
+                    newSubtypeSelect.addEventListener("change", function () {
                         const selectedValue = newSubtypeSelect.value;
                         if (!selectedValue) return;
 
@@ -1731,7 +1663,7 @@
                                     });
 
                                     document.querySelectorAll(`#checkboxDropdown_${fieldCounter} .specific-item-checkbox`).forEach(checkbox => {
-                                        checkbox.addEventListener("change", function() {
+                                        checkbox.addEventListener("change", function () {
                                             if (this.checked) {
                                                 selectedItems[this.value] = this.getAttribute("data-name");
                                             } else {
@@ -1757,7 +1689,7 @@
                             itemDiv.classList.add("selected-item");
                             itemDiv.innerHTML = `${selectedItems[id]} <button data-id="${id}">&times;</button>`;
 
-                            itemDiv.querySelector("button").addEventListener("click", function() {
+                            itemDiv.querySelector("button").addEventListener("click", function () {
                                 delete selectedItems[this.getAttribute("data-id")];
                                 updateSelectedItemsDisplay();
                             });
@@ -1769,15 +1701,15 @@
             }
             const apiBaseUrl = "<?= base_url('header/delete_page/') ?>";
 
-            window.deletePage = function(pageId) {
+            window.deletePage = function (pageId) {
                 if (!confirm("Are you sure you want to delete this page?")) return;
 
                 fetch(`${apiBaseUrl}${pageId}`, {
-                        method: "DELETE",
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    })
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1797,7 +1729,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let selectedPages = {};
@@ -1805,7 +1737,7 @@
             let itemDataMap = {}; // ✅ Store item ID-to-Title mapping
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const value = this.value;
                     selectedPages[value] = this.checked ? value : delete selectedPages[value];
                     updateSelectedPagesDisplay();
@@ -1825,7 +1757,7 @@
 
             // **Handle Subtype Change**
             document.querySelectorAll(".subtype-select").forEach(select => {
-                select.addEventListener("change", function() {
+                select.addEventListener("change", function () {
                     const fieldId = this.id.split("_")[1];
                     fetchSubtypeItems(fieldId, this.value);
                 });
@@ -1858,7 +1790,7 @@
 
             function attachCheckboxListeners(fieldId) {
                 document.querySelectorAll(`#checkboxDropdown_${fieldId} .specific-item-checkbox`).forEach(checkbox => {
-                    checkbox.addEventListener("change", function() {
+                    checkbox.addEventListener("change", function () {
                         updateSelectedItems(fieldId);
                     });
                 });
@@ -1896,7 +1828,7 @@
 
             function attachRemoveButtons(fieldId) {
                 document.querySelectorAll(`#selectedItemsContainer_${fieldId} .remove-item-btn`).forEach(button => {
-                    button.addEventListener("click", function() {
+                    button.addEventListener("click", function () {
                         const itemId = this.dataset.id;
                         document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`).checked = false;
                         updateSelectedItems(fieldId);
@@ -1945,7 +1877,7 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
-        document.getElementById("web_section").addEventListener("change", function() {
+        document.getElementById("web_section").addEventListener("change", function () {
             const selectedSection = this.value; // Get selected value
             const sections = document.querySelectorAll(".web-section"); // Select all sections
 
@@ -1961,7 +1893,7 @@
 
     <script>
         document.querySelectorAll('.element-select').forEach(select => {
-            select.addEventListener('change', function() {
+            select.addEventListener('change', function () {
                 let wrapper = this.closest('.form-group').nextElementSibling;
 
                 wrapper.querySelector('.product-wrapper').style.display = 'none';
@@ -1976,7 +1908,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Configuration for Quill editor
             const quillConfig = {
                 theme: 'snow',
@@ -2008,7 +1940,7 @@
                     const quill = new Quill(editorElement, quillConfig);
 
                     // Sync Quill content to hidden input
-                    quill.on('text-change', function() {
+                    quill.on('text-change', function () {
                         targetInput.value = quill.root.innerHTML;
                     });
 
@@ -2022,7 +1954,7 @@
             });
 
             document.querySelectorAll('.file-preview').forEach((fileInput) => {
-                fileInput.addEventListener('change', function(event) {
+                fileInput.addEventListener('change', function (event) {
                     const input = event.target;
                     const previewContainerId = input.id + '_preview';
                     const previewContainer = document.getElementById(previewContainerId);
@@ -2053,7 +1985,7 @@
 
                         // Set image source using FileReader
                         const reader = new FileReader();
-                        reader.onload = function(e) {
+                        reader.onload = function (e) {
                             img.src = e.target.result;
                         };
                         reader.readAsDataURL(file);
@@ -2128,7 +2060,7 @@
 
             // Handle checkbox selection
             blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const blogId = this.dataset.id;
                     const blogTitle = this.dataset.title;
 
@@ -2160,7 +2092,7 @@
         `;
 
                 // Remove blog on click
-                blogBox.querySelector(".remove-blog").addEventListener("click", function() {
+                blogBox.querySelector(".remove-blog").addEventListener("click", function () {
                     blogBox.remove();
                     document.getElementById(`blog_${blogId}`).checked = false;
                 });
@@ -2190,7 +2122,7 @@
 
             // Handle checkbox selection
             r_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const r_productId = this.dataset.id;
                     const r_productTitle = this.dataset.title;
 
@@ -2222,7 +2154,7 @@
         `;
 
                 // Remove r_product on click
-                r_productBox.querySelector(".remove-r_product").addEventListener("click", function() {
+                r_productBox.querySelector(".remove-r_product").addEventListener("click", function () {
                     r_productBox.remove();
                     document.getElementById(`r_product_${r_productId}`).checked = false;
                 });
@@ -2252,7 +2184,7 @@
 
             // Handle checkbox selection
             t_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const t_productId = this.dataset.id;
                     const t_productTitle = this.dataset.title;
 
@@ -2284,7 +2216,7 @@
         `;
 
                 // Remove t_product on click
-                t_productBox.querySelector(".remove-t_product").addEventListener("click", function() {
+                t_productBox.querySelector(".remove-t_product").addEventListener("click", function () {
                     t_productBox.remove();
                     document.getElementById(`t_product_${t_productId}`).checked = false;
                 });
@@ -2314,7 +2246,7 @@
 
             // Handle checkbox selection
             m_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const m_productId = this.dataset.id;
                     const m_productTitle = this.dataset.title;
 
@@ -2346,7 +2278,7 @@
         `;
 
                 // Remove m_product on click
-                m_productBox.querySelector(".remove-m_product").addEventListener("click", function() {
+                m_productBox.querySelector(".remove-m_product").addEventListener("click", function () {
                     m_productBox.remove();
                     document.getElementById(`m_product_${m_productId}`).checked = false;
                 });
@@ -2377,7 +2309,7 @@
 
             // Handle checkbox selection
             s_blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const s_blogId = this.dataset.id;
                     const s_blogTitle = this.dataset.title;
 
@@ -2409,7 +2341,7 @@
         `;
 
                 // Remove s_blog on click
-                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function() {
+                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function () {
                     s_blogBox.remove();
                     document.getElementById(`s_blog_${s_blogId}`).checked = false;
                 });
@@ -2440,7 +2372,7 @@
 
             // Handle checkbox selection
             cm_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const cm_productId = this.dataset.id;
                     const cm_productTitle = this.dataset.title;
 
@@ -2472,7 +2404,7 @@
         `;
 
                 // Remove cm_product on click
-                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function() {
+                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function () {
                     cm_productBox.remove();
                     document.getElementById(`cm_product_${cm_productId}`).checked = false;
                 });
@@ -2502,7 +2434,7 @@
 
             // Handle checkbox selection
             error_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     const error_productId = this.dataset.id;
                     const error_productTitle = this.dataset.title;
 
@@ -2534,7 +2466,7 @@
         `;
 
                 // Remove error_product on click
-                error_productBox.querySelector(".remove-error_product").addEventListener("click", function() {
+                error_productBox.querySelector(".remove-error_product").addEventListener("click", function () {
                     error_productBox.remove();
                     document.getElementById(`error_product_${error_productId}`).checked = false;
                 });
@@ -2608,7 +2540,7 @@
 
 
             // Update form submission
-            updateaboutBtn.addEventListener("click", function(e) {
+            updateaboutBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2656,12 +2588,12 @@
                 updateaboutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_about') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2685,7 +2617,7 @@
 
             // Update form submission
 
-            updatecontactBtn.addEventListener("click", function(e) {
+            updatecontactBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2732,12 +2664,12 @@
                 updatecontactBtn.innerHTML = "Updating...";
 
                 fetch("<?= base_url('online_store/update_contact') ?>", {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest",
-                        },
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -2759,7 +2691,7 @@
 
 
             // Update form submission
-            updatesearchBtn.addEventListener("click", function(e) {
+            updatesearchBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2796,12 +2728,12 @@
                 updatesearchBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_search') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2822,7 +2754,7 @@
             });
 
             // Update form submission
-            updatewishlistBtn.addEventListener("click", function(e) {
+            updatewishlistBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2836,12 +2768,12 @@
                 updatewishlistBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_wishlist') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2863,7 +2795,7 @@
 
 
             // Update form submission
-            updatecartBtn.addEventListener("click", function(e) {
+            updatecartBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2895,12 +2827,12 @@
                 updatecartBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_cart') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2921,7 +2853,7 @@
             });
 
             // Update form submission
-            updatecheckoutBtn.addEventListener("click", function(e) {
+            updatecheckoutBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2937,12 +2869,12 @@
                 updatecheckoutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_checkout') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2964,7 +2896,7 @@
 
 
             // Update form submission
-            updatetrackingBtn.addEventListener("click", function(e) {
+            updatetrackingBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3015,12 +2947,12 @@
                 updatetrackingBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_tracking') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3042,7 +2974,7 @@
 
 
             // Update form submission
-            update404Btn.addEventListener("click", function(e) {
+            update404Btn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3114,12 +3046,12 @@
                 update404Btn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_404') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3158,7 +3090,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const maxSubsections = 5; // Maximum allowed subsections
             const iconsContainer = document.querySelector('.icons');
             const addIconBtn = document.querySelector('.addicon');
@@ -3190,7 +3122,7 @@
             }
 
             // Add new subsection
-            addIconBtn.addEventListener('click', function(e) {
+            addIconBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 const currentSubsections = document.querySelectorAll('.iconsubsection').length;
 
@@ -3208,7 +3140,7 @@
             });
 
             // Remove subsection
-            iconsContainer.addEventListener('click', function(e) {
+            iconsContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('removeicon')) {
                     e.preventDefault();
                     const subsection = e.target.closest('.iconsubsection');
@@ -3242,7 +3174,7 @@
                         }
 
                         const reader = new FileReader();
-                        reader.onload = function(e) {
+                        reader.onload = function (e) {
                             const img = document.createElement('img');
                             img.src = e.target.result;
                             img.classList.add('img-fluid', 'img-thumbnail');
@@ -3272,9 +3204,9 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
 
-            document.getElementById("toggleteamsFormButton").addEventListener("click", function() {
+            document.getElementById("toggleteamsFormButton").addEventListener("click", function () {
                 const form = document.getElementById("AddteamsForm");
                 form.style.display = form.style.display === "none" ? "block" : "none";
             });
@@ -3283,11 +3215,11 @@
             const imgInput = document.getElementById('member_pic');
             const newImgPreview = document.getElementById('preview_member_pic');
 
-            imgInput.addEventListener('change', function() {
+            imgInput.addEventListener('change', function () {
                 const file = this.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         newImgPreview.src = e.target.result;
                         newImgPreview.style.display = 'block';
                     };
@@ -3313,11 +3245,11 @@
                     }
 
                     // Handle new image preview
-                    imgInput.addEventListener("change", function() {
+                    imgInput.addEventListener("change", function () {
                         const file = this.files[0];
                         if (file) {
                             const reader = new FileReader();
-                            reader.onload = function(e) {
+                            reader.onload = function (e) {
                                 previewImg.src = e.target.result;
                                 previewImg.style.display = 'block';
                             };
@@ -3339,14 +3271,14 @@
             // For the add form
             const addImgInput = document.getElementById('member_pic');
             if (addImgInput) {
-                addImgInput.addEventListener('change', async function() {
+                addImgInput.addEventListener('change', async function () {
                     await validateImageInput(this);
                 });
             }
 
             // For all edit forms
             document.querySelectorAll("input[type='file'][id^='member_pic']").forEach((imgInput) => {
-                imgInput.addEventListener('change', async function() {
+                imgInput.addEventListener('change', async function () {
                     await validateImageInput(this);
                 });
             });
@@ -3379,12 +3311,12 @@
                 img.src = URL.createObjectURL(file);
 
                 return new Promise((resolve) => {
-                    img.onload = function() {
+                    img.onload = function () {
                         URL.revokeObjectURL(this.src);
                         resolve(true);
                     };
 
-                    img.onerror = function() {
+                    img.onerror = function () {
                         displayError($(inputElement), 'Invalid image file');
                         URL.revokeObjectURL(this.src);
                         resolve(false);
@@ -3445,7 +3377,7 @@
                 return isValid;
             }
 
-            addBtn.addEventListener("click", function(e) {
+            addBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
@@ -3456,12 +3388,12 @@
                     addBtn.innerHTML = "Updating...";
 
                     fetch("<?= base_url('online_store/add_members') ?>", {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "X-Requested-With": "XMLHttpRequest"
-                            },
-                        })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                    })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.success) {
@@ -3489,7 +3421,7 @@
             editForms.forEach((form) => {
                 const editBtn = form.querySelector("#editmembersBtn");
 
-                editBtn.addEventListener("click", function(e) {
+                editBtn.addEventListener("click", function (e) {
                     e.preventDefault();
 
                     if (validateForm(form)) {
@@ -3499,12 +3431,12 @@
                         editBtn.innerHTML = "Updating...";
 
                         fetch("<?= base_url('online_store/edit_members') ?>", {
-                                method: "POST",
-                                body: formData,
-                                headers: {
-                                    "X-Requested-With": "XMLHttpRequest"
-                                },
-                            })
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            },
+                        })
                             .then((response) => response.json())
                             .then((data) => {
                                 if (data.success) {
@@ -3534,7 +3466,7 @@
                 Sortable.create(container, {
                     handle: ".handle",
                     animation: 150,
-                    onEnd: function(evt) {
+                    onEnd: function (evt) {
                         // Get the new order of IDs
                         const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
 
@@ -3545,15 +3477,15 @@
 
             function updateAwardOrder(orderedIds) {
                 fetch("<?= base_url('online_store/update_members_order') ?>", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "X-Requested-With": "XMLHttpRequest",
-                        },
-                        body: JSON.stringify({
-                            order: orderedIds
-                        }),
-                    })
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                    body: JSON.stringify({
+                        order: orderedIds
+                    }),
+                })
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
@@ -3590,8 +3522,8 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $("#addFooterdata").submit(function(event) {
+        $(document).ready(function () {
+            $("#addFooterdata").submit(function (event) {
                 event.preventDefault(); // Prevent default form submission
 
                 var formData = new FormData(this);
@@ -3604,7 +3536,7 @@
                     contentType: false, // Prevent jQuery from setting content-type
                     processData: false, // Prevent automatic data processing
                     dataType: "json", // Expect JSON response
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -3612,7 +3544,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert('An error occurred while updating the footer.');
                     }
                 });
@@ -3621,13 +3553,13 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const policyPlusButton = document.getElementById('policyplus');
             const addPolicyForm = document.getElementById('AddNewPolicyForm');
             const editPolicyForm = document.getElementById('EditPolicyForm');
 
             // Handle the add button click to toggle the Add Policy form
-            policyPlusButton.addEventListener('click', function() {
+            policyPlusButton.addEventListener('click', function () {
                 if (addPolicyForm.style.display === 'none' || addPolicyForm.style.display === '') {
                     addPolicyForm.style.display = 'block'; // Show the Add Policy form
                     editPolicyForm.style.display = 'none'; // Hide the Edit Policy form
@@ -3637,7 +3569,7 @@
             });
 
             // Handle form submission for Add form
-            $('#addpolicy').on('submit', function(e) {
+            $('#addpolicy').on('submit', function (e) {
                 e.preventDefault();
 
                 const formData = {
@@ -3651,7 +3583,7 @@
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh to reflect changes
@@ -3659,7 +3591,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     },
@@ -3668,7 +3600,7 @@
 
             const baseUrl = "<?= base_url() ?>";
 
-            $('form[id^="editNewPolicyForm"]').on('submit', function(e) {
+            $('form[id^="editNewPolicyForm"]').on('submit', function (e) {
                 e.preventDefault();
 
                 const policyId = $(this).attr('id').split('-')[1];
@@ -3688,7 +3620,7 @@
                     processData: false,
                     contentType: false,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh the page to show updated data
@@ -3696,7 +3628,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     }
@@ -3739,7 +3671,7 @@
                     data: {
                         policy_id: policyId
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             // Remove the policy from the DOM if deletion is successful
                             $('#policyBox-' + policyId).remove();
@@ -3748,7 +3680,7 @@
                             alert("Failed to delete the policy.");
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert("An error occurred while deleting the policy.");
                     }
                 });
@@ -3759,7 +3691,7 @@
 
     <script>
         // Automatically generate the link based on policy name input
-        document.getElementById('policy_name').addEventListener('input', function() {
+        document.getElementById('policy_name').addEventListener('input', function () {
             var policyName = this.value;
             var generatedLink = policyName.trim().toLowerCase().replace(/\s+/g, '-');
             document.getElementById('policy_link').value = generatedLink;
@@ -3768,7 +3700,7 @@
 
     <!--chaitanya product-->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Elements for products
             const showProductBtn = document.getElementById("showProductBtn");
             const productCheckboxContainer = document.getElementById("productCheckboxContainer");
@@ -3785,27 +3717,27 @@
 
 
             // Show/Hide product list
-            showProductBtn.addEventListener("click", function() {
+            showProductBtn.addEventListener("click", function () {
                 const isVisible = productCheckboxContainer.style.display === "block";
                 productCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Show/Hide bundle list
-            showBundleBtn.addEventListener("click", function() {
+            showBundleBtn.addEventListener("click", function () {
                 const isVisible = bundleCheckboxContainer.style.display === "block";
                 bundleCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Add/remove selected products dynamically
-            productCheckboxContainer.addEventListener("change", function(e) {
+            productCheckboxContainer.addEventListener("change", function (e) {
                 handleSelection(e, "product-checkbox", selectedProductsContainer);
             });
 
 
             // Add/remove selected bundles dynamically
-            bundleCheckboxContainer.addEventListener("change", function(e) {
+            bundleCheckboxContainer.addEventListener("change", function (e) {
                 handleSelection(e, "bundle-checkbox", selectedBundlesContainer);
             });
 
@@ -3857,7 +3789,7 @@
 
 
                     // Add delete functionality
-                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function() {
+                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function () {
                         itemElement.remove();
                         checkbox.checked = false; // Uncheck the checkbox
                     });
@@ -3866,7 +3798,7 @@
 
 
             // Handle save button click event
-            updateproductpage.addEventListener("click", function(e) {
+            updateproductpage.addEventListener("click", function (e) {
                 e.preventDefault(); // Prevent form submission
 
 
@@ -3897,12 +3829,12 @@
 
                 // Send the AJAX request
                 fetch('<?= base_url('product-settings/save') ?>', {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3950,8 +3882,37 @@
             loadPreviouslySelectedItems();
         });
     </script>
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the FormValidator
+        new FormValidator('#carouselForm', {
+            onSuccess: (form) => {
+                // Show the loader
+                document.getElementById('loaderOverlay').style.display = 'flex';
+
+                // Submit the form programmatically
+                form.submit();
+            },
+        });
+    </script>
+
+    <script>
+        // Initialize the FormValidator
+        new FormValidator('#carouselEditForm', {
+            onSuccess: (form) => {
+                // Show the loader
+                document.getElementById('loaderOverlay').style.display = 'flex';
+
+                // Submit the form programmatically
+                form.submit();
+            },
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             const viewTypeSelect = document.getElementById('viewType');
             const sortSelectContainer = document.getElementById('sortSelectContainer');
             const postSelectContainer = document.getElementById('postSelectContainer');
@@ -4004,7 +3965,7 @@
             }
 
             // Handle view type changes
-            viewTypeSelect.addEventListener('change', function() {
+            viewTypeSelect.addEventListener('change', function () {
                 updateContainers(this.value);
                 // Reset selections when view type changes
                 postCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -4013,7 +3974,7 @@
             });
 
             // Handle post selection
-            document.querySelector('.dropdown-menu').addEventListener('change', function(e) {
+            document.querySelector('.dropdown-menu').addEventListener('change', function (e) {
                 if (e.target.classList.contains('post-checkbox')) {
                     if (viewTypeSelect.value === 'single') {
                         // For single view, uncheck all other checkboxes
@@ -4064,8 +4025,8 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            $('#updateEmail_POP_UPpage').click(function(e) {
+        $(document).ready(function () {
+            $('#updateEmail_POP_UPpage').click(function (e) {
                 e.preventDefault();
 
 
@@ -4091,10 +4052,10 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         alert(response.message);
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         alert('An error occurred: ' + xhr.status + ' ' + error);
                     }
                 });
@@ -4106,13 +4067,13 @@
 
 
     <script>
-        document.getElementById('Email_POP_UP_Image').addEventListener('change', function(event) {
+        document.getElementById('Email_POP_UP_Image').addEventListener('change', function (event) {
             let file = event.target.files[0];
 
 
             if (file) {
                 let reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     let preview = document.getElementById('previewImage');
                     preview.src = e.target.result;
                     preview.style.display = "block"; // Show the preview
@@ -4124,23 +4085,23 @@
 
     <!--marquee chaitanya-->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Toggle form visibility on button click
-            document.getElementById("toggleTextFormButton").addEventListener("click", function() {
+            document.getElementById("toggleTextFormButton").addEventListener("click", function () {
                 var form = document.getElementById("addmarqueeText");
                 form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
             });
 
             // Handle form submission with AJAX
-            document.getElementById("addmarqueeText").addEventListener("submit", function(e) {
+            document.getElementById("addmarqueeText").addEventListener("submit", function (e) {
                 e.preventDefault(); // Prevent form from submitting traditionally
 
                 let formData = new FormData(this);
 
                 fetch("<?= site_url('marquee-text/save-marquee') ?>", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4160,10 +4121,10 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Toggle edit form visibility
             document.querySelectorAll(".actions button").forEach((button) => {
-                button.addEventListener("click", function() {
+                button.addEventListener("click", function () {
                     const editForm = this.closest(".textBox").querySelector(".edit-form");
                     const chevron = this.querySelector("#chevron");
 
@@ -4201,14 +4162,14 @@
 
             // Handle delete button
             document.querySelectorAll(".actions a").forEach((deleteButton) => {
-                deleteButton.addEventListener("click", function() {
+                deleteButton.addEventListener("click", function () {
                     const textBox = this.closest(".textBox");
                     const textId = textBox.getAttribute("data-id");
 
                     if (confirm("Are you sure you want to delete this text?")) {
                         fetch(`<?= site_url('marquee-text/delete-marquee') ?>/${textId}`, {
-                                method: "DELETE"
-                            })
+                            method: "DELETE"
+                        })
                             .then(response => response.json())
                             .then(data => {
                                 if (data.status === "success") {
@@ -4231,16 +4192,16 @@
 
     <script>
         document.querySelectorAll("[id^='edittextForm-']").forEach(form => {
-            form.addEventListener("submit", function(e) {
+            form.addEventListener("submit", function (e) {
                 e.preventDefault(); // Prevent default form submission
 
                 let formData = new FormData(this);
                 let recordId = this.id.split('-')[1]; // Extract the record ID from the form's ID
 
                 fetch(`<?= site_url('marquee-text/UpdateMarquee/') ?>${recordId}`, {
-                        method: "POST",
-                        body: formData
-                    })
+                    method: "POST",
+                    body: formData
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4260,8 +4221,8 @@
 
 
     <script>
-        $(document).ready(function() {
-            $("#addmarqueebottomText").on("submit", function(e) {
+        $(document).ready(function () {
+            $("#addmarqueebottomText").on("submit", function (e) {
                 e.preventDefault();
 
                 $.ajax({
@@ -4271,7 +4232,7 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function(response) {
+                    success: function (response) {
                         if (response.status === "success") {
                             alert(response.message);
                             location.reload();
@@ -4279,7 +4240,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert("An error occurred while saving the data.");
                     }
                 });
@@ -4287,5 +4248,181 @@
         });
     </script>
 
+    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get elements
+
+            const toggleButton = document.getElementById("toggleProductFormButton");
+            const formContainer = document.getElementById("productAddForm");
+            const productList = document.getElementById("productList");
+            const collectionList = document.getElementById("collectionList");
+
+            // ✅ Toggle Form Visibility
+            toggleButton.addEventListener("click", function () {
+                formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#ShowProduct, #ShowCollection').hide();
+
+            // Toggle visibility of Product & Collection fields based on selection
+            $('#select_type').on('change', function () {
+                let selectedValue = $(this).val();
+
+                if (selectedValue === 'product') {
+                    $('#ShowProduct').fadeIn();
+                    $('#ShowCollection').hide();
+                } else if (selectedValue === 'collection') {
+                    $('#ShowCollection').fadeIn();
+                    $('#ShowProduct').hide();
+                } else {
+                    $('#ShowProduct, #ShowCollection').hide();
+                }
+            });
+
+            // Function to update selected items display
+            function updateSelectedDisplay(selectElement, displayElement, hiddenInput) {
+                displayElement.html('');
+                let selectedValues = [];
+
+                $(selectElement).find(':selected').each(function () {
+                    let selectedItem = $(this).text();
+                    selectedValues.push($(this).val());
+
+                    let badge = $('<div class="badge badge-primary p-2 m-1"></div>').text(selectedItem);
+                    displayElement.append(badge);
+                });
+
+                hiddenInput.val(selectedValues.join(',')); // Store selected values
+            }
+
+            // Attach event listeners to Product and Collection select elements
+            $('#selected_product').on('change', function () {
+                updateSelectedDisplay(this, $('#selected_products_display'), $('#selected_products_hidden'));
+            });
+
+            $('#selected_collection').on('change', function () {
+                updateSelectedDisplay(this, $('#selected_collections_display'), $('#selected_collections_hidden'));
+            });
+
+            // Append hidden input fields to store selected values for submission
+            $('#productForm').append('<input type="hidden" id="selected_products_hidden" name="selected_products">');
+            $('#productForm').append('<input type="hidden" id="selected_collections_hidden" name="selected_collections">');
+        });
+    </script>
+
+    <script>
+        function toggleEditFormProduct(productId) {
+            let editForm = document.getElementById(`editForm-${productId}`);
+            let chevronIcon = document.getElementById(`chevron-${productId}`);
+
+            if (editForm.style.display === "none" || editForm.style.display === "") {
+                editForm.style.display = "block";
+                chevronIcon.classList.remove("fa-chevron-down");
+                chevronIcon.classList.add("fa-chevron-up");
+            } else {
+                editForm.style.display = "none";
+                chevronIcon.classList.remove("fa-chevron-up");
+                chevronIcon.classList.add("fa-chevron-down");
+            }
+        }
+    </script>
+
+    <script>
+        function deleteProduct(productId) {
+            if (!confirm("Are you sure you want to delete this product?")) {
+                return;
+            }
+
+            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
+                method: "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Product deleted successfully!");
+                        document.getElementById(`productBox-${productId}`).remove(); // Remove from UI
+                    } else {
+                        alert("Failed to delete product: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred while deleting the product.");
+                });
+        }
+    </script>
+
+
+
+
+    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".select_link").forEach(selectField => {
+                let id = selectField.id.split("_")[2];
+                let productField = document.getElementById("ShowProductField_" + id);
+                let collectionField = document.getElementById("ShowCollectionField_" + id);
+
+                if (!selectField || !productField || !collectionField) {
+                    console.error("Element not found: ", { selectField, productField, collectionField });
+                    return;
+                }
+
+                function updateFields(value) {
+                    if (value === 'product') {
+                        productField.style.display = 'block';
+                        collectionField.style.display = 'none';
+                    } else if (value === 'collection') {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'block';
+                    } else {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'none';
+                    }
+                }
+
+                // Initializing
+                updateFields(selectField.value);
+
+                // On change event
+                selectField.addEventListener('change', function () {
+                    updateFields(this.value);
+                });
+            });
+        });
+    </script>
+
+
+    <!------------------------------------------------------------------------------- Home Page Image -------------------------------------------------------------------------------->
+
+    <!-- JavaScript -->
+    <script>
+        function toggleFields(index) {
+            let selection = document.getElementById('select_link' + index).value;
+            document.getElementById('ShowProductField' + index).style.display = selection === 'product' ? 'block' : 'none';
+            document.getElementById('ShowCollectionField' + index).style.display = selection === 'collection' ? 'block' : 'none';
+        }
+
+        // Function to update preview section
+        function updatePreview(type) {
+            let selectElement = document.getElementById(type === 'product' ? 'selected_product1' : 'selected_collection1');
+            let previewElement = document.getElementById(type === 'product' ? 'productPreview' : 'collectionPreview');
+
+            let selectedItems = Array.from(selectElement.selectedOptions).map(option => option.text);
+            previewElement.innerHTML = selectedItems.length ? `<small class="text-muted">Selected: ${selectedItems.join(', ')}</small>` : '';
+        }
+    </script>
 
 </body>

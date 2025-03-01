@@ -262,4 +262,16 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('email_pop_up')->where('id', 1)->get()->getRowArray();
     }
+
+    public function Getproductsection()
+    {
+        return $this->db->table('products_section')->get()->getResultArray();
+    }
+    
+    public function GetProductsData()
+    {
+        return $this->db->table('products')->get()->getResultArray();
+    }
+    
+
 }
