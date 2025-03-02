@@ -286,9 +286,5 @@ class HeaderController extends Controller
             return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete page'])->setStatusCode(500);
         }
     }
-
-
-
-
 }
 

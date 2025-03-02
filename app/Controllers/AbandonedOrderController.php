@@ -45,23 +45,23 @@ class AbandonedOrderController extends BaseController
         }
 
         $data['cart'] = $uniqueSessionItems;
+
         return view('abandoned_view', $data);
     }
 
-    // Send Email to a Single User
     public function sendEmail($id = null)
     {
         $registerUsersModel = new Registerusers_model();
         $cartModel = new Cart_model();
         $email = null;
-    
+
         if ($id) {
             // Check if the user exists and get their email
             $user = $registerUsersModel->where('user_id', $id)->first();
             if ($user && isset($user['email'])) {
                 $email = $user['email'];
             }
-    
+
             // If no email is found, check if it's a session-based cart
             if (!$email) {
                 $cart = $cartModel->where('guest_id', $id)->first();
@@ -70,16 +70,16 @@ class AbandonedOrderController extends BaseController
                 }
             }
         }
-    
+
         if ($email) {
             $emailService = \Config\Services::email();
             $emailService->setFrom('avhadenterprisespc7@gmail.com', 'Admin');
             $emailService->setTo($email);
             $emailService->setSubject('Cart Reminder');
-    
+
             // Generate the personalized cart URL
             $cartUrl = base_url("cart/edit_cart_view/{$id}");
-    
+
             // Email message
             $message = "
                 <p>Hello!</p>
@@ -87,10 +87,10 @@ class AbandonedOrderController extends BaseController
                 <p><a href='{$cartUrl}' target='_blank'>Click here to view your cart.</a></p>
                 <p>Thank you!</p>
             ";
-    
+
             $emailService->setMessage($message);
             $emailService->setMailType('html');
-    
+
             // Send the email
             if ($emailService->send()) {
                 return redirect()->back()->with('success', 'Email sent successfully!');
@@ -98,10 +98,10 @@ class AbandonedOrderController extends BaseController
                 return redirect()->back()->with('error', 'Failed to send the email.');
             }
         }
-    
+
         return redirect()->back()->with('error', 'No email found for the given user or session.');
     }
-    
+
     // Send Email to Multiple Selected Users
     public function sendEmailMultiple()
     {
@@ -138,35 +138,35 @@ class AbandonedOrderController extends BaseController
     {
         // First, check if it's a user_id or guest_id, and fetch the user accordingly
         $user = $this->Registerusers_model->where('user_id', $userIdOrSessionId)->first();
-    
+
         if (!$user) {
             // If not found by user_id, try guest_id
             $user = $this->Cart_model->where('guest_id', $userIdOrSessionId)->first();
         }
-    
+
         // If the user or session exists, and email is available
         if ($user && isset($user['email']) && filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
             $emailService = \Config\Services::email();
             $emailService->setFrom('avhadenterprisespc7@gmail.com', 'Admin');
             $emailService->setTo($user['email']);
             $emailService->setSubject('Cart Reminder');
-    
+
             // Generate the edit cart view link dynamically
             $cartUrl = base_url("cart/edit_cart_view/{$userIdOrSessionId}");
-            
+
             $message = "
                 <p>Hello!</p>
                 <p>You have items in your cart. Come back and complete your purchase!</p>
                 <p><a href='{$cartUrl}' target='_blank'>Click here to view your cart.</a></p>
                 <p>Thank you!</p>
             ";
-    
+
             $emailService->setMessage($message);
             $emailService->setMailType('html');
-    
+
             // Log before sending the email
             log_message('debug', "Sending email to: " . $user['email']);
-    
+
             // Send the email
             if ($emailService->send()) {
                 return true;
@@ -175,12 +175,11 @@ class AbandonedOrderController extends BaseController
                 return false;
             }
         }
-    
+
         log_message('error', 'Invalid email for user/session: ' . $userIdOrSessionId);
         return false;
     }
-    
-    // Send Custom Email to Multiple Recipients
+
     public function sendCustomEmail()
     {
         $recipients = $this->request->getPost('email_recipients');
@@ -223,7 +222,7 @@ class AbandonedOrderController extends BaseController
                 return redirect()->back()->with(
                     'success',
                     "{$emailSentCount} emails sent successfully!" .
-                    ($emailFailedCount > 0 ? " {$emailFailedCount} emails failed to send." : "")
+                        ($emailFailedCount > 0 ? " {$emailFailedCount} emails failed to send." : "")
                 );
             } else {
                 return redirect()->back()->with('error', 'No emails were sent. Please check the user selection.');
@@ -239,19 +238,19 @@ class AbandonedOrderController extends BaseController
         $cartModel = new Cart_model();
         $userModel = new Registerusers_model();
         $footerModel = new Footer_model(); // Assuming you have a model for footer links
-        
+
         // Fetch user by ID
         $customer = $userModel->find($id);
-    
+
         // Fetch cart items using the pre-defined model method
-        $cartItems = $cartModel->getCartItemsByUserOrSession($id);
-    
+        $cartItems = $cartModel->getCartItemsByses($id);
+
         // Calculate cart count
         $cartCount = count($cartItems);
-    
+
         // Fetch footer links
         $footerLinks = $footerModel->getFooterLinks(); // Replace with actual method to fetch footer links
-    
+
         // If no registered user found but session-based cart exists
         if (!$customer && !empty($cartItems)) {
             // Use cart table data to create a "guest" customer profile
@@ -264,12 +263,12 @@ class AbandonedOrderController extends BaseController
                 'pincode' => $cartItems[0]['pincode'] ?? '',
             ];
         }
-    
+
         // If no customer or cart data is found, redirect back with an error
         if (!$customer && empty($cartItems)) {
             return redirect()->back()->with('error', 'Customer or cart data not found.');
         }
-    
+
         // Prepare data for the view
         $data = [
             'customer' => $customer,
@@ -277,10 +276,10 @@ class AbandonedOrderController extends BaseController
             'cartCount' => $cartCount,
             'footerLinks' => $footerLinks,
         ];
-    
+
         return view('edit_cart_view', $data);
     }
-       
+
     public function update_cart($id)
     {
         $cartModel = new Cart_model();
@@ -323,10 +322,4 @@ class AbandonedOrderController extends BaseController
 
         return redirect()->to('cart')->with('success', 'Cart updated successfully!');
     }
-
-
-    
-    
-
-
 }

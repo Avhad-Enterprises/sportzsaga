@@ -98,8 +98,10 @@
                 <!-- Default Basic Forms Start -->
                 <div class="">
                     <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class=" h4">User Info</h4>
+                        <div class="pull-left mb-2">
+                            <a href="<?= base_url() ?>registeredusers" class="px-2">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -275,16 +277,34 @@
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Cart Abandonment</p>
                                     <?php if (!empty($cart_abandonment)): ?>
-                                        <ul>
-                                            <?php foreach ($cart_abandonment as $cart): ?>
-                                                <li>
-                                                    <img src="<?= base_url('uploads/' . $cart['product_image']); ?>" alt="<?= $cart['product_name']; ?>" style="width: 50px;height: 50px;object-fit: scale-down;">
-                                                    <strong><?= $cart['product_name']; ?></strong> -
-                                                    Price: <?= $cart['product_price']; ?>,
-                                                    Added on: <strong><?= date('j F, Y, g:i a', strtotime($cart['added_on'])); ?></strong>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>Product Image</th>
+                                                        <th>Product Name</th>
+                                                        <th>Price (₹)</th>
+                                                        <th>Quantity</th>
+                                                        <th>Added On</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($cart_abandonment as $cart): ?>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="<?= esc($cart['product_image']); ?>"
+                                                                    onerror="this.src='<?= base_url('assets/images/default-product.jpg'); ?>';"
+                                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                            </td>
+                                                            <td><strong><?= esc($cart['product_name']); ?></strong></td>
+                                                            <td>₹<?= number_format($cart['product_price'], 2); ?></td>
+                                                            <td><?= esc($cart['quantity']); ?></td>
+                                                            <td><strong><?= date('j F, Y, g:i a', strtotime($cart['added_on'])); ?></strong></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     <?php else: ?>
                                         <p>No abandoned cart items.</p>
                                     <?php endif; ?>
@@ -506,11 +526,10 @@
                                         <div class="timeline-item">
                                             <div class="timeline-badge">
                                                 <?php
-                                                $bgColor = 'background-color: #ffc107;'; // Yellow for Placed
                                                 $iconClass = 'fas fa-box'; // Box icon for Placed
                                                 ?>
 
-                                                <div class="badge-icon" style="<?= $bgColor ?>">
+                                                <div>
                                                     <i class="<?= $iconClass ?>"></i>
                                                 </div>
                                             </div>
@@ -533,11 +552,10 @@
                                             <div class="timeline-item">
                                                 <div class="timeline-badge">
                                                     <?php
-                                                    $bgColor = 'background-color: #17a2b8;'; // Blue for Fulfilled
                                                     $iconClass = 'fas fa-truck'; // Truck icon for Fulfilled
                                                     ?>
 
-                                                    <div class="badge-icon" style="<?= $bgColor ?>">
+                                                    <div>
                                                         <i class="<?= $iconClass ?>"></i>
                                                     </div>
                                                 </div>
@@ -560,11 +578,10 @@
                                             <div class="timeline-item">
                                                 <div class="timeline-badge">
                                                     <?php
-                                                    $bgColor = 'background-color: #007bff;'; // Blue for Delivered
                                                     $iconClass = 'fas fa-box'; // Box icon for Delivered
                                                     ?>
 
-                                                    <div class="badge-icon" style="<?= $bgColor ?>">
+                                                    <div>
                                                         <i class="<?= $iconClass ?>"></i>
                                                     </div>
                                                 </div>
@@ -587,11 +604,10 @@
                                             <div class="timeline-item">
                                                 <div class="timeline-badge">
                                                     <?php
-                                                    $bgColor = 'background-color: #dc3545;'; // Red for Returned
                                                     $iconClass = 'fas fa-undo'; // Undo icon for Returned
                                                     ?>
 
-                                                    <div class="badge-icon" style="<?= $bgColor ?>">
+                                                    <div>
                                                         <i class="<?= $iconClass ?>"></i>
                                                     </div>
                                                 </div>
@@ -612,7 +628,7 @@
                                         <!-- Email Sent Timeline Item -->
                                         <div class="timeline-item">
                                             <div class="timeline-badge">
-                                                <div class="badge-icon" style="background-color: <?= $order['email_send'] == 'yes' ? '#17a2b8' : '#ffc107' ?>;">
+                                                <div>
                                                     <i class="fas fa-envelope"></i>
                                                 </div>
                                             </div>

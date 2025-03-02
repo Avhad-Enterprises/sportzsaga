@@ -31,7 +31,7 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => 'root',
         'password'     => '',
-        'database'     => 'github_db',
+        'database'     => 'sportsaga_db_adityapatil',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
