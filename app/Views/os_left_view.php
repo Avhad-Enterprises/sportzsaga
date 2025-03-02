@@ -880,9 +880,6 @@
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <div id="selected_products_display" class="selected-items mt-2"
-                                        style="max-width: 100%; overflow-x: auto; white-space: normal; padding: 5px; border: 1px solid #ddd; border-radius: 5px; display: flex; flex-direction: column;">
-                                    </div>
                                 </div>
 
                                 <!-- Collection Field (Hidden by Default) -->
@@ -896,9 +893,6 @@
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <div id="selected_collections_display" class="selected-items mt-2"
-                                        style="max-width: 100%; overflow-x: auto; white-space: normal; padding: 5px; border: 1px solid #ddd; border-radius: 5px; display: flex; flex-direction: column;">
-                                    </div>
                                 </div>
 
                                 <!-- Submit Button -->
@@ -4015,9 +4009,7 @@
                     </ul>
                 </li>
 
-
                 <!---------------------------------------------------------------- Marquee Page End----------------------------------------------------------------------------------------------------->
-
 
                 <li id="web-Email_POP_UP" style="display: none;" class="web-section dropdown">
                     <a href="javascript:;" class="dropdown-toggle">

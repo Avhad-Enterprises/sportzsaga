@@ -2079,8 +2079,8 @@ class Store extends BaseController
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
+        $selectedProducts = $this->request->getPost('selected_product');
+        $selectedCollections = $this->request->getPost('selected_collection');
 
         // Ensure at least one selection is made
         if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
@@ -2090,10 +2090,10 @@ class Store extends BaseController
         // Prepare selected items array only if they are not empty
         $selectedItems = [];
         if (!empty($selectedProducts)) {
-            $selectedItems['products'] = $selectedProducts;
+            $selectedItems = $selectedProducts;
         }
         if (!empty($selectedCollections)) {
-            $selectedItems['collections'] = $selectedCollections;
+            $selectedItems = $selectedCollections;
         }
 
         $data = [
