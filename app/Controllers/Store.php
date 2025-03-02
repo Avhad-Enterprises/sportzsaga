@@ -17,6 +17,7 @@ use App\Models\HeaderFirstModel;
 use App\Models\Footer_model;
 use App\Models\MemberModel;
 use App\Models\MarqueeTextModel;
+use App\Models\Productselection;
 use Google\Cloud\Storage\StorageClient;
 
 class Store extends BaseController
@@ -79,7 +80,7 @@ class Store extends BaseController
         $data['email_pop_up'] = $modal->getAllEmail_POP_UP();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['selectedCollections'] = $modal->getHomeCollectionIds();
-
+        $data['product_list'] = $modal->Getproductsection(); // Fixing the undefined variable issue
         // Fetch Instagram posts
         $accessToken = 'IGQWRPTVE0S2lUS3BpYWhNekZAvbnppeGh6OWFXT1F0VTR6Tld2UGduV0UyYU9tQjAtejY5WWxLQTZAaa3N1cmVwel9jX1FoNWFESk9zbm4yMnE2TWhJYzFrWW9PVnBpcmswb3JJVnNKY3hsUUJUTE9JbXpLLU1LTEEZD';
         $apiUrl = "https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,like_count,comments_count,children{media_url}&access_token={$accessToken}";
@@ -1362,64 +1363,72 @@ class Store extends BaseController
         }
     }
 
-    // Edit Logo
     public function editLogo()
     {
         try {
+            // Get logo ID from request
             $logoId = $this->request->getPost('id');
-            $file = $this->request->getFile('logo');
 
-            if ($file && $file->isValid() && !$file->hasMoved()) {
-                $logo = $this->logoModel->find($logoId);
-                if ($logo) {
-                    // Initialize Google Cloud Storage
-                    $storage = new StorageClient([
-                        'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
-                        'projectId' => 'peak-tide-441609-r1',
-                    ]);
-                    $bucketName = 'sportzsaga_imgs';
-                    $bucket = $storage->bucket($bucketName);
+            // Initialize Google Cloud Storage
+            $storage = new StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Update path to your service account JSON key
+                'projectId' => 'peak-tide-441609-r1', // Update with your Google Cloud project ID
+            ]);
+            $bucketName = 'sportzsaga_imgs'; // Update with your bucket name
+            $bucket = $storage->bucket($bucketName);
 
-                    // Delete old logo file from Google Cloud Storage
-                    if (!empty($logo['logo'])) {
-                        $oldFilePath = parse_url($logo['logo'], PHP_URL_PATH);
-                        $object = $bucket->object(ltrim($oldFilePath, '/'));
-                        if ($object->exists()) {
-                            $object->delete();
-                        }
-                    }
-
-                    // Upload new file
-                    $fileName = 'logos/' . uniqid() . '_' . $file->getClientName();
-                    $object = $bucket->upload(
-                        fopen($file->getTempName(), 'r'),
-                        [
-                            'name' => $fileName,
-                            'predefinedAcl' => 'publicRead',
-                        ]
-                    );
-                    $fileUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
-
-                    // Update file URL in the database
-                    $data = [
-                        'logo' => $fileUrl,
-                        'visibility' => $this->request->getPost('visibility'),
-                        'title' => $this->request->getPost('title')
-                    ];
-                    $this->logoModel->update($logoId, $data);
-
-                    return $this->response->setJSON(['status' => 'success', 'message' => 'Logo updated successfully.', 'file_url' => $fileUrl]);
-                } else {
-                    return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
-                }
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid file upload.']);
+            // Find the existing logo
+            $existingLogo = $this->logoModel->find($logoId);
+            if (!$existingLogo) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
             }
+
+            // Check if a new file is uploaded
+            $logo = $this->request->getFile('logo');
+            $fileUrl = $existingLogo['logo']; // Default to old image URL
+
+            if ($logo && $logo->isValid() && !$logo->hasMoved()) {
+                // Delete the old logo from Google Cloud Storage
+                if (!empty($existingLogo['logo'])) {
+                    $oldFilePath = parse_url($existingLogo['logo'], PHP_URL_PATH);
+                    $object = $bucket->object(ltrim($oldFilePath, '/'));
+                    if ($object->exists()) {
+                        $object->delete();
+                    }
+                }
+
+                // Generate unique filename
+                $fileName = 'logos/' . uniqid() . '_' . $logo->getClientName();
+
+                // Upload new logo to Google Cloud Storage
+                $object = $bucket->upload(
+                    fopen($logo->getTempName(), 'r'),
+                    [
+                        'name' => $fileName,
+                        'predefinedAcl' => 'publicRead',
+                    ]
+                );
+
+                // Get public URL of the uploaded file
+                $fileUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+            }
+
+            // Update logo data in the database
+            $data = [
+                'logo' => $fileUrl, // If no new file, the old logo remains
+                'visibility' => $this->request->getPost('visibility'),
+                'title' => $this->request->getPost('title')
+            ];
+            $this->logoModel->update($logoId, $data);
+
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Logo updated successfully.', 'file_url' => $fileUrl]);
         } catch (\Exception $e) {
             log_message('error', 'Error updating logo: ' . $e->getMessage());
             return $this->response->setJSON(['status' => 'error', 'message' => 'An error occurred while updating the logo.']);
         }
     }
+
+
 
     // Delete Logo
     public function deleteLogo()
@@ -1613,6 +1622,11 @@ class Store extends BaseController
             $existingRecord = $model->find(1);
             $data = $this->request->getPost();
 
+            // Assign selected values to data array
+            $data['select_link'] = $this->request->getPost('select_link');
+            $data['selected_product'] = ($data['select_link'] === 'product') ? $this->request->getPost('selected_product') : null;
+            $data['selected_collection'] = ($data['select_link'] === 'collection') ? $this->request->getPost('selected_collection') : null;
+
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
@@ -1644,11 +1658,17 @@ class Store extends BaseController
         }
     }
 
+
     public function update()
     {
         try {
             $model = new HomeCarousel2Model();
             $data = $this->request->getPost();
+
+            // Assign selected values to data array
+            $data['select_link'] = $this->request->getPost('select_link');
+            $data['selected_product'] = ($data['select_link'] === 'product') ? $this->request->getPost('selected_product') : null;
+            $data['selected_collection'] = ($data['select_link'] === 'collection') ? $this->request->getPost('selected_collection') : null;
 
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
@@ -1675,6 +1695,7 @@ class Store extends BaseController
     }
 
 
+
     public function delete($id)
     {
         $model = new HomeCarousel2Model();
@@ -1683,64 +1704,74 @@ class Store extends BaseController
     }
 
 
+
+
+
+
+
+
+    //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
     public function save()
     {
-        helper(['form', 'url']);
-
-        // Log incoming data for debugging
-        log_message('info', 'Received Data: ' . json_encode($this->request->getPost()));
-
-        $homeImageModel = new \App\Models\HomeImageModel();
-
-        // Validate the incoming data (e.g., ensure all required fields are provided)
-        if (
-            !$this->validate([
-                'image_title1' => 'required|max_length[255]',
-                'description1' => 'required',
-                'title2' => 'required|max_length[255]',
-                'description2' => 'required',
-            ])
-        ) {
-            return $this->response->setJSON([
-                'status' => false,
-                'errors' => $this->validator->getErrors(),
-            ]);
-        }
-
-        // Prepare data for saving
-        $data = [
-            'image_title1' => $this->request->getPost('image_title1'),
-            'description1' => $this->request->getPost('description1'),
-            'title2' => $this->request->getPost('title2'),
-            'description2' => $this->request->getPost('description2'),
-        ];
-
-        // Handle file uploads
-        $backgroundImage1 = $this->request->getFile('background_image1');
-        $backgroundImage2 = $this->request->getFile('background_image2');
-
-        if ($backgroundImage1 && $backgroundImage1->isValid()) {
-            $data['background_image1'] = $backgroundImage1->store('uploads');
-        }
-        if ($backgroundImage2 && $backgroundImage2->isValid()) {
-            $data['background_image2'] = $backgroundImage2->store('uploads');
-        }
-
-        // Save or update the data (assumes one row for home_image, always with ID=1)
         try {
-            $homeImageModel->update(1, $data);
-            return $this->response->setJSON([
-                'status' => true,
-                'message' => 'Data saved successfully.',
+            helper(['form', 'url']);
+
+            // Log incoming data for debugging
+            log_message('info', 'Received Data: ' . json_encode($this->request->getPost()));
+
+            $homeImageModel = new \App\Models\HomeImageModel();
+
+            // Prepare data for saving
+            $data = [
+                'image_title1' => $this->request->getPost('image_title1'),
+                'description1' => $this->request->getPost('description1'),
+                'title2' => $this->request->getPost('title2'),
+                'description2' => $this->request->getPost('description2'),
+                'select_link1' => $this->request->getPost('select_link1'),
+                'selected_product1' => $this->request->getPost('select_link1') === 'product' ? $this->request->getPost('selected_product1') : null,
+                'selected_collection1' => $this->request->getPost('select_link1') === 'collection' ? $this->request->getPost('selected_collection1') : null,
+                'select_link2' => $this->request->getPost('select_link2'),
+                'selected_product2' => $this->request->getPost('select_link2') === 'product' ? $this->request->getPost('selected_product2') : null,
+                'selected_collection2' => $this->request->getPost('select_link2') === 'collection' ? $this->request->getPost('selected_collection2') : null,
+                'updated_at' => date('Y-m-d H:i:s'), // Add timestamp for updates
+            ];
+
+            // Initialize Google Cloud Storage
+            $storage = new StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
             ]);
+            $bucket = $storage->bucket('sportzsaga_imgs');
+
+            // Handle file uploads
+            foreach (['background_image1', 'background_image2'] as $field) {
+                $file = $this->request->getFile($field);
+                if ($file && $file->isValid() && !$file->hasMoved()) {
+                    $fileName = 'backgrounds/' . uniqid() . '_' . $file->getClientName();
+                    $object = $bucket->upload(
+                        fopen($file->getTempName(), 'r'),
+                        [
+                            'name' => $fileName,
+                            'predefinedAcl' => 'publicRead',
+                        ]
+                    );
+                    $data[$field] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+                }
+            }
+
+            // Save or update the data (assumes one row for home_image, always with ID=1)
+            $homeImageModel->update(1, $data);
+
+            // Redirect to the edit form with a success message
+            return redirect()->to(base_url('online_store/edit'))->with('success', 'Data saved successfully.');
         } catch (\Exception $e) {
             log_message('error', 'Error saving data: ' . $e->getMessage());
-            return $this->response->setJSON([
-                'status' => false,
-                'message' => 'Failed to save data: ' . $e->getMessage(),
-            ]);
+
+            // Redirect to the edit form with an error message
+            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save data: ' . $e->getMessage());
         }
     }
+
 
 
 
@@ -2028,4 +2059,153 @@ class Store extends BaseController
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
+    public function add_new_product()
+    {
+        $productModel = new Productselection();
+
+        $title = $this->request->getPost('product_title');
+        $description = $this->request->getPost('product_description');
+        $selectionType = $this->request->getPost('select_type');
+        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
+        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
+
+        // Ensure at least one selection is made
+        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
+            return $this->response->setJSON(['success' => false, 'message' => 'All fields are required, including at least one selection.']);
+        }
+
+        // Prepare selected items array only if they are not empty
+        $selectedItems = [];
+        if (!empty($selectedProducts)) {
+            $selectedItems['products'] = $selectedProducts;
+        }
+        if (!empty($selectedCollections)) {
+            $selectedItems['collections'] = $selectedCollections;
+        }
+
+        $data = [
+            'title' => $title,
+            'description' => $description,
+            'selection_type' => $selectionType,
+            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+        ];
+
+        if ($productModel->insert($data)) {
+            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product selection saved successfully.');
+        } else {
+            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save product selection.');
+        }
+    }
+
+
+
+    public function fetch_products()
+    {
+        $modal = new onlinestoremodal();
+        $products = $modal->GetallProductsData();
+
+        return $this->response->setJSON([
+            'items' => array_map(function ($product) {
+                return [
+                    'id' => $product['product_id'],
+                    'title' => $product['product_title']
+                ];
+            }, $products)
+        ]);
+    }
+
+
+    public function fetch_collections()
+    {
+        $modal = new onlinestoremodal();
+        $collections = $modal->GetallCollectionsData();
+
+        return $this->response->setJSON([
+            'items' => array_map(function ($collection) {
+                return [
+                    'id' => $collection['collection_id'],
+                    'title' => $collection['collection_title']
+                ];
+            }, $collections)
+        ]);
+    }
+
+    public function update_product($id)
+    {
+        $productModel = new Productselection();
+
+        // Fetch existing product data
+        $product = $productModel->find($id);
+
+        if (!$product) {
+            return redirect()->to(base_url('online_store/index'))->with('error', 'Product not found.');
+        }
+
+        // Get input values
+        $title = $this->request->getPost('product_title');
+        $description = $this->request->getPost('product_description');
+        $selectionType = $this->request->getPost('select_type');
+        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
+        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
+
+        // Ensure at least one selection is made
+        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
+            return redirect()->to(base_url('online_store/index'))->with('error', 'All fields are required, including at least one selection.');
+        }
+
+        // Prepare selected items array only if they are not empty
+        $selectedItems = [];
+        if ($selectionType === 'product' && !empty($selectedProducts)) {
+            $selectedItems['products'] = $selectedProducts;
+        } elseif ($selectionType === 'collection' && !empty($selectedCollections)) {
+            $selectedItems['collections'] = $selectedCollections;
+        }
+
+        $data = [
+            'title' => $title,
+            'description' => $description,
+            'selection_type' => $selectionType,
+            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+        ];
+
+        // Update product in database
+        if ($productModel->update($id, $data)) {
+            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product updated successfully.');
+        } else {
+            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update product.');
+        }
+    }
+
+    public function delete_product($id)
+    {
+        $productModel = new Productselection();
+
+        // Check if product exists
+        $product = $productModel->find($id);
+        if (!$product) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Product not found.']);
+        }
+
+        // Delete product
+        if ($productModel->delete($id)) {
+            return $this->response->setJSON(['success' => true, 'message' => 'Product deleted successfully.']);
+        } else {
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
+        }
+    }
+
+
 }
