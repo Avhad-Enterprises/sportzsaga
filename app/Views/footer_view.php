@@ -12,6 +12,7 @@
 <script src="<?= base_url(); ?>src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 <script src="<?= base_url(); ?>vendors/scripts/dashboard3.js"></script>
 <script src="<?= base_url(); ?>src/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="<?= base_url(); ?>vendors/scripts/updatebutton.js"></script>
 <!-- bootstrap-touchspin js -->
 <script src="<?= base_url(); ?>src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
 <!-- switchery js -->

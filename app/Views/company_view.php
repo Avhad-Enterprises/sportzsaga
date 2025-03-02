@@ -1,5 +1,3 @@
-//company_view::
-
 <!-- Head View Start -->
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
@@ -110,74 +108,36 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
 
-
-                <div class="row mb-4"> <!-- Added mb-4 for spacing -->
-                    <div class="col-md-6 col-sm-12"></div>
-                    <div class="col-md-6 col-sm-12 text-right blogs-imex">
-                        <div class="dropdown">
-                            <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>add_new_company" role="button">
-                                Add New
-                            </a>
-                        </div>
-                        <button id="openImportModal" class="btn btn-success">
-                            Import CSV
-                        </button>
-                        <div class="dropdown">
-                            <a class="btn btn-primary fw-bold" href="<?= base_url('company/exportCSV'); ?>"
-                                role="button">
-                                Export to Excel
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Import Company Modal -->
-                <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="importCompanyModalLabel">Import Companies (CSV)</h5>
-                                <!-- Corrected Close Button -->
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="title">
+                                <h4>Registered Companies</h4>
                             </div>
-                            <form action="<?= base_url('company/importCSV'); ?>" method="post" enctype="multipart/form-data">
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="csv_file" class="form-label">Select CSV File</label>
-                                        <input type="file" name="csv_file" id="csv_file" class="form-control" accept=".csv" required>
-                                    </div>
-                                    <div class="alert alert-info">
-                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following headers:
-                                        <ul>
-                                            <li><code>company_name</code>, <code>user_ids</code>, <code>tags</code>,
-                                                <code>street</code>, <code>city</code>, <code>state</code>,
-                                                <code>country</code>, <code>postal_code</code>, <code>notes</code>,
-                                                <code>apply_for_credit</code>, <code>registration_number</code>,
-                                                <code>principal_director</code>
-                                            </li>
-                                        </ul>
-                                        <strong>Example:</strong>
-                                        <pre>Company A,1|2|3,Fashion|Retail,123 St,New York,NY,USA,10001,Test Notes,1,REG123,John Doe</pre>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <!-- Corrected Close Button -->
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Import CSV</button>
-                                </div>
-                            </form>
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-right blogs-imex">
+                            <div class="dropdown">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>add_new_company" role="button">
+                                    Add New
+                                </a>
+                            </div>
+                            <button id="openImportModal" class="btn btn-success">
+                                Import CSV
+                            </button>
+                            <div class="dropdown">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url('company/exportCSV'); ?>"
+                                    role="button">
+                                    Export to Excel
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Page Content Start -->
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Registered Companies</h4>
+                        <h4 class="text-blue h4"></h4>
                     </div>
                     <div class="pb-20">
                         <table id="datatable-responsive" class="table hover multiple-select-row data-table-export"
@@ -224,30 +184,70 @@
                 </div>
                 <!-- Page Content End -->
 
+                 <!-- Import Company Modal -->
+                 <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="importCompanyModalLabel">Import Companies (CSV)</h5>
+                                <!-- Corrected Close Button -->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="<?= base_url('company/importCSV'); ?>" method="post" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="csv_file" class="form-label">Select CSV File</label>
+                                        <input type="file" name="csv_file" id="csv_file" class="form-control" accept=".csv" required>
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following headers:
+                                        <ul>
+                                            <li><code>company_name</code>, <code>user_ids</code>, <code>tags</code>,
+                                                <code>street</code>, <code>city</code>, <code>state</code>,
+                                                <code>country</code>, <code>postal_code</code>, <code>notes</code>,
+                                                <code>apply_for_credit</code>, <code>registration_number</code>,
+                                                <code>principal_director</code>
+                                            </li>
+                                        </ul>
+                                        <strong>Example:</strong>
+                                        <pre>Company A,1|2|3,Fashion|Retail,123 St,New York,NY,USA,10001,Test Notes,1,REG123,John Doe</pre>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Corrected Close Button -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Import CSV</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Get the Import button
             var importButton = document.getElementById("openImportModal");
 
+            // Get the modal
+            var importModal = new bootstrap.Modal(document.getElementById("importCompanyModal"));
+
             // Open modal when button is clicked
             importButton.addEventListener("click", function() {
-                $("#importCompanyModal").modal("show"); // Bootstrap 4 method
+                importModal.show();
             });
         });
     </script>
 
 </body>
+
 <!-- Footer View Start -->
 <?= $this->include('footer_view') ?>
 <!-- Footer View End -->
-
-</html>

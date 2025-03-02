@@ -527,7 +527,7 @@ class CatalogController extends Controller
     {
         $catalogModel = new CompanyModel();
         if ($catalogModel->delete($id)) {
-            return redirect()->to('company_view')->with('success', 'Catalog deleted successfully.');
+            return redirect()->to('company_view')->with('success', 'Company deleted successfully.');
         } else {
             return redirect()->to('company_view')->with('error', 'Failed to delete catalog.');
         }

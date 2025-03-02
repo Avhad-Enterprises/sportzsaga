@@ -112,15 +112,23 @@
             <div class="min-height-200px">
                 <!-- Default Basic Forms Start -->
                 <div class="pd-20 card-box mb-30">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="text-blue h4">Edit Company</h4>
-                            <p class="mb-30">Update the company details below</p>
-                        </div>
-                    </div>
+
                     <form id="edit_company_form" method="post"
                         action="<?= base_url('company/update_company/' . $company['id']) ?>"
                         enctype="multipart/form-data">
+
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <!-- Back Button on the Left -->
+                            <button type="button" class="btn" onclick="goBack()">
+                                <i class="fa fa-arrow-left"></i> Back
+                            </button>
+
+                            <!-- Update Company Button on the Right -->
+                            <button type="submit" id="companyupdate" class="btn btn-primary btn-lg">Update Company</button>
+                        </div>
+
 
                         <!-- Company Name -->
                         <div class="form-group">
@@ -147,14 +155,18 @@
                         <div class="form-group">
                             <p class="text-blue">Tags</p>
                             <div class="d-flex align-items-center mb-20">
-                                <select id="product-tags" name="product-tags[]" multiple="multiple"
-                                    class="form-control custom-dropdown me-2">
+                                <select id="product-tags" name="blog-tags[]" multiple="multiple" class="form-control custom-dropdown me-2">
                                     <?php foreach ($tags as $tag): ?>
-                                        <option value="<?= $tag['tag_name']; ?>" <?= in_array($tag['tag_name'], explode(',', $company['tags'])) ? 'selected' : '' ?>>
+                                        <?php
+                                        // Ensure 'blog_tags' is defined and a valid string
+                                        $postTags = !empty($post['blog_tags']) ? explode(',', $post['blog_tags']) : [];
+                                        ?>
+                                        <option value="<?= esc($tag['tag_name']); ?>" <?= in_array($tag['tag_name'], $postTags) ? 'selected' : '' ?>>
                                             <?= esc($tag['tag_name']); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
+
                                 <button type="button" class="btn btn-sm btn-primary" id="add-tag-btn"
                                     data-toggle="modal" data-target="#tagModal">
                                     <i class="fa fa-plus"></i>
@@ -246,7 +258,7 @@
                             <div class="text-danger mt-1" id="notes_error"></div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg">Update Company</button>
+
                     </form>
                 </div>
             </div>
@@ -257,6 +269,12 @@
         <?= $this->include('footer_view') ?>
         <!-- Footer View End -->
 
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new FormChangeTracker('edit_company_form', 'companyupdate');
+            });
+        </script>
 
         <script>
             $(document).ready(function() {
