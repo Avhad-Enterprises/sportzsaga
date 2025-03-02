@@ -642,7 +642,8 @@
                                                             <br>
                                                             <span class="text-muted">Inventory: <?= esc($related['inventory']) ?></span> | 
                                                             <span class="text-muted">Price: ₹<?= esc($related['selling_price']) ?></span>
-                                                        </div>                                                     
+                                                        </div>
+                                                     
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
