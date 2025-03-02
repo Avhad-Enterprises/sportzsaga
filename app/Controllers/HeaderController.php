@@ -8,7 +8,6 @@ use App\Models\Products_model;
 use CodeIgniter\Controller;
 use CodeIgniter\Database\BaseConnection;
 use Google\Cloud\Storage\StorageClient;
-
 class HeaderController extends Controller
 {
     protected $pageModel;
@@ -86,6 +85,7 @@ class HeaderController extends Controller
                 // Get the public URL of the uploaded image
                 $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
                 log_message('info', 'Image uploaded successfully: ' . $imageUrl);
+
             } catch (\Exception $e) {
                 log_message('error', 'Error uploading image: ' . $e->getMessage());
             }
@@ -97,9 +97,9 @@ class HeaderController extends Controller
             'link' => $request->getPost('link'),
             'visibility' => $request->getPost('visibility'),
             'page_type' => implode(',', (array) $request->getPost('page_type')),
-            'subtype' => $subtypes_data, // ✅ Correctly storing selected subtypes
-            'specific_item' => $specific_item_data, // ✅ Correctly mapping specific items
-            'image' => $imageUrl, // Store the image URL
+            'subtype' => $subtypes_data,
+            'specific_item' => $specific_item_data,
+            'image' => $imageUrl,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
@@ -167,14 +167,52 @@ class HeaderController extends Controller
             $data = [
                 'title' => $this->request->getPost('title'),
                 'link' => $this->request->getPost('link'),
-                'visibility' => $this->request->getPost('visibility')
+                'visibility' => $this->request->getPost('visibility'),
             ];
 
-            // Handle image upload if provided
-            $imageFile = $this->request->getFile('image');
-            $imageUrl = '';
+            // Handle Page Type (Multiple Selection)
+            $pageType = $this->request->getPost('page_type');
+            $data['page_type'] = (!empty($pageType)) ? implode(',', array_unique(explode(',', $pageType))) : '';
 
-            // If a new image is uploaded, handle the file upload to Google Cloud Storage
+            // Handle Subtype (Multiple Selection)
+            $subtype = $this->request->getPost('subtype');
+            $data['subtype'] = (!empty($subtype) && is_array($subtype)) ? implode(',', array_unique($subtype)) : '';
+
+            $specificItems = $this->request->getPost('specific_item');
+            log_message('debug', 'Received Specific Items: ' . print_r($specificItems, true));
+
+            $formattedSpecificItems = [];
+
+            if (!empty($subtype) && is_array($subtype)) {
+                foreach ($subtype as $index => $selectedSubtype) {
+                    if (isset($specificItems[$index])) {
+                        // ✅ Flatten nested arrays and split comma-separated values
+                        $flattenedItems = [];
+
+                        foreach ($specificItems[$index] as $items) {
+                            if (is_array($items)) {
+                                $flattenedItems = array_merge($flattenedItems, $items);
+                            } else {
+                                $flattenedItems = array_merge($flattenedItems, explode(',', $items));
+                            }
+                        }
+
+                        // ✅ Remove duplicates and trim spaces
+                        $uniqueItems = array_values(array_unique(array_map('trim', $flattenedItems)));
+                        sort($uniqueItems);
+
+                        if (!empty($uniqueItems)) {
+                            $formattedSpecificItems[$selectedSubtype] = implode(',', $uniqueItems);
+                        }
+                    }
+                }
+            }
+
+            $data['specific_item'] = !empty($formattedSpecificItems) ? json_encode($formattedSpecificItems) : json_encode([]);
+            log_message('debug', 'Formatted Specific Items Before Update: ' . print_r($data['specific_item'], true));
+
+            // Handle image upload with Google Cloud Storage (GCS)
+            $imageFile = $this->request->getFile('image');
             if ($imageFile && $imageFile->isValid() && !$imageFile->hasMoved()) {
                 try {
                     // Initialize Google Cloud Storage
@@ -189,8 +227,8 @@ class HeaderController extends Controller
                     $object = $bucket->upload(
                         fopen($imageFile->getTempName(), 'r'),
                         [
-                            'name' => 'pages/' . $imageName, // Path in the bucket
-                            'predefinedAcl' => 'publicRead', // Set file to be publicly accessible
+                            'name' => 'pages/' . $imageName,
+                            'predefinedAcl' => 'publicRead',
                         ]
                     );
 
@@ -198,27 +236,38 @@ class HeaderController extends Controller
                     $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
                     log_message('info', 'Image uploaded successfully: ' . $imageUrl);
 
-                    // Add the image URL to the data array
-                    $data['image'] = $imageUrl;
+                    $data['image'] = $imageUrl; // Update image URL in database
+
                 } catch (\Exception $e) {
                     log_message('error', 'Error uploading image: ' . $e->getMessage());
                 }
-            } else {
-                // If no new image, keep the existing image
-                $existingPage = $pageModel->find($id);
-                $data['image'] = $existingPage['image']; // Retain the existing image URL
             }
 
-            // Update the page data
-            if ($pageModel->update($id, $data)) {
-                return redirect()->back()->with('success', 'Page updated successfully!');
+            // Fetch existing image if no new image is uploaded
+            if (empty($data['image'])) {
+                $existingPage = $pageModel->find($id);
+                if ($existingPage) {
+                    $data['image'] = $existingPage['image']; // Retain existing image
+                }
+            }
+
+            // Log the final update data
+            log_message('debug', 'Update Data: ' . print_r($data, true));
+
+            // Update Page Data in the Database
+            $updateStatus = $pageModel->update($id, $data);
+
+            if ($updateStatus) {
+                return redirect()->to(base_url('online_store/edit'))->with('success', 'Page updated successfully.');
             } else {
-                return redirect()->to(base_url('/pages'))->with('error', 'Failed to update page. Try again!');
+                return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update the page.');
             }
         }
 
-        return redirect()->to(base_url('/pages'))->with('error', 'Invalid request.');
+        return redirect()->to(base_url('online_store/edit'));
     }
+
+
 
     public function delete_page($id)
     {
@@ -238,3 +287,4 @@ class HeaderController extends Controller
         }
     }
 }
+

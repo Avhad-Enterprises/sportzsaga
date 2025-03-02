@@ -630,6 +630,27 @@
                                     </div>
                                 </div>
 
+                                <div class="pd-20 card-box mb-30">
+                                    <p class="text-blue">Related Products</p>
+                                    <div id="relatedProductsContainer">
+                                        <?php if (!empty($related_products)): ?>
+                                            <ul class="list-group">
+                                                <?php foreach ($related_products as $related): ?>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <strong><?= esc($related['product_title']) ?></strong>
+                                                            <br>
+                                                            <span class="text-muted">Inventory: <?= esc($related['inventory']) ?></span> | 
+                                                            <span class="text-muted">Price: ₹<?= esc($related['selling_price']) ?></span>
+                                                        </div>                                                     
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php else: ?>
+                                            <p>No related products found.</p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
