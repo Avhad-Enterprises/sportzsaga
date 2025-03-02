@@ -23,3 +23,75 @@ in APPPATH\Controllers\Customerservice.php on line 223.
  3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
  4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-02 17:40:59 --> Starting tracking details update process
+INFO - 2025-03-02 17:40:59 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-03-02 17:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-03-02 17:40:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:40:59 --> Starting fetchEmails method
+INFO - 2025-03-02 17:40:59 --> Starting email processing
+CRITICAL - 2025-03-02 17:40:59 --> Error: Call to undefined function App\Controllers\imap_open()
+in APPPATH\Controllers\Customerservice.php on line 223.
+ 1 APPPATH\Controllers\Customerservice.php(34): App\Controllers\Customerservice->processNewEmails()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-03-02 17:41:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:41:29 --> Starting fetchEmails method
+INFO - 2025-03-02 17:41:29 --> Starting email processing
+CRITICAL - 2025-03-02 17:41:29 --> Error: Call to undefined function App\Controllers\imap_open()
+in APPPATH\Controllers\Customerservice.php on line 223.
+ 1 APPPATH\Controllers\Customerservice.php(34): App\Controllers\Customerservice->processNewEmails()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-02 17:41:29 --> Starting tracking details update process
+INFO - 2025-03-02 17:41:29 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-03-02 17:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-02 17:42:05 --> Starting tracking details update process
+INFO - 2025-03-02 17:42:05 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-03-02 17:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-03-02 17:42:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:42:05 --> Starting fetchEmails method
+INFO - 2025-03-02 17:42:05 --> Starting email processing
+CRITICAL - 2025-03-02 17:42:05 --> Error: Call to undefined function App\Controllers\imap_open()
+in APPPATH\Controllers\Customerservice.php on line 223.
+ 1 APPPATH\Controllers\Customerservice.php(34): App\Controllers\Customerservice->processNewEmails()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-02 17:43:05 --> Starting tracking details update process
+INFO - 2025-03-02 17:43:05 --> No active BlueDart shipments found for tracking updates.
+INFO - 2025-03-02 17:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-03-02 17:43:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Customerservice::$replyModel is deprecated in APPPATH\Controllers\Customerservice.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Customerservice->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-02 17:43:05 --> Starting fetchEmails method
+INFO - 2025-03-02 17:43:05 --> Starting email processing
+CRITICAL - 2025-03-02 17:43:05 --> Error: Call to undefined function App\Controllers\imap_open()
+in APPPATH\Controllers\Customerservice.php on line 223.
+ 1 APPPATH\Controllers\Customerservice.php(34): App\Controllers\Customerservice->processNewEmails()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Customerservice->fetchEmails()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customerservice))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

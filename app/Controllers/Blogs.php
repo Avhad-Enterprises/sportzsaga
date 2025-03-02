@@ -37,7 +37,7 @@ class Blogs extends BaseController
     {
         $blogModel = new blogs_model();
         $blogModel->deletePost($blog_id);
-        return redirect()->to('blogs')->with('success', 'Blog deleted successfully.');
+        return redirect()->to('admin_blogs')->with('success', 'Blog deleted successfully.');
     }
 
     public function addnewblog()
@@ -63,6 +63,7 @@ class Blogs extends BaseController
     {
         // Load the model
         $model = new Blogs_model();
+        $db = \Config\Database::connect();
 
         // Initialize Google Cloud Storage
         $storage = new StorageClient([
@@ -72,53 +73,27 @@ class Blogs extends BaseController
         $bucketName = 'mkv_imagesbackend';
         $bucket = $storage->bucket($bucketName);
 
-        // Handle blog-main-image upload to Google Cloud Storage
-        $blogimage = $this->request->getFile('blog-main-image');
-        if ($blogimage && $blogimage->isValid() && !$blogimage->hasMoved()) {
-            $fileName = $blogimage->getRandomName();
-            $filePath = $blogimage->getTempName();
-            $object = $bucket->upload(
-                fopen($filePath, 'r'),
-                [
-                    'name' => 'blogs/main_images/' . $fileName,
-                    'predefinedAcl' => 'publicRead',
-                ]
-            );
-            $newblogimg = sprintf('https://storage.googleapis.com/%s/blogs/main_images/%s', $bucketName, $fileName);
-        } else {
-            $newblogimg = null;
-        }
+        // Handle blog-pc-image upload to Google Cloud Storage
+        $newblogimg = $this->uploadImage($this->request->getFile('blog-pc-image'), 'blogs/main_images/', $bucket);
 
         // Handle blog-mobile-image upload to Google Cloud Storage
-        $blogmobileimage = $this->request->getFile('blog-mobile-image');
-        if ($blogmobileimage && $blogmobileimage->isValid() && !$blogmobileimage->hasMoved()) {
-            $fileName = $blogmobileimage->getRandomName();
-            $filePath = $blogmobileimage->getTempName();
-            $object = $bucket->upload(
-                fopen($filePath, 'r'),
-                [
-                    'name' => 'blogs/mobile_images/' . $fileName,
-                    'predefinedAcl' => 'publicRead',
-                ]
-            );
-            $newblogmobileimg = sprintf('https://storage.googleapis.com/%s/blogs/mobile_images/%s', $bucketName, $fileName);
-        } else {
-            $newblogmobileimg = null;
-        }
+        $newblogmobileimg = $this->uploadImage($this->request->getFile('blog-mobile-image'), 'blogs/mobile_images/', $bucket);
+
+        // Generate Meta URL from Title
+        $metaUrl = $this->generateSlug($this->request->getPost('blog-title'));
 
         // Gather the rest of the form data
         $data = [
             'blog_title' => $this->request->getPost('blog-title'),
             'blog_description' => $this->request->getPost('blog-description'),
             'main_description' => $this->request->getPost('blog-main-content'),
-            'product_tags' => implode(',', $this->request->getPost('product-tags')),
+            'blog_tags' => $this->request->getPost('blog-tags'),
             'category' => $this->request->getPost('blog-category'),
             'blog_visibility' => $this->request->getPost('blog-visibility'),
-            'is_default' => $this->request->getPost('blog-carousel'),
             'author_name' => $this->request->getPost('blog-author-name'),
             'blog_metatitle' => $this->request->getPost('blog-meta-title'),
             'blog_metadescription' => $this->request->getPost('blog-meta-description'),
-            'blog_metaurl' => $this->request->getPost('blog-meta-url'),
+            'blog_metaurl' => $metaUrl, // Auto-generated URL
             'blog_image' => $newblogimg,
             'blog_mobile_image' => $newblogmobileimg,
             'publish_date_and_time' => $this->request->getPost('publish_date_and_time'),
@@ -133,44 +108,53 @@ class Blogs extends BaseController
         $sectionDescriptions = $this->request->getPost('section_description');
         $sectionImages = $this->request->getFiles('section_image');
 
-        // Validate the number of sections
+        // Validate number of sections (Max 10)
         if (count($sectionTitles) > 10) {
             return redirect()->back()->with('error', 'You cannot add more than 10 sections.');
         }
 
-        // Prepare the section data
+        // Process and store subsections
         foreach ($sectionTitles as $index => $title) {
-            $sectionIndex = $index + 1; // Database column indexes start from 1
-            $sectionImage = $sectionImages['section_image'][$index] ?? null;
-            if ($sectionImage && $sectionImage->isValid() && !$sectionImage->hasMoved()) {
-                $fileName = $sectionImage->getRandomName();
-                $filePath = $sectionImage->getTempName();
-                $object = $bucket->upload(
-                    fopen($filePath, 'r'),
-                    [
-                        'name' => 'blogs/sections/' . $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $sectionImagePath = sprintf('https://storage.googleapis.com/%s/blogs/sections/%s', $bucketName, $fileName);
-            } else {
-                $sectionImagePath = null;
-            }
+            $sectionIndex = $index + 1; // Column indexing starts from 1
+            $sectionImage = isset($sectionImages['section_image'][$index]) ? $sectionImages['section_image'][$index] : null;
 
-            // Add each section data to the main data array
+            // Upload section image if available
+            $sectionImagePath = $this->uploadImage($sectionImage, 'blogs/sections/', $bucket);
+
+            // Add section data dynamically to the main data array
             $data["section_title_$sectionIndex"] = $title;
             $data["section_description_$sectionIndex"] = $sectionDescriptions[$index] ?? null;
             $data["section_image_$sectionIndex"] = $sectionImagePath;
         }
 
-        // Insert main blog data
+        // Insert blog data into database
         $model->insertmyblogpost($data);
 
-        // Redirect to a success page or display a success message
+        // Redirect to success page
         return redirect()->to('admin_blogs')->with('success', 'Blog published successfully!');
     }
 
+    private function uploadImage($image, $folder, $bucket)
+    {
+        if ($image && $image->isValid() && !$image->hasMoved()) {
+            $fileName = $image->getRandomName();
+            $filePath = $image->getTempName();
+            $object = $bucket->upload(
+                fopen($filePath, 'r'),
+                [
+                    'name' => $folder . $fileName,
+                    'predefinedAcl' => 'publicRead',
+                ]
+            );
+            return sprintf('https://storage.googleapis.com/%s/%s%s', $bucket->name(), $folder, $fileName);
+        }
+        return null;
+    }
 
+    private function generateSlug($title)
+    {
+        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
+    }
 
     public function editblogs($blog_id)
     {
@@ -179,13 +163,11 @@ class Blogs extends BaseController
         return view('edit_blog_view', $data);
     }
 
-   
-
     public function editmyblog($blog_id)
     {
         $model = new blogs_model();
         $blog = $model->find($blog_id);
-    
+
         $title = $this->request->getPost('blog-title');
         $description = $this->request->getPost('blog-description');
         $mainContent = $this->request->getPost('blog-main-content');
@@ -193,10 +175,10 @@ class Blogs extends BaseController
         $carousel = $this->request->getPost('blog-carousel');
         $updateimage = $this->request->getFile('blog-main-image');
         $updatemobileimage = $this->request->getFile('blog-mobile-image');
-    
+
         $currentImage = $this->request->getPost('current-blog-image');
         $currentMobileImage = $this->request->getPost('current-blog-mobile-image');
-    
+
         // Initialize Google Cloud Storage client
         $storage = new StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Path to your Google Cloud credentials file
@@ -204,7 +186,7 @@ class Blogs extends BaseController
         ]);
         $bucketName = 'mkv_imagesbackend'; // Your Google Cloud bucket name
         $bucket = $storage->bucket($bucketName);
-    
+
         // Handle main image upload
         if ($updateimage->isValid() && !$updateimage->hasMoved()) {
             $updateimagename = $updateimage->getClientName();
@@ -221,7 +203,7 @@ class Blogs extends BaseController
         } else {
             $updateimagename = $currentImage;
         }
-    
+
         // Handle mobile image upload
         if ($updatemobileimage->isValid() && !$updatemobileimage->hasMoved()) {
             $updatemobileimagename = $updatemobileimage->getClientName();
@@ -238,7 +220,7 @@ class Blogs extends BaseController
         } else {
             $updatemobileimagename = $currentMobileImage;
         }
-    
+
         // Handle additional images (section images)
         $blogData = [
             'blog_title' => $title,
@@ -255,7 +237,7 @@ class Blogs extends BaseController
             'blog_metadescription' => $this->request->getPost('blog-meta-description'),
             'blog_metaurl' => $this->request->getPost('blog-meta-url'),
         ];
-    
+
         // Handle section images upload
         for ($i = 1; $i <= 10; $i++) {
             $fileKey = 'section_image_' . $i;
@@ -263,7 +245,7 @@ class Blogs extends BaseController
             $removeImage = $this->request->getPost('remove_image_' . $i);
             $currentImageKey = 'current_section_image_' . $i;
             $currentImage = $this->request->getPost($currentImageKey);
-    
+
             if ($removeImage === '1') {
                 $blogData[$fileKey] = null;
             } elseif ($file && $file->isValid() && !$file->hasMoved()) {
@@ -281,20 +263,20 @@ class Blogs extends BaseController
             } else {
                 $blogData[$fileKey] = $currentImage;
             }
-    
+
             // Section title and description
             $sectionTitleKey = 'section_title_' . $i;
             $sectionDescriptionKey = 'section_description_' . $i;
             $blogData[$sectionTitleKey] = $this->request->getPost($sectionTitleKey);
             $blogData[$sectionDescriptionKey] = $this->request->getPost($sectionDescriptionKey);
         }
-    
+
         // Update the blog data in the database
         $model->updatablogsdata($blog_id, $blogData);
-    
+
         return redirect()->to('admin_blogs')->with('success', 'Your blog has been updated successfully!');
     }
-    
+
     public function exporttoexcel()
     {
         // Load the model

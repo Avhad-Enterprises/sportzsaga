@@ -40,6 +40,12 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('users/view_all_orders/(:num)', 'Registeredusers::view_all_orders/$1');
    $routes->get('edit/user/(:num)', 'Registeredusers::user_details/$1');
 
+   // Loyality Points
+   $routes->get('registeredusers/loyality_points_history/(:num)', 'Registeredusers::loyality_points_history/$1');
+   $routes->get('registeredusers/referral-history/(:num)', 'Registeredusers::referral_history/$1');
+   $routes->post('registeredusers/updateRefpoints', 'Registeredusers::updateRefpoints');
+   $routes->get('registeredusers/SetLoyaltyPointValue', 'Registeredusers::SetLoyaltyPointValue');
+
    // Users
    $routes->get('registeredusers/edituser/(:num)', 'Registeredusers::edituser/$1');
    $routes->post('registeredusers/updateuserdata/(:num)', 'Registeredusers::updateuserdata/$1');
@@ -171,6 +177,22 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('companies/deletecompany/(:num)', 'CatalogController::deletecompany/$1');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
+
+   //related products
+   $routes->get('addnew_related_product', 'RelatedproductController::index');
+   $routes->get('admin-products/getDistinctFieldValues', 'RelatedproductController::getDistinctFieldValues');
+   $routes->post('admin-products/getProductsByConditions', 'RelatedproductController::getProductsByConditions');
+   $routes->get('admin-products/getSelectedProducts/(:num)', 'RelatedproductController::getSelectedProducts/$1');
+   $routes->post('admin-products/getProductsByIds', 'RelatedproductController::getProductsByIds');
+   $routes->get('admin-products/getConditions/(:num)', 'RelatedproductController::getConditions/$1');
+   $routes->get('getAllProducts', 'RelatedproductController::getAllProducts');
+   $routes->post('admin-products/getFilteredProducts/(:num)', 'RelatedproductController::getFilteredProducts/$1');
+   $routes->post('admin-products/saveRelatedProducts', 'RelatedproductController::saveRelatedProducts');
+   $routes->post('getProductsByTags', 'RelatedproductController::getProductsByTags');
+   $routes->get('relatedproduct_table_view', 'RelatedproductController::tableview');
+   $routes->get('admin-products/deleterelatedproduct/(:num)', 'RelatedproductController::deleteRelatedProduct/$1');
+   $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
+   $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
 });
 
 // Admin Dashboard Controller;
@@ -504,5 +526,5 @@ $routes->post('marquee-bottom-text/save', 'Store::saveBottomText');
 $routes->post('save-email-popup', 'EmailPopupController::save');
 $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
-$routes->delete('marquee-text/delete-marquee(:num)', 'Store::delete_marquee/$1');
-$routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::update/$1');
+$routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
+$routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');

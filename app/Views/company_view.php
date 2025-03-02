@@ -245,7 +245,6 @@
         });
     </script>
 
-
 </body>
 <!-- Footer View Start -->
 <?= $this->include('footer_view') ?>

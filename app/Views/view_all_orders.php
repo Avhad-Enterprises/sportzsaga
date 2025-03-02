@@ -94,14 +94,27 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <div class="row pb-10">
-                    
+                <!-- Export Datatable Start -->
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title mb-10">
+                            <p>
+                                <a href="<?= base_url() ?>registeredusers/edituser/<?= $user_id ?>" class="px-2">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                Back
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">All Orders</h4>
+                        <h4 class="text-blue h4">Order History</h4>
                     </div>
                     <div class="pb-20">
-                        <table class="table hover multiple-select-row data-table-export">
+                        <table class="table hover table-hover">
                             <thead>
                                 <tr>
                                     <th>Order Number</th>
@@ -141,6 +154,8 @@
                         </table>
                     </div>
                 </div>
+
+
                 <!-- Export Datatable End -->
             </div>
         </div>

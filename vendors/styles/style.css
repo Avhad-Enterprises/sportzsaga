@@ -774,7 +774,7 @@ p {
     font-weight: 400;
     padding: .657rem 1rem;
     letter-spacing: 0;
-    width: 500px;
+    /* width: 500px; */
     text-wrap: auto;
     color: #444;
     font-family: 'Inter', sans-serif;
@@ -6947,4 +6947,17 @@ red {
 
 textarea {
     white-space: pre-wrap;
+}
+
+.resizable-textarea {
+    resize: vertical;
+    overflow: auto;
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
 }

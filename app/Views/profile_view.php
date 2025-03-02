@@ -118,7 +118,7 @@
                             <div class="pd-20 card-box height-100-p">
                                 <div class="profile-photo">
                                     <a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
-                                    <img src="<?= $user['profile_img'] ?>" alt="" class="avatar-photo" />
+                                    <img src="<?= !empty($user['profile_img']) ? $user['profile_img'] : 'https://storage.googleapis.com/mkv_imagesbackend/imaages/usericon.jpg'; ?>" alt="" class="avatar-photo" />
                                     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
@@ -130,11 +130,15 @@
                                                 </div>
                                                 <div class="modal-body text-center">
                                                     <div class="img-container mb-3">
-                                                        <img id="image" src="<?= $user['profile_img'] ?>" alt="Profile Picture" class="img-fluid rounded-circle" style="max-width: 160px; max-height: 160px;" />
+                                                        <img id="image-preview" src="<?= esc($user['profile_img']) ?>" alt="Profile Picture"
+                                                            class="img-fluid rounded-circle" style="max-width: 160px; max-height: 160px;" />
                                                     </div>
-                                                    <form id="profile-picture-form" action="<?= base_url('profile/uploadProfilePicture'); ?>" method="POST" enctype="multipart/form-data" class="mb-3">
-                                                        <input type="file" name="profile-picture" class="btn btn-primary mb-2" accept="image/*" />
-                                                        <small class="d-block">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 160 x 160 px.</small>
+
+                                                    <form id="profile-picture-form" action="<?= base_url('profile/uploadProfilePicture'); ?>" method="POST"
+                                                        enctype="multipart/form-data" class="mb-3">
+                                                        <input type="file" id="profile-picture" name="profile-picture" class="btn btn-primary mb-2" accept="image/*" />
+                                                        <div id="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
+                                                        <small class="d-block">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 300 x 300 px.</small>
                                                         <button type="submit" class="btn btn-success mt-2">Upload</button>
                                                     </form>
                                                 </div>
@@ -166,7 +170,7 @@
                                         </li>
                                         <li>
                                             <span>Address:</span>
-                                            <?= $user['address_information']; ?>
+                                            <?= $user['address_one']; ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -200,7 +204,7 @@
                                                                 }
                                                                 $tasks_by_month[$month][] = $task;
                                                             }
-                                                        
+
                                                             // Render tasks by month
                                                             foreach ($tasks_by_month as $month => $tasks) {
                                                                 echo '<div class="timeline-month"><h5>' . $month . '</h5></div>';
@@ -212,13 +216,13 @@
                                                                     echo '<span>' . date('d M', strtotime($task['due_date'])) . '</span>';
                                                                     echo '<small style="display: block; font-size: 12px;">Due Date</small>';
                                                                     echo '</div>';
-                                                        
+
                                                                     // Task name and status icon
                                                                     echo '<div class="task-header">';
                                                                     echo '<div class="task-name" style="display: inline-block;">';
                                                                     echo '<i class="ion-android-alarm-clock"></i> ' . htmlspecialchars($task['task_name']);
                                                                     echo '</div>';
-                                                        
+
                                                                     // Status icon with left margin
                                                                     echo '<div class="task-status" style="display: inline-block; margin-left: 10px;">';
                                                                     if ($task['status'] == 'pending') {
@@ -228,11 +232,11 @@
                                                                     }
                                                                     echo '</div>';
                                                                     echo '</div>';
-                                                        
+
                                                                     // Description and assigned_to
                                                                     echo '<p>' . htmlspecialchars($task['description']) . '</p>';
                                                                     echo '<div class="assigned-to">Assigned to: ' . htmlspecialchars($task['assigned_to']) . '</div>';
-                                                        
+
                                                                     echo '</li>';
                                                                 }
                                                                 echo '</ul></div>';
@@ -247,98 +251,98 @@
                                             <div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
                                                 <div class="profile-setting">
                                                     <?php foreach ($userData as $user) : ?>
-                                                    <form method="post" action="<?= base_url('update_profile/' . $user['user_id']) ?>">
-                                                        <ul class="profile-edit-list row">
-                                                            <li class="weight-500 col-md-6">
-                                                                <h4 class="text-blue h5 mb-20">
-                                                                    Edit Your Personal Settings
-                                                                </h4>
-                                                                <div class="form-group">
-                                                                    <label>Full Name</label>
-                                                                    <input class="form-control form-control-lg" name="name" value="<?= set_value('name', $user['name']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Title</label>
-                                                                    <input class="form-control form-control-lg" name="employee_role" value="<?= set_value('employee_role', $user['employee_role']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Email</label>
-                                                                    <input class="form-control form-control-lg" name="email" value="<?= set_value('email', $user['email']) ?>" type="email" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Date of Birth</label>
-                                                                    <input class="form-control form-control-lg date-picker" name="dob" value="<?= set_value('dob', $user['dob']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Gender</label>
-                                                                    <div class="d-flex">
-                                                                        <div class="custom-control custom-radio mb-5 mr-20">
-                                                                            <input type="radio" id="male" name="gender" value="male" class="custom-control-input" <?= set_radio('gender', 'male', $user['gender'] == 'male') ?> />
-                                                                            <label class="custom-control-label weight-400" for="male">Male</label>
-                                                                        </div>
-                                                                        <div class="custom-control custom-radio mb-5">
-                                                                            <input type="radio" id="female" name="gender" value="female" class="custom-control-input" <?= set_radio('gender', 'female', $user['gender'] == 'female') ?> />
-                                                                            <label class="custom-control-label weight-400" for="female">Female</label>
+                                                        <form method="post" action="<?= base_url('update_profile/' . $user['user_id']) ?>">
+                                                            <ul class="profile-edit-list row">
+                                                                <li class="weight-500 col-md-6">
+                                                                    <h4 class="text-blue h5 mb-20">
+                                                                        Edit Your Personal Settings
+                                                                    </h4>
+                                                                    <div class="form-group">
+                                                                        <label>Full Name</label>
+                                                                        <input class="form-control form-control-lg" name="name" value="<?= set_value('name', $user['name']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Title</label>
+                                                                        <input class="form-control form-control-lg" name="employee_role" value="<?= set_value('employee_role', $user['employee_role']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Email</label>
+                                                                        <input class="form-control form-control-lg" name="email" value="<?= set_value('email', $user['email']) ?>" type="email" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Date of Birth</label>
+                                                                        <input class="form-control form-control-lg date-picker" name="dob" value="<?= set_value('dob', $user['dob']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Gender</label>
+                                                                        <div class="d-flex">
+                                                                            <div class="custom-control custom-radio mb-5 mr-20">
+                                                                                <input type="radio" id="male" name="gender" value="male" class="custom-control-input" <?= set_radio('gender', 'male', $user['gender'] == 'male') ?> />
+                                                                                <label class="custom-control-label weight-400" for="male">Male</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio mb-5">
+                                                                                <input type="radio" id="female" name="gender" value="female" class="custom-control-input" <?= set_radio('gender', 'female', $user['gender'] == 'female') ?> />
+                                                                                <label class="custom-control-label weight-400" for="female">Female</label>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Country</label>
-                                                                    <input class="form-control form-control-lg" name="country" value="<?= set_value('country', $user['country']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>State/Province/Region</label>
-                                                                    <input class="form-control form-control-lg" name="state" value="<?= set_value('state', $user['state']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Pincode Code</label>
-                                                                    <input class="form-control form-control-lg" name="pincode" value="<?= set_value('pincode', $user['pincode']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Phone Number</label>
-                                                                    <input class="form-control form-control-lg" name="phone_no" value="<?= set_value('phone_no', $user['phone_no']) ?>" type="text" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Address</label>
-                                                                    <textarea class="form-control" name="address_information"><?= set_value('address_information', $user['address_information']) ?></textarea>
-                                                                </div>
-                                                                <div class="form-group mb-0">
-                                                                    <input type="submit" class="btn btn-primary" value="Update Information" />
-                                                                </div>
-                                                            </li>
-                                                            <li class="weight-500 col-md-6">
-                                                                <div class="row">
-                                                                    <h4 class="text-blue col-9 h5 mb-20">
-                                                                        Manage Pickup Location 
-                                                                    </h4>
-                                                                    <a class="bg-light-blue col-3 btn text-blue weight-500" data-toggle="modal" data-target="#addLocationModal">
-                                                                        <i class="ion-plus-round"></i>
-                                                                        Add
-                                                                    </a>
-                                                                </div>
-                                                                <div id="pickup_location_container">
-                                                                    <table class="table dataTable hover">
-                                                                    <?php foreach ($warehouse_locations as $location) : ?>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);" class="edit-location" data-id="<?= $location['id'] ?>">
-                                                                                    <?= $location['pickup_location'] ?>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a class=" delete-location" 
-                                                                                        data-id="<?= $location['id'] ?>" 
-                                                                                        data-name="<?= $location['pickup_location'] ?>">
-                                                                                        <i class="icon-copy dw dw-delete-3"></i>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    <?php endforeach; ?>
-                                                                    </table>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </form>
+                                                                    <div class="form-group">
+                                                                        <label>Country</label>
+                                                                        <input class="form-control form-control-lg" name="country" value="<?= set_value('country', $user['country']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>State/Province/Region</label>
+                                                                        <input class="form-control form-control-lg" name="state" value="<?= set_value('state', $user['state']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Pincode Code</label>
+                                                                        <input class="form-control form-control-lg" name="pincode" value="<?= set_value('pincode', $user['pincode']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Phone Number</label>
+                                                                        <input class="form-control form-control-lg" name="phone_no" value="<?= set_value('phone_no', $user['phone_no']) ?>" type="text" />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Address</label>
+                                                                        <textarea class="form-control" name="address_information"><?= set_value('address_one', $user['address_one']) ?></textarea>
+                                                                    </div>
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="submit" class="btn btn-primary" value="Update Information" />
+                                                                    </div>
+                                                                </li>
+                                                                <li class="weight-500 col-md-6">
+                                                                    <div class="row">
+                                                                        <h4 class="text-blue col-9 h5 mb-20">
+                                                                            Manage Pickup Location
+                                                                        </h4>
+                                                                        <a class="bg-light-blue col-3 btn text-blue weight-500" data-toggle="modal" data-target="#addLocationModal">
+                                                                            <i class="ion-plus-round"></i>
+                                                                            Add
+                                                                        </a>
+                                                                    </div>
+                                                                    <div id="pickup_location_container">
+                                                                        <table class="table dataTable hover">
+                                                                            <?php foreach ($warehouse_locations as $location) : ?>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <a href="javascript:void(0);" class="edit-location" data-id="<?= $location['id'] ?>">
+                                                                                            <?= $location['pickup_location'] ?>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a class=" delete-location"
+                                                                                            data-id="<?= $location['id'] ?>"
+                                                                                            data-name="<?= $location['pickup_location'] ?>">
+                                                                                            <i class="icon-copy dw dw-delete-3"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            <?php endforeach; ?>
+                                                                        </table>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </form>
                                                     <?php endforeach; ?>
                                                     <!-- Add Location Modal -->
                                                     <div class="modal fade" id="addLocationModal" tabindex="-1" role="dialog" aria-labelledby="addLocationModalLabel" aria-hidden="true">
@@ -473,7 +477,8 @@
                                                     <td><?= $task['task_name'] ?></td>
                                                     <td><?= $task['description'] ?></td>
                                                     <td><?= $task['due_date'] ?></td>
-                                                    <td><?php $date = new DateTime($task['created_at']);echo $date->format('d-F-Y h:i A');?></td>
+                                                    <td><?php $date = new DateTime($task['created_at']);
+                                                        echo $date->format('d-F-Y h:i A'); ?></td>
                                                     <td><?= $task['priority_level'] ?></td>
                                                     <td class="<?= ($task['status'] == 'pending') ? 'text-uppercase text-danger' : 'text-uppercase text-success' ?>">
                                                         <?= ucfirst($task['status']) ?>
@@ -516,108 +521,108 @@
             </div>
         </div>
         <!-- Page Main Content End -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Get all task names
-        const taskNames = document.querySelectorAll('.task-name');
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get all task names
+                const taskNames = document.querySelectorAll('.task-name');
 
-        taskNames.forEach(taskName => {
-            taskName.addEventListener('click', function () {
-                // Get task details from data attributes
-                const taskName = this.dataset.taskName;
-                const taskDescription = this.dataset.taskDescription;
-                const taskDueDate = this.dataset.taskDueDate;
-                const taskTime = this.dataset.taskTime;
+                taskNames.forEach(taskName => {
+                    taskName.addEventListener('click', function() {
+                        // Get task details from data attributes
+                        const taskName = this.dataset.taskName;
+                        const taskDescription = this.dataset.taskDescription;
+                        const taskDueDate = this.dataset.taskDueDate;
+                        const taskTime = this.dataset.taskTime;
 
-                // Set task details in the modal
-                document.getElementById('modalTaskName').innerText = taskName;
-                document.getElementById('modalTaskDescription').innerText = taskDescription;
-                document.getElementById('modalTaskDueDate').innerText = taskDueDate;
-                document.getElementById('modalTaskTime').innerText = taskTime;
+                        // Set task details in the modal
+                        document.getElementById('modalTaskName').innerText = taskName;
+                        document.getElementById('modalTaskDescription').innerText = taskDescription;
+                        document.getElementById('modalTaskDueDate').innerText = taskDueDate;
+                        document.getElementById('modalTaskTime').innerText = taskTime;
 
-                // Show the modal
-                $('#taskDetailsModal').modal('show');
-            });
-        });
-    });
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- JavaScript -->
-<script>
-    // Add Location Form Submission
-    document.getElementById('addLocationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Disable submit button to prevent double submission
-        const submitButton = this.querySelector('button[type="submit"]');
-        if (submitButton) submitButton.disabled = true;
-        
-        const formData = new FormData(this);
-        
-        // Log form data for debugging
-        console.log('Form data being sent:');
-        for (let pair of formData.entries()) {
-            console.log(pair[0] + ': ' + pair[1]);
-        }
-
-        fetch('<?= base_url('warehouse/addLocation') ?>', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => {
-                    throw new Error(err.message || 'Server error');
+                        // Show the modal
+                        $('#taskDetailsModal').modal('show');
+                    });
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                alert(data.message);
-                $('#addLocationModal').modal('hide');
-                this.reset(); // Reset form
-                location.reload();
-            } else {
-                alert(data.message || 'Failed to add location');
-                if (submitButton) submitButton.disabled = false;
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while adding the location: ' + error.message);
-            if (submitButton) submitButton.disabled = false;
-        });
-    });
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- JavaScript -->
+        <script>
+            // Add Location Form Submission
+            document.getElementById('addLocationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
 
-    // Edit Location - Open Modal with Data
-    document.querySelectorAll('.edit-location').forEach(link => {
-        link.addEventListener('click', function() {
-            const locationId = this.getAttribute('data-id');
-            
-            fetch(`<?= base_url('warehouse/getLocation/') ?>${locationId}`, {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                // Disable submit button to prevent double submission
+                const submitButton = this.querySelector('button[type="submit"]');
+                if (submitButton) submitButton.disabled = true;
+
+                const formData = new FormData(this);
+
+                // Log form data for debugging
+                console.log('Form data being sent:');
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + pair[1]);
                 }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch location data');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (!data || !data.id) {
-                    throw new Error('Invalid location data received');
-                }
-                
-                const modalBody = document.querySelector('#editLocationModal .modal-body');
-                modalBody.innerHTML = `
+
+                fetch('<?= base_url('warehouse/addLocation') ?>', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => {
+                                throw new Error(err.message || 'Server error');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            $('#addLocationModal').modal('hide');
+                            this.reset(); // Reset form
+                            location.reload();
+                        } else {
+                            alert(data.message || 'Failed to add location');
+                            if (submitButton) submitButton.disabled = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while adding the location: ' + error.message);
+                        if (submitButton) submitButton.disabled = false;
+                    });
+            });
+
+            // Edit Location - Open Modal with Data
+            document.querySelectorAll('.edit-location').forEach(link => {
+                link.addEventListener('click', function() {
+                    const locationId = this.getAttribute('data-id');
+
+                    fetch(`<?= base_url('warehouse/getLocation/') ?>${locationId}`, {
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Failed to fetch location data');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (!data || !data.id) {
+                                throw new Error('Invalid location data received');
+                            }
+
+                            const modalBody = document.querySelector('#editLocationModal .modal-body');
+                            modalBody.innerHTML = `
                     <input type="hidden" name="id" value="${data.id}">
                     <div class="form-group">
                         <label for="pickup_location">Pickup Location Name</label>
@@ -668,67 +673,67 @@
                         <input type="text" class="form-control" name="origin_area" value="${data.OriginArea || ''}" required>
                     </div>
                 `;
-                
-                $('#editLocationModal').modal('show');
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to load location data: ' + error.message);
-            });
-        });
-    });
 
-    // Edit Location Form Submission
-    // Edit Location Form Submission
-    document.getElementById('editLocationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Disable form submission button to prevent double submission
-        const submitButton = this.querySelector('button[type="submit"]');
-        if (submitButton) submitButton.disabled = true;
-        
-        const formData = new FormData(this);
-        
-        // Log the form data for debugging
-        console.log('Form data being sent:');
-        for (let pair of formData.entries()) {
-            console.log(pair[0] + ': ' + pair[1]);
-        }
-
-        fetch('<?= base_url('warehouse/editLocation') ?>', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => {
-                    throw new Error(err.message || 'Server error');
+                            $('#editLocationModal').modal('show');
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Failed to load location data: ' + error.message);
+                        });
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                alert(data.message);
-                location.reload();
-            } else {
-                alert(data.message || 'Failed to update location');
-                if (submitButton) submitButton.disabled = false;
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while updating the location: ' + error.message);
-            if (submitButton) submitButton.disabled = false;
-        });
-    });
+            });
 
-    // Confirm Delete
-    // Delete confirmation modal HTML
-    const deleteModalHTML = `
+            // Edit Location Form Submission
+            // Edit Location Form Submission
+            document.getElementById('editLocationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Disable form submission button to prevent double submission
+                const submitButton = this.querySelector('button[type="submit"]');
+                if (submitButton) submitButton.disabled = true;
+
+                const formData = new FormData(this);
+
+                // Log the form data for debugging
+                console.log('Form data being sent:');
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + pair[1]);
+                }
+
+                fetch('<?= base_url('warehouse/editLocation') ?>', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => {
+                                throw new Error(err.message || 'Server error');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            location.reload();
+                        } else {
+                            alert(data.message || 'Failed to update location');
+                            if (submitButton) submitButton.disabled = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while updating the location: ' + error.message);
+                        if (submitButton) submitButton.disabled = false;
+                    });
+            });
+
+            // Confirm Delete
+            // Delete confirmation modal HTML
+            const deleteModalHTML = `
     <div class="modal fade" id="deleteLocationModal" tabindex="-1" role="dialog" aria-labelledby="deleteLocationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -751,76 +756,76 @@
     </div>
     `;
 
-    // Add the modal HTML to the document body
-    document.body.insertAdjacentHTML('beforeend', deleteModalHTML);
+            // Add the modal HTML to the document body
+            document.body.insertAdjacentHTML('beforeend', deleteModalHTML);
 
-    // Store the location ID for deletion
-    let locationToDelete = null;
+            // Store the location ID for deletion
+            let locationToDelete = null;
 
-    // Function to show delete confirmation modal
-    function showDeleteConfirmation(locationId, locationName) {
-        locationToDelete = locationId;
-        document.getElementById('deleteLocationName').textContent = locationName;
-        $('#deleteLocationModal').modal('show');
-    }
-
-    // Delete Location click handler
-    document.querySelectorAll('.delete-location').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const locationId = this.getAttribute('data-id');
-            const locationName = this.getAttribute('data-name');
-            showDeleteConfirmation(locationId, locationName);
-        });
-    });
-
-    // Confirm delete button click handler
-    document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
-        if (!locationToDelete) {
-            alert('No location selected for deletion');
-            return;
-        }
-
-        // Disable the delete button to prevent double submission
-        this.disabled = true;
-        this.textContent = 'Deleting...';
-
-        fetch(`<?= base_url('warehouse/deleteLocation/') ?>${locationToDelete}`, {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
+            // Function to show delete confirmation modal
+            function showDeleteConfirmation(locationId, locationName) {
+                locationToDelete = locationId;
+                document.getElementById('deleteLocationName').textContent = locationName;
+                $('#deleteLocationModal').modal('show');
             }
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => {
-                    throw new Error(err.message || 'Server error');
+
+            // Delete Location click handler
+            document.querySelectorAll('.delete-location').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const locationId = this.getAttribute('data-id');
+                    const locationName = this.getAttribute('data-name');
+                    showDeleteConfirmation(locationId, locationName);
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                alert(data.message);
-                $('#deleteLocationModal').modal('hide');
-                // Reload the page to update the location list
-                location.reload();
-            } else {
-                throw new Error(data.message || 'Failed to delete location');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while deleting the location: ' + error.message);
-            // Re-enable the delete button
-            this.disabled = false;
-            this.textContent = 'Delete Location';
-        })
-        .finally(() => {
-            locationToDelete = null;
-        });
-    });
-</script>
+            });
+
+            // Confirm delete button click handler
+            document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+                if (!locationToDelete) {
+                    alert('No location selected for deletion');
+                    return;
+                }
+
+                // Disable the delete button to prevent double submission
+                this.disabled = true;
+                this.textContent = 'Deleting...';
+
+                fetch(`<?= base_url('warehouse/deleteLocation/') ?>${locationToDelete}`, {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => {
+                                throw new Error(err.message || 'Server error');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            $('#deleteLocationModal').modal('hide');
+                            // Reload the page to update the location list
+                            location.reload();
+                        } else {
+                            throw new Error(data.message || 'Failed to delete location');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while deleting the location: ' + error.message);
+                        // Re-enable the delete button
+                        this.disabled = false;
+                        this.textContent = 'Delete Location';
+                    })
+                    .finally(() => {
+                        locationToDelete = null;
+                    });
+            });
+        </script>
 
         <!-- Footer View Start -->
         <?= $this->include('footer_view') ?>

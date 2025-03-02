@@ -99,7 +99,7 @@
                 <div class="">
                     <div class="clearfix">
                         <div class="pull-left">
-                            <h4 class=" h4">Edit User Info</h4>
+                            <h4 class=" h4">User Info</h4>
                         </div>
                     </div>
                 </div>
@@ -110,17 +110,42 @@
                             <div class="col-md-8">
 
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Customer</p>
+                                    <p class="text-blue">
+                                        <span class="badge 
+                                                <?php
+                                                if ($user['account_status'] === 'active') {
+                                                    echo 'badge-success';
+                                                } elseif ($user['account_status'] === 'inactive') {
+                                                    echo 'badge-warning';
+                                                } elseif ($user['account_status'] === 'suspended') {
+                                                    echo 'badge-danger';
+                                                } else {
+                                                    echo 'badge-secondary';
+                                                }
+                                                ?>">
+                                            <?= ucfirst($user['account_status']) ?>
+                                        </span>
+                                    </p>
+
 
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="">Risk Profile</label>
-                                                <?php if ($user['risk_profile'] === 'No'): ?>
-                                                    <span class="badge badge-pill" data-bgcolor="#28a745" data-color="#ffffff"><?= $user['risk_profile'] ?></span>
-                                                <?php else: ?>
-                                                    <span class="badge badge-pill" data-bgcolor="#DA1614" data-color="#ffffff"><?= $user['risk_profile'] ?></span>
-                                                <?php endif; ?>
+                                                <?php
+
+                                                $riskProfile = !empty($user['risk_profile']) ? $user['risk_profile'] : 'Low';
+
+                                                $badgeClass = 'badge-success';
+                                                if ($riskProfile === 'High') {
+                                                    $badgeClass = 'badge-danger';
+                                                } elseif ($riskProfile === 'Medium') {
+                                                    $badgeClass = 'badge-warning';
+                                                }
+                                                ?>
+                                                <span class="badge badge-pill <?= $badgeClass ?>">
+                                                    <?= ucfirst($riskProfile) ?>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -163,31 +188,51 @@
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label>Account Status</label>
-                                                <select class="form-control" name="account_status" required>
-                                                    <option value="">Select Account Status</option>
-                                                    <option value="active" <?= $user['account_status'] == 'active' ? 'selected' : '' ?>>Active</option>
-                                                    <option value="inactive" <?= $user['account_status'] == 'inactive' ? 'selected' : '' ?>>Inactive</option>
-                                                </select>
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">This field can't be empty</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <label for="" class="form-label">Referral ID
+                                                        (<a href="<?= base_url() ?>registeredusers/referral-history/<?= $user['user_id'] ?>">History</a>)
+                                                    </label>
+                                                    <div class="pointer" data-toggle="modal" data-target="#referralPointsModal">Set</div>
+                                                </div>
+                                                <input type="text" class="form-control" id="" value="<?= $user['referral_id'] ?>" placeholder="Referral ID" readonly>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Total Amount Spent</label>
-                                                <i>
-                                                    <p>&#8377; <?= number_format($amount_spent, 2) ?></p>
-                                                </i>
+                                                <input type="number" class="form-control" id="" value="<?= number_format($amount_spent, 2) ?>" placeholder="Spend" readonly>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Tags</label>
-                                                <input type="text" name="tags" value="<?= $user['tags'] ?>" data-role="tagsinput" />
+                                                <h6 class="card-title">
+                                                    Loyalty
+                                                    <?php
+                                                    // Set default value to 'NA' if loyalty_program_status is empty or not set
+                                                    $loyaltyStatus = !empty($user['loyalty_program_status']) ? $user['loyalty_program_status'] : 'NA';
+
+                                                    // Determine Bootstrap Badge Class
+                                                    $badgeClass = 'badge-secondary'; // Default for NA (Gray)
+                                                    if ($loyaltyStatus === 'active') {
+                                                        $badgeClass = 'badge-success'; // Green for Active
+                                                    } elseif ($loyaltyStatus === 'inactive') {
+                                                        $badgeClass = 'badge-warning'; // Yellow for Inactive
+                                                    }
+                                                    ?>
+                                                    <span class="badge <?= $badgeClass ?>">
+                                                        <?= ucfirst($loyaltyStatus) ?>
+                                                    </span>
+                                                </h6>
+                                                <div class="form-group">
+                                                    <input type="number" class="form-control" id="" value="<?= $user['loyalty_points'] ?>" placeholder="Points" readonly>
+                                                    <div class="d-flex justify-content-between">
+                                                        <label for="" class="form-label">Reward Points (<a href="<?= base_url() ?>registeredusers/loyality_points_history/<?= $user['user_id'] ?>">History</a>)</label>
+                                                        <p for="">1 Point = <?= $loyalty_point_value ?> GBP <a href="<?= base_url() ?>registeredusers/SetLoyaltyPointValue">Change</a></p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -243,39 +288,6 @@
                                     <?php else: ?>
                                         <p>No abandoned cart items.</p>
                                     <?php endif; ?>
-                                </div>
-
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue mb-30">Royality Program</p>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Loyalty Program Status</label>
-                                                <select class="form-control" name="loyalty_program_status">
-                                                    <option value="active" <?= $user['loyalty_program_status'] == 'active' ? 'selected' : '' ?>>Active</option>
-                                                    <option value="inactive" <?= $user['loyalty_program_status'] == 'inactive' ? 'selected' : '' ?>>Inactive</option>
-                                                </select>
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">This field can't be empty</div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Reward Points</label>
-                                                <input class="form-control" name="reward_points" value="<?= $user['reward_points'] ?>" type="number" />
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">This field can't be empty</div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Credit Balance</label>
-                                                <input class="form-control" name="credit_balance" value="<?= $user['credit_balance'] ?>" type="number" step="0.01" />
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">This field can't be empty</div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
@@ -387,101 +399,65 @@
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Customer Address</p>
-
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>Shipping Address</label>
-                                            <div class="form-group">
-                                                <?= $user['address_information'] ?>, <?= $user['landmark'] ?>, <?= $user['city'] ?>, <?= $user['state'] ?>, <?= $user['country'] ?>, <?= $user['pincode'] ?>
-                                                <button id="editAddress" class="btn btn-sm btn-light ml-2" type="button">Edit</button>
-                                            </div>
+                                    <div class="form_section">
+                                        <div class="form-group">
+                                            <label for="" class="form-label">Address Line 1</label>
+                                            <input type="text" class="form-control" id="" value="<?= $user['address_one'] ?>" placeholder="Address line 2">
                                         </div>
-                                    </div>
-
-                                    <div id="addressForm" style="display: none;">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label>Address Line 1</label>
-                                                    <input class="form-control" name="address_information" value="<?= $user['address_information'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
-                                                </div>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="" class="form-label">Address Line 2</label>
+                                            <input type="text" class="form-control" id="" value="<?= $user['address_two'] ?>" placeholder="Address line 2">
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label>Landmark</label>
-                                                    <input class="form-control" name="landmark" value="<?= $user['landmark'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label>Pincode</label>
-                                                    <input class="form-control" name="pincode" value="<?= $user['pincode'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label>City</label>
-                                                    <input class="form-control" name="city" value="<?= $user['city'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label>State</label>
-                                                    <input class="form-control" name="state" value="<?= $user['state'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Country</label>
-                                                    <input class="form-control" name="country" value="<?= $user['country'] ?>" type="text" />
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                    <div class="invalid-feedback">This field can't be empty</div>
+                                                    <label for="" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="" value="<?= $user['city'] ?>" placeholder="City">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="" class="form-label">State</label>
+                                                    <input type="text" class="form-control" id="" value="<?= $user['state'] ?>" placeholder="State">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="" class="form-label">Pincode</label>
+                                                    <input type="text" class="form-control" id="" value="<?= $user['pincode'] ?>" placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="" class="form-label">Country</label>
+                                                    <input type="text" class="form-control" id="" value="<?= $user['country'] ?>" placeholder="Name">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                </div>
+
+                                <div class="pd-20 card-box mb-30">
                                     <div class="form-group">
                                         <label>Notes</label>
-                                        <input class="form-control" name="notes" value="<?= $user['notes'] ?>" type="text" />
+                                        <textarea class="form-control resizable-textarea" name="notes"><?= $user['notes'] ?></textarea>
                                         <div class="valid-feedback">Looks good!</div>
                                         <div class="invalid-feedback">This field can't be empty</div>
                                     </div>
-                                    
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Change Password</p>
-                                
+
                                     <div class="form-group">
                                         <label>Current Password</label>
                                         <div class="input-group">
-                                            <input class="form-control" value="<?= $user['password'] ?>" type="text" id="current-password" disabled />
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" id="edit-password-btn" type="button">Edit</button>
-                                            </div>
+                                            <input class="form-control" value="<?= $user['password'] ?>" type="password" id="current-password" disabled />
                                         </div>
                                     </div>
-                                
+
                                     <div id="new-password-fields" style="display:none;">
                                         <div class="form-group">
                                             <label>New Password</label>
@@ -496,7 +472,16 @@
                                             <div class="invalid-feedback">This field can't be empty</div>
                                         </div>
                                     </div>
-                                    
+
+                                </div>
+
+                                <div class="pd-20 card-box mb-30">
+                                    <div class="form-group">
+                                        <p class="text-blue">Tags</p>
+                                        <div class="mb-20">
+                                            <input type="text" class="form-control" value="<?= $user['tags'] ?>" data-role="tagsinput" id="user_tags" name="user_tags" />
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -669,6 +654,36 @@
             </div>
         </div>
         <!-- Page Main Content End -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="referralPointsModal" tabindex="-1" role="dialog" aria-labelledby="referralPointsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="referralPointsModalLabel">Manage Referral Points</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="<?= base_url('registeredusers/updateRefpoints') ?>" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="points_for_referrer">Points for Referrer:</label>
+                                <input type="number" class="form-control" id="points_for_referrer" name="points_for_referrer" value="<?= $referralConfig['points_for_referrer'] ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="points_for_referred">Points for Referred User:</label>
+                                <input type="number" class="form-control" id="points_for_referred" name="points_for_referred" value="<?= $referralConfig['points_for_referred'] ?>" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 </body>
 <!-- Footer View Start -->

@@ -1454,6 +1454,7 @@ class Store extends BaseController
         }
     }
 
+    
     //<!------------------------------------------------------------------------------------Home Collection------------------------------------------------------------------------------------------------------------>
     public function saveCollection()
     {
@@ -2010,11 +2011,11 @@ class Store extends BaseController
         ];
 
         // Check if the row with ID 1 exists
-        $existingRow = $model->db->table('marqueebottomText')->where('id', 1)->get()->getRowArray();
+        $existingRow = $model->db->table('marqueebottomtext')->where('id', 1)->get()->getRowArray();
 
         if ($existingRow) {
             // If the row exists, update it
-            if ($model->db->table('marqueebottomText')->update($data, ['id' => 1])) {
+            if ($model->db->table('marqueebottomtext')->update($data, ['id' => 1])) {
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Data updated successfully']);
             } else {
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update data']);
@@ -2022,7 +2023,7 @@ class Store extends BaseController
         } else {
             // If the row doesn't exist, insert it with ID 1
             $data['id'] = 1;
-            if ($model->db->table('marqueebottomText')->insert($data)) {
+            if ($model->db->table('marqueebottomtext')->insert($data)) {
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Data saved successfully']);
             } else {
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save data']);
