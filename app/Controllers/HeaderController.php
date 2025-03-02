@@ -219,4 +219,22 @@ class HeaderController extends Controller
 
         return redirect()->to(base_url('/pages'))->with('error', 'Invalid request.');
     }
+
+    public function delete_page($id)
+    {
+        $pageModel = new PageModel();
+
+        // Check if the page exists
+        $page = $pageModel->find($id);
+        if (!$page) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Page not found'])->setStatusCode(404);
+        }
+
+        // Delete the page
+        if ($pageModel->delete($id)) {
+            return $this->response->setJSON(['success' => true, 'message' => 'Page deleted successfully'])->setStatusCode(200);
+        } else {
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete page'])->setStatusCode(500);
+        }
+    }
 }

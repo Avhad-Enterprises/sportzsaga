@@ -3640,7 +3640,7 @@
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription1">Description 1</label>
                                                 <textarea class="form-control" name="marqueebottomDescription1"
-                                                    id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription1'] ?>"</textarea>
+                                                    id="marqueebottomDescription2"><?= $marqueebottomText['marqueebottomDescription1'] ?></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomText2">Enter text 2</label>
@@ -3651,7 +3651,7 @@
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription2">Description2</label>
                                                 <textarea class="form-control" name="marqueebottomDescription2"
-                                                    id="marqueebottomDescription2">value="<?= $marqueebottomText['marqueebottomDescription2'] ?>"</textarea>
+                                                    id="marqueebottomDescription2"><?= $marqueebottomText['marqueebottomDescription2'] ?></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="marqueebottomText3">Enter text 3</label>
@@ -3662,7 +3662,7 @@
                                             <div class="form-group">
                                                 <label for="marqueebottomDescription3">Description 3</label>
                                                 <textarea class="form-control" name="marqueebottomDescription3"
-                                                    id="marqueebottomDescription3">value="<?= $marqueebottomText['marqueebottomDescription3'] ?>"</textarea>
+                                                    id="marqueebottomDescription3"><?= $marqueebottomText['marqueebottomDescription3'] ?></textarea>
                                             </div>
                                         </div>
                                     </div>
