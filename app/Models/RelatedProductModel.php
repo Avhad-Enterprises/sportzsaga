@@ -61,4 +61,19 @@ class RelatedProductModel extends Model
             ->get()
             ->getResultArray();
     }
+
+    public function RelatedProducts($productId)
+    {
+        // Fetch related products where product_id = $productId
+        $relatedProducts = $this->where('product_id', $productId)->first();
+
+        $relatedProductIds = [];
+
+        if ($relatedProducts && !empty($relatedProducts['related_product_ids'])) {
+            $relatedProductIds = json_decode($relatedProducts['related_product_ids'], true);
+        }
+
+        return is_array($relatedProductIds) ? $relatedProductIds : [];
+    }
+
 }

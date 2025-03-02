@@ -735,7 +735,7 @@
                                                         <label for="select_link_<?= htmlspecialchars($item['id']) ?>"
                                                             class="font-weight-bold">Select Type</label>
                                                         <select
-                                                            class="custom-select form-control select_link border-primary shadow-sm"
+                                                            class="custom-select form-control select_link border-dark shadow-sm"
                                                             id="select_link_<?= htmlspecialchars($item['id']) ?>"
                                                             name="select_link"
                                                             style="width: 100%; height: 42px; font-size: 16px;">
@@ -748,12 +748,12 @@
                                                     </div>
 
                                                     <!-- Product Field -->
-                                                    <div class="card shadow-sm border-success p-3 productField"
+                                                    <div class="card shadow-sm border-dark p-3 productField"
                                                         id="ShowProductField_<?= $item['id'] ?>"
                                                         style="<?= ($item['select_link'] == 'product') ? 'display:block;' : 'display:none;' ?>">
                                                         <h6 class="text-success"><i class="bi bi-box-seam"></i> Selected
                                                             Product</h6>
-                                                        <select class="custom-select form-control border-success shadow-sm"
+                                                        <select class="custom-select form-control border-dark shadow-sm"
                                                             id="selected_product_<?= $item['id'] ?>" name="selected_product"
                                                             style="width: 100%; height: 42px; font-size: 16px;"
                                                             onchange="updatePreview('product', <?= $item['id'] ?>)">
@@ -769,12 +769,12 @@
                                                     </div>
 
                                                     <!-- Collection Field -->
-                                                    <div class="card shadow-sm border-info p-3 collectionField"
+                                                    <div class="card shadow-sm border-dark p-3 collectionField"
                                                         id="ShowCollectionField_<?= $item['id'] ?>"
                                                         style="<?= ($item['select_link'] == 'collection') ? 'display:block;' : 'display:none;' ?>">
                                                         <h6 class="text-info"><i class="bi bi-collection"></i> Selected
                                                             Collection</h6>
-                                                        <select class="custom-select form-control border-info shadow-sm"
+                                                        <select class="custom-select form-control border-dark shadow-sm"
                                                             id="selected_collection_<?= $item['id'] ?>"
                                                             name="selected_collection"
                                                             style="width: 100%; height: 42px; font-size: 16px;"
@@ -1046,9 +1046,9 @@
                                     <!-- Product/Collection Selection -->
                                     <div class="form-group">
                                         <label for="select_link1" class="font-weight-bold">Select Field</label>
-                                        <select class="custom-select form-control border-dark shadow-sm"
-                                            id="select_link1" name="select_link1"
-                                            style="width: 100%; height: 42px; font-size: 16px;" onchange="toggleFields(1)">
+                                        <select class="custom-select form-control border-dark shadow-sm" id="select_link1"
+                                            name="select_link1" style="width: 100%; height: 42px; font-size: 16px;"
+                                            onchange="toggleFields(1)">
                                             <option value="">Select</option>
                                             <option value="product" <?= ($dataimage['select_link1'] == "product") ? 'selected' : '' ?>>Product</option>
                                             <option value="collection" <?= ($dataimage['select_link1'] == "collection") ? 'selected' : '' ?>>Collection</option>
@@ -1074,10 +1074,10 @@
                                     </div>
 
                                     <!-- Collection Selection -->
-                                    <div class="card shadow-sm border-info p-3" id="ShowCollectionField1"
+                                    <div class="card shadow-sm border-dark p-3" id="ShowCollectionField1"
                                         style="display: <?= ($dataimage['select_link1'] == "collection") ? 'block' : 'none' ?>;">
                                         <h6 class="text-info"><i class="bi bi-collection"></i>Collections</h6>
-                                        <select class="custom-select form-control border-info shadow-sm"
+                                        <select class="custom-select form-control border-dark shadow-sm"
                                             id="selected_collection1" name="selected_collection1[]"
                                             onchange="updatePreview('collection')">
                                             <?php
@@ -1126,9 +1126,9 @@
                                     <!-- Product/Collection Selection 2 -->
                                     <div class="form-group">
                                         <label for="select_link2" class="font-weight-bold">Select Field</label>
-                                        <select class="custom-select form-control border-primary shadow-sm"
-                                            id="select_link2" name="select_link2"
-                                            style="width: 100%; height: 42px; font-size: 16px;" onchange="toggleFields(2)">
+                                        <select class="custom-select form-control border-dark shadow-sm" id="select_link2"
+                                            name="select_link2" style="width: 100%; height: 42px; font-size: 16px;"
+                                            onchange="toggleFields(2)">
                                             <option value="">Select</option>
                                             <option value="product" <?= ($dataimage['select_link2'] == "product") ? 'selected' : '' ?>>Product</option>
                                             <option value="collection" <?= ($dataimage['select_link2'] == "collection") ? 'selected' : '' ?>>Collection</option>
@@ -1136,10 +1136,10 @@
                                     </div>
 
                                     <!-- Product Selection -->
-                                    <div class="card shadow-sm border-success p-3" id="ShowProductField2"
+                                    <div class="card shadow-sm border-dark p-3" id="ShowProductField2"
                                         style="display: <?= ($dataimage['select_link2'] == "product") ? 'block' : 'none' ?>;">
                                         <h6 class="text-success"><i class="bi bi-box-seam"></i> Products</h6>
-                                        <select class="custom-select form-control border-success shadow-sm"
+                                        <select class="custom-select form-control border-dark shadow-sm"
                                             id="selected_product2" name="selected_product2[]"
                                             onchange="updatePreview('product', 2)">
                                             <?php
@@ -1156,10 +1156,10 @@
                                     </div>
 
                                     <!-- Collection Selection -->
-                                    <div class="card shadow-sm border-info p-3" id="ShowCollectionField2"
+                                    <div class="card shadow-sm border-dark p-3" id="ShowCollectionField2"
                                         style="display: <?= ($dataimage['select_link2'] == "collection") ? 'block' : 'none' ?>;">
                                         <h6 class="text-info"><i class="bi bi-collection"></i>Collections</h6>
-                                        <select class="custom-select form-control border-info shadow-sm"
+                                        <select class="custom-select form-control border-dark shadow-sm"
                                             id="selected_collection2" name="selected_collection2[]"
                                             onchange="updatePreview('collection', 2)">
                                             <?php
@@ -1423,90 +1423,87 @@
 
 
 
-                <!----------------------------------------------------------------collection form ---------------------------------------------------------------->
-
-                <form id="collection-form">
-                    <!-- Collection Section -->
-                    <li id="web-collection" style="display: none;" class="web-section dropdown">
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon bi bi-collection"></span>
-                            <span class="mtext">Collection Section</span>
-                        </a>
-                        <ul class="submenu">
-                            <div class="ImageUploadBox">
-                                <form id="collection-form">
-
-                                    <div>
-                                        <label for="title">Title</label>
-                                        <input type="text" id="title" name="title"
-                                            value="<?= $page1_data['title'] ?? '' ?>" required>
-                                    </div>
-
-                                    <!-- Favorite Blogs -->
-                                    <div class="form-group">
-                                        <label for="fav_product">Favorite product</label>
-                                        <div class="dropdown">
-                                            <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
-                                                id="favBlogsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Select Favorite Product
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="favBlogsDropdown">
-                                                <?php
-                                                $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
-                                                foreach ($products as $Product):
-                                                    $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
-                                                    ?>
-                                                    <div class="dropdown-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox"
-                                                                class="custom-control-input fav-blog-checkbox"
-                                                                id="fav_product_<?= $Product['product_id'] ?>"
-                                                                name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
-                                                                data-title="<?= $Product['product_title'] ?>" <?= $isChecked ?>>
-
-                                                            <label class="custom-control-label"
-                                                                for="fav_product_<?= $Product['product_id'] ?>">
-                                                                <?= $Product['product_title'] ?>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Display Selected Products -->
-                                    <ul class="sortable-list" id="favBlogsList">
-                                        <?php
-                                        foreach ($products as $Product):
-                                            if (in_array($Product['product_id'], $selectedFavproduct)): ?>
-                                                <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
-                                                    data-id="<?= $Product['product_id'] ?>">
-                                                    <span><?= $Product['product_title'] ?></span>
-                                                    <button class="btn btn-danger btn-sm remove-item"
-                                                        data-id="<?= $Product['product_id'] ?>">Delete</button>
-                                                </li>
-                                            <?php endif;
-                                        endforeach; ?>
-                                    </ul>
-                                    <input type="hidden" name="fav_product" id="fav_blogs_input"
-                                        value="<?= $page1_data['fav_product'] ?? '' ?>">
-
-                                </form>
-                            </div>
-                        </ul>
-                    </li>
-                </form>
-
-                <!---------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
-
-                <li id="web-header" style="display: none;" class="web-section dropdown">
+                <!-----------------------------------------------------------------------------------------------------collection form ---------------------------------------------------------------->
+                <li id="web-collection" style="display: none;" class="web-section dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-collection"></span>
-                        <span class="mtext">Navbar</span>
+                        <span class="mtext">Collection Section</span>
+                    </a>
+                    <ul class="submenu">
+                        <div class="ImageUploadBox">
+                            <form id="collection-form">
+
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" name="title" value="<?= $page1_data['title'] ?? '' ?>"
+                                        required>
+                                </div>
+
+                                <!-- Favorite Blogs -->
+                                <div class="form-group">
+                                    <label for="fav_product">Favorite product</label>
+                                    <div class="dropdown">
+                                        <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                            id="favBlogsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Select Favorite Product
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="favBlogsDropdown">
+                                            <?php
+                                            $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
+                                            foreach ($products as $Product):
+                                                $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
+                                                ?>
+                                                <div class="dropdown-item">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input fav-blog-checkbox"
+                                                            id="fav_product_<?= $Product['product_id'] ?>"
+                                                            name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
+                                                            data-title="<?= $Product['product_title'] ?>" <?= $isChecked ?>>
+
+                                                        <label class="custom-control-label"
+                                                            for="fav_product_<?= $Product['product_id'] ?>">
+                                                            <?= $Product['product_title'] ?>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Display Selected Products -->
+                                <ul class="sortable-list" id="favBlogsList">
+                                    <?php
+                                    foreach ($products as $Product):
+                                        if (in_array($Product['product_id'], $selectedFavproduct)): ?>
+                                            <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
+                                                data-id="<?= $Product['product_id'] ?>">
+                                                <span><?= $Product['product_title'] ?></span>
+                                                <button class="btn btn-danger btn-sm remove-item"
+                                                    data-id="<?= $Product['product_id'] ?>">Delete</button>
+                                            </li>
+                                        <?php endif;
+                                    endforeach; ?>
+                                </ul>
+                                <input type="hidden" name="fav_product" id="fav_blogs_input"
+                                    value="<?= $page1_data['fav_product'] ?? '' ?>">
+
+                            </form>
+                        </div>
+                    </ul>
+                </li>
+
+                <!--------------------------------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
+
+                <li id="web-header" class="web-section dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-collection"></span>
+                        <span class="mtext">Pages</span>
                     </a>
                     <ul class="submenu child">
+
                         <!-- Plus Button to Add New -->
                         <div class="hr-container">
                             <hr class="line">
@@ -1538,8 +1535,6 @@
                                     <label for="image">Upload Image</label>
                                     <input type="file" name="image" id="image" class="form-control" accept="image/*"
                                         required />
-                                    <small>Formats: JPG, PNG, JPEG, (WEBP), Max-size: 400 KB, Recommended
-                                        Dimensions: 424 x 412 px.</small>
                                 </div>
 
 
@@ -1618,7 +1613,6 @@
                             </form>
                         </div>
 
-
                         <!-- List of Added Pages -->
                         <div class="PageBoxContainer" id="pageBoxContainer">
                             <?php foreach ($pages as $page): ?>
@@ -1662,11 +1656,23 @@
                                                     class="form-control" required value="<?= esc($page['link']) ?>">
                                             </div>
 
-                                            <!-- Image -->
+                                             <!-- Image Upload Field -->
                                             <div class="form-group">
                                                 <label for="image_<?= $page['id'] ?>">Image:</label>
-                                                <input type="file" name="image" id="image_<?= $page['id'] ?>"
-                                                    class="form-control">
+                                                <input type="file" name="image" id="image_<?= $page['id'] ?>" class="form-control" onchange="previewImage(event, 'preview_<?= $page['id'] ?>')">
+
+                                                <!-- Display the Uploaded Image Below -->
+                                                <?php if (!empty($page['image'])): ?>
+                                                    <div class="mt-2">
+                                                        <img id="preview_<?= $page['id'] ?>" src="<?= esc($page['image']) ?>" alt="Uploaded Image"
+                                                            style="max-width: 200px; max-height: 200px; border-radius: 10px; border: 1px solid #ddd;">
+                                                    </div>
+                                                <?php else: ?>
+                                                    <div class="mt-2">
+                                                        <img id="preview_<?= $page['id'] ?>" src="" alt="Image Preview"
+                                                            style="max-width: 200px; max-height: 200px; border-radius: 10px; border: 1px solid #ddd; display: none;">
+                                                    </div>
+                                                <?php endif; ?>
                                             </div>
 
                                             <!-- Visibility -->
@@ -1770,8 +1776,7 @@
                                                                 value="<?= isset($specificItems[$subtype]) ? $specificItems[$subtype] : '' ?>">
                                                         </div>
                                                     </div>
-                                                    <?php $counter++;
-                                                endforeach; ?>
+                                                    <?php $counter++; endforeach; ?>
                                             </div>
 
                                             <button type="submit" class="btn btn-primary">Update Page</button>

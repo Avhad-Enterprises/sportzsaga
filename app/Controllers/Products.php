@@ -14,6 +14,7 @@ use App\Models\Cart_model;
 use App\Models\PincodeModel;
 use App\Models\TagModel;
 use App\Models\Registerusers_model;
+use App\Models\RelatedProductModel;
 use Google\Cloud\Storage\StorageClient;
 
 class Products extends BaseController
@@ -432,14 +433,20 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $tiersmodel = new tiersmodel();
+        $relatedProductModel = new RelatedProductModel(); // Load related product model
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
 
-        $tier1id = $data['products']['0']['tier_1'];
-        $tier2id = $data['products']['0']['tier_2'];
-        $tier3id = $data['products']['0']['tier_3'];
-        $tier4id = $data['products']['0']['tier_4'];
+        if (empty($data['products'])) {
+            return redirect()->to('admin_products')->with('error', 'Product not found.');
+        }
+
+        // Fetch tiers
+        $tier1id = $data['products'][0]['tier_1'];
+        $tier2id = $data['products'][0]['tier_2'];
+        $tier3id = $data['products'][0]['tier_3'];
+        $tier4id = $data['products'][0]['tier_4'];
 
         $data['tier_1'] = $tiersmodel->gettierbyid($tier1id);
         $data['tier_2'] = $tiersmodel->gettiersbyid($tier2id);
@@ -451,16 +458,16 @@ class Products extends BaseController
 
         // Fetch pre-selected tiers for the product
         $data['selected_tiers'] = [
-            'tier_1' => $data['products']['tier_1'] ?? null,
-            'tier_2' => $data['products']['tier_2'] ?? null,
-            'tier_3' => $data['products']['tier_3'] ?? null,
-            'tier_4' => $data['products']['tier_4'] ?? null,
+            'tier_1' => $data['products'][0]['tier_1'] ?? null,
+            'tier_2' => $data['products'][0]['tier_2'] ?? null,
+            'tier_3' => $data['products'][0]['tier_3'] ?? null,
+            'tier_4' => $data['products'][0]['tier_4'] ?? null,
         ];
 
         // Fetch all products for dropdown
         $data['all_products'] = $model->getAllProducts();
 
-        // Pass raw JSON strings or strings directly from the database
+        // Fetch bullet points (if available)
         if (!empty($data['products'][0])) {
             $product = $data['products'][0];
             $data['bullet_points'] = $product['bullet_points'] ?? '';
@@ -468,8 +475,33 @@ class Products extends BaseController
             $data['bullet_points'] = '';
         }
 
+        // ** Fetch related products both ways **
+        $relatedProductIds = $relatedProductModel->RelatedProducts($id);
+
+        // Fetch products where this product is in related_product_ids
+        $relatedProductsForThis = $relatedProductModel->where("related_product_ids LIKE", "%$id%")->findAll();
+
+        foreach ($relatedProductsForThis as $relatedRow) {
+            $relatedProductIds[] = $relatedRow['product_id'];
+        }
+
+        // Remove duplicates
+        $relatedProductIds = array_unique($relatedProductIds);
+
+        if (!empty($relatedProductIds)) {
+            $builder = \Config\Database::connect()->table('products');
+            $data['related_products'] = $builder
+                ->select('product_id, product_title, inventory, selling_price')
+                ->whereIn('product_id', $relatedProductIds)
+                ->get()
+                ->getResultArray();
+        } else {
+            $data['related_products'] = [];
+        }
+
         return view('edit_products_view', $data);
     }
+
 
     public function updateProduct($id)
     {
@@ -1540,9 +1572,13 @@ class Products extends BaseController
         return view('add_pincodes_view');
     }
 
-    public function save_pincodes() {}
+    public function save_pincodes()
+    {
+    }
 
-    public function edit_pincode($id) {}
+    public function edit_pincode($id)
+    {
+    }
 
     public function delete_pincode($id)
     {

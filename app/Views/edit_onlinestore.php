@@ -132,6 +132,7 @@
                             <option value="Email_POP_UP">Email POP UP</option>
                         </select>
                     </div>
+
                     <div id="web-home" class="web-section" style="display: none;">
                         <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home page</button>
                     </div>
@@ -189,305 +190,497 @@
                     </div>
                 </div>
 
+                <div class="d-flex justify-content-center my-3">
+                    <button type="button" id="showDesktop" class="btn btn-primary mx-2">Desktop View</button>
+                    <button type="button" id="showMobile" class="btn btn-secondary mx-2">Mobile View</button>
+                </div>
 
                 <div id="web-home" class="web-section">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                        <!-- Desktop View (Large Size, Visible by Default) -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+                <!-- Search Page -->
                 <div id="web-search" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                        <!-- Desktop View (Large Size, Visible by Default) -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
                     </div>
                 </div>
+
+                <!-- Blogs Page -->
                 <div id="web-blogs" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0"
-                                class="preview-iframe"></iframe>
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                        <!-- Desktop View (Large Size, Visible by Default) -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
                     </div>
                 </div>
+                <!-- Single Blog Page -->
                 <div id="web-singleblog" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                        <!-- Desktop View (Large Size, Visible by Default) -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
                             <iframe
                                 src="http://localhost/sportz_saga/blog_detail/the-power-of-digital-marketing-unlocking-business-potential-in-the-digital-age2"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
+                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
                             <iframe
                                 src="http://localhost/sportz_saga/blog_detail/the-power-of-digital-marketing-unlocking-business-potential-in-the-digital-age2"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Collection Page -->
                 <div id="web-collection" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- About Page -->
                 <div id="web-about" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/about" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/about" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Contact Page -->
                 <div id="web-contact" class="web-section" style="display: none;">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <!-- Desktop View (Large Size, Visible by Default) -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Wishlist Page -->
                 <div id="web-wishlist" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Marquee Page -->
                 <div id="web-marquee" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Cart Page -->
                 <div id="web-cart" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Checkout Page -->
                 <div id="web-checkout" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Tracking Page -->
                 <div id="web-tracking" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- 404 Page -->
                 <div id="web-404" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/404" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/404" frameborder="0"
-                                class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Header Page -->
                 <div id="web-header" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
                     </div>
                 </div>
+                <!-- Product Page -->
                 <div id="web-product" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
-                                frameborder="0" class="preview-iframe"></iframe>
+                                frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Footer Page -->
                 <div id="web-Footer" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Other Pages -->
                 <div id="web-otherpages" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
-                                class="preview-iframe"></iframe>
+                                class="preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
-                                class="preview-iframe"></iframe>
+                                class="preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
-                <div id="web-Email_POP_UP" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain">
-                        <!-- Desktop View -->
-                        <div class="preview desktop-view" style="height: 700px;">
-                            <p class="preview-title">Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
-                        </div>
 
+                <!-- Email Pop-Up Page -->
+                <div id="web-Email_POP_UP" class="web-section" style="display: none;">
+                    <div class="OnlinStorePreMain"
+                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                            <p class="preview-title"
+                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view" style="height: 700px;">
-                            <p class="preview-title">Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                        <div class="preview mobile-view"
+                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
+                            <p class="preview-title"
+                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
+                                Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
+                                style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
+
                     </div>
                 </div>
 
@@ -495,6 +688,36 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let desktopViews = document.querySelectorAll(".desktop-view");
+            let mobileViews = document.querySelectorAll(".mobile-view");
+            let showDesktopBtn = document.getElementById("showDesktop");
+            let showMobileBtn = document.getElementById("showMobile");
+
+            // Show Desktop View by default
+            showDesktopBtn.classList.add("btn-primary");
+            showMobileBtn.classList.add("btn-secondary");
+
+            showDesktopBtn.addEventListener("click", function () {
+                desktopViews.forEach(view => view.style.display = "block");
+                mobileViews.forEach(view => view.style.display = "none");
+                showDesktopBtn.classList.add("btn-primary");
+                showMobileBtn.classList.remove("btn-primary");
+                showMobileBtn.classList.add("btn-secondary");
+            });
+
+            showMobileBtn.addEventListener("click", function () {
+                desktopViews.forEach(view => view.style.display = "none");
+                mobileViews.forEach(view => view.style.display = "block");
+                showMobileBtn.classList.add("btn-primary");
+                showDesktopBtn.classList.remove("btn-primary");
+                showDesktopBtn.classList.add("btn-secondary");
+            });
+        });
+    </script>
 
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
@@ -867,7 +1090,7 @@
 
 
 
-    <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------------------>
     <script>
         // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
@@ -945,6 +1168,24 @@
                 checkbox.addEventListener('change', () => updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox'));
             });
 
+            // Event listeners for removing items from the list
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function () {
+                    const itemId = this.getAttribute('data-id');
+                    const listItem = this.closest('.sortable-item');
+
+                    // Uncheck the corresponding checkbox
+                    const checkbox = document.querySelector(`#fav_product_${itemId}`);
+                    if (checkbox) checkbox.checked = false;
+
+                    // Remove item from the list
+                    listItem.remove();
+
+                    // Update hidden input value
+                    updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox');
+                });
+            });
+
             // AJAX Form Submission for Collection
             document.getElementById('updatecollection').addEventListener('click', function () {
                 // Gather form data
@@ -959,13 +1200,7 @@
                         'X-Requested-With': 'XMLHttpRequest',
                     },
                 })
-
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
+                    .then(response => response.json())
                     .then(data => {
                         if (data.success) {
                             alert('Collection data saved successfully!');
@@ -979,6 +1214,7 @@
                     });
             });
         });
+
     </script>
 
     <script>
@@ -1010,6 +1246,7 @@
                 previewImage(this, 'image2-preview');
             });
         });
+
     </script>
 
 
@@ -1870,8 +2107,22 @@
         }
     </script>
 
+    <script>
+        function previewImage(event, previewId) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById(previewId);
+                output.src = reader.result;
+                output.style.display = "block"; // Show image when selected
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 
 
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>

@@ -194,6 +194,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('admin-products/deleterelatedproduct/(:num)', 'RelatedproductController::deleteRelatedProduct/$1');
    $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
    $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
+   $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
+
 });
 
 // Admin Dashboard Controller;
