@@ -524,6 +524,192 @@
         });
     </script>
 
+    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get elements
+
+            const toggleButton = document.getElementById("toggleProductFormButton");
+            const formContainer = document.getElementById("productAddForm");
+            const productList = document.getElementById("productList");
+            const collectionList = document.getElementById("collectionList");
+
+            // ✅ Toggle Form Visibility
+            toggleButton.addEventListener("click", function() {
+                formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#ShowProduct, #ShowCollection').hide();
+
+            // Toggle visibility of Product & Collection fields based on selection
+            $('#select_type').on('change', function() {
+                let selectedValue = $(this).val();
+
+                if (selectedValue === 'product') {
+                    $('#ShowProduct').fadeIn();
+                    $('#ShowCollection').hide();
+                } else if (selectedValue === 'collection') {
+                    $('#ShowCollection').fadeIn();
+                    $('#ShowProduct').hide();
+                } else {
+                    $('#ShowProduct, #ShowCollection').hide();
+                }
+            });
+
+            // Function to update selected items display
+            function updateSelectedDisplay(selectElement, displayElement, hiddenInput) {
+                displayElement.html('');
+                let selectedValues = [];
+
+                $(selectElement).find(':selected').each(function() {
+                    let selectedItem = $(this).text();
+                    selectedValues.push($(this).val());
+
+                    let badge = $('<div class="badge badge-primary p-2 m-1"></div>').text(selectedItem);
+                    displayElement.append(badge);
+                });
+
+                hiddenInput.val(selectedValues.join(',')); // Store selected values
+            }
+
+            // Attach event listeners to Product and Collection select elements
+            $('#selected_product').on('change', function() {
+                updateSelectedDisplay(this, $('#selected_products_display'), $('#selected_products_hidden'));
+            });
+
+            $('#selected_collection').on('change', function() {
+                updateSelectedDisplay(this, $('#selected_collections_display'), $('#selected_collections_hidden'));
+            });
+
+            // Append hidden input fields to store selected values for submission
+            $('#productForm').append('<input type="hidden" id="selected_products_hidden" name="selected_products">');
+            $('#productForm').append('<input type="hidden" id="selected_collections_hidden" name="selected_collections">');
+        });
+    </script>
+
+    <script>
+        function toggleEditFormProduct(productId) {
+            let editForm = document.getElementById(`editForm-${productId}`);
+            let chevronIcon = document.getElementById(`chevron-${productId}`);
+
+            if (editForm.style.display === "none" || editForm.style.display === "") {
+                editForm.style.display = "block";
+                chevronIcon.classList.remove("fa-chevron-down");
+                chevronIcon.classList.add("fa-chevron-up");
+            } else {
+                editForm.style.display = "none";
+                chevronIcon.classList.remove("fa-chevron-up");
+                chevronIcon.classList.add("fa-chevron-down");
+            }
+        }
+    </script>
+
+    <script>
+        function deleteProduct(productId) {
+            if (!confirm("Are you sure you want to delete this product?")) {
+                return;
+            }
+
+            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
+                    method: "POST",
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Product deleted successfully!");
+                        document.getElementById(`productBox-${productId}`).remove(); // Remove from UI
+                    } else {
+                        alert("Failed to delete product: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred while deleting the product.");
+                });
+        }
+    </script>
+
+    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".select_link").forEach(selectField => {
+                let id = selectField.id.split("_")[2];
+                let productField = document.getElementById("ShowProductField_" + id);
+                let collectionField = document.getElementById("ShowCollectionField_" + id);
+
+                if (!selectField || !productField || !collectionField) {
+                    console.error("Element not found: ", {
+                        selectField,
+                        productField,
+                        collectionField
+                    });
+                    return;
+                }
+
+                function updateFields(value) {
+                    if (value === 'product') {
+                        productField.style.display = 'block';
+                        collectionField.style.display = 'none';
+                    } else if (value === 'collection') {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'block';
+                    } else {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'none';
+                    }
+                }
+
+                // Initializing
+                updateFields(selectField.value);
+
+                // On change event
+                selectField.addEventListener('change', function() {
+                    updateFields(this.value);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+            const form = document.getElementById('carousel2AddForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
+
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -1508,29 +1694,24 @@
     <!--home-->
     <script>
         $('#homeImageForm').on('submit', function(e) {
-            e.preventDefault(); // Prevent the default form submission
+            e.preventDefault();
 
-            var formData = new FormData(this); // Create FormData object from the form
+            var formData = new FormData(this);
 
-            $.ajax({
-                url: '<?= site_url('home-image/save') ?>', // URL for the POST request
-                type: 'POST', // Use POST method for sending data
-                data: formData, // Send the FormData object (which includes the form fields and files)
-                processData: false, // Don't let jQuery process the data
-                contentType: false, // Don't set a content type because FormData does this automatically
+        $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
                 success: function(response) {
-                    console.log('Success Response:', response); // Log the response from the server
-                    alert('Data updated successfully!'); // Show success message
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
                 },
 
             });
         });
     </script>
-
-
-
-
-
 
 
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
@@ -3806,11 +3987,11 @@
                     itemElement.className = itemClass;
                     itemElement.setAttribute("data-id", itemId);
                     itemElement.innerHTML = `
-                        <span>${itemTitle}</span>
-                        <button class="btn btn-danger btn-sm remove-item-btn" type="button">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
+                    <span>${itemTitle}</span>
+                    <button class="btn btn-danger btn-sm remove-item-btn" type="button">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
                     container.appendChild(itemElement);
 
 
@@ -3824,38 +4005,32 @@
 
 
             // Handle save button click event
-            updateproductpage.addEventListener("click", function(e) {
+            document.getElementById("updateproductpage").addEventListener("click", function(e) {
                 e.preventDefault(); // Prevent form submission
-
 
                 const formData = new FormData();
 
-
                 // Get form fields
-                formData.append("title", document.getElementById("title").value);
+                formData.append("productpagetitle", document.getElementById("productpagetitle").value);
                 formData.append("Description", document.getElementById("Description").value);
-
 
                 // Get selected products
                 const selectedProducts = Array.from(document.querySelectorAll(".selected-product"))
                     .map(product => product.getAttribute("data-id"));
                 selectedProducts.forEach(productId => formData.append("products[]", productId));
 
-
                 // Get selected bundles
                 const selectedBundles = Array.from(document.querySelectorAll(".selected-bundle"))
                     .map(bundle => bundle.getAttribute("data-id"));
                 selectedBundles.forEach(bundleId => formData.append("bundles[]", bundleId));
 
-
                 // Disable the button and update its text
                 updateproductpage.disabled = true;
                 updateproductpage.innerHTML = "Saving...";
 
-
                 // Send the AJAX request
                 fetch('<?= base_url('product-settings/save') ?>', {
-                        method: "POST",
+                        method: "POST", // Ensure it’s POST
                         body: formData,
                         headers: {
                             "X-Requested-With": "XMLHttpRequest"
@@ -3893,12 +4068,12 @@
                 const toast = document.createElement("div");
                 toast.className = `toast toast-${type} position-fixed top-0 end-0 m-4`;
                 toast.innerHTML = `
-                    <div class="toast-header">
-                        <strong class="me-auto">${type.toUpperCase()}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-                    </div>
-                    <div class="toast-body">${message}</div>
-                `;
+            <div class="toast-header">
+                <strong class="me-auto">${type.toUpperCase()}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">${message}</div>
+        `;
                 document.body.appendChild(toast);
                 new bootstrap.Toast(toast).show();
             }

@@ -24,7 +24,7 @@ class Store extends BaseController
 {
     protected $aboutModel;
     protected $logoModel;
-    
+
     public function __construct()
     {
         $this->aboutModel = new onlinestoremodal();
@@ -1659,7 +1659,7 @@ class Store extends BaseController
     }
 
 
-    public function update()
+    public function update_carsecond()
     {
         try {
             $model = new HomeCarousel2Model();
@@ -1694,21 +1694,12 @@ class Store extends BaseController
         }
     }
 
-
-
     public function delete($id)
     {
         $model = new HomeCarousel2Model();
         $model->delete($id);
         return redirect()->back()->with('message', 'Carousel deleted successfully');
     }
-
-
-
-
-
-
-
 
     //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
     public function save()
@@ -2206,6 +2197,4 @@ class Store extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
         }
     }
-
-
 }
