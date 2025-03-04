@@ -777,8 +777,8 @@
                     <ul class="submenu child">
                         <div class="ImageUploadBox">
                             <?php foreach ($dataimages as $dataimage): ?>
-                            <form id="homeImageForm" method="post" enctype="multipart/form-data">
-                                <!-- Image 1 -->
+                                <form id="homeImageForm" method="post" enctype="multipart/form-data">
+                                    <!-- Image 1 -->
                                     <div class="form-group">
                                         <label for="image_title1">Image Title 1</label>
                                         <input type="text" name="image_title1" id="image_title1" class="form-control"
@@ -994,7 +994,7 @@
                                             <?php
                                             $selectedRelatedBlogs = explode(',', $page_data['related_blogs'] ?? '');
                                             foreach ($blogs as $blog):
-                                                ?>
+                                            ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox"
@@ -1029,7 +1029,7 @@
                                             <?php
                                             $selectedTags = explode(',', $page_data['tags'] ?? '');
                                             foreach ($tags as $tag):
-                                                ?>
+                                            ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input tag1-checkbox"
@@ -1062,7 +1062,7 @@
                                             <?php
                                             $selectedPopularPosts = explode(',', $page_data['popular_posts'] ?? '');
                                             foreach ($blogs as $blog):
-                                                ?>
+                                            ?>
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox"
@@ -1122,7 +1122,7 @@
                                                 $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
                                                 foreach ($products as $Product):
                                                     $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
-                                                    ?>
+                                                ?>
                                                     <div class="dropdown-item">
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox"
@@ -1153,7 +1153,7 @@
                                                     <button class="btn btn-danger btn-sm remove-item"
                                                         data-id="<?= $Product['product_id'] ?>">Delete</button>
                                                 </li>
-                                            <?php endif;
+                                        <?php endif;
                                         endforeach; ?>
                                     </ul>
                                     <input type="hidden" name="fav_product" id="fav_blogs_input"
@@ -1436,7 +1436,7 @@
                                                                 value="<?= isset($specificItems[$subtype]) ? $specificItems[$subtype] : '' ?>">
                                                         </div>
                                                     </div>
-                                                    <?php $counter++;
+                                                <?php $counter++;
                                                 endforeach; ?>
                                             </div>
 
@@ -1513,7 +1513,7 @@
                                     // Ensure the value is JSON before decoding
                                     $iconData = is_string($about[$iconKey] ?? null) ? json_decode($about[$iconKey], true) : ($about[$iconKey] ?? []);
                                     if (!empty($iconData) || $i == 1):
-                                        ?>
+                                ?>
                                         <div class="iconsubsection mb-4">
                                             <div class="form-group">
                                                 <div class="d-flex justify-content-between align-items-baseline">
@@ -1544,7 +1544,7 @@
                                             </div>
                                             <hr>
                                         </div>
-                                        <?php
+                                <?php
                                     endif;
                                 endfor;
                                 ?>
@@ -1860,7 +1860,7 @@
                                             <?php
                                             $selectedBlogs = explode(',', $about['blogs'] ?? '');
                                             foreach ($blogs as $blog):
-                                                ?>
+                                            ?>
                                                 <div class="dropdown-item search-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input blog-checkbox"
@@ -2119,7 +2119,7 @@
                                         <?php
                                         $selectedr_product = explode(',', $search['r_products'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input r_product-checkbox"
@@ -2172,7 +2172,7 @@
                                         <?php
                                         $selectedt_product = explode(',', $search['t_products'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input t_product-checkbox"
@@ -2225,7 +2225,7 @@
                                         <?php
                                         $selectedm_product = explode(',', $search['m_products'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input m_product-checkbox"
@@ -2278,7 +2278,7 @@
                                         <?php
                                         $selecteds_blog = explode(',', $search['s_blogs'] ?? '');
                                         foreach ($blogs as $blog):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input s_blog-checkbox"
@@ -2422,7 +2422,7 @@
                                         <?php
                                         $selectedcm_product = explode(',', $cart_page['cm_products'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input cm_product-checkbox"
@@ -3164,7 +3164,7 @@
                                         <?php
                                         $selectederror_product = explode(',', $error['error_products'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="dropdown-item  search-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox"
@@ -3482,7 +3482,7 @@
                                         <?php
                                         $selectedproducts = explode(',', $product_setting['product_id'] ?? '');
                                         foreach ($products as $product):
-                                            ?>
+                                        ?>
                                             <div class="product-item">
                                                 <input type="checkbox" class="product-checkbox"
                                                     id="product-<?= $product['product_id'] ?>"
@@ -3516,7 +3516,7 @@
                                         <?php
                                         $selectedbundle = explode(',', $product_setting['bundle_id'] ?? '');
                                         foreach ($bundles as $bundle):
-                                            ?>
+                                        ?>
                                             <div class="bundle-item">
                                                 <input type="checkbox" class="bundle-checkbox"
                                                     id="bundle-<?= $bundle['bundle_id'] ?>"
@@ -3591,7 +3591,7 @@
 
                                 <div class="textBoxContainer" id="textBoxContainer">
                                     <?php if (!empty($marqueeTexts)): // Assuming $marqueeTexts is an array of records fetched from the database 
-                                            ?>
+                                    ?>
                                         <?php foreach ($marqueeTexts as $text): ?>
                                             <div class="textBox" data-id="<?= $text['id']; ?>">
                                                 <div class="CarouselHeader">
@@ -3720,8 +3720,7 @@
                                         class="form-control" accept="image/*">
                                     <br>
                                     <?php if (!empty($email_pop_up['email_pop_up_image'])): ?>
-                                        <img id="previewImage" src="<?= $email_pop_up['email_pop_up_image'] ?>"
-                                            alt="Image Preview" style="max-width: 150px; margin-top: 10px; display: ;">
+                                        <img id="previewImage" src="<?= $email_pop_up['email_pop_up_image'] ?>" alt="Image Preview" style="max-width: 150px; margin-top: 10px; display: ;">
                                     <?php endif; ?>
                                 </div>
 
@@ -3769,7 +3768,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         // Initialize Select2 for all select elements with the 'select2' class
         $('.select2').select2({
             placeholder: "Select an option",
