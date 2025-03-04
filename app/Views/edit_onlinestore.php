@@ -529,7 +529,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Get elements
 
             const toggleButton = document.getElementById("toggleProductFormButton");
             const formContainer = document.getElementById("productAddForm");
@@ -541,73 +540,6 @@
                 formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
             });
         });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#ShowProduct, #ShowCollection').hide();
-
-            // Toggle visibility of Product & Collection fields based on selection
-            $('#select_type').on('change', function() {
-                let selectedValue = $(this).val();
-
-                if (selectedValue === 'product') {
-                    $('#ShowProduct').fadeIn();
-                    $('#ShowCollection').hide();
-                } else if (selectedValue === 'collection') {
-                    $('#ShowCollection').fadeIn();
-                    $('#ShowProduct').hide();
-                } else {
-                    $('#ShowProduct, #ShowCollection').hide();
-                }
-            });
-
-            // Function to update selected items display
-            function updateSelectedDisplay(selectElement, displayElement, hiddenInput) {
-                displayElement.html('');
-                let selectedValues = [];
-
-                $(selectElement).find(':selected').each(function() {
-                    let selectedItem = $(this).text();
-                    selectedValues.push($(this).val());
-
-                    let badge = $('<div class="badge badge-primary p-2 m-1"></div>').text(selectedItem);
-                    displayElement.append(badge);
-                });
-
-                hiddenInput.val(selectedValues.join(',')); // Store selected values
-            }
-
-            // Attach event listeners to Product and Collection select elements
-            $('#selected_product').on('change', function() {
-                updateSelectedDisplay(this, $('#selected_products_display'), $('#selected_products_hidden'));
-            });
-
-            $('#selected_collection').on('change', function() {
-                updateSelectedDisplay(this, $('#selected_collections_display'), $('#selected_collections_hidden'));
-            });
-
-            // Append hidden input fields to store selected values for submission
-            $('#productForm').append('<input type="hidden" id="selected_products_hidden" name="selected_products">');
-            $('#productForm').append('<input type="hidden" id="selected_collections_hidden" name="selected_collections">');
-        });
-    </script>
-
-    <script>
-        function toggleEditFormProduct(productId) {
-            let editForm = document.getElementById(`editForm-${productId}`);
-            let chevronIcon = document.getElementById(`chevron-${productId}`);
-
-            if (editForm.style.display === "none" || editForm.style.display === "") {
-                editForm.style.display = "block";
-                chevronIcon.classList.remove("fa-chevron-down");
-                chevronIcon.classList.add("fa-chevron-up");
-            } else {
-                editForm.style.display = "none";
-                chevronIcon.classList.remove("fa-chevron-up");
-                chevronIcon.classList.add("fa-chevron-down");
-            }
-        }
     </script>
 
     <script>
@@ -627,7 +559,7 @@
                 .then(data => {
                     if (data.success) {
                         alert("Product deleted successfully!");
-                        document.getElementById(`productBox-${productId}`).remove(); // Remove from UI
+                        document.getElementById(`productBox-${productId}`).remove();
                     } else {
                         alert("Failed to delete product: " + data.message);
                     }
@@ -637,6 +569,58 @@
                     alert("An error occurred while deleting the product.");
                 });
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Toggle Product/Collection fields based on selection
+            $("#select_type").on("change", function() {
+                var selectedValue = $(this).val();
+                if (selectedValue === "product") {
+                    $("#ShowProduct").show();
+                    $("#ShowCollection").hide();
+                } else if (selectedValue === "collection") {
+                    $("#ShowProduct").hide();
+                    $("#ShowCollection").show();
+                } else {
+                    $("#ShowProduct, #ShowCollection").hide();
+                }
+            });
+
+            // Search Functionality (By Product Name or SKU)
+            $("#productSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#productList li").filter(function() {
+                    var title = $(this).find(".product-title").text().toLowerCase();
+                    var sku = $(this).attr("data-sku").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || sku.includes(searchValue));
+                });
+            });
+
+            // Search Functionality (By Collection Name or ID)
+            $("#collectionSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#collectionList li").filter(function() {
+                    var title = $(this).find(".collection-title").text().toLowerCase();
+                    var collectionId = $(this).attr("data-collection-id").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || collectionId.includes(searchValue));
+                });
+            });
+
+            // Function to update selected items in the hidden input field
+            function updateSelectedItems() {
+                var selectedItems = [];
+                $(".product-checkbox:checked, .collection-checkbox:checked").each(function() {
+                    selectedItems.push($(this).val());
+                });
+                $("#selected_items").val(JSON.stringify(selectedItems)); // Store only checked IDs in JSON format
+            }
+
+            // Handle Checkbox Selection for Products & Collections
+            $(".product-checkbox, .collection-checkbox").on("change", function() {
+                updateSelectedItems();
+            });
+        });
     </script>
 
     <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
@@ -685,28 +669,6 @@
         document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
             const form = document.getElementById('carousel2AddForm');
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        });
-    </script>
-
-    <!--home-->
-    <script>
-        $('#homeImageForm').on('submit', function(e) {
-            e.preventDefault();
-
-            var formData = new FormData(this);
-
-            $.ajax({
-                url: '<?= site_url('home-image/save') ?>',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    console.log('Success Response:', response);
-                    alert('Data updated successfully!');
-                },
-
-            });
         });
     </script>
 
@@ -1682,37 +1644,6 @@
             });
         });
     </script>
-
-
-    <script>
-        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
-            const form = document.getElementById('carousel2AddForm');
-            form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        });
-    </script>
-
-    <!--home-->
-    <script>
-        $('#homeImageForm').on('submit', function(e) {
-            e.preventDefault();
-
-            var formData = new FormData(this);
-
-        $.ajax({
-                url: '<?= site_url('home-image/save') ?>',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    console.log('Success Response:', response);
-                    alert('Data updated successfully!');
-                },
-
-            });
-        });
-    </script>
-
 
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 

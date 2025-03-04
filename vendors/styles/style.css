@@ -6951,3 +6951,102 @@ textarea {
     font-size: 16px;
     line-height: 1.5;
 }
+
+.SelectProductBox {
+    background-color: #fff;
+    border: #ababab solid 0.5px;
+    width: 100%;
+    height: 212px;
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Custom Scrollbar Styling */
+.SelectProductBox::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+}
+
+.SelectProductBox::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background */
+}
+
+.SelectProductBox::-webkit-scrollbar-thumb {
+    background: #888; /* Darker scrollbar */
+    border-radius: 4px;
+}
+
+.SelectProductBox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Default List Item Styling */
+.SelectProductBox li {
+    margin: 6px 0;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style checkboxes */
+.product-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#collectionSearch,
+#productSearch{
+    margin: 6px 0;
+}
+
+.SelectCollectionBox {
+    background-color: #fff;
+    border: #ababab solid 0.5px;
+    width: 100%;
+    height: 212px;
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Custom Scrollbar Styling */
+.SelectCollectionBox::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+}
+
+.SelectCollectionBox::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background */
+}
+
+.SelectCollectionBox::-webkit-scrollbar-thumb {
+    background: #888; /* Darker scrollbar */
+    border-radius: 4px;
+}
+
+.SelectCollectionBox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Default List Item Styling */
+.SelectCollectionBox li {
+    margin: 6px 0;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style checkboxes */
+.collection-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}

@@ -146,7 +146,7 @@ class PurchaseOrderController extends Controller
 
         // Save the data to the database
         $purchaseOrderModel = new PurchaseOrderModel();
-        if (!$purchaseOrderModel->insert($data)) {
+        if (!$purchaseOrderModel->InsertPurchaseOrderData($data)) {
             return redirect()->back()->withInput()->with('error', 'Failed to save the purchase order.');
         }
 

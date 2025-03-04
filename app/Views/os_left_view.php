@@ -619,30 +619,48 @@
                                 </div>
 
                                 <!-- Product Field (Hidden by Default) -->
-                                <div class="form-group productField" id="ShowProduct" style="display: none;">
-                                    <label for="selected_product">Product</label>
-                                    <select class="custom-select2 form-control" id="selected_product"
-                                        name="selected_product[]" multiple style="width: 100%; height: 38px">
-                                        <?php foreach ($products as $product): ?>
-                                            <option value="<?= $product['product_id']; ?>">
-                                                <?= esc($product['product_title']); ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                <div class="form-group" id="ShowProduct" style="display: none;">
+                                    <label for="select_type">Select Field</label>
+
+                                    <!-- Search Bar -->
+                                    <input type="text" id="productSearch" class="form-control" placeholder="Product name or SKU...">
+
+                                    <div class="SelectProductBox">
+                                        <ul id="productList">
+                                            <?php foreach ($products as $product): ?>
+                                                <li class="selectable-product" data-id="<?= $product['product_id']; ?>" data-sku="<?= esc($product['sku']); ?>">
+                                                    <input type="checkbox" class="product-checkbox" value="<?= $product['product_id']; ?>">
+                                                    <span class="product-title"><?= esc($product['product_title']); ?></span>
+                                                    <span class="product-sku" style="display: none;"><?= esc($product['sku']); ?></span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
                                 </div>
 
                                 <!-- Collection Field (Hidden by Default) -->
-                                <div class="form-group collectionField" id="ShowCollection" style="display: none;">
-                                    <label for="selected_collection">Collection</label>
-                                    <select class="custom-select2 form-control" id="selected_collection"
-                                        name="selected_collection[]" multiple style="width: 100%; height: 38px">
-                                        <?php foreach ($collections as $collection): ?>
-                                            <option value="<?= $collection['collection_id']; ?>">
-                                                <?= esc($collection['collection_title']); ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                <div class="form-group" id="ShowCollection" style="display: none;">
+                                    <label for="select_type">Select Collection</label>
+
+                                    <!-- Search Bar -->
+                                    <input type="text" id="collectionSearch" class="form-control" placeholder="Search collections by name or ID...">
+
+                                    <div class="SelectCollectionBox">
+                                        <ul id="collectionList">
+                                            <?php foreach ($collections as $collection): ?>
+                                                <li class="selectable-collection" data-id="<?= $collection['collection_id']; ?>" data-collection-id="<?= esc($collection['collection_id']); ?>">
+                                                    <input type="checkbox" class="collection-checkbox" value="<?= $collection['collection_id']; ?>">
+                                                    <span class="collection-title"><?= esc($collection['collection_title']); ?></span>
+                                                    <span class="collection-id" style="display: none;"><?= esc($collection['collection_id']); ?></span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
                                 </div>
+
+                                <!-- Hidden Input to Store Selected IDs -->
+                                <input type="hidden" name="selected_items" id="selected_items">
+
 
                                 <!-- Submit Button -->
                                 <button type="submit" class="btn btn-primary">Add</button>
@@ -942,7 +960,7 @@
                     <ul class="submenu child">
                         <div class="ImageUploadBox">
                             <?php foreach ($dataimages as $dataimage): ?>
-                                <form action="<?= base_url('online_store/save') ?>" id="homeImageForm" method="post"
+                                <form action="<?= base_url('home-image/save') ?>" id="homeImageForm" method="post"
                                     enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="image_title1">Image Title 1</label>

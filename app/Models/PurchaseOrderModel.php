@@ -93,4 +93,9 @@ class PurchaseOrderModel extends Model
     {
         return $this->findAll();
     }
+
+    public function InsertPurchaseOrderData($data)
+    {
+        return $this->db->table('purchase_orders')->insert($data);
+    }
 }

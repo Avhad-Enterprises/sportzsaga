@@ -72,7 +72,6 @@ class Store extends BaseController
         $data['pages'] = $modal->getpages();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['availableProducts'] = $modal->getAllAvailableProducts();
-        $data['selectedProducts'] = $modal->getHomeProductIds();
         $data['selectedBlogs'] = $modal->getHomeBlogIds();
         $data['carousel2'] = $modal->getAllCarousel2();
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
@@ -2065,42 +2064,30 @@ class Store extends BaseController
     ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
     public function add_new_product()
     {
-        $productModel = new Productselection();
+        $productModel = new onlinestoremodal();
 
-        $title = $this->request->getPost('product_title');
-        $description = $this->request->getPost('product_description');
-        $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product');
-        $selectedCollections = $this->request->getPost('selected_collection');
+        // Fetch selected items from form input
+        $selectedItems = $this->request->getPost('selected_items');
+        $selectedItems = json_decode($selectedItems, true); // Decode JSON input
 
-        // Ensure at least one selection is made
-        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
-            return $this->response->setJSON(['success' => false, 'message' => 'All fields are required, including at least one selection.']);
-        }
-
-        // Prepare selected items array only if they are not empty
-        $selectedItems = [];
-        if (!empty($selectedProducts)) {
-            $selectedItems = $selectedProducts;
-        }
-        if (!empty($selectedCollections)) {
-            $selectedItems = $selectedCollections;
+        // Ensure selected_items is an array, otherwise set it to an empty array
+        if (!is_array($selectedItems)) {
+            $selectedItems = [];
         }
 
         $data = [
-            'title' => $title,
-            'description' => $description,
-            'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'title' => $this->request->getPost('product_title'),
+            'description' => $this->request->getPost('product_description'),
+            'selection_type' => $this->request->getPost('select_type'),
+            'selected_items' => json_encode($selectedItems) // Store only checked IDs
         ];
 
-        if ($productModel->insert($data)) {
-            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product selection saved successfully.');
+        if ($productModel->InsertProductCarData($data)) {
+            return redirect()->back()->with('success', 'Product added successfully!');
         } else {
-            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save product selection.');
+            return redirect()->back()->with('error', 'Failed to add product.');
         }
     }
-
 
 
     public function fetch_products()
