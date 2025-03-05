@@ -185,26 +185,23 @@
                 <!-- Page Content End -->
 
                 <!-- Import Company Modal -->
-                <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="importCompanyModalLabel">Import Companies (CSV)</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <form action="<?= base_url('company/importCSV'); ?>" method="post"
-                                enctype="multipart/form-data">
+                            <form action="<?= base_url('company/importCSV'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label for="csv_file" class="form-label">Select CSV File</label>
-                                        <input type="file" name="csv_file" id="csv_file" class="form-control"
-                                            accept=".csv" required>
+                                        <input type="file" name="csv_file" id="csv_file" class="form-control" accept=".csv" required>
                                     </div>
                                     <div class="alert alert-info">
-                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following
-                                        headers:
+                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following headers:
                                         <ul>
                                             <li><code>company_name</code>, <code>user_ids</code>, <code>tags</code>,
                                                 <code>street</code>, <code>city</code>, <code>state</code>,
@@ -218,8 +215,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Import CSV</button>
                                 </div>
                             </form>

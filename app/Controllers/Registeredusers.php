@@ -352,17 +352,16 @@ class Registeredusers extends BaseController
             'state' => $this->request->getPost('state'),
             'pincode' => $this->request->getPost('pincode'),
             'phone_no' => $this->request->getPost('phone_no'),
-            'address_information' => $this->request->getPost('address_information')
+            'address_one' => $this->request->getPost('address_information_linef'),
+            'address_two' => $this->request->getPost('address_information_linesec'),
+            'landmark' => $this->request->getPost('landmark'),
         ];
 
         // Update user data
         $userModel->updateusermodel($user_id, $data);
 
-        // Set flash data for success message
-        session()->setFlashdata('success', 'Profile updated successfully.');
-
         // Redirect to the profile page or any other page
-        return redirect()->to('profile');
+        return redirect()->to('profile')->with('success', 'Profile updated successfully.');
     }
 
     public function updateempolyee($id)

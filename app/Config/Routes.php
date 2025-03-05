@@ -460,7 +460,6 @@ $routes->post('permissions/savePermissions', 'PermissionsController::savePermiss
 $routes->get('permissions_view', 'PermissionsController::viewPermissionsPage');
 $routes->post('permissions/deletePermissions', 'PermissionsController::deletePermissions');
 
-
 //suppliers
 $routes->get('supplier_list_view', 'SupplierController::index');
 $routes->get('suppliers/create', 'SupplierController::create');

@@ -425,50 +425,6 @@ class PurchaseOrderController extends Controller
         return redirect()->back()->with('error', 'Error importing the file.');
     }
 
-
-    public function UpdateMarquee($id)
-    {
-        $model = new \App\Models\MarqueeTextModel();
-    
-        // Validate the input
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'marqueeText' => 'required',
-            'marqueeText_link' => 'permit_empty|valid_url',
-            'text_visibility' => 'required|in_list[0,1]'
-        ]);
-    
-        if (!$validation->withRequest($this->request)->run()) {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Validation failed. Please check your input.',
-                'errors' => $validation->getErrors()
-            ]);
-        }
-    
-        // Prepare data for updating
-        $data = [
-            'marqueeText' => $this->request->getPost('marqueeText'),
-            'marqueeText_link' => $this->request->getPost('marqueeText_link'),
-            'text_visibility' => $this->request->getPost('text_visibility'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-    
-        // Update the record
-        if ($model->update($id, $data)) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Text updated successfully.'
-            ]);
-        } else {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Failed to update text.'
-            ]);
-        }
-    }
-
-
     public function delete($id)
     {
         $session = session();

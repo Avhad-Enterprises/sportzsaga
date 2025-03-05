@@ -469,10 +469,9 @@
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue mb-30">Change Password</p>
+                                    <p class="text-blue">Password</p>
 
-                                    <div class="form-group">
-                                        <label>Current Password</label>
+                                    <div class="">
                                         <div class="input-group">
                                             <input class="form-control" value="<?= $user['password'] ?>" type="password" id="current-password" disabled />
                                         </div>
