@@ -150,27 +150,31 @@
                                         <td>
                                             <a class="b_line"
                                                 href="<?= base_url() ?>admin-products/edit_related_product/<?= $product['id'] ?>">
-                                                <?= esc($product['product_title']) ?>
+                                                <?= esc($product['collection_title'] ?? $product['product_title']) ?>
                                             </a>
                                         </td>
+
                                         <td>
                                             <?php
                                             $relatedIds = json_decode($product['related_product_ids'], true);
                                             if (is_array($relatedIds) && count($relatedIds) > 0) {
-                                                // Fetch titles of related products
+                                                // Fetch product titles and images
                                                 $db = \Config\Database::connect();
                                                 $builder = $db->table('products');
-                                                $relatedProducts = $builder->select('product_title')
+                                                $relatedProducts = $builder->select('product_title, product_image')
                                                     ->whereIn('product_id', $relatedIds)
                                                     ->get()
                                                     ->getResultArray();
 
-                                                // Convert product titles to a numbered format
-                                                $relatedTitles = array_column($relatedProducts, 'product_title');
+                                                echo "<ol style='list-style: none; padding: 0;'>";
+                                                foreach ($relatedProducts as $related) {
+                                                    $imageUrl = esc($related['product_image']);
+                                                    $title = esc($related['product_title']);
 
-                                                echo "<ol>";
-                                                foreach ($relatedTitles as $title) {
-                                                    echo "<li>" . esc($title) . "</li>";
+                                                    echo "<li style='display: flex; align-items: center; gap: 10px; margin-bottom: 5px;'>
+                                                            <img src='{$imageUrl}' alt='{$title}' style='width: 50px; height: 50px; border-radius: 5px; object-fit: cover;'>
+                                                            <span>{$title}</span>
+                                                        </li>";
                                                 }
                                                 echo "</ol>";
                                             } else {
@@ -178,9 +182,13 @@
                                             }
                                             ?>
                                         </td>
-                                        <td><?= ucfirst($product['selection_method']) ?></td>
+
+                                        <td>
+                                            <?= ucfirst($product['selection_method'] === 'collection' ? 'Collection' : $product['selection_method']) ?>
+                                        </td>
+
                                         <td><?php $date = new DateTime($product['created_at']);
-                                            echo $date->format('d-F-Y h:i A'); ?>
+                                        echo $date->format('d-F-Y h:i A'); ?>
                                         </td>
                                         <td>
                                             <a href="javascript:void(0);"

@@ -195,6 +195,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
    $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
    $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
+   $routes->post('RelatedproductController/fetchProducts', 'RelatedproductController::fetchProducts'); // Fetch products dynamically
 
 });
 
@@ -540,6 +541,7 @@ $routes->get('online_store/fetch_collections', 'Store::fetch_collections');
 $routes->post('online_store/add_new_product', 'Store::add_new_product'); // ✅ Change from GET to POST
 $routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
 $routes->post('online_store/delete_product/(:num)', 'Store::delete_product/$1');
+
 
 
 //home image

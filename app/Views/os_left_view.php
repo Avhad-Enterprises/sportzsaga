@@ -1460,40 +1460,42 @@
                                                             class="custom-control-input fav-blog-checkbox"
                                                             id="fav_product_<?= $Product['product_id'] ?>"
                                                             name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
-                                                            data-title="<?= $Product['product_title'] ?>" <?= $isChecked ?>>
+                                                            data-title="<?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>"
+                                                            <?= $isChecked ?>>
 
                                                         <label class="custom-control-label"
                                                             for="fav_product_<?= $Product['product_id'] ?>">
-                                                            <?= $Product['product_title'] ?>
+                                                            <?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>
                                                         </label>
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>
+
+                                        <!-- Hidden Input to Store Selected Products -->
+                                        <input type="hidden" id="fav_blogs_input" name="fav_product"
+                                            value="<?= implode(',', $selectedFavproduct) ?>">
+
+                                        <!-- Display Selected Products -->
+                                        <ul class="sortable-list" id="favList">
+                                            <?php foreach ($products as $Product):
+                                                if (in_array($Product['product_id'], $selectedFavproduct)): ?>
+                                                    <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
+                                                        data-id="<?= $Product['product_id'] ?>">
+                                                        <span><?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?></span>
+                                                        <button class="btn btn-danger btn-sm remove-item"
+                                                            data-id="<?= $Product['product_id'] ?>">Delete</button>
+                                                    </li>
+                                                <?php endif;
+                                            endforeach; ?>
+                                        </ul>
                                     </div>
-                                </div>
-
-                                <!-- Display Selected Products -->
-                                <ul class="sortable-list" id="favBlogsList">
-                                    <?php
-                                    foreach ($products as $Product):
-                                        if (in_array($Product['product_id'], $selectedFavproduct)): ?>
-                                            <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
-                                                data-id="<?= $Product['product_id'] ?>">
-                                                <span><?= $Product['product_title'] ?></span>
-                                                <button class="btn btn-danger btn-sm remove-item"
-                                                    data-id="<?= $Product['product_id'] ?>">Delete</button>
-                                            </li>
-                                        <?php endif;
-                                    endforeach; ?>
-                                </ul>
-                                <input type="hidden" name="fav_product" id="fav_blogs_input"
-                                    value="<?= $page1_data['fav_product'] ?? '' ?>">
-
                             </form>
                         </div>
                     </ul>
                 </li>
+
+
 
                 <!--------------------------------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
 
@@ -1656,15 +1658,18 @@
                                                     class="form-control" required value="<?= esc($page['link']) ?>">
                                             </div>
 
-                                             <!-- Image Upload Field -->
+                                            <!-- Image Upload Field -->
                                             <div class="form-group">
                                                 <label for="image_<?= $page['id'] ?>">Image:</label>
-                                                <input type="file" name="image" id="image_<?= $page['id'] ?>" class="form-control" onchange="previewImage(event, 'preview_<?= $page['id'] ?>')">
+                                                <input type="file" name="image" id="image_<?= $page['id'] ?>"
+                                                    class="form-control"
+                                                    onchange="previewImage(event, 'preview_<?= $page['id'] ?>')">
 
                                                 <!-- Display the Uploaded Image Below -->
                                                 <?php if (!empty($page['image'])): ?>
                                                     <div class="mt-2">
-                                                        <img id="preview_<?= $page['id'] ?>" src="<?= esc($page['image']) ?>" alt="Uploaded Image"
+                                                        <img id="preview_<?= $page['id'] ?>" src="<?= esc($page['image']) ?>"
+                                                            alt="Uploaded Image"
                                                             style="max-width: 200px; max-height: 200px; border-radius: 10px; border: 1px solid #ddd;">
                                                     </div>
                                                 <?php else: ?>
@@ -4115,4 +4120,5 @@
             allowClear: true
         });
     });
+
 </script>

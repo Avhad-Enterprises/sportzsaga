@@ -134,70 +134,26 @@
                             <div class="pd-20 card-box mb-30">
                                 <p class="text-blue mb-30">Product Information</p>
 
-                                <div class="row">
-                                    <!-- Product Selection Dropdown -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="product">Product</label>
-                                            <select class="form-control" id="product" name="product_id"
-                                                onchange="updateProductDetails(this.value)">
-                                                <option value="">Select a product</option>
-                                                <?php foreach ($products as $product): ?>
-                                                    <option value="<?= $product['product_id'] ?>"
-                                                        data-sku="<?= $product['sku'] ?>"
-                                                        data-tag="<?= $product['product_tags'] ?>"
-                                                        data-inventory="<?= $product['inventory'] ?>"
-                                                        data-selling-price="<?= $product['selling_price'] ?>"
-                                                        data-cost-price="<?= $product['cost_price'] ?>">
-                                                        <?= $product['product_title'] ?>
-                                                    </option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- SKU Field -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>SKU</label>
-                                            <input type="text" id="productSKU" class="form-control" readonly>
-                                        </div>
-                                    </div>
-
-                                    <!-- Product Tag -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Tag</label>
-                                            <input type="text" id="productTag" class="form-control" readonly>
-                                        </div>
-                                    </div>
-
-                                    <!-- Inventory -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Inventory</label>
-                                            <input type="text" id="productinventory" class="form-control" readonly>
-                                        </div>
-                                    </div>
-
-                                    <!-- Selling Price -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Selling Price</label>
-                                            <input type="text" id="productSellingPrice" class="form-control" readonly>
-                                        </div>
-                                    </div>
-
-                                    <!-- Cost Price -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Cost Price</label>
-                                            <input type="text" id="productCostPrice" class="form-control" readonly>
-                                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="collection">Collection</label>
+                                        <select class="form-control" id="collection" name="collection_id"
+                                            onchange="fetchProducts(this.value)">
+                                            <option value="">Select a collection</option>
+                                            <?php foreach ($collections as $collection): ?>
+                                                <option value="<?= $collection['collection_id'] ?>">
+                                                    <?= $collection['collection_title'] ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
 
+                                <!-- Product Display Section -->
+                                <div class="col-md-12">
+                                    <div id="product-list" class="row"></div> <!-- Products will be displayed here -->
+                                </div>
+                            </div>
 
                             <div class="pd-20 card-box mb-30">
                                 <div class="clearfix row">
@@ -623,7 +579,13 @@
                                 <tr class="selected-product-item" draggable="true">
                                     <td>${product.product_title}</td>
                                     <td>${product.cost_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                   <td>
+                                        <img src="${product.product_image}" 
+                                            alt="${product.product_title}" 
+                                            width="50" 
+                                            height="50" 
+                                            style="border-radius: 5px; object-fit: cover;">
+                                    </td>
                                 </tr>
                             `);
                             });
@@ -1001,7 +963,13 @@
                                 <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                     <td>${product.product_title}</td>
                                     <td>${product.cost_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                   <td>
+                                        <img src="${product.product_image}" 
+                                            alt="${product.product_title}" 
+                                            width="50" 
+                                            height="50" 
+                                            style="border-radius: 5px; object-fit: cover;">
+                                    </td>
                                 </tr>
                             `);
                             });
@@ -1029,7 +997,7 @@
 
         // Function to fetch all products when no conditions are specified
         function fetchAllProducts() {
-            showLoader(); // Show loader before making the AJAX call
+            showLoader();
 
             $.ajax({
                 url: `${baseUrl}getAllProducts`,
@@ -1048,7 +1016,13 @@
                             <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                 <td>${product.product_title}</td>
                                 <td>${product.cost_price}</td>
-                                <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                <td>
+                                    <img src="${product.product_image}" 
+                                        alt="${product.product_title}" 
+                                        width="50" 
+                                        height="50" 
+                                        style="border-radius: 5px; object-fit: cover;">
+                                </td>
                             </tr>
                         `);
                         });
@@ -1253,7 +1227,13 @@
                             </td>
                             <td>${product.product_title}</td>
                             <td>${product.cost_price}</td>
-                            <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                            <td>
+                                <img src="${product.product_image}" 
+                                    alt="${product.product_title}" 
+                                    width="50" 
+                                    height="50" 
+                                    style="border-radius: 5px; object-fit: cover;">
+                            </td>
                         </tr>
                     `);
                     });
@@ -1312,7 +1292,7 @@
             var selectedProductsHtml = selectedProducts.map(product =>
                 `<div class="list-group-item selected-product-item" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-created="${product.created}">
                 <div class="row" style="display: flex; align-items: center;">
-                    <img  class="border-radius-100 shadow" src="${product.image}" alt="${product.title}" width="30" height="30">
+                    <img class="border-radius-100 shadow" src="${product.image}" alt="${product.title}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                     <p class="col p-3" style="font-weight: 700; font-size: small; padding: 5px; margin: auto;">${product.title}</p>
                     <i class="icon-copy btn ion-trash-b remove-product" data-id="${product.id}"></i>
                 </div>
@@ -1371,18 +1351,101 @@
 
 <script>
     function goBack() {
-        // Redirects to the previous page in browser history
+
         window.history.back();
     }
 </script>
 
 <script>
-    function updateProductDetails(productId) {
-        let selectedOption = document.querySelector(`#product option[value='${productId}']`);
-        document.getElementById('productSKU').value = selectedOption.getAttribute('data-sku');
-        document.getElementById('productTag').value = selectedOption.getAttribute('data-tag');
-        document.getElementById('productinventory').value = selectedOption.getAttribute('data-inventory');
-        document.getElementById('productSellingPrice').value = selectedOption.getAttribute('data-selling-price');
-        document.getElementById('productCostPrice').value = selectedOption.getAttribute('data-cost-price');
+    function fetchProducts(collectionId) {
+        let productList = document.getElementById('product-list');
+        productList.innerHTML = ''; // Clear previous products
+
+        if (!collectionId) return;
+
+        fetch('<?= base_url('RelatedproductController/fetchProducts') ?>', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ collection_id: collectionId })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success' && data.products.length > 0) {
+                    data.products.forEach(product => {
+                        let productCard = `
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <img src="${product.product_image}" class="card-img-top" alt="${product.product_title}" style="width: 100px; height: 100px; object-fit: cover; margin: auto;">
+                            <div class="card-body">
+                                <h6 class="card-title">${product.product_title}</h6>
+                                <p class="card-text">Price: ₹${product.selling_price}</p>
+                                <p class="card-text">Inventory: ${product.inventory}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                        productList.innerHTML += productCard;
+                    });
+                } else {
+                    productList.innerHTML = '<div class="col-md-12"><p>No products found for this collection.</p></div>';
+                }
+            })
+            .catch(error => console.error('Error fetching products:', error));
     }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const collectionDropdown = document.getElementById("collection");
+        const automatedRadio = document.getElementById("customRadio4");
+        const manualRadio = document.getElementById("customRadio5");
+
+        function disableSelectionMethods() {
+            automatedRadio.disabled = true;
+            manualRadio.disabled = true;
+            automatedRadio.checked = false;
+            manualRadio.checked = false;
+        }
+
+        function enableSelectionMethods() {
+            automatedRadio.disabled = false;
+            manualRadio.disabled = false;
+        }
+
+        function disableCollection() {
+            collectionDropdown.disabled = true;
+            collectionDropdown.value = ""; // Reset the collection selection
+        }
+
+        function enableCollection() {
+            collectionDropdown.disabled = false;
+        }
+
+        // When collection is selected
+        collectionDropdown.addEventListener("change", function () {
+            if (this.value) {
+                disableSelectionMethods(); // Disable Automated & Manual
+            } else {
+                enableSelectionMethods(); // Enable them if no collection selected
+            }
+        });
+
+        // When Automated or Manual is selected
+        automatedRadio.addEventListener("change", function () {
+            if (this.checked) {
+                disableCollection();
+            }
+        });
+
+        manualRadio.addEventListener("change", function () {
+            if (this.checked) {
+                disableCollection();
+            }
+        });
+
+        // Ensure correct state on page load (for edit mode)
+        if (collectionDropdown.value) {
+            disableSelectionMethods();
+        }
+    });
 </script>

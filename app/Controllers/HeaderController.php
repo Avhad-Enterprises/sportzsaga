@@ -287,8 +287,6 @@ class HeaderController extends Controller
         }
     }
 
-
-
-
+    
 }
 

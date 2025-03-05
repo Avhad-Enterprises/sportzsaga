@@ -9,16 +9,11 @@ class RelatedProductModel extends Model
     protected $table = 'related_products';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'product_id',
-        'sku',
-        'product_tag',
-        'inventory',
-        'selling_price',
-        'cost_price',
+        'collection_ids', // Keep this
+        'related_product_ids', // Keep this
         'selection_method',
         'condition_type',
         'conditions',
-        'related_product_ids',
         'sort_by',
         'created_at',
         'updated_at'
@@ -54,13 +49,36 @@ class RelatedProductModel extends Model
 
     public function getAllRelatedProducts()
     {
-        return $this->db->table('related_products rp')
-            ->select('rp.id, p.product_title, rp.related_product_ids, rp.selection_method, rp.created_at')
-            ->join('products p', 'p.product_id = rp.product_id', 'left')
+        $db = \Config\Database::connect();
+
+        $relatedProducts = $db->table('related_products rp')
+            ->select('rp.id, rp.collection_ids, rp.related_product_ids, rp.selection_method, rp.created_at,
+            (SELECT collection_title FROM collection c WHERE FIND_IN_SET(c.collection_id, rp.collection_ids) LIMIT 1) AS collection_title')
             ->orderBy('rp.created_at', 'DESC')
             ->get()
             ->getResultArray();
+
+        $productModel = new Products_model();
+
+        foreach ($relatedProducts as &$rp) {
+            // Decode JSON related product IDs
+            $productIds = json_decode($rp['related_product_ids'], true);
+
+            if (!empty($productIds) && is_array($productIds)) {
+                // Get first product title as fallback if no collection is present
+                $firstProduct = $productModel->where('product_id', $productIds[0])
+                    ->select('product_title')
+                    ->first();
+
+                $rp['product_title'] = $rp['collection_title'] ?? ($firstProduct['product_title'] ?? 'No product');
+            } else {
+                $rp['product_title'] = 'No product';
+            }
+        }
+
+        return $relatedProducts;
     }
+
 
     public function RelatedProducts($productId)
     {
@@ -75,5 +93,6 @@ class RelatedProductModel extends Model
 
         return is_array($relatedProductIds) ? $relatedProductIds : [];
     }
+
 
 }

@@ -109,7 +109,7 @@
             <div class="min-height-200px">
                 <!-- Page Main Content Start -->
 
-                <div class="d-flex justify-content-between align-content-baseline">
+                <div class="d-flex justify-content-between align-items-center w-100">
                     <div class="form-group col-md-4">
                         <label for="web_section">Section</label>
                         <select name="web_section" id="web_section" class="form-control">
@@ -132,67 +132,81 @@
                             <option value="Email_POP_UP">Email POP UP</option>
                         </select>
                     </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div id="web-home" class="web-section">
+                            <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home
+                                page</button>
+                        </div>
+                        <div id="web-blogs" class="web-section" style="display: none;">
+                            <button type="button" id="updateblogpage" class="btn m-4 btn-primary">Update Blogs
+                                page</button>
+                        </div>
+                        <div id="web-about" class="web-section" style="display: none;">
+                            <button type="button" id="updateaboutpage" class="btn m-4 btn-primary">Update About
+                                page</button>
+                        </div>
+                        <div id="web-contact" class="web-section" style="display: none;">
+                            <button type="button" id="updatecontactpage" class="btn m-4 btn-primary">Update Contact
+                                page</button>
+                        </div>
+                        <div id="web-search" class="web-section" style="display: none;">
+                            <button type="button" id="updatesearchpage" class="btn m-4 btn-primary">Update Search
+                                page</button>
+                        </div>
+                        <div id="web-wishlist" class="web-section" style="display: none;">
+                            <button type="button" id="updatewishlistpage" class="btn m-4 btn-primary">Update Wishlist
+                                page</button>
+                        </div>
+                        <div id="web-cart" class="web-section" style="display: none;">
+                            <button type="button" id="updatecartpage" class="btn m-4 btn-primary">Update Cart
+                                page</button>
+                        </div>
+                        <div id="web-checkout" class="web-section" style="display: none;">
+                            <button type="button" id="updatecheckout" class="btn m-4 btn-primary">Update Checkout
+                                page</button>
+                        </div>
+                        <div id="web-tracking" class="web-section" style="display: none;">
+                            <button type="button" id="updatetracking" class="btn m-4 btn-primary">Update Tracking
+                                page</button>
+                        </div>
+                        <div id="web-404" class="web-section" style="display: none;">
+                            <button type="button" id="update404" class="btn m-4 btn-primary">Update 404 page</button>
+                        </div>
+                        <div id="web-header" class="web-section" style="display: none;">
+                            <button type="submit" id="updateheader" class="btn m-4 btn-primary">Update Header</button>
+                        </div>
+                        <div id="web-singleblog" class="web-section" style="display: none;">
+                            <button type="submit" id="updatesingleblog" class="btn m-4 btn-primary">Update Single Blog
+                                page</button>
+                        </div>
+                        <div id="web-collection" class="web-section" style="display: none;">
+                            <button type="submit" id="updatecollection" class="btn m-4 btn-primary">Update Collection
+                                page</button>
+                        </div>
+                        <div id="web-product" class="web-section" style="display: none;">
+                            <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product
+                                page</button>
+                        </div>
+                        <div id="web-Email_POP_UP" class="web-section" style="display: none;">
+                            <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email
+                                POP
+                                UP page</button>
+                        </div>
 
-                    <div id="web-home" class="web-section" style="display: none;">
-                        <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home page</button>
+                        <!-- Mobile & Desktop View Buttons with Icons -->
+                        <div class="d-flex align-items-center gap-3">
+                            <button type="button" id="showDesktop"
+                                class="btn btn-outline-primary d-flex align-items-center px-3 py-1"
+                                style="height: 40px; width: 45px; margin-right: 10px;">
+                                <i class="fas fa-desktop"></i>
+                            </button>
+                            <button type="button" id="showMobile"
+                                class="btn btn-outline-primary d-flex align-items-center px-3 py-1"
+                                style="height: 40px; width: 45px;">
+                                <i class="fas fa-mobile-alt"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div id="web-blogs" class="web-section" style="display: none;">
-                        <button type="button" id="updateblogpage" class="btn m-4 btn-primary">Update Blogs page</button>
-                    </div>
-                    <div id="web-about" class="web-section" style="display: none;">
-                        <button type="button" id="updateaboutpage" class="btn m-4 btn-primary">Update About
-                            page</button>
-                    </div>
-                    <div id="web-contact" class="web-section" style="display: none;">
-                        <button type="button" id="updatecontactpage" class="btn m-4 btn-primary">Update Contact
-                            page</button>
-                    </div>
-                    <div id="web-search" class="web-section" style="display: none;">
-                        <button type="button" id="updatesearchpage" class="btn m-4 btn-primary">Update Search
-                            page</button>
-                    </div>
-                    <div id="web-wishlist" class="web-section" style="display: none;">
-                        <button type="button" id="updatewishlistpage" class="btn m-4 btn-primary">Update Wishlist
-                            page</button>
-                    </div>
-                    <div id="web-cart" class="web-section" style="display: none;">
-                        <button type="button" id="updatecartpage" class="btn m-4 btn-primary">Update Cart page</button>
-                    </div>
-                    <div id="web-checkout" class="web-section" style="display: none;">
-                        <button type="button" id="updatecheckout" class="btn m-4 btn-primary">Update Checkout
-                            page</button>
-                    </div>
-                    <div id="web-tracking" class="web-section" style="display: none;">
-                        <button type="button" id="updatetracking" class="btn m-4 btn-primary">Update Tracking
-                            page</button>
-                    </div>
-                    <div id="web-404" class="web-section" style="display: none;">
-                        <button type="button" id="update404" class="btn m-4 btn-primary">Update 404 page</button>
-                    </div>
-                    <div id="web-header" class="web-section" style="display: none;">
-                        <button type="submit" id="updateheader" class="btn m-4 btn-primary">Update Header</button>
-                    </div>
-                    <div id="web-singleblog" class="web-section" style="display: none;">
-                        <button type="submit" id="updatesingleblog" class="btn m-4 btn-primary">Update Single Blog
-                            page</button>
-                    </div>
-                    <div id="web-collection" class="web-section" style="display: none;">
-                        <button type="submit" id="updatecollection" class="btn m-4 btn-primary">Update Collection
-                            page</button>
-                    </div>
-                    <div id="web-product" class="web-section" style="display: none;">
-                        <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product
-                            page</button>
-                    </div>
-                    <div id="web-Email_POP_UP" class="web-section" style="display: none;">
-                        <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email POP
-                            UP page</button>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center my-3">
-                    <button type="button" id="showDesktop" class="btn btn-primary mx-2">Desktop View</button>
-                    <button type="button" id="showMobile" class="btn btn-secondary mx-2">Mobile View</button>
                 </div>
 
                 <div id="web-home" class="web-section">
@@ -200,7 +214,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -217,7 +231,6 @@
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
-
                     </div>
                 </div>
                 <!-- Search Page -->
@@ -226,7 +239,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -252,7 +265,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -277,7 +290,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -298,7 +311,6 @@
                                 frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
-
                     </div>
                 </div>
 
@@ -308,7 +320,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -337,7 +349,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -364,7 +376,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -391,7 +403,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -418,7 +430,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -445,7 +457,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -472,7 +484,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -499,7 +511,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -526,7 +538,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -553,7 +565,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -580,7 +592,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -609,7 +621,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -636,7 +648,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -663,7 +675,7 @@
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 85vh; display: block;">
+                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
@@ -718,6 +730,8 @@
             });
         });
     </script>
+
+
 
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
@@ -1092,81 +1106,67 @@
 
     <!---------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------------------>
     <script>
-        // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
             const listContainer = document.getElementById(listId);
-
-            // Clear the list container
-            listContainer.innerHTML = '';
+            const checkboxes = document.querySelectorAll(`.${checkboxClass}`);
 
             // Iterate through checkboxes
-            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
+            checkboxes.forEach(checkbox => {
+                const id = checkbox.getAttribute('data-id');
+                const title = checkbox.getAttribute('data-title');
+
                 if (checkbox.checked) {
-                    const title = checkbox.getAttribute('data-title');
-                    const id = checkbox.getAttribute('data-id');
+                    // Check if item already exists
+                    if (!document.querySelector(`#item_${id}`)) {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                        listItem.setAttribute('data-id', id);
+                        listItem.setAttribute('id', `item_${id}`);
 
-                    // Create the list item
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                    listItem.setAttribute('data-id', id);
+                        // Add title
+                        const itemTitle = document.createElement('span');
+                        itemTitle.textContent = title;
+                        listItem.appendChild(itemTitle);
 
-                    // Add the item title
-                    const itemTitle = document.createElement('span');
-                    itemTitle.textContent = title;
-                    listItem.appendChild(itemTitle);
+                        // Add delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'remove-item');
+                        deleteButton.setAttribute('data-id', id);
 
-                    // Add the delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                    deleteButton.addEventListener('click', () => {
-                        // Uncheck the checkbox
-                        checkbox.checked = false;
-
-                        // Remove the item from the list
-                        listContainer.removeChild(listItem);
-
-                        // Update the hidden input value
-                        updateSelections(listId, inputId, checkboxClass);
-                    });
-
-                    listItem.appendChild(deleteButton);
-
-                    // Append the list item to the list container
-                    listContainer.appendChild(listItem);
-
-                    // Add ID to the selected items array
+                        listItem.appendChild(deleteButton);
+                        listContainer.appendChild(listItem);
+                    }
                     selectedItems.push(id);
                 }
             });
 
-            // Update hidden input value
+            // Update hidden input field
             document.getElementById(inputId).value = selectedItems.join(',');
-        }
 
-        // Initialize sortable for drag-and-drop
-        function initializeSortable(listId, inputId) {
-            new Sortable(document.getElementById(listId), {
-                animation: 150,
-                onEnd: function () {
-                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
-                    document.getElementById(inputId).value = orderedIds.join(',');
+            // Attach delete event listener (Event Delegation)
+            document.getElementById(listId).addEventListener('click', function (event) {
+                if (event.target.classList.contains('remove-item')) {
+                    const itemId = event.target.getAttribute('data-id');
+                    document.getElementById(`item_${itemId}`).remove();
+                    document.querySelector(`#fav_product_${itemId}`).checked = false;
+                    updateSelections(listId, inputId, checkboxClass);
                 }
             });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sortable list for favorite blogs
-            initializeSortable('favBlogsList', 'fav_blogs_input');
+            initializeSortable('favList', 'fav_blogs_input');
 
             // Initialize selections on page load
-            updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox');
-
-            // Event listeners for checkbox changes
+            updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox');
+            
             document.querySelectorAll('.fav-blog-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox'));
+                checkbox.addEventListener('change', () => updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox'));
             });
+
 
             // Event listeners for removing items from the list
             document.querySelectorAll('.remove-item').forEach(button => {
@@ -1182,7 +1182,7 @@
                     listItem.remove();
 
                     // Update hidden input value
-                    updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox');
+                    updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox');
                 });
             });
 
@@ -1213,8 +1213,7 @@
                         alert('An error occurred while saving the collection data.');
                     });
             });
-        });
-
+        });        
     </script>
 
     <script>
@@ -2122,7 +2121,7 @@
 
 
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
