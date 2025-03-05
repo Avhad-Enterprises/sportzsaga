@@ -2066,29 +2066,50 @@ class Store extends BaseController
     {
         $productModel = new onlinestoremodal();
 
-        // Fetch selected items from form input
-        $selectedItems = $this->request->getPost('selected_items');
-        $selectedItems = json_decode($selectedItems, true); // Decode JSON input
+        // Get form inputs
+        $title = $this->request->getPost('product_title');
+        $description = $this->request->getPost('product_description');
+        $selectionType = $this->request->getPost('select_type');
 
-        // Ensure selected_items is an array, otherwise set it to an empty array
-        if (!is_array($selectedItems)) {
-            $selectedItems = [];
+        // Get selected product or collection IDs
+        $selectedProducts = $this->request->getPost('selected_product_items');
+        $selectedCarCollections = $this->request->getPost('selected_collection_items');
+
+        $selectedItems = [];
+
+        if ($selectionType === 'product' && !empty($selectedProducts)) {
+            // No need to json_encode() again as it's already JSON
+            $selectedItems = $selectedProducts;
+        } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
+            // Decode JSON collection ID
+            $collectionid = json_decode($selectedCarCollections, true);
+            $collectionid = is_array($collectionid) ? reset($collectionid) : (string) $collectionid;
+
+            // Fetch product IDs linked to this collection
+            $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
+
+            if ($collectionData && !empty($collectionData['product_ids'])) {
+                // Convert comma-separated product IDs from the collection into a JSON array
+                $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
+            }
         }
 
+        // Prepare data for insertion
         $data = [
-            'title' => $this->request->getPost('product_title'),
-            'description' => $this->request->getPost('product_description'),
-            'selection_type' => $this->request->getPost('select_type'),
-            'selected_items' => json_encode($selectedItems) // Store only checked IDs
+            'title' => $title,
+            'description' => $description,
+            'selection_type' => $selectionType,
+            'selected_items' => $selectedItems,
+            'collection_id' => $collectionid ?? null,
         ];
 
+        // Insert into database
         if ($productModel->InsertProductCarData($data)) {
             return redirect()->back()->with('success', 'Product added successfully!');
         } else {
             return redirect()->back()->with('error', 'Failed to add product.');
         }
     }
-
 
     public function fetch_products()
     {

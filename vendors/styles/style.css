@@ -6962,48 +6962,16 @@ textarea {
     border-radius: 4px;
 }
 
-/* Custom Scrollbar Styling */
-.SelectProductBox::-webkit-scrollbar {
-    width: 8px; /* Adjust scrollbar width */
+/* Highlight selected item */
+.SelectProductBox li.selected,
+.SelectCollectionBox li.selected {
+    background: black;
+    color: white;
+    font-weight: bold;
 }
 
-.SelectProductBox::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Light background */
-}
-
-.SelectProductBox::-webkit-scrollbar-thumb {
-    background: #888; /* Darker scrollbar */
-    border-radius: 4px;
-}
-
-.SelectProductBox::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* Default List Item Styling */
-.SelectProductBox li {
-    margin: 6px 0;
-    font-size: 14px;
-    padding: 6px 10px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Style checkboxes */
-.product-checkbox {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-#collectionSearch,
-#productSearch{
-    margin: 6px 0;
-}
-
+/* Styling for Scrollable Product & Collection Box */
+.SelectProductBox,
 .SelectCollectionBox {
     background-color: #fff;
     border: #ababab solid 0.5px;
@@ -7015,24 +6983,29 @@ textarea {
 }
 
 /* Custom Scrollbar Styling */
+.SelectProductBox::-webkit-scrollbar,
 .SelectCollectionBox::-webkit-scrollbar {
-    width: 8px; /* Adjust scrollbar width */
+    width: 8px;
 }
 
+.SelectProductBox::-webkit-scrollbar-track,
 .SelectCollectionBox::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Light background */
+    background: #f1f1f1;
 }
 
+.SelectProductBox::-webkit-scrollbar-thumb,
 .SelectCollectionBox::-webkit-scrollbar-thumb {
-    background: #888; /* Darker scrollbar */
+    background: #888;
     border-radius: 4px;
 }
 
+.SelectProductBox::-webkit-scrollbar-thumb:hover,
 .SelectCollectionBox::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
 /* Default List Item Styling */
+.SelectProductBox li,
 .SelectCollectionBox li {
     margin: 6px 0;
     font-size: 14px;
@@ -7044,9 +7017,7 @@ textarea {
     gap: 10px;
 }
 
-/* Style checkboxes */
-.collection-checkbox {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
+#collectionSearch,
+#productSearch {
+    margin: 6px 0;
 }

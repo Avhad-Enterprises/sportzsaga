@@ -530,17 +530,33 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
 
+            // ✅ Toggle Add Product Form Visibility
             const toggleButton = document.getElementById("toggleProductFormButton");
             const formContainer = document.getElementById("productAddForm");
-            const productList = document.getElementById("productList");
-            const collectionList = document.getElementById("collectionList");
 
-            // ✅ Toggle Form Visibility
             toggleButton.addEventListener("click", function() {
-                formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
+                formContainer.style.display = (formContainer.style.display === "none" || formContainer.style.display === "") ? "block" : "none";
             });
+
+            // ✅ Function to Toggle Edit Form Visibility for Each Product
+            window.toggleEditFormProduct = function(productId) {
+                const editForm = document.getElementById(`editForm-${productId}`);
+                const chevronIcon = document.getElementById(`chevron-${productId}`);
+
+                if (editForm.style.display === "none" || editForm.style.display === "") {
+                    editForm.style.display = "block";
+                    chevronIcon.classList.remove("fa-chevron-down");
+                    chevronIcon.classList.add("fa-chevron-up");
+                } else {
+                    editForm.style.display = "none";
+                    chevronIcon.classList.remove("fa-chevron-up");
+                    chevronIcon.classList.add("fa-chevron-down");
+                }
+            };
+
         });
     </script>
+
 
     <script>
         function deleteProduct(productId) {
@@ -607,22 +623,73 @@
                 });
             });
 
-            // Function to update selected items in the hidden input field
+            // Function to handle product selection
+            let selectedProducts = [];
+            let selectedCollections = [];
+
             function updateSelectedItems() {
-                var selectedItems = [];
-                $(".product-checkbox:checked, .collection-checkbox:checked").each(function() {
-                    selectedItems.push($(this).val());
-                });
-                $("#selected_items").val(JSON.stringify(selectedItems)); // Store only checked IDs in JSON format
+                $("#selected_product_items").val(JSON.stringify(selectedProducts));
+                $("#selected_collection_items").val(JSON.stringify(selectedCollections));
             }
 
-            // Handle Checkbox Selection for Products & Collections
-            $(".product-checkbox, .collection-checkbox").on("change", function() {
+            // Click event for product selection
+            $("#productList").on("click", "li", function() {
+                var productId = $(this).attr("data-id");
+
+                if (selectedProducts.includes(productId)) {
+                    selectedProducts = selectedProducts.filter(id => id !== productId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedProducts.push(productId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
+                updateSelectedItems();
+            });
+
+            // Click event for collection selection
+            $("#collectionList").on("click", "li", function() {
+                var collectionId = $(this).attr("data-id");
+
+                if (selectedCollections.includes(collectionId)) {
+                    selectedCollections = selectedCollections.filter(id => id !== collectionId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedCollections.push(collectionId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
                 updateSelectedItems();
             });
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to toggle between Products and Collections based on selection type
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.id.split("_")[1]; // Extract product ID from select ID
+                    let selectedValue = this.value;
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+
+                    if (selectedValue === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                    } else if (selectedValue === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+    
     <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
 
     <script>

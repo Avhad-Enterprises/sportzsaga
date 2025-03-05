@@ -610,8 +610,7 @@
                                 <!-- Select Field (Dropdown) -->
                                 <div class="form-group">
                                     <label for="select_type">Select Field</label>
-                                    <select class="custom-select2 form-control" id="select_type" name="select_type"
-                                        style="width: 100%; height: 38px">
+                                    <select class="custom-select2 form-control" id="select_type" name="select_type" style="width: 100%; height: 38px">
                                         <option value="">Select</option>
                                         <option value="product">Product</option>
                                         <option value="collection">Collection</option>
@@ -620,7 +619,7 @@
 
                                 <!-- Product Field (Hidden by Default) -->
                                 <div class="form-group" id="ShowProduct" style="display: none;">
-                                    <label for="select_type">Select Field</label>
+                                    <label for="productSearch">Select Product</label>
 
                                     <!-- Search Bar -->
                                     <input type="text" id="productSearch" class="form-control" placeholder="Product name or SKU...">
@@ -629,7 +628,6 @@
                                         <ul id="productList">
                                             <?php foreach ($products as $product): ?>
                                                 <li class="selectable-product" data-id="<?= $product['product_id']; ?>" data-sku="<?= esc($product['sku']); ?>">
-                                                    <input type="checkbox" class="product-checkbox" value="<?= $product['product_id']; ?>">
                                                     <span class="product-title"><?= esc($product['product_title']); ?></span>
                                                     <span class="product-sku" style="display: none;"><?= esc($product['sku']); ?></span>
                                                 </li>
@@ -640,7 +638,7 @@
 
                                 <!-- Collection Field (Hidden by Default) -->
                                 <div class="form-group" id="ShowCollection" style="display: none;">
-                                    <label for="select_type">Select Collection</label>
+                                    <label for="collectionSearch">Select Collection</label>
 
                                     <!-- Search Bar -->
                                     <input type="text" id="collectionSearch" class="form-control" placeholder="Search collections by name or ID...">
@@ -649,7 +647,6 @@
                                         <ul id="collectionList">
                                             <?php foreach ($collections as $collection): ?>
                                                 <li class="selectable-collection" data-id="<?= $collection['collection_id']; ?>" data-collection-id="<?= esc($collection['collection_id']); ?>">
-                                                    <input type="checkbox" class="collection-checkbox" value="<?= $collection['collection_id']; ?>">
                                                     <span class="collection-title"><?= esc($collection['collection_title']); ?></span>
                                                     <span class="collection-id" style="display: none;"><?= esc($collection['collection_id']); ?></span>
                                                 </li>
@@ -659,8 +656,8 @@
                                 </div>
 
                                 <!-- Hidden Input to Store Selected IDs -->
-                                <input type="hidden" name="selected_items" id="selected_items">
-
+                                <input type="hidden" name="selected_product_items" id="selected_product_items">
+                                <input type="hidden" name="selected_collection_items" id="selected_collection_items">
 
                                 <!-- Submit Button -->
                                 <button type="submit" class="btn btn-primary">Add</button>
@@ -707,46 +704,40 @@
                                                     class="form-control"><?= $product['description'] ?></textarea>
                                             </div>
 
+                                            <!-- Select Type -->
                                             <div class="form-group">
                                                 <label for="select_type_<?= $product['id'] ?>">Select Field</label>
-                                                <select class="custom-select2 form-control"
-                                                    id="select_type_<?= $product['id'] ?>" name="select_type">
+                                                <select class="custom-select2 form-control select-type" id="select_type_<?= $product['id'] ?>" name="select_type" style="width: 100%; height: 38px">
                                                     <option value="product" <?= ($product['selection_type'] == "product") ? 'selected' : '' ?>>Product</option>
                                                     <option value="collection" <?= ($product['selection_type'] == "collection") ? 'selected' : '' ?>>Collection</option>
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="selected_products_<?= $product['id'] ?>">Selected
-                                                    Products</label>
-                                                <select class="custom-select2 form-control"
-                                                    id="selected_products_<?= $product['id'] ?>" name="selected_product[]"
-                                                    multiple>
+                                            <!-- Product Field (Hidden by Default) -->
+                                            <div class="form-group product-section" id="ShowProduct_<?= $product['id'] ?>" style="<?= ($product['selection_type'] == 'product') ? 'display:block;' : 'display:none;' ?>">
+                                                <label for="selected_products_<?= $product['id'] ?>">Selected Products</label>
+                                                <select class="custom-select2 form-control selected-products" id="selected_products_<?= $product['id'] ?>" name="selected_product[]" multiple>
                                                     <?php
                                                     $selectedItems = json_decode($product['selected_items'], true);
                                                     $selectedProducts = $selectedItems['products'] ?? [];
                                                     ?>
                                                     <?php foreach ($products as $prod): ?>
-                                                        <option value="<?= $prod['product_id']; ?>"
-                                                            <?= in_array($prod['product_id'], $selectedProducts) ? 'selected' : '' ?>>
+                                                        <option value="<?= $prod['product_id']; ?>" <?= in_array($prod['product_id'], $selectedProducts) ? 'selected' : '' ?>>
                                                             <?= esc($prod['product_title']); ?>
                                                         </option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="selected_collections_<?= $product['id'] ?>">Selected
-                                                    Collections</label>
-                                                <select class="custom-select2 form-control"
-                                                    id="selected_collections_<?= $product['id'] ?>"
-                                                    name="selected_collection[]" multiple>
+                                            <!-- Collection Field (Hidden by Default) -->
+                                            <div class="form-group collection-section" id="ShowCollection_<?= $product['id'] ?>" style="<?= ($product['selection_type'] == 'collection') ? 'display:block;' : 'display:none;' ?>">
+                                                <label for="selected_collections_<?= $product['id'] ?>">Selected Collections</label>
+                                                <select class="custom-select2 form-control selected-collections" id="selected_collections_<?= $product['id'] ?>" name="selected_collection[]" multiple>
                                                     <?php
                                                     $selectedCollections = $selectedItems['collections'] ?? [];
                                                     ?>
                                                     <?php foreach ($collections as $col): ?>
-                                                        <option value="<?= $col['collection_id']; ?>"
-                                                            <?= in_array($col['collection_id'], $selectedCollections) ? 'selected' : '' ?>>
+                                                        <option value="<?= $col['collection_id']; ?>" <?= in_array($col['collection_id'], $selectedCollections) ? 'selected' : '' ?>>
                                                             <?= esc($col['collection_title']); ?>
                                                         </option>
                                                     <?php endforeach; ?>

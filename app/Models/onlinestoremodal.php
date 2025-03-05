@@ -266,4 +266,9 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('products_section')->insert($data);
     }
+
+    public function GetProdctsBycollectionid($id)
+    {
+        return $this->db->table('collection')->where('collection_id', $id)->get()->getRowArray();
+    }
 }
