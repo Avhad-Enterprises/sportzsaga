@@ -672,6 +672,28 @@
         });
     </script>
 
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
+
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function() {

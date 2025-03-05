@@ -158,11 +158,11 @@ class PurchaseOrderController extends Controller
     public function edit($id)
     {
         $session = session();
-        $userId = $session->get('user_id'); // Get the logged-in user's ID
+        $userId = $session->get('user_id');
         $purchaseOrderModel = new PurchaseOrderModel();
         $productModel = new Products_model();
         $warehouseModel = new WarehouseModel();
-        $supplierModel = new SupplierModel(); // Ensure you have this model created
+        $supplierModel = new SupplierModel();
 
         // Fetch the purchase order by ID
         $purchaseOrder = $purchaseOrderModel->find($id);
@@ -195,7 +195,7 @@ class PurchaseOrderController extends Controller
             'products' => $products,
             'warehouses' => $warehouses,
             'suppliers' => $suppliers,
-            'allowedFields' => $allowedFields // Pass allowed fields to the view
+            'allowedFields' => $allowedFields
         ]);
     }
 
