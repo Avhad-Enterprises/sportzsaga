@@ -9,7 +9,7 @@ class ReplyModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'msg_no', 'session_id', 'subject', 'from_email', 'to_email', 'user_id', 'full_message', 'attachments', 
-        'email_date', 'tags', 'assigned_agent', 'status', 'message_type', 'replied_to_msgno', 'cc_email', 'bcc_email', 'channel'
+        'email_date', 'tags', 'assigned_agent', 'status', 'message_type', 'replied_to_msgno', 'cc_email', 'bcc_email', 'channel', 'ticket_status', 'ticket_no'
     ];
 
     public function checkExistingEmail($msgNo)
@@ -420,7 +420,7 @@ public function getAllConversations()
 
     // Fetch email threads (Root emails - those without replied_to_msgno)
     $emailThreads = $db->table('cs_mails')
-        ->select('msg_no as id, subject, from_email, customer_name, assigned_agent, status, email_date, "email" as channel, replied_to_msgno')
+        ->select('msg_no as id, subject, from_email, customer_name, assigned_agent, status, email_date, "email" as channel, replied_to_msgno, ticket_no, ticket_status')
         ->where('channel', 'email')
         ->where('replied_to_msgno IS NULL', null, false)  // Fetch only root emails
         ->orderBy('email_date', 'DESC')
@@ -431,7 +431,7 @@ public function getAllConversations()
 
     // Fetch live chat sessions (Grouped by session_id)
     $chatSessions = $db->table('cs_mails')
-        ->select('session_id as id, subject, from_email, customer_name, assigned_agent, status, created_at as email_date, "livechat" as channel, null as replied_to_msgno')
+        ->select('session_id as id, subject, from_email, customer_name, assigned_agent, status, created_at as email_date, "livechat" as channel, null as replied_to_msgno, ticket_no, ticket_status')
         ->where('channel', 'livechat')
         ->groupBy('session_id')
         ->orderBy('created_at', 'DESC')
@@ -548,6 +548,77 @@ public function getDistinctValues()
     ];
 }
 
+public function getTicketNumber($conversationId)
+{
+    $db = \Config\Database::connect();
+    $result = $db->table('cs_mails')
+        ->select('ticket_no', 'ticket_status')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->get()
+        ->getRow();
+
+    return $result ? $result->ticket_no : null;
+}
+
+public function getTicketDetails($conversationId)
+{
+    $db = \Config\Database::connect();
+    return $db->table('cs_mails')
+        ->select('ticket_no, ticket_status')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->get()
+        ->getRowArray();
+}
+
+
+public function createTicket($conversationId)
+{
+    $ticketNo = "TICKET-" . strtoupper(uniqid());
+    $db = \Config\Database::connect();
+
+    $db->table('cs_mails')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->update([
+            'ticket_no' => $ticketNo,
+            'ticket_status' => 'opened'
+        ]);
+
+    return $ticketNo;
+}
+
+public function closeTicket($conversationId)
+{
+    $db = \Config\Database::connect();
+
+    return $db->table('cs_mails')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->update(['ticket_status' => 'closed']);
+}
+
+public function openTicket($conversationId)
+{
+    $db = \Config\Database::connect();
+
+    return $db->table('cs_mails')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->update(['ticket_status' => 'opened']);
+}
+
+public function updateStatus($conversationId, $status)
+{
+    $db = \Config\Database::connect();
+    return $db->table('cs_mails')
+        ->where('msg_no', $conversationId)
+        ->orWhere('session_id', $conversationId)
+        ->update(['status' => $status]);
+}
+
+    
 public function saveView($data)
 {
     return $this->db->table('saved_views')->insert($data);
