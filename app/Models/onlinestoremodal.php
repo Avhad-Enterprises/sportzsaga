@@ -263,4 +263,9 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('email_pop_up')->where('id', 1)->get()->getRowArray();
     }
+
+    public function getAllonlineblogs()
+    {
+        return $this->db->table('onlinestore_blogs')->get()->getResultArray();
+    }
 }

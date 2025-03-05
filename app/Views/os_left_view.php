@@ -888,6 +888,252 @@
                     </ul>
                 </li>
 
+
+
+
+                <!---------------------------------------------------------------------- All Blogs Form chaitanya----------------------------------------------------------------------------------------------->
+
+
+                <li id="web-blogs" style="display: none;" class="web-section dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-list"></span>
+                        <span class="mtext">Blogs</span>
+                    </a>
+                    <ul class="submenu">
+                        <!-- Plus Button to Add New -->
+                        <div class="hr-container">
+                            <hr class="line">
+                            <button type="button" id="blogsplus" class="circle-button">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <hr class="line">
+                        </div>
+
+                        <!-- Add New blogs Form -->
+                        <div class="ImageUploadBox" id="AddNewblogsForm" style="display: none;">
+                            <form id="addblogs" method="post" enctype="multipart/form-data">
+                                <h6 class="mt-3">Add Blogs</h6>
+                                <hr class="mt-1">
+                                <!-- Title -->
+                                <div class="form-group">
+                                    <label for="blogs_name">Name</label>
+                                    <input type="text" name="blogs_name" id="blogs_name" class="form-control" placeholder="Enter blogs">
+                                </div>
+                                <div class="form-group">
+                                    <label for="blogs_description">About Description</label>
+                                    <div class="quill-editor" data-target="blogs_description"></div>
+                                    <input type="hidden" name="blogs_description" id="blogs_description">
+                                </div>
+
+
+                                <!-- Selection Dropdown -->
+                                <div class="form-group">
+                                    <label for="contentType">Select Content Type</label>
+                                    <select id="contentType" name="content_type" class="form-control">
+                                        <option value="">-- Select --</option>
+                                        <option value="blogs">Blogs</option>
+                                        <option value="tags">Tags</option>
+                                    </select>
+                                </div>
+
+
+                                <!-- Blog Selection (Hidden Initially) -->
+                                <div id="blogSelection" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="newblog"></label>
+                                        <div class="dropdown">
+                                            <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                                id="newblogDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Select Blogs
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="newblogDropdown">
+                                                <div class="dropdown-item search_bar p-2">
+                                                    <input type="text" class="form-control dropdown-search" placeholder="Search items...">
+                                                </div>
+                                                <?php foreach ($blogs as $blog): ?>
+                                                    <div class="dropdown-item search-item">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input newblog-checkbox"
+                                                                id="newblog_<?= $blog['blog_id'] ?>"
+                                                                data-id="<?= $blog['blog_id'] ?>"
+                                                                data-title="<?= $blog['blog_title'] ?>">
+                                                            <label class="custom-control-label"
+                                                                for="newblog_<?= $blog['blog_id'] ?>"><?= $blog['blog_title'] ?></label>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="newblogsBoxContainer" id="newblogsboxcontainer"></div>
+                                </div>
+
+
+                                <!-- Tag Selection (Hidden Initially) -->
+                                <div id="tagSelection" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="newtag"></label>
+                                        <div class="dropdown">
+                                            <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                                id="newtagDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Select Tags
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="newtagDropdown">
+                                                <div class="dropdown-item search_bar p-2">
+                                                    <input type="text" class="form-control dropdown-search" placeholder="Search items...">
+                                                </div>
+                                                <?php foreach ($tags as $tag): ?>
+                                                    <div class="dropdown-item search-item">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input newtag-checkbox"
+                                                                id="newtag_<?= $tag['id'] ?>"
+                                                                data-id="<?= $tag['id'] ?>"
+                                                                data-title="<?= $tag['tag_name'] ?>">
+                                                            <label class="custom-control-label"
+                                                                for="newtag_<?= $tag['id'] ?>"><?= $tag['tag_name'] ?></label>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="newtagsBoxContainer" id="newtagsboxcontainer"></div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+
+
+                        <!-- List of blogs -->
+                        <div class="blogsBoxContainer" id="blogsBoxContainer">
+                            <?php foreach ($os_blogs as $os_blog) : ?>
+                                <div class="blogsBox" id="blogBox-<?= $os_blog['id'] ?>" data-id="<?= $os_blog['id'] ?>">
+
+                                    <div class="CarouselHeader">
+                                        <div class="handle" id="handle">☰ <?= (strlen($os_blog['blogs_name']) > 6) ? substr($os_blog['blogs_name'], 0, 6) . '...' : $os_blog['blogs_name'] ?></div>
+                                        <div class="actions">
+                                            <!-- Expand/Collapse Icon -->
+                                            <button type="button" class="btn btn-link" style="margin-top: 0;" onclick="toggleEditFormblog(<?= $os_blog['id'] ?>)">
+                                                <i id="chevron-<?= $os_blog['id'] ?>" class="fas fa-chevron-down"></i>
+                                            </button>
+                                            <!-- Delete Button -->
+                                            <a href="javascript:void(0);" onclick="deleteblog(<?= $os_blog['id'] ?>)" class="" style="color: red; padding: 0;">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collapsible Edit Form -->
+                                    <div class="edit-form" id="editblogForm-<?= $os_blog['id'] ?>" style="display:none;">
+                                        <form id="editNewblogForm-<?= $os_blog['id'] ?>" method="post" enctype="multipart/form-data">
+                                            <h6 class="mt-3">Edit blog</h6>
+                                            <hr class="mt-1">
+
+                                            <!-- Title -->
+                                            <div class="form-group">
+                                                <label for="blogs_name">Name</label>
+                                                <input type="text" name="blogs_name" value="<?= $os_blog['blogs_name'] ?>" id="blogs_name" class="form-control" placeholder="Enter blogs name">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="blogs_description">About Description</label>
+                                                <div class="quill-editor" data-target="blogs_description"><?= $os_blog['blogs_description'] ?></div>
+                                                <input type="hidden" value="<?= $os_blog['blogs_description'] ?>" name="blogs_description" id="blogs_description">
+                                            </div>
+
+                                            <input type="hidden" id="selectedContentType" name="content_type" value="<?= $os_blog['content_type'] ?>">
+
+                                            <select id="contentType_<?= $os_blog['id'] ?>" name="content_type" class="form-control contentTypeDropdown" data-id="<?= $os_blog['id'] ?>">
+                                                <option value="">-- Select --</option>
+                                                <option value="blogs" <?= ($os_blog['content_type'] == 'blogs') ? 'selected' : '' ?>>Blogs</option>
+                                                <option value="tags" <?= ($os_blog['content_type'] == 'tags') ? 'selected' : '' ?>>Tags</option>
+                                            </select>
+
+                                            <!-- Blog Selection Dropdown -->
+                                            <div class="form-group blogSelection_<?= $os_blog['id'] ?>" <?= ($os_blog['content_type'] == 'blogs') ? '' : 'style="display:none;"' ?>>
+                                                <label for="updateblog"></label>
+                                                <div class="dropdown">
+                                                    <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                                        id="updateblogDropdown_<?= $os_blog['id'] ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Select Blogs
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <div class="dropdown-item search_bar p-2">
+                                                            <input type="text" class="form-control dropdown-search" placeholder="Search items...">
+                                                        </div>
+                                                        <?php
+                                                        $selectedBlogs = json_decode($os_blog['blogs'], true) ?? [];
+                                                        foreach ($blogs as $blog): ?>
+                                                            <div class="dropdown-item search-item">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input updateblog-checkbox"
+                                                                        id="updateblog_<?= $os_blog['id'] ?>_<?= $blog['blog_id'] ?>"
+                                                                        name="blogs[]" value="<?= $blog['blog_id'] ?>"
+                                                                        data-id="<?= $blog['blog_id'] ?>"
+                                                                        data-title="<?= $blog['blog_title'] ?>"
+                                                                        <?= in_array($blog['blog_id'], $selectedBlogs) ? 'checked' : '' ?>>
+                                                                    <label class="custom-control-label"
+                                                                        for="updateblog_<?= $os_blog['id'] ?>_<?= $blog['blog_id'] ?>"><?= $blog['blog_title'] ?></label>
+                                                                </div>
+                                                            </div>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="updateblogsBoxContainer" id="updateblogsboxcontainer">
+
+                                            </div>
+
+                                            <!-- Tag Selection Dropdown -->
+                                            <div class="form-group tagSelection_<?= $os_blog['id'] ?>" <?= ($os_blog['content_type'] == 'tags') ? '' : 'style="display:none;"' ?>>
+                                                <label for="updatetag"></label>
+                                                <div class="dropdown">
+                                                    <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                                        id="updatetagDropdown_<?= $os_blog['id'] ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Select Tags
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <div class="dropdown-item search_bar p-2">
+                                                            <input type="text" class="form-control dropdown-search" placeholder="Search items...">
+                                                        </div>
+                                                        <?php
+                                                        $selectedTags = json_decode($os_blog['tags'], true) ?? [];
+                                                        foreach ($tags as $tag): ?>
+                                                            <div class="dropdown-item search-item">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input updatetag-checkbox"
+                                                                        id="updatetag_<?= $os_blog['id'] ?>_<?= $tag['id'] ?>"
+                                                                        name="tags[]" value="<?= $tag['id'] ?>"
+                                                                         data-id="<?= $tag['id'] ?>"
+                                                                        data-title="<?= $tag['tag_name'] ?>"
+                                                                        <?= in_array($tag['id'], $selectedTags) ? 'checked' : '' ?>>
+                                                                    <label class="custom-control-label"
+                                                                        for="updatetag_<?= $os_blog['id'] ?>_<?= $tag['id'] ?>"><?= $tag['tag_name'] ?></label>
+                                                                </div>
+                                                            </div>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="updatetagsBoxContainer" id="updatetagsboxcontainer">
+
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </ul>
+                </li>
+
                 <!----------------------------------------------------------------------------------------- Single blog Form -------------------------------------------------------------------------------------->
 
                 <!-- Blogs Section -->
@@ -2030,7 +2276,7 @@
                                         Select Products
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="r_productDropdown">
-                                        <!-- Search Bar -->
+
                                         <div class="dropdown-item search_bar p-2">
                                             <input type="text" class="form-control dropdown-search"
                                                 placeholder="Search items...">
@@ -3616,6 +3862,12 @@
                         </div>
                     </ul>
                 </li>
+
+
+
+
+
+
 
             </ul>
         </div>

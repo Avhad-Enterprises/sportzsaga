@@ -4220,4 +4220,534 @@
     </script>
 
 
+
+    <!-- chaitanya blogs-->
+
+    <!-- JavaScript for Handling Dropdown Visibility -->
+    <script>
+        document.getElementById("contentType").addEventListener("change", function() {
+            let selectedValue = this.value;
+            document.getElementById("blogSelection").style.display = (selectedValue === "blogs") ? "block" : "none";
+            document.getElementById("tagSelection").style.display = (selectedValue === "tags") ? "block" : "none";
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogsplusButton = document.getElementById('blogsplus');
+
+
+            blogsplusButton.addEventListener('click', function() {
+                if (AddNewblogsForm.style.display === 'none' || AddNewblogsForm.style.display === '') {
+                    AddNewblogsForm.style.display = 'block';
+                } else {
+                    AddNewblogsForm.style.display = 'none';
+                }
+            });
+        });
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        const newblog_container = document.getElementById("newblogsboxcontainer");
+        const newblogCheckboxes = document.querySelectorAll(".newblog-checkbox");
+
+
+
+        // Handle checkbox selection
+        newblogCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                const newblogId = this.dataset.id;
+                const newblogTitle = this.dataset.title;
+
+                if (this.checked) {
+                    addnewblogBox(newblogId, newblogTitle);
+                } else {
+                    const existingBox = document.getElementById(`newblogsBox-${newblogId}`);
+                    if (existingBox) existingBox.remove();
+                }
+            });
+        });
+
+
+        // Addnewblog box
+        function addnewblogBox(newblogId, newblogTitle) {
+            const newblogBox = document.createElement("div");
+            newblogBox.className = "newblogBox";
+            newblogBox.id = `newblogBox-${newblogId}`;
+            newblogBox.dataset.id = newblogId;
+            newblogBox.innerHTML = `
+            <div class="CarouselHeader">
+                <div class="handle">☰</div>
+                <b>${newblogTitle} </b>
+                <div class="actions">
+                    <a href="javascript:void(0);" class="remove-newblog" style="color: red; padding: 0;">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+
+            // Remove newblog on click
+            newblogBox.querySelector(".remove-newblog").addEventListener("click", function() {
+                newblogBox.remove();
+                document.getElementById(`newblog_${newblogId}`).checked = false;
+            });
+
+            newblog_container.appendChild(newblogBox);
+        }
+
+
+        // Initialize drag-and-drop sorting
+        Sortable.create(newblog_container, {
+            handle: ".handle",
+            animation: 150,
+        });
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        const newtag_container = document.getElementById("newtagsboxcontainer");
+        const newtagCheckboxes = document.querySelectorAll(".newtag-checkbox");
+
+        // Handle checkbox selection
+        newtagCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                const newtagId = this.dataset.id;
+                const newtagTitle = this.dataset.title;
+
+                if (this.checked) {
+                    addnewtagBox(newtagId, newtagTitle);
+                } else {
+                    const existingBox = document.getElementById(`newtagsBox-${newtagId}`);
+                    if (existingBox) existingBox.remove();
+                }
+            });
+        });
+
+
+        // Addnewtag box
+        function addnewtagBox(newtagId, newtagTitle) {
+            const newtagBox = document.createElement("div");
+            newtagBox.className = "newtagBox";
+            newtagBox.id = `newtagBox-${newtagId}`;
+            newtagBox.dataset.id = newtagId;
+            newtagBox.innerHTML = `
+            <div class="CarouselHeader">
+                <div class="handle">☰</div>
+                <b>${newtagTitle} </b>
+                <div class="actions">
+                    <a href="javascript:void(0);" class="remove-newtag" style="color: red; padding: 0;">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+
+            // Remove newtag on click
+            newtagBox.querySelector(".remove-newtag").addEventListener("click", function() {
+                newtagBox.remove();
+                document.getElementById(`newtag_${newtagId}`).checked = false;
+            });
+
+            newtag_container.appendChild(newtagBox);
+        }
+
+
+        // Initialize drag-and-drop sorting
+        Sortable.create(newtag_container, {
+            handle: ".handle",
+            animation: 150,
+        });
+
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        function toggleEditFormblog(osblogsId) {
+            const editForm = document.getElementById(`editblogForm-${osblogsId}`);
+            const chevron = document.getElementById(`chevron-${osblogsId}`);
+
+            if (editForm.style.display === 'none' || editForm.style.display === '') {
+                editForm.style.display = 'block';
+                chevron.classList.remove('fa-chevron-down');
+                chevron.classList.add('fa-chevron-up');
+            } else {
+                editForm.style.display = 'none';
+                chevron.classList.remove('fa-chevron-up');
+                chevron.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#addblogs').submit(function(e) {
+                e.preventDefault();
+
+                let selectedBlogs = [];
+                $('.newblog-checkbox:checked').each(function() {
+                    selectedBlogs.push($(this).data('id'));
+                });
+
+                let selectedTags = [];
+                $('.newtag-checkbox:checked').each(function() {
+                    selectedTags.push($(this).data('id'));
+                });
+
+                let formData = new FormData(this);
+                formData.append('blogs', selectedBlogs.join(','));
+                formData.append('tags', selectedTags.join(','));
+
+                let contentType = $('#contentType').val();
+                if (!contentType) {
+                    console.warn("Content Type is empty!"); // Log warning if it's empty
+                }
+                formData.append('content_type', contentType || 'blogs'); // Default to 'blogs' if empty
+
+                // Debugging: Log form data before sending
+                console.log('Form Data:');
+                formData.forEach((value, key) => {
+                    console.log(key, value);
+                });
+
+                $.ajax({
+                    url: "<?= base_url('Store/saveBlogs') ?>",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    dataType: "json",
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status == 'success') {
+                            alert('Blog added successfully');
+                            location.reload();
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        alert('Error: ' + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        document.querySelectorAll(".edit-form").forEach((form) => {
+            const updatetagContainer = form.querySelector(".updatetagsBoxContainer");
+            const updatetagCheckboxes = form.querySelectorAll(".updatetag-checkbox");
+
+            // Prepopulate updatetagContainer with existing selected tags
+            updatetagCheckboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    addupdatetagBox(checkbox.dataset.id, checkbox.dataset.title, updatetagContainer, form);
+                }
+            });
+
+            // Handle checkbox selection
+            updatetagCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener("change", function() {
+                    const updatetagId = this.dataset.id;
+                    const updatetagTitle = this.dataset.title;
+
+                    if (this.checked) {
+                        addupdatetagBox(updatetagId, updatetagTitle, updatetagContainer, form);
+                    } else {
+                        const existingBox = updatetagContainer.querySelector(`#updatetagBox-${updatetagId}`);
+                        if (existingBox) existingBox.remove();
+                    }
+                });
+            });
+
+            // Initialize drag-and-drop sorting for this specific form
+            Sortable.create(updatetagContainer, {
+                handle: ".handle",
+                animation: 150,
+            });
+        });
+
+        // Function to add selected tag box
+        function addupdatetagBox(updatetagId, updatetagTitle, updatetagContainer, form) {
+            if (!updatetagContainer) return;
+
+            const updatetagBox = document.createElement("div");
+            updatetagBox.className = "updatetagBox";
+            updatetagBox.id = `updatetagBox-${updatetagId}`;
+            updatetagBox.dataset.id = updatetagId;
+            updatetagBox.innerHTML = `
+        <div class="CarouselHeader">
+            <div class="handle">☰</div>
+            <b>${updatetagTitle} </b>
+            <div class="actions">
+                <a href="javascript:void(0);" class="remove-updatetag" style="color: red; padding: 0;">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+    `;
+
+            // Remove tag on click
+            updatetagBox.querySelector(".remove-updatetag").addEventListener("click", function() {
+                updatetagBox.remove();
+                form.querySelector(`#updatetag_${updatetagId}`).checked = false;
+            });
+
+            updatetagContainer.appendChild(updatetagBox);
+        }
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".edit-form").forEach((form) => {
+                const updateblog_container = form.querySelector(".updateblogsBoxContainer");
+
+                if (!updateblog_container) return; // Skip forms without the container
+
+                // Function to add a blog box
+                function addUpdateblogBox(updateblogId, updateblogTitle) {
+                    if (updateblog_container.querySelector(`#updateblogBox-${updateblogId}`)) return;
+
+                    const updateblogBox = document.createElement("div");
+                    updateblogBox.className = "updateblogBox";
+                    updateblogBox.id = `updateblogBox-${updateblogId}`;
+                    updateblogBox.dataset.id = updateblogId;
+                    updateblogBox.innerHTML = `
+                <div class="CarouselHeader">
+                    <div class="handle">☰</div>
+                    <b>${updateblogTitle}</b>
+                    <div class="actions">
+                        <a href="javascript:void(0);" class="remove-updateblog" style="color: red; padding: 0;">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+
+                    // Remove blog when clicking the trash icon
+                    updateblogBox.querySelector(".remove-updateblog").addEventListener("click", function() {
+                        removeUpdateblogBox(updateblogId);
+                    });
+
+                    updateblog_container.appendChild(updateblogBox);
+                }
+
+                // Function to remove a blog box
+                function removeUpdateblogBox(updateblogId) {
+                    const updateblogBox = updateblog_container.querySelector(`#updateblogBox-${updateblogId}`);
+                    if (updateblogBox) updateblogBox.remove();
+
+                    // Ensure the corresponding checkbox is unchecked
+                    const checkbox = form.querySelector(`#updateblog_${updateblogId}`);
+                    if (checkbox) checkbox.checked = false;
+                }
+
+                // Handle checkbox selection (delegated for dynamic elements)
+                form.addEventListener("change", function(event) {
+                    if (event.target.classList.contains("updateblog-checkbox")) {
+                        const checkbox = event.target;
+                        const updateblogId = checkbox.dataset.id;
+                        const updateblogTitle = checkbox.dataset.title;
+
+                        if (checkbox.checked) {
+                            addUpdateblogBox(updateblogId, updateblogTitle);
+                        } else {
+                            removeUpdateblogBox(updateblogId);
+                        }
+                    }
+                });
+
+                // Prepopulate selected blogs for each form
+                form.querySelectorAll(".updateblog-checkbox:checked").forEach((checkbox) => {
+                    addUpdateblogBox(checkbox.dataset.id, checkbox.dataset.title);
+                });
+
+                // Initialize sorting only for this form
+                new Sortable(updateblog_container, {
+                    handle: ".handle",
+                    animation: 150,
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("[id^='editNewblogForm-']").forEach(form => {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    let formData = new FormData(this);
+                    let blogId = this.id.replace("editNewblogForm-", "").trim(); // Ensure clean ID
+                    console.log("Submitting update for Blog ID:", blogId); // Debugging
+
+                    let updateUrl = "<?= base_url('update-blog/') ?>" + blogId;
+
+                    fetch(updateUrl, {
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Server response:", data); // Debugging
+                            if (data.status === "success") {
+                                alert("Blog updated successfully!");
+                                location.reload();
+                            } else {
+                                alert("Error: " + data.message);
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("An error occurred while updating.");
+                        });
+                });
+            });
+        });
+
+
+        function deleteblog(blogId) {
+            if (confirm("Are you sure you want to delete this blog?")) {
+                $.ajax({
+                    url: "<?= base_url('Store/deleteBlog') ?>",
+                    type: "POST",
+                    data: {
+                        id: blogId
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.status === "success") {
+                            $("#blogBox-" + blogId).remove();
+                            alert(response.message);
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function() {
+                        alert("An error occurred. Please try again.");
+                    }
+                });
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".edit-form").forEach(function (form) {
+        let contentTypeDropdown = form.querySelector("#contentType");
+        let blogSelection = form.querySelector("#blogSelection");
+        let tagSelection = form.querySelector("#tagSelection");
+
+        // Pre-fill and show the correct selection
+        if (contentTypeDropdown) {
+            let selectedType = contentTypeDropdown.dataset.selected; // Get selected value from PHP
+            contentTypeDropdown.value = selectedType;
+
+            if (selectedType === "blogs") {
+                blogSelection.style.display = "block";
+                tagSelection.style.display = "none";
+            } else if (selectedType === "tags") {
+                tagSelection.style.display = "block";
+                blogSelection.style.display = "none";
+            }
+        }
+
+        // Show relevant selection when dropdown changes
+        contentTypeDropdown.addEventListener("change", function () {
+            if (this.value === "blogs") {
+                blogSelection.style.display = "block";
+                tagSelection.style.display = "none";
+            } else if (this.value === "tags") {
+                tagSelection.style.display = "block";
+                blogSelection.style.display = "none";
+            }
+        });
+    });
+});
+
+</script>
+
+
+
+
+<!-- JavaScript to Toggle Dropdowns Based on Content Type -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.contentTypeDropdown').forEach(function(dropdown) {
+        dropdown.addEventListener('change', function() {
+            let id = this.getAttribute('data-id');
+            let selectedValue = this.value;
+
+            if (selectedValue === 'blogs') {
+                document.querySelector('.blogSelection_' + id).style.display = 'block';
+                document.querySelector('.tagSelection_' + id).style.display = 'none';
+            } else if (selectedValue === 'tags') {
+                document.querySelector('.blogSelection_' + id).style.display = 'none';
+                document.querySelector('.tagSelection_' + id).style.display = 'block';
+            } else {
+                document.querySelector('.blogSelection_' + id).style.display = 'none';
+                document.querySelector('.tagSelection_' + id).style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+<script>
+  $('#contentType').change(function () {
+    let selectedType = $(this).val();
+    $('#selectedContentType').val(selectedType); // Update hidden field
+
+    // Clear previous selections
+    if (selectedType === 'blogs') {
+        $('.updateblog-checkbox').prop('checked', false);
+        $('#updateblogsboxcontainer').empty();
+        $('#updateblogDropdown').show();
+        $('#updatetagDropdown').hide();
+    } else if (selectedType === 'tags') {
+        $('.updatetag-checkbox').prop('checked', false);
+        $('#updatetagsboxcontainer').empty();
+        $('#updateblogDropdown').hide();
+        $('#updatetagDropdown').show();
+    }
+});
+
+</script>
+
+
+
+<script>
+
+$(document).ready(function () {
+    $(".dropdown-search").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(this).closest(".dropdown-menu").find(".search-item").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+});
+
+</script>
 </body>

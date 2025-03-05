@@ -528,3 +528,14 @@ $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
 $routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');
+
+
+
+
+
+$routes->post('Store/saveBlogs', 'Store::saveBlogs');
+$routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
+$routes->post('Store/deleteBlog', 'Store::deleteBlog');
+
+
+
