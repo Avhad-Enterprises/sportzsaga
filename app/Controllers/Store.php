@@ -24,6 +24,7 @@ class Store extends BaseController
 {
     protected $aboutModel;
     protected $logoModel;
+
     public function __construct()
     {
         $this->aboutModel = new onlinestoremodal();
@@ -71,7 +72,6 @@ class Store extends BaseController
         $data['pages'] = $modal->getpages();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['availableProducts'] = $modal->getAllAvailableProducts();
-        $data['selectedProducts'] = $modal->getHomeProductIds();
         $data['selectedBlogs'] = $modal->getHomeBlogIds();
         $data['carousel2'] = $modal->getAllCarousel2();
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
@@ -1658,7 +1658,7 @@ class Store extends BaseController
     }
 
 
-    public function update()
+    public function update_carsecond()
     {
         try {
             $model = new HomeCarousel2Model();
@@ -1693,21 +1693,12 @@ class Store extends BaseController
         }
     }
 
-
-
     public function delete($id)
     {
         $model = new HomeCarousel2Model();
         $model->delete($id);
         return redirect()->back()->with('message', 'Carousel deleted successfully');
     }
-
-
-
-
-
-
-
 
     //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
     public function save()
@@ -2073,43 +2064,52 @@ class Store extends BaseController
     ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
     public function add_new_product()
     {
-        $productModel = new Productselection();
+        $productModel = new onlinestoremodal();
 
+        // Get form inputs
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
 
-        // Ensure at least one selection is made
-        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
-            return $this->response->setJSON(['success' => false, 'message' => 'All fields are required, including at least one selection.']);
-        }
+        // Get selected product or collection IDs
+        $selectedProducts = $this->request->getPost('selected_product_items');
+        $selectedCarCollections = $this->request->getPost('selected_collection_items');
 
-        // Prepare selected items array only if they are not empty
         $selectedItems = [];
-        if (!empty($selectedProducts)) {
-            $selectedItems['products'] = $selectedProducts;
-        }
-        if (!empty($selectedCollections)) {
-            $selectedItems['collections'] = $selectedCollections;
+
+        if ($selectionType === 'product' && !empty($selectedProducts)) {
+            // No need to json_encode() again as it's already JSON
+            $selectedItems = $selectedProducts;
+        } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
+            // Decode JSON collection ID
+            $collectionid = json_decode($selectedCarCollections, true);
+            $collectionid = is_array($collectionid) ? reset($collectionid) : (string) $collectionid;
+
+            // Fetch product IDs linked to this collection
+            $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
+
+            if ($collectionData && !empty($collectionData['product_ids'])) {
+                // Convert comma-separated product IDs from the collection into a JSON array
+                $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
+            }
         }
 
+        // Prepare data for insertion
         $data = [
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => $selectedItems,
+            'collection_id' => $collectionid ?? null,
         ];
 
-        if ($productModel->insert($data)) {
-            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product selection saved successfully.');
+        // Insert into database
+        if ($productModel->InsertProductCarData($data)) {
+            return redirect()->back()->with('success', 'Product added successfully!');
         } else {
-            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save product selection.');
+            return redirect()->back()->with('error', 'Failed to add product.');
         }
     }
-
-
 
     public function fetch_products()
     {
@@ -2205,6 +2205,4 @@ class Store extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
         }
     }
-
-
 }

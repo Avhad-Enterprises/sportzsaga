@@ -6865,16 +6865,6 @@ red {
     top: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
 .attachment-preview-card {
     border: 1px solid #ddd;
     padding: 10px;
@@ -6962,3 +6952,72 @@ textarea {
     line-height: 1.5;
 }
 
+.SelectProductBox {
+    background-color: #fff;
+    border: #ababab solid 0.5px;
+    width: 100%;
+    height: 212px;
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Highlight selected item */
+.SelectProductBox li.selected,
+.SelectCollectionBox li.selected {
+    background: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Styling for Scrollable Product & Collection Box */
+.SelectProductBox,
+.SelectCollectionBox {
+    background-color: #fff;
+    border: #ababab solid 0.5px;
+    width: 100%;
+    height: 212px;
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Custom Scrollbar Styling */
+.SelectProductBox::-webkit-scrollbar,
+.SelectCollectionBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.SelectProductBox::-webkit-scrollbar-track,
+.SelectCollectionBox::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.SelectProductBox::-webkit-scrollbar-thumb,
+.SelectCollectionBox::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.SelectProductBox::-webkit-scrollbar-thumb:hover,
+.SelectCollectionBox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Default List Item Styling */
+.SelectProductBox li,
+.SelectCollectionBox li {
+    margin: 6px 0;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#collectionSearch,
+#productSearch {
+    margin: 6px 0;
+}

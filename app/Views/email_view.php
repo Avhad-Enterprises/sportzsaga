@@ -113,7 +113,17 @@
                         <!-- email_view.php -->
                         <div>
                             <div class="row p-3">
-                                <div class="col p-3 card-box"><h3 class="text-blue h3"><?= esc($email['subject']); ?></h3></div>
+                                <div class="col p-3 card-box">
+                                    
+                                    <strong id="ticket">
+                                        <?php if (!empty($ticketNo)): ?>
+                                            <?= esc($ticketNo) ?>
+                                            (<?= esc($ticketStatus) ?>)
+                                        <?php endif; ?>
+                                    </strong>
+                                    <h3 class="text-blue h3"><?= esc($email['subject']); ?></h3>
+                                    
+                                </div>
                                 <div class="col-4">            
                                     <label>Select Agent</label>
                                     <select class="form-control" id="agent-select" data-msgno="<?= $email['msg_no'] ?>">
@@ -457,6 +467,19 @@
                         </div>
                     </div>
                     <div class="col-md-3">
+                        <div class="form-group">
+                            <?php if (empty($ticketNo)): ?>
+                                <!-- Show Create Ticket button if no ticket exists -->
+                                <a class="btn btn-primary col" id="create-ticket" data-id="<?= esc($email['msg_no']) ?>">Create Ticket</a>
+                            <?php else: ?>
+                                <!-- If ticket exists, show Close/Open button based on ticket status -->
+                                <?php if ($ticketStatus === 'opened'): ?>
+                                    <a class="btn btn-danger col" id="close-ticket" data-id="<?= esc($email['msg_no']) ?>">Close Ticket</a>
+                                <?php elseif ($ticketStatus === 'closed'): ?>
+                                    <a class="btn btn-success col" id="open-ticket" data-id="<?= esc($email['msg_no']) ?>">Reopen Ticket</a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
                         <div class="card-box mb-30">
                             <div class="pd-10">
                                 <?php if ($email['userdata']): ?>
@@ -968,6 +991,57 @@ function getMessageCardClass($messageType) {
 
 
 </style>
+
+
+<script>
+$(document).ready(function () {
+    // Create Ticket
+    $(document).on("click", "#create-ticket", function () {
+        let conversationId = $(this).data("id");
+
+        $.post("<?= base_url('createTicket') ?>", { conversation_ids: [conversationId] }, function (response) {
+            if (response.status === "success") {
+                // Update UI dynamically: Show ticket number & "Close Ticket" button
+                location.reload();
+            } else {
+                alert(response.message);
+            }
+        }, "json");
+    });
+
+    // Close Ticket
+    $(document).on("click", "#close-ticket", function () {
+        let conversationId = $(this).data("id");
+
+        $.post("<?= base_url('closeTicket') ?>", { conversation_ids: [conversationId] }, function (response) {
+            if (response.status === "success") {
+                // Update UI dynamically: Show "Reopen Ticket" button
+                location.reload();
+            } else {
+                alert(response.message);
+            }
+        }, "json");
+    });
+
+    // Reopen Ticket
+    $(document).on("click", "#open-ticket", function () {
+        let conversationId = $(this).data("id");
+
+        $.post("<?= base_url('openTicket') ?>", { conversation_ids: [conversationId] }, function (response) {
+            if (response.status === "success") {
+                // Update UI dynamically: Show "Close Ticket" button
+                location.reload();
+            } else {
+                alert(response.message);
+            }
+        }, "json");
+    });
+});
+
+
+</script>
+
+
 <script>
     $(document).ready(function() {
         // Initialize Select2 for tags

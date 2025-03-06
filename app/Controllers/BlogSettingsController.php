@@ -73,13 +73,6 @@ class BlogSettingsController extends BaseController
 
 
 
-
-
-
-
-
-
-
     ////////////////////////////////Collections////////////////////////////////
     public function saveCollection()
     {

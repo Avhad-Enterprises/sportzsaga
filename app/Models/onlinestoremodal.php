@@ -8,7 +8,7 @@ class onlinestoremodal extends Model
 {
     protected $table = 'carousels';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'description', 'selection_type','product_id','collection_id','image', 'image_mobile', 'visibility', 'created_at', 'updated_at'];
+    protected $allowedFields = ['title', 'description', 'selection_type', 'product_id', 'collection_id', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at'];
     protected $useTimestamps = true;
 
     public function getabout()
@@ -195,17 +195,6 @@ class onlinestoremodal extends Model
             ->getResultArray(); // Return the result as an array
     }
 
-    public function getHomeProductIds()
-    {
-        $result = $this->db->table('home_product')
-            ->select('product_id')
-            ->where('id', 1) // Assuming you always fetch the record with ID 1
-            ->get()
-            ->getRowArray();
-
-        return $result['product_id'] ?? ''; // Return the product IDs as a comma-separated string
-    }
-
     public function getHomeBlogIds()
     {
         $row = $this->db->table('home_blog')->where('id', 1)->get()->getRowArray();
@@ -267,11 +256,19 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('products_section')->get()->getResultArray();
     }
-    
+
     public function GetProductsData()
     {
         return $this->db->table('products')->get()->getResultArray();
     }
-    
 
+    public function InsertProductCarData($data)
+    {
+        return $this->db->table('products_section')->insert($data);
+    }
+
+    public function GetProdctsBycollectionid($id)
+    {
+        return $this->db->table('collection')->where('collection_id', $id)->get()->getRowArray();
+    }
 }

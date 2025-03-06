@@ -140,7 +140,7 @@ class Registerusers_model extends Model
     public function updateusermodel($userId, $data)
     {
         // Update the user data
-        return $this->update($userId, $data);
+        return $this->db->table('users')->where('user_id', $userId)->update($data);
     }
 
     public function updateUserData($userId, $data)

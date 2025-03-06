@@ -31,4 +31,9 @@ class CompanyModel extends Model
     {
         return $this->db->table('companies')->where('id', $id)->update($data);
     }
+
+    public function insertBatchCompanies($data)
+    {
+        return $this->db->table('companies')->insertBatch($data);
+    }
 }

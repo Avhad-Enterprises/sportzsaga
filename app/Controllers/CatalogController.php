@@ -520,19 +520,18 @@ class CatalogController extends Controller
             'principal_director' => $this->request->getPost('principal_director'),
         ];
         $model->updatecompaniesdata($id, $data);
-        return redirect()->to('company_view')->with('status', 'Tier updated successfully!');
+        return redirect()->to('company_view')->with('success', 'updated successfully!');
     }
 
     public function deletecompany($id)
     {
         $catalogModel = new CompanyModel();
         if ($catalogModel->delete($id)) {
-            return redirect()->to('company_view')->with('success', 'Catalog deleted successfully.');
+            return redirect()->to('company_view')->with('success', 'deleted successfully.');
         } else {
-            return redirect()->to('company_view')->with('error', 'Failed to delete catalog.');
+            return redirect()->to('company_view')->with('error', 'Failed to delete.');
         }
     }
-
 
     public function importCSV()
     {
@@ -541,20 +540,23 @@ class CatalogController extends Controller
         if ($file = $this->request->getFile('csv_file')) {
             if ($file->isValid() && !$file->hasMoved()) {
                 $filePath = $file->getTempName();
-                $csv = array_map('str_getcsv', file($filePath));
+                $csvFile = fopen($filePath, 'r');
 
-                // ✅ Remove CSV Header Row
-                array_shift($csv);
+                // ✅ Read the first row as headers (optional, to ensure correct mapping)
+                $headers = fgetcsv($csvFile);
 
-                foreach ($csv as $row) {
-                    // ✅ Skip empty or incomplete rows
+                // ✅ Prepare an array to store data before batch insert
+                $insertData = [];
+
+                while (($row = fgetcsv($csvFile)) !== false) {
+                    // ✅ Ensure the row has at least 12 columns to avoid errors
                     if (count($row) < 12) {
                         log_message('error', 'Skipping invalid row: ' . json_encode($row));
                         continue;
                     }
 
                     $data = [
-                        'company_name' => $row[0],
+                        'company_name' => $row[0] ?? null,
                         'user_ids' => !empty($row[1]) ? implode(',', explode('|', $row[1])) : null,
                         'tags' => !empty($row[2]) ? implode(',', explode('|', $row[2])) : null,
                         'notes' => $row[3] ?? null,
@@ -574,19 +576,24 @@ class CatalogController extends Controller
                     ];
                     $data['address'] = json_encode($address);
 
-                    // ✅ Insert into database
-                    if (!$companyModel->insert($data)) {
-                        log_message('error', 'Database Insert Error: ' . json_encode($companyModel->errors()));
-                    }
+                    // ✅ Store the row in an array for batch insert
+                    $insertData[] = $data;
                 }
 
-                return redirect()->back()->with('success', 'Companies imported successfully.');
+                fclose($csvFile);
+
+                // ✅ Insert into database using batch insert
+                if (!empty($insertData)) {
+                    $companyModel->insertBatchCompanies($insertData);
+                    return redirect()->back()->with('success', 'Companies imported successfully.');
+                } else {
+                    return redirect()->back()->with('error', 'No valid data found in the CSV file.');
+                }
             }
         }
 
         return redirect()->back()->with('error', 'Error importing the file.');
     }
-
 
     public function exportCSV()
     {

@@ -220,20 +220,79 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                    <div id="web-home" class="web-section" style="display: none;">
+                        <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home page</button>
+                    </div>
+                    <div id="web-blogs" class="web-section" style="display: none;">
+                        <button type="button" id="updateblogpage" class="btn m-4 btn-primary">Update Blogs page</button>
+                    </div>
+                    <div id="web-about" class="web-section" style="display: none;">
+                        <button type="button" id="updateaboutpage" class="btn m-4 btn-primary">Update About
+                            page</button>
+                    </div>
+                    <div id="web-contact" class="web-section" style="display: none;">
+                        <button type="button" id="updatecontactpage" class="btn m-4 btn-primary">Update Contact
+                            page</button>
+                    </div>
+                    <div id="web-search" class="web-section" style="display: none;">
+                        <button type="button" id="updatesearchpage" class="btn m-4 btn-primary">Update Search
+                            page</button>
+                    </div>
+                    <div id="web-wishlist" class="web-section" style="display: none;">
+                        <button type="button" id="updatewishlistpage" class="btn m-4 btn-primary">Update Wishlist
+                            page</button>
+                    </div>
+                    <div id="web-cart" class="web-section" style="display: none;">
+                        <button type="button" id="updatecartpage" class="btn m-4 btn-primary">Update Cart page</button>
+                    </div>
+                    <div id="web-checkout" class="web-section" style="display: none;">
+                        <button type="button" id="updatecheckout" class="btn m-4 btn-primary">Update Checkout
+                            page</button>
+                    </div>
+                    <div id="web-tracking" class="web-section" style="display: none;">
+                        <button type="button" id="updatetracking" class="btn m-4 btn-primary">Update Tracking
+                            page</button>
+                    </div>
+                    <div id="web-404" class="web-section" style="display: none;">
+                        <button type="button" id="update404" class="btn m-4 btn-primary">Update 404 page</button>
+                    </div>
+                    <div id="web-header" class="web-section" style="display: none;">
+                        <button type="submit" id="updateheader" class="btn m-4 btn-primary">Update Header</button>
+                    </div>
+                    <div id="web-singleblog" class="web-section" style="display: none;">
+                        <button type="submit" id="updatesingleblog" class="btn m-4 btn-primary">Update Single Blog
+                            page</button>
+                    </div>
+                    <div id="web-collection" class="web-section" style="display: none;">
+                        <button type="submit" id="updatecollection" class="btn m-4 btn-primary">Update Collection
+                            page</button>
+                    </div>
+                    <div id="web-product" class="web-section" style="display: none;">
+                        <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product
+                            page</button>
+                    </div>
+                    <div id="web-Email_POP_UP" class="web-section" style="display: none;">
+                        <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email POP
+                            UP page</button>
+                    </div>
+                </div>
+
+
+                <div id="web-home" class="web-section">
+                    <div class="OnlinStorePreMain">
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
-                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <!-- Mobile View -->
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-                <!-- Search Page -->
                 <div id="web-search" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
@@ -245,21 +304,20 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                    <div class="OnlinStorePreMain">
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
-                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <!-- Mobile View -->
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blogs Page -->
                 <div id="web-blogs" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
@@ -271,20 +329,22 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                    <div class="OnlinStorePreMain">
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
-                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <!-- Mobile View -->
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-                <!-- Single Blog Page -->
                 <div id="web-singleblog" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
@@ -294,60 +354,47 @@
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
+                    <div class="OnlinStorePreMain">
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
                             <iframe
                                 src="http://localhost/sportz_saga/blog_detail/the-power-of-digital-marketing-unlocking-business-potential-in-the-digital-age2"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
-                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
+                        <!-- Mobile View -->
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
                             <iframe
                                 src="http://localhost/sportz_saga/blog_detail/the-power-of-digital-marketing-unlocking-business-potential-in-the-digital-age2"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-
-                <!-- Collection Page -->
                 <div id="web-collection" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- About Page -->
                 <div id="web-about" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -355,22 +402,20 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/about" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/about" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Contact Page -->
                 <div id="web-contact" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
                         style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
@@ -384,24 +429,24 @@
                                 style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
 
-                        <!-- Mobile View (Smaller Size, Hidden by Default) -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                    <div class="OnlinStorePreMain">
+                        <!-- Desktop View -->
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
+                        <!-- Mobile View -->
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0"
+                                class="preview-iframe"></iframe>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Wishlist Page -->
                 <div id="web-wishlist" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -409,26 +454,22 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Marquee Page -->
                 <div id="web-marquee" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -436,26 +477,20 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Cart Page -->
                 <div id="web-cart" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -463,26 +498,22 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0"
+                                    class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Checkout Page -->
                 <div id="web-checkout" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -490,26 +521,22 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Tracking Page -->
                 <div id="web-tracking" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -517,109 +544,93 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- 404 Page -->
                 <div id="web-404" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
+
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/404" frameborder="0"
+                                class="preview-iframe"></iframe>
+
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/404" frameborder="0"
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Header Page -->
                 <div id="web-header" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
+
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
+
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-                <!-- Product Page -->
                 <div id="web-product" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
-                                frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                                frameborder="0" class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Footer Page -->
                 <div id="web-Footer" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
@@ -627,72 +638,67 @@
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Other Pages -->
                 <div id="web-otherpages" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
+
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
+
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
-                                class="preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
-                                class="preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
+                                class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Email Pop-Up Page -->
                 <div id="web-Email_POP_UP" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                    <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
+
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
                                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
+
+                        <div class="preview desktop-view" style="height: 700px;">
+                            <p class="preview-title">Desktop View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+
                         </div>
+
 
                         <!-- Mobile View -->
-                        <div class="preview mobile-view"
-                            style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
-                            <p class="preview-title"
-                                style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: bold;">
-                                Mobile View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
+                        <div class="preview mobile-view" style="height: 700px;">
+                            <p class="preview-title">Mobile View</p>
+                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
                         </div>
-
                     </div>
                 </div>
 
@@ -700,6 +706,7 @@
             </div>
         </div>
     </div>
+
 
 
     <script>
@@ -731,20 +738,18 @@
         });
     </script>
 
-
-
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
     <!-- Footer View End -->
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Hide both fields initially
             $('#ShowProductField, #ShowCollectionField').hide();
 
             // Show the appropriate field when the user selects a value
-            $('#select_link').on('change', function () {
+            $('#select_link').on('change', function() {
                 let selectedValue = $(this).val();
 
                 if (selectedValue === 'product') {
@@ -761,14 +766,251 @@
         });
     </script>
 
+    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // ✅ Toggle Add Product Form Visibility
+            const toggleButton = document.getElementById("toggleProductFormButton");
+            const formContainer = document.getElementById("productAddForm");
+
+            toggleButton.addEventListener("click", function() {
+                formContainer.style.display = (formContainer.style.display === "none" || formContainer.style.display === "") ? "block" : "none";
+            });
+
+            // ✅ Function to Toggle Edit Form Visibility for Each Product
+            window.toggleEditFormProduct = function(productId) {
+                const editForm = document.getElementById(`editForm-${productId}`);
+                const chevronIcon = document.getElementById(`chevron-${productId}`);
+
+                if (editForm.style.display === "none" || editForm.style.display === "") {
+                    editForm.style.display = "block";
+                    chevronIcon.classList.remove("fa-chevron-down");
+                    chevronIcon.classList.add("fa-chevron-up");
+                } else {
+                    editForm.style.display = "none";
+                    chevronIcon.classList.remove("fa-chevron-up");
+                    chevronIcon.classList.add("fa-chevron-down");
+                }
+            };
+
+        });
+    </script>
+
+
+    <script>
+        function deleteProduct(productId) {
+            if (!confirm("Are you sure you want to delete this product?")) {
+                return;
+            }
+
+            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
+                    method: "POST",
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Product deleted successfully!");
+                        document.getElementById(`productBox-${productId}`).remove();
+                    } else {
+                        alert("Failed to delete product: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred while deleting the product.");
+                });
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Toggle Product/Collection fields based on selection
+            $("#select_type").on("change", function() {
+                var selectedValue = $(this).val();
+                if (selectedValue === "product") {
+                    $("#ShowProduct").show();
+                    $("#ShowCollection").hide();
+                } else if (selectedValue === "collection") {
+                    $("#ShowProduct").hide();
+                    $("#ShowCollection").show();
+                } else {
+                    $("#ShowProduct, #ShowCollection").hide();
+                }
+            });
+
+            // Search Functionality (By Product Name or SKU)
+            $("#productSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#productList li").filter(function() {
+                    var title = $(this).find(".product-title").text().toLowerCase();
+                    var sku = $(this).attr("data-sku").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || sku.includes(searchValue));
+                });
+            });
+
+            // Search Functionality (By Collection Name or ID)
+            $("#collectionSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#collectionList li").filter(function() {
+                    var title = $(this).find(".collection-title").text().toLowerCase();
+                    var collectionId = $(this).attr("data-collection-id").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || collectionId.includes(searchValue));
+                });
+            });
+
+            // Function to handle product selection
+            let selectedProducts = [];
+            let selectedCollections = [];
+
+            function updateSelectedItems() {
+                $("#selected_product_items").val(JSON.stringify(selectedProducts));
+                $("#selected_collection_items").val(JSON.stringify(selectedCollections));
+            }
+
+            // Click event for product selection
+            $("#productList").on("click", "li", function() {
+                var productId = $(this).attr("data-id");
+
+                if (selectedProducts.includes(productId)) {
+                    selectedProducts = selectedProducts.filter(id => id !== productId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedProducts.push(productId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
+                updateSelectedItems();
+            });
+
+            // Click event for collection selection
+            $("#collectionList").on("click", "li", function() {
+                var collectionId = $(this).attr("data-id");
+
+                if (selectedCollections.includes(collectionId)) {
+                    selectedCollections = selectedCollections.filter(id => id !== collectionId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedCollections.push(collectionId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
+                updateSelectedItems();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to toggle between Products and Collections based on selection type
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.id.split("_")[1]; // Extract product ID from select ID
+                    let selectedValue = this.value;
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+
+                    if (selectedValue === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                    } else if (selectedValue === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".select_link").forEach(selectField => {
+                let id = selectField.id.split("_")[2];
+                let productField = document.getElementById("ShowProductField_" + id);
+                let collectionField = document.getElementById("ShowCollectionField_" + id);
+
+                if (!selectField || !productField || !collectionField) {
+                    console.error("Element not found: ", {
+                        selectField,
+                        productField,
+                        collectionField
+                    });
+                    return;
+                }
+
+                function updateFields(value) {
+                    if (value === 'product') {
+                        productField.style.display = 'block';
+                        collectionField.style.display = 'none';
+                    } else if (value === 'collection') {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'block';
+                    } else {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'none';
+                    }
+                }
+
+                // Initializing
+                updateFields(selectField.value);
+
+                // On change event
+                selectField.addEventListener('change', function() {
+                    updateFields(this.value);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+            const form = document.getElementById('carousel2AddForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
+
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Initialize sortable for blogs
             new Sortable(document.getElementById('blogs-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function () {
+                onEnd: function() {
                     console.log("Blogs reordered");
                 }
             });
@@ -777,7 +1019,7 @@
             new Sortable(document.getElementById('tags-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function () {
+                onEnd: function() {
                     console.log("Tags reordered");
                 }
             });
@@ -786,7 +1028,7 @@
             new Sortable(document.getElementById('posts-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function () {
+                onEnd: function() {
                     console.log("Posts reordered");
                 }
             });
@@ -803,7 +1045,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
 
             function updateSelections(listId, inputId, checkboxClass) {
                 const selectedItems = new Set(); // Ensure unique selections
@@ -854,7 +1096,7 @@
                     sortableInstances[listId] = new Sortable(document.getElementById(listId), {
                         animation: 150,
                         ghostClass: 'sortable-ghost',
-                        onEnd: function () {
+                        onEnd: function() {
                             const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                             document.getElementById(inputId).value = orderedIds.join(',');
                         }
@@ -872,7 +1114,7 @@
             updateSelections('tagsList', 'tags_input', 'tag-checkbox');
             updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
 
-            document.addEventListener('change', function (event) {
+            document.addEventListener('change', function(event) {
                 if (event.target.classList.contains('blog-checkbox')) {
                     updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
                 }
@@ -895,7 +1137,7 @@
 
             // Form submission with correct hidden input values
             const updateBlogBtn = document.getElementById("updateblogpage");
-            updateBlogBtn.addEventListener("click", function (e) {
+            updateBlogBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -910,9 +1152,9 @@
                 formData.append("meta_title", document.getElementById("meta_title").value);
 
                 fetch("<?= base_url('admin/blog_settings/save') ?>", {
-                    method: "POST",
-                    body: formData,
-                })
+                        method: "POST",
+                        body: formData,
+                    })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -952,11 +1194,11 @@
             loadExistingSelections('popular_posts_input_single', 'popularPostsListsingle', 'popular-post-checkbox');
 
             // Event listeners for checkbox changes
-            document.addEventListener('change', function (event) {
+            document.addEventListener('change', function(event) {
                 if (event.target.classList.contains('related-blog-checkbox')) {
                     updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
                 }
-                if (event.target.classList.contains('tag1-checkbox')) {  // Fixed class name
+                if (event.target.classList.contains('tag1-checkbox')) { // Fixed class name
                     updateSelections('tagsListsingle', 'tags_input_single', 'tag1-checkbox');
                 }
                 if (event.target.classList.contains('popular-post-checkbox')) {
@@ -965,17 +1207,17 @@
             });
 
             // AJAX Form Submission
-            document.getElementById('updatesingleblog').addEventListener('click', function () {
+            document.getElementById('updatesingleblog').addEventListener('click', function() {
                 const form = document.getElementById('singleblog-form');
                 const formData = new FormData(form);
 
                 fetch('<?= base_url('admin/single_blog/store') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1062,7 +1304,7 @@
                         const deleteButton = document.createElement('button');
                         deleteButton.textContent = 'Delete';
                         deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                        deleteButton.addEventListener('click', function () {
+                        deleteButton.addEventListener('click', function() {
                             checkbox.checked = false;
                             listContainer.removeChild(listItem);
                             updateHiddenInput(inputId);
@@ -1093,18 +1335,17 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
             });
         }
-
     </script>
 
 
 
-    <!---------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------------------>
+    <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
     <script>
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
@@ -1152,6 +1393,15 @@
                     document.getElementById(`item_${itemId}`).remove();
                     document.querySelector(`#fav_product_${itemId}`).checked = false;
                     updateSelections(listId, inputId, checkboxClass);
+
+        // Initialize sortable for drag-and-drop
+        function initializeSortable(listId, inputId) {
+            new Sortable(document.getElementById(listId), {
+                animation: 150,
+                onEnd: function() {
+                    const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
+                    document.getElementById(inputId).value = orderedIds.join(',');
+
                 }
             });
         }
@@ -1186,21 +1436,28 @@
                 });
             });
 
+
             // AJAX Form Submission for Collection
-            document.getElementById('updatecollection').addEventListener('click', function () {
+            document.getElementById('updatecollection').addEventListener('click', function() {
                 // Gather form data
                 const form = document.getElementById('collection-form');
                 const formData = new FormData(form);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('admin/collection/saveCollection') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
-                    .then(response => response.json())
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
+
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
                     .then(data => {
                         if (data.success) {
                             alert('Collection data saved successfully!');
@@ -1213,7 +1470,11 @@
                         alert('An error occurred while saving the collection data.');
                     });
             });
+
         });        
+
+        });
+
     </script>
 
     <script>
@@ -1227,7 +1488,7 @@
                     const reader = new FileReader();
 
                     // Load the file and set it as the `src` of the img tag
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         previewElement.src = e.target.result;
                         previewElement.style.display = 'block'; // Show the image preview
                     };
@@ -1237,15 +1498,14 @@
             }
 
             // Event listeners for image inputs
-            document.getElementById('image1').addEventListener('change', function () {
+            document.getElementById('image1').addEventListener('change', function() {
                 previewImage(this, 'image1-preview');
             });
 
-            document.getElementById('image2').addEventListener('change', function () {
+            document.getElementById('image2').addEventListener('change', function() {
                 previewImage(this, 'image2-preview');
             });
         });
-
     </script>
 
 
@@ -1255,7 +1515,7 @@
 
     <script>
         // Save Logo
-        $('#homeLogoForm').on('submit', function (e) {
+        $('#homeLogoForm').on('submit', function(e) {
             e.preventDefault(); // Prevent default form submission
             var formData = new FormData(this);
             $.ajax({
@@ -1264,7 +1524,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function (response) {
+                success: function(response) {
                     if (response.status === 'success') {
                         alert(response.message); // Show success message
                         location.reload(); // Reload the page
@@ -1272,30 +1532,30 @@
                         alert(response.message); // Show error message
                     }
                 },
-                error: function () {
+                error: function() {
                     alert('Error saving logo.');
                 }
             });
         });
 
+        // Update Logo
         function updateLogo(logoId) {
-            var formData = new FormData($('#editLogoForm-' + logoId)[0]); // Collect form data
-
+            var formData = new FormData($('#editLogoForm-' + logoId)[0]);
             $.ajax({
-                url: "<?= base_url('home/editLogo') ?>",
+                url: "<?= base_url('home/editLogo') ?>", // Adjusted for CodeIgniter 4
                 type: 'POST',
                 data: formData,
-                processData: false, // Prevent jQuery from converting to query string
-                contentType: false, // Ensure form data is sent correctly
-                success: function (response) {
+                processData: false,
+                contentType: false,
+                success: function(response) {
                     if (response.status === 'success') {
-                        alert(response.message);
-                        location.reload();
+                        alert(response.message); // Show success message
+                        location.reload(); // Reload the page
                     } else {
-                        alert(response.message);
+                        alert(response.message); // Show error message
                     }
                 },
-                error: function () {
+                error: function() {
                     alert('Error updating logo.');
                 }
             });
@@ -1316,7 +1576,7 @@
                         "<?= csrf_token() ?>": "<?= csrf_hash() ?>" // ✅ CSRF token (if enabled)
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -1324,7 +1584,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert('Error deleting logo.');
                     }
                 });
@@ -1353,7 +1613,7 @@
         }
 
         // Toggle Add Form
-        document.getElementById("togglelogoFormButton").addEventListener("click", function () {
+        document.getElementById("togglelogoFormButton").addEventListener("click", function() {
             const addForm = document.getElementById("logoAddForm");
             if (addForm.style.display === "none") {
                 addForm.style.display = "block";
@@ -1367,7 +1627,7 @@
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     document.getElementById(`previewLogo-${logoId}`).src = e.target.result;
                 };
                 reader.readAsDataURL(file);
@@ -1433,7 +1693,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1453,19 +1713,19 @@
             });
 
             // AJAX Form Submission for Collections
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_collection', document.getElementById('fav_collection_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('collection/saveCollection') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1490,9 +1750,9 @@
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Open the collection form when "Add Collection" is clicked
-            $('#openCollectionForm').click(function (e) {
+            $('#openCollectionForm').click(function(e) {
                 e.preventDefault(); // Prevent default navigation
                 $('#collectionAddForm').show(); // Show the collection form
             });
@@ -1559,7 +1819,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1579,19 +1839,19 @@
             });
 
             // AJAX Form Submission for Products
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_product', document.getElementById('fav_product_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('product/saveProduct') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1672,11 +1932,12 @@
 
 
         let sortableInitialized = false;
+
         function initializeSortable(listId, inputId) {
             if (!sortableInitialized) {
                 new Sortable(document.getElementById(listId), {
                     animation: 150,
-                    onEnd: function () {
+                    onEnd: function() {
                         const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                         document.getElementById(inputId).value = orderedIds.join(',');
                     }
@@ -1699,19 +1960,19 @@
             });
 
             // AJAX Form Submission for Blogs
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_blog', document.getElementById('fav_blog_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('blog/saveBlog') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1733,20 +1994,10 @@
         });
     </script>
 
-
-    <script>
-        document.getElementById('togglecarousel2FormButton').addEventListener('click', function () {
-            const form = document.getElementById('carousel2AddForm');
-            form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        });
-    </script>
-
-
-
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let fieldCounter = 0;
@@ -1757,7 +2008,7 @@
             const pageAddForm = document.getElementById("pageAddForm");
 
             if (toggleAddPageButton && pageAddForm) {
-                toggleAddPageButton.addEventListener("click", function () {
+                toggleAddPageButton.addEventListener("click", function() {
                     pageAddForm.style.display = (pageAddForm.style.display === "none" || pageAddForm.style.display === "") ?
                         "block" : "none";
                 });
@@ -1771,13 +2022,13 @@
             const selectedPageTypesContainer = document.getElementById("selectedPageTypesContainer");
             const selectedPageTypes = document.getElementById("selectedPageTypes");
 
-            togglePageTypeDropdown.addEventListener("click", function () {
+            togglePageTypeDropdown.addEventListener("click", function() {
                 pageTypeCheckboxDropdown.style.display = (pageTypeCheckboxDropdown.style.display === "none" || pageTypeCheckboxDropdown.style.display === "") ?
                     "block" : "none";
             });
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const value = this.value;
                     if (this.checked) {
                         selectedPages[value] = value;
@@ -1797,7 +2048,7 @@
                     itemDiv.classList.add("selected-item");
                     itemDiv.innerHTML = `${selectedPages[page]} <button data-value="${page}">&times;</button>`;
 
-                    itemDiv.querySelector("button").addEventListener("click", function () {
+                    itemDiv.querySelector("button").addEventListener("click", function() {
                         const value = this.getAttribute("data-value");
                         delete selectedPages[value];
                         document.querySelector(`.page-type-checkbox[value="${value}"]`).checked = false;
@@ -1823,7 +2074,7 @@
             }
 
             if (toggleSubtypeButton) {
-                toggleSubtypeButton.addEventListener("click", function () {
+                toggleSubtypeButton.addEventListener("click", function() {
                     if (Object.keys(selectedPages).length > 0) {
                         console.warn("Toggle button is disabled because Page Type is selected.");
                         return;
@@ -1868,12 +2119,12 @@
 
                     let selectedItems = {};
 
-                    newToggleDropdown.addEventListener("click", function () {
+                    newToggleDropdown.addEventListener("click", function() {
                         newCheckboxDropdown.style.display = (newCheckboxDropdown.style.display === "none" || newCheckboxDropdown.style.display === "") ?
                             "block" : "none";
                     });
 
-                    newSubtypeSelect.addEventListener("change", function () {
+                    newSubtypeSelect.addEventListener("change", function() {
                         const selectedValue = newSubtypeSelect.value;
                         if (!selectedValue) return;
 
@@ -1899,7 +2150,7 @@
                                     });
 
                                     document.querySelectorAll(`#checkboxDropdown_${fieldCounter} .specific-item-checkbox`).forEach(checkbox => {
-                                        checkbox.addEventListener("change", function () {
+                                        checkbox.addEventListener("change", function() {
                                             if (this.checked) {
                                                 selectedItems[this.value] = this.getAttribute("data-name");
                                             } else {
@@ -1925,7 +2176,7 @@
                             itemDiv.classList.add("selected-item");
                             itemDiv.innerHTML = `${selectedItems[id]} <button data-id="${id}">&times;</button>`;
 
-                            itemDiv.querySelector("button").addEventListener("click", function () {
+                            itemDiv.querySelector("button").addEventListener("click", function() {
                                 delete selectedItems[this.getAttribute("data-id")];
                                 updateSelectedItemsDisplay();
                             });
@@ -1937,15 +2188,15 @@
             }
             const apiBaseUrl = "<?= base_url('header/delete_page/') ?>";
 
-            window.deletePage = function (pageId) {
+            window.deletePage = function(pageId) {
                 if (!confirm("Are you sure you want to delete this page?")) return;
 
                 fetch(`${apiBaseUrl}${pageId}`, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1965,7 +2216,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let selectedPages = {};
@@ -1973,7 +2224,7 @@
             let itemDataMap = {}; // ✅ Store item ID-to-Title mapping
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const value = this.value;
                     selectedPages[value] = this.checked ? value : delete selectedPages[value];
                     updateSelectedPagesDisplay();
@@ -1993,7 +2244,7 @@
 
             // **Handle Subtype Change**
             document.querySelectorAll(".subtype-select").forEach(select => {
-                select.addEventListener("change", function () {
+                select.addEventListener("change", function() {
                     const fieldId = this.id.split("_")[1];
                     fetchSubtypeItems(fieldId, this.value);
                 });
@@ -2026,7 +2277,7 @@
 
             function attachCheckboxListeners(fieldId) {
                 document.querySelectorAll(`#checkboxDropdown_${fieldId} .specific-item-checkbox`).forEach(checkbox => {
-                    checkbox.addEventListener("change", function () {
+                    checkbox.addEventListener("change", function() {
                         updateSelectedItems(fieldId);
                     });
                 });
@@ -2064,7 +2315,7 @@
 
             function attachRemoveButtons(fieldId) {
                 document.querySelectorAll(`#selectedItemsContainer_${fieldId} .remove-item-btn`).forEach(button => {
-                    button.addEventListener("click", function () {
+                    button.addEventListener("click", function() {
                         const itemId = this.dataset.id;
                         document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`).checked = false;
                         updateSelectedItems(fieldId);
@@ -2105,29 +2356,14 @@
             }
         }
     </script>
-
-    <script>
-        function previewImage(event, previewId) {
-            var reader = new FileReader();
-            reader.onload = function () {
-                var output = document.getElementById(previewId);
-                output.src = reader.result;
-                output.style.display = "block"; // Show image when selected
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
-
-
-
-
+                  
     <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-
+    
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
-        document.getElementById("web_section").addEventListener("change", function () {
+        document.getElementById("web_section").addEventListener("change", function() {
             const selectedSection = this.value; // Get selected value
             const sections = document.querySelectorAll(".web-section"); // Select all sections
 
@@ -2143,7 +2379,7 @@
 
     <script>
         document.querySelectorAll('.element-select').forEach(select => {
-            select.addEventListener('change', function () {
+            select.addEventListener('change', function() {
                 let wrapper = this.closest('.form-group').nextElementSibling;
 
                 wrapper.querySelector('.product-wrapper').style.display = 'none';
@@ -2158,7 +2394,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Configuration for Quill editor
             const quillConfig = {
                 theme: 'snow',
@@ -2190,7 +2426,7 @@
                     const quill = new Quill(editorElement, quillConfig);
 
                     // Sync Quill content to hidden input
-                    quill.on('text-change', function () {
+                    quill.on('text-change', function() {
                         targetInput.value = quill.root.innerHTML;
                     });
 
@@ -2204,7 +2440,7 @@
             });
 
             document.querySelectorAll('.file-preview').forEach((fileInput) => {
-                fileInput.addEventListener('change', function (event) {
+                fileInput.addEventListener('change', function(event) {
                     const input = event.target;
                     const previewContainerId = input.id + '_preview';
                     const previewContainer = document.getElementById(previewContainerId);
@@ -2235,7 +2471,7 @@
 
                         // Set image source using FileReader
                         const reader = new FileReader();
-                        reader.onload = function (e) {
+                        reader.onload = function(e) {
                             img.src = e.target.result;
                         };
                         reader.readAsDataURL(file);
@@ -2310,7 +2546,7 @@
 
             // Handle checkbox selection
             blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const blogId = this.dataset.id;
                     const blogTitle = this.dataset.title;
 
@@ -2342,7 +2578,7 @@
         `;
 
                 // Remove blog on click
-                blogBox.querySelector(".remove-blog").addEventListener("click", function () {
+                blogBox.querySelector(".remove-blog").addEventListener("click", function() {
                     blogBox.remove();
                     document.getElementById(`blog_${blogId}`).checked = false;
                 });
@@ -2372,7 +2608,7 @@
 
             // Handle checkbox selection
             r_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const r_productId = this.dataset.id;
                     const r_productTitle = this.dataset.title;
 
@@ -2404,7 +2640,7 @@
         `;
 
                 // Remove r_product on click
-                r_productBox.querySelector(".remove-r_product").addEventListener("click", function () {
+                r_productBox.querySelector(".remove-r_product").addEventListener("click", function() {
                     r_productBox.remove();
                     document.getElementById(`r_product_${r_productId}`).checked = false;
                 });
@@ -2434,7 +2670,7 @@
 
             // Handle checkbox selection
             t_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const t_productId = this.dataset.id;
                     const t_productTitle = this.dataset.title;
 
@@ -2466,7 +2702,7 @@
         `;
 
                 // Remove t_product on click
-                t_productBox.querySelector(".remove-t_product").addEventListener("click", function () {
+                t_productBox.querySelector(".remove-t_product").addEventListener("click", function() {
                     t_productBox.remove();
                     document.getElementById(`t_product_${t_productId}`).checked = false;
                 });
@@ -2496,7 +2732,7 @@
 
             // Handle checkbox selection
             m_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const m_productId = this.dataset.id;
                     const m_productTitle = this.dataset.title;
 
@@ -2528,7 +2764,7 @@
         `;
 
                 // Remove m_product on click
-                m_productBox.querySelector(".remove-m_product").addEventListener("click", function () {
+                m_productBox.querySelector(".remove-m_product").addEventListener("click", function() {
                     m_productBox.remove();
                     document.getElementById(`m_product_${m_productId}`).checked = false;
                 });
@@ -2559,7 +2795,7 @@
 
             // Handle checkbox selection
             s_blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const s_blogId = this.dataset.id;
                     const s_blogTitle = this.dataset.title;
 
@@ -2591,7 +2827,7 @@
         `;
 
                 // Remove s_blog on click
-                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function () {
+                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function() {
                     s_blogBox.remove();
                     document.getElementById(`s_blog_${s_blogId}`).checked = false;
                 });
@@ -2622,7 +2858,7 @@
 
             // Handle checkbox selection
             cm_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const cm_productId = this.dataset.id;
                     const cm_productTitle = this.dataset.title;
 
@@ -2654,7 +2890,7 @@
         `;
 
                 // Remove cm_product on click
-                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function () {
+                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function() {
                     cm_productBox.remove();
                     document.getElementById(`cm_product_${cm_productId}`).checked = false;
                 });
@@ -2684,7 +2920,7 @@
 
             // Handle checkbox selection
             error_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const error_productId = this.dataset.id;
                     const error_productTitle = this.dataset.title;
 
@@ -2716,7 +2952,7 @@
         `;
 
                 // Remove error_product on click
-                error_productBox.querySelector(".remove-error_product").addEventListener("click", function () {
+                error_productBox.querySelector(".remove-error_product").addEventListener("click", function() {
                     error_productBox.remove();
                     document.getElementById(`error_product_${error_productId}`).checked = false;
                 });
@@ -2790,7 +3026,7 @@
 
 
             // Update form submission
-            updateaboutBtn.addEventListener("click", function (e) {
+            updateaboutBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2838,12 +3074,12 @@
                 updateaboutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_about') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2867,7 +3103,7 @@
 
             // Update form submission
 
-            updatecontactBtn.addEventListener("click", function (e) {
+            updatecontactBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2914,12 +3150,12 @@
                 updatecontactBtn.innerHTML = "Updating...";
 
                 fetch("<?= base_url('online_store/update_contact') ?>", {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest",
-                    },
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest",
+                        },
+                    })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -2941,7 +3177,7 @@
 
 
             // Update form submission
-            updatesearchBtn.addEventListener("click", function (e) {
+            updatesearchBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2978,12 +3214,12 @@
                 updatesearchBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_search') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3004,7 +3240,7 @@
             });
 
             // Update form submission
-            updatewishlistBtn.addEventListener("click", function (e) {
+            updatewishlistBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3018,12 +3254,12 @@
                 updatewishlistBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_wishlist') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3045,7 +3281,7 @@
 
 
             // Update form submission
-            updatecartBtn.addEventListener("click", function (e) {
+            updatecartBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3077,12 +3313,12 @@
                 updatecartBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_cart') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3103,7 +3339,7 @@
             });
 
             // Update form submission
-            updatecheckoutBtn.addEventListener("click", function (e) {
+            updatecheckoutBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3119,12 +3355,12 @@
                 updatecheckoutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_checkout') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3146,7 +3382,7 @@
 
 
             // Update form submission
-            updatetrackingBtn.addEventListener("click", function (e) {
+            updatetrackingBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3197,12 +3433,12 @@
                 updatetrackingBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_tracking') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3224,7 +3460,7 @@
 
 
             // Update form submission
-            update404Btn.addEventListener("click", function (e) {
+            update404Btn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3296,12 +3532,12 @@
                 update404Btn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_404') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3340,7 +3576,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const maxSubsections = 5; // Maximum allowed subsections
             const iconsContainer = document.querySelector('.icons');
             const addIconBtn = document.querySelector('.addicon');
@@ -3372,7 +3608,7 @@
             }
 
             // Add new subsection
-            addIconBtn.addEventListener('click', function (e) {
+            addIconBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const currentSubsections = document.querySelectorAll('.iconsubsection').length;
 
@@ -3390,7 +3626,7 @@
             });
 
             // Remove subsection
-            iconsContainer.addEventListener('click', function (e) {
+            iconsContainer.addEventListener('click', function(e) {
                 if (e.target.classList.contains('removeicon')) {
                     e.preventDefault();
                     const subsection = e.target.closest('.iconsubsection');
@@ -3424,7 +3660,7 @@
                         }
 
                         const reader = new FileReader();
-                        reader.onload = function (e) {
+                        reader.onload = function(e) {
                             const img = document.createElement('img');
                             img.src = e.target.result;
                             img.classList.add('img-fluid', 'img-thumbnail');
@@ -3454,9 +3690,9 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
 
-            document.getElementById("toggleteamsFormButton").addEventListener("click", function () {
+            document.getElementById("toggleteamsFormButton").addEventListener("click", function() {
                 const form = document.getElementById("AddteamsForm");
                 form.style.display = form.style.display === "none" ? "block" : "none";
             });
@@ -3465,11 +3701,11 @@
             const imgInput = document.getElementById('member_pic');
             const newImgPreview = document.getElementById('preview_member_pic');
 
-            imgInput.addEventListener('change', function () {
+            imgInput.addEventListener('change', function() {
                 const file = this.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         newImgPreview.src = e.target.result;
                         newImgPreview.style.display = 'block';
                     };
@@ -3495,11 +3731,11 @@
                     }
 
                     // Handle new image preview
-                    imgInput.addEventListener("change", function () {
+                    imgInput.addEventListener("change", function() {
                         const file = this.files[0];
                         if (file) {
                             const reader = new FileReader();
-                            reader.onload = function (e) {
+                            reader.onload = function(e) {
                                 previewImg.src = e.target.result;
                                 previewImg.style.display = 'block';
                             };
@@ -3521,14 +3757,14 @@
             // For the add form
             const addImgInput = document.getElementById('member_pic');
             if (addImgInput) {
-                addImgInput.addEventListener('change', async function () {
+                addImgInput.addEventListener('change', async function() {
                     await validateImageInput(this);
                 });
             }
 
             // For all edit forms
             document.querySelectorAll("input[type='file'][id^='member_pic']").forEach((imgInput) => {
-                imgInput.addEventListener('change', async function () {
+                imgInput.addEventListener('change', async function() {
                     await validateImageInput(this);
                 });
             });
@@ -3561,12 +3797,12 @@
                 img.src = URL.createObjectURL(file);
 
                 return new Promise((resolve) => {
-                    img.onload = function () {
+                    img.onload = function() {
                         URL.revokeObjectURL(this.src);
                         resolve(true);
                     };
 
-                    img.onerror = function () {
+                    img.onerror = function() {
                         displayError($(inputElement), 'Invalid image file');
                         URL.revokeObjectURL(this.src);
                         resolve(false);
@@ -3627,7 +3863,7 @@
                 return isValid;
             }
 
-            addBtn.addEventListener("click", function (e) {
+            addBtn.addEventListener("click", function(e) {
                 e.preventDefault();
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
@@ -3638,12 +3874,12 @@
                     addBtn.innerHTML = "Updating...";
 
                     fetch("<?= base_url('online_store/add_members') ?>", {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        },
-                    })
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            },
+                        })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.success) {
@@ -3671,7 +3907,7 @@
             editForms.forEach((form) => {
                 const editBtn = form.querySelector("#editmembersBtn");
 
-                editBtn.addEventListener("click", function (e) {
+                editBtn.addEventListener("click", function(e) {
                     e.preventDefault();
 
                     if (validateForm(form)) {
@@ -3681,12 +3917,12 @@
                         editBtn.innerHTML = "Updating...";
 
                         fetch("<?= base_url('online_store/edit_members') ?>", {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "X-Requested-With": "XMLHttpRequest"
-                            },
-                        })
+                                method: "POST",
+                                body: formData,
+                                headers: {
+                                    "X-Requested-With": "XMLHttpRequest"
+                                },
+                            })
                             .then((response) => response.json())
                             .then((data) => {
                                 if (data.success) {
@@ -3716,7 +3952,7 @@
                 Sortable.create(container, {
                     handle: ".handle",
                     animation: 150,
-                    onEnd: function (evt) {
+                    onEnd: function(evt) {
                         // Get the new order of IDs
                         const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
 
@@ -3727,15 +3963,15 @@
 
             function updateAwardOrder(orderedIds) {
                 fetch("<?= base_url('online_store/update_members_order') ?>", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Requested-With": "XMLHttpRequest",
-                    },
-                    body: JSON.stringify({
-                        order: orderedIds
-                    }),
-                })
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-Requested-With": "XMLHttpRequest",
+                        },
+                        body: JSON.stringify({
+                            order: orderedIds
+                        }),
+                    })
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
@@ -3772,8 +4008,8 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            $("#addFooterdata").submit(function (event) {
+        $(document).ready(function() {
+            $("#addFooterdata").submit(function(event) {
                 event.preventDefault(); // Prevent default form submission
 
                 var formData = new FormData(this);
@@ -3786,7 +4022,7 @@
                     contentType: false, // Prevent jQuery from setting content-type
                     processData: false, // Prevent automatic data processing
                     dataType: "json", // Expect JSON response
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -3794,7 +4030,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert('An error occurred while updating the footer.');
                     }
                 });
@@ -3803,13 +4039,13 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const policyPlusButton = document.getElementById('policyplus');
             const addPolicyForm = document.getElementById('AddNewPolicyForm');
             const editPolicyForm = document.getElementById('EditPolicyForm');
 
             // Handle the add button click to toggle the Add Policy form
-            policyPlusButton.addEventListener('click', function () {
+            policyPlusButton.addEventListener('click', function() {
                 if (addPolicyForm.style.display === 'none' || addPolicyForm.style.display === '') {
                     addPolicyForm.style.display = 'block'; // Show the Add Policy form
                     editPolicyForm.style.display = 'none'; // Hide the Edit Policy form
@@ -3819,7 +4055,7 @@
             });
 
             // Handle form submission for Add form
-            $('#addpolicy').on('submit', function (e) {
+            $('#addpolicy').on('submit', function(e) {
                 e.preventDefault();
 
                 const formData = {
@@ -3833,7 +4069,7 @@
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh to reflect changes
@@ -3841,7 +4077,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     },
@@ -3850,7 +4086,7 @@
 
             const baseUrl = "<?= base_url() ?>";
 
-            $('form[id^="editNewPolicyForm"]').on('submit', function (e) {
+            $('form[id^="editNewPolicyForm"]').on('submit', function(e) {
                 e.preventDefault();
 
                 const policyId = $(this).attr('id').split('-')[1];
@@ -3870,7 +4106,7 @@
                     processData: false,
                     contentType: false,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh the page to show updated data
@@ -3878,7 +4114,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     }
@@ -3921,7 +4157,7 @@
                     data: {
                         policy_id: policyId
                     },
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             // Remove the policy from the DOM if deletion is successful
                             $('#policyBox-' + policyId).remove();
@@ -3930,7 +4166,7 @@
                             alert("Failed to delete the policy.");
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert("An error occurred while deleting the policy.");
                     }
                 });
@@ -3941,7 +4177,7 @@
 
     <script>
         // Automatically generate the link based on policy name input
-        document.getElementById('policy_name').addEventListener('input', function () {
+        document.getElementById('policy_name').addEventListener('input', function() {
             var policyName = this.value;
             var generatedLink = policyName.trim().toLowerCase().replace(/\s+/g, '-');
             document.getElementById('policy_link').value = generatedLink;
@@ -3950,7 +4186,7 @@
 
     <!--chaitanya product-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Elements for products
             const showProductBtn = document.getElementById("showProductBtn");
             const productCheckboxContainer = document.getElementById("productCheckboxContainer");
@@ -3967,27 +4203,27 @@
 
 
             // Show/Hide product list
-            showProductBtn.addEventListener("click", function () {
+            showProductBtn.addEventListener("click", function() {
                 const isVisible = productCheckboxContainer.style.display === "block";
                 productCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Show/Hide bundle list
-            showBundleBtn.addEventListener("click", function () {
+            showBundleBtn.addEventListener("click", function() {
                 const isVisible = bundleCheckboxContainer.style.display === "block";
                 bundleCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Add/remove selected products dynamically
-            productCheckboxContainer.addEventListener("change", function (e) {
+            productCheckboxContainer.addEventListener("change", function(e) {
                 handleSelection(e, "product-checkbox", selectedProductsContainer);
             });
 
 
             // Add/remove selected bundles dynamically
-            bundleCheckboxContainer.addEventListener("change", function (e) {
+            bundleCheckboxContainer.addEventListener("change", function(e) {
                 handleSelection(e, "bundle-checkbox", selectedBundlesContainer);
             });
 
@@ -4030,16 +4266,16 @@
                     itemElement.className = itemClass;
                     itemElement.setAttribute("data-id", itemId);
                     itemElement.innerHTML = `
-                        <span>${itemTitle}</span>
-                        <button class="btn btn-danger btn-sm remove-item-btn" type="button">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
+                    <span>${itemTitle}</span>
+                    <button class="btn btn-danger btn-sm remove-item-btn" type="button">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
                     container.appendChild(itemElement);
 
 
                     // Add delete functionality
-                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function () {
+                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function() {
                         itemElement.remove();
                         checkbox.checked = false; // Uncheck the checkbox
                     });
@@ -4048,43 +4284,37 @@
 
 
             // Handle save button click event
-            updateproductpage.addEventListener("click", function (e) {
+            document.getElementById("updateproductpage").addEventListener("click", function(e) {
                 e.preventDefault(); // Prevent form submission
-
 
                 const formData = new FormData();
 
-
                 // Get form fields
-                formData.append("title", document.getElementById("title").value);
+                formData.append("productpagetitle", document.getElementById("productpagetitle").value);
                 formData.append("Description", document.getElementById("Description").value);
-
 
                 // Get selected products
                 const selectedProducts = Array.from(document.querySelectorAll(".selected-product"))
                     .map(product => product.getAttribute("data-id"));
                 selectedProducts.forEach(productId => formData.append("products[]", productId));
 
-
                 // Get selected bundles
                 const selectedBundles = Array.from(document.querySelectorAll(".selected-bundle"))
                     .map(bundle => bundle.getAttribute("data-id"));
                 selectedBundles.forEach(bundleId => formData.append("bundles[]", bundleId));
 
-
                 // Disable the button and update its text
                 updateproductpage.disabled = true;
                 updateproductpage.innerHTML = "Saving...";
 
-
                 // Send the AJAX request
                 fetch('<?= base_url('product-settings/save') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST", // Ensure it’s POST
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -4117,12 +4347,12 @@
                 const toast = document.createElement("div");
                 toast.className = `toast toast-${type} position-fixed top-0 end-0 m-4`;
                 toast.innerHTML = `
-                    <div class="toast-header">
-                        <strong class="me-auto">${type.toUpperCase()}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-                    </div>
-                    <div class="toast-body">${message}</div>
-                `;
+            <div class="toast-header">
+                <strong class="me-auto">${type.toUpperCase()}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">${message}</div>
+        `;
                 document.body.appendChild(toast);
                 new bootstrap.Toast(toast).show();
             }
@@ -4162,7 +4392,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const viewTypeSelect = document.getElementById('viewType');
             const sortSelectContainer = document.getElementById('sortSelectContainer');
             const postSelectContainer = document.getElementById('postSelectContainer');
@@ -4215,7 +4445,7 @@
             }
 
             // Handle view type changes
-            viewTypeSelect.addEventListener('change', function () {
+            viewTypeSelect.addEventListener('change', function() {
                 updateContainers(this.value);
                 // Reset selections when view type changes
                 postCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -4224,7 +4454,7 @@
             });
 
             // Handle post selection
-            document.querySelector('.dropdown-menu').addEventListener('change', function (e) {
+            document.querySelector('.dropdown-menu').addEventListener('change', function(e) {
                 if (e.target.classList.contains('post-checkbox')) {
                     if (viewTypeSelect.value === 'single') {
                         // For single view, uncheck all other checkboxes
@@ -4275,8 +4505,8 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $('#updateEmail_POP_UPpage').click(function (e) {
+        $(document).ready(function() {
+            $('#updateEmail_POP_UPpage').click(function(e) {
                 e.preventDefault();
 
 
@@ -4302,10 +4532,10 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         alert(response.message);
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         alert('An error occurred: ' + xhr.status + ' ' + error);
                     }
                 });
@@ -4317,13 +4547,13 @@
 
 
     <script>
-        document.getElementById('Email_POP_UP_Image').addEventListener('change', function (event) {
+        document.getElementById('Email_POP_UP_Image').addEventListener('change', function(event) {
             let file = event.target.files[0];
 
 
             if (file) {
                 let reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     let preview = document.getElementById('previewImage');
                     preview.src = e.target.result;
                     preview.style.display = "block"; // Show the preview
@@ -4335,23 +4565,23 @@
 
     <!--marquee chaitanya-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Toggle form visibility on button click
-            document.getElementById("toggleTextFormButton").addEventListener("click", function () {
+            document.getElementById("toggleTextFormButton").addEventListener("click", function() {
                 var form = document.getElementById("addmarqueeText");
                 form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
             });
 
             // Handle form submission with AJAX
-            document.getElementById("addmarqueeText").addEventListener("submit", function (e) {
+            document.getElementById("addmarqueeText").addEventListener("submit", function(e) {
                 e.preventDefault(); // Prevent form from submitting traditionally
 
                 let formData = new FormData(this);
 
                 fetch("<?= site_url('marquee-text/save-marquee') ?>", {
-                    method: "POST",
-                    body: formData,
-                })
+                        method: "POST",
+                        body: formData,
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4371,10 +4601,10 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Toggle edit form visibility
             document.querySelectorAll(".actions button").forEach((button) => {
-                button.addEventListener("click", function () {
+                button.addEventListener("click", function() {
                     const editForm = this.closest(".textBox").querySelector(".edit-form");
                     const chevron = this.querySelector("#chevron");
 
@@ -4412,14 +4642,14 @@
 
             // Handle delete button
             document.querySelectorAll(".actions a").forEach((deleteButton) => {
-                deleteButton.addEventListener("click", function () {
+                deleteButton.addEventListener("click", function() {
                     const textBox = this.closest(".textBox");
                     const textId = textBox.getAttribute("data-id");
 
                     if (confirm("Are you sure you want to delete this text?")) {
                         fetch(`<?= site_url('marquee-text/delete-marquee') ?>/${textId}`, {
-                            method: "DELETE"
-                        })
+                                method: "DELETE"
+                            })
                             .then(response => response.json())
                             .then(data => {
                                 if (data.status === "success") {
@@ -4442,16 +4672,16 @@
 
     <script>
         document.querySelectorAll("[id^='edittextForm-']").forEach(form => {
-            form.addEventListener("submit", function (e) {
+            form.addEventListener("submit", function(e) {
                 e.preventDefault(); // Prevent default form submission
 
                 let formData = new FormData(this);
                 let recordId = this.id.split('-')[1]; // Extract the record ID from the form's ID
 
                 fetch(`<?= site_url('marquee-text/UpdateMarquee/') ?>${recordId}`, {
-                    method: "POST",
-                    body: formData
-                })
+                        method: "POST",
+                        body: formData
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4471,8 +4701,8 @@
 
 
     <script>
-        $(document).ready(function () {
-            $("#addmarqueebottomText").on("submit", function (e) {
+        $(document).ready(function() {
+            $("#addmarqueebottomText").on("submit", function(e) {
                 e.preventDefault();
 
                 $.ajax({
@@ -4482,7 +4712,7 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === "success") {
                             alert(response.message);
                             location.reload();
@@ -4490,7 +4720,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert("An error occurred while saving the data.");
                     }
                 });
@@ -4673,6 +4903,5 @@
             previewElement.innerHTML = selectedItems.length ? `<small class="text-muted">Selected: ${selectedItems.join(', ')}</small>` : '';
         }
     </script>
-
 
 </body>

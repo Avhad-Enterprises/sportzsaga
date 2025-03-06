@@ -108,7 +108,6 @@
                 </div>
 
                 <?php if (!empty($referralHistory)): ?>
-                    <?php $firstReferral = $referralHistory[0]; ?>
                     <div class="card-box mb-30">
                         <div class="pd-20">
                             <h4 class="text-blue h4">Referral History</h4>
@@ -117,8 +116,8 @@
                             <table class="table hover table-hover">
                                 <thead>
                                     <tr>
-                                        <th>User Name</th>
-                                        <th>Referrals</th>
+                                        <th>Referrer Name</th>
+                                        <th>Referred User</th>
                                         <th>Status</th>
                                         <th>Reward Points</th>
                                     </tr>
@@ -126,10 +125,10 @@
                                 <tbody>
                                     <?php foreach ($referralHistory as $referrals): ?>
                                         <tr>
-                                            <td><?= $referrals['referrer_id'] ?></td>
-                                            <td><?= $referrals['referee_id'] ?></td>
-                                            <td><?= ucfirst($referrals['status']) ?></td>
-                                            <td><?= $referrals['reward_points'] ?></td>
+                                            <td><?= esc($referrals['referrer_name']) ?></td>
+                                            <td><?= esc($referrals['referee_name']) ?></td>
+                                            <td><?= ucfirst(esc($referrals['status'])) ?></td>
+                                            <td><?= esc($referrals['reward_points']) ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -146,6 +145,7 @@
                         </div>
                     </div>
                 <?php endif; ?>
+
 
             </div>
         </div>

@@ -534,6 +534,12 @@ class Customerservice extends Controller
             $attachments = [];
             $allTags = [];
 
+
+            // Fetch ticket number
+            $ticketDetails = $model->getTicketDetails($id);
+            $ticketNo = $ticketDetails['ticket_no'] ?? null;
+            $ticketStatus = $ticketDetails['ticket_status'] ?? null;
+
             // Initialize IMAP connection only if the channel is email
             if ($channel === 'email') {
                 $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
@@ -645,7 +651,15 @@ class Customerservice extends Controller
                 //print_r($threadData);exit();
             log_message('info', "Conversation processing completed successfully");
     
-            return view('email_view', ['thread' => $threadData, 'tags' => $tags, 'email' => $threadData[0], 'channel' => $channel, 'uniqueTags' => $uniqueTags]);
+            return view('email_view', [
+                'thread' => $threadData,
+                'tags' => $tags,
+                'email' => $threadData[0],
+                'channel' => $channel,
+                'uniqueTags' => $uniqueTags,
+                'ticketNo' => $ticketNo,
+                'ticketStatus' => $ticketStatus
+            ]);
     
         } catch (Exception $e) {
             log_message('error', "Error processing conversation: " . $e->getMessage());
@@ -1244,6 +1258,7 @@ public function fetchConversations()
         // Process each conversation to extract unique tags
         foreach ($conversations as &$conversation) {
             $conversation['unique_tags'] = $this->replyModel->getUniqueTagsForConversation($conversation['id'], $conversation['channel']);
+            $conversation['ticket_no'] = $this->replyModel->getTicketNumber($conversation['id']); // Fetch ticket number if exists
         }
 
         log_message('info', 'Processed ' . count($conversations) . ' conversations with unique tags.');
@@ -1262,6 +1277,52 @@ public function fetchConversations()
         log_message('error', 'Error in fetchConversations: ' . $e->getMessage());
         return 'Error loading conversations. Please check logs for details.';
     }
+}
+
+
+public function updateStatus()
+{
+    $conversationIds = $this->request->getPost('conversation_ids');
+    $status = $this->request->getPost('status');
+
+    foreach ($conversationIds as $id) {
+        $this->replyModel->updateStatus($id, $status);
+    }
+
+    return $this->response->setJSON(['status' => 'success']);
+}
+
+public function createTicket()
+{
+    $conversationIds = $this->request->getPost('conversation_ids');
+    
+    foreach ($conversationIds as $id) {
+        $this->replyModel->createTicket($id);
+    }
+
+    return $this->response->setJSON(['status' => 'success']);
+}
+
+public function closeTicket()
+{
+    $conversationIds = $this->request->getPost('conversation_ids');
+
+    foreach ($conversationIds as $id) {
+        $this->replyModel->closeTicket($id);
+    }
+
+    return $this->response->setJSON(['status' => 'success']);
+}
+
+public function openTicket()
+{
+    $conversationIds = $this->request->getPost('conversation_ids');
+
+    foreach ($conversationIds as $id) {
+        $this->replyModel->openTicket($id);
+    }
+
+    return $this->response->setJSON(['status' => 'success']);
 }
 
 
