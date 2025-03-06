@@ -109,7 +109,7 @@
             <div class="min-height-200px">
                 <!-- Page Main Content Start -->
 
-                <div class="d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex justify-content-between align-content-baseline">
                     <div class="form-group col-md-4">
                         <label for="web_section">Section</label>
                         <select name="web_section" id="web_section" class="form-control">
@@ -132,94 +132,6 @@
                             <option value="Email_POP_UP">Email POP UP</option>
                         </select>
                     </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <div id="web-home" class="web-section">
-                            <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home
-                                page</button>
-                        </div>
-                        <div id="web-blogs" class="web-section" style="display: none;">
-                            <button type="button" id="updateblogpage" class="btn m-4 btn-primary">Update Blogs
-                                page</button>
-                        </div>
-                        <div id="web-about" class="web-section" style="display: none;">
-                            <button type="button" id="updateaboutpage" class="btn m-4 btn-primary">Update About
-                                page</button>
-                        </div>
-                        <div id="web-contact" class="web-section" style="display: none;">
-                            <button type="button" id="updatecontactpage" class="btn m-4 btn-primary">Update Contact
-                                page</button>
-                        </div>
-                        <div id="web-search" class="web-section" style="display: none;">
-                            <button type="button" id="updatesearchpage" class="btn m-4 btn-primary">Update Search
-                                page</button>
-                        </div>
-                        <div id="web-wishlist" class="web-section" style="display: none;">
-                            <button type="button" id="updatewishlistpage" class="btn m-4 btn-primary">Update Wishlist
-                                page</button>
-                        </div>
-                        <div id="web-cart" class="web-section" style="display: none;">
-                            <button type="button" id="updatecartpage" class="btn m-4 btn-primary">Update Cart
-                                page</button>
-                        </div>
-                        <div id="web-checkout" class="web-section" style="display: none;">
-                            <button type="button" id="updatecheckout" class="btn m-4 btn-primary">Update Checkout
-                                page</button>
-                        </div>
-                        <div id="web-tracking" class="web-section" style="display: none;">
-                            <button type="button" id="updatetracking" class="btn m-4 btn-primary">Update Tracking
-                                page</button>
-                        </div>
-                        <div id="web-404" class="web-section" style="display: none;">
-                            <button type="button" id="update404" class="btn m-4 btn-primary">Update 404 page</button>
-                        </div>
-                        <div id="web-header" class="web-section" style="display: none;">
-                            <button type="submit" id="updateheader" class="btn m-4 btn-primary">Update Header</button>
-                        </div>
-                        <div id="web-singleblog" class="web-section" style="display: none;">
-                            <button type="submit" id="updatesingleblog" class="btn m-4 btn-primary">Update Single Blog
-                                page</button>
-                        </div>
-                        <div id="web-collection" class="web-section" style="display: none;">
-                            <button type="submit" id="updatecollection" class="btn m-4 btn-primary">Update Collection
-                                page</button>
-                        </div>
-                        <div id="web-product" class="web-section" style="display: none;">
-                            <button type="submit" id="updateproductpage" class="btn m-4 btn-primary">Update Product
-                                page</button>
-                        </div>
-                        <div id="web-Email_POP_UP" class="web-section" style="display: none;">
-                            <button type="submit" id="updateEmail_POP_UPpage" class="btn m-4 btn-primary">Update Email
-                                POP
-                                UP page</button>
-                        </div>
-
-                        <!-- Mobile & Desktop View Buttons with Icons -->
-                        <div class="d-flex align-items-center gap-3">
-                            <button type="button" id="showDesktop"
-                                class="btn btn-outline-primary d-flex align-items-center px-3 py-1"
-                                style="height: 40px; width: 45px; margin-right: 10px;">
-                                <i class="fas fa-desktop"></i>
-                            </button>
-                            <button type="button" id="showMobile"
-                                class="btn btn-outline-primary d-flex align-items-center px-3 py-1"
-                                style="height: 40px; width: 45px;">
-                                <i class="fas fa-mobile-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="web-home" class="web-section">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
-                        <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                     <div id="web-home" class="web-section" style="display: none;">
                         <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home page</button>
                     </div>
@@ -294,16 +206,6 @@
                     </div>
                 </div>
                 <div id="web-search" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
-                        <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="height: 700px;">
@@ -319,16 +221,6 @@
                     </div>
                 </div>
                 <div id="web-blogs" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
-                        <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="height: 700px;">
@@ -346,14 +238,6 @@
                     </div>
                 </div>
                 <div id="web-singleblog" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
-                        <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="height: 700px;">
@@ -375,10 +259,6 @@
                 <div id="web-collection" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
@@ -396,12 +276,6 @@
                 <div id="web-about" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/about" frameborder="0"
@@ -417,17 +291,6 @@
                     </div>
                 </div>
                 <div id="web-contact" class="web-section" style="display: none;">
-                    <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
-                        <!-- Desktop View (Large Size, Visible by Default) -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/contact" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
-                        </div>
 
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
@@ -448,12 +311,6 @@
                 <div id="web-wishlist" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0"
@@ -471,12 +328,6 @@
                 <div id="web-marquee" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
@@ -492,16 +343,10 @@
                 <div id="web-cart" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/cart" frameborder="0"
-                                    class="preview-iframe"></iframe>
+                                class="preview-iframe"></iframe>
                         </div>
 
                         <!-- Mobile View -->
@@ -515,12 +360,6 @@
                 <div id="web-checkout" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/checkout" frameborder="0"
@@ -538,12 +377,6 @@
                 <div id="web-tracking" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/tracking" frameborder="0"
@@ -561,19 +394,10 @@
                 <div id="web-404" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
-
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/404" frameborder="0"
                                 class="preview-iframe"></iframe>
-
                         </div>
 
                         <!-- Mobile View -->
@@ -587,15 +411,8 @@
                 <div id="web-header" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
-
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
                                 frameborder="0" class="preview-iframe"></iframe>
                         </div>
@@ -611,10 +428,6 @@
                 <div id="web-product" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
@@ -632,17 +445,9 @@
                 <div id="web-Footer" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
-
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
-
                         </div>
 
                         <!-- Mobile View -->
@@ -655,15 +460,8 @@
                 <div id="web-otherpages" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
-
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
                                 class="preview-iframe"></iframe>
                         </div>
@@ -679,18 +477,9 @@
                 <div id="web-Email_POP_UP" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain">
                         <!-- Desktop View -->
-
-                        <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
-                            <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
-                                Desktop View</p>
-                            <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
-                                style="width: 100%; height: 100%; border: none;"></iframe>
-
                         <div class="preview desktop-view" style="height: 700px;">
                             <p class="preview-title">Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
-
                         </div>
 
 
@@ -706,37 +495,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let desktopViews = document.querySelectorAll(".desktop-view");
-            let mobileViews = document.querySelectorAll(".mobile-view");
-            let showDesktopBtn = document.getElementById("showDesktop");
-            let showMobileBtn = document.getElementById("showMobile");
-
-            // Show Desktop View by default
-            showDesktopBtn.classList.add("btn-primary");
-            showMobileBtn.classList.add("btn-secondary");
-
-            showDesktopBtn.addEventListener("click", function () {
-                desktopViews.forEach(view => view.style.display = "block");
-                mobileViews.forEach(view => view.style.display = "none");
-                showDesktopBtn.classList.add("btn-primary");
-                showMobileBtn.classList.remove("btn-primary");
-                showMobileBtn.classList.add("btn-secondary");
-            });
-
-            showMobileBtn.addEventListener("click", function () {
-                desktopViews.forEach(view => view.style.display = "none");
-                mobileViews.forEach(view => view.style.display = "block");
-                showMobileBtn.classList.add("btn-primary");
-                showDesktopBtn.classList.remove("btn-primary");
-                showDesktopBtn.classList.add("btn-secondary");
-            });
-        });
-    </script>
 
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
@@ -931,7 +689,7 @@
             });
         });
     </script>
-    
+
     <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
 
     <script>
@@ -1347,52 +1105,58 @@
 
     <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
     <script>
+        // Function to handle checkbox changes
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
             const listContainer = document.getElementById(listId);
-            const checkboxes = document.querySelectorAll(`.${checkboxClass}`);
+
+            // Clear the list container
+            listContainer.innerHTML = '';
 
             // Iterate through checkboxes
-            checkboxes.forEach(checkbox => {
-                const id = checkbox.getAttribute('data-id');
-                const title = checkbox.getAttribute('data-title');
-
+            document.querySelectorAll(`.${checkboxClass}`).forEach(checkbox => {
                 if (checkbox.checked) {
-                    // Check if item already exists
-                    if (!document.querySelector(`#item_${id}`)) {
-                        const listItem = document.createElement('li');
-                        listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
-                        listItem.setAttribute('data-id', id);
-                        listItem.setAttribute('id', `item_${id}`);
+                    const title = checkbox.getAttribute('data-title');
+                    const id = checkbox.getAttribute('data-id');
 
-                        // Add title
-                        const itemTitle = document.createElement('span');
-                        itemTitle.textContent = title;
-                        listItem.appendChild(itemTitle);
+                    // Create the list item
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('sortable-item', 'p-2', 'mb-2', 'bg-light', 'rounded', 'border', 'd-flex', 'justify-content-between', 'align-items-center');
+                    listItem.setAttribute('data-id', id);
 
-                        // Add delete button
-                        const deleteButton = document.createElement('button');
-                        deleteButton.textContent = 'Delete';
-                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'remove-item');
-                        deleteButton.setAttribute('data-id', id);
+                    // Add the item title
+                    const itemTitle = document.createElement('span');
+                    itemTitle.textContent = title;
+                    listItem.appendChild(itemTitle);
 
-                        listItem.appendChild(deleteButton);
-                        listContainer.appendChild(listItem);
-                    }
+                    // Add the delete button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                    deleteButton.addEventListener('click', () => {
+                        // Uncheck the checkbox
+                        checkbox.checked = false;
+
+                        // Remove the item from the list
+                        listContainer.removeChild(listItem);
+
+                        // Update the hidden input value
+                        updateSelections(listId, inputId, checkboxClass);
+                    });
+
+                    listItem.appendChild(deleteButton);
+
+                    // Append the list item to the list container
+                    listContainer.appendChild(listItem);
+
+                    // Add ID to the selected items array
                     selectedItems.push(id);
                 }
             });
 
-            // Update hidden input field
+            // Update hidden input value
             document.getElementById(inputId).value = selectedItems.join(',');
-
-            // Attach delete event listener (Event Delegation)
-            document.getElementById(listId).addEventListener('click', function (event) {
-                if (event.target.classList.contains('remove-item')) {
-                    const itemId = event.target.getAttribute('data-id');
-                    document.getElementById(`item_${itemId}`).remove();
-                    document.querySelector(`#fav_product_${itemId}`).checked = false;
-                    updateSelections(listId, inputId, checkboxClass);
+        }
 
         // Initialize sortable for drag-and-drop
         function initializeSortable(listId, inputId) {
@@ -1401,41 +1165,21 @@
                 onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
-
                 }
             });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sortable list for favorite blogs
-            initializeSortable('favList', 'fav_blogs_input');
+            initializeSortable('favBlogsList', 'fav_blogs_input');
 
             // Initialize selections on page load
-            updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox');
+            updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox');
 
+            // Event listeners for checkbox changes
             document.querySelectorAll('.fav-blog-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox'));
+                checkbox.addEventListener('change', () => updateSelections('favBlogsList', 'fav_blogs_input', 'fav-blog-checkbox'));
             });
-
-
-            // Event listeners for removing items from the list
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', function () {
-                    const itemId = this.getAttribute('data-id');
-                    const listItem = this.closest('.sortable-item');
-
-                    // Uncheck the corresponding checkbox
-                    const checkbox = document.querySelector(`#fav_product_${itemId}`);
-                    if (checkbox) checkbox.checked = false;
-
-                    // Remove item from the list
-                    listItem.remove();
-
-                    // Update hidden input value
-                    updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox');
-                });
-            });
-
 
             // AJAX Form Submission for Collection
             document.getElementById('updatecollection').addEventListener('click', function() {
@@ -1470,11 +1214,7 @@
                         alert('An error occurred while saving the collection data.');
                     });
             });
-
-        });        
-
         });
-
     </script>
 
     <script>
@@ -2356,9 +2096,10 @@
             }
         }
     </script>
-                  
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-    
+
+
+
+
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
@@ -4726,182 +4467,6 @@
                 });
             });
         });
-    </script>
-
-    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get elements
-
-            const toggleButton = document.getElementById("toggleProductFormButton");
-            const formContainer = document.getElementById("productAddForm");
-            const productList = document.getElementById("productList");
-            const collectionList = document.getElementById("collectionList");
-
-            // ✅ Toggle Form Visibility
-            toggleButton.addEventListener("click", function () {
-                formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('#ShowProduct, #ShowCollection').hide();
-
-            // Toggle visibility of Product & Collection fields based on selection
-            $('#select_type').on('change', function () {
-                let selectedValue = $(this).val();
-
-                if (selectedValue === 'product') {
-                    $('#ShowProduct').fadeIn();
-                    $('#ShowCollection').hide();
-                } else if (selectedValue === 'collection') {
-                    $('#ShowCollection').fadeIn();
-                    $('#ShowProduct').hide();
-                } else {
-                    $('#ShowProduct, #ShowCollection').hide();
-                }
-            });
-
-            // Function to update selected items display
-            function updateSelectedDisplay(selectElement, displayElement, hiddenInput) {
-                displayElement.html('');
-                let selectedValues = [];
-
-                $(selectElement).find(':selected').each(function () {
-                    let selectedItem = $(this).text();
-                    selectedValues.push($(this).val());
-
-                    let badge = $('<div class="badge badge-primary p-2 m-1"></div>').text(selectedItem);
-                    displayElement.append(badge);
-                });
-
-                hiddenInput.val(selectedValues.join(',')); // Store selected values
-            }
-
-            // Attach event listeners to Product and Collection select elements
-            $('#selected_product').on('change', function () {
-                updateSelectedDisplay(this, $('#selected_products_display'), $('#selected_products_hidden'));
-            });
-
-            $('#selected_collection').on('change', function () {
-                updateSelectedDisplay(this, $('#selected_collections_display'), $('#selected_collections_hidden'));
-            });
-
-            // Append hidden input fields to store selected values for submission
-            $('#productForm').append('<input type="hidden" id="selected_products_hidden" name="selected_products">');
-            $('#productForm').append('<input type="hidden" id="selected_collections_hidden" name="selected_collections">');
-        });
-    </script>
-
-    <script>
-        function toggleEditFormProduct(productId) {
-            let editForm = document.getElementById(`editForm-${productId}`);
-            let chevronIcon = document.getElementById(`chevron-${productId}`);
-
-            if (editForm.style.display === "none" || editForm.style.display === "") {
-                editForm.style.display = "block";
-                chevronIcon.classList.remove("fa-chevron-down");
-                chevronIcon.classList.add("fa-chevron-up");
-            } else {
-                editForm.style.display = "none";
-                chevronIcon.classList.remove("fa-chevron-up");
-                chevronIcon.classList.add("fa-chevron-down");
-            }
-        }
-    </script>
-
-    <script>
-        function deleteProduct(productId) {
-            if (!confirm("Are you sure you want to delete this product?")) {
-                return;
-            }
-
-            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
-                method: "POST",
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert("Product deleted successfully!");
-                        document.getElementById(`productBox-${productId}`).remove(); // Remove from UI
-                    } else {
-                        alert("Failed to delete product: " + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("An error occurred while deleting the product.");
-                });
-        }
-    </script>
-
-
-
-
-    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".select_link").forEach(selectField => {
-                let id = selectField.id.split("_")[2];
-                let productField = document.getElementById("ShowProductField_" + id);
-                let collectionField = document.getElementById("ShowCollectionField_" + id);
-
-                if (!selectField || !productField || !collectionField) {
-                    console.error("Element not found: ", { selectField, productField, collectionField });
-                    return;
-                }
-
-                function updateFields(value) {
-                    if (value === 'product') {
-                        productField.style.display = 'block';
-                        collectionField.style.display = 'none';
-                    } else if (value === 'collection') {
-                        productField.style.display = 'none';
-                        collectionField.style.display = 'block';
-                    } else {
-                        productField.style.display = 'none';
-                        collectionField.style.display = 'none';
-                    }
-                }
-
-                // Initializing
-                updateFields(selectField.value);
-
-                // On change event
-                selectField.addEventListener('change', function () {
-                    updateFields(this.value);
-                });
-            });
-        });
-    </script>
-
-
-    <!------------------------------------------------------------------------------- Home Page Image -------------------------------------------------------------------------------->
-
-    <script>
-        function toggleFields(index) {
-            let selection = document.getElementById('select_link' + index).value;
-            document.getElementById('ShowProductField' + index).style.display = selection === 'product' ? 'block' : 'none';
-            document.getElementById('ShowCollectionField' + index).style.display = selection === 'collection' ? 'block' : 'none';
-        }
-
-        // Function to update preview section
-        function updatePreview(type) {
-            let selectElement = document.getElementById(type === 'product' ? 'selected_product1' : 'selected_collection1');
-            let previewElement = document.getElementById(type === 'product' ? 'productPreview' : 'collectionPreview');
-
-            let selectedItems = Array.from(selectElement.selectedOptions).map(option => option.text);
-            previewElement.innerHTML = selectedItems.length ? `<small class="text-muted">Selected: ${selectedItems.join(', ')}</small>` : '';
-        }
     </script>
 
 </body>
