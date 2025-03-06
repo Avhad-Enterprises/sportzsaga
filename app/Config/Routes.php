@@ -544,6 +544,5 @@ $routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
 $routes->post('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
 
-
 //home image
 $routes->post('online_store/save', 'Store::save');

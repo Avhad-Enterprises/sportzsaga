@@ -1447,5 +1447,6 @@
         if (collectionDropdown.value) {
             disableSelectionMethods();
         }
-    });    
+    });
+        
 </script>

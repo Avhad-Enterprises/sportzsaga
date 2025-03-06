@@ -92,5 +92,6 @@ class RelatedProductModel extends Model
         }
 
         return is_array($relatedProductIds) ? $relatedProductIds : [];
+  
     }    
 }
