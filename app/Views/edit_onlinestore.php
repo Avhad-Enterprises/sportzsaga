@@ -1162,7 +1162,7 @@
 
             // Initialize selections on page load
             updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox');
-            
+
             document.querySelectorAll('.fav-blog-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('change', () => updateSelections('favList', 'fav_blogs_input', 'fav-blog-checkbox'));
             });
@@ -4657,7 +4657,6 @@
 
     <!------------------------------------------------------------------------------- Home Page Image -------------------------------------------------------------------------------->
 
-    <!-- JavaScript -->
     <script>
         function toggleFields(index) {
             let selection = document.getElementById('select_link' + index).value;
@@ -4674,6 +4673,5 @@
             previewElement.innerHTML = selectedItems.length ? `<small class="text-muted">Selected: ${selectedItems.join(', ')}</small>` : '';
         }
     </script>
-
 
 </body>

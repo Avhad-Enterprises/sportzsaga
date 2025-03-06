@@ -354,7 +354,4 @@ class RelatedproductController extends Controller
 
         return redirect()->to('relatedproduct_table_view')->with('error', 'Product not found.');
     }
-
-    
-
 }
