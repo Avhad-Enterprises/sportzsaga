@@ -11,40 +11,36 @@ use App\Models\TagModel;
 use DOMDocument;
 use DOMXPath;
 
-
 class Customerservice extends Controller
 {
+    protected $replyModel;
     public function __construct()
     {
         header('Content-Type: text/html; charset=utf-8');
-        
-
         $this->replyModel = new ReplyModel();
-
     }
 
     public function fetchEmails()
     {
         try {
             log_message('info', 'Starting fetchEmails method');
-            
+
             $model = new ReplyModel();
-            
+
             // Process new emails first
             $this->processNewEmails();
-            
+
             // Fetch email threads instead of individual emails
             $threadData = $model->getEmailThreads();
             log_message('info', 'Retrieved ' . count($threadData) . ' email threads');
-            
+
             // Set proper content type header
             $this->response->setHeader('Content-Type', 'text/html; charset=utf-8');
-            
+
             // Return the view with thread data
             return $this->response->setJSON([
                 'status' => 'success'
             ]);
-            
         } catch (\Exception $e) {
             log_message('error', 'Error in fetchEmails: ' . $e->getMessage());
             return 'Error loading emails. Please check logs for details.';
@@ -52,7 +48,8 @@ class Customerservice extends Controller
     }
 
 
-    private function cleanEmailContent($content, $type = 'html') {
+    private function cleanEmailContent($content, $type = 'html')
+    {
         if (empty($content)) {
             return '';
         }
@@ -66,13 +63,13 @@ class Customerservice extends Controller
         try {
             // Remove common email client style blocks
             $content = preg_replace('/<style[^>]*>.*?<\/style>/is', '', $content);
-            
+
             // Remove excessive whitespace
             $content = preg_replace('/\s+/', ' ', $content);
-            
+
             // Remove common email client meta tags
             $content = preg_replace('/<meta[^>]*>/is', '', $content);
-            
+
             // Clean up nested tables while preserving content
             $dom = new \DOMDocument();
             libxml_use_internal_errors(true);
@@ -82,7 +79,7 @@ class Customerservice extends Controller
             // Function to clean up nested tables
             $xpath = new \DOMXPath($dom);
             $tables = $xpath->query('//table');
-            
+
             foreach ($tables as $table) {
                 // If this table only contains one table, replace it with its content
                 $nestedTables = $xpath->query('.//table', $table);
@@ -96,7 +93,7 @@ class Customerservice extends Controller
             // Get the body content only
             $xpath = new \DOMXPath($dom);
             $body = $xpath->query('//body')->item(0);
-            
+
             if ($body) {
                 $cleanContent = '';
                 foreach ($body->childNodes as $node) {
@@ -104,9 +101,8 @@ class Customerservice extends Controller
                 }
                 return trim($cleanContent);
             }
-            
+
             return $dom->saveHTML();
-            
         } catch (\Exception $e) {
             log_message('error', 'Error cleaning email content: ' . $e->getMessage());
             return $content; // Return original content if cleaning fails
@@ -120,22 +116,23 @@ class Customerservice extends Controller
 
 
 
-    private function getMessageParts($inbox, $msgno, $structure, $partNumber = "") {
+    private function getMessageParts($inbox, $msgno, $structure, $partNumber = "")
+    {
         $data = [];
 
         try {
-                
+
             // Handle multipart emails
             if ($structure->type == 1) {
                 foreach ($structure->parts as $partNum => $part) {
                     $newPartNumber = $partNumber . ($partNumber ? "." : "") . ($partNum + 1);
                     $data = array_merge_recursive($data, $this->getMessageParts($inbox, $msgno, $part, $newPartNumber));
                 }
-            } 
+            }
             // Handle text parts
             elseif ($structure->type == 0) {
                 $content = imap_fetchbody($inbox, $msgno, $partNumber ?: 1);
-                
+
                 // Decode content based on encoding
                 if ($structure->encoding == 3) { // BASE64
                     $content = base64_decode($content);
@@ -158,15 +155,17 @@ class Customerservice extends Controller
                 }
             }
             // Handle file attachments
-            else if (isset($structure->disposition) && 
-                    strtolower($structure->disposition) == 'attachment') {
+            else if (
+                isset($structure->disposition) &&
+                strtolower($structure->disposition) == 'attachment'
+            ) {
                 $filename = '';
                 if (isset($structure->dparameters[0])) {
                     $filename = $structure->dparameters[0]->value;
                 } elseif (isset($structure->parameters[0])) {
                     $filename = $structure->parameters[0]->value;
                 }
-        
+
                 if ($filename) {
                     $attachmentData = [
                         'filename' => $filename,
@@ -182,11 +181,12 @@ class Customerservice extends Controller
         } catch (\Exception $e) {
             log_message('error', 'Error processing message parts: ' . $e->getMessage());
         }
-    
+
         return $data;
     }
 
-    private function getCharset($structure) {
+    private function getCharset($structure)
+    {
         if (isset($structure->parameters)) {
             foreach ($structure->parameters as $param) {
                 if (strtolower($param->attribute) == 'charset') {
@@ -204,52 +204,52 @@ class Customerservice extends Controller
         return 'UTF-8';
     }
 
-    
+
     // Modified processNewEmails method with better email content extraction
     public function processNewEmails()
     {
         // Set proper headers for AJAX response
         $this->response->setHeader('Content-Type', 'application/json');
-        
+
         $model = new ReplyModel();
-        
+
         try {
             log_message('info', 'Starting email processing');
-            
+
             $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
             $username = 'support@driphunter.in';
             $password = 's@Tz6Vw5*Ju4Lq';
-            
+
             $inbox = imap_open($hostname, $username, $password);
             if (!$inbox) {
                 throw new \Exception('Cannot connect to email: ' . imap_last_error());
             }
-            
+
             $emails = imap_search($inbox, 'ALL');
             $processedCount = 0;
-            
+
             if ($emails) {
                 rsort($emails);
-                
+
                 foreach ($emails as $email_number) {
                     try {
                         $overview = imap_fetch_overview($inbox, $email_number, 0);
-                        
+
                         if (!$model->checkExistingEmail($overview[0]->msgno)) {
                             log_message('info', 'Processing new email: ' . $overview[0]->subject);
-                            
+
                             // Check if this is a reply to an existing email
                             $relatedEmail = $model->findRelatedEmail(
                                 $this->decodeSubject($overview[0]->subject),
                                 $overview[0]->from
                             );
-                            
+
                             // Get message structure
                             $structure = imap_fetchstructure($inbox, $email_number);
-                            
+
                             // Get message content
                             $messageData = $this->getMessageParts($inbox, $email_number, $structure);
-            
+
                             // Process the email content
                             $emailContent = '';
                             if (!empty($messageData['html'])) {
@@ -260,23 +260,23 @@ class Customerservice extends Controller
                                 $rawContent = imap_body($inbox, $email_number);
                                 $emailContent = $this->cleanEmailContent($rawContent, 'plain');
                             }
-                            
+
                             // Clean the content
                             //$emailContent = strip_tags($emailContent);
                             //$emailContent = preg_replace('/\s+/', ' ', $emailContent);
                             $emailContent = trim($emailContent);
-                            
+
                             // Get user ID if sender exists in users table
                             $fromEmail = $overview[0]->from;
                             $userId = $model->getUserIdByEmail($fromEmail);
-                            
+
                             // Get tags based on message content
                             $tags = $model->getTagsForMessage($emailContent);
                             $tagsString = implode(',', $tags);
-                            
+
                             // Get agent based on primary tag
                             $assignedAgent = $model->getAgentForTags($tags);
-                            
+
                             // Prepare email data
                             $emailData = [
                                 'msg_no' => $overview[0]->msgno,
@@ -290,12 +290,12 @@ class Customerservice extends Controller
                                 'status' => 'new',
                                 'replied_to_msgno' => $relatedEmail ? $relatedEmail['msg_no'] : null
                             ];
-                            
+
                             // Save to database
                             $model->insert($emailData);
                             $processedCount++;
-                            
-                            log_message('info', 'Email saved successfully: ' . $overview[0]->msgno . 
+
+                            log_message('info', 'Email saved successfully: ' . $overview[0]->msgno .
                                 ($relatedEmail ? ' (Reply to: ' . $relatedEmail['msg_no'] . ')' : ''));
                         }
                     } catch (\Exception $e) {
@@ -304,15 +304,14 @@ class Customerservice extends Controller
                     }
                 }
             }
-            
+
             imap_close($inbox);
             log_message('info', 'Email processing completed. Processed ' . $processedCount . ' new emails');
-            
+
             return $this->response->setJSON([
                 'status' => 'success',
                 'processed' => $processedCount
             ]);
-            
         } catch (\Exception $e) {
             log_message('error', 'Error processing emails: ' . $e->getMessage());
             return $this->response->setJSON([
@@ -322,7 +321,8 @@ class Customerservice extends Controller
         }
     }
 
-    private function sanitizeHtml($html) {
+    private function sanitizeHtml($html)
+    {
         // Define allowed HTML tags with their allowed attributes
         $allowedTags = [
             'p' => ['style', 'class'],
@@ -390,9 +390,9 @@ class Customerservice extends Controller
         $cleanHtml = $dom->saveHTML();
         return $cleanHtml;
     }
-    
-    
-    
+
+
+
     private function decodeSubject($subject)
     {
         $subject = imap_mime_header_decode($subject);
@@ -403,39 +403,40 @@ class Customerservice extends Controller
         return $decodedSubject;
     }
 
-    public function customerEmailView($msgno) {
+    public function customerEmailView($msgno)
+    {
         log_message('info', 'Starting to fetch complete email thread for message number: ' . $msgno);
         $model = new ReplyModel();
-    
+
         try {
             $conversationThread = $model->getCompleteThread($msgno);
             log_message('info', 'Found ' . count($conversationThread) . ' messages in complete thread');
-    
+
             // IMAP connection for received messages
             $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
             $username = 'support@driphunter.in';
             $password = 's@Tz6Vw5*Ju4Lq';
-            
+
             $inbox = imap_open($hostname, $username, $password);
             if (!$inbox) {
                 throw new Exception('Cannot connect to email server');
             }
-    
+
             $threadData = [];
             foreach ($conversationThread as $message) {
                 $messageData = [];
                 $attachments = [];
-                
+
                 if ($message['message_type'] === 'received') {
                     // Existing IMAP attachment handling
                     $structure = imap_fetchstructure($inbox, $message['msg_no']);
                     $messageData = $this->getMessageParts($inbox, $message['msg_no'], $structure);
-                    
+
                     if (isset($messageData['attachments'])) {
                         foreach ($messageData['attachments'] as $key => $attachment) {
                             $tempPath = FCPATH . 'uploads/' . $attachment['filename'];
-                            $decodedContent = $attachment['encoding'] == 3 ? 
-                                base64_decode($attachment['content']) : 
+                            $decodedContent = $attachment['encoding'] == 3 ?
+                                base64_decode($attachment['content']) :
                                 quoted_printable_decode($attachment['content']);
                             file_put_contents($tempPath, $decodedContent);
                             $attachments[] = [
@@ -449,18 +450,18 @@ class Customerservice extends Controller
                 } else if ($message['message_type'] === 'sent' && !empty($message['attachments'])) {
                     // Handle stored attachments for sent messages
                     $storedAttachments = json_decode($message['attachments'], true);
-                    
+
                     foreach ($storedAttachments as $attachment) {
                         // Copy file to temporary location for consistent handling
                         $tempFilename = basename($attachment['filepath']);
                         $tempPath = FCPATH . 'uploads/' . $attachment['filename'];
-                        
+
                         if (file_exists($attachment['filepath'])) {
                             copy($attachment['filepath'], $tempPath);
-                            
+
                             // Parse MIME type into type and subtype
                             list($mainType, $subType) = array_pad(explode('/', $attachment['filetype']), 2, 'unknown');
-                            
+
                             $typeMap = [
                                 'text' => 0,
                                 'multipart' => 1,
@@ -471,7 +472,7 @@ class Customerservice extends Controller
                                 'video' => 6,
                                 'other' => 7
                             ];
-    
+
                             $attachments[] = [
                                 'filename' => $attachment['filename'],
                                 'type' => $typeMap[$mainType] ?? 7,
@@ -481,14 +482,14 @@ class Customerservice extends Controller
                         }
                     }
                 }
-    
+
                 // Prepare unified message format
                 $threadData[] = [
                     'msg_no' => $message['msg_no'],
                     'subject' => $message['subject'],
                     'from' => $message['from_email'],
                     'to' => $message['to_email'],
-                    'date' => $message['email_date'] ?? $message['created_at'] ,
+                    'date' => $message['email_date'] ?? $message['created_at'],
                     'full_message' => $message['full_message'],
                     'message_type' => $message['message_type'],
                     'attachments' => $attachments,
@@ -497,14 +498,13 @@ class Customerservice extends Controller
                     'user_id' => $message['user_id'] ?? null
                 ];
             }
-    
+
             if ($inbox) {
                 imap_close($inbox);
             }
             log_message('info', 'Email thread processing completed successfully');
-    
+
             return view('email_view', ['thread' => $threadData, 'email' => $threadData[0]]);
-    
         } catch (Exception $e) {
             log_message('error', 'Error processing email thread: ' . $e->getMessage());
             return view('error_view', ['error' => $e->getMessage()]);
@@ -512,14 +512,15 @@ class Customerservice extends Controller
     }
 
 
-    public function customerConversationView($id, $channel) {
+    public function customerConversationView($id, $channel)
+    {
         log_message('info', "Fetching conversation for ID: $id (Channel: $channel)");
         $model = new ReplyModel();
         $user = new Registerusers_model();
         $ordermodel = new Ordermanagement_model();
         $tagModel = new TagModel();
 
-    
+
         try {
             // Fetch conversation based on channel type
             if ($channel === 'email') {
@@ -527,9 +528,9 @@ class Customerservice extends Controller
             } else {
                 $conversationThread = $model->getLiveChatThread($id);
             }
-    
+
             log_message('info', "Found " . count($conversationThread) . " messages in the conversation thread");
-    
+
             $threadData = [];
             $attachments = [];
             $allTags = [];
@@ -545,22 +546,22 @@ class Customerservice extends Controller
                 $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
                 $username = 'support@driphunter.in';
                 $password = 's@Tz6Vw5*Ju4Lq';
-    
+
                 $inbox = imap_open($hostname, $username, $password);
                 if (!$inbox) {
                     throw new Exception('Cannot connect to email server');
                 }
             }
-    
+
             foreach ($conversationThread as $message) {
                 $messageData = [];
                 $attachments = [];
-    
+
                 // Process email attachments
                 if ($channel === 'email' && $message['message_type'] === 'received') {
                     $structure = imap_fetchstructure($inbox, $message['msg_no']);
                     $messageData = $this->getMessageParts($inbox, $message['msg_no'], $structure);
-    
+
                     if (isset($messageData['attachments'])) {
                         foreach ($messageData['attachments'] as $attachment) {
                             $tempPath = FCPATH . 'uploads/' . $attachment['filename'];
@@ -568,7 +569,7 @@ class Customerservice extends Controller
                                 ? base64_decode($attachment['content'])
                                 : quoted_printable_decode($attachment['content']);
                             file_put_contents($tempPath, $decodedContent);
-    
+
                             $attachments[] = [
                                 'filename' => $attachment['filename'],
                                 'type' => $attachment['type'],
@@ -582,10 +583,10 @@ class Customerservice extends Controller
                     $storedAttachments = json_decode($message['attachments'], true);
                     foreach ($storedAttachments as $attachment) {
                         $tempPath = FCPATH . 'uploads/' . basename($attachment['filepath']);
-    
+
                         if (file_exists($attachment['filepath'])) {
                             copy($attachment['filepath'], $tempPath);
-    
+
                             list($mainType, $subType) = array_pad(explode('/', $attachment['filetype']), 2, 'unknown');
                             $typeMap = [
                                 'text' => 0,
@@ -597,7 +598,7 @@ class Customerservice extends Controller
                                 'video' => 6,
                                 'other' => 7
                             ];
-    
+
                             $attachments[] = [
                                 'filename' => $attachment['filename'],
                                 'type' => $typeMap[$mainType] ?? 7,
@@ -608,14 +609,14 @@ class Customerservice extends Controller
                     }
                 }
 
-                if($message['user_id']){
-                    $userdata = $user->getRegisteredUserData($message['user_id']);                    
+                if ($message['user_id']) {
+                    $userdata = $user->getRegisteredUserData($message['user_id']);
                     $orderData = !empty($message['user_id']) ? $ordermodel->getuserOrderData($message['user_id']) : null;
                     $tracking = !empty($orderData['order_number']) ? $ordermodel->getOrderTracking($orderData['order_number']) : null;
                     //print_r($tracking);exit();
                 }
 
-                            // Extract tags from each message and merge them
+                // Extract tags from each message and merge them
                 if (!empty($message['tags'])) {
                     $tagsArray = explode(',', $message['tags']);
                     $allTags = array_merge($allTags, $tagsArray);
@@ -641,16 +642,15 @@ class Customerservice extends Controller
                     'tracking' => $tracking ?? [],
                     'user_id' => $message['user_id'] ?? null
                 ];
-
             }
-    
+
             if ($channel === 'email' && $inbox) {
                 imap_close($inbox);
             }
-    
-                //print_r($threadData);exit();
+
+            //print_r($threadData);exit();
             log_message('info', "Conversation processing completed successfully");
-    
+
             return view('email_view', [
                 'thread' => $threadData,
                 'tags' => $tags,
@@ -660,19 +660,15 @@ class Customerservice extends Controller
                 'ticketNo' => $ticketNo,
                 'ticketStatus' => $ticketStatus
             ]);
-    
         } catch (Exception $e) {
             log_message('error', "Error processing conversation: " . $e->getMessage());
             return view('error_view', ['error' => $e->getMessage()]);
         }
     }
-    
-
-
-
 
     // Helper method to decode email subjects
-    private function decodeEmailSubject($string) {
+    private function decodeEmailSubject($string)
+    {
         $elements = imap_mime_header_decode($string);
         $text = '';
         foreach ($elements as $element) {
@@ -681,11 +677,10 @@ class Customerservice extends Controller
         return $text;
     }
 
-
     public function downloadAttachment($filename)
     {
         log_message('info', 'Download requested for file: ' . $filename);
-        
+
         // Verify this is an AJAX request
         if (!$this->request->isAJAX()) {
             log_message('error', 'Non-AJAX request detected for download');
@@ -693,7 +688,7 @@ class Customerservice extends Controller
         }
 
         $tempPath = FCPATH . 'uploads/' . $filename;
-        
+
         if (!file_exists($tempPath)) {
             log_message('error', 'Download file not found: ' . $tempPath);
             return $this->response->setStatusCode(404)->setJSON(['error' => 'File not found']);
@@ -701,7 +696,7 @@ class Customerservice extends Controller
 
         try {
             log_message('info', 'Starting file download process for: ' . $filename);
-            
+
             $fileContent = file_get_contents($tempPath);
             if ($fileContent === false) {
                 throw new \Exception('Failed to read file');
@@ -721,15 +716,14 @@ class Customerservice extends Controller
 
             // Send file content
             $this->response->setBody($fileContent);
-            
+
             // Log successful download
             log_message('info', 'File download completed successfully: ' . $filename);
-            
+
             // Clean up the temporary file
             unlink($tempPath);
-            
+
             return $this->response;
-            
         } catch (\Exception $e) {
             log_message('error', 'Error during file download: ' . $e->getMessage());
             return $this->response->setStatusCode(500)->setJSON([
@@ -739,48 +733,48 @@ class Customerservice extends Controller
         }
     }
 
-
     // Controller method addition - Add this to your existing controller
-    public function getAttachmentPreview($filename) {
+    public function getAttachmentPreview($filename)
+    {
         log_message('info', 'Attempting to get preview for file: ' . $filename);
-        
+
         $tempPath = FCPATH . 'uploads/' . $filename;
-        
+
         if (!file_exists($tempPath)) {
             // If not in temp folder, check in email attachments folder
             $potentialPaths = glob(WRITEPATH . 'uploads/email_attachments/*/*/*/' . '*');
             $filePath = '';
-            
+
             foreach ($potentialPaths as $path) {
                 if (basename($path) === basename($filename)) {
                     $filePath = $path;
                     break;
                 }
             }
-            
+
             if ($filePath && file_exists($filePath)) {
                 copy($filePath, $tempPath);
             }
         }
-        
+
         if (!file_exists($tempPath)) {
             log_message('error', 'Preview file not found: ' . $tempPath);
             return $this->response->setJSON(['error' => 'File not found']);
         }
-    
+
         $fileInfo = new \finfo(FILEINFO_MIME_TYPE);
         $mimeType = $fileInfo->file($tempPath);
         $fileSize = filesize($tempPath);
-        
+
         log_message('info', 'File mime type: ' . $mimeType);
-    
+
         $previewData = [
             'filename' => $filename,
             'mime_type' => $mimeType,
             'size' => $fileSize,
             'preview_type' => $this->getPreviewType($mimeType),
         ];
-    
+
         if (in_array($mimeType, ['image/jpeg', 'image/png', 'image/gif'])) {
             $previewData['content'] = base64_encode(file_get_contents($tempPath));
         } elseif ($mimeType === 'application/pdf') {
@@ -788,16 +782,17 @@ class Customerservice extends Controller
         } else {
             $previewData['url'] = base_url('downloadAttachment/' . $filename);
         }
-    
+
         log_message('info', 'Preview data prepared successfully for: ' . $filename);
         return $this->response->setJSON($previewData);
     }
 
-    private function getPreviewType($mimeType) {
+    private function getPreviewType($mimeType)
+    {
         $imageTypes = ['image/jpeg', 'image/png', 'image/gif'];
         $documentTypes = ['application/pdf'];
         $spreadsheetTypes = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-        
+
         if (in_array($mimeType, $imageTypes)) return 'image';
         if (in_array($mimeType, $documentTypes)) return 'pdf';
         if (in_array($mimeType, $spreadsheetTypes)) return 'spreadsheet';
@@ -849,7 +844,6 @@ class Customerservice extends Controller
         return view('statics_view');
     }
 
-
     public function viewEmail($uid)
     {
         $db = \Config\Database::connect();
@@ -888,17 +882,17 @@ class Customerservice extends Controller
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-    
+
     public function updateAssignedAgent()
     {
         try {
             $msgNo = $this->request->getPost('msg_no');
             $agentId = $this->request->getPost('agent_id');
             $userId = session()->get('user_id'); // Get user_id from session
-            
+
             $model = new ReplyModel();
             $result = $model->updateAgent($msgNo, $agentId, $userId);
-            
+
             log_message('info', "Agent updated for message $msgNo by user $userId");
             return $this->response->setJSON(['status' => 'success']);
         } catch (\Exception $e) {
@@ -908,7 +902,7 @@ class Customerservice extends Controller
     }
 
     public function updateTags()
-    {            
+    {
         $model = new ReplyModel();
         $userId = session()->get('user_id'); // Get user_id from session
 
@@ -929,16 +923,15 @@ class Customerservice extends Controller
         }
     }
 
-    
     public function getMacros()
     {
         try {
             $tags = $this->request->getGet('tags');
             $model = new ReplyModel();
-    
+
             // Fetch macros based on tags if provided, else fetch all
             $macros = $tags ? $model->getMacrosByTags($tags) : $model->getAllMacros();
-    
+
             log_message('info', 'Successfully fetched macros for tags: ' . $tags);
             return $this->response->setJSON(['status' => 'success', 'macros' => $macros]);
         } catch (\Exception $e) {
@@ -946,24 +939,24 @@ class Customerservice extends Controller
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-    
+
     public function getMacroContenta()
     {
         try {
             $macroId = $this->request->getGet('macro_id');
             $userId = $this->request->getGet('user_id');
-            
+
             log_message('info', 'Successfully fetched macro content for ID: ' . $macroId . $userId);
-            
+
             $model = new ReplyModel();
             $macroContent = $model->getMacroContent($macroId);
             $userData = $model->getUserData($userId);
             $agentName = session()->get('admin_name');
-            
-            $content = "Hello, " . $userData->name . "\n\n" . 
-                      $macroContent->reply_msg . "\n\n" .
-                      "Best regards,\n" . $agentName;
-            
+
+            $content = "Hello, " . $userData->name . "\n\n" .
+                $macroContent->reply_msg . "\n\n" .
+                "Best regards,\n" . $agentName;
+
             log_message('info', 'Successfully fetched macro content for ID: ' . $macroId);
             return $this->response->setJSON(['status' => 'success', 'content' => $content]);
         } catch (\Exception $e) {
@@ -976,14 +969,14 @@ class Customerservice extends Controller
     {
         try {
             log_message('info', 'Fetching macro content');
-            
+
             $macroId = $this->request->getGet('macro_id');
             $userId = $this->request->getGet('user_id');
-            
+
             if (empty($macroId)) {
                 throw new \Exception('Macro ID is required');
             }
-            
+
             $model = new ReplyModel();
             $ordermodel = new Ordermanagement_model();
             $macroData = $model->getMacroContent($macroId);
@@ -994,7 +987,7 @@ class Customerservice extends Controller
             $userData = !empty($userId) ? $model->getUserData($userId) : null;
             $agentname = session()->get('admin_name');
             $agentemail = session()->get('admin_email');
-            
+
             if ($macroData) {
                 log_message('info', 'Macro content retrieved successfully');
                 return $this->response->setJSON([
@@ -1026,7 +1019,7 @@ class Customerservice extends Controller
 
 
 
-/*
+    /*
 
 Create the upload directory:
 
@@ -1037,151 +1030,150 @@ chmod -R 777 writable/uploads/email_attachments
 
 
 
-public function sendReply()
-{
-    try {
-        log_message('info', 'Starting sendReply process');
+    public function sendReply()
+    {
+        try {
+            log_message('info', 'Starting sendReply process');
 
-        // Get form input
-        $msgno = $this->request->getPost('msg_no');
-        $session_id = $this->request->getPost('session_id');
-        $content = $this->request->getPost('content');
-        $toEmails = $this->request->getPost('to_email');
-        $ccEmails = $this->request->getPost('cc_email');
-        $bccEmails = $this->request->getPost('bcc_email');
-        $subject = $this->request->getPost('subject');
-        $replyType = $this->request->getPost('reply_type');
-        $channel = $this->request->getPost('channel'); // Check if it's email or livechat
+            // Get form input
+            $msgno = $this->request->getPost('msg_no');
+            $session_id = $this->request->getPost('session_id');
+            $content = $this->request->getPost('content');
+            $toEmails = $this->request->getPost('to_email');
+            $ccEmails = $this->request->getPost('cc_email');
+            $bccEmails = $this->request->getPost('bcc_email');
+            $subject = $this->request->getPost('subject');
+            $replyType = $this->request->getPost('reply_type');
+            $channel = $this->request->getPost('channel'); // Check if it's email or livechat
 
-        // Handle file uploads
-        $uploadedFiles = [];
-        $files = $this->request->getFiles();
+            // Handle file uploads
+            $uploadedFiles = [];
+            $files = $this->request->getFiles();
 
-        if (!empty($files)) {
-            $uploadPath = WRITEPATH . 'uploads/email_attachments/' . date('Y/m/d/');
-            if (!is_dir($uploadPath)) {
-                mkdir($uploadPath, 0777, true);
-            }
+            if (!empty($files)) {
+                $uploadPath = WRITEPATH . 'uploads/email_attachments/' . date('Y/m/d/');
+                if (!is_dir($uploadPath)) {
+                    mkdir($uploadPath, 0777, true);
+                }
 
-            foreach ($files as $file) {
-                if ($file->isValid() && !$file->hasMoved()) {
-                    $newName = $file->getRandomName();
-                    $file->move($uploadPath, $newName);
+                foreach ($files as $file) {
+                    if ($file->isValid() && !$file->hasMoved()) {
+                        $newName = $file->getRandomName();
+                        $file->move($uploadPath, $newName);
 
-                    $uploadedFiles[] = [
-                        'filename' => $file->getClientName(),
-                        'filepath' => $uploadPath . $newName,
-                        'filetype' => $file->getClientMimeType()
-                    ];
+                        $uploadedFiles[] = [
+                            'filename' => $file->getClientName(),
+                            'filepath' => $uploadPath . $newName,
+                            'filetype' => $file->getClientMimeType()
+                        ];
+                    }
                 }
             }
-        }
 
-        $model = new ReplyModel();
+            $model = new ReplyModel();
 
-        // **Handle Live Chat Messages**
-        if ($channel === 'livechat') {
-            log_message('info', 'Processing live chat message');
+            // **Handle Live Chat Messages**
+            if ($channel === 'livechat') {
+                log_message('info', 'Processing live chat message');
 
-            $chatData = [
-                'msg_no' => 'livechat-' . uniqid(),
-                'session_id' => $session_id,  // msg_no is session_id for live chat
-                'sender' => 'team',
-                'user_id' => session()->get('user_id'),
-                'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
-                'full_message' => $content,
-                'message_type' => ($replyType === 'internal_note') ? 'internal_note' : 'sent',
-                //'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
-                'created_at' => date('Y-m-d H:i:s'),
-                'channel' => 'livechat'
-            ];
+                $chatData = [
+                    'msg_no' => 'livechat-' . uniqid(),
+                    'session_id' => $session_id,  // msg_no is session_id for live chat
+                    'sender' => 'team',
+                    'user_id' => session()->get('user_id'),
+                    'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
+                    'full_message' => $content,
+                    'message_type' => ($replyType === 'internal_note') ? 'internal_note' : 'sent',
+                    //'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'channel' => 'livechat'
+                ];
 
-            $saved = $model->saveMessage($chatData);
-            if (!$saved) {
-                log_message('error', 'Database insert returned false.');
+                $saved = $model->saveMessage($chatData);
+                if (!$saved) {
+                    log_message('error', 'Database insert returned false.');
+                    return $this->response->setJSON([
+                        'status' => 'error',
+                        'message' => 'Failed to save live chat message. Please try again.'
+                    ]);
+                }
+                log_message('info', 'Live chat message saved successfully.');
                 return $this->response->setJSON([
-                    'status' => 'error',
-                    'message' => 'Failed to save live chat message. Please try again.'
+                    'status' => 'success',
+                    'message' => 'Chat message sent successfully'
                 ]);
             }
-            log_message('info', 'Live chat message saved successfully.');
+
+            // **Handle Email Replies**
+            log_message('info', 'Processing email reply');
+
+            if (empty($toEmails) && $replyType !== 'internal_note') {
+                throw new \Exception('At least one recipient email is required.');
+            }
+
+            $emailData = [
+                'msg_no' => time() . rand(1000, 9999),
+                'user_id' => session()->get('user_id'),
+                'subject' => $subject,
+                'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
+                'to_email' => $toEmails,
+                'cc_email' => $ccEmails,
+                'bcc_email' => $bccEmails,
+                'full_message' => $content,
+                'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
+                'email_date' => date('Y-m-d H:i:s'),
+                'assigned_agent' => session()->get('admin_name'),
+                'message_type' => ($replyType === 'internal_note') ? 'internal_note' : 'sent',
+                'replied_to_msgno' => $msgno,
+                'channel' => 'email'
+            ];
+
+            $saved = $model->insert($emailData);
+            if (!$saved) {
+                throw new \Exception('Failed to save email message.');
+            }
+
+            // If not an internal note, send an actual email
+            if ($replyType !== 'internal_note') {
+                $email = \Config\Services::email();
+                $email->setFrom('support@driphunter.in', 'DripHunter Support');
+                $email->setTo(explode(',', $toEmails));
+
+                if (!empty($ccEmails)) {
+                    $email->setCC(explode(',', $ccEmails));
+                }
+
+                if (!empty($bccEmails)) {
+                    $email->setBCC(explode(',', $bccEmails));
+                }
+
+                $email->setSubject($subject);
+                $email->setMessage($content);
+
+                foreach ($uploadedFiles as $file) {
+                    $email->attach($file['filepath']);
+                }
+
+                if (!$email->send()) {
+                    throw new \Exception('Failed to send email: ' . $email->printDebugger(['headers']));
+                }
+            }
+
             return $this->response->setJSON([
                 'status' => 'success',
-                'message' => 'Chat message sent successfully'
+                'message' => $replyType === 'internal_note' ? 'Internal note saved' : 'Reply sent successfully'
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error in sendReply: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => $e->getMessage()
             ]);
         }
-
-        // **Handle Email Replies**
-        log_message('info', 'Processing email reply');
-
-        if (empty($toEmails) && $replyType !== 'internal_note') {
-            throw new \Exception('At least one recipient email is required.');
-        }
-
-        $emailData = [
-            'msg_no' => time() . rand(1000, 9999),
-            'user_id' => session()->get('user_id'),
-            'subject' => $subject,
-            'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
-            'to_email' => $toEmails,
-            'cc_email' => $ccEmails,
-            'bcc_email' => $bccEmails,
-            'full_message' => $content,
-            'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
-            'email_date' => date('Y-m-d H:i:s'),
-            'assigned_agent' => session()->get('admin_name'),
-            'message_type' => ($replyType === 'internal_note') ? 'internal_note' : 'sent',
-            'replied_to_msgno' => $msgno,
-            'channel' => 'email'
-        ];
-
-        $saved = $model->insert($emailData);
-        if (!$saved) {
-            throw new \Exception('Failed to save email message.');
-        }
-
-        // If not an internal note, send an actual email
-        if ($replyType !== 'internal_note') {
-            $email = \Config\Services::email();
-            $email->setFrom('support@driphunter.in', 'DripHunter Support');
-            $email->setTo(explode(',', $toEmails));
-
-            if (!empty($ccEmails)) {
-                $email->setCC(explode(',', $ccEmails));
-            }
-
-            if (!empty($bccEmails)) {
-                $email->setBCC(explode(',', $bccEmails));
-            }
-
-            $email->setSubject($subject);
-            $email->setMessage($content);
-
-            foreach ($uploadedFiles as $file) {
-                $email->attach($file['filepath']);
-            }
-
-            if (!$email->send()) {
-                throw new \Exception('Failed to send email: ' . $email->printDebugger(['headers']));
-            }
-        }
-
-        return $this->response->setJSON([
-            'status' => 'success',
-            'message' => $replyType === 'internal_note' ? 'Internal note saved' : 'Reply sent successfully'
-        ]);
-
-    } catch (\Exception $e) {
-        log_message('error', 'Error in sendReply: ' . $e->getMessage());
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => $e->getMessage()
-        ]);
     }
-}
 
 
-    
+
 
     public function getCSTags()
     {
@@ -1200,7 +1192,7 @@ public function sendReply()
     {
         try {
             log_message('info', 'Starting macro save process');
-            
+
             $data = [
                 'macros_title' => $this->request->getPost('macros_title'),
                 'cs_tags' => $this->request->getPost('cs_tags'),
@@ -1211,10 +1203,10 @@ public function sendReply()
                 'reply_msg' => $this->request->getPost('reply_msg'),
                 'macro_attachments' => $this->request->getPost('macro_attachments')
             ];
-            
+
             $model = new ReplyModel();
             $saved = $model->saveMacro($data);
-            
+
             if ($saved) {
                 log_message('info', 'Macro saved successfully');
                 return $this->response->setJSON(['status' => 'success']);
@@ -1239,276 +1231,268 @@ public function sendReply()
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public function fetchConversations()
-{
-    try {
-        log_message('info', 'Fetching all conversations.');
+    public function fetchConversations()
+    {
+        try {
+            log_message('info', 'Fetching all conversations.');
 
-        $conversations = $this->replyModel->getAllConversations();
-        $agents = $this->replyModel->getAllAgents();
-        $views = $this->replyModel->getSavedViews();
-        $distinctValues = $this->replyModel->getDistinctValues();
+            $conversations = $this->replyModel->getAllConversations();
+            $agents = $this->replyModel->getAllAgents();
+            $views = $this->replyModel->getSavedViews();
+            $distinctValues = $this->replyModel->getDistinctValues();
 
-        if (empty($conversations)) {
-            log_message('warning', 'No conversations found.');
+            if (empty($conversations)) {
+                log_message('warning', 'No conversations found.');
+            }
+
+            // Process each conversation to extract unique tags
+            foreach ($conversations as &$conversation) {
+                $conversation['unique_tags'] = $this->replyModel->getUniqueTagsForConversation($conversation['id'], $conversation['channel']);
+                $conversation['ticket_no'] = $this->replyModel->getTicketNumber($conversation['id']); // Fetch ticket number if exists
+            }
+
+            log_message('info', 'Processed ' . count($conversations) . ' conversations with unique tags.');
+
+            // Set proper content type header
+            $this->response->setHeader('Content-Type', 'text/html; charset=utf-8');
+
+            return view('emails_list', [
+                'conversations' => $conversations,
+                'agents' => $agents,
+                'views' => $views,
+                'distinctValues' => $distinctValues
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error in fetchConversations: ' . $e->getMessage());
+            return 'Error loading conversations. Please check logs for details.';
+        }
+    }
+
+
+    public function updateStatus()
+    {
+        $conversationIds = $this->request->getPost('conversation_ids');
+        $status = $this->request->getPost('status');
+
+        foreach ($conversationIds as $id) {
+            $this->replyModel->updateStatus($id, $status);
         }
 
-        // Process each conversation to extract unique tags
-        foreach ($conversations as &$conversation) {
-            $conversation['unique_tags'] = $this->replyModel->getUniqueTagsForConversation($conversation['id'], $conversation['channel']);
-            $conversation['ticket_no'] = $this->replyModel->getTicketNumber($conversation['id']); // Fetch ticket number if exists
-        }
-
-        log_message('info', 'Processed ' . count($conversations) . ' conversations with unique tags.');
-
-        // Set proper content type header
-        $this->response->setHeader('Content-Type', 'text/html; charset=utf-8');
-
-        return view('emails_list', [
-            'conversations' => $conversations,
-            'agents' => $agents,
-            'views' => $views,
-            'distinctValues' => $distinctValues
-        ]);
-
-    } catch (\Exception $e) {
-        log_message('error', 'Error in fetchConversations: ' . $e->getMessage());
-        return 'Error loading conversations. Please check logs for details.';
-    }
-}
-
-
-public function updateStatus()
-{
-    $conversationIds = $this->request->getPost('conversation_ids');
-    $status = $this->request->getPost('status');
-
-    foreach ($conversationIds as $id) {
-        $this->replyModel->updateStatus($id, $status);
-    }
-
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-public function createTicket()
-{
-    $conversationIds = $this->request->getPost('conversation_ids');
-    
-    foreach ($conversationIds as $id) {
-        $this->replyModel->createTicket($id);
-    }
-
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-public function closeTicket()
-{
-    $conversationIds = $this->request->getPost('conversation_ids');
-
-    foreach ($conversationIds as $id) {
-        $this->replyModel->closeTicket($id);
-    }
-
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-public function openTicket()
-{
-    $conversationIds = $this->request->getPost('conversation_ids');
-
-    foreach ($conversationIds as $id) {
-        $this->replyModel->openTicket($id);
-    }
-
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-
-
-
-
-
-
-public function createView()
-{
-    $data = $this->request->getPost();
-
-    $viewData = [
-        'name' => $data['view_name'],
-        'status_filter' => $data['status_value'],
-        'status_operand' => $data['status_operand'],
-        'channel_filter' => $data['channel_value'],
-        'channel_operand' => $data['channel_operand'],
-        'assignee_filter' => $data['user_value'],
-        'assignee_operand' => $data['user_operand']
-    ];
-
-    if ($this->replyModel->saveView($viewData)) {
         return $this->response->setJSON(['status' => 'success']);
-    } else {
-        return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save view']);
-    }
-}
-
-
-public function applyView($viewId)
-{
-    log_message('info', "Applying view filter with ID: $viewId");
-
-    $filteredConversations = $this->replyModel->getConversationsByView($viewId);
-
-    if (empty($filteredConversations)) {
-        log_message('warning', "No conversations found for view ID: $viewId");
     }
 
-    // Extract matching conversation IDs
-    $conversationIds = array_map(function ($conversation) {
-        return (string) $conversation['id']; // Ensure IDs are strings for JavaScript
-    }, $filteredConversations);
+    public function createTicket()
+    {
+        $conversationIds = $this->request->getPost('conversation_ids');
 
-    log_message('info', 'Filtered Conversations IDs: ' . implode(',', $conversationIds));
-
-    return $this->response->setJSON([
-        'status' => 'success',
-        'conversationIds' => $conversationIds
-    ]);
-}
-
-public function updateView()
-{
-    $data = $this->request->getPost();
-    $this->replyModel->updateView($data['view_id'], $data);
-    
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-public function deleteView()
-{
-    $data = $this->request->getPost();
-    $this->replyModel->deleteView($data['view_id']);
-    
-    return $this->response->setJSON(['status' => 'success']);
-}
-
-
-
-public function sendComposeEmail()
-{
-    try {
-        log_message('info', 'Starting sendComposeEmail process');
-
-        // Get form input
-        $toEmails = $this->request->getPost('to_email');
-        $ccEmails = $this->request->getPost('cc_email');
-        $bccEmails = $this->request->getPost('bcc_email');
-        $subject = $this->request->getPost('subject');
-        $content = $this->request->getPost('content');
-
-        // Validate required fields
-        if (empty($toEmails)) {
-            throw new \Exception('At least one recipient email is required.');
+        foreach ($conversationIds as $id) {
+            $this->replyModel->createTicket($id);
         }
 
-        if (empty($subject)) {
-            throw new \Exception('Subject cannot be empty.');
+        return $this->response->setJSON(['status' => 'success']);
+    }
+
+    public function closeTicket()
+    {
+        $conversationIds = $this->request->getPost('conversation_ids');
+
+        foreach ($conversationIds as $id) {
+            $this->replyModel->closeTicket($id);
         }
 
-        if (empty($content)) {
-            throw new \Exception('Email content cannot be empty.');
+        return $this->response->setJSON(['status' => 'success']);
+    }
+
+    public function openTicket()
+    {
+        $conversationIds = $this->request->getPost('conversation_ids');
+
+        foreach ($conversationIds as $id) {
+            $this->replyModel->openTicket($id);
         }
 
-        // Handle file uploads
-        $uploadedFiles = [];
-        $files = $this->request->getFiles();
+        return $this->response->setJSON(['status' => 'success']);
+    }
 
-        if (!empty($files)) {
-            $uploadPath = WRITEPATH . 'uploads/email_attachments/' . date('Y/m/d/');
-            if (!is_dir($uploadPath)) {
-                mkdir($uploadPath, 0777, true);
-            }
 
-            foreach ($files as $file) {
-                if ($file->isValid() && !$file->hasMoved()) {
-                    $newName = $file->getRandomName();
-                    $file->move($uploadPath, $newName);
 
-                    $uploadedFiles[] = [
-                        'filename' => $file->getClientName(),
-                        'filepath' => $uploadPath . $newName,
-                        'filetype' => $file->getClientMimeType()
-                    ];
-                }
-            }
-        }
 
-        $model = new ReplyModel();
 
-        // **Save Email Data in Database**
-        $emailData = [
-            'msg_no' => time() . rand(1000, 9999),
-            'user_id' => session()->get('user_id'),
-            'subject' => $subject,
-            'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
-            'to_email' => $toEmails,
-            'cc_email' => $ccEmails,
-            'bcc_email' => $bccEmails,
-            'full_message' => $content,
-            'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
-            'email_date' => date('Y-m-d H:i:s'),
-            'assigned_agent' => session()->get('admin_name'),
-            'message_type' => 'sent',
-            'channel' => 'email'
+
+
+    public function createView()
+    {
+        $data = $this->request->getPost();
+
+        $viewData = [
+            'name' => $data['view_name'],
+            'status_filter' => $data['status_value'],
+            'status_operand' => $data['status_operand'],
+            'channel_filter' => $data['channel_value'],
+            'channel_operand' => $data['channel_operand'],
+            'assignee_filter' => $data['user_value'],
+            'assignee_operand' => $data['user_operand']
         ];
 
-        $saved = $model->insert($emailData);
-        if (!$saved) {
-            throw new \Exception('Failed to save email message.');
+        if ($this->replyModel->saveView($viewData)) {
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save view']);
+        }
+    }
+
+
+    public function applyView($viewId)
+    {
+        log_message('info', "Applying view filter with ID: $viewId");
+
+        $filteredConversations = $this->replyModel->getConversationsByView($viewId);
+
+        if (empty($filteredConversations)) {
+            log_message('warning', "No conversations found for view ID: $viewId");
         }
 
-        // **Send Email**
-        $email = \Config\Services::email();
-        $email->setFrom('support@driphunter.in', 'DripHunter Support');
-        $email->setTo(explode(',', $toEmails));
+        // Extract matching conversation IDs
+        $conversationIds = array_map(function ($conversation) {
+            return (string) $conversation['id']; // Ensure IDs are strings for JavaScript
+        }, $filteredConversations);
 
-        if (!empty($ccEmails)) {
-            $email->setCC(explode(',', $ccEmails));
-        }
-
-        if (!empty($bccEmails)) {
-            $email->setBCC(explode(',', $bccEmails));
-        }
-
-        $email->setSubject($subject);
-        $email->setMessage($content);
-
-        // Attach files
-        foreach ($uploadedFiles as $file) {
-            $email->attach($file['filepath']);
-        }
-
-        if (!$email->send()) {
-            throw new \Exception('Failed to send email: ' . $email->printDebugger(['headers']));
-        }
+        log_message('info', 'Filtered Conversations IDs: ' . implode(',', $conversationIds));
 
         return $this->response->setJSON([
             'status' => 'success',
-            'message' => 'Email sent successfully'
-        ]);
-
-    } catch (\Exception $e) {
-        log_message('error', 'Error in sendComposeEmail: ' . $e->getMessage());
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => $e->getMessage()
+            'conversationIds' => $conversationIds
         ]);
     }
-}
+
+    public function updateView()
+    {
+        $data = $this->request->getPost();
+        $this->replyModel->updateView($data['view_id'], $data);
+
+        return $this->response->setJSON(['status' => 'success']);
+    }
+
+    public function deleteView()
+    {
+        $data = $this->request->getPost();
+        $this->replyModel->deleteView($data['view_id']);
+
+        return $this->response->setJSON(['status' => 'success']);
+    }
 
 
 
+    public function sendComposeEmail()
+    {
+        try {
+            log_message('info', 'Starting sendComposeEmail process');
 
+            // Get form input
+            $toEmails = $this->request->getPost('to_email');
+            $ccEmails = $this->request->getPost('cc_email');
+            $bccEmails = $this->request->getPost('bcc_email');
+            $subject = $this->request->getPost('subject');
+            $content = $this->request->getPost('content');
 
+            // Validate required fields
+            if (empty($toEmails)) {
+                throw new \Exception('At least one recipient email is required.');
+            }
 
+            if (empty($subject)) {
+                throw new \Exception('Subject cannot be empty.');
+            }
+
+            if (empty($content)) {
+                throw new \Exception('Email content cannot be empty.');
+            }
+
+            // Handle file uploads
+            $uploadedFiles = [];
+            $files = $this->request->getFiles();
+
+            if (!empty($files)) {
+                $uploadPath = WRITEPATH . 'uploads/email_attachments/' . date('Y/m/d/');
+                if (!is_dir($uploadPath)) {
+                    mkdir($uploadPath, 0777, true);
+                }
+
+                foreach ($files as $file) {
+                    if ($file->isValid() && !$file->hasMoved()) {
+                        $newName = $file->getRandomName();
+                        $file->move($uploadPath, $newName);
+
+                        $uploadedFiles[] = [
+                            'filename' => $file->getClientName(),
+                            'filepath' => $uploadPath . $newName,
+                            'filetype' => $file->getClientMimeType()
+                        ];
+                    }
+                }
+            }
+
+            $model = new ReplyModel();
+
+            // **Save Email Data in Database**
+            $emailData = [
+                'msg_no' => time() . rand(1000, 9999),
+                'user_id' => session()->get('user_id'),
+                'subject' => $subject,
+                'from_email' => session()->get('admin_name') . ' <' . session()->get('admin_email') . '>',
+                'to_email' => $toEmails,
+                'cc_email' => $ccEmails,
+                'bcc_email' => $bccEmails,
+                'full_message' => $content,
+                'attachments' => !empty($uploadedFiles) ? json_encode($uploadedFiles) : null,
+                'email_date' => date('Y-m-d H:i:s'),
+                'assigned_agent' => session()->get('admin_name'),
+                'message_type' => 'sent',
+                'channel' => 'email'
+            ];
+
+            $saved = $model->insert($emailData);
+            if (!$saved) {
+                throw new \Exception('Failed to save email message.');
+            }
+
+            // **Send Email**
+            $email = \Config\Services::email();
+            $email->setFrom('support@driphunter.in', 'DripHunter Support');
+            $email->setTo(explode(',', $toEmails));
+
+            if (!empty($ccEmails)) {
+                $email->setCC(explode(',', $ccEmails));
+            }
+
+            if (!empty($bccEmails)) {
+                $email->setBCC(explode(',', $bccEmails));
+            }
+
+            $email->setSubject($subject);
+            $email->setMessage($content);
+
+            // Attach files
+            foreach ($uploadedFiles as $file) {
+                $email->attach($file['filepath']);
+            }
+
+            if (!$email->send()) {
+                throw new \Exception('Failed to send email: ' . $email->printDebugger(['headers']));
+            }
+
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Email sent successfully'
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error in sendComposeEmail: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
 }

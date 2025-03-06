@@ -18,6 +18,7 @@ use App\Models\Footer_model;
 use App\Models\MemberModel;
 use App\Models\MarqueeTextModel;
 use App\Models\Productselection;
+use App\Models\BlogModel;
 use Google\Cloud\Storage\StorageClient;
 
 class Store extends BaseController
@@ -2205,5 +2206,114 @@ class Store extends BaseController
         } else {
             return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
         }
+    }
+
+    public function saveBlogs()
+    {
+        try {
+            if ($this->request->getMethod() !== 'post') {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request method.']);
+            }
+
+            log_message('debug', 'Received POST data: ' . print_r($this->request->getPost(), true));
+
+            $contentType = trim($this->request->getPost('content_type'));
+
+            if (empty($contentType)) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Content type is missing.']);
+            }
+
+            $blogModel = new BlogModel();
+
+            $data = [
+                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_description' => $this->request->getPost('blogs_description'),
+                'content_type'      => $contentType, // Ensure it's being assigned
+                'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
+                'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
+                'added_by'          => session()->get('user_id') ?? 1,
+                'created_at'        => date('Y-m-d H:i:s'),
+                'updated_at'        => date('Y-m-d H:i:s'),
+            ];
+
+            log_message('debug', 'Data before insert: ' . json_encode($data));
+
+            if (!$blogModel->insert($data)) {
+                log_message('error', 'DB Insert Failed: ' . json_encode($blogModel->errors()));
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to insert data.']);
+            }
+
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Blog saved successfully.']);
+        } catch (\Exception $e) {
+            return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
+        }
+    }
+
+
+
+    public function updateBlog($id)
+    {
+        log_message('debug', 'Received blog ID: ' . $id); // Debugging
+
+        if ($this->request->getMethod() === 'post') {
+            $db = \Config\Database::connect();
+            $builder = $db->table('onlinestore_blogs');
+
+            $blogData = $builder->where('id', $id)->get()->getRowArray();
+
+            if (!$blogData) {
+                log_message('error', 'Blog not found for ID: ' . $id); // Log error
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Blog not found.']);
+            }
+
+            // Get the content type from the form
+            $content_type = $this->request->getPost('content_type');
+
+            // Prepare update data
+            $data = [
+                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_description' => $this->request->getPost('blogs_description'),
+                'content_type'      => $content_type, // Ensure content type is updated
+                'blogs'             => ($content_type === 'blogs') ? json_encode($this->request->getPost('blogs') ?? []) : json_encode([]),
+                'tags'              => ($content_type === 'tags') ? json_encode($this->request->getPost('tags') ?? []) : json_encode([]),
+                'updated_by'        => session()->get('user_id'),
+                'updated_at'        => date('Y-m-d H:i:s')
+            ];
+
+            log_message('debug', 'Updating blog ID: ' . $id . ' with data: ' . json_encode($data)); // Debugging
+
+            $builder->where('id', $id)->update($data);
+
+            if ($db->affectedRows() > 0) {
+                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog updated successfully.']);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'No changes made or update failed.']);
+            }
+        }
+
+        return $this->response->setStatusCode(400)->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+    }
+
+
+
+    public function deleteBlog()
+    {
+        $blogId = $this->request->getPost('id');
+
+        if ($blogId) {
+            $db = \Config\Database::connect();
+            $builder = $db->table('onlinestore_blogs');
+
+            // Delete the blog entry
+            $delete = $builder->where('id', $blogId)->delete();
+
+            if ($delete) {
+                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog deleted successfully!']);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete blog.']);
+            }
+        }
+
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
     }
 }
