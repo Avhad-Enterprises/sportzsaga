@@ -1232,12 +1232,6 @@
                     </ul>
                 </li>
 
-
-
-
-
-
-
                 <!----------------------------------------------------------------------------------------- Single blog Form -------------------------------------------------------------------------------------->
 
                 <li id="web-singleblog" style="display: none;" class="web-section dropdown">
@@ -1339,16 +1333,6 @@
                                                 <div class="dropdown-item">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox"
-                                                            class="custom-control-input fav-blog-checkbox"
-                                                            id="fav_product_<?= $Product['product_id'] ?>"
-                                                            name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
-                                                            data-title="<?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>"
-                                                            <?= $isChecked ?>>
-
-                                                        <label class="custom-control-label"
-                                                            for="fav_product_<?= $Product['product_id'] ?>">
-                                                            <?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>
-                                                        </label>
                                                             class="custom-control-input popular-post-checkbox"
                                                             id="popular_post_<?= $blog['blog_id'] ?>"
                                                             data-id="<?= $blog['blog_id'] ?>"
@@ -1360,38 +1344,15 @@
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>
-
-                                        <!-- Hidden Input to Store Selected Products -->
-                                        <input type="hidden" id="fav_blogs_input" name="fav_product"
-                                            value="<?= implode(',', $selectedFavproduct) ?>">
-
-                                        <!-- Display Selected Products -->
-                                        <ul class="sortable-list" id="favList">
-                                            <?php foreach ($products as $Product):
-                                                if (in_array($Product['product_id'], $selectedFavproduct)): ?>
-                                                    <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
-                                                        data-id="<?= $Product['product_id'] ?>">
-                                                        <span><?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?></span>
-                                                        <button class="btn btn-danger btn-sm remove-item"
-                                                            data-id="<?= $Product['product_id'] ?>">Delete</button>
-                                                    </li>
-                                                <?php endif;
-                                            endforeach; ?>
-                                        </ul>
-                                    </div>
-
                                     </div>
                                 </div>
                                 <ul class="sortable-list" id="popularPostsListsingle"></ul>
                                 <input type="hidden" name="popular_posts" id="popular_posts_input_single"
                                     value="<?= $page_data['popular_posts'] ?? '' ?>">
-
                             </form>
                         </div>
                     </ul>
                 </li>
-
-
 
 
                 <!--------------------------------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
@@ -1657,119 +1618,119 @@
                                                             style="max-width: 200px; max-height: 200px; border-radius: 10px; border: 1px solid #ddd; display: none;">
                                                     </div>
                                                 <?php endif; ?>
-                                            <!-- Image -->
-                                            <div class="form-group">
-                                                <label for="image_<?= $page['id'] ?>">Image:</label>
-                                                <input type="file" name="image" id="image_<?= $page['id'] ?>"
-                                                    class="form-control">
-                                            </div>
-
-                                            <!-- Visibility -->
-                                            <div class="form-group">
-                                                <label for="visibility_<?= $page['id'] ?>">Visibility:</label>
-                                                <select name="visibility" id="visibility_<?= $page['id'] ?>"
-                                                    class="form-control" required>
-                                                    <option value="1" <?= ($page['visibility'] == 1) ? 'selected' : '' ?>>
-                                                        Active</option>
-                                                    <option value="0" <?= ($page['visibility'] == 0) ? 'selected' : '' ?>>Draft
-                                                    </option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Select Page Type -->
-                                            <div class="form-group">
-                                                <label>Select Page Type</label>
-                                                <div id="pageTypeDropdownContainer" class="dropdown-container">
-                                                    <button type="button" id="togglePageTypeDropdown" class="form-control">
-                                                        Select Page Type ▼
-                                                    </button>
-                                                    <div id="pageTypeCheckboxDropdown" class="dropdown-content"
-                                                        style="display: none;">
-                                                        <label><input type="checkbox" value="blogs"
-                                                                class="page-type-checkbox" <?= (strpos($page['page_type'], 'blogs') !== false) ? 'checked' : '' ?>> Blogs</label>
-                                                        <label><input type="checkbox" value="about_us"
-                                                                class="page-type-checkbox" <?= (strpos($page['page_type'], 'about_us') !== false) ? 'checked' : '' ?>> About Us</label>
-                                                        <label><input type="checkbox" value="contact_us"
-                                                                class="page-type-checkbox" <?= (strpos($page['page_type'], 'contact_us') !== false) ? 'checked' : '' ?>> Contact
-                                                            Us</label>
-                                                    </div>
+                                                <!-- Image -->
+                                                <div class="form-group">
+                                                    <label for="image_<?= $page['id'] ?>">Image:</label>
+                                                    <input type="file" name="image" id="image_<?= $page['id'] ?>"
+                                                        class="form-control">
                                                 </div>
-                                                <div id="selectedPageTypesContainer" class="selected-items-container"></div>
-                                                <input type="hidden" name="page_type" id="selectedPageTypes"
-                                                    value="<?= esc($page['page_type']) ?>">
-                                            </div>
 
-                                            <!-- Plus Button to Add New Subtype -->
-                                            <div class="hr-container">
-                                                <hr class="line">
-                                                <button type="button" id="toggleSubtypeButton" class="circle-button">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                                <hr class="line">
-                                            </div>
+                                                <!-- Visibility -->
+                                                <div class="form-group">
+                                                    <label for="visibility_<?= $page['id'] ?>">Visibility:</label>
+                                                    <select name="visibility" id="visibility_<?= $page['id'] ?>"
+                                                        class="form-control" required>
+                                                        <option value="1" <?= ($page['visibility'] == 1) ? 'selected' : '' ?>>
+                                                            Active</option>
+                                                        <option value="0" <?= ($page['visibility'] == 0) ? 'selected' : '' ?>>Draft
+                                                        </option>
+                                                    </select>
+                                                </div>
 
-                                            <!-- Container for Multiple Subtype Fields -->
-                                            <div id="subtypeFieldContainer">
-                                                <?php
-                                                $subtypes = !empty($page['subtype']) ? explode(',', $page['subtype']) : [];
-                                                $specificItems = !empty($page['specific_item']) ? json_decode($page['specific_item'], true) : [];
-                                                $counter = 0;
-
-                                                foreach ($subtypes as $subtype): ?>
-                                                    <div class="subtype-field-set">
-                                                        <div class="form-group">
-                                                            <label for="subtype_<?= $counter ?>">Select Subtype</label>
-                                                            <select name="subtype[]" id="subtype_<?= $counter ?>"
-                                                                class="form-control subtype-select">
-                                                                <option value="blogs" <?= ($subtype == 'blogs') ? 'selected' : '' ?>>Blogs</option>
-                                                                <option value="product" <?= ($subtype == 'product') ? 'selected' : '' ?>>Product</option>
-                                                                <option value="collection" <?= ($subtype == 'collection') ? 'selected' : '' ?>>Collection</option>
-                                                            </select>
+                                                <!-- Select Page Type -->
+                                                <div class="form-group">
+                                                    <label>Select Page Type</label>
+                                                    <div id="pageTypeDropdownContainer" class="dropdown-container">
+                                                        <button type="button" id="togglePageTypeDropdown" class="form-control">
+                                                            Select Page Type ▼
+                                                        </button>
+                                                        <div id="pageTypeCheckboxDropdown" class="dropdown-content"
+                                                            style="display: none;">
+                                                            <label><input type="checkbox" value="blogs"
+                                                                    class="page-type-checkbox" <?= (strpos($page['page_type'], 'blogs') !== false) ? 'checked' : '' ?>> Blogs</label>
+                                                            <label><input type="checkbox" value="about_us"
+                                                                    class="page-type-checkbox" <?= (strpos($page['page_type'], 'about_us') !== false) ? 'checked' : '' ?>> About Us</label>
+                                                            <label><input type="checkbox" value="contact_us"
+                                                                    class="page-type-checkbox" <?= (strpos($page['page_type'], 'contact_us') !== false) ? 'checked' : '' ?>> Contact
+                                                                Us</label>
                                                         </div>
+                                                    </div>
+                                                    <div id="selectedPageTypesContainer" class="selected-items-container"></div>
+                                                    <input type="hidden" name="page_type" id="selectedPageTypes"
+                                                        value="<?= esc($page['page_type']) ?>">
+                                                </div>
 
-                                                        <div class="form-group specific-item-field"
-                                                            id="specificItemField_<?= $counter ?>">
-                                                            <label>Select Specific Items</label>
-                                                            <div id="specificItemDropdown_<?= $counter ?>"
-                                                                class="dropdown-container">
-                                                                <button type="button" id="toggleDropdown_<?= $counter ?>"
-                                                                    class="form-control">
-                                                                    Select Items ▼
-                                                                </button>
-                                                                <div id="checkboxDropdown_<?= $counter ?>"
-                                                                    class="dropdown-content">
-                                                                    <?php
-                                                                    if (isset($specificItems[$subtype])) {
-                                                                        foreach (explode(',', $specificItems[$subtype]) as $item) {
-                                                                            echo '<label>
+                                                <!-- Plus Button to Add New Subtype -->
+                                                <div class="hr-container">
+                                                    <hr class="line">
+                                                    <button type="button" id="toggleSubtypeButton" class="circle-button">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                    <hr class="line">
+                                                </div>
+
+                                                <!-- Container for Multiple Subtype Fields -->
+                                                <div id="subtypeFieldContainer">
+                                                    <?php
+                                                    $subtypes = !empty($page['subtype']) ? explode(',', $page['subtype']) : [];
+                                                    $specificItems = !empty($page['specific_item']) ? json_decode($page['specific_item'], true) : [];
+                                                    $counter = 0;
+
+                                                    foreach ($subtypes as $subtype): ?>
+                                                        <div class="subtype-field-set">
+                                                            <div class="form-group">
+                                                                <label for="subtype_<?= $counter ?>">Select Subtype</label>
+                                                                <select name="subtype[]" id="subtype_<?= $counter ?>"
+                                                                    class="form-control subtype-select">
+                                                                    <option value="blogs" <?= ($subtype == 'blogs') ? 'selected' : '' ?>>Blogs</option>
+                                                                    <option value="product" <?= ($subtype == 'product') ? 'selected' : '' ?>>Product</option>
+                                                                    <option value="collection" <?= ($subtype == 'collection') ? 'selected' : '' ?>>Collection</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group specific-item-field"
+                                                                id="specificItemField_<?= $counter ?>">
+                                                                <label>Select Specific Items</label>
+                                                                <div id="specificItemDropdown_<?= $counter ?>"
+                                                                    class="dropdown-container">
+                                                                    <button type="button" id="toggleDropdown_<?= $counter ?>"
+                                                                        class="form-control">
+                                                                        Select Items ▼
+                                                                    </button>
+                                                                    <div id="checkboxDropdown_<?= $counter ?>"
+                                                                        class="dropdown-content">
+                                                                        <?php
+                                                                        if (isset($specificItems[$subtype])) {
+                                                                            foreach (explode(',', $specificItems[$subtype]) as $item) {
+                                                                                echo '<label>
                                                                                     <input type="checkbox" class="specific-item-checkbox" value="' . $item . '" checked>
                                                                                     ' . $item . '
                                                                                   </label>';
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    ?>
+                                                                        ?>
+                                                                    </div>
                                                                 </div>
+
+                                                                <div id="selectedItemsContainer_<?= $counter ?>"
+                                                                    class="selected-items-container">
+                                                                    <?php if (isset($specificItems[$subtype])): ?>
+                                                                        <?php foreach (explode(',', $specificItems[$subtype]) as $item): ?>
+
+                                                                        <?php endforeach; ?>
+                                                                    <?php endif; ?>
+                                                                </div>
+
+                                                                <input type="hidden" name="specific_item[<?= $counter ?>][]"
+                                                                    id="selectedSpecificItems_<?= $counter ?>"
+                                                                    value="<?= isset($specificItems[$subtype]) ? $specificItems[$subtype] : '' ?>">
                                                             </div>
-
-                                                            <div id="selectedItemsContainer_<?= $counter ?>"
-                                                                class="selected-items-container">
-                                                                <?php if (isset($specificItems[$subtype])): ?>
-                                                                    <?php foreach (explode(',', $specificItems[$subtype]) as $item): ?>
-
-                                                                    <?php endforeach; ?>
-                                                                <?php endif; ?>
-                                                            </div>
-
-                                                            <input type="hidden" name="specific_item[<?= $counter ?>][]"
-                                                                id="selectedSpecificItems_<?= $counter ?>"
-                                                                value="<?= isset($specificItems[$subtype]) ? $specificItems[$subtype] : '' ?>">
                                                         </div>
-                                                    </div>
-                                                <?php $counter++;
-                                                endforeach; ?>
-                                            </div>
+                                                    <?php $counter++;
+                                                    endforeach; ?>
+                                                </div>
 
-                                            <button type="submit" class="btn btn-primary">Update Page</button>
+                                                <button type="submit" class="btn btn-primary">Update Page</button>
                                         </form>
                                     </div>
                                 </div>
@@ -1779,7 +1740,6 @@
                 </li>
 
                 <!---------------------------------------------------------------- About page----------------------------------------------------------------------------------------------------->
-
 
                 <li id="web-about" style="display: none;" class="web-section dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
@@ -4090,6 +4050,4 @@
             allowClear: true
         });
     });
-    
-
 </script>

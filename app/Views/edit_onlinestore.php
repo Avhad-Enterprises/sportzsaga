@@ -1734,6 +1734,36 @@
         });
     </script>
 
+
+    <script>
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+            const form = document.getElementById('carousel2AddForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
+
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
     <script>

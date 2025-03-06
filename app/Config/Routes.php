@@ -550,3 +550,7 @@ $routes->post('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
 //home image
 $routes->post('home-image/save', 'Store::save');
+
+$routes->post('Store/saveBlogs', 'Store::saveBlogs');
+$routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
+$routes->post('Store/deleteBlog', 'Store::deleteBlog');

@@ -79,7 +79,8 @@ class Store extends BaseController
         $data['email_pop_up'] = $modal->getAllEmail_POP_UP();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['selectedCollections'] = $modal->getHomeCollectionIds();
-        $data['product_list'] = $modal->Getproductsection(); // Fixing the undefined variable issue
+        $data['product_list'] = $modal->Getproductsection();
+        $data['os_blogs'] = $modal->getAllonlineblogs();
         // Fetch Instagram posts
         $accessToken = 'IGQWRPTVE0S2lUS3BpYWhNekZAvbnppeGh6OWFXT1F0VTR6Tld2UGduV0UyYU9tQjAtejY5WWxLQTZAaa3N1cmVwel9jX1FoNWFESk9zbm4yMnE2TWhJYzFrWW9PVnBpcmswb3JJVnNKY3hsUUJUTE9JbXpLLU1LTEEZD';
         $apiUrl = "https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,like_count,comments_count,children{media_url}&access_token={$accessToken}";
