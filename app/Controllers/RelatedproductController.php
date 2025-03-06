@@ -20,78 +20,79 @@ class RelatedproductController extends Controller
     }
     public function index()
     {
-        $productModel = new Products_model();
-        $relatedProductModel = new RelatedProductModel();
+        $db = \Config\Database::connect();
 
-        // Fetch all product IDs that exist in related_products table
-        $relatedProductRecords = $relatedProductModel->findAll();
-        $relatedProductIds = [];
+        // Fetch collections
+        $builder = $db->table('collection');
+        $data['collections'] = $builder->select('collection_id, collection_title')->get()->getResultArray();
 
-        foreach ($relatedProductRecords as $record) {
-            // Add `product_id` to the list
-            if (!empty($record['product_id'])) {
-                $relatedProductIds[] = $record['product_id'];
-            }
-
-            // Add `related_product_ids` (decoded) to the list
-            if (!empty($record['related_product_ids'])) {
-                $relatedIds = json_decode($record['related_product_ids'], true);
-                if (is_array($relatedIds)) {
-                    $relatedProductIds = array_merge($relatedProductIds, $relatedIds);
-                }
-            }
-        }
-
-        // Remove duplicates and ensure array is not empty
-        $relatedProductIds = array_unique(array_filter($relatedProductIds));
-
-        // Fetch only products that are NOT in `related_products` table
-        $builder = \Config\Database::connect()->table('products');
-        $builder->select('product_id, product_title, sku, product_tags, inventory, selling_price, cost_price');
-
-        if (!empty($relatedProductIds)) {
-            // Only apply `whereNotIn()` if $relatedProductIds is NOT empty
-            $builder->whereNotIn('product_id', $relatedProductIds);
-        }
-
-        $data['products'] = $builder->get()->getResultArray();
-
-        $data['fields'] = ['product_title', 'product_tags', 'cost_price', 'size'];
+        // Define fields for the conditions dropdown
+        $data['fields'] = ['product_title', 'product_tags', 'cost_price', 'size']; // Add any other fields needed
 
         return view('addnew_related_product', $data);
+    }
+
+    public function fetchProducts()
+    {
+        $db = \Config\Database::connect();
+        $collectionId = $this->request->getPost('collection_id');
+
+        if (!$collectionId) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid collection']);
+        }
+
+        // Fetch the product_ids list from the 'collections' table
+        $builder = $db->table('collection');
+        $builder->select('product_ids'); // Use the correct column name
+        $collection = $builder->where('collection_id', $collectionId)->get()->getRowArray();
+
+        if (!$collection || empty($collection['product_ids'])) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'No products found for this collection.']);
+        }
+
+        // Convert comma-separated product IDs into an array
+        $productIds = explode(',', $collection['product_ids']);
+
+        // Fetch product details for the given product IDs
+        $productBuilder = $db->table('products');
+        $productBuilder->select('product_id, product_title, product_image, selling_price, inventory');
+        $productBuilder->whereIn('product_id', $productIds);
+        $products = $productBuilder->get()->getResultArray();
+
+        return $this->response->setJSON(['status' => 'success', 'products' => $products]);
     }
 
 
     public function saveRelatedProducts()
     {
-        $productId = $this->request->getPost('product_id');
-
-        if (empty($productId)) {
-            return redirect()->to('relatedproduct_table_view')->with('error', 'Product ID is required.');
-        }
-
-        // Fetch product details from the database using the selected product_id
-        $productModel = new Products_model();
-        $product = $productModel->where('product_id', $productId)->first();
-
-        if (!$product) {
-            return redirect()->to('relatedproduct_table_view')->with('error', 'Selected product not found.');
-        }
-
-        // Determine selection method
+        $collectionId = $this->request->getPost('collection_id');
         $selectMethod = $this->request->getPost('selectMethod');
         $conditionType = $this->request->getPost('conditionType');
         $conditions = $this->request->getPost('conditions');
         $sortBy = $this->request->getPost('sortBy');
         $productIds = [];
 
-        if ($selectMethod === 'automated') {
-            // Fetch products based on filter conditions
-            $productIds = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
-            $productIds = array_column($productIds, 'product_id'); // Extract only product IDs
-        } else if ($selectMethod === 'manual') {
-            // Get manually selected products from the form
-            $productIds = $this->request->getPost('products') ?? [];
+        // If collection is selected, set selection method to "collection" and ignore other methods
+        if (!empty($collectionId)) {
+            $selectMethod = 'collection';
+
+            // Fetch all products linked to the selected collection
+            $db = \Config\Database::connect();
+            $builder = $db->table('collection');
+            $builder->select('product_ids'); // Assuming 'products_ids' contains comma-separated product IDs
+            $collection = $builder->where('collection_id', $collectionId)->get()->getRowArray();
+
+            if ($collection && !empty($collection['product_ids'])) {
+                $productIds = explode(',', $collection['product_ids']);
+            }
+        } else {
+            // Automated or Manual selection
+            if ($selectMethod === 'automated') {
+                $productIds = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
+                $productIds = array_column($productIds, 'product_id'); // Extract only product IDs
+            } else if ($selectMethod === 'manual') {
+                $productIds = $this->request->getPost('products') ?? [];
+            }
         }
 
         // Ensure at least some products are selected
@@ -99,26 +100,22 @@ class RelatedproductController extends Controller
             return redirect()->to('relatedproduct_table_view')->with('error', 'No related products selected.');
         }
 
+        // Prepare data for insertion
         $data = [
-            'product_id' => $productId,
-            'sku' => $product['sku'],
-            'product_tag' => $product['product_tags'],
-            'inventory' => $product['inventory'],
-            'selling_price' => $product['selling_price'],
-            'cost_price' => $product['cost_price'],
-            'selection_method' => $selectMethod,
-            'condition_type' => $conditionType,
-            'conditions' => json_encode($conditions),
-            'related_product_ids' => json_encode($productIds), // Store as JSON
-            'sort_by' => $sortBy
+            'collection_ids' => $collectionId ?? null, // Store selected collection ID
+            'related_product_ids' => json_encode($productIds), // Store related product IDs as JSON
+            'selection_method' => $selectMethod, // Now "collection" is set automatically
+            'condition_type' => $conditionType ?? null,
+            'conditions' => json_encode($conditions ?? []),
+            'sort_by' => $sortBy ?? null
         ];
 
+        // Insert into the database
         $relatedProductModel = new RelatedProductModel();
         $relatedProductModel->insert($data);
 
         return redirect()->to('relatedproduct_table_view')->with('success', 'Related products saved successfully.');
     }
-
 
 
     public function getDistinctFieldValues() //
@@ -160,7 +157,7 @@ class RelatedproductController extends Controller
         return $this->response->setJSON($products);
     }
 
-    public function getProductsByConditions()
+    public function getProductsByConditions() //
     {
         try {
             $conditions = json_decode($this->request->getPost('conditions'), true);
@@ -171,40 +168,15 @@ class RelatedproductController extends Controller
                 throw new \Exception('No conditions provided');
             }
 
-            // Fetch all product IDs already used in `related_products`
-            $relatedProductModel = new RelatedProductModel();
-            $relatedProductRecords = $relatedProductModel->findAll();
-            $relatedProductIds = [];
 
-            foreach ($relatedProductRecords as $record) {
-                $relatedProductIds[] = $record['product_id'];
 
-                if (!empty($record['related_product_ids'])) {
-                    $relatedIds = json_decode($record['related_product_ids'], true);
-                    if (is_array($relatedIds)) {
-                        $relatedProductIds = array_merge($relatedProductIds, $relatedIds);
-                    }
-                }
-            }
-
-            // Remove duplicates and ensure array is not empty
-            $relatedProductIds = array_unique(array_filter($relatedProductIds));
-
-            // Fetch products from model **WITHOUT** passing `relatedProductIds` to model
             $products = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
-
-            // **Only apply filtering if `$relatedProductIds` has values**
-            if (!empty($relatedProductIds)) {
-                $products = array_filter($products, function ($product) use ($relatedProductIds) {
-                    return !in_array($product['product_id'], $relatedProductIds);
-                });
-            }
 
             if (empty($products)) {
                 return $this->response->setJSON(['products' => [], 'message' => 'No products found']);
             }
 
-            return $this->response->setJSON(['products' => array_values($products)]);
+            return $this->response->setJSON(['products' => $products]);
         } catch (\Exception $e) {
             return $this->response->setJSON(['error' => $e->getMessage()])->setStatusCode(500);
         }
@@ -234,6 +206,7 @@ class RelatedproductController extends Controller
     {
         $model = new RelatedProductModel();
         $productModel = new Products_model();
+        $db = \Config\Database::connect();
 
         // Fetch the related product data
         $relatedProduct = $model->find($id);
@@ -241,19 +214,15 @@ class RelatedproductController extends Controller
             return redirect()->to('relatedproduct_table_view')->with('error', 'Related Product not found.');
         }
 
-        // Ensure `conditions` is decoded properly
-        if (!empty($relatedProduct['conditions']) && is_string($relatedProduct['conditions'])) {
-            $relatedProduct['conditions'] = json_decode($relatedProduct['conditions'], true);
-        } else {
-            $relatedProduct['conditions'] = [];
-        }
+        // Decode conditions
+        $relatedProduct['conditions'] = !empty($relatedProduct['conditions']) && is_string($relatedProduct['conditions'])
+            ? json_decode($relatedProduct['conditions'], true)
+            : [];
 
-        // Ensure `related_product_ids` is decoded properly
-        if (!empty($relatedProduct['related_product_ids']) && is_string($relatedProduct['related_product_ids'])) {
-            $relatedProduct['related_product_ids'] = json_decode($relatedProduct['related_product_ids'], true);
-        } else {
-            $relatedProduct['related_product_ids'] = [];
-        }
+        // Decode related product IDs
+        $relatedProduct['related_product_ids'] = !empty($relatedProduct['related_product_ids']) && is_string($relatedProduct['related_product_ids'])
+            ? json_decode($relatedProduct['related_product_ids'], true)
+            : [];
 
         // Fetch all products for dropdown
         $products = $productModel->findAll();
@@ -261,7 +230,7 @@ class RelatedproductController extends Controller
         // Fetch related products along with inventory and price
         $relatedProducts = [];
         if (!empty($relatedProduct['related_product_ids'])) {
-            $builder = \Config\Database::connect()->table('products');
+            $builder = $db->table('products');
             $relatedProducts = $builder
                 ->select('product_id, product_title, inventory, selling_price')
                 ->whereIn('product_id', $relatedProduct['related_product_ids'])
@@ -269,10 +238,17 @@ class RelatedproductController extends Controller
                 ->getResultArray();
         }
 
+        // Fetch collections from the database
+        $collections = $db->table('collection')
+            ->select('collection_id, collection_title')
+            ->get()
+            ->getResultArray();
+
         $data = [
             'relatedProduct' => $relatedProduct,
             'relatedProducts' => $relatedProducts,
-            'products' => $products
+            'products' => $products,
+            'collections' => $collections, // Pass collections to view
         ];
 
         // Define the available fields
@@ -280,9 +256,6 @@ class RelatedproductController extends Controller
 
         return view('edit_related_product', $data);
     }
-
-
-
 
     public function updateRelatedProduct($id)
     {
@@ -295,33 +268,34 @@ class RelatedproductController extends Controller
             return redirect()->to('relatedproduct_table_view')->with('error', 'Related Product not found.');
         }
 
-        $productId = $this->request->getPost('product_id');
-
-        if (empty($productId)) {
-            return redirect()->to('relatedproduct_table_view')->with('error', 'Product ID is required.');
-        }
-
-        // Fetch product details from the database using the selected product_id
-        $product = $productModel->where('product_id', $productId)->first();
-
-        if (!$product) {
-            return redirect()->to('relatedproduct_table_view')->with('error', 'Selected product not found.');
-        }
-
-        // Determine selection method
+        $collectionId = $this->request->getPost('collection_id');
         $selectMethod = $this->request->getPost('selectMethod');
         $conditionType = $this->request->getPost('conditionType');
         $conditions = $this->request->getPost('conditions');
         $sortBy = $this->request->getPost('sortBy');
         $productIds = [];
 
-        if ($selectMethod === 'automated') {
-            // Fetch products based on filter conditions
-            $productIds = $productModel->geteditProductsByConditions($conditions, $conditionType, $sortBy);
-            $productIds = array_column($productIds, 'product_id'); // Extract only product IDs
-        } else if ($selectMethod === 'manual') {
-            // Get manually selected products from the form
-            $productIds = $this->request->getPost('products') ?? [];
+        // If a collection is selected, set selection method to "collection" and ignore manual/automated methods
+        if (!empty($collectionId)) {
+            $selectMethod = 'collection';
+
+            // Fetch all products linked to the selected collection
+            $db = \Config\Database::connect();
+            $builder = $db->table('collection'); // Ensure this is the correct table name
+            $builder->select('product_ids'); // Assuming 'product_ids' contains comma-separated product IDs
+            $collection = $builder->where('collection_id', $collectionId)->get()->getRowArray();
+
+            if ($collection && !empty($collection['product_ids'])) {
+                $productIds = explode(',', $collection['product_ids']);
+            }
+        } else {
+            // Automated or Manual selection
+            if ($selectMethod === 'automated') {
+                $productIds = $productModel->getProductsByConditions($conditions, $conditionType, $sortBy);
+                $productIds = array_column($productIds, 'product_id'); // Extract only product IDs
+            } else if ($selectMethod === 'manual') {
+                $productIds = $this->request->getPost('products') ?? [];
+            }
         }
 
         // Ensure at least some products are selected
@@ -329,20 +303,17 @@ class RelatedproductController extends Controller
             return redirect()->to('relatedproduct_table_view')->with('error', 'No related products selected.');
         }
 
+        // Prepare data for updating
         $data = [
-            'product_id' => $productId,
-            'sku' => $product['sku'],
-            'product_tag' => $product['product_tags'],
-            'inventory' => $product['inventory'],
-            'selling_price' => $product['selling_price'],
-            'cost_price' => $product['cost_price'],
-            'selection_method' => $selectMethod,
-            'condition_type' => $conditionType,
-            'conditions' => json_encode($conditions),
-            'related_product_ids' => json_encode($productIds), // Store as JSON
-            'sort_by' => $sortBy
+            'collection_ids' => $collectionId ?? null, // Store selected collection ID
+            'related_product_ids' => json_encode($productIds), // Store related product IDs as JSON
+            'selection_method' => $selectMethod, // Now "collection" is set automatically
+            'condition_type' => $conditionType ?? null,
+            'conditions' => json_encode($conditions ?? []),
+            'sort_by' => $sortBy ?? null
         ];
 
+        // Update the database
         $model->update($id, $data);
 
         return redirect()->to('relatedproduct_table_view')->with('success', 'Related products updated successfully.');
@@ -354,32 +325,34 @@ class RelatedproductController extends Controller
         $request = service('request');
 
         // Get product ID from the AJAX request
-        $productId = $request->getJSON()->product_id;
+        $productId = $this->request->getPost('product_id'); // Use getPost() for normal form requests
 
         if (!$productId) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Product ID is missing']);
+            return redirect()->to('relatedproduct_table_view')->with('error', 'Product ID is missing.');
         }
 
         $relatedProductModel = new RelatedProductModel();
 
-        // Fetch the record containing related product IDs
-        $relatedProduct = $relatedProductModel->where('related_product_ids LIKE', "%$productId%")->first();
+        // Fetch all records where product exists in related_product_ids
+        $relatedProducts = $relatedProductModel->findAll();
 
-        if ($relatedProduct) {
+        foreach ($relatedProducts as $relatedProduct) {
             $relatedIds = json_decode($relatedProduct['related_product_ids'], true);
 
-            // Remove the product from the array
-            $updatedIds = array_diff($relatedIds, [$productId]);
+            if (is_array($relatedIds) && in_array($productId, $relatedIds)) {
+                // Remove the product from the array
+                $updatedIds = array_diff($relatedIds, [$productId]);
 
-            // Update the database with the new related products list
-            $relatedProductModel->update($relatedProduct['id'], [
-                'related_product_ids' => json_encode(array_values($updatedIds))
-            ]);
+                // Update the database with the new related products list
+                $relatedProductModel->update($relatedProduct['id'], [
+                    'related_product_ids' => json_encode(array_values($updatedIds))
+                ]);
 
-            return $this->response->setJSON(['success' => true]);
+                return redirect()->to('relatedproduct_table_view')->with('success', 'Product removed successfully.');
+            }
         }
 
-        return $this->response->setJSON(['success' => false, 'message' => 'Product not found']);
+        return redirect()->to('relatedproduct_table_view')->with('error', 'Product not found.');
+   
     }
-
 }

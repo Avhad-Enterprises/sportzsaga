@@ -132,148 +132,147 @@
 
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue mb-30">Product Information</p>
-                                <div class="form-group">
-                                    <label for="product">Product</label>
-                                    <select class="form-control" id="product" name="product_id"
-                                        onchange="updateProductDetails(this.value)">
-                                        <option value="">Select a product</option>
-                                        <?php foreach ($products as $product): ?>
-                                            <option value="<?= $product['product_id'] ?>" data-sku="<?= $product['sku'] ?>"
-                                                data-tag="<?= $product['product_tags'] ?>"
-                                                data-inventory="<?= $product['inventory'] ?>"
-                                                data-selling-price="<?= $product['selling_price'] ?>"
-                                                data-cost-price="<?= $product['cost_price'] ?>"
-                                                <?= $product['product_id'] == $relatedProduct['product_id'] ? 'selected' : '' ?>>
-                                                <?= $product['product_title'] ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>SKU</label>
-                                    <input type="text" id="productSKU" class="form-control"
-                                        value="<?= esc($relatedProduct['sku']) ?>" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label>Tag</label>
-                                    <input type="text" id="productTag" class="form-control"
-                                        value="<?= esc($relatedProduct['product_tag']) ?>" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label>Inventory</label>
-                                    <input type="text" id="productinventory" class="form-control"
-                                        value="<?= esc($relatedProduct['inventory']) ?>" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label>Selling Price</label>
-                                    <input type="text" id="productSellingPrice" class="form-control"
-                                        value="<?= esc($relatedProduct['selling_price']) ?>" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label>Cost Price</label>
-                                    <input type="text" id="productCostPrice" class="form-control"
-                                        value="<?= esc($relatedProduct['cost_price']) ?>" readonly>
-                                </div>
-                            </div>
+                            <div class="col-md-8">
+                                <div class="pd-20 card-box mb-30">
+                                    <p class="text-blue mb-30">Product Information</p>
 
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Selection Method</p>
-                                <div class="form-group">
-                                    <label>Method</label>
-                                    <select class="form-control" name="selection_method" disabled>
-                                        <option value="manual" <?= ($relatedProduct['selection_method'] === 'manual') ? 'selected' : '' ?>>Manual</option>
-                                        <option value="automated" <?= ($relatedProduct['selection_method'] === 'automated') ? 'selected' : '' ?>>Automated</option>
-                                    </select>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="collection">Collection</label>
+                                            <select class="form-control" id="collection" name="collection_id">
+                                                <option value="">Select a collection</option>
+                                                <?php foreach ($collections as $collection): ?>
+                                                    <option value="<?= $collection['collection_id'] ?>"
+                                                        <?= $collection['collection_id'] == $relatedProduct['collection_ids'] ? 'selected' : '' ?>>
+                                                        <?= $collection['collection_title'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Product Display Section -->
+                                    <div class="col-md-12">
+                                        <div id="product-list" class="row">
+                                            <!-- Products will be displayed here dynamically -->
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="productsContainer" class="mt-4">
+                                            <div class="pd-20 card-box">
+                                                <p class="text-blue"><strong>Selected Products</strong></p>
+                                                <div style="overflow-y: auto; max-height: 582px;">
+                                                    <ul class="list-group">
+                                                        <?php
+                                                            $db = \Config\Database::connect();
 
-                            <div class="row">
-                                <div class="col-md-12"> 
-                                    <div id="productsContainer" class="mt-4">
-                                        <div class="pd-20 card-box">
-                                            <p class="text-blue"><strong>Selected Products</strong></p>
-                                            <div style="overflow-y: auto; max-height: 582px;">
-                                                <ul class="list-group">
-                                                    <?php
-                                                    $db = \Config\Database::connect();
+                                                            $relatedIds = is_string($relatedProduct['related_product_ids'])
+                                                                ? json_decode($relatedProduct['related_product_ids'], true)
+                                                                : $relatedProduct['related_product_ids'];
 
-                                                    $relatedIds = is_string($relatedProduct['related_product_ids'])
-                                                        ? json_decode($relatedProduct['related_product_ids'], true)
-                                                        : $relatedProduct['related_product_ids'];
+                                                            if (is_array($relatedIds) && count($relatedIds) > 0) {
+                                                                $builder = $db->table('products');
+                                                                $relatedProducts = $builder->select('product_id, product_title, product_image, inventory, selling_price')
+                                                                    ->whereIn('product_id', $relatedIds)
+                                                                    ->get()
+                                                                    ->getResultArray();
 
-                                                    if (is_array($relatedIds) && count($relatedIds) > 0) {                                                       
-                                                        $builder = $db->table('products');
-                                                        $relatedProducts = $builder->select('product_id, product_title, inventory, selling_price')
-                                                            ->whereIn('product_id', $relatedIds)
-                                                            ->get()
-                                                            ->getResultArray();
+                                                                foreach ($relatedProducts as $product) {
+                                                                    $imageUrl = esc($product['product_image']);
 
-                                                        foreach ($relatedProducts as $product) {
-                                                            echo '<li class="list-group-item d-flex justify-content-between align-items-center" id="product-' . $product['product_id'] . '">';
-                                                            echo '<div>';
-                                                            echo '<strong>' . esc($product['product_title']) . '</strong>';
-                                                            echo '<br><span class="text-muted">Inventory: ' . esc($product['inventory']) . '</span> | ';
-                                                            echo '<span class="text-muted">Price: ₹' . esc($product['selling_price']) . '</span>';
-                                                            echo '</div>';
-                                                            echo '<button class="btn btn-sm btn-danger delete-product" data-id="' . $product['product_id'] . '">Delete</button>';
-                                                            echo '</li>';
-                                                        }
-                                                    } else {
-                                                        echo '<li class="list-group-item">No related products selected.</li>';
-                                                    }
-                                                    ?>
-                                                </ul>
+                                                                    echo '<li class="list-group-item d-flex justify-content-between align-items-center" id="product-' . esc($product['product_id']) . '">';
+                                                                    echo '<div class="d-flex align-items-center">';
+                                                                    echo '<img src="' . $imageUrl . '" alt="' . esc($product['product_title']) . '" style="width: 50px; height: 50px; border-radius: 5px; object-fit: cover; margin-right: 10px;">';
+                                                                    echo '<div>';
+                                                                    echo '<strong>' . esc($product['product_title']) . '</strong>';
+                                                                    echo '<br><span class="text-muted">Inventory: ' . esc($product['inventory']) . '</span> | ';
+                                                                    echo '<span class="text-muted">Price: ₹' . esc($product['selling_price']) . '</span>';
+                                                                    echo '</div>';
+                                                                    echo '</div>';                                                             
+                                                                    echo '</li>';
+                                                                }
+                                                            } else {
+                                                                echo '<li class="list-group-item">No related products selected.</li>';
+                                                            }
+                                                        ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pd-20 card-box mt-5 mb-30">
+                                    <p class="text-blue mb-30">Product Conditions</p>
+                                    <div id="conditionsContainer">
+                                        <?php if (!empty($relatedProduct['conditions'])): ?>
+                                            <?php foreach ($relatedProduct['conditions'] as $index => $condition): ?>
+                                                <div class="row condition-item" id="condition-<?= $index ?>">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Field</label>
+                                                            <select class="form-control condition-field"
+                                                                name="conditions[<?= $index ?>][field]" disabled>
+                                                                <option value="cost_price" <?= $condition['field'] === 'cost_price' ? 'selected' : '' ?>>Cost Price</option>
+                                                                <option value="product_tags"
+                                                                    <?= $condition['field'] === 'product_tags' ? 'selected' : '' ?>>Product Tags</option>
+                                                                <option value="size" <?= $condition['field'] === 'size' ? 'selected' : '' ?>>Size</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Operator</label>
+                                                            <select class="form-control condition-operator"
+                                                                name="conditions[<?= $index ?>][operator]" disabled>
+                                                                <option value="is_equal_to"
+                                                                    <?= $condition['operator'] === 'is_equal_to' ? 'selected' : '' ?>>
+                                                                    Is Equal To</option>
+                                                                <option value="is_greater_than"
+                                                                    <?= $condition['operator'] === 'is_greater_than' ? 'selected' : '' ?>>Is Greater Than</option>
+                                                                <option value="is_less_than"
+                                                                    <?= $condition['operator'] === 'is_less_than' ? 'selected' : '' ?>>
+                                                                    Is Less Than</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Value</label>
+                                                            <input type="text" class="form-control condition-value"
+                                                                name="conditions[<?= $index ?>][value]"
+                                                                value="<?= esc($condition['value']) ?>" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <p>No conditions set.</p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="pd-20 card-box mb-30">
+                                    <div class="clearfix row">
+                                        <div class="pull-left col-md-4">
+                                            <p class="text-blue">Select Products</p>
+                                        </div>
+                                        <div class="col-md-8 row">
+                                            <div class="col">
+                                                <label for="selection_method">Selection Method</label>
+                                                <input type="text" id="selection_method" name="selection_method" 
+                                                    class="form-control" 
+                                                    value="<?= ucfirst($relatedProduct['selection_method']) ?>" 
+                                                    disabled>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="pd-20 card-box mt-5 mb-30">
-                                <p class="text-blue mb-30">Product Conditions</p>
-                                <div id="conditionsContainer">
-                                    <?php if (!empty($relatedProduct['conditions'])): ?>
-                                        <?php foreach ($relatedProduct['conditions'] as $index => $condition): ?>
-                                            <div class="row condition-item" id="condition-<?= $index ?>">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Field</label>
-                                                        <select class="form-control condition-field" name="conditions[<?= $index ?>][field]" disabled>
-                                                            <option value="cost_price" <?= $condition['field'] === 'cost_price' ? 'selected' : '' ?>>Cost Price</option>
-                                                            <option value="product_tags" <?= $condition['field'] === 'product_tags' ? 'selected' : '' ?>>Product Tags</option>
-                                                            <option value="size" <?= $condition['field'] === 'size' ? 'selected' : '' ?>>Size</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Operator</label>
-                                                        <select class="form-control condition-operator" name="conditions[<?= $index ?>][operator]" disabled>
-                                                            <option value="is_equal_to" <?= $condition['operator'] === 'is_equal_to' ? 'selected' : '' ?>>Is Equal To</option>
-                                                            <option value="is_greater_than" <?= $condition['operator'] === 'is_greater_than' ? 'selected' : '' ?>>Is Greater Than</option>
-                                                            <option value="is_less_than" <?= $condition['operator'] === 'is_less_than' ? 'selected' : '' ?>>Is Less Than</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label>Value</label>
-                                                        <input type="text" class="form-control condition-value" name="conditions[<?= $index ?>][value]" value="<?= esc($condition['value']) ?>" disabled>
-                                                    </div>
-                                                </div>                                            
-                                            </div>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <p>No conditions set.</p>
-                                    <?php endif; ?>
-                                </div>                            
-                            </div>
-
-
-                            <!-- Added mt-5 for spacing -->
-                            <div class="pd-20 card-box mt-5 mb-30">
+                            <div class="pd-20 card-box mb-30">
                                 <div class="clearfix row">
                                     <div class="pull-left col-md-4">
                                         <p class="text-blue">Select Products</p>
@@ -291,159 +290,159 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                           
 
-                            <div id="automatedSection" style="display: none;">
-                                <div id="collectionForm">
-                                    <div id="conditionsContainer">
-                                        <div class="card card-body">
-                                            <div class="form-group row">
-                                                <label class="col-5">
-                                                    <h3>Include</h3> products which satisfies:
-                                                </label>
-                                                <div class="custom-control col custom-radio">
-                                                    <input type="radio" id="allConditions" name="conditionType"
-                                                        value="all" class="custom-control-input" checked>
-                                                    <label class="custom-control-label" for="allConditions">All
-                                                        Conditions</label>
+                                <div id="automatedSection" style="display: none;">
+                                    <div id="collectionForm">
+                                        <div id="conditionsContainer">
+                                            <div class="card card-body">
+                                                <div class="form-group row">
+                                                    <label class="col-5">
+                                                        <h3>Include</h3> products which satisfies:
+                                                    </label>
+                                                    <div class="custom-control col custom-radio">
+                                                        <input type="radio" id="allConditions" name="conditionType"
+                                                            value="all" class="custom-control-input" checked>
+                                                        <label class="custom-control-label" for="allConditions">All
+                                                            Conditions</label>
+                                                    </div>
+                                                    <div class="custom-control col custom-radio">
+                                                        <input type="radio" id="anyCondition" name="conditionType"
+                                                            value="any" class="custom-control-input">
+                                                        <label class="custom-control-label" for="anyCondition">Any
+                                                            Condition</label>
+                                                    </div>
                                                 </div>
-                                                <div class="custom-control col custom-radio">
-                                                    <input type="radio" id="anyCondition" name="conditionType"
-                                                        value="any" class="custom-control-input">
-                                                    <label class="custom-control-label" for="anyCondition">Any
-                                                        Condition</label>
-                                                </div>
-                                            </div>
-                                            <div id="conditionsList"></div>
-                                            <div class="form-row" style=" justify-content: space-between;">
-                                                <div class="col-3">
-                                                    <button type="button" class="btn col-12 mt-2 btn-secondary"
-                                                        id="addCondition">Add Condition</button>
-                                                </div>
-                                                <div class="col-7">
-                                                    <input type="text" class="form-control mt-2" name="sortbystatus"
-                                                        id="sortbystatus" readonly>
-                                                </div>
-                                                <div class="col-2 d-flex justify-content-end form-row text-right">
+                                                <div id="conditionsList"></div>
+                                                <div class="form-row" style=" justify-content: space-between;">
+                                                    <div class="col-3">
+                                                        <button type="button" class="btn col-12 mt-2 btn-secondary"
+                                                            id="addCondition">Add Condition</button>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control mt-2" name="sortbystatus"
+                                                            id="sortbystatus" readonly>
+                                                    </div>
+                                                    <div class="col-2 d-flex justify-content-end form-row text-right">
+                                                        <div id="loader" class="mt-2" style="display: none;">
+                                                            <div class="spinner-border" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                            <!-- You can replace this with a spinner or any other loading indicator -->
+                                                        </div>
+                                                        <i class="icon-copy mt-2 btn btn-dark refresh fa fa-refresh"
+                                                            aria-hidden="true"></i>
+                                                    </div>
                                                     <div id="loader" class="mt-2" style="display: none;">
                                                         <div class="spinner-border" role="status">
                                                             <span class="sr-only">Loading...</span>
                                                         </div>
                                                         <!-- You can replace this with a spinner or any other loading indicator -->
                                                     </div>
-                                                    <i class="icon-copy mt-2 btn btn-dark refresh fa fa-refresh"
-                                                        aria-hidden="true"></i>
-                                                </div>
-                                                <div id="loader" class="mt-2" style="display: none;">
-                                                    <div class="spinner-border" role="status">
-                                                        <span class="sr-only">Loading...</span>
-                                                    </div>
-                                                    <!-- You can replace this with a spinner or any other loading indicator -->
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="productsContainer" class="mt-4">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <strong>Selected Products</strong>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group text-right">
+                                                    <label for="sortProductsAutomated">Sort Products:</label>
+                                                    <select class="selectpicker" id="sortProductsAutomated">
+                                                        <option value="manually">Manually</option>
+                                                        <option value="titleAZ">Product title A-Z</option>
+                                                        <option value="titleZA">Product title Z-A</option>
+                                                        <option value="priceHigh">Highest price</option>
+                                                        <option value="priceLow">Lowest price</option>
+                                                        <option value="newest">Newest</option>
+                                                        <option value="oldest">Oldest</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="overflow-y: auto; max-height: 582px; scrollbar-width: thin;">
+                                            <table class="table" id="productsTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product Title</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Product Image</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div id="productsContainer" class="mt-4">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <strong>Selected Products</strong>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group text-right">
-                                                <label for="sortProductsAutomated">Sort Products:</label>
-                                                <select class="selectpicker" id="sortProductsAutomated">
-                                                    <option value="manually">Manually</option>
-                                                    <option value="titleAZ">Product title A-Z</option>
-                                                    <option value="titleZA">Product title Z-A</option>
-                                                    <option value="priceHigh">Highest price</option>
-                                                    <option value="priceLow">Lowest price</option>
-                                                    <option value="newest">Newest</option>
-                                                    <option value="oldest">Oldest</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                <div id="manualSection" style="display: none;">
+                                    <div class="form-group">
+                                        <label class="" for="searchProducts">Search Products here:</label>
+                                        <input type="text" id="searchProducts" class="form-control"
+                                            placeholder="Search products...">
                                     </div>
-                                    <div style="overflow-y: auto; max-height: 582px; scrollbar-width: thin;">
-                                        <table class="table" id="productsTable">
+                                </div>
+
+                                <div class="form-group" id="productsTableSection" style="display: none;">
+                                    <label>Products</label>
+                                    <div id="loader" style="display: none;">
+                                        <p>Loading...</p>
+                                    </div>
+                                    <div id="productsContainer"
+                                        style=" overflow-y: auto; max-height: 582px; scrollbar-width: thin;" class="mt-4">
+                                        <table class="table" id="productstable">
                                             <thead>
                                                 <tr>
+                                                    <th class=" dt-body-center" id="selectAllHeader" style="display: none;">
+                                                        <div class="dt-checkbox">
+                                                            <input type="checkbox" id="select_all">
+                                                            <span class="dt-checkbox-label"></span>
+                                                        </div>
+                                                    </th>
                                                     <th>Product Title</th>
                                                     <th>Cost Price</th>
                                                     <th>Product Image</th>
                                                 </tr>
                                             </thead>
-                                            <tbody></tbody>
+                                            <tbody>
+                                                <!-- Products will be loaded here by jQuery -->
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div id="manualSection" style="display: none;">
-                                <div class="form-group">
-                                    <label class="" for="searchProducts">Search Products here:</label>
-                                    <input type="text" id="searchProducts" class="form-control"
-                                        placeholder="Search products...">
+                                <div id="selectedProductscontainer" style="display: none;" class="pd-20 card-box mb-30">
+                                    <p class="text-blue mb-30">Selected Products</p>
+                                    <input type="hidden" name="sortBy">
+                                    <div class="form-group">
+                                        <label for="sortProducts">Sort Products:</label>
+                                        <select class="selectpicker" id="sortProducts">
+                                            <option value="manually">Manually</option>
+                                            <option value="titleAZ">Product title A-Z</option>
+                                            <option value="titleZA">Product title Z-A</option>
+                                            <option value="priceHigh">Highest price</option>
+                                            <option value="priceLow">Lowest price</option>
+                                            <option value="newest">Newest</option>
+                                            <option value="oldest">Oldest</option>
+                                        </select>
+                                    </div>
+                                    <div id="selectedProducts"
+                                        style=" overflow-y: auto; max-height: 652px; scrollbar-width: thin;"
+                                        class=" list-group list-group-flush"></div>
                                 </div>
-                            </div>
-
-                            <div class="form-group" id="productsTableSection" style="display: none;">
-                                <label>Products</label>
-                                <div id="loader" style="display: none;">
-                                    <p>Loading...</p>
-                                </div>
-                                <div id="productsContainer"
-                                    style=" overflow-y: auto; max-height: 582px; scrollbar-width: thin;" class="mt-4">
-                                    <table class="table" id="productstable">
-                                        <thead>
-                                            <tr>
-                                                <th class=" dt-body-center" id="selectAllHeader" style="display: none;">
-                                                    <div class="dt-checkbox">
-                                                        <input type="checkbox" id="select_all">
-                                                        <span class="dt-checkbox-label"></span>
-                                                    </div>
-                                                </th>
-                                                <th>Product Title</th>
-                                                <th>Cost Price</th>
-                                                <th>Product Image</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Products will be loaded here by jQuery -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div id="selectedProductscontainer" style="display: none;" class="pd-20 card-box mb-30">
-                                <p class="text-blue mb-30">Selected Products</p>
-                                <input type="hidden" name="sortBy">
-                                <div class="form-group">
-                                    <label for="sortProducts">Sort Products:</label>
-                                    <select class="selectpicker" id="sortProducts">
-                                        <option value="manually">Manually</option>
-                                        <option value="titleAZ">Product title A-Z</option>
-                                        <option value="titleZA">Product title Z-A</option>
-                                        <option value="priceHigh">Highest price</option>
-                                        <option value="priceLow">Lowest price</option>
-                                        <option value="newest">Newest</option>
-                                        <option value="oldest">Oldest</option>
-                                    </select>
-                                </div>
-                                <div id="selectedProducts"
-                                    style=" overflow-y: auto; max-height: 652px; scrollbar-width: thin;"
-                                    class=" list-group list-group-flush"></div>
                             </div>
                         </div>
                     </div>
-            </div>
-            <div class="mb-3">
-                <button value="submit" class="btn btn-primary btn-lg">
-                    Publish
-                </button>
-            </div>
-            </form>
+                    <div class="mb-3">
+                        <button value="submit" class="btn btn-primary btn-lg">
+                            Publish
+                        </button>
+                    </div>
+                </form>
         </div>
     </div>
     </div>
@@ -696,7 +695,13 @@
                                 <tr class="selected-product-item" draggable="true">
                                     <td>${product.product_title}</td>
                                     <td>${product.cost_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                   <td>
+                                        <img src="${product.product_image}" 
+                                            alt="${product.product_title}" 
+                                            width="50" 
+                                            height="50" 
+                                            style="border-radius: 5px; object-fit: cover;">
+                                    </td>
                                 </tr>
                             `);
                             });
@@ -1074,7 +1079,13 @@
                                 <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                     <td>${product.product_title}</td>
                                     <td>${product.cost_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                   <td>
+                                        <img src="${product.product_image}" 
+                                            alt="${product.product_title}" 
+                                            width="50" 
+                                            height="50" 
+                                            style="border-radius: 5px; object-fit: cover;">
+                                    </td>
                                 </tr>
                             `);
                             });
@@ -1121,7 +1132,13 @@
                             <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                 <td>${product.product_title}</td>
                                 <td>${product.cost_price}</td>
-                                <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                               <td>
+                                    <img src="${product.product_image}" 
+                                        alt="${product.product_title}" 
+                                        width="50" 
+                                        height="50" 
+                                        style="border-radius: 5px; object-fit: cover;">
+                                </td>
                             </tr>
                         `);
                         });
@@ -1326,7 +1343,14 @@
                             </td>
                             <td>${product.product_title}</td>
                             <td>${product.cost_price}</td>
-                            <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                           <td>
+                                <img src="${product.product_image}" 
+                                    alt="${product.product_title}" 
+                                    width="50" 
+                                    height="50" 
+                                    style="border-radius: 5px; object-fit: cover;">
+                            </td>
+
                         </tr>
                     `);
                     });
@@ -1461,39 +1485,118 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.delete-product').forEach(button => {
-            button.addEventListener('click', function () {
-                let productId = this.getAttribute('data-id');
-                let listItem = document.getElementById('product-' + productId);
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-product')) {
+            let productId = event.target.getAttribute('data-id');
+            let listItem = document.getElementById('product-' + productId);
 
-                if (!productId) {
-                    alert("Product ID is missing.");
-                    return;
+            if (!productId) {
+                alert("Product ID is missing.");
+                return;
+            }
+
+            // Send AJAX request to delete product
+            fetch('<?= base_url("relatedproduct/deleteProduct") ?>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    listItem.remove(); // Remove item from UI
+                } else {
+                    alert('Failed to remove product: ' + data.message);
                 }
-
-                // Send AJAX request to delete product
-                fetch('<?= base_url("relatedproduct/deleteProduct") ?>', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify({ product_id: productId })
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            listItem.remove(); // Remove item from UI
-                        } else {
-                            alert('Failed to remove product: ' + data.message);
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-            });
-        });
+            })
+            .catch(error => console.error('Error:', error));
+        }
     });
+});
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const collectionDropdown = document.getElementById("collection");
+    const automatedRadio = document.getElementById("customRadio4");
+    const manualRadio = document.getElementById("customRadio5");
+    const productList = document.getElementById('product-list');
+
+    function fetchProducts(collectionId) {
+        productList.innerHTML = ''; // Clear previous products
+
+        if (!collectionId) {
+            enableSelectionMethods();
+            return;
+        }
+
+        fetch('<?= base_url('RelatedproductController/fetchProducts') ?>', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ collection_id: collectionId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success' && data.products.length > 0) {
+                data.products.forEach(product => {
+                    let productCard = `
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="${product.product_image}" class="card-img-top" alt="${product.product_title}" style="width: 100px; height: 100px; object-fit: cover; margin: auto;">
+                                <div class="card-body">
+                                    <h6 class="card-title">${product.product_title}</h6>
+                                    <p class="card-text">Price: ₹${product.selling_price}</p>
+                                    <p class="card-text">Inventory: ${product.inventory}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productList.innerHTML += productCard;
+                });
+            } else {
+                productList.innerHTML = '<div class="col-md-12"><p>No products found for this collection.</p></div>';
+            }
+        })
+        .catch(error => console.error('Error fetching products:', error));
+    }
+
+    function disableSelectionMethods() {
+        automatedRadio.disabled = true;
+        manualRadio.disabled = true;
+        automatedRadio.checked = false;
+        manualRadio.checked = false;
+    }
+
+    function enableSelectionMethods() {
+        automatedRadio.disabled = false;
+        manualRadio.disabled = false;
+    }
+
+    function handleCollectionChange() {
+        if (collectionDropdown.value) {
+            disableSelectionMethods();
+        } else {
+            enableSelectionMethods();
+        }
+    }
+
+    // Add event listener for collection selection change
+    collectionDropdown.addEventListener("change", function () {
+        handleCollectionChange();
+        fetchProducts(this.value);
+    });
+
+    // Initialize logic on page load (for editing an existing entry)
+    handleCollectionChange();
+    if (collectionDropdown.value) {
+        fetchProducts(collectionDropdown.value);
+    }
+});
+</script>
 
 </html>
