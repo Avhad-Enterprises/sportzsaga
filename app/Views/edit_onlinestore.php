@@ -110,6 +110,7 @@
                 <!-- Page Main Content Start -->
 
                 <div class="d-flex justify-content-between align-items-center w-100">
+
                     <div class="form-group col-md-4">
                         <label for="web_section">Section</label>
                         <select name="web_section" id="web_section" class="form-control">
@@ -132,6 +133,7 @@
                             <option value="Email_POP_UP">Email POP UP</option>
                         </select>
                     </div>
+
                     <div class="d-flex align-items-center gap-2">
                         <div id="web-home" class="web-section">
                             <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home
@@ -206,17 +208,18 @@
                                 <i class="fas fa-mobile-alt"></i>
                             </button>
                         </div>
+
                     </div>
                 </div>
 
                 <div id="web-home" class="web-section">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -233,20 +236,20 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Search Page -->
                 <div id="web-search" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
-
                         <!-- Mobile View (Smaller Size, Hidden by Default) -->
                         <div class="preview mobile-view"
                             style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
@@ -262,17 +265,15 @@
                 <!-- Blogs Page -->
                 <div id="web-blogs" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
                         <!-- Desktop View (Large Size, Visible by Default) -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/allblogs" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
-
                         <!-- Mobile View (Smaller Size, Hidden by Default) -->
                         <div class="preview mobile-view"
                             style="width: 375px; height: 667px; display: none; border: 10px solid #000; border-radius: 20px; background: white; position: relative;">
@@ -284,15 +285,16 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Single Blog Page -->
                 <div id="web-singleblog" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe
                                 src="http://localhost/sportz_saga/blog_detail/the-power-of-digital-marketing-unlocking-business-potential-in-the-digital-age2"
@@ -317,12 +319,12 @@
                 <!-- Collection Page -->
                 <div id="web-collection" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
                                 frameborder="0" class="preview-iframe"
@@ -346,12 +348,12 @@
                 <!-- About Page -->
                 <div id="web-about" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/about" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -373,12 +375,12 @@
                 <!-- Contact Page -->
                 <div id="web-contact" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View (Large Size, Visible by Default) -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/contact" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -400,12 +402,12 @@
                 <!-- Wishlist Page -->
                 <div id="web-wishlist" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/wishlist" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -427,12 +429,12 @@
                 <!-- Marquee Page -->
                 <div id="web-marquee" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -454,12 +456,12 @@
                 <!-- Cart Page -->
                 <div id="web-cart" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/cart" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -481,12 +483,12 @@
                 <!-- Checkout Page -->
                 <div id="web-checkout" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/checkout" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -508,12 +510,12 @@
                 <!-- Tracking Page -->
                 <div id="web-tracking" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/tracking" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -535,12 +537,12 @@
                 <!-- 404 Page -->
                 <div id="web-404" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/404" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -562,12 +564,12 @@
                 <!-- Header Page -->
                 <div id="web-header" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/collection/siscaa-black-carrom-board#"
                                 frameborder="0" class="preview-iframe"
@@ -589,12 +591,12 @@
                 <!-- Product Page -->
                 <div id="web-product" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/product/siscaa-easy-fold-floor-stand"
                                 frameborder="0" class="preview-iframe"
@@ -618,12 +620,12 @@
                 <!-- Footer Page -->
                 <div id="web-Footer" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -645,12 +647,12 @@
                 <!-- Other Pages -->
                 <div id="web-otherpages" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/page/privacy-policy" frameborder="0"
                                 class="preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
@@ -672,12 +674,12 @@
                 <!-- Email Pop-Up Page -->
                 <div id="web-Email_POP_UP" class="web-section" style="display: none;">
                     <div class="OnlinStorePreMain"
-                        style="width: 100%; max-width: 1200px; height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                        style="width: 100%;  height: 85vh; margin: auto; background: #f4f4f4; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
 
                         <!-- Desktop View -->
                         <div class="preview desktop-view" style="width: 100%; height: 78vh; display: block;">
                             <p class="preview-title"
-                                style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
+                                style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: bold;">
                                 Desktop View</p>
                             <iframe src="http://localhost/sportz_saga/" frameborder="0" class="preview-iframe"
                                 style="width: 100%; height: 100%; border: none;"></iframe>
@@ -701,9 +703,14 @@
         </div>
     </div>
 
+    <!-- Footer View Start -->
+    <?= $this->include('footer_view') ?>
+    <!-- Footer View End -->
+
+    <!---------------------------------------------------------------------------------- OS Descktop Mobile View ----------------------------------------------------------------------->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             let desktopViews = document.querySelectorAll(".desktop-view");
             let mobileViews = document.querySelectorAll(".mobile-view");
             let showDesktopBtn = document.getElementById("showDesktop");
@@ -713,7 +720,7 @@
             showDesktopBtn.classList.add("btn-primary");
             showMobileBtn.classList.add("btn-secondary");
 
-            showDesktopBtn.addEventListener("click", function () {
+            showDesktopBtn.addEventListener("click", function() {
                 desktopViews.forEach(view => view.style.display = "block");
                 mobileViews.forEach(view => view.style.display = "none");
                 showDesktopBtn.classList.add("btn-primary");
@@ -721,7 +728,7 @@
                 showMobileBtn.classList.add("btn-secondary");
             });
 
-            showMobileBtn.addEventListener("click", function () {
+            showMobileBtn.addEventListener("click", function() {
                 desktopViews.forEach(view => view.style.display = "none");
                 mobileViews.forEach(view => view.style.display = "block");
                 showMobileBtn.classList.add("btn-primary");
@@ -731,20 +738,16 @@
         });
     </script>
 
-
-
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
+    <!---------------------------------------------------------------------------------- OS Carousel ----------------------------------------------------------------------->
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Hide both fields initially
             $('#ShowProductField, #ShowCollectionField').hide();
 
             // Show the appropriate field when the user selects a value
-            $('#select_link').on('change', function () {
+            $('#select_link').on('change', function() {
                 let selectedValue = $(this).val();
 
                 if (selectedValue === 'product') {
@@ -761,17 +764,298 @@
         });
     </script>
 
+    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // ✅ Toggle Add Product Form Visibility
+            const toggleButton = document.getElementById("toggleProductFormButton");
+            const formContainer = document.getElementById("productAddForm");
+
+            toggleButton.addEventListener("click", function() {
+                formContainer.style.display = (formContainer.style.display === "none" || formContainer.style.display === "") ? "block" : "none";
+            });
+
+            // ✅ Function to Toggle Edit Form Visibility for Each Product
+            window.toggleEditFormProduct = function(productId) {
+                const editForm = document.getElementById(`editForm-${productId}`);
+                const chevronIcon = document.getElementById(`chevron-${productId}`);
+
+                if (editForm.style.display === "none" || editForm.style.display === "") {
+                    editForm.style.display = "block";
+                    chevronIcon.classList.remove("fa-chevron-down");
+                    chevronIcon.classList.add("fa-chevron-up");
+                } else {
+                    editForm.style.display = "none";
+                    chevronIcon.classList.remove("fa-chevron-up");
+                    chevronIcon.classList.add("fa-chevron-down");
+                }
+            };
+
+        });
+    </script>
+
+
+    <script>
+        function deleteProduct(productId) {
+            if (!confirm("Are you sure you want to delete this product?")) {
+                return;
+            }
+
+            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
+                    method: "POST",
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Product deleted successfully!");
+                        document.getElementById(`productBox-${productId}`).remove();
+                    } else {
+                        alert("Failed to delete product: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred while deleting the product.");
+                });
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Toggle Product/Collection fields based on selection
+            $("#select_type").on("change", function() {
+                var selectedValue = $(this).val();
+                if (selectedValue === "product") {
+                    $("#ShowProduct").show();
+                    $("#ShowCollection").hide();
+                } else if (selectedValue === "collection") {
+                    $("#ShowProduct").hide();
+                    $("#ShowCollection").show();
+                } else {
+                    $("#ShowProduct, #ShowCollection").hide();
+                }
+            });
+
+            // Search Functionality (By Product Name or SKU)
+            $("#productSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#productList li").filter(function() {
+                    var title = $(this).find(".product-title").text().toLowerCase();
+                    var sku = $(this).attr("data-sku").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || sku.includes(searchValue));
+                });
+            });
+
+            // Search Functionality (By Collection Name or ID)
+            $("#collectionSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#collectionList li").filter(function() {
+                    var title = $(this).find(".collection-title").text().toLowerCase();
+                    var collectionId = $(this).attr("data-collection-id").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || collectionId.includes(searchValue));
+                });
+            });
+
+            // Function to handle product selection
+            let selectedProducts = [];
+            let selectedCollections = [];
+
+            function updateSelectedItems() {
+                $("#selected_product_items").val(JSON.stringify(selectedProducts));
+                $("#selected_collection_items").val(JSON.stringify(selectedCollections));
+            }
+
+            // Click event for product selection
+            $("#productList").on("click", "li", function() {
+                var productId = $(this).attr("data-id");
+
+                if (selectedProducts.includes(productId)) {
+                    selectedProducts = selectedProducts.filter(id => id !== productId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedProducts.push(productId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
+                updateSelectedItems();
+            });
+
+            // Click event for collection selection
+            $("#collectionList").on("click", "li", function() {
+                var collectionId = $(this).attr("data-id");
+
+                if (selectedCollections.includes(collectionId)) {
+                    selectedCollections = selectedCollections.filter(id => id !== collectionId);
+                    $(this).removeClass("selected"); // Remove highlight
+                } else {
+                    selectedCollections.push(collectionId);
+                    $(this).addClass("selected"); // Highlight selected item
+                }
+
+                updateSelectedItems();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to toggle between Products and Collections based on selection type
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.id.split("_")[1]; // Extract product ID from select ID
+                    let selectedValue = this.value;
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+
+                    if (selectedValue === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                    } else if (selectedValue === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.getAttribute("id").split("_")[2];
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+
+                    if (!productSection || !collectionSection) return;
+
+                    if (this.value === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                    } else if (this.value === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+
+                select.dispatchEvent(new Event("change"));
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Apply Select2 to all dropdowns
+            $('.custom-select2').select2();
+
+            // Change selected option styling inside the dropdown
+            $('.custom-select2').on('select2:select select2:unselect', function() {
+                $('.select2-selection__choice').css({
+                    "background-color": "#007bff", // Background color
+                    "color": "#ffffff", // Text color
+                    "border": "1px solid #0056b3" // Border color
+                });
+            });
+        });
+    </script>
+
+    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".select_link").forEach(selectField => {
+                let id = selectField.id.split("_")[2];
+                let productField = document.getElementById("ShowProductField_" + id);
+                let collectionField = document.getElementById("ShowCollectionField_" + id);
+
+                if (!selectField || !productField || !collectionField) {
+                    console.error("Element not found: ", {
+                        selectField,
+                        productField,
+                        collectionField
+                    });
+                    return;
+                }
+
+                function updateFields(value) {
+                    if (value === 'product') {
+                        productField.style.display = 'block';
+                        collectionField.style.display = 'none';
+                    } else if (value === 'collection') {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'block';
+                    } else {
+                        productField.style.display = 'none';
+                        collectionField.style.display = 'none';
+                    }
+                }
+
+                // Initializing
+                updateFields(selectField.value);
+
+                // On change event
+                selectField.addEventListener('change', function() {
+                    updateFields(this.value);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
+            const form = document.getElementById('carousel2AddForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
+
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize sortable for blogs
-            new Sortable(document.getElementById('blogs-list'), {
-                animation: 150,
-                ghostClass: 'sortable-ghost',
-                onEnd: function () {
-                    console.log("Blogs reordered");
-                }
-            });
+            //new Sortable(document.getElementById('blogs-list'), {
+                //animation: 150,
+                //ghostClass: 'sortable-ghost',
+                //onEnd: function () {
+                 //   console.log("Blogs reordered");
+               // }
+          //  });
 
             // Initialize sortable for tags
             new Sortable(document.getElementById('tags-list'), {
@@ -863,22 +1147,16 @@
             }
 
             // Initialize sortable on page load
-            initializeSortable('blogsList', 'blogs_input');
+           // initializeSortable('blogsList', 'blogs_input');
             initializeSortable('tagsList', 'tags_input');
             initializeSortable('popularPostsList', 'popular_posts_input');
 
             // Update selections on page load
-            updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
+            //updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
             updateSelections('tagsList', 'tags_input', 'tag-checkbox');
             updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
 
-            document.addEventListener('change', function (event) {
-                if (event.target.classList.contains('blog-checkbox')) {
-                    updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
-                }
-            });
-
-
+            
 
             document.querySelectorAll('.tag-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('change', () => updateSelections('tagsList', 'tags_input', 'tag-checkbox'));
@@ -901,13 +1179,13 @@
                 const formData = new FormData();
 
                 // Get selected values from hidden inputs
-                formData.append("blogs", document.getElementById("blogs_input").value);
+                //formData.append("blogs", document.getElementById("blogs_input").value);
                 formData.append("popular_tags", document.getElementById("tags_input").value);
                 formData.append("popular_posts", document.getElementById("popular_posts_input").value);
 
                 // Other form fields
                 formData.append("blogs_title", document.getElementById("blogs_title").value);
-                formData.append("meta_title", document.getElementById("meta_title").value);
+                //formData.append("meta_title", document.getElementById("meta_title").value);
 
                 fetch("<?= base_url('admin/blog_settings/save') ?>", {
                     method: "POST",
@@ -952,11 +1230,11 @@
             loadExistingSelections('popular_posts_input_single', 'popularPostsListsingle', 'popular-post-checkbox');
 
             // Event listeners for checkbox changes
-            document.addEventListener('change', function (event) {
+            document.addEventListener('change', function(event) {
                 if (event.target.classList.contains('related-blog-checkbox')) {
                     updateSelections('relatedBlogsList', 'related_blogs_input', 'related-blog-checkbox');
                 }
-                if (event.target.classList.contains('tag1-checkbox')) {  // Fixed class name
+                if (event.target.classList.contains('tag1-checkbox')) { // Fixed class name
                     updateSelections('tagsListsingle', 'tags_input_single', 'tag1-checkbox');
                 }
                 if (event.target.classList.contains('popular-post-checkbox')) {
@@ -965,17 +1243,17 @@
             });
 
             // AJAX Form Submission
-            document.getElementById('updatesingleblog').addEventListener('click', function () {
+            document.getElementById('updatesingleblog').addEventListener('click', function() {
                 const form = document.getElementById('singleblog-form');
                 const formData = new FormData(form);
 
                 fetch('<?= base_url('admin/single_blog/store') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1062,7 +1340,7 @@
                         const deleteButton = document.createElement('button');
                         deleteButton.textContent = 'Delete';
                         deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
-                        deleteButton.addEventListener('click', function () {
+                        deleteButton.addEventListener('click', function() {
                             checkbox.checked = false;
                             listContainer.removeChild(listItem);
                             updateHiddenInput(inputId);
@@ -1093,18 +1371,18 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
             });
         }
-
     </script>
 
 
 
-    <!---------------------------------------------------------------------------------------Collection------------------------------------------------------------------------------------------>
+    <!----------------------------------------------------------------------------------------------collection ----------------------------------------------------------------------------------->
+
     <script>
         function updateSelections(listId, inputId, checkboxClass) {
             const selectedItems = [];
@@ -1146,7 +1424,7 @@
             document.getElementById(inputId).value = selectedItems.join(',');
 
             // Attach delete event listener (Event Delegation)
-            document.getElementById(listId).addEventListener('click', function (event) {
+            document.getElementById(listId).addEventListener('click', function(event) {
                 if (event.target.classList.contains('remove-item')) {
                     const itemId = event.target.getAttribute('data-id');
                     document.getElementById(`item_${itemId}`).remove();
@@ -1170,7 +1448,7 @@
 
             // Event listeners for removing items from the list
             document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', function () {
+                button.addEventListener('click', function() {
                     const itemId = this.getAttribute('data-id');
                     const listItem = this.closest('.sortable-item');
 
@@ -1187,19 +1465,19 @@
             });
 
             // AJAX Form Submission for Collection
-            document.getElementById('updatecollection').addEventListener('click', function () {
+            document.getElementById('updatecollection').addEventListener('click', function() {
                 // Gather form data
                 const form = document.getElementById('collection-form');
                 const formData = new FormData(form);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('admin/collection/saveCollection') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1213,7 +1491,7 @@
                         alert('An error occurred while saving the collection data.');
                     });
             });
-        });        
+        });
     </script>
 
     <script>
@@ -1227,7 +1505,7 @@
                     const reader = new FileReader();
 
                     // Load the file and set it as the `src` of the img tag
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         previewElement.src = e.target.result;
                         previewElement.style.display = 'block'; // Show the image preview
                     };
@@ -1237,25 +1515,21 @@
             }
 
             // Event listeners for image inputs
-            document.getElementById('image1').addEventListener('change', function () {
+            document.getElementById('image1').addEventListener('change', function() {
                 previewImage(this, 'image1-preview');
             });
 
-            document.getElementById('image2').addEventListener('change', function () {
+            document.getElementById('image2').addEventListener('change', function() {
                 previewImage(this, 'image2-preview');
             });
         });
-
     </script>
-
-
-
 
     <!------------------------------------------------------------------------------Home page logo---------------------------------------------------------------------------->
 
     <script>
         // Save Logo
-        $('#homeLogoForm').on('submit', function (e) {
+        $('#homeLogoForm').on('submit', function(e) {
             e.preventDefault(); // Prevent default form submission
             var formData = new FormData(this);
             $.ajax({
@@ -1264,7 +1538,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function (response) {
+                success: function(response) {
                     if (response.status === 'success') {
                         alert(response.message); // Show success message
                         location.reload(); // Reload the page
@@ -1272,30 +1546,30 @@
                         alert(response.message); // Show error message
                     }
                 },
-                error: function () {
+                error: function() {
                     alert('Error saving logo.');
                 }
             });
         });
 
+        // Update Logo
         function updateLogo(logoId) {
-            var formData = new FormData($('#editLogoForm-' + logoId)[0]); // Collect form data
-
+            var formData = new FormData($('#editLogoForm-' + logoId)[0]);
             $.ajax({
-                url: "<?= base_url('home/editLogo') ?>",
+                url: "<?= base_url('home/editLogo') ?>", // Adjusted for CodeIgniter 4
                 type: 'POST',
                 data: formData,
-                processData: false, // Prevent jQuery from converting to query string
-                contentType: false, // Ensure form data is sent correctly
-                success: function (response) {
+                processData: false,
+                contentType: false,
+                success: function(response) {
                     if (response.status === 'success') {
-                        alert(response.message);
-                        location.reload();
+                        alert(response.message); // Show success message
+                        location.reload(); // Reload the page
                     } else {
-                        alert(response.message);
+                        alert(response.message); // Show error message
                     }
                 },
-                error: function () {
+                error: function() {
                     alert('Error updating logo.');
                 }
             });
@@ -1316,7 +1590,7 @@
                         "<?= csrf_token() ?>": "<?= csrf_hash() ?>" // ✅ CSRF token (if enabled)
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -1324,7 +1598,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert('Error deleting logo.');
                     }
                 });
@@ -1353,7 +1627,7 @@
         }
 
         // Toggle Add Form
-        document.getElementById("togglelogoFormButton").addEventListener("click", function () {
+        document.getElementById("togglelogoFormButton").addEventListener("click", function() {
             const addForm = document.getElementById("logoAddForm");
             if (addForm.style.display === "none") {
                 addForm.style.display = "block";
@@ -1367,7 +1641,7 @@
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     document.getElementById(`previewLogo-${logoId}`).src = e.target.result;
                 };
                 reader.readAsDataURL(file);
@@ -1433,7 +1707,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1453,19 +1727,19 @@
             });
 
             // AJAX Form Submission for Collections
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_collection', document.getElementById('fav_collection_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('collection/saveCollection') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1490,9 +1764,9 @@
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Open the collection form when "Add Collection" is clicked
-            $('#openCollectionForm').click(function (e) {
+            $('#openCollectionForm').click(function(e) {
                 e.preventDefault(); // Prevent default navigation
                 $('#collectionAddForm').show(); // Show the collection form
             });
@@ -1559,7 +1833,7 @@
         function initializeSortable(listId, inputId) {
             new Sortable(document.getElementById(listId), {
                 animation: 150,
-                onEnd: function () {
+                onEnd: function() {
                     const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                     document.getElementById(inputId).value = orderedIds.join(',');
                 }
@@ -1579,19 +1853,19 @@
             });
 
             // AJAX Form Submission for Products
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_product', document.getElementById('fav_product_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('product/saveProduct') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1672,11 +1946,12 @@
 
 
         let sortableInitialized = false;
+
         function initializeSortable(listId, inputId) {
             if (!sortableInitialized) {
                 new Sortable(document.getElementById(listId), {
                     animation: 150,
-                    onEnd: function () {
+                    onEnd: function() {
                         const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                         document.getElementById(inputId).value = orderedIds.join(',');
                     }
@@ -1699,19 +1974,19 @@
             });
 
             // AJAX Form Submission for Blogs
-            document.getElementById('updatehomepage').addEventListener('click', function () {
+            document.getElementById('updatehomepage').addEventListener('click', function() {
                 // Gather form data
                 const formData = new FormData();
                 formData.append('fav_blog', document.getElementById('fav_blog_input').value);
 
                 // AJAX request to save the data
                 fetch('<?= base_url('blog/saveBlog') ?>', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                })
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1735,18 +2010,38 @@
 
 
     <script>
-        document.getElementById('togglecarousel2FormButton').addEventListener('click', function () {
+        document.getElementById('togglecarousel2FormButton').addEventListener('click', function() {
             const form = document.getElementById('carousel2AddForm');
             form.style.display = form.style.display === 'none' ? 'block' : 'none';
         });
     </script>
 
+    <!--home-->
+    <script>
+        $('#homeImageForm').on('submit', function(e) {
+            e.preventDefault();
 
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: '<?= site_url('home-image/save') ?>',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('Success Response:', response);
+                    alert('Data updated successfully!');
+                },
+
+            });
+        });
+    </script>
 
     <!---------------------------------------------------------------------------------------Header pages---------------------------------------------------------------->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let fieldCounter = 0;
@@ -1757,7 +2052,7 @@
             const pageAddForm = document.getElementById("pageAddForm");
 
             if (toggleAddPageButton && pageAddForm) {
-                toggleAddPageButton.addEventListener("click", function () {
+                toggleAddPageButton.addEventListener("click", function() {
                     pageAddForm.style.display = (pageAddForm.style.display === "none" || pageAddForm.style.display === "") ?
                         "block" : "none";
                 });
@@ -1771,13 +2066,13 @@
             const selectedPageTypesContainer = document.getElementById("selectedPageTypesContainer");
             const selectedPageTypes = document.getElementById("selectedPageTypes");
 
-            togglePageTypeDropdown.addEventListener("click", function () {
+            togglePageTypeDropdown.addEventListener("click", function() {
                 pageTypeCheckboxDropdown.style.display = (pageTypeCheckboxDropdown.style.display === "none" || pageTypeCheckboxDropdown.style.display === "") ?
                     "block" : "none";
             });
 
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const value = this.value;
                     if (this.checked) {
                         selectedPages[value] = value;
@@ -1797,7 +2092,7 @@
                     itemDiv.classList.add("selected-item");
                     itemDiv.innerHTML = `${selectedPages[page]} <button data-value="${page}">&times;</button>`;
 
-                    itemDiv.querySelector("button").addEventListener("click", function () {
+                    itemDiv.querySelector("button").addEventListener("click", function() {
                         const value = this.getAttribute("data-value");
                         delete selectedPages[value];
                         document.querySelector(`.page-type-checkbox[value="${value}"]`).checked = false;
@@ -1823,7 +2118,7 @@
             }
 
             if (toggleSubtypeButton) {
-                toggleSubtypeButton.addEventListener("click", function () {
+                toggleSubtypeButton.addEventListener("click", function() {
                     if (Object.keys(selectedPages).length > 0) {
                         console.warn("Toggle button is disabled because Page Type is selected.");
                         return;
@@ -1868,12 +2163,12 @@
 
                     let selectedItems = {};
 
-                    newToggleDropdown.addEventListener("click", function () {
+                    newToggleDropdown.addEventListener("click", function() {
                         newCheckboxDropdown.style.display = (newCheckboxDropdown.style.display === "none" || newCheckboxDropdown.style.display === "") ?
                             "block" : "none";
                     });
 
-                    newSubtypeSelect.addEventListener("change", function () {
+                    newSubtypeSelect.addEventListener("change", function() {
                         const selectedValue = newSubtypeSelect.value;
                         if (!selectedValue) return;
 
@@ -1899,7 +2194,7 @@
                                     });
 
                                     document.querySelectorAll(`#checkboxDropdown_${fieldCounter} .specific-item-checkbox`).forEach(checkbox => {
-                                        checkbox.addEventListener("change", function () {
+                                        checkbox.addEventListener("change", function() {
                                             if (this.checked) {
                                                 selectedItems[this.value] = this.getAttribute("data-name");
                                             } else {
@@ -1925,7 +2220,7 @@
                             itemDiv.classList.add("selected-item");
                             itemDiv.innerHTML = `${selectedItems[id]} <button data-id="${id}">&times;</button>`;
 
-                            itemDiv.querySelector("button").addEventListener("click", function () {
+                            itemDiv.querySelector("button").addEventListener("click", function() {
                                 delete selectedItems[this.getAttribute("data-id")];
                                 updateSelectedItemsDisplay();
                             });
@@ -1937,15 +2232,15 @@
             }
             const apiBaseUrl = "<?= base_url('header/delete_page/') ?>";
 
-            window.deletePage = function (pageId) {
+            window.deletePage = function(pageId) {
                 if (!confirm("Are you sure you want to delete this page?")) return;
 
                 fetch(`${apiBaseUrl}${pageId}`, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -1965,12 +2260,13 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             console.log("JavaScript Loaded - Ready to execute!");
 
             let selectedPages = {};
             let fieldCounter = <?= isset($subtypes) && is_array($subtypes) ? count($subtypes) : 0 ?>;
             let itemDataMap = {};
+
 
             // ==========================
             // ✅ PAGE TYPE SELECTION LOGIC ✅
@@ -1985,6 +2281,12 @@
             pageTypeDropdown.addEventListener("click", function () {
                 pageTypeDropdownContent.style.display =
                     pageTypeDropdownContent.style.display === "none" ? "block" : "none";
+            document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
+                checkbox.addEventListener("change", function() {
+                    const value = this.value;
+                    selectedPages[value] = this.checked ? value : delete selectedPages[value];
+                    updateSelectedPagesDisplay();
+                });
             });
 
             // Function to update selected Page Types
@@ -2023,7 +2325,7 @@
             // ==========================
 
             document.querySelectorAll(".subtype-select").forEach(select => {
-                select.addEventListener("change", function () {
+                select.addEventListener("change", function() {
                     const fieldId = this.id.split("_")[1];
                     fetchSubtypeItems(fieldId, this.value);
                 });
@@ -2055,7 +2357,7 @@
 
             function attachCheckboxListeners(fieldId) {
                 document.querySelectorAll(`#checkboxDropdown_${fieldId} .specific-item-checkbox`).forEach(checkbox => {
-                    checkbox.addEventListener("change", function () {
+                    checkbox.addEventListener("change", function() {
                         updateSelectedItems(fieldId);
                     });
                 });
@@ -2093,7 +2395,7 @@
 
             function attachRemoveButtons(fieldId) {
                 document.querySelectorAll(`#selectedItemsContainer_${fieldId} .remove-item-btn`).forEach(button => {
-                    button.addEventListener("click", function () {
+                    button.addEventListener("click", function() {
                         const itemId = this.dataset.id;
                         document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`).checked = false;
                         updateSelectedItems(fieldId);
@@ -2135,28 +2437,14 @@
         }
     </script>
 
-    <script>
-        function previewImage(event, previewId) {
-            var reader = new FileReader();
-            reader.onload = function () {
-                var output = document.getElementById(previewId);
-                output.src = reader.result;
-                output.style.display = "block"; // Show image when selected
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
 
 
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
-        document.getElementById("web_section").addEventListener("change", function () {
+        document.getElementById("web_section").addEventListener("change", function() {
             const selectedSection = this.value; // Get selected value
             const sections = document.querySelectorAll(".web-section"); // Select all sections
 
@@ -2172,7 +2460,7 @@
 
     <script>
         document.querySelectorAll('.element-select').forEach(select => {
-            select.addEventListener('change', function () {
+            select.addEventListener('change', function() {
                 let wrapper = this.closest('.form-group').nextElementSibling;
 
                 wrapper.querySelector('.product-wrapper').style.display = 'none';
@@ -2187,7 +2475,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Configuration for Quill editor
             const quillConfig = {
                 theme: 'snow',
@@ -2219,7 +2507,7 @@
                     const quill = new Quill(editorElement, quillConfig);
 
                     // Sync Quill content to hidden input
-                    quill.on('text-change', function () {
+                    quill.on('text-change', function() {
                         targetInput.value = quill.root.innerHTML;
                     });
 
@@ -2233,7 +2521,7 @@
             });
 
             document.querySelectorAll('.file-preview').forEach((fileInput) => {
-                fileInput.addEventListener('change', function (event) {
+                fileInput.addEventListener('change', function(event) {
                     const input = event.target;
                     const previewContainerId = input.id + '_preview';
                     const previewContainer = document.getElementById(previewContainerId);
@@ -2264,7 +2552,7 @@
 
                         // Set image source using FileReader
                         const reader = new FileReader();
-                        reader.onload = function (e) {
+                        reader.onload = function(e) {
                             img.src = e.target.result;
                         };
                         reader.readAsDataURL(file);
@@ -2339,7 +2627,7 @@
 
             // Handle checkbox selection
             blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const blogId = this.dataset.id;
                     const blogTitle = this.dataset.title;
 
@@ -2371,7 +2659,7 @@
         `;
 
                 // Remove blog on click
-                blogBox.querySelector(".remove-blog").addEventListener("click", function () {
+                blogBox.querySelector(".remove-blog").addEventListener("click", function() {
                     blogBox.remove();
                     document.getElementById(`blog_${blogId}`).checked = false;
                 });
@@ -2401,7 +2689,7 @@
 
             // Handle checkbox selection
             r_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const r_productId = this.dataset.id;
                     const r_productTitle = this.dataset.title;
 
@@ -2433,7 +2721,7 @@
         `;
 
                 // Remove r_product on click
-                r_productBox.querySelector(".remove-r_product").addEventListener("click", function () {
+                r_productBox.querySelector(".remove-r_product").addEventListener("click", function() {
                     r_productBox.remove();
                     document.getElementById(`r_product_${r_productId}`).checked = false;
                 });
@@ -2463,7 +2751,7 @@
 
             // Handle checkbox selection
             t_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const t_productId = this.dataset.id;
                     const t_productTitle = this.dataset.title;
 
@@ -2495,7 +2783,7 @@
         `;
 
                 // Remove t_product on click
-                t_productBox.querySelector(".remove-t_product").addEventListener("click", function () {
+                t_productBox.querySelector(".remove-t_product").addEventListener("click", function() {
                     t_productBox.remove();
                     document.getElementById(`t_product_${t_productId}`).checked = false;
                 });
@@ -2525,7 +2813,7 @@
 
             // Handle checkbox selection
             m_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const m_productId = this.dataset.id;
                     const m_productTitle = this.dataset.title;
 
@@ -2557,7 +2845,7 @@
         `;
 
                 // Remove m_product on click
-                m_productBox.querySelector(".remove-m_product").addEventListener("click", function () {
+                m_productBox.querySelector(".remove-m_product").addEventListener("click", function() {
                     m_productBox.remove();
                     document.getElementById(`m_product_${m_productId}`).checked = false;
                 });
@@ -2588,7 +2876,7 @@
 
             // Handle checkbox selection
             s_blogCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const s_blogId = this.dataset.id;
                     const s_blogTitle = this.dataset.title;
 
@@ -2620,7 +2908,7 @@
         `;
 
                 // Remove s_blog on click
-                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function () {
+                s_blogBox.querySelector(".remove-s_blog").addEventListener("click", function() {
                     s_blogBox.remove();
                     document.getElementById(`s_blog_${s_blogId}`).checked = false;
                 });
@@ -2651,7 +2939,7 @@
 
             // Handle checkbox selection
             cm_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const cm_productId = this.dataset.id;
                     const cm_productTitle = this.dataset.title;
 
@@ -2683,7 +2971,7 @@
         `;
 
                 // Remove cm_product on click
-                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function () {
+                cm_productBox.querySelector(".remove-cm_product").addEventListener("click", function() {
                     cm_productBox.remove();
                     document.getElementById(`cm_product_${cm_productId}`).checked = false;
                 });
@@ -2713,7 +3001,7 @@
 
             // Handle checkbox selection
             error_productCheckboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
+                checkbox.addEventListener("change", function() {
                     const error_productId = this.dataset.id;
                     const error_productTitle = this.dataset.title;
 
@@ -2745,7 +3033,7 @@
         `;
 
                 // Remove error_product on click
-                error_productBox.querySelector(".remove-error_product").addEventListener("click", function () {
+                error_productBox.querySelector(".remove-error_product").addEventListener("click", function() {
                     error_productBox.remove();
                     document.getElementById(`error_product_${error_productId}`).checked = false;
                 });
@@ -2819,7 +3107,7 @@
 
 
             // Update form submission
-            updateaboutBtn.addEventListener("click", function (e) {
+            updateaboutBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2867,12 +3155,12 @@
                 updateaboutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_about') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -2896,7 +3184,7 @@
 
             // Update form submission
 
-            updatecontactBtn.addEventListener("click", function (e) {
+            updatecontactBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -2943,12 +3231,12 @@
                 updatecontactBtn.innerHTML = "Updating...";
 
                 fetch("<?= base_url('online_store/update_contact') ?>", {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest",
-                    },
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest",
+                        },
+                    })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -2970,7 +3258,7 @@
 
 
             // Update form submission
-            updatesearchBtn.addEventListener("click", function (e) {
+            updatesearchBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3007,12 +3295,12 @@
                 updatesearchBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_search') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3033,7 +3321,7 @@
             });
 
             // Update form submission
-            updatewishlistBtn.addEventListener("click", function (e) {
+            updatewishlistBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3047,12 +3335,12 @@
                 updatewishlistBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_wishlist') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3074,7 +3362,7 @@
 
 
             // Update form submission
-            updatecartBtn.addEventListener("click", function (e) {
+            updatecartBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3106,12 +3394,12 @@
                 updatecartBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_cart') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3132,7 +3420,7 @@
             });
 
             // Update form submission
-            updatecheckoutBtn.addEventListener("click", function (e) {
+            updatecheckoutBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3148,12 +3436,12 @@
                 updatecheckoutBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_checkout') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3175,7 +3463,7 @@
 
 
             // Update form submission
-            updatetrackingBtn.addEventListener("click", function (e) {
+            updatetrackingBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3226,12 +3514,12 @@
                 updatetrackingBtn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_tracking') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3253,7 +3541,7 @@
 
 
             // Update form submission
-            update404Btn.addEventListener("click", function (e) {
+            update404Btn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -3325,12 +3613,12 @@
                 update404Btn.innerHTML = "Updating...";
 
                 fetch('<?= base_url('online_store/update_404') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -3369,7 +3657,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const maxSubsections = 5; // Maximum allowed subsections
             const iconsContainer = document.querySelector('.icons');
             const addIconBtn = document.querySelector('.addicon');
@@ -3401,7 +3689,7 @@
             }
 
             // Add new subsection
-            addIconBtn.addEventListener('click', function (e) {
+            addIconBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const currentSubsections = document.querySelectorAll('.iconsubsection').length;
 
@@ -3419,7 +3707,7 @@
             });
 
             // Remove subsection
-            iconsContainer.addEventListener('click', function (e) {
+            iconsContainer.addEventListener('click', function(e) {
                 if (e.target.classList.contains('removeicon')) {
                     e.preventDefault();
                     const subsection = e.target.closest('.iconsubsection');
@@ -3453,7 +3741,7 @@
                         }
 
                         const reader = new FileReader();
-                        reader.onload = function (e) {
+                        reader.onload = function(e) {
                             const img = document.createElement('img');
                             img.src = e.target.result;
                             img.classList.add('img-fluid', 'img-thumbnail');
@@ -3483,9 +3771,9 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
 
-            document.getElementById("toggleteamsFormButton").addEventListener("click", function () {
+            document.getElementById("toggleteamsFormButton").addEventListener("click", function() {
                 const form = document.getElementById("AddteamsForm");
                 form.style.display = form.style.display === "none" ? "block" : "none";
             });
@@ -3494,11 +3782,11 @@
             const imgInput = document.getElementById('member_pic');
             const newImgPreview = document.getElementById('preview_member_pic');
 
-            imgInput.addEventListener('change', function () {
+            imgInput.addEventListener('change', function() {
                 const file = this.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         newImgPreview.src = e.target.result;
                         newImgPreview.style.display = 'block';
                     };
@@ -3524,11 +3812,11 @@
                     }
 
                     // Handle new image preview
-                    imgInput.addEventListener("change", function () {
+                    imgInput.addEventListener("change", function() {
                         const file = this.files[0];
                         if (file) {
                             const reader = new FileReader();
-                            reader.onload = function (e) {
+                            reader.onload = function(e) {
                                 previewImg.src = e.target.result;
                                 previewImg.style.display = 'block';
                             };
@@ -3550,14 +3838,14 @@
             // For the add form
             const addImgInput = document.getElementById('member_pic');
             if (addImgInput) {
-                addImgInput.addEventListener('change', async function () {
+                addImgInput.addEventListener('change', async function() {
                     await validateImageInput(this);
                 });
             }
 
             // For all edit forms
             document.querySelectorAll("input[type='file'][id^='member_pic']").forEach((imgInput) => {
-                imgInput.addEventListener('change', async function () {
+                imgInput.addEventListener('change', async function() {
                     await validateImageInput(this);
                 });
             });
@@ -3590,12 +3878,12 @@
                 img.src = URL.createObjectURL(file);
 
                 return new Promise((resolve) => {
-                    img.onload = function () {
+                    img.onload = function() {
                         URL.revokeObjectURL(this.src);
                         resolve(true);
                     };
 
-                    img.onerror = function () {
+                    img.onerror = function() {
                         displayError($(inputElement), 'Invalid image file');
                         URL.revokeObjectURL(this.src);
                         resolve(false);
@@ -3656,7 +3944,7 @@
                 return isValid;
             }
 
-            addBtn.addEventListener("click", function (e) {
+            addBtn.addEventListener("click", function(e) {
                 e.preventDefault();
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
@@ -3667,12 +3955,12 @@
                     addBtn.innerHTML = "Updating...";
 
                     fetch("<?= base_url('online_store/add_members') ?>", {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        },
-                    })
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            },
+                        })
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.success) {
@@ -3700,7 +3988,7 @@
             editForms.forEach((form) => {
                 const editBtn = form.querySelector("#editmembersBtn");
 
-                editBtn.addEventListener("click", function (e) {
+                editBtn.addEventListener("click", function(e) {
                     e.preventDefault();
 
                     if (validateForm(form)) {
@@ -3710,12 +3998,12 @@
                         editBtn.innerHTML = "Updating...";
 
                         fetch("<?= base_url('online_store/edit_members') ?>", {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "X-Requested-With": "XMLHttpRequest"
-                            },
-                        })
+                                method: "POST",
+                                body: formData,
+                                headers: {
+                                    "X-Requested-With": "XMLHttpRequest"
+                                },
+                            })
                             .then((response) => response.json())
                             .then((data) => {
                                 if (data.success) {
@@ -3745,7 +4033,7 @@
                 Sortable.create(container, {
                     handle: ".handle",
                     animation: 150,
-                    onEnd: function (evt) {
+                    onEnd: function(evt) {
                         // Get the new order of IDs
                         const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
 
@@ -3756,15 +4044,15 @@
 
             function updateAwardOrder(orderedIds) {
                 fetch("<?= base_url('online_store/update_members_order') ?>", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Requested-With": "XMLHttpRequest",
-                    },
-                    body: JSON.stringify({
-                        order: orderedIds
-                    }),
-                })
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-Requested-With": "XMLHttpRequest",
+                        },
+                        body: JSON.stringify({
+                            order: orderedIds
+                        }),
+                    })
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
@@ -3801,8 +4089,8 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            $("#addFooterdata").submit(function (event) {
+        $(document).ready(function() {
+            $("#addFooterdata").submit(function(event) {
                 event.preventDefault(); // Prevent default form submission
 
                 var formData = new FormData(this);
@@ -3815,7 +4103,7 @@
                     contentType: false, // Prevent jQuery from setting content-type
                     processData: false, // Prevent automatic data processing
                     dataType: "json", // Expect JSON response
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -3823,7 +4111,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert('An error occurred while updating the footer.');
                     }
                 });
@@ -3832,13 +4120,13 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const policyPlusButton = document.getElementById('policyplus');
             const addPolicyForm = document.getElementById('AddNewPolicyForm');
             const editPolicyForm = document.getElementById('EditPolicyForm');
 
             // Handle the add button click to toggle the Add Policy form
-            policyPlusButton.addEventListener('click', function () {
+            policyPlusButton.addEventListener('click', function() {
                 if (addPolicyForm.style.display === 'none' || addPolicyForm.style.display === '') {
                     addPolicyForm.style.display = 'block'; // Show the Add Policy form
                     editPolicyForm.style.display = 'none'; // Hide the Edit Policy form
@@ -3848,7 +4136,7 @@
             });
 
             // Handle form submission for Add form
-            $('#addpolicy').on('submit', function (e) {
+            $('#addpolicy').on('submit', function(e) {
                 e.preventDefault();
 
                 const formData = {
@@ -3862,7 +4150,7 @@
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh to reflect changes
@@ -3870,7 +4158,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     },
@@ -3879,7 +4167,7 @@
 
             const baseUrl = "<?= base_url() ?>";
 
-            $('form[id^="editNewPolicyForm"]').on('submit', function (e) {
+            $('form[id^="editNewPolicyForm"]').on('submit', function(e) {
                 e.preventDefault();
 
                 const policyId = $(this).attr('id').split('-')[1];
@@ -3899,7 +4187,7 @@
                     processData: false,
                     contentType: false,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             alert(response.message);
                             location.reload(); // Refresh the page to show updated data
@@ -3907,7 +4195,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', error);
                         alert('An error occurred. Please try again.');
                     }
@@ -3950,7 +4238,7 @@
                     data: {
                         policy_id: policyId
                     },
-                    success: function (response) {
+                    success: function(response) {
                         if (response.success) {
                             // Remove the policy from the DOM if deletion is successful
                             $('#policyBox-' + policyId).remove();
@@ -3959,7 +4247,7 @@
                             alert("Failed to delete the policy.");
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert("An error occurred while deleting the policy.");
                     }
                 });
@@ -3970,7 +4258,7 @@
 
     <script>
         // Automatically generate the link based on policy name input
-        document.getElementById('policy_name').addEventListener('input', function () {
+        document.getElementById('policy_name').addEventListener('input', function() {
             var policyName = this.value;
             var generatedLink = policyName.trim().toLowerCase().replace(/\s+/g, '-');
             document.getElementById('policy_link').value = generatedLink;
@@ -3979,7 +4267,7 @@
 
     <!--chaitanya product-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Elements for products
             const showProductBtn = document.getElementById("showProductBtn");
             const productCheckboxContainer = document.getElementById("productCheckboxContainer");
@@ -3996,27 +4284,27 @@
 
 
             // Show/Hide product list
-            showProductBtn.addEventListener("click", function () {
+            showProductBtn.addEventListener("click", function() {
                 const isVisible = productCheckboxContainer.style.display === "block";
                 productCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Show/Hide bundle list
-            showBundleBtn.addEventListener("click", function () {
+            showBundleBtn.addEventListener("click", function() {
                 const isVisible = bundleCheckboxContainer.style.display === "block";
                 bundleCheckboxContainer.style.display = isVisible ? "none" : "block";
             });
 
 
             // Add/remove selected products dynamically
-            productCheckboxContainer.addEventListener("change", function (e) {
+            productCheckboxContainer.addEventListener("change", function(e) {
                 handleSelection(e, "product-checkbox", selectedProductsContainer);
             });
 
 
             // Add/remove selected bundles dynamically
-            bundleCheckboxContainer.addEventListener("change", function (e) {
+            bundleCheckboxContainer.addEventListener("change", function(e) {
                 handleSelection(e, "bundle-checkbox", selectedBundlesContainer);
             });
 
@@ -4059,16 +4347,16 @@
                     itemElement.className = itemClass;
                     itemElement.setAttribute("data-id", itemId);
                     itemElement.innerHTML = `
-                        <span>${itemTitle}</span>
-                        <button class="btn btn-danger btn-sm remove-item-btn" type="button">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
+                    <span>${itemTitle}</span>
+                    <button class="btn btn-danger btn-sm remove-item-btn" type="button">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
                     container.appendChild(itemElement);
 
 
                     // Add delete functionality
-                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function () {
+                    itemElement.querySelector(".remove-item-btn").addEventListener("click", function() {
                         itemElement.remove();
                         checkbox.checked = false; // Uncheck the checkbox
                     });
@@ -4077,43 +4365,37 @@
 
 
             // Handle save button click event
-            updateproductpage.addEventListener("click", function (e) {
+            document.getElementById("updateproductpage").addEventListener("click", function(e) {
                 e.preventDefault(); // Prevent form submission
-
 
                 const formData = new FormData();
 
-
                 // Get form fields
-                formData.append("title", document.getElementById("title").value);
+                formData.append("productpagetitle", document.getElementById("productpagetitle").value);
                 formData.append("Description", document.getElementById("Description").value);
-
 
                 // Get selected products
                 const selectedProducts = Array.from(document.querySelectorAll(".selected-product"))
                     .map(product => product.getAttribute("data-id"));
                 selectedProducts.forEach(productId => formData.append("products[]", productId));
 
-
                 // Get selected bundles
                 const selectedBundles = Array.from(document.querySelectorAll(".selected-bundle"))
                     .map(bundle => bundle.getAttribute("data-id"));
                 selectedBundles.forEach(bundleId => formData.append("bundles[]", bundleId));
 
-
                 // Disable the button and update its text
                 updateproductpage.disabled = true;
                 updateproductpage.innerHTML = "Saving...";
 
-
                 // Send the AJAX request
                 fetch('<?= base_url('product-settings/save') ?>', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                })
+                        method: "POST", // Ensure it’s POST
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -4146,12 +4428,12 @@
                 const toast = document.createElement("div");
                 toast.className = `toast toast-${type} position-fixed top-0 end-0 m-4`;
                 toast.innerHTML = `
-                    <div class="toast-header">
-                        <strong class="me-auto">${type.toUpperCase()}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-                    </div>
-                    <div class="toast-body">${message}</div>
-                `;
+            <div class="toast-header">
+                <strong class="me-auto">${type.toUpperCase()}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">${message}</div>
+        `;
                 document.body.appendChild(toast);
                 new bootstrap.Toast(toast).show();
             }
@@ -4191,7 +4473,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const viewTypeSelect = document.getElementById('viewType');
             const sortSelectContainer = document.getElementById('sortSelectContainer');
             const postSelectContainer = document.getElementById('postSelectContainer');
@@ -4244,7 +4526,7 @@
             }
 
             // Handle view type changes
-            viewTypeSelect.addEventListener('change', function () {
+            viewTypeSelect.addEventListener('change', function() {
                 updateContainers(this.value);
                 // Reset selections when view type changes
                 postCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -4253,7 +4535,7 @@
             });
 
             // Handle post selection
-            document.querySelector('.dropdown-menu').addEventListener('change', function (e) {
+            document.querySelector('.dropdown-menu').addEventListener('change', function(e) {
                 if (e.target.classList.contains('post-checkbox')) {
                     if (viewTypeSelect.value === 'single') {
                         // For single view, uncheck all other checkboxes
@@ -4304,8 +4586,8 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $('#updateEmail_POP_UPpage').click(function (e) {
+        $(document).ready(function() {
+            $('#updateEmail_POP_UPpage').click(function(e) {
                 e.preventDefault();
 
 
@@ -4331,10 +4613,10 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         alert(response.message);
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         alert('An error occurred: ' + xhr.status + ' ' + error);
                     }
                 });
@@ -4346,13 +4628,13 @@
 
 
     <script>
-        document.getElementById('Email_POP_UP_Image').addEventListener('change', function (event) {
+        document.getElementById('Email_POP_UP_Image').addEventListener('change', function(event) {
             let file = event.target.files[0];
 
 
             if (file) {
                 let reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     let preview = document.getElementById('previewImage');
                     preview.src = e.target.result;
                     preview.style.display = "block"; // Show the preview
@@ -4364,23 +4646,23 @@
 
     <!--marquee chaitanya-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Toggle form visibility on button click
-            document.getElementById("toggleTextFormButton").addEventListener("click", function () {
+            document.getElementById("toggleTextFormButton").addEventListener("click", function() {
                 var form = document.getElementById("addmarqueeText");
                 form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
             });
 
             // Handle form submission with AJAX
-            document.getElementById("addmarqueeText").addEventListener("submit", function (e) {
+            document.getElementById("addmarqueeText").addEventListener("submit", function(e) {
                 e.preventDefault(); // Prevent form from submitting traditionally
 
                 let formData = new FormData(this);
 
                 fetch("<?= site_url('marquee-text/save-marquee') ?>", {
-                    method: "POST",
-                    body: formData,
-                })
+                        method: "POST",
+                        body: formData,
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4400,10 +4682,10 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Toggle edit form visibility
             document.querySelectorAll(".actions button").forEach((button) => {
-                button.addEventListener("click", function () {
+                button.addEventListener("click", function() {
                     const editForm = this.closest(".textBox").querySelector(".edit-form");
                     const chevron = this.querySelector("#chevron");
 
@@ -4441,14 +4723,14 @@
 
             // Handle delete button
             document.querySelectorAll(".actions a").forEach((deleteButton) => {
-                deleteButton.addEventListener("click", function () {
+                deleteButton.addEventListener("click", function() {
                     const textBox = this.closest(".textBox");
                     const textId = textBox.getAttribute("data-id");
 
                     if (confirm("Are you sure you want to delete this text?")) {
                         fetch(`<?= site_url('marquee-text/delete-marquee') ?>/${textId}`, {
-                            method: "DELETE"
-                        })
+                                method: "DELETE"
+                            })
                             .then(response => response.json())
                             .then(data => {
                                 if (data.status === "success") {
@@ -4471,16 +4753,16 @@
 
     <script>
         document.querySelectorAll("[id^='edittextForm-']").forEach(form => {
-            form.addEventListener("submit", function (e) {
+            form.addEventListener("submit", function(e) {
                 e.preventDefault(); // Prevent default form submission
 
                 let formData = new FormData(this);
                 let recordId = this.id.split('-')[1]; // Extract the record ID from the form's ID
 
                 fetch(`<?= site_url('marquee-text/UpdateMarquee/') ?>${recordId}`, {
-                    method: "POST",
-                    body: formData
-                })
+                        method: "POST",
+                        body: formData
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === "success") {
@@ -4500,8 +4782,8 @@
 
 
     <script>
-        $(document).ready(function () {
-            $("#addmarqueebottomText").on("submit", function (e) {
+        $(document).ready(function() {
+            $("#addmarqueebottomText").on("submit", function(e) {
                 e.preventDefault();
 
                 $.ajax({
@@ -4511,7 +4793,7 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === "success") {
                             alert(response.message);
                             location.reload();
@@ -4519,7 +4801,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function () {
+                    error: function() {
                         alert("An error occurred while saving the data.");
                     }
                 });
@@ -4527,181 +4809,528 @@
         });
     </script>
 
-    <!---------------------------------------------------------------------------------- Home page Product Section ----------------------------------------------------------------------->
+    <!-- chaitanya blogs-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <!-- JavaScript for Handling Dropdown Visibility -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get elements
-
-            const toggleButton = document.getElementById("toggleProductFormButton");
-            const formContainer = document.getElementById("productAddForm");
-            const productList = document.getElementById("productList");
-            const collectionList = document.getElementById("collectionList");
-
-            // ✅ Toggle Form Visibility
-            toggleButton.addEventListener("click", function () {
-                formContainer.style.display = formContainer.style.display === "none" || formContainer.style.display === "" ? "block" : "none";
-            });
+        document.getElementById("contentType").addEventListener("change", function() {
+            let selectedValue = this.value;
+            document.getElementById("blogSelection").style.display = (selectedValue === "blogs") ? "block" : "none";
+            document.getElementById("tagSelection").style.display = (selectedValue === "tags") ? "block" : "none";
         });
     </script>
 
     <script>
-        $(document).ready(function () {
-            $('#ShowProduct, #ShowCollection').hide();
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogsplusButton = document.getElementById('blogsplus');
 
-            // Toggle visibility of Product & Collection fields based on selection
-            $('#select_type').on('change', function () {
-                let selectedValue = $(this).val();
 
-                if (selectedValue === 'product') {
-                    $('#ShowProduct').fadeIn();
-                    $('#ShowCollection').hide();
-                } else if (selectedValue === 'collection') {
-                    $('#ShowCollection').fadeIn();
-                    $('#ShowProduct').hide();
+            blogsplusButton.addEventListener('click', function() {
+                if (AddNewblogsForm.style.display === 'none' || AddNewblogsForm.style.display === '') {
+                    AddNewblogsForm.style.display = 'block';
                 } else {
-                    $('#ShowProduct, #ShowCollection').hide();
+                    AddNewblogsForm.style.display = 'none';
                 }
             });
-
-            // Function to update selected items display
-            function updateSelectedDisplay(selectElement, displayElement, hiddenInput) {
-                displayElement.html('');
-                let selectedValues = [];
-
-                $(selectElement).find(':selected').each(function () {
-                    let selectedItem = $(this).text();
-                    selectedValues.push($(this).val());
-
-                    let badge = $('<div class="badge badge-primary p-2 m-1"></div>').text(selectedItem);
-                    displayElement.append(badge);
-                });
-
-                hiddenInput.val(selectedValues.join(',')); // Store selected values
-            }
-
-            // Attach event listeners to Product and Collection select elements
-            $('#selected_product').on('change', function () {
-                updateSelectedDisplay(this, $('#selected_products_display'), $('#selected_products_hidden'));
-            });
-
-            $('#selected_collection').on('change', function () {
-                updateSelectedDisplay(this, $('#selected_collections_display'), $('#selected_collections_hidden'));
-            });
-
-            // Append hidden input fields to store selected values for submission
-            $('#productForm').append('<input type="hidden" id="selected_products_hidden" name="selected_products">');
-            $('#productForm').append('<input type="hidden" id="selected_collections_hidden" name="selected_collections">');
         });
-    </script>
 
-    <script>
-        function toggleEditFormProduct(productId) {
-            let editForm = document.getElementById(`editForm-${productId}`);
-            let chevronIcon = document.getElementById(`chevron-${productId}`);
 
-            if (editForm.style.display === "none" || editForm.style.display === "") {
-                editForm.style.display = "block";
-                chevronIcon.classList.remove("fa-chevron-down");
-                chevronIcon.classList.add("fa-chevron-up");
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        const newblog_container = document.getElementById("newblogsboxcontainer");
+        const newblogCheckboxes = document.querySelectorAll(".newblog-checkbox");
+
+
+
+        // Handle checkbox selection
+        newblogCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                const newblogId = this.dataset.id;
+                const newblogTitle = this.dataset.title;
+
+                if (this.checked) {
+                    addnewblogBox(newblogId, newblogTitle);
+                } else {
+                    const existingBox = document.getElementById(`newblogsBox-${newblogId}`);
+                    if (existingBox) existingBox.remove();
+                }
+            });
+        });
+
+
+        // Addnewblog box
+        function addnewblogBox(newblogId, newblogTitle) {
+            const newblogBox = document.createElement("div");
+            newblogBox.className = "newblogBox";
+            newblogBox.id = `newblogBox-${newblogId}`;
+            newblogBox.dataset.id = newblogId;
+            newblogBox.innerHTML = `
+            <div class="CarouselHeader">
+                <div class="handle">☰</div>
+                <b>${newblogTitle} </b>
+                <div class="actions">
+                    <a href="javascript:void(0);" class="remove-newblog" style="color: red; padding: 0;">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+
+            // Remove newblog on click
+            newblogBox.querySelector(".remove-newblog").addEventListener("click", function() {
+                newblogBox.remove();
+                document.getElementById(`newblog_${newblogId}`).checked = false;
+            });
+
+            newblog_container.appendChild(newblogBox);
+        }
+
+
+        // Initialize drag-and-drop sorting
+        Sortable.create(newblog_container, {
+            handle: ".handle",
+            animation: 150,
+        });
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        const newtag_container = document.getElementById("newtagsboxcontainer");
+        const newtagCheckboxes = document.querySelectorAll(".newtag-checkbox");
+
+        // Handle checkbox selection
+        newtagCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                const newtagId = this.dataset.id;
+                const newtagTitle = this.dataset.title;
+
+                if (this.checked) {
+                    addnewtagBox(newtagId, newtagTitle);
+                } else {
+                    const existingBox = document.getElementById(`newtagsBox-${newtagId}`);
+                    if (existingBox) existingBox.remove();
+                }
+            });
+        });
+
+
+        // Addnewtag box
+        function addnewtagBox(newtagId, newtagTitle) {
+            const newtagBox = document.createElement("div");
+            newtagBox.className = "newtagBox";
+            newtagBox.id = `newtagBox-${newtagId}`;
+            newtagBox.dataset.id = newtagId;
+            newtagBox.innerHTML = `
+            <div class="CarouselHeader">
+                <div class="handle">☰</div>
+                <b>${newtagTitle} </b>
+                <div class="actions">
+                    <a href="javascript:void(0);" class="remove-newtag" style="color: red; padding: 0;">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+
+            // Remove newtag on click
+            newtagBox.querySelector(".remove-newtag").addEventListener("click", function() {
+                newtagBox.remove();
+                document.getElementById(`newtag_${newtagId}`).checked = false;
+            });
+
+            newtag_container.appendChild(newtagBox);
+        }
+
+
+        // Initialize drag-and-drop sorting
+        Sortable.create(newtag_container, {
+            handle: ".handle",
+            animation: 150,
+        });
+
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        function toggleEditFormblog(osblogsId) {
+            const editForm = document.getElementById(`editblogForm-${osblogsId}`);
+            const chevron = document.getElementById(`chevron-${osblogsId}`);
+
+            if (editForm.style.display === 'none' || editForm.style.display === '') {
+                editForm.style.display = 'block';
+                chevron.classList.remove('fa-chevron-down');
+                chevron.classList.add('fa-chevron-up');
             } else {
-                editForm.style.display = "none";
-                chevronIcon.classList.remove("fa-chevron-up");
-                chevronIcon.classList.add("fa-chevron-down");
+                editForm.style.display = 'none';
+                chevron.classList.remove('fa-chevron-up');
+                chevron.classList.add('fa-chevron-down');
             }
         }
     </script>
 
-    <script>
-        function deleteProduct(productId) {
-            if (!confirm("Are you sure you want to delete this product?")) {
-                return;
-            }
 
-            fetch(`<?= base_url('online_store/delete_product/') ?>${productId}`, {
-                method: "POST",
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest", // Ensure AJAX request
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert("Product deleted successfully!");
-                        document.getElementById(`productBox-${productId}`).remove(); // Remove from UI
-                    } else {
-                        alert("Failed to delete product: " + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("An error occurred while deleting the product.");
+    <script>
+        $(document).ready(function() {
+            $('#addblogs').submit(function(e) {
+                e.preventDefault();
+
+                let selectedBlogs = [];
+                $('.newblog-checkbox:checked').each(function() {
+                    selectedBlogs.push($(this).data('id'));
                 });
-        }
-    </script>
 
+                let selectedTags = [];
+                $('.newtag-checkbox:checked').each(function() {
+                    selectedTags.push($(this).data('id'));
+                });
 
+                let formData = new FormData(this);
+                formData.append('blogs', selectedBlogs.join(','));
+                formData.append('tags', selectedTags.join(','));
 
-
-    <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".select_link").forEach(selectField => {
-                let id = selectField.id.split("_")[2];
-                let productField = document.getElementById("ShowProductField_" + id);
-                let collectionField = document.getElementById("ShowCollectionField_" + id);
-
-                if (!selectField || !productField || !collectionField) {
-                    console.error("Element not found: ", { selectField, productField, collectionField });
-                    return;
+                let contentType = $('#contentType').val();
+                if (!contentType) {
+                    console.warn("Content Type is empty!"); // Log warning if it's empty
                 }
+                formData.append('content_type', contentType || 'blogs'); // Default to 'blogs' if empty
 
-                function updateFields(value) {
-                    if (value === 'product') {
-                        productField.style.display = 'block';
-                        collectionField.style.display = 'none';
-                    } else if (value === 'collection') {
-                        productField.style.display = 'none';
-                        collectionField.style.display = 'block';
-                    } else {
-                        productField.style.display = 'none';
-                        collectionField.style.display = 'none';
+                // Debugging: Log form data before sending
+                console.log('Form Data:');
+                formData.forEach((value, key) => {
+                    console.log(key, value);
+                });
+
+                $.ajax({
+                    url: "<?= base_url('Store/saveBlogs') ?>",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    dataType: "json",
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status == 'success') {
+                            alert('Blog added successfully');
+                            location.reload();
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        alert('Error: ' + xhr.responseText);
                     }
-                }
-
-                // Initializing
-                updateFields(selectField.value);
-
-                // On change event
-                selectField.addEventListener('change', function () {
-                    updateFields(this.value);
                 });
             });
         });
     </script>
 
 
-    <!------------------------------------------------------------------------------- Home Page Image -------------------------------------------------------------------------------->
+
 
     <script>
-        function toggleFields(index) {
-            let selection = document.getElementById('select_link' + index).value;
-            document.getElementById('ShowProductField' + index).style.display = selection === 'product' ? 'block' : 'none';
-            document.getElementById('ShowCollectionField' + index).style.display = selection === 'collection' ? 'block' : 'none';
-        }
+        document.querySelectorAll(".edit-form").forEach((form) => {
+            const updatetagContainer = form.querySelector(".updatetagsBoxContainer");
+            const updatetagCheckboxes = form.querySelectorAll(".updatetag-checkbox");
 
-        // Function to update preview section
-        function updatePreview(type) {
-            let selectElement = document.getElementById(type === 'product' ? 'selected_product1' : 'selected_collection1');
-            let previewElement = document.getElementById(type === 'product' ? 'productPreview' : 'collectionPreview');
+            // Prepopulate updatetagContainer with existing selected tags
+            updatetagCheckboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    addupdatetagBox(checkbox.dataset.id, checkbox.dataset.title, updatetagContainer, form);
+                }
+            });
 
-            let selectedItems = Array.from(selectElement.selectedOptions).map(option => option.text);
-            previewElement.innerHTML = selectedItems.length ? `<small class="text-muted">Selected: ${selectedItems.join(', ')}</small>` : '';
+            // Handle checkbox selection
+            updatetagCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener("change", function() {
+                    const updatetagId = this.dataset.id;
+                    const updatetagTitle = this.dataset.title;
+
+                    if (this.checked) {
+                        addupdatetagBox(updatetagId, updatetagTitle, updatetagContainer, form);
+                    } else {
+                        const existingBox = updatetagContainer.querySelector(`#updatetagBox-${updatetagId}`);
+                        if (existingBox) existingBox.remove();
+                    }
+                });
+            });
+
+            // Initialize drag-and-drop sorting for this specific form
+            Sortable.create(updatetagContainer, {
+                handle: ".handle",
+                animation: 150,
+            });
+        });
+
+        // Function to add selected tag box
+        function addupdatetagBox(updatetagId, updatetagTitle, updatetagContainer, form) {
+            if (!updatetagContainer) return;
+
+            const updatetagBox = document.createElement("div");
+            updatetagBox.className = "updatetagBox";
+            updatetagBox.id = `updatetagBox-${updatetagId}`;
+            updatetagBox.dataset.id = updatetagId;
+            updatetagBox.innerHTML = `
+        <div class="CarouselHeader">
+            <div class="handle">☰</div>
+            <b>${updatetagTitle} </b>
+            <div class="actions">
+                <a href="javascript:void(0);" class="remove-updatetag" style="color: red; padding: 0;">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+    `;
+
+            // Remove tag on click
+            updatetagBox.querySelector(".remove-updatetag").addEventListener("click", function() {
+                updatetagBox.remove();
+                form.querySelector(`#updatetag_${updatetagId}`).checked = false;
+            });
+
+            updatetagContainer.appendChild(updatetagBox);
         }
     </script>
 
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".edit-form").forEach((form) => {
+                const updateblog_container = form.querySelector(".updateblogsBoxContainer");
+
+                if (!updateblog_container) return; // Skip forms without the container
+
+                // Function to add a blog box
+                function addUpdateblogBox(updateblogId, updateblogTitle) {
+                    if (updateblog_container.querySelector(`#updateblogBox-${updateblogId}`)) return;
+
+                    const updateblogBox = document.createElement("div");
+                    updateblogBox.className = "updateblogBox";
+                    updateblogBox.id = `updateblogBox-${updateblogId}`;
+                    updateblogBox.dataset.id = updateblogId;
+                    updateblogBox.innerHTML = `
+                <div class="CarouselHeader">
+                    <div class="handle">☰</div>
+                    <b>${updateblogTitle}</b>
+                    <div class="actions">
+                        <a href="javascript:void(0);" class="remove-updateblog" style="color: red; padding: 0;">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+
+                    // Remove blog when clicking the trash icon
+                    updateblogBox.querySelector(".remove-updateblog").addEventListener("click", function() {
+                        removeUpdateblogBox(updateblogId);
+                    });
+
+                    updateblog_container.appendChild(updateblogBox);
+                }
+
+                // Function to remove a blog box
+                function removeUpdateblogBox(updateblogId) {
+                    const updateblogBox = updateblog_container.querySelector(`#updateblogBox-${updateblogId}`);
+                    if (updateblogBox) updateblogBox.remove();
+
+                    // Ensure the corresponding checkbox is unchecked
+                    const checkbox = form.querySelector(`#updateblog_${updateblogId}`);
+                    if (checkbox) checkbox.checked = false;
+                }
+
+                // Handle checkbox selection (delegated for dynamic elements)
+                form.addEventListener("change", function(event) {
+                    if (event.target.classList.contains("updateblog-checkbox")) {
+                        const checkbox = event.target;
+                        const updateblogId = checkbox.dataset.id;
+                        const updateblogTitle = checkbox.dataset.title;
+
+                        if (checkbox.checked) {
+                            addUpdateblogBox(updateblogId, updateblogTitle);
+                        } else {
+                            removeUpdateblogBox(updateblogId);
+                        }
+                    }
+                });
+
+                // Prepopulate selected blogs for each form
+                form.querySelectorAll(".updateblog-checkbox:checked").forEach((checkbox) => {
+                    addUpdateblogBox(checkbox.dataset.id, checkbox.dataset.title);
+                });
+
+                // Initialize sorting only for this form
+                new Sortable(updateblog_container, {
+                    handle: ".handle",
+                    animation: 150,
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("[id^='editNewblogForm-']").forEach(form => {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    let formData = new FormData(this);
+                    let blogId = this.id.replace("editNewblogForm-", "").trim(); // Ensure clean ID
+                    console.log("Submitting update for Blog ID:", blogId); // Debugging
+
+                    let updateUrl = "<?= base_url('update-blog/') ?>" + blogId;
+
+                    fetch(updateUrl, {
+                            method: "POST",
+                            body: formData,
+                            headers: {
+                                "X-Requested-With": "XMLHttpRequest"
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Server response:", data); // Debugging
+                            if (data.status === "success") {
+                                alert("Blog updated successfully!");
+                                location.reload();
+                            } else {
+                                alert("Error: " + data.message);
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("An error occurred while updating.");
+                        });
+                });
+            });
+        });
+
+
+        function deleteblog(blogId) {
+            if (confirm("Are you sure you want to delete this blog?")) {
+                $.ajax({
+                    url: "<?= base_url('Store/deleteBlog') ?>",
+                    type: "POST",
+                    data: {
+                        id: blogId
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.status === "success") {
+                            $("#blogBox-" + blogId).remove();
+                            alert(response.message);
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function() {
+                        alert("An error occurred. Please try again.");
+                    }
+                });
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".edit-form").forEach(function(form) {
+                let contentTypeDropdown = form.querySelector("#contentType");
+                let blogSelection = form.querySelector("#blogSelection");
+                let tagSelection = form.querySelector("#tagSelection");
+
+                // Pre-fill and show the correct selection
+                if (contentTypeDropdown) {
+                    let selectedType = contentTypeDropdown.dataset.selected; // Get selected value from PHP
+                    contentTypeDropdown.value = selectedType;
+
+                    if (selectedType === "blogs") {
+                        blogSelection.style.display = "block";
+                        tagSelection.style.display = "none";
+                    } else if (selectedType === "tags") {
+                        tagSelection.style.display = "block";
+                        blogSelection.style.display = "none";
+                    }
+                }
+
+                // Show relevant selection when dropdown changes
+                contentTypeDropdown.addEventListener("change", function() {
+                    if (this.value === "blogs") {
+                        blogSelection.style.display = "block";
+                        tagSelection.style.display = "none";
+                    } else if (this.value === "tags") {
+                        tagSelection.style.display = "block";
+                        blogSelection.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JavaScript to Toggle Dropdowns Based on Content Type -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.contentTypeDropdown').forEach(function(dropdown) {
+                dropdown.addEventListener('change', function() {
+                    let id = this.getAttribute('data-id');
+                    let selectedValue = this.value;
+
+                    if (selectedValue === 'blogs') {
+                        document.querySelector('.blogSelection_' + id).style.display = 'block';
+                        document.querySelector('.tagSelection_' + id).style.display = 'none';
+                    } else if (selectedValue === 'tags') {
+                        document.querySelector('.blogSelection_' + id).style.display = 'none';
+                        document.querySelector('.tagSelection_' + id).style.display = 'block';
+                    } else {
+                        document.querySelector('.blogSelection_' + id).style.display = 'none';
+                        document.querySelector('.tagSelection_' + id).style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $('#contentType').change(function() {
+            let selectedType = $(this).val();
+            $('#selectedContentType').val(selectedType); // Update hidden field
+
+            // Clear previous selections
+            if (selectedType === 'blogs') {
+                $('.updateblog-checkbox').prop('checked', false);
+                $('#updateblogsboxcontainer').empty();
+                $('#updateblogDropdown').show();
+                $('#updatetagDropdown').hide();
+            } else if (selectedType === 'tags') {
+                $('.updatetag-checkbox').prop('checked', false);
+                $('#updatetagsboxcontainer').empty();
+                $('#updateblogDropdown').hide();
+                $('#updatetagDropdown').show();
+            }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $(".dropdown-search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(this).closest(".dropdown-menu").find(".search-item").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
 
 </body>

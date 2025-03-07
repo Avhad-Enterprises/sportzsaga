@@ -139,7 +139,7 @@
                                                         <input type="file" id="profile-picture" name="profile-picture" class="btn btn-primary mb-2" accept="image/*" />
                                                         <div id="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
                                                         <small class="d-block">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 300 x 300 px.</small>
-                                                        <button type="submit" class="btn btn-success mt-2">Upload</button>
+                                                        <button type="submit" id="upload-btn" class="btn btn-success mt-2" disabled>Upload</button>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
@@ -262,10 +262,6 @@
                                                                         <input class="form-control form-control-lg" name="name" value="<?= set_value('name', $user['name']) ?>" type="text" />
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label>Title</label>
-                                                                        <input class="form-control form-control-lg" name="employee_role" value="<?= set_value('employee_role', $user['employee_role']) ?>" type="text" />
-                                                                    </div>
-                                                                    <div class="form-group">
                                                                         <label>Email</label>
                                                                         <input class="form-control form-control-lg" name="email" value="<?= set_value('email', $user['email']) ?>" type="email" />
                                                                     </div>
@@ -303,8 +299,16 @@
                                                                         <input class="form-control form-control-lg" name="phone_no" value="<?= set_value('phone_no', $user['phone_no']) ?>" type="text" />
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label>Address</label>
-                                                                        <textarea class="form-control" name="address_information"><?= set_value('address_one', $user['address_one']) ?></textarea>
+                                                                        <label>Flat, House no., Building, Company, Apartment</label>
+                                                                        <input type="text" class="form-control" name="address_information_linef" value="<?= set_value('address_one', $user['address_one']) ?>">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Area, Street, Sector, Village</label>
+                                                                        <input type="text" class="form-control" name="address_information_linesec" value="<?= set_value('address_two', $user['address_two']) ?>">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Landmark</label>
+                                                                        <input type="text" class="form-control" name="landmark" value="<?= set_value('landmark', $user['landmark']) ?>">
                                                                     </div>
                                                                     <div class="form-group mb-0">
                                                                         <input type="submit" class="btn btn-primary" value="Update Information" />
@@ -827,11 +831,40 @@
             });
         </script>
 
-        <!-- Footer View Start -->
-        <?= $this->include('footer_view') ?>
-        <!-- Footer View End -->
+        <script>
+            document.getElementById('profile-picture').addEventListener('change', function(event) {
+                var file = event.target.files[0];
+                var errorMessage = document.getElementById('error-message');
+                var uploadButton = document.getElementById('upload-btn');
+
+                if (file) {
+                    var img = new Image();
+                    img.src = URL.createObjectURL(file);
+
+                    img.onload = function() {
+                        var width = this.width;
+                        var height = this.height;
+                        var fileSize = file.size / 1024 / 1024; // Convert size to MB
+
+                        if (width !== 300 || height !== 300) {
+                            errorMessage.textContent = "Error: Image must be exactly 300 x 300 pixels.";
+                            uploadButton.disabled = true;
+                        } else if (fileSize > 1) {
+                            errorMessage.textContent = "Error: File size must be under 1MB.";
+                            uploadButton.disabled = true;
+                        } else {
+                            errorMessage.textContent = "";
+                            uploadButton.disabled = false;
+                        }
+                    };
+                }
+            });
+        </script>
 
 </body>
 
+<!-- Footer View Start -->
+<?= $this->include('footer_view') ?>
+<!-- Footer View End -->
 
 </html>

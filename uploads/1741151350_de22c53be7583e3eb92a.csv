@@ -1,0 +1,92 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 05, 2025 at 04:32 AM
+-- Server version: 10.11.10-MariaDB
+-- PHP Version: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `u541614220_sportzsagandb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase_orders`
+--
+
+CREATE TABLE `purchase_orders` (
+  `id` int(11) NOT NULL,
+  `supplier_contact_person` varchar(255) DEFAULT NULL,
+  `supplier_email` varchar(255) DEFAULT NULL,
+  `supplier_phone` int(11) DEFAULT NULL,
+  `supplier_address` text DEFAULT NULL,
+  `po_number` varchar(50) NOT NULL,
+  `order_date` date NOT NULL,
+  `supplier_name` varchar(100) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `product_sku` varchar(255) DEFAULT NULL,
+  `quantity` int(11) NOT NULL,
+  `unit_price` decimal(10,2) NOT NULL,
+  `total_price` decimal(10,2) GENERATED ALWAYS AS (`quantity` * `unit_price`) STORED,
+  `warehouse_name` varchar(100) DEFAULT NULL,
+  `expected_delivery_date` date DEFAULT NULL,
+  `warehouse_location` date DEFAULT NULL,
+  `shipping_address` text DEFAULT NULL,
+  `shipping_method` varchar(50) DEFAULT NULL,
+  `shipping_cost` decimal(10,2) DEFAULT 0.00,
+  `payment_terms` varchar(100) DEFAULT NULL,
+  `order_status` enum('Pending','Approved','Dispatched','Received','Cancelled') DEFAULT 'Pending',
+  `approved_by` varchar(100) DEFAULT NULL,
+  `approval_date` date DEFAULT NULL,
+  `remarks` text DEFAULT NULL,
+  `attachments` text DEFAULT NULL,
+  `tax` decimal(10,2) DEFAULT 0.00,
+  `discount` decimal(10,2) DEFAULT 0.00,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `purchase_orders`
+--
+
+INSERT INTO `purchase_orders` (`id`, `supplier_contact_person`, `supplier_email`, `supplier_phone`, `supplier_address`, `po_number`, `order_date`, `supplier_name`, `product_name`, `product_sku`, `quantity`, `unit_price`, `warehouse_name`, `expected_delivery_date`, `warehouse_location`, `shipping_address`, `shipping_method`, `shipping_cost`, `payment_terms`, `order_status`, `approved_by`, `approval_date`, `remarks`, `attachments`, `tax`, `discount`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, NULL, NULL, '123456', '2025-03-05', 'John', '652', NULL, 100, 599.00, '3', '2025-03-09', NULL, 'Nashik', 'Ground', 198.99, 'COD', 'Pending', 'Aditya', '2025-03-06', 'Ro House No. 5, Ballaleshwar, Behind, Espalier School\r\nKamatwada Road, Trimurti Chowk\r\nNASHIK, MAHARASHTRA 422008\r\nIndia', 'https://storage.googleapis.com/mkv_imagesbackend/attachments/67c7d1f2941b1_c-img-1.jpg', 1000.00, 5000.00, '2025-03-05 04:24:19', '2025-03-05 04:24:19');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `purchase_orders`
+--
+ALTER TABLE `purchase_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `purchase_orders`
+--
+ALTER TABLE `purchase_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

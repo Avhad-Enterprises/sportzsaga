@@ -529,9 +529,10 @@ class Dashboard extends BaseController
         $session = session();
         $taskModel = new Registerusers_model();
 
+        // Get form data
         $taskName = $this->request->getPost('task-name');
         $taskDescription = $this->request->getPost('task-description');
-        $assignedTo = $this->request->getPost('employee-name');
+        $assignedTo = $this->request->getPost('employee-name'); // Employee ID
         $dueDate = $this->request->getPost('due-date');
         $url = $this->request->getPost('url');
         $prioritylevel = $this->request->getPost('priority-level');
@@ -539,16 +540,28 @@ class Dashboard extends BaseController
         $file = $this->request->getFile('task-file');
         $taskFile = null;
 
+        // ✅ **Validation: Check if an employee is selected**
+        if (empty($assignedTo)) {
+            return redirect()->back()->with('error', 'Please select an employee to assign the task.');
+        }
+
+        // ✅ **Validation: Check if the employee exists**
+        $assignedUser = $taskModel->find($assignedTo);
+        if (!$assignedUser) {
+            return redirect()->back()->with('error', 'The selected employee does not exist.');
+        }
+
+        // ✅ **Fetch assigned person's email**
+        $assignedEmail = $assignedUser['email'];
+
+        // ✅ **Handle File Upload**
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $newName = $file->getRandomName();
             $file->move('uploads/', $newName);
             $taskFile = $newName;
         }
 
-        // Fetch assigned person's email from the database
-        $assignedUser = $taskModel->find($assignedTo);
-        $assignedEmail = $assignedUser['email'];
-
+        // ✅ **Prepare Data for Insertion**
         $data = [
             'task_name' => $taskName,
             'description' => $taskDescription,
@@ -560,13 +573,15 @@ class Dashboard extends BaseController
             'url' => $url,
         ];
 
+        // ✅ **Insert Task into Database**
         $taskModel->insertask($data);
 
-        // Send email to the assigned person
+        // ✅ **Send Email Notification**
         $this->sendTaskEmail($assignedEmail, $data);
 
-        return redirect()->to('profile');
+        return redirect()->to('profile')->with('success', 'Task assigned successfully!');
     }
+
 
     private function sendTaskEmail($to, $taskData)
     {

@@ -160,7 +160,7 @@
                                         <label for="image">Image for PC</label>
                                         <input type="file" class="form-control" id="collection-pc-image"
                                             name="collection-pc-image" onchange="previewpccollectionImage(event)">
-                                        <small>Formats: JPG, PNG, JPEG, Recommended Size: 1150 x 300 px.</small>
+                                        <small>Formats: JPG, PNG, JPEG, Recommended Size: 1240 x 325 px.</small>
                                         <div class="collection_pc_preview">
                                             <img id="image-collpc-preview" src="#" alt="Image pc Preview"
                                                 style="display: none;">
@@ -176,41 +176,11 @@
                                         <label for="image">Image for Mobile</label>
                                         <input type="file" class="form-control" id="collection-mob-image"
                                             name="collection-mob-image" onchange="previewmobilecollectionImage(event)">
-                                        <small>Formats: JPG, PNG, JPEG, Recommended Size: 352 x 300 px.</small>
+                                        <small>Formats: JPG, PNG, JPEG, Recommended Size: 410 x 280 px.</small>
                                         <div class="collection_mob_preview">
                                             <img id="image-collmob-preview" src="#" alt="Image mob Preview"
                                                 style="display: none;">
                                         </div>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            This feild can't be Empty
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm">
-                                        <label for="url">Collection Type</label>
-                                        <select class="custom-select form-control" id="collection_type"
-                                            name="collection_type" style="width: 100%; height: 38px" required>
-                                            <option value="">Select</option>
-                                            <option value="tshirts">T-shirts</option>
-                                            <option value="shoes">Shoes</option>
-                                            <option value="sneakers">Sneakers</option>
-                                        </select>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            This field can't be empty.
-                                        </div>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label for="theme_template">Theme Template</label>
-                                        <input type="file" class="form-control" id="theme_template"
-                                            name="theme_template" disabled>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -423,7 +393,7 @@
                                     <div class="form-group">
                                         <label for="input1">Meta Title</label>
                                         <input type="text" name="collection-meta-title" class="form-control" id="input1"
-                                            placeholder=" Meta Title" readonly required>
+                                            placeholder=" Meta Title"  required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -434,7 +404,7 @@
                                     <div class="form-group">
                                         <label for="input2">Meta Description</label>
                                         <input type="text" name="collection-meta-description" class="form-control"
-                                            id="input2" placeholder=" Meta Description" readonly required>
+                                            id="input2" placeholder=" Meta Description"  required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -445,7 +415,7 @@
                                     <div class="form-group">
                                         <label for="url">URL</label>
                                         <input type="text" class="form-control" id="collection-url"
-                                            placeholder=" Meta URL" name="collection-url" readonly required>
+                                            placeholder=" Meta URL" name="collection-url"  required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>

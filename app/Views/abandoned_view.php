@@ -197,7 +197,7 @@
                                             <tr>
                                                 <td>
                                                     <input type="checkbox" name="user_ids[]"
-                                                        value="<?= $item['user_id'] ?? $item['session_id'] ?>"
+                                                        value="<?= $item['user_id'] ?? $item['guest_id'] ?>"
                                                         class="user-checkbox">
                                                 </td>
                                                 <td><?= $item['id'] ?></td>
@@ -206,9 +206,9 @@
                                                         <a href="<?= base_url('cart/edit_cart/' . $item['user_id']) ?>" class="text-success">
                                                             <?= $item['user_id'] ?>
                                                         </a>
-                                                    <?php elseif (!empty($item['session_id'])): ?>
-                                                        <a href="<?= base_url('cart/edit_cart/' . $item['session_id']) ?>" class="text-danger">
-                                                            <?= $item['session_id'] ?>
+                                                    <?php elseif (!empty($item['guest_id'])): ?>
+                                                        <a href="<?= base_url('cart/edit_cart/' . $item['guest_id']) ?>" class="text-danger">
+                                                            <?= $item['guest_id'] ?>
                                                         </a>
                                                     <?php else: ?>
                                                         NA
@@ -226,7 +226,7 @@
                                                 <td><?= $item['product_name'] ?></td>
                                                 <td><?= $item['quantity'] ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('abandoned-orders/send-email/' . ($item['user_id'] ?? $item['session_id'])) ?>"
+                                                    <a href="<?= base_url('abandoned-orders/send-email/' . ($item['user_id'] ?? $item['guest_id'])) ?>"
                                                         class="btn btn-primary btn-sm"
                                                         onclick="return confirm('Send email to this user or session?');">
                                                         Send Email

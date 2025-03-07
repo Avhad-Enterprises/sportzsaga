@@ -18,12 +18,14 @@ use App\Models\Footer_model;
 use App\Models\MemberModel;
 use App\Models\MarqueeTextModel;
 use App\Models\Productselection;
+use App\Models\BlogModel;
 use Google\Cloud\Storage\StorageClient;
 
 class Store extends BaseController
 {
     protected $aboutModel;
     protected $logoModel;
+
     public function __construct()
     {
         $this->aboutModel = new onlinestoremodal();
@@ -71,7 +73,6 @@ class Store extends BaseController
         $data['pages'] = $modal->getpages();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['availableProducts'] = $modal->getAllAvailableProducts();
-        $data['selectedProducts'] = $modal->getHomeProductIds();
         $data['selectedBlogs'] = $modal->getHomeBlogIds();
         $data['carousel2'] = $modal->getAllCarousel2();
         $data['marqueeTexts'] = $modal->getAllmarqueeText();
@@ -79,7 +80,8 @@ class Store extends BaseController
         $data['email_pop_up'] = $modal->getAllEmail_POP_UP();
         $data['availableCollections'] = $modal->getAllAvailableCollections();
         $data['selectedCollections'] = $modal->getHomeCollectionIds();
-        $data['product_list'] = $modal->Getproductsection(); // Fixing the undefined variable issue
+        $data['product_list'] = $modal->Getproductsection();
+        $data['os_blogs'] = $modal->getAllonlineblogs();
         // Fetch Instagram posts
         $accessToken = 'IGQWRPTVE0S2lUS3BpYWhNekZAvbnppeGh6OWFXT1F0VTR6Tld2UGduV0UyYU9tQjAtejY5WWxLQTZAaa3N1cmVwel9jX1FoNWFESk9zbm4yMnE2TWhJYzFrWW9PVnBpcmswb3JJVnNKY3hsUUJUTE9JbXpLLU1LTEEZD';
         $apiUrl = "https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,like_count,comments_count,children{media_url}&access_token={$accessToken}";
@@ -1658,7 +1660,7 @@ class Store extends BaseController
     }
 
 
-    public function update()
+    public function update_carsecond()
     {
         try {
             $model = new HomeCarousel2Model();
@@ -1693,21 +1695,12 @@ class Store extends BaseController
         }
     }
 
-
-
     public function delete($id)
     {
         $model = new HomeCarousel2Model();
         $model->delete($id);
         return redirect()->back()->with('message', 'Carousel deleted successfully');
     }
-
-
-
-
-
-
-
 
     //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
     public function save()
@@ -2073,43 +2066,52 @@ class Store extends BaseController
     ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
     public function add_new_product()
     {
-        $productModel = new Productselection();
+        $productModel = new onlinestoremodal();
 
+        // Get form inputs
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
 
-        // Ensure at least one selection is made
-        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
-            return $this->response->setJSON(['success' => false, 'message' => 'All fields are required, including at least one selection.']);
-        }
+        // Get selected product or collection IDs
+        $selectedProducts = $this->request->getPost('selected_product_items');
+        $selectedCarCollections = $this->request->getPost('selected_collection_items');
 
-        // Prepare selected items array only if they are not empty
         $selectedItems = [];
-        if (!empty($selectedProducts)) {
-            $selectedItems['products'] = $selectedProducts;
-        }
-        if (!empty($selectedCollections)) {
-            $selectedItems['collections'] = $selectedCollections;
+
+        if ($selectionType === 'product' && !empty($selectedProducts)) {
+            // No need to json_encode() again as it's already JSON
+            $selectedItems = $selectedProducts;
+        } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
+            // Decode JSON collection ID
+            $collectionid = json_decode($selectedCarCollections, true);
+            $collectionid = is_array($collectionid) ? reset($collectionid) : (string) $collectionid;
+
+            // Fetch product IDs linked to this collection
+            $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
+
+            if ($collectionData && !empty($collectionData['product_ids'])) {
+                // Convert comma-separated product IDs from the collection into a JSON array
+                $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
+            }
         }
 
+        // Prepare data for insertion
         $data = [
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => $selectedItems,
+            'collection_id' => $collectionid ?? null,
         ];
 
-        if ($productModel->insert($data)) {
-            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product selection saved successfully.');
+        // Insert into database
+        if ($productModel->InsertProductCarData($data)) {
+            return redirect()->back()->with('success', 'Product added successfully!');
         } else {
-            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save product selection.');
+            return redirect()->back()->with('error', 'Failed to add product.');
         }
     }
-
-
 
     public function fetch_products()
     {
@@ -2144,47 +2146,49 @@ class Store extends BaseController
 
     public function update_product($id)
     {
-        $productModel = new Productselection();
+        $productModel = new onlinestoremodal();
 
-        // Fetch existing product data
-        $product = $productModel->find($id);
-
-        if (!$product) {
-            return redirect()->to(base_url('online_store/index'))->with('error', 'Product not found.');
-        }
-
-        // Get input values
+        // Get form inputs
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
 
-        // Ensure at least one selection is made
-        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
-            return redirect()->to(base_url('online_store/index'))->with('error', 'All fields are required, including at least one selection.');
-        }
+        // Get selected product or collection IDs
+        $selectedProducts = $this->request->getPost('selected_product');
+        $selectedCarCollections = $this->request->getPost('selected_collection');
 
-        // Prepare selected items array only if they are not empty
         $selectedItems = [];
+
         if ($selectionType === 'product' && !empty($selectedProducts)) {
-            $selectedItems['products'] = $selectedProducts;
-        } elseif ($selectionType === 'collection' && !empty($selectedCollections)) {
-            $selectedItems['collections'] = $selectedCollections;
+            // Convert array to JSON format for storage
+            $selectedItems = json_encode($selectedProducts);
+        } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
+            // Decode JSON collection ID
+            $collectionid = is_array($selectedCarCollections) ? reset($selectedCarCollections) : (string) $selectedCarCollections;
+
+            // Fetch product IDs linked to this collection
+            $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
+
+            if ($collectionData && !empty($collectionData['product_ids'])) {
+                // Convert comma-separated product IDs from the collection into a JSON array
+                $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
+            }
         }
 
+        // Prepare data for update
         $data = [
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => $selectedItems,
+            'collection_id' => $collectionid ?? null,
         ];
 
-        // Update product in database
-        if ($productModel->update($id, $data)) {
-            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product updated successfully.');
+        // Update the database record
+        if ($productModel->updateProductData($id, $data)) {
+            return redirect()->back()->with('success', 'Product updated successfully!');
         } else {
-            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update product.');
+            return redirect()->back()->with('error', 'Failed to update product.');
         }
     }
 
@@ -2206,5 +2210,112 @@ class Store extends BaseController
         }
     }
 
+    public function saveBlogs()
+    {
+        try {
+            if ($this->request->getMethod() !== 'post') {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request method.']);
+            }
 
+            log_message('debug', 'Received POST data: ' . print_r($this->request->getPost(), true));
+
+            $contentType = trim($this->request->getPost('content_type'));
+
+            if (empty($contentType)) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Content type is missing.']);
+            }
+
+            $blogModel = new BlogModel();
+
+            $data = [
+                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_description' => $this->request->getPost('blogs_description'),
+                'content_type'      => $contentType, // Ensure it's being assigned
+                'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
+                'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
+                'added_by'          => session()->get('user_id') ?? 1,
+                'created_at'        => date('Y-m-d H:i:s'),
+                'updated_at'        => date('Y-m-d H:i:s'),
+            ];
+
+            log_message('debug', 'Data before insert: ' . json_encode($data));
+
+            if (!$blogModel->insert($data)) {
+                log_message('error', 'DB Insert Failed: ' . json_encode($blogModel->errors()));
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to insert data.']);
+            }
+
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Blog saved successfully.']);
+        } catch (\Exception $e) {
+            return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
+        }
+    }
+
+
+
+    public function updateBlog($id)
+    {
+        log_message('debug', 'Received blog ID: ' . $id); // Debugging
+
+        if ($this->request->getMethod() === 'post') {
+            $db = \Config\Database::connect();
+            $builder = $db->table('onlinestore_blogs');
+
+            $blogData = $builder->where('id', $id)->get()->getRowArray();
+
+            if (!$blogData) {
+                log_message('error', 'Blog not found for ID: ' . $id); // Log error
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Blog not found.']);
+            }
+
+            // Get the content type from the form
+            $content_type = $this->request->getPost('content_type');
+
+            // Prepare update data
+            $data = [
+                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_description' => $this->request->getPost('blogs_description'),
+                'content_type'      => $content_type, // Ensure content type is updated
+                'blogs'             => ($content_type === 'blogs') ? json_encode($this->request->getPost('blogs') ?? []) : json_encode([]),
+                'tags'              => ($content_type === 'tags') ? json_encode($this->request->getPost('tags') ?? []) : json_encode([]),
+                'updated_by'        => session()->get('user_id'),
+                'updated_at'        => date('Y-m-d H:i:s')
+            ];
+
+            log_message('debug', 'Updating blog ID: ' . $id . ' with data: ' . json_encode($data)); // Debugging
+
+            $builder->where('id', $id)->update($data);
+
+            if ($db->affectedRows() > 0) {
+                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog updated successfully.']);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'No changes made or update failed.']);
+            }
+        }
+
+        return $this->response->setStatusCode(400)->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+    }
+
+
+
+    public function deleteBlog()
+    {
+        $blogId = $this->request->getPost('id');
+
+        if ($blogId) {
+            $db = \Config\Database::connect();
+            $builder = $db->table('onlinestore_blogs');
+
+            // Delete the blog entry
+            $delete = $builder->where('id', $blogId)->delete();
+
+            if ($delete) {
+                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog deleted successfully!']);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete blog.']);
+            }
+        }
+
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+    }
 }
