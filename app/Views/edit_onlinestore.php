@@ -694,12 +694,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll(".select-type").forEach(function(select) {
                 select.addEventListener("change", function() {
-                    let productId = this.getAttribute("id").split("_")[2]; // Extract product ID correctly
+                    let productId = this.getAttribute("id").split("_")[2];
 
                     let productSection = document.getElementById(`ShowProduct_${productId}`);
                     let collectionSection = document.getElementById(`ShowCollection_${productId}`);
 
-                    if (!productSection || !collectionSection) return; // Prevent errors if elements are missing
+                    if (!productSection || !collectionSection) return;
 
                     if (this.value === "product") {
                         productSection.style.display = "block";
@@ -713,7 +713,6 @@
                     }
                 });
 
-                // ✅ Trigger change event on page load to ensure correct visibility
                 select.dispatchEvent(new Event("change"));
             });
         });
