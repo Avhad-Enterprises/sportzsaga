@@ -1970,28 +1970,58 @@
 
             let selectedPages = {};
             let fieldCounter = <?= isset($subtypes) && is_array($subtypes) ? count($subtypes) : 0 ?>;
-            let itemDataMap = {}; // ✅ Store item ID-to-Title mapping
+            let itemDataMap = {};
 
-            document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
-                checkbox.addEventListener("change", function () {
-                    const value = this.value;
-                    selectedPages[value] = this.checked ? value : delete selectedPages[value];
-                    updateSelectedPagesDisplay();
-                });
+            // ==========================
+            // ✅ PAGE TYPE SELECTION LOGIC ✅
+            // ==========================
+
+            const pageTypeDropdown = document.getElementById("togglePageDropdown");
+            const pageTypeDropdownContent = document.getElementById("pageCheckboxDropdown");
+            const selectedPageContainer = document.getElementById("selectedPageContainer");
+            const selectedPageTypesInput = document.getElementById("selectedPageTypes");
+
+            // Show/Hide the dropdown when clicking the button
+            pageTypeDropdown.addEventListener("click", function () {
+                pageTypeDropdownContent.style.display =
+                    pageTypeDropdownContent.style.display === "none" ? "block" : "none";
             });
 
-            function updateSelectedPagesDisplay() {
-                const selectedPageTypesContainer = document.getElementById("selectedPageTypesContainer");
-                selectedPageTypesContainer.innerHTML = "";
-                Object.keys(selectedPages).forEach(page => {
-                    const itemDiv = document.createElement("div");
-                    itemDiv.classList.add("selected-item");
-                    itemDiv.innerHTML = `${selectedPages[page]} <button data-value="${page}">&times;</button>`;
-                    selectedPageTypesContainer.appendChild(itemDiv);
+            // Function to update selected Page Types
+            function updateSelectedPageTypes() {
+                let selectedValues = [];
+                let badges = '';
+
+                document.querySelectorAll(".page-type-checkbox:checked").forEach(checkedBox => {
+                    selectedValues.push(checkedBox.value);
+                    badges += `<span class="badge badge-info m-1">${checkedBox.value}</span> `;
                 });
+
+                // Update hidden input field & UI
+                selectedPageTypesInput.value = selectedValues.join(",");
+                selectedPageContainer.innerHTML = badges;
             }
 
-            // **Handle Subtype Change**
+            // Attach change event to checkboxes
+            document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
+                checkbox.addEventListener("change", updateSelectedPageTypes);
+            });
+
+            // Load previously selected values on page load
+            let initialSelected = selectedPageTypesInput.value ? selectedPageTypesInput.value.split(",") : [];
+            document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
+                if (initialSelected.includes(checkbox.value)) {
+                    checkbox.checked = true;
+                }
+            });
+
+            // Ensure UI updates on page load
+            updateSelectedPageTypes();
+
+            // ==========================
+            // ✅ EXISTING LOGIC ✅
+            // ==========================
+
             document.querySelectorAll(".subtype-select").forEach(select => {
                 select.addEventListener("change", function () {
                     const fieldId = this.id.split("_")[1];
@@ -2000,7 +2030,6 @@
             });
 
             function fetchSubtypeItems(fieldId, subtype) {
-
                 fetch(`<?= base_url('header/get_items/') ?>${encodeURIComponent(subtype)}`)
                     .then(response => response.json())
                     .then(data => {
@@ -2012,10 +2041,10 @@
 
                             if (!document.querySelector(`#checkboxDropdown_${fieldId} input[value="${item.id}"]`)) {
                                 checkboxDropdown.innerHTML += `
-                        <label>
-                            <input type="checkbox" value="${item.id}" class="specific-item-checkbox">
-                            ${item.name} <!-- ✅ Display Name Instead of ID -->
-                        </label>`;
+                    <label>
+                        <input type="checkbox" value="${item.id}" class="specific-item-checkbox">
+                        ${item.name} <!-- ✅ Display Name Instead of ID -->
+                    </label>`;
                             }
                         });
 
@@ -2077,8 +2106,8 @@
                 let itemId = item.dataset.id;
                 if (itemDataMap[itemId]) {
                     item.innerHTML = `
-                ${itemDataMap[itemId]} <!-- ✅ Replace ID with Name -->
-                <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>`;
+            ${itemDataMap[itemId]} <!-- ✅ Replace ID with Name -->
+            <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>`;
                 }
             });
         });
