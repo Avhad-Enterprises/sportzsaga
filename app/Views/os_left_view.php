@@ -714,8 +714,8 @@
                                             </div>
 
                                             <?php
-                                                $selectedItems = json_decode($product['selected_items'], true);
-                                                $selectedProducts = $selectedItems;
+                                            $selectedItems = json_decode($product['selected_items'], true);
+                                            $selectedProducts = $selectedItems;
                                             ?>
 
                                             <!-- Product Field (Hidden by Default) -->
@@ -1486,85 +1486,82 @@
                 </li>
 
 
-                <!--------------------------------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
+                <!--------------------------------------------------------------------------------------- header page--------------------------------------------->
 
 
 
                 <!----------------------------------------------------------------collection form ---------------------------------------------------------------->
 
-                <form id="collection-form">
-                    <!-- Collection Section -->
-                    <li id="web-collection" style="display: none;" class="web-section dropdown">
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon bi bi-collection"></span>
-                            <span class="mtext">Collection Section</span>
-                        </a>
-                        <ul class="submenu">
-                            <div class="ImageUploadBox">
-                                <form id="collection-form">
+                <li id="web-collection" style="display: none;" class="web-section dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-collection"></span>
+                        <span class="mtext">Collection Section</span>
+                    </a>
+                    <ul class="submenu">
+                        <div class="ImageUploadBox">
+                            <form id="collection-form">
 
-                                    <div>
-                                        <label for="title">Title</label>
-                                        <input type="text" class="form-control" id="title" name="title"
-                                            value="<?= $page1_data['title'] ?? '' ?>" required>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" name="title" value="<?= $page1_data['title'] ?? '' ?>"
+                                        required>
+                                </div>
 
-                                    <!-- Favorite Blogs -->
-                                    <div class="form-group">
-                                        <label for="fav_product">Favorite product</label>
-                                        <div class="dropdown">
-                                            <button class="btn p-3 pr-5 btn-light dropdown-toggle" type="button"
-                                                id="favBlogsDropdown" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Select Favorite Product
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="favBlogsDropdown">
-                                                <?php
-                                                $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
-                                                foreach ($products as $Product):
-                                                    $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
-                                                ?>
-                                                    <div class="dropdown-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox"
-                                                                class="custom-control-input fav-blog-checkbox"
-                                                                id="fav_product_<?= $Product['product_id'] ?>"
-                                                                name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
-                                                                data-title="<?= $Product['product_title'] ?>" <?= $isChecked ?>>
+                                <!-- Favorite Blogs -->
+                                <div class="form-group">
+                                    <label for="fav_product">Favorite product</label>
+                                    <div class="dropdown">
+                                        <button class="btn p-3 pr-5 btn-secondary dropdown-toggle" type="button"
+                                            id="favBlogsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Select Favorite Product
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="favBlogsDropdown">
+                                            <?php
+                                            $selectedFavproduct = explode(',', $page1_data['fav_product'] ?? '');
+                                            foreach ($products as $Product):
+                                                $isChecked = in_array($Product['product_id'], $selectedFavproduct) ? 'checked' : '';
+                                            ?>
+                                                <div class="dropdown-item">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input fav-blog-checkbox"
+                                                            id="fav_product_<?= $Product['product_id'] ?>"
+                                                            name="fav_product[]" data-id="<?= $Product['product_id'] ?>"
+                                                            data-title="<?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>"
+                                                            <?= $isChecked ?>>
 
-                                                            <label class="custom-control-label"
-                                                                for="fav_product_<?= $Product['product_id'] ?>">
-                                                                <?= $Product['product_title'] ?>
-                                                            </label>
-                                                        </div>
+                                                        <label class="custom-control-label"
+                                                            for="fav_product_<?= $Product['product_id'] ?>">
+                                                            <?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?>
+                                                        </label>
                                                     </div>
-                                                <?php endforeach; ?>
-                                            </div>
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
+
+                                        <!-- Hidden Input to Store Selected Products -->
+                                        <input type="hidden" id="fav_blogs_input" name="fav_product"
+                                            value="<?= implode(',', $selectedFavproduct) ?>">
+
+                                        <!-- Display Selected Products -->
+                                        <ul class="sortable-list" id="favList">
+                                            <?php foreach ($products as $Product):
+                                                if (in_array($Product['product_id'], $selectedFavproduct)): ?>
+                                                    <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
+                                                        data-id="<?= $Product['product_id'] ?>">
+                                                        <span><?= htmlspecialchars($Product['product_title'], ENT_QUOTES, 'UTF-8') ?></span>
+                                                        <button class="btn btn-danger btn-sm remove-item"
+                                                            data-id="<?= $Product['product_id'] ?>">Delete</button>
+                                                    </li>
+                                            <?php endif;
+                                            endforeach; ?>
+                                        </ul>
                                     </div>
-
-                                    <!-- Display Selected Products -->
-                                    <ul class="sortable-list" id="favBlogsList">
-                                        <?php
-                                        foreach ($products as $Product):
-                                            if (in_array($Product['product_id'], $selectedFavproduct)): ?>
-                                                <li class="sortable-item p-2 mb-2 bg-light rounded border d-flex justify-content-between align-items-center"
-                                                    data-id="<?= $Product['product_id'] ?>">
-                                                    <span><?= $Product['product_title'] ?></span>
-                                                    <button class="btn btn-danger btn-sm remove-item"
-                                                        data-id="<?= $Product['product_id'] ?>">Delete</button>
-                                                </li>
-                                        <?php endif;
-                                        endforeach; ?>
-                                    </ul>
-                                    <input type="hidden" name="fav_product" id="fav_blogs_input"
-                                        value="<?= $page1_data['fav_product'] ?? '' ?>">
-
-                                </form>
-                            </div>
-                        </ul>
-                    </li>
-                </form>
+                            </form>
+                        </div>
+                    </ul>
+                </li>
 
                 <!---------------------------------------------------------------- header page----------------------------------------------------------------------------------------------------->
 
