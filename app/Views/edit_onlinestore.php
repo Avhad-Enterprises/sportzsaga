@@ -110,6 +110,7 @@
                 <!-- Page Main Content Start -->
 
                 <div class="d-flex justify-content-between align-items-center w-100">
+                    
                     <div class="form-group col-md-4">
                         <label for="web_section">Section</label>
                         <select name="web_section" id="web_section" class="form-control">
@@ -132,7 +133,7 @@
                             <option value="Email_POP_UP">Email POP UP</option>
                         </select>
                     </div>
-                    
+
                     <div class="d-flex align-items-center gap-2">
                         <div id="web-home" class="web-section">
                             <button type="button" id="updatehomepage" class="btn m-4 btn-primary">Update Home
@@ -4778,8 +4779,6 @@
         });
     </script>
 
-    <!-- chaitanya blogs-->
-
     <!-- JavaScript for Handling Dropdown Visibility -->
     <script>
         document.getElementById("contentType").addEventListener("change", function() {
@@ -4803,14 +4802,8 @@
             });
         });
 
-
-        //////////////////////////////////////////////////////////////////////////////////////////////
-
-
         const newblog_container = document.getElementById("newblogsboxcontainer");
         const newblogCheckboxes = document.querySelectorAll(".newblog-checkbox");
-
-
 
         // Handle checkbox selection
         newblogCheckboxes.forEach((checkbox) => {
@@ -4861,10 +4854,6 @@
             handle: ".handle",
             animation: 150,
         });
-
-
-        //////////////////////////////////////////////////////////////////////////////////////////////
-
 
         const newtag_container = document.getElementById("newtagsboxcontainer");
         const newtagCheckboxes = document.querySelectorAll(".newtag-checkbox");
@@ -4918,10 +4907,6 @@
             handle: ".handle",
             animation: 150,
         });
-
-
-
-        //////////////////////////////////////////////////////////////////////////////////////////////
 
 
         function toggleEditFormblog(osblogsId) {
@@ -5203,108 +5188,4 @@
         }
     </script>
 
-
-
-
-
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".edit-form").forEach(function (form) {
-        let contentTypeDropdown = form.querySelector("#contentType");
-        let blogSelection = form.querySelector("#blogSelection");
-        let tagSelection = form.querySelector("#tagSelection");
-
-        // Pre-fill and show the correct selection
-        if (contentTypeDropdown) {
-            let selectedType = contentTypeDropdown.dataset.selected; // Get selected value from PHP
-            contentTypeDropdown.value = selectedType;
-
-            if (selectedType === "blogs") {
-                blogSelection.style.display = "block";
-                tagSelection.style.display = "none";
-            } else if (selectedType === "tags") {
-                tagSelection.style.display = "block";
-                blogSelection.style.display = "none";
-            }
-        }
-
-        // Show relevant selection when dropdown changes
-        contentTypeDropdown.addEventListener("change", function () {
-            if (this.value === "blogs") {
-                blogSelection.style.display = "block";
-                tagSelection.style.display = "none";
-            } else if (this.value === "tags") {
-                tagSelection.style.display = "block";
-                blogSelection.style.display = "none";
-            }
-        });
-    });
-});
-
-</script>
-
-
-
-
-<!-- JavaScript to Toggle Dropdowns Based on Content Type -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.contentTypeDropdown').forEach(function(dropdown) {
-        dropdown.addEventListener('change', function() {
-            let id = this.getAttribute('data-id');
-            let selectedValue = this.value;
-
-            if (selectedValue === 'blogs') {
-                document.querySelector('.blogSelection_' + id).style.display = 'block';
-                document.querySelector('.tagSelection_' + id).style.display = 'none';
-            } else if (selectedValue === 'tags') {
-                document.querySelector('.blogSelection_' + id).style.display = 'none';
-                document.querySelector('.tagSelection_' + id).style.display = 'block';
-            } else {
-                document.querySelector('.blogSelection_' + id).style.display = 'none';
-                document.querySelector('.tagSelection_' + id).style.display = 'none';
-            }
-        });
-    });
-});
-</script>
-
-<script>
-  $('#contentType').change(function () {
-    let selectedType = $(this).val();
-    $('#selectedContentType').val(selectedType); // Update hidden field
-
-    // Clear previous selections
-    if (selectedType === 'blogs') {
-        $('.updateblog-checkbox').prop('checked', false);
-        $('#updateblogsboxcontainer').empty();
-        $('#updateblogDropdown').show();
-        $('#updatetagDropdown').hide();
-    } else if (selectedType === 'tags') {
-        $('.updatetag-checkbox').prop('checked', false);
-        $('#updatetagsboxcontainer').empty();
-        $('#updateblogDropdown').hide();
-        $('#updatetagDropdown').show();
-    }
-});
-
-</script>
-
-
-
-<script>
-
-$(document).ready(function () {
-    $(".dropdown-search").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $(this).closest(".dropdown-menu").find(".search-item").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-    });
-});
-
-</script>
 </body>
