@@ -17,14 +17,14 @@ class BlogSettingsController extends BaseController
         $settings = $blogSettingsModel->find(1); // Assuming there's a single row for blog settings with ID=1
 
         // Convert comma-separated string to array (Ensure no empty values)
-        $selectedBlogIds = array_filter(explode(',', $settings['blogs'] ?? ''));
+       // $selectedBlogIds = array_filter(explode(',', $settings['blogs'] ?? ''));
 
         // Fetch **all blogs** from the table (to display in dropdown)
-        $blogsModel = new Blogs_model();
-        $allBlogs = $blogsModel->findAll(); // ✅ Fetch all blogs
+        //$blogsModel = new Blogs_model();
+        //$allBlogs = $blogsModel->findAll(); // ✅ Fetch all blogs
 
         // Fetch **only selected blogs** (for displaying in the sortable list)
-        $selectedBlogs = !empty($selectedBlogIds) ? $blogsModel->whereIn('blog_id', $selectedBlogIds)->findAll() : [];
+       // $selectedBlogs = !empty($selectedBlogIds) ? $blogsModel->whereIn('blog_id', $selectedBlogIds)->findAll() : [];
 
         // Fetch all available tags
         $tagsModel = new TagModel();
@@ -32,8 +32,8 @@ class BlogSettingsController extends BaseController
 
         return view('admin/blog_settings', [
             'settings' => $settings,        // Pass saved settings
-            'blogs' => $allBlogs,           // ✅ Pass all blogs for dropdown
-            'selectedBlogs' => $selectedBlogs, // ✅ Pass selected blogs for sortable list
+            //'blogs' => $allBlogs,           // ✅ Pass all blogs for dropdown
+            //selectedBlogs' => $selectedBlogs, // ✅ Pass selected blogs for sortable list
             'tags' => $tags,                // Pass all tags
         ]);
     }
@@ -53,10 +53,10 @@ class BlogSettingsController extends BaseController
 
             $data = [
                 'blogs_title' => $this->request->getPost('blogs_title') ?? '',
-                'blogs' => implode(',', $blogsOrder),
+               // 'blogs' => implode(',', $blogsOrder),
                 'popular_tags' => implode(',', $tagsOrder),
                 'popular_posts' => implode(',', $postsOrder),
-                'meta_title' => $this->request->getPost('meta_title') ?? '',
+                //'meta_title' => $this->request->getPost('meta_title') ?? '',
             ];
 
             if ($model->saveSettings($data)) {
@@ -70,6 +70,13 @@ class BlogSettingsController extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'An error occurred: ' . $e->getMessage()]);
         }
     }
+
+
+
+
+
+
+
 
 
 

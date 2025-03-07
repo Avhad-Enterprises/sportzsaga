@@ -808,21 +808,21 @@
 
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Initialize sortable for blogs
-            new Sortable(document.getElementById('blogs-list'), {
-                animation: 150,
-                ghostClass: 'sortable-ghost',
-                onEnd: function() {
-                    console.log("Blogs reordered");
-                }
-            });
+            //new Sortable(document.getElementById('blogs-list'), {
+                //animation: 150,
+                //ghostClass: 'sortable-ghost',
+                //onEnd: function () {
+                 //   console.log("Blogs reordered");
+               // }
+          //  });
 
             // Initialize sortable for tags
             new Sortable(document.getElementById('tags-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Tags reordered");
                 }
             });
@@ -831,7 +831,7 @@
             new Sortable(document.getElementById('posts-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function() {
+                onEnd: function () {
                     console.log("Posts reordered");
                 }
             });
@@ -848,7 +848,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
 
             function updateSelections(listId, inputId, checkboxClass) {
                 const selectedItems = new Set(); // Ensure unique selections
@@ -899,7 +899,7 @@
                     sortableInstances[listId] = new Sortable(document.getElementById(listId), {
                         animation: 150,
                         ghostClass: 'sortable-ghost',
-                        onEnd: function() {
+                        onEnd: function () {
                             const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                             document.getElementById(inputId).value = orderedIds.join(',');
                         }
@@ -908,22 +908,16 @@
             }
 
             // Initialize sortable on page load
-            initializeSortable('blogsList', 'blogs_input');
+           // initializeSortable('blogsList', 'blogs_input');
             initializeSortable('tagsList', 'tags_input');
             initializeSortable('popularPostsList', 'popular_posts_input');
 
             // Update selections on page load
-            updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
+            //updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
             updateSelections('tagsList', 'tags_input', 'tag-checkbox');
             updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
 
-            document.addEventListener('change', function(event) {
-                if (event.target.classList.contains('blog-checkbox')) {
-                    updateSelections('blogsList', 'blogs_input', 'blog-checkbox');
-                }
-            });
-
-
+            
 
             document.querySelectorAll('.tag-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('change', () => updateSelections('tagsList', 'tags_input', 'tag-checkbox'));
@@ -940,24 +934,24 @@
 
             // Form submission with correct hidden input values
             const updateBlogBtn = document.getElementById("updateblogpage");
-            updateBlogBtn.addEventListener("click", function(e) {
+            updateBlogBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 const formData = new FormData();
 
                 // Get selected values from hidden inputs
-                formData.append("blogs", document.getElementById("blogs_input").value);
+                //formData.append("blogs", document.getElementById("blogs_input").value);
                 formData.append("popular_tags", document.getElementById("tags_input").value);
                 formData.append("popular_posts", document.getElementById("popular_posts_input").value);
 
                 // Other form fields
                 formData.append("blogs_title", document.getElementById("blogs_title").value);
-                formData.append("meta_title", document.getElementById("meta_title").value);
+                //formData.append("meta_title", document.getElementById("meta_title").value);
 
                 fetch("<?= base_url('admin/blog_settings/save') ?>", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
