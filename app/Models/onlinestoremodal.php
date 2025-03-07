@@ -272,6 +272,13 @@ class onlinestoremodal extends Model
         return $this->db->table('collection')->where('collection_id', $id)->get()->getRowArray();
     }
 
+    public function updateProductData($id, $data)
+    {
+        return $this->db->table('products_section')
+            ->where('id', $id)
+            ->update($data);
+    }
+
     public function getAllonlineblogs()
     {
         return $this->db->table('onlinestore_blogs')->get()->getResultArray();

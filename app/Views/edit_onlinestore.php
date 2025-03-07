@@ -690,6 +690,51 @@
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.getAttribute("id").split("_")[2]; // Extract product ID correctly
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+
+                    if (!productSection || !collectionSection) return; // Prevent errors if elements are missing
+
+                    if (this.value === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                    } else if (this.value === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+
+                // ✅ Trigger change event on page load to ensure correct visibility
+                select.dispatchEvent(new Event("change"));
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Apply Select2 to all dropdowns
+            $('.custom-select2').select2();
+
+            // Change selected option styling inside the dropdown
+            $('.custom-select2').on('select2:select select2:unselect', function() {
+                $('.select2-selection__choice').css({
+                    "background-color": "#007bff", // Background color
+                    "color": "#ffffff", // Text color
+                    "border": "1px solid #0056b3" // Border color
+                });
+            });
+        });
+    </script>
+
     <!-------------------------------------------------------------------------------- carousel 2 --------------------------------------------------------------------------------------->
 
     <script>

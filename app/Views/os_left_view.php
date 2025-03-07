@@ -713,14 +713,15 @@
                                                 </select>
                                             </div>
 
+                                            <?php
+                                                $selectedItems = json_decode($product['selected_items'], true);
+                                                $selectedProducts = $selectedItems;
+                                            ?>
+
                                             <!-- Product Field (Hidden by Default) -->
                                             <div class="form-group product-section" id="ShowProduct_<?= $product['id'] ?>" style="<?= ($product['selection_type'] == 'product') ? 'display:block;' : 'display:none;' ?>">
                                                 <label for="selected_products_<?= $product['id'] ?>">Selected Products</label>
-                                                <select class="custom-select2 form-control selected-products" id="selected_products_<?= $product['id'] ?>" name="selected_product[]" multiple>
-                                                    <?php
-                                                    $selectedItems = json_decode($product['selected_items'], true);
-                                                    $selectedProducts = $selectedItems['products'] ?? [];
-                                                    ?>
+                                                <select class="custom-select2 form-control selected-products" id="selected_products_<?= $product['id'] ?>" name="selected_product[]" multiple style="width: 100%; height: 38px">
                                                     <?php foreach ($products as $prod): ?>
                                                         <option value="<?= $prod['product_id']; ?>" <?= in_array($prod['product_id'], $selectedProducts) ? 'selected' : '' ?>>
                                                             <?= esc($prod['product_title']); ?>
@@ -732,12 +733,9 @@
                                             <!-- Collection Field (Hidden by Default) -->
                                             <div class="form-group collection-section" id="ShowCollection_<?= $product['id'] ?>" style="<?= ($product['selection_type'] == 'collection') ? 'display:block;' : 'display:none;' ?>">
                                                 <label for="selected_collections_<?= $product['id'] ?>">Selected Collections</label>
-                                                <select class="custom-select2 form-control selected-collections" id="selected_collections_<?= $product['id'] ?>" name="selected_collection[]" multiple>
-                                                    <?php
-                                                    $selectedCollections = $selectedItems['collections'] ?? [];
-                                                    ?>
+                                                <select class="custom-select2 form-control selected-collections" id="selected_collections_<?= $product['id'] ?>" name="selected_collection[]" multiple style="width: 100%; height: 38px">
                                                     <?php foreach ($collections as $col): ?>
-                                                        <option value="<?= $col['collection_id']; ?>" <?= in_array($col['collection_id'], $selectedCollections) ? 'selected' : '' ?>>
+                                                        <option value="<?= $col['collection_id']; ?>" <?= $col['collection_id'] == $product['collection_id'] ? 'selected' : '' ?>>
                                                             <?= esc($col['collection_title']); ?>
                                                         </option>
                                                     <?php endforeach; ?>

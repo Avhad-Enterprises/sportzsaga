@@ -2146,47 +2146,49 @@ class Store extends BaseController
 
     public function update_product($id)
     {
-        $productModel = new Productselection();
+        $productModel = new onlinestoremodal();
 
-        // Fetch existing product data
-        $product = $productModel->find($id);
-
-        if (!$product) {
-            return redirect()->to(base_url('online_store/index'))->with('error', 'Product not found.');
-        }
-
-        // Get input values
+        // Get form inputs
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
 
-        // Ensure at least one selection is made
-        if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
-            return redirect()->to(base_url('online_store/index'))->with('error', 'All fields are required, including at least one selection.');
-        }
+        // Get selected product or collection IDs
+        $selectedProducts = $this->request->getPost('selected_product');
+        $selectedCarCollections = $this->request->getPost('selected_collection');
 
-        // Prepare selected items array only if they are not empty
         $selectedItems = [];
+
         if ($selectionType === 'product' && !empty($selectedProducts)) {
-            $selectedItems['products'] = $selectedProducts;
-        } elseif ($selectionType === 'collection' && !empty($selectedCollections)) {
-            $selectedItems['collections'] = $selectedCollections;
+            // Convert array to JSON format for storage
+            $selectedItems = json_encode($selectedProducts);
+        } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
+            // Decode JSON collection ID
+            $collectionid = is_array($selectedCarCollections) ? reset($selectedCarCollections) : (string) $selectedCarCollections;
+
+            // Fetch product IDs linked to this collection
+            $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
+
+            if ($collectionData && !empty($collectionData['product_ids'])) {
+                // Convert comma-separated product IDs from the collection into a JSON array
+                $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
+            }
         }
 
+        // Prepare data for update
         $data = [
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => $selectedItems,
+            'collection_id' => $collectionid ?? null,
         ];
 
-        // Update product in database
-        if ($productModel->update($id, $data)) {
-            return redirect()->to(base_url('online_store/edit'))->with('success', 'Product updated successfully.');
+        // Update the database record
+        if ($productModel->updateProductData($id, $data)) {
+            return redirect()->back()->with('success', 'Product updated successfully!');
         } else {
-            return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update product.');
+            return redirect()->back()->with('error', 'Failed to update product.');
         }
     }
 

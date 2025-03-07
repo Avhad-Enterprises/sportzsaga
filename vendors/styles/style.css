@@ -7021,3 +7021,22 @@ textarea {
 #productSearch {
     margin: 6px 0;
 }
+
+/* Change background color and text color of selected options */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #007bff !important; /* Change background color */
+    color: white !important; /* Change text color */
+    border: 1px solid #0056b3 !important; /* Add border for better visibility */
+}
+
+/* Change hover effect of selected options */
+.select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
+    background-color: #0056b3 !important;
+    color: #ffffff !important;
+}
+
+/* Change dropdown selected option background */
+.select2-results__option[aria-selected=true] {
+    background-color: #007bff !important;
+    color: white !important;
+}
