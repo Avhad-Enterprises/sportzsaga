@@ -1662,7 +1662,6 @@
                         <div class="ImageUploadBox" id="pageAddForm" style="display: none;">
                             <form id="pageForm" action="<?= base_url('header/add_new_page') ?>" method="post"
                                 enctype="multipart/form-data">
-
                                 <!-- Title -->
                                 <div class="form-group">
                                     <label for="title">Title</label>
@@ -1685,6 +1684,7 @@
                                         Dimensions: 424 x 412 px.</small>
                                 </div>
 
+
                                 <!-- Visibility -->
                                 <div class="form-group">
                                     <label for="visibility">Visibility</label>
@@ -1703,7 +1703,8 @@
                                         </button>
                                         <div id="pageTypeCheckboxDropdown" class="dropdown-content"
                                             style="display: none;">
-
+                                            <!--  <label><input type="checkbox" value="collection" class="page-type-checkbox">
+                                                Collection</label> -->
                                             <label><input type="checkbox" value="blogs" class="page-type-checkbox">
                                                 Blogs</label>
                                             <label><input type="checkbox" value="about_us" class="page-type-checkbox">
@@ -1730,6 +1731,7 @@
 
                                 <!-- 2nd Field: Select Subtype -->
                                 <div class="form-group" id="subtypeField" style="display: none;">
+                                    <label for="subtype">Select Subtype</label>
                                     <select name="subtype[]" id="subtype_${fieldCounter}"
                                         class="form-control subtype-select">
                                         <option value="" disabled selected>Select Subtype</option>
@@ -1741,6 +1743,7 @@
                                 </div>
 
                                 <div class="form-group" id="specificItemField" style="display: none;">
+                                    <label>Select Specific Items</label>
                                     <div id="specificItemDropdown" class="dropdown-container">
                                         <button type="button" id="toggleDropdown" class="form-control">
                                             Select Items
@@ -1840,31 +1843,6 @@
                                                     </select>
                                                 </div>
 
-                                            <?php
-                                            // Ensure `$page['page_type']` is an array if multiple values exist
-                                            $pageTypes = isset($page['page_type']) ? explode(',', $page['page_type']) : [];
-                                            ?>
-
-                                            <div class="form-group">
-                                                <label>Select Page Type</label>
-                                                <div id="pageTypeContainer" class="dropdown-container">
-                                                    <button type="button" id="togglePageDropdown" class="form-control">
-                                                        Select Page Type ▼
-                                                    </button>
-                                                    <div id="pageCheckboxDropdown" class="dropdown-content"
-                                                        style="display: none;">
-                                                        <label>
-                                                            <input type="checkbox" value="blogs" class="page-type-checkbox"
-                                                                <?= in_array('blogs', $pageTypes) ? 'checked' : '' ?>> Blogs
-                                                        </label>
-                                                        <label>
-                                                            <input type="checkbox" value="about_us"
-                                                                class="page-type-checkbox" <?= in_array('about_us', $pageTypes) ? 'checked' : '' ?>> About Us
-                                                        </label>
-                                                        <label>
-                                                            <input type="checkbox" value="contact_us"
-                                                                class="page-type-checkbox" <?= in_array('contact_us', $pageTypes) ? 'checked' : '' ?>> Contact Us
-                                                        </label>
                                                 <!-- Select Page Type -->
                                                 <div class="form-group">
                                                     <label>Select Page Type</label>
@@ -1888,28 +1866,6 @@
                                                         value="<?= esc($page['page_type']) ?>">
                                                 </div>
 
-                                                <!-- Selected Page Types Display -->
-                                                <div id="selectedPageContainer" class="selected-items-container">
-                                                    <?php foreach ($pageTypes as $type): ?>
-                                                        <span class="badge badge-info"><?= esc($type) ?> <button type="button"
-                                                                class="remove-page-type"
-                                                                data-type="<?= esc($type) ?>">&times;</button></span>
-                                                    <?php endforeach; ?>
-                                                </div>
-
-                                                <!-- Hidden Input to Store Selected Page Types -->
-                                                <input type="hidden" name="page_type" id="selectedPageTypes"
-                                                    value="<?= esc(implode(',', $pageTypes)) ?>">
-                                            </div>
-
-                                            <!-- Plus Button to Add New Subtype -->
-                                            <div class="hr-container">
-                                                <hr class="line">
-                                                <button type="button" id="toggleSubButton" class="circle-button">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                                <hr class="line">
-                                            </div>
                                                 <!-- Plus Button to Add New Subtype -->
                                                 <div class="hr-container">
                                                     <hr class="line">
@@ -2423,6 +2379,7 @@
                         </div>
                     </ul>
                 </li>
+
 
 
 
