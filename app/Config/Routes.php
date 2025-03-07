@@ -506,6 +506,7 @@ $routes->delete('header/delete_page/(:num)', 'HeaderController::delete_page/$1')
 //All blog
 $routes->post('admin/blog_settings/save', 'BlogSettingsController::save');
 
+
 //singleblog 
 $routes->post('admin/single_blog/store', 'SingleBlogController::store');
 

@@ -1119,7 +1119,85 @@
                     </ul>
                 </li>
 
-                <!-------------------------------------------------------------------------------------------------- All Blogs Form -------------------------------------------------------------------->
+
+
+
+ <!-------------------------------------------------------------------------------------------------- All Blogs Form -------------------------------------------------------------------->
+
+
+                <!-- Blogs Section -->
+                <li id="web-blogs" class="web-section dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-list"></span>
+                        <span class="mtext">Blogs Section</span>
+                    </a>
+                    <ul class="submenu">
+                        <div class="ImageUploadBox">
+                            <form id="blog-settings-form">
+                                <!-- Blogs Title -->
+                                <div class="form-group">
+                                    <label for="blogs_title">Blogs Section Title</label>
+                                    <input type="text" name="blogs_title" id="blogs_title" class="form-control"
+                                        value="<?= esc($settings['blogs_title'] ?? '') ?>">
+                                </div>
+
+                                <!-- Popular Tags -->
+                                <div class="form-group">
+                                    <label for="popular_tags">Popular Tags</label>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="tagsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Select Tags
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="tagsDropdown">
+                                            <?php foreach ($tags as $tag): ?>
+                                                <div class="dropdown-item">
+                                                    <input type="checkbox" class="tag-checkbox" id="tag_<?= $tag['id'] ?>"
+                                                        data-id="<?= $tag['id'] ?>"
+                                                        data-title="<?= esc($tag['tag_name']) ?>" <?= in_array($tag['id'], explode(',', $settings['popular_tags'] ?? '')) ? 'checked' : '' ?>>
+                                                    <label for="tag_<?= $tag['id'] ?>"><?= esc($tag['tag_name']) ?></label>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="sortable-list" id="tagsList"></ul>
+                                <input type="hidden" name="popular_tags" id="tags_input"
+                                    value="<?= $settings['popular_tags'] ?? '' ?>">
+
+                                <!-- Popular Posts -->
+                                <div class="form-group">
+                                    <label for="popular_posts">Select Popular Posts</label>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="popularPostsDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Select Popular Posts
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="popularPostsDropdown">
+                                            <?php foreach ($blogs as $blog): ?>
+                                                <div class="dropdown-item">
+                                                    <input type="checkbox" class="popular-post-checkbox"
+                                                        id="post_<?= $blog['blog_id'] ?>" data-id="<?= $blog['blog_id'] ?>"
+                                                        data-title="<?= esc($blog['blog_title']) ?>"
+                                                        <?= in_array($blog['blog_id'], explode(',', $settings['popular_posts'] ?? '')) ? 'checked' : '' ?>>
+                                                    <label
+                                                        for="post_<?= $blog['blog_id'] ?>"><?= esc($blog['blog_title']) ?></label>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="sortable-list" id="popularPostsList"></ul>
+                                <input type="hidden" name="popular_posts" id="popular_posts_input"
+                                    value="<?= $settings['popular_posts'] ?? '' ?>">
+                            </form>
+                        </div>
+                    </ul>
+                </li>
+
+                <!-------------------------------------------------------------------------------------------------- All Blogs Form Chaitanya-------------------------------------------------------------------->
 
 
                 <!-- Blogs Section -->
