@@ -54,10 +54,10 @@ class Blogs extends BaseController
         $data['sheader'] = $controlmodel->getMenusecondaryLinks();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->findAll();  // Fetch all tags from the tags table
+        $data['tags'] = $tagModel->findAll();
 
         // Fetch all users
-        $data['users'] = $userModel->findAll(); // Fetch all users from the users table
+        $data['users'] = $userModel->findAll();
 
         return view('addnew_blog_view', $data);
     }
@@ -112,12 +112,18 @@ class Blogs extends BaseController
         // Generate Meta URL from Title
         $metaUrl = $this->generateSlug($this->request->getPost('blog-title'));
 
+        // Fetch the selected tags from the form
+        $blogTags = $this->request->getPost('blog-tags');
+
+        // Convert the array into a JSON string (if not empty)
+        $blogTagsJson = !empty($blogTags) ? json_encode($blogTags) : json_encode([]);
+
         // Gather the rest of the form data
         $data = [
             'blog_title' => $this->request->getPost('blog-title'),
             'blog_description' => $this->request->getPost('blog-description'),
             'main_description' => $this->request->getPost('blog-main-content'),
-            'blog_tags' => $this->request->getPost('blog-tags'),
+            'blog_tags' => $blogTagsJson,
             'category' => $this->request->getPost('blog-category'),
             'blog_visibility' => $this->request->getPost('blog-visibility'),
             'author_name' => $this->request->getPost('blog-author-name'),
@@ -190,9 +196,11 @@ class Blogs extends BaseController
     public function editblogs($blog_id)
     {
         $model = new blogs_model();
+        $tagModel = new TagModel();
         $data['posts'] = $model->getblogbyid($blog_id);
         $catmodel = new CategoryModel();
         $data['categories'] = $catmodel->getAllCategories();
+        $data['tags'] = $tagModel->findAll();
         return view('edit_blog_view', $data);
     }
 
@@ -254,6 +262,12 @@ class Blogs extends BaseController
             $updatemobileimagename = $currentMobileImage;
         }
 
+        // Fetch the selected tags from the form
+        $blogTags = $this->request->getPost('blog-tags');
+
+        // Convert the array into a JSON string (if not empty)
+        $blogTagsJson = !empty($blogTags) ? json_encode($blogTags) : json_encode([]);
+
         // Handle additional images (section images)
         $blogData = [
             'blog_title' => $title,
@@ -263,7 +277,7 @@ class Blogs extends BaseController
             'is_default' => $carousel,
             'blog_image' => $updateimagename,
             'blog_mobile_image' => $updatemobileimagename,
-            'blog_tags' => $this->request->getPost('blog-tags'),
+            'blog_tags' => $blogTagsJson,
             'category' => $this->request->getPost('blog-category'),
             'author_name' => $this->request->getPost('blog-author-name'),
             'blog_metatitle' => $this->request->getPost('blog-meta-title'),
@@ -402,6 +416,31 @@ class Blogs extends BaseController
             return redirect()->to('blogs');
         } else {
             echo 'Invalid file format. Please upload an Excel file.';
+        }
+    }
+
+    public function AddNewTag()
+    {
+        $Model = new blogs_model();
+
+        // Get AJAX request data
+        $tagName = $this->request->getPost('tag_name');
+        $tagValue = $this->request->getPost('tag_value');
+
+        if (empty($tagName) || empty($tagValue)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Tag Name and Value are required']);
+        }
+
+        // Insert into database
+        $data = [
+            'tag_name' => $tagName,
+            'tag_value' => $tagValue
+        ];
+
+        if ($Model->InsertNewBlogTag($data)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Tag added successfully']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to add tag']);
         }
     }
 }

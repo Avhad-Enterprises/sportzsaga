@@ -63,6 +63,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('blogs/editblogs/(:num)', 'Blogs::editblogs/$1');
    $routes->post('blogs/editmyblog/(:num)', 'Blogs::editmyblog/$1');
    $routes->post('blogs/add-category', 'Blogs::addCategory');
+   $routes->post('blogs/add_new_tag', 'Blogs::AddNewTag');
 
    // Empolyee's Login/signup Controller;
    $routes->get('sendinvite', 'Registeredusers::sendinvite');
@@ -506,7 +507,6 @@ $routes->delete('header/delete_page/(:num)', 'HeaderController::delete_page/$1')
 //All blog
 $routes->post('admin/blog_settings/save', 'BlogSettingsController::save');
 
-
 //singleblog 
 $routes->post('admin/single_blog/store', 'SingleBlogController::store');
 
@@ -551,7 +551,7 @@ $routes->get('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
 //home image
 $routes->post('home-image/save', 'Store::save');
-
 $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
 $routes->post('Store/deleteBlog', 'Store::deleteBlog');
+

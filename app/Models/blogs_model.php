@@ -375,4 +375,9 @@ class Blogs_model extends Model
     {
         return $this->db->table('dripvision')->delete(['id' => $id]);
     }
+
+    public function InsertNewBlogTag($data)
+    {
+        return $this->db->table('tags')->insert($data);
+    }
 }
