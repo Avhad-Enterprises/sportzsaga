@@ -152,7 +152,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('online_store/edit_members', 'Store::edit_members');
    $routes->post('online_store/update_members_order', 'Store::update_member_order');
    $routes->post('admin/update-footer', 'Store::updateFooter');
-   $routes->post('delete_carousel/(:num)', 'Store::delete_carousel/$1');
+   $routes->get('online_store/delete_carousel/(:num)', 'Store::delete_carousel/$1');
 
    // Route for adding or updating a policy
    $routes->post('policy/save', 'Store::add_policy');
@@ -494,7 +494,7 @@ $routes->get('transfer/delete/(:num)', 'TransferController::delete/$1');
 $routes->post('header/add_new_page', 'HeaderController::add_new_page');
 $routes->post('header/update_page/(:num)', 'HeaderController::update_page/$1');
 $routes->get('header/get_items/(:segment)', 'HeaderController::get_items/$1');
-$routes->delete('header/delete_page/(:num)', 'HeaderController::delete_page/$1');
+
 
 //All blog
 $routes->post('admin/blog_settings/save', 'BlogSettingsController::save');
@@ -531,7 +531,6 @@ $routes->post('marquee-bottom-text/save', 'Store::saveBottomText');
 $routes->post('save-email-popup', 'EmailPopupController::save');
 $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
-$routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');
 
 
@@ -546,3 +545,21 @@ $routes->post('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
 //home image
 $routes->post('online_store/save', 'Store::save');
+
+
+//logs
+$routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+$routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
+$routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
+
+
+//logs header page
+$routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
+$routes->get('online_store/deleted_pages', 'Store::online_store_logs');
+$routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
+
+
+
+//Marquee
+$routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
+$routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');

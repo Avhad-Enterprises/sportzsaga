@@ -118,13 +118,15 @@
                                 <!-- Desktop View -->
                                 <div class="preview desktop-view">
                                     <p class="preview-title">Desktop View</p>
-                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0"
+                                        class="preview-iframe"></iframe>
                                 </div>
 
                                 <!-- Mobile View -->
                                 <div class="preview mobile-view">
                                     <p class="preview-title">Mobile View</p>
-                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0"
+                                        class="preview-iframe"></iframe>
                                 </div>
                             </div>
                             <div class="row">
@@ -136,7 +138,10 @@
                                         </div>
                                         <div class="right-content">
                                             <a href="<?= base_url() ?>online_store/edit">
-                                                <button class="visit-btn">Edit</button>
+                                                <button class="btn btn-primary">Edit</button>
+                                            </a>
+                                            <a href="<?= base_url() ?>online_store/online_store_logs">
+                                                <button class="btn btn-success">Logs</button> <!-- ✅ Green Button -->
                                             </a>
                                         </div>
                                     </div>

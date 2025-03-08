@@ -227,7 +227,7 @@
                                                     </button>
                                                     <!-- Delete Button -->
                                                     <a href="javascript:void(0);"
-                                                        onclick="deleteCarousel(<?= $carousel['id'] ?>)"
+                                                        onclick="confirmcarouseldelete(<?= $carousel['id'] ?>)"
                                                         style="color: red; padding: 0;" class="delete-carousel">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </a>
@@ -1627,7 +1627,8 @@
                                                 <i id="chevron-<?= (int) $page['id'] ?>" class="fas fa-chevron-down"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <a href="javascript:void(0);" onclick="deletePage(<?= (int) $page['id'] ?>)"
+                                            <a href="javascript:void(0);"
+                                                onclick="confirmheaderdelete(<?= (int) $page['id'] ?>)"
                                                 style="color: red; padding: 0;">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -3962,9 +3963,11 @@
                                                         <button type="button" class="btn btn-link" style="margin-top: 0;">
                                                             <i id="chevron--<?= $text['id'] ?>" class="fas fa-chevron-down"></i>
                                                         </button>
+
                                                         <!-- Delete Button -->
-                                                        <a href="javascript:void(0);" class="delete-button"
-                                                            data-id="<?= $text['id']; ?>" style="color: red; padding: 0;">
+                                                        <a href="javascript:void(0);"
+                                                            onclick="deletemarquee(<?= $text['id'] ?>)" class=""
+                                                            style="color: red; padding: 0;">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>

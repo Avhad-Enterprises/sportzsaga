@@ -18,6 +18,7 @@ use App\Models\Footer_model;
 use App\Models\MemberModel;
 use App\Models\MarqueeTextModel;
 use App\Models\Productselection;
+use App\Models\PageModel;
 use Google\Cloud\Storage\StorageClient;
 
 class Store extends BaseController
@@ -160,9 +161,14 @@ class Store extends BaseController
     {
         $session = session();
 
-        log_message('info', 'addcarousel method started.');
+        // ✅ Fetch User ID from Session
+        $userId = $session->get('user_id');
 
-        // Google Cloud Storage Setup
+        if (!$userId) {
+            return redirect()->back()->with('error', 'User session not found. Please log in again.');
+        }
+
+        // ✅ Google Cloud Storage Setup
         try {
             log_message('info', 'Setting up Google Cloud Storage.');
             $storage = new \Google\Cloud\Storage\StorageClient([
@@ -173,11 +179,7 @@ class Store extends BaseController
             $bucket = $storage->bucket($bucketName);
         } catch (\Exception $e) {
             log_message('error', 'Google Cloud Storage setup failed: ' . $e->getMessage());
-            $session->setFlashdata('toast', [
-                'type' => 'error',
-                'message' => 'Failed to connect to Google Cloud Storage.',
-            ]);
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Failed to connect to Google Cloud Storage.');
         }
 
         $carouselImage = $this->request->getFile('carousel_image');
@@ -186,49 +188,33 @@ class Store extends BaseController
         $mobileImageUrl = '';
 
         try {
-            // Upload Carousel Image
+            // ✅ Upload Carousel Image
             if ($carouselImage && $carouselImage->isValid() && !$carouselImage->hasMoved()) {
                 log_message('info', 'Uploading carousel image.');
                 $carouselFileName = 'carousel/' . uniqid() . '_' . $carouselImage->getClientName();
                 $bucket->upload(
                     fopen($carouselImage->getTempName(), 'r'),
-                    [
-                        'name' => $carouselFileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $carouselFileName, 'predefinedAcl' => 'publicRead']
                 );
                 $carouselImageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $carouselFileName);
-                log_message('info', 'Carousel image uploaded: ' . $carouselImageUrl);
-            } else {
-                log_message('info', 'No valid carousel image provided.');
             }
 
-            // Upload Mobile Image
+            // ✅ Upload Mobile Image
             if ($mobileImage && $mobileImage->isValid() && !$mobileImage->hasMoved()) {
                 log_message('info', 'Uploading mobile image.');
                 $mobileFileName = 'carousel/mobile/' . uniqid() . '_' . $mobileImage->getClientName();
                 $bucket->upload(
                     fopen($mobileImage->getTempName(), 'r'),
-                    [
-                        'name' => $mobileFileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $mobileFileName, 'predefinedAcl' => 'publicRead']
                 );
                 $mobileImageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $mobileFileName);
-                log_message('info', 'Mobile image uploaded: ' . $mobileImageUrl);
-            } else {
-                log_message('info', 'No valid mobile image provided.');
             }
         } catch (\Exception $e) {
             log_message('error', 'Image upload failed: ' . $e->getMessage());
-            $session->setFlashdata('toast', [
-                'type' => 'error',
-                'message' => 'Failed to upload images: ' . $e->getMessage(),
-            ]);
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Failed to upload images.');
         }
 
-        // Prepare Carousel Data
+        // ✅ Prepare Carousel Data
         $carouselData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
@@ -238,17 +224,18 @@ class Store extends BaseController
             'image' => $carouselImageUrl,
             'image_mobile' => $mobileImageUrl,
             'visibility' => $this->request->getPost('carousel_visibility') == '1' ? 1 : 0,
-            'added_by' => $session->get('user_id'),
+            'added_by' => $userId,  // ✅ Store User ID who added the carousel
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
         $carouselModel = new onlinestoremodal();
-        if ($carouselModel->insert($carouselData, false)) { // Using false prevents re-insertion
+        if ($carouselModel->insert($carouselData)) {
             return redirect()->back()->with('success', 'Carousel added successfully!');
         } else {
             return redirect()->back()->with('error', 'Failed to save carousel data.');
         }
     }
+
 
     public function update_carousel($id)
     {
@@ -340,21 +327,70 @@ class Store extends BaseController
     public function delete_carousel($id)
     {
         $db = \Config\Database::connect();
-        $builder = $db->table('carousels'); // ✅ Corrected table name
+        $builder = $db->table('carousels');
 
-        // Debug: Check if the ID exists before deleting
+        // Check if the carousel exists
         $existing = $builder->where('id', $id)->get()->getRow();
         if (!$existing) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Carousel not found.']);
+            return redirect()->to('online_store/edit')->with('error', 'Carousel not found.');
         }
 
-        // Attempt deletion
-        if ($builder->where('id', $id)->delete()) {
-            return $this->response->setJSON(['success' => true, 'message' => 'Carousel deleted successfully.']);
-        } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete carousel.']);
+        // Get the current user's ID for logging who deleted it
+        $userId = session()->get('user_id');
+        $deletedAt = date('Y-m-d H:i:s');
+
+        // Perform soft deletion by updating specific fields
+        $updateSuccess = $builder->where('id', $id)->update([
+            'is_deleted' => 1,         // Mark as deleted
+            'deleted_by' => $userId,   // Store who deleted it
+            'deleted_at' => $deletedAt // Record deletion timestamp
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete carousel. Please try again.');
         }
+
+        return redirect()->to('online_store/edit')->with('success', 'Carousel deleted successfully.');
     }
+
+
+    public function restore_carousel($id)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('carousels');
+
+        // Check if the carousel exists and is soft deleted
+        $existing = $builder->where('id', $id)->where('is_deleted', 1)->get()->getRow();
+        if (!$existing) {
+            return redirect()->to('carousels/deleted')->with('error', 'Carousel not found.');
+        }
+
+        // Restore the soft-deleted record
+        $builder->where('id', $id)->update([
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Carousel restored successfully.');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //<!----------------------------------------------------------------------------------------------------- Home Image ------------------------------------------------------------------>
 
     public function SaveHomeImage()
     {
@@ -1720,7 +1756,7 @@ class Store extends BaseController
 
             $homeImageModel = new \App\Models\HomeImageModel();
 
-            // Prepare data for saving
+          
             $data = [
                 'image_title1' => $this->request->getPost('image_title1'),
                 'description1' => $this->request->getPost('description1'),
@@ -1732,17 +1768,17 @@ class Store extends BaseController
                 'select_link2' => $this->request->getPost('select_link2'),
                 'selected_product2' => $this->request->getPost('select_link2') === 'product' ? $this->request->getPost('selected_product2') : null,
                 'selected_collection2' => $this->request->getPost('select_link2') === 'collection' ? $this->request->getPost('selected_collection2') : null,
-                'updated_at' => date('Y-m-d H:i:s'), // Add timestamp for updates
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
-            // Initialize Google Cloud Storage
+          
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
             $bucket = $storage->bucket('sportzsaga_imgs');
 
-            // Handle file uploads
+           
             foreach (['background_image1', 'background_image2'] as $field) {
                 $file = $this->request->getFile($field);
                 if ($file && $file->isValid() && !$file->hasMoved()) {
@@ -1758,15 +1794,15 @@ class Store extends BaseController
                 }
             }
 
-            // Save or update the data (assumes one row for home_image, always with ID=1)
+            
             $homeImageModel->update(1, $data);
 
-            // Redirect to the edit form with a success message
+          
             return redirect()->to(base_url('online_store/edit'))->with('success', 'Data saved successfully.');
         } catch (\Exception $e) {
             log_message('error', 'Error saving data: ' . $e->getMessage());
 
-            // Redirect to the edit form with an error message
+        
             return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save data: ' . $e->getMessage());
         }
     }
@@ -1799,153 +1835,43 @@ class Store extends BaseController
 
 
 
-    public function add_new_header_first()
-    {
-        // Validate and get POST data
-        $data = [
-            'title' => $this->request->getPost('header_first_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_first_visibility'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Insert new data
-        $headerFirstModel = new HeaderFirstModel();
-        $headerFirstModel->insert($data);
-
-        // Redirect to the same page to show the updated list (or wherever you want)
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    public function update_header_first($id)
-    {
-        // Validate and get updated data
-        $data = [
-            'title' => $this->request->getPost('header_first_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_first_visibility'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Update the header data
-        $headerFirstModel = new HeaderFirstModel();
-        $headerFirstModel->update($id, $data);
-
-        // Redirect back to the page to show the updated list
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    public function add_new_header_second()
-    {
-        // Get POST data directly
-        $data = [
-            'title' => $this->request->getPost('header_second_title'),
-            'header_first_id' => $this->request->getPost('header_first_id'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_second_visibility'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Insert the second header data
-        $headerSecondModel = new HeaderSecondModel();
-        $headerSecondModel->insert($data);
-
-        // Redirect back to the same page to show updated data
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    public function update_header_second($id)
-    {
-        // Get updated POST data directly
-        $data = [
-            'title' => $this->request->getPost('header_second_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_second_visibility'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Update the second header data
-        $headerSecondModel = new HeaderSecondModel();
-        $headerSecondModel->update($id, $data);
-
-        // Redirect back to the page to show the updated data
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    // Add New Third Header
-    public function add_new_header_third()
-    {
-        $data = [
-            'header_second_id' => $this->request->getPost('header_second_id'),
-            'title' => $this->request->getPost('header_third_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_third_visibility'),
-        ];
-
-        $model = new HeaderThirdModel();
-        $model->insert($data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    // Update Third Header
-    public function update_header_third($id)
-    {
-        $data = [
-            'title' => $this->request->getPost('header_third_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_third_visibility'),
-        ];
-
-        $model = new HeaderThirdModel();
-        $model->update($id, $data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    // Add New Fourth Header
-    public function add_new_header_fourth()
-    {
-        $data = [
-            'header_third_id' => $this->request->getPost('header_third_id'),
-            'title' => $this->request->getPost('header_fourth_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_fourth_visibility'),
-            'added_by' => session()->get('user_id'),
-        ];
-
-        $model = new HeaderFourthModel();
-        $model->insert($data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Fourth Header Added');
-    }
-
+    //<!--------------------------------------------------------------------------------- Marquee ------------------------------------------------------------------------------------------->
 
     public function saveMarqueeText()
     {
+        $session = session();
         $response = ['status' => 'error', 'message' => 'Something went wrong'];
+
+        
+        $userId = $session->get('user_id');
+
+        if (!$userId) {
+            $response['message'] = 'User session not found. Please log in again.';
+            return $this->response->setJSON($response);
+        }
+
+        log_message('debug', 'Session User ID: ' . $userId);
 
         $marqueeText = $this->request->getPost('marqueeText');
         $marqueeTextLink = $this->request->getPost('marqueeText_link');
         $textVisibility = $this->request->getPost('text_visibility');
 
-        // Validation (Optional)
+        // ✅ Validation
         if (empty($marqueeText)) {
             $response['message'] = 'Text field is required.';
             return $this->response->setJSON($response);
         }
 
+       
         $data = [
             'marqueeText' => $marqueeText,
             'marqueeText_link' => $marqueeTextLink,
             'text_visibility' => $textVisibility,
-            'added_by' => 1,
+            'added_by' => $userId,  
+            'created_at' => date('Y-m-d H:i:s'),
         ];
+
+        log_message('debug', 'Final Data to Insert: ' . print_r($data, true));
 
         $model = new MarqueeTextModel();
         if ($model->insert($data)) {
@@ -1957,6 +1883,7 @@ class Store extends BaseController
 
         return $this->response->setJSON($response);
     }
+
 
     public function GetMarqueeText($id)
     {
@@ -1973,18 +1900,56 @@ class Store extends BaseController
     public function delete_marquee($id)
     {
         $model = new MarqueeTextModel();
-        if ($model->delete($id)) {
-            return $this->response->setJSON(['status' => 'success', 'message' => 'Text deleted successfully']);
-        } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete text']);
+        $session = session();
+        $userId = $session->get('user_id'); 
+
+        
+        $marquee = $model->find($id);
+        if (!$marquee) {
+            return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
         }
+
+        
+        $updateSuccess = $model->update($id, [
+            'is_deleted' => 1,        
+            'deleted_by' => $userId,   
+            'deleted_at' => date('Y-m-d H:i:s')
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete marquee text. Please try again.');
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'Marquee text deleted successfully.');
     }
+
+
+    public function restore_marquee($id)
+    {
+        $model = new MarqueeTextModel();
+
+        $marquee = $model->where('id', $id)->where('is_deleted', 1)->first();
+        if (!$marquee) {
+            return redirect()->to('marquees/deleted')->with('error', 'Marquee text not found.');
+        }
+
+      
+        $model->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Marquee text restored successfully.');
+    }
+
+
 
     public function UpdateMarquee($id)
     {
         $model = new MarqueeTextModel();
 
-        // Validate the input
+      
         $validation = \Config\Services::validation();
         $validation->setRules([
             'marqueeText' => 'required',
@@ -2000,15 +1965,14 @@ class Store extends BaseController
             ]);
         }
 
-        // Prepare data for updating
-        $data = [
+         $data = [
             'marqueeText' => $this->request->getPost('marqueeText'),
             'marqueeText_link' => $this->request->getPost('marqueeText_link'),
             'text_visibility' => $this->request->getPost('text_visibility'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        // Update the record
+        
         if ($model->update($id, $data)) {
             return $this->response->setJSON([
                 'status' => 'success',
@@ -2022,11 +1986,16 @@ class Store extends BaseController
         }
     }
 
+
+
+
+    // ------------------------------------------------------------------------------------------- Marquee 2nd form ----------------------------------------------------------------------------------------
+   
     public function saveBottomText()
     {
         $model = new onlinestoremodal();
 
-        // Prepare the data
+
         $data = [
             'marqueebottomText1' => $this->request->getPost('marqueebottomText1'),
             'marqueebottomDescription1' => $this->request->getPost('marqueebottomDescription1'),
@@ -2035,21 +2004,21 @@ class Store extends BaseController
             'marqueebottomText3' => $this->request->getPost('marqueebottomText3'),
             'marqueebottomDescription3' => $this->request->getPost('marqueebottomDescription3'),
             'updated_at' => date('Y-m-d H:i:s'),
-            'updated_by' => 1, // Placeholder for user ID
+            'updated_by' => 1, 
         ];
 
-        // Check if the row with ID 1 exists
+    
         $existingRow = $model->db->table('marqueebottomtext')->where('id', 1)->get()->getRowArray();
 
         if ($existingRow) {
-            // If the row exists, update it
+      
             if ($model->db->table('marqueebottomtext')->update($data, ['id' => 1])) {
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Data updated successfully']);
             } else {
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update data']);
             }
         } else {
-            // If the row doesn't exist, insert it with ID 1
+
             $data['id'] = 1;
             if ($model->db->table('marqueebottomtext')->insert($data)) {
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Data saved successfully']);
@@ -2071,6 +2040,7 @@ class Store extends BaseController
 
 
     ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
+   
     public function add_new_product()
     {
         $productModel = new Productselection();
@@ -2078,15 +2048,15 @@ class Store extends BaseController
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
+        $selectedProducts = $this->request->getPost('selected_product'); 
+        $selectedCollections = $this->request->getPost('selected_collection'); 
 
-        // Ensure at least one selection is made
+    
         if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
             return $this->response->setJSON(['success' => false, 'message' => 'All fields are required, including at least one selection.']);
         }
 
-        // Prepare selected items array only if they are not empty
+       
         $selectedItems = [];
         if (!empty($selectedProducts)) {
             $selectedItems['products'] = $selectedProducts;
@@ -2099,7 +2069,7 @@ class Store extends BaseController
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null 
         ];
 
         if ($productModel->insert($data)) {
@@ -2146,26 +2116,26 @@ class Store extends BaseController
     {
         $productModel = new Productselection();
 
-        // Fetch existing product data
+      
         $product = $productModel->find($id);
 
         if (!$product) {
             return redirect()->to(base_url('online_store/index'))->with('error', 'Product not found.');
         }
 
-        // Get input values
+
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
         $selectionType = $this->request->getPost('select_type');
-        $selectedProducts = $this->request->getPost('selected_product'); // Array of selected products
-        $selectedCollections = $this->request->getPost('selected_collection'); // Array of selected collections
+        $selectedProducts = $this->request->getPost('selected_product');
+        $selectedCollections = $this->request->getPost('selected_collection'); 
 
-        // Ensure at least one selection is made
+      
         if (!$title || !$selectionType || (empty($selectedProducts) && empty($selectedCollections))) {
             return redirect()->to(base_url('online_store/index'))->with('error', 'All fields are required, including at least one selection.');
         }
 
-        // Prepare selected items array only if they are not empty
+      
         $selectedItems = [];
         if ($selectionType === 'product' && !empty($selectedProducts)) {
             $selectedItems['products'] = $selectedProducts;
@@ -2177,10 +2147,10 @@ class Store extends BaseController
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null // Store only if not empty
+            'selected_items' => !empty($selectedItems) ? json_encode($selectedItems) : null 
         ];
 
-        // Update product in database
+      
         if ($productModel->update($id, $data)) {
             return redirect()->to(base_url('online_store/edit'))->with('success', 'Product updated successfully.');
         } else {
@@ -2192,19 +2162,97 @@ class Store extends BaseController
     {
         $productModel = new Productselection();
 
-        // Check if product exists
+       
         $product = $productModel->find($id);
         if (!$product) {
             return $this->response->setJSON(['success' => false, 'message' => 'Product not found.']);
         }
 
-        // Delete product
+       
         if ($productModel->delete($id)) {
             return $this->response->setJSON(['success' => true, 'message' => 'Product deleted successfully.']);
         } else {
             return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
         }
     }
+
+
+
+
+
+
+
+    //<1-------------------------------------------------------------------------------------- Header Pages Delete ---------------------------------------------------------------------->
+
+    public function delete_page($id)
+    {
+        $pageModel = new PageModel();
+        $session = session();
+        $userId = $session->get('user_id'); 
+
+      
+        $page = $pageModel->find($id);
+        if (!$page) {
+            return redirect()->to('online_store/edit')->with('error', 'Page not found.');
+        }
+
+      
+        $updateSuccess = $pageModel->update($id, [
+            'is_deleted' => 1,      
+            'deleted_by' => $userId,   
+            'deleted_at' => date('Y-m-d H:i:s') 
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete page. Please try again.');
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'Page deleted successfully.');
+    }
+
+
+    public function restore_page($id)
+    {
+        $pageModel = new PageModel();
+
+       
+        $page = $pageModel->where('id', $id)->where('is_deleted', 1)->first();
+        if (!$page) {
+            return redirect()->to('header_pages/deleted')->with('error', 'Page not found.');
+        }
+
+      
+        $pageModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Page restored successfully.');
+    }
+
+
+
+
+
+
+    //<!---------------------------------------------------------------------------------- Logs ---------------------------------------------------------------------------------------->
+
+
+    public function online_store_logs()
+    {
+        $db = \Config\Database::connect();
+        $model = new onlinestoremodal();
+        $pageModel = new PageModel();
+
+        $data['pages'] = $model->getDeletedHeaderPages();
+        $data['marquees'] = $model->getDeletedMarqueeTexts();
+        $data['carousels'] = $model->getcarouselTexts();
+
+        return view('online_store_logs', $data);
+    }
+
+
 
 
 }

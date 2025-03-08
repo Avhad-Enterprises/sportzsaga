@@ -4437,34 +4437,7 @@
                         console.error("Error:", error);
                         alert("An error occurred while fetching data.");
                     });
-            }
-
-            // Handle delete button
-            document.querySelectorAll(".actions a").forEach((deleteButton) => {
-                deleteButton.addEventListener("click", function () {
-                    const textBox = this.closest(".textBox");
-                    const textId = textBox.getAttribute("data-id");
-
-                    if (confirm("Are you sure you want to delete this text?")) {
-                        fetch(`<?= site_url('marquee-text/delete-marquee') ?>/${textId}`, {
-                            method: "DELETE"
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.status === "success") {
-                                    textBox.remove(); // Remove the text box from the UI
-                                    alert(data.message);
-                                } else {
-                                    alert(data.message);
-                                }
-                            })
-                            .catch(error => {
-                                console.error("Error:", error);
-                                alert("An error occurred while deleting data.");
-                            });
-                    }
-                });
-            });
+            }            
         });
     </script>
 
