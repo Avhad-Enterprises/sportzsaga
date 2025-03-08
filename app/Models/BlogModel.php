@@ -23,5 +23,12 @@ class BlogModel extends Model
         'deleted_by',
         'deleted_at'
     ];
+
+    public function DeleteRelBlog($id, $data)
+    {
+        return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
+    }
+
+   
     
 }

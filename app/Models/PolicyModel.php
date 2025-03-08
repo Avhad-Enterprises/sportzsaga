@@ -39,9 +39,9 @@ class PolicyModel extends Model
         return $this->update($id, ['order_position' => $position]);
     }
     // In PolicyModel
-    public function deletePolicy($id)
+    public function deletepolicy($id, $data)
     {
-        return $this->db->table('policies')->delete(['id' => $id]);
+        return $this->db->table('policies')->where('id', $id)->update($data);
     }
 
     public function updatePolicy($id, $data)

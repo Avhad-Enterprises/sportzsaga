@@ -761,6 +761,46 @@
 </script>
 
 <script>
+  function AllblogsDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete-all-blogs/' + id;
+      }
+    });
+  }
+</script>
+
+
+
+<script>
+  function confirmblogsRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this carousel?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore-all-blogs/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<script>
   $(document).ready(function() {
     $('.swiper-slide').on('click', function() {
       var storyId = $(this).data('story-id');
@@ -2189,4 +2229,137 @@
       }
     });
   });
+</script>
+
+
+
+<!-------------------------------------------------------------sweet message chaitanya------------------------------------------------------------------------->
+<script>
+  function AlllogoDelete(logoId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`<?= base_url('online_store/delete-all-logo/') ?>${logoId}`, {
+          method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+          Swal.fire('Deleted!', data.message, 'success');
+          location.reload(); // Refresh page to update UI
+        })
+        .catch(error => {
+          Swal.fire('Error!', 'Something went wrong.', 'error');
+          console.error('Delete Error:', error);
+        });
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function confirmlogoRestore(logoId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this carousel?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/delete-all-logos/') ?>" + logoId;
+      }
+    });
+  }
+</script>
+
+
+
+
+<script>
+  function ourteamDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/deletemember/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function memberRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Member?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore-all-members/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+<script>
+  function policyDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/delete_policy/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function policyRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Member?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore-policy/') ?>" + id;
+      }
+    });
+  }
 </script>

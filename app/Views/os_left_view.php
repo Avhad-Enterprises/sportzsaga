@@ -454,7 +454,7 @@
                                                     </button>
 
                                                     <button type="button" class="btn btn-danger btn-sm"
-                                                        onclick="deleteLogo(<?= $logo['id'] ?>)">
+                                                        onclick="AlllogoDelete(<?= $logo['id'] ?>)">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
 
@@ -1328,7 +1328,7 @@
                                                 <i id="chevron-<?= $os_blog['id'] ?>" class="fas fa-chevron-down"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <a href="javascript:void(0);" onclick="deleteblog(<?= $os_blog['id'] ?>)" class="" style="color: red; padding: 0;">
+                                            <a href="javascript:void(0);" onclick="AllblogsDelete(<?= $os_blog['id'] ?>)" class="" style="color: red; padding: 0;">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </div>
@@ -2218,7 +2218,7 @@
                                                 <i id="chevron-<?= $member['id'] ?>" class="fas fa-chevron-down"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <a href="javascript:void(0);" onclick="deleteMember(<?= $member['id'] ?>)"
+                                            <a href="javascript:void(0);" onclick="ourteamDelete(<?= $member['id'] ?>)"
                                                 class="" style="color: red; padding: 0;">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -3893,7 +3893,7 @@
                                                 <i id="chevron-<?= $policy['id'] ?>" class="fas fa-chevron-down"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <a href="javascript:void(0);" onclick="deletePolicy(<?= $policy['id'] ?>)"
+                                            <a href="javascript:void(0);" onclick="policyDelete(<?= $policy['id'] ?>)"
                                                 class="" style="color: red; padding: 0;">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
