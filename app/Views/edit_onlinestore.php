@@ -828,42 +828,81 @@
     </script>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript Loaded - Ready to execute!");
+
+            document.querySelectorAll(".select-type").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    let productId = this.getAttribute("id").split("_")[2];
+
+                    let productSection = document.getElementById(`ShowProduct_${productId}`);
+                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
+                    let selectedProductsInput = document.getElementById(`selected_products_${productId}`);
+                    let selectedCollectionsInput = document.getElementById(`selected_collections_${productId}`);
+
+                    if (!productSection || !collectionSection) return;
+
+                    if (this.value === "product") {
+                        productSection.style.display = "block";
+                        collectionSection.style.display = "none";
+                        selectedCollectionsInput.value = ""; // ✅ Clear previously selected collections
+                    } else if (this.value === "collection") {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "block";
+                        selectedProductsInput.value = ""; // ✅ Clear previously selected products
+                    } else {
+                        productSection.style.display = "none";
+                        collectionSection.style.display = "none";
+                    }
+                });
+
+                select.dispatchEvent(new Event("change"));
+            });
+        });
+
         $(document).ready(function() {
-            // Toggle Product/Collection fields based on selection
-            $("#select_type").on("change", function() {
+            $(".select-type").on("change", function() {
+                var productId = $(this).attr("id").split("_")[2];
                 var selectedValue = $(this).val();
+                var productSection = $("#ShowProduct_" + productId);
+                var collectionSection = $("#ShowCollection_" + productId);
+                var selectedProductsInput = $("#selected_products_" + productId);
+                var selectedCollectionsInput = $("#selected_collections_" + productId);
+
                 if (selectedValue === "product") {
-                    $("#ShowProduct").show();
-                    $("#ShowCollection").hide();
+                    productSection.show();
+                    collectionSection.hide();
+                    selectedCollectionsInput.val(""); // ✅ Clear previously selected collections
                 } else if (selectedValue === "collection") {
-                    $("#ShowProduct").hide();
-                    $("#ShowCollection").show();
+                    productSection.hide();
+                    collectionSection.show();
+                    selectedProductsInput.val(""); // ✅ Clear previously selected products
                 } else {
-                    $("#ShowProduct, #ShowCollection").hide();
+                    productSection.hide();
+                    collectionSection.hide();
                 }
             });
 
-            // Search Functionality (By Product Name or SKU)
+            // ✅ Search Functionality for Product List
             $("#productSearch").on("keyup", function() {
                 var searchValue = $(this).val().toLowerCase();
-                $("#productList li").filter(function() {
+                $("#productList li").each(function() {
                     var title = $(this).find(".product-title").text().toLowerCase();
                     var sku = $(this).attr("data-sku").toLowerCase();
                     $(this).toggle(title.includes(searchValue) || sku.includes(searchValue));
                 });
             });
 
-            // Search Functionality (By Collection Name or ID)
+            // ✅ Search Functionality for Collection List
             $("#collectionSearch").on("keyup", function() {
                 var searchValue = $(this).val().toLowerCase();
-                $("#collectionList li").filter(function() {
+                $("#collectionList li").each(function() {
                     var title = $(this).find(".collection-title").text().toLowerCase();
                     var collectionId = $(this).attr("data-collection-id").toLowerCase();
                     $(this).toggle(title.includes(searchValue) || collectionId.includes(searchValue));
                 });
             });
 
-            // Function to handle product selection
             let selectedProducts = [];
             let selectedCollections = [];
 
@@ -872,7 +911,7 @@
                 $("#selected_collection_items").val(JSON.stringify(selectedCollections));
             }
 
-            // Click event for product selection
+            // ✅ Click event for product selection
             $("#productList").on("click", "li", function() {
                 var productId = $(this).attr("data-id");
 
@@ -887,7 +926,7 @@
                 updateSelectedItems();
             });
 
-            // Click event for collection selection
+            // ✅ Click event for collection selection
             $("#collectionList").on("click", "li", function() {
                 var collectionId = $(this).attr("data-id");
 
@@ -900,60 +939,6 @@
                 }
 
                 updateSelectedItems();
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Function to toggle between Products and Collections based on selection type
-            document.querySelectorAll(".select-type").forEach(function(select) {
-                select.addEventListener("change", function() {
-                    let productId = this.id.split("_")[1]; // Extract product ID from select ID
-                    let selectedValue = this.value;
-
-                    let productSection = document.getElementById(`ShowProduct_${productId}`);
-                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
-
-                    if (selectedValue === "product") {
-                        productSection.style.display = "block";
-                        collectionSection.style.display = "none";
-                    } else if (selectedValue === "collection") {
-                        productSection.style.display = "none";
-                        collectionSection.style.display = "block";
-                    } else {
-                        productSection.style.display = "none";
-                        collectionSection.style.display = "none";
-                    }
-                });
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".select-type").forEach(function(select) {
-                select.addEventListener("change", function() {
-                    let productId = this.getAttribute("id").split("_")[2];
-
-                    let productSection = document.getElementById(`ShowProduct_${productId}`);
-                    let collectionSection = document.getElementById(`ShowCollection_${productId}`);
-
-                    if (!productSection || !collectionSection) return;
-
-                    if (this.value === "product") {
-                        productSection.style.display = "block";
-                        collectionSection.style.display = "none";
-                    } else if (this.value === "collection") {
-                        productSection.style.display = "none";
-                        collectionSection.style.display = "block";
-                    } else {
-                        productSection.style.display = "none";
-                        collectionSection.style.display = "none";
-                    }
-                });
-
-                select.dispatchEvent(new Event("change"));
             });
         });
     </script>
@@ -1047,21 +1032,21 @@
 
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Initialize sortable for blogs
             //new Sortable(document.getElementById('blogs-list'), {
-                //animation: 150,
-                //ghostClass: 'sortable-ghost',
-                //onEnd: function () {
-                 //   console.log("Blogs reordered");
-               // }
-          //  });
+            //animation: 150,
+            //ghostClass: 'sortable-ghost',
+            //onEnd: function () {
+            //   console.log("Blogs reordered");
+            // }
+            //  });
 
             // Initialize sortable for tags
             new Sortable(document.getElementById('tags-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function () {
+                onEnd: function() {
                     console.log("Tags reordered");
                 }
             });
@@ -1070,7 +1055,7 @@
             new Sortable(document.getElementById('posts-list'), {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: function () {
+                onEnd: function() {
                     console.log("Posts reordered");
                 }
             });
@@ -1087,7 +1072,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
 
             function updateSelections(listId, inputId, checkboxClass) {
                 const selectedItems = new Set(); // Ensure unique selections
@@ -1138,7 +1123,7 @@
                     sortableInstances[listId] = new Sortable(document.getElementById(listId), {
                         animation: 150,
                         ghostClass: 'sortable-ghost',
-                        onEnd: function () {
+                        onEnd: function() {
                             const orderedIds = Array.from(document.getElementById(listId).children).map(item => item.dataset.id);
                             document.getElementById(inputId).value = orderedIds.join(',');
                         }
@@ -1147,7 +1132,7 @@
             }
 
             // Initialize sortable on page load
-           // initializeSortable('blogsList', 'blogs_input');
+            // initializeSortable('blogsList', 'blogs_input');
             initializeSortable('tagsList', 'tags_input');
             initializeSortable('popularPostsList', 'popular_posts_input');
 
@@ -1156,7 +1141,7 @@
             updateSelections('tagsList', 'tags_input', 'tag-checkbox');
             updateSelections('popularPostsList', 'popular_posts_input', 'popular-post-checkbox');
 
-            
+
 
             document.querySelectorAll('.tag-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('change', () => updateSelections('tagsList', 'tags_input', 'tag-checkbox'));
@@ -1173,7 +1158,7 @@
 
             // Form submission with correct hidden input values
             const updateBlogBtn = document.getElementById("updateblogpage");
-            updateBlogBtn.addEventListener("click", function (e) {
+            updateBlogBtn.addEventListener("click", function(e) {
                 e.preventDefault();
 
                 const formData = new FormData();
@@ -1188,9 +1173,9 @@
                 //formData.append("meta_title", document.getElementById("meta_title").value);
 
                 fetch("<?= base_url('admin/blog_settings/save') ?>", {
-                    method: "POST",
-                    body: formData,
-                })
+                        method: "POST",
+                        body: formData,
+                    })
                     .then((response) => response.json())
                     .then((data) => {
                         if (data.success) {
@@ -2266,30 +2251,31 @@
             let selectedPages = {};
             let fieldCounter = <?= isset($subtypes) && is_array($subtypes) ? count($subtypes) : 0 ?>;
             let itemDataMap = {};
-
-
-            // ==========================
-            // ✅ PAGE TYPE SELECTION LOGIC ✅
-            // ==========================
-
             const pageTypeDropdown = document.getElementById("togglePageDropdown");
             const pageTypeDropdownContent = document.getElementById("pageCheckboxDropdown");
             const selectedPageContainer = document.getElementById("selectedPageContainer");
             const selectedPageTypesInput = document.getElementById("selectedPageTypes");
 
-            // Show/Hide the dropdown when clicking the button
-            pageTypeDropdown.addEventListener("click", function () {
+            // ✅ Toggle dropdown visibility
+            pageTypeDropdown.addEventListener("click", function() {
                 pageTypeDropdownContent.style.display =
                     pageTypeDropdownContent.style.display === "none" ? "block" : "none";
+            });
+
+            // ✅ Attach event listeners to checkboxes on page load
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
                 checkbox.addEventListener("change", function() {
                     const value = this.value;
-                    selectedPages[value] = this.checked ? value : delete selectedPages[value];
+                    if (this.checked) {
+                        selectedPages[value] = value;
+                    } else {
+                        delete selectedPages[value];
+                    }
                     updateSelectedPagesDisplay();
                 });
             });
 
-            // Function to update selected Page Types
+            // ✅ Function to update selected Page Types
             function updateSelectedPageTypes() {
                 let selectedValues = [];
                 let badges = '';
@@ -2304,12 +2290,12 @@
                 selectedPageContainer.innerHTML = badges;
             }
 
-            // Attach change event to checkboxes
+            // ✅ Attach event listener to checkboxes
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
                 checkbox.addEventListener("change", updateSelectedPageTypes);
             });
 
-            // Load previously selected values on page load
+            // ✅ Load previously selected values on page load
             let initialSelected = selectedPageTypesInput.value ? selectedPageTypesInput.value.split(",") : [];
             document.querySelectorAll(".page-type-checkbox").forEach(checkbox => {
                 if (initialSelected.includes(checkbox.value)) {
@@ -2317,13 +2303,9 @@
                 }
             });
 
-            // Ensure UI updates on page load
-            updateSelectedPageTypes();
+            updateSelectedPageTypes(); // ✅ Ensure UI updates on page load
 
-            // ==========================
-            // ✅ EXISTING LOGIC ✅
-            // ==========================
-
+            // ✅ Attach event listeners for subtype selects
             document.querySelectorAll(".subtype-select").forEach(select => {
                 select.addEventListener("change", function() {
                     const fieldId = this.id.split("_")[1];
@@ -2343,10 +2325,10 @@
 
                             if (!document.querySelector(`#checkboxDropdown_${fieldId} input[value="${item.id}"]`)) {
                                 checkboxDropdown.innerHTML += `
-                    <label>
-                        <input type="checkbox" value="${item.id}" class="specific-item-checkbox">
-                        ${item.name} <!-- ✅ Display Name Instead of ID -->
-                    </label>`;
+                                <label>
+                                    <input type="checkbox" value="${item.id}" class="specific-item-checkbox">
+                                    ${item.name} <!-- ✅ Display Name Instead of ID -->
+                                </label>`;
                             }
                         });
 
@@ -2383,10 +2365,10 @@
 
                     if (!selectedContainer.querySelector(`.selected-item[data-id="${itemId}"]`)) {
                         selectedContainer.innerHTML += `
-                <div class="selected-item" data-id="${itemId}">
-                    ${itemName} <!-- ✅ Display Name Instead of ID -->
-                    <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>
-                </div>`;
+                        <div class="selected-item" data-id="${itemId}">
+                            ${itemName} <!-- ✅ Display Name Instead of ID -->
+                            <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>
+                        </div>`;
                     }
                 });
 
@@ -2397,7 +2379,8 @@
                 document.querySelectorAll(`#selectedItemsContainer_${fieldId} .remove-item-btn`).forEach(button => {
                     button.addEventListener("click", function() {
                         const itemId = this.dataset.id;
-                        document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`).checked = false;
+                        let checkbox = document.querySelector(`#checkboxDropdown_${fieldId} .specific-item-checkbox[value="${itemId}"]`);
+                        if (checkbox) checkbox.checked = false;
                         updateSelectedItems(fieldId);
                     });
                 });
@@ -2408,13 +2391,12 @@
                 let itemId = item.dataset.id;
                 if (itemDataMap[itemId]) {
                     item.innerHTML = `
-            ${itemDataMap[itemId]} <!-- ✅ Replace ID with Name -->
-            <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>`;
+                    ${itemDataMap[itemId]} <!-- ✅ Replace ID with Name -->
+                    <button type="button" class="remove-item-btn" data-id="${itemId}">&times;</button>`;
                 }
             });
         });
     </script>
-
 
     <script>
         function toggleEditFormPage(pageId) {

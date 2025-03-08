@@ -2230,7 +2230,7 @@ class Store extends BaseController
             $data = [
                 'blogs_name'        => $this->request->getPost('blogs_name'),
                 'blogs_description' => $this->request->getPost('blogs_description'),
-                'content_type'      => $contentType, // Ensure it's being assigned
+                'content_type'      => $contentType,
                 'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
                 'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
                 'added_by'          => session()->get('user_id') ?? 1,
@@ -2250,8 +2250,6 @@ class Store extends BaseController
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-
-
 
     public function updateBlog($id)
     {
