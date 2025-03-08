@@ -254,7 +254,7 @@ class onlinestoremodal extends Model
 
     public function Getproductsection()
     {
-        return $this->db->table('products_section')->get()->getResultArray();
+        return $this->db->table('products_section')->where('is_deleted', 0)->where('visibility', 1)->get()->getResultArray();
     }
 
     public function GetProductsData()
@@ -273,6 +273,13 @@ class onlinestoremodal extends Model
     }
 
     public function updateProductData($id, $data)
+    {
+        return $this->db->table('products_section')
+            ->where('id', $id)
+            ->update($data);
+    }
+
+    public function deleteProductData($id, $data)
     {
         return $this->db->table('products_section')
             ->where('id', $id)
