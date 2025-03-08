@@ -218,7 +218,21 @@
                                         <td class="truncate-text"><?= substr($post['blog_description'], 0, 35) . (strlen($post['blog_description']) > 50 ? '...' : '') ?></td>
                                         <td><?= $post['blog_visibility'] ?></td>
                                         <td>
-                                            <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7"><?= $post['blog_tags'] ?></span>
+                                            <?php
+                                            $tags = json_decode($post['blog_tags'], true);
+
+                                            if (!empty($tags) && is_array($tags)) :
+                                                foreach ($tags as $tag) :
+                                                    // ✅ Convert 'tag-name' to 'Tag Name'
+                                                    $formattedTag = ucwords(str_replace('-', ' ', $tag));
+                                            ?>
+                                                    <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7"><?= esc($formattedTag) ?></span>
+                                                <?php
+                                                endforeach;
+                                                else :
+                                                ?>
+                                                <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">No Tags</span>
+                                            <?php endif; ?>
                                         </td>
                                         <td><?= $post['category'] ?></td>
                                         <td><?php $date = new DateTime($post['publish_date_and_time']);

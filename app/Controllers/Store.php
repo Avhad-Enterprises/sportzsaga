@@ -2066,44 +2066,52 @@ class Store extends BaseController
     ////////////////////////////////////////////////////////////////////// Product Selection section //////////////////////////////////////////////////////////////////
     public function add_new_product()
     {
+        $session = session();
+        $addedBy = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
         $productModel = new onlinestoremodal();
 
         // Get form inputs
         $title = $this->request->getPost('product_title');
         $description = $this->request->getPost('product_description');
-        $selectionType = $this->request->getPost('select_type');
+        $selectionType = $this->request->getPost('productcarousel_select_type'); // ✅ Fixed ID mismatch
+        $visibility = $this->request->getPost('productcar_visibility'); // ✅ Added visibility
 
         // Get selected product or collection IDs
-        $selectedProducts = $this->request->getPost('selected_product_items');
-        $selectedCarCollections = $this->request->getPost('selected_collection_items');
+        $selectedProducts = json_decode($this->request->getPost('selected_product_items'), true);
+        $selectedCarCollections = json_decode($this->request->getPost('selected_collection_items'), true);
 
         $selectedItems = [];
 
         if ($selectionType === 'product' && !empty($selectedProducts)) {
-            // No need to json_encode() again as it's already JSON
-            $selectedItems = $selectedProducts;
+            // ✅ Ensure valid JSON format
+            $selectedItems = json_encode($selectedProducts);
         } elseif ($selectionType === 'collection' && !empty($selectedCarCollections)) {
-            // Decode JSON collection ID
-            $collectionid = json_decode($selectedCarCollections, true);
-            $collectionid = is_array($collectionid) ? reset($collectionid) : (string) $collectionid;
+            // ✅ Ensure collection_id is correctly assigned
+            $collectionid = is_array($selectedCarCollections) ? reset($selectedCarCollections) : $selectedCarCollections;
 
             // Fetch product IDs linked to this collection
             $collectionData = $productModel->GetProdctsBycollectionid($collectionid);
 
             if ($collectionData && !empty($collectionData['product_ids'])) {
-                // Convert comma-separated product IDs from the collection into a JSON array
+                // ✅ Convert comma-separated product IDs from the collection into JSON array
                 $selectedItems = json_encode(explode(',', $collectionData['product_ids']));
             }
         }
 
-        // Prepare data for insertion
+        // ✅ Prepare data for insertion
         $data = [
             'title' => $title,
             'description' => $description,
             'selection_type' => $selectionType,
-            'selected_items' => $selectedItems,
-            'collection_id' => $collectionid ?? null,
+            'selected_items' => $selectedItems ?: json_encode([]), // ✅ Ensure valid JSON
+            'collection_id' => $collectionid ?? NULL, // ✅ Ensures NULL value doesn't break SQL
+            'visibility' => $visibility,
+            'added_by' => $addedBy,
+            'created_at' => date('Y-m-d H:i:s'),
         ];
+
+        // ✅ Debugging: Log the SQL query before execution
+        log_message('error', 'Insert Query: ' . json_encode($data));
 
         // Insert into database
         if ($productModel->InsertProductCarData($data)) {
@@ -2146,6 +2154,8 @@ class Store extends BaseController
 
     public function update_product($id)
     {
+        $session = session();
+        $updatedBy = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
         $productModel = new onlinestoremodal();
 
         // Get form inputs
@@ -2182,6 +2192,8 @@ class Store extends BaseController
             'selection_type' => $selectionType,
             'selected_items' => $selectedItems,
             'collection_id' => $collectionid ?? null,
+            'updated_by' => $updatedBy,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         // Update the database record
@@ -2194,19 +2206,20 @@ class Store extends BaseController
 
     public function delete_product($id)
     {
-        $productModel = new Productselection();
+        $session = session();
+        $deletedBy = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+        $productModel = new onlinestoremodal();
 
-        // Check if product exists
-        $product = $productModel->find($id);
-        if (!$product) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Product not found.']);
-        }
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
 
-        // Delete product
-        if ($productModel->delete($id)) {
-            return $this->response->setJSON(['success' => true, 'message' => 'Product deleted successfully.']);
+        if ($productModel->deleteProductData($id, $data)) {
+            return redirect()->back()->with('success', 'Product deleted successfully!');
         } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete product.']);
+            return redirect()->back()->with('error', 'Failed to delete product.');
         }
     }
 

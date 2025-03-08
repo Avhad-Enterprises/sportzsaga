@@ -797,6 +797,120 @@
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript Loaded - Ready to execute!");
+
+            // Function to toggle edit form visibility
+            window.toggleEditFormProduct = function(productId) {
+                console.log("Toggling form for product ID:", productId); // Debug
+                const editForm = document.getElementById(`editProductCarouselForm-${productId}`);
+                const chevronIcon = document.getElementById(`CarProductchevron-${productId}`);
+
+                if (!editForm || !chevronIcon) {
+                    console.error("Element not found for product ID:", productId);
+                    return;
+                }
+
+                if (editForm.style.display === "none" || editForm.style.display === "") {
+                    // Show Edit Form
+                    editForm.style.display = "block";
+                    chevronIcon.classList.remove("fa-chevron-down");
+                    chevronIcon.classList.add("fa-chevron-up");
+                    console.log("Form shown for product ID:", productId);
+                } else {
+                    // Hide Edit Form
+                    editForm.style.display = "none";
+                    chevronIcon.classList.remove("fa-chevron-up");
+                    chevronIcon.classList.add("fa-chevron-down");
+                    console.log("Form hidden for product ID:", productId);
+                }
+            };
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // ✅ Toggle Product/Collection fields based on selection
+            $("#productcarousel_select_type").on("change", function() {
+                var selectedValue = $(this).val();
+                if (selectedValue === "product") {
+                    $("#ShowCarProduct").show();
+                    $("#ShowCarCollection").hide();
+                    $("#selected_collection_items").val("");
+                } else if (selectedValue === "collection") {
+                    $("#ShowCarProduct").hide();
+                    $("#ShowCarCollection").show();
+                    $("#selected_product_items").val("");
+                } else {
+                    $("#ShowCarProduct, #ShowCarCollection").hide();
+                }
+            });
+
+            // ✅ Search Functionality for Product List (By Name or SKU)
+            $("#productSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#productList li").each(function() {
+                    var title = $(this).find(".product-title").text().toLowerCase();
+                    var sku = $(this).attr("data-sku").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || sku.includes(searchValue));
+                });
+            });
+
+            // ✅ Search Functionality for Collection List (By Name or ID)
+            $("#collectionSearch").on("keyup", function() {
+                var searchValue = $(this).val().toLowerCase();
+                $("#collectionList li").each(function() {
+                    var title = $(this).find(".collection-title").text().toLowerCase();
+                    var collectionId = $(this).attr("data-collection-id").toLowerCase();
+                    $(this).toggle(title.includes(searchValue) || collectionId.includes(searchValue));
+                });
+            });
+
+            // ✅ Selected Items Handling
+            let selectedProducts = [];
+            let selectedCollections = [];
+
+            function updateSelectedItems() {
+                $("#selected_product_items").val(JSON.stringify(selectedProducts));
+                $("#selected_collection_items").val(JSON.stringify(selectedCollections));
+            }
+
+            // ✅ Click event for product selection
+            $("#productList").on("click", "li", function() {
+                var productId = $(this).attr("data-id");
+
+                if (selectedProducts.includes(productId)) {
+                    selectedProducts = selectedProducts.filter(id => id !== productId);
+                    $(this).removeClass("selected");
+                } else {
+                    selectedProducts.push(productId);
+                    $(this).addClass("selected");
+                }
+
+                updateSelectedItems();
+            });
+
+            // ✅ Click event for collection selection
+            $("#collectionList").on("click", "li", function() {
+                var collectionId = $(this).attr("data-id");
+
+                if (selectedCollections.includes(collectionId)) {
+                    selectedCollections = selectedCollections.filter(id => id !== collectionId);
+                    $(this).removeClass("selected");
+                } else {
+                    selectedCollections.push(collectionId);
+                    $(this).addClass("selected");
+                }
+
+                updateSelectedItems();
+            });
+
+            // ✅ Auto-Trigger Selection Change on Page Load
+            $("#productcarousel_select_type").trigger("change");
+        });
+    </script>
+
 
     <script>
         function deleteProduct(productId) {
@@ -845,11 +959,11 @@
                     if (this.value === "product") {
                         productSection.style.display = "block";
                         collectionSection.style.display = "none";
-                        selectedCollectionsInput.value = ""; // ✅ Clear previously selected collections
+                        selectedCollectionsInput.value = "";
                     } else if (this.value === "collection") {
                         productSection.style.display = "none";
                         collectionSection.style.display = "block";
-                        selectedProductsInput.value = ""; // ✅ Clear previously selected products
+                        selectedProductsInput.value = "";
                     } else {
                         productSection.style.display = "none";
                         collectionSection.style.display = "none";

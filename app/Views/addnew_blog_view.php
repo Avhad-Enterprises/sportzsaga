@@ -309,20 +309,25 @@
 
                             <div class="pd-20 card-box mb-30">
                                 <div class="form-group">
-                                    <div class="">
-                                        <div class="">
-                                            <h5 class="h5">Add Tags</h5>
-                                            <p>
-                                                Press Enter to Seprate
-                                            </p>
-                                            <input type="text" name="blog-tags" data-role="tagsinput" required />
+                                    <label>Add Tags</label>
+                                    <div class="input-group">
+                                        <?php if (!empty($tags)): ?>
+                                            <select class="custom-select2 custom-select-tags form-control" name="blog-tags[]" multiple="multiple" style="width: 80%">
+                                                <optgroup label="Available Tags">
+                                                    <?php foreach ($tags as $tag): ?>
+                                                        <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                            </select>
+                                        <?php else: ?>
+                                            <p class="text-danger">No tags available</p>
+                                        <?php endif; ?>
+
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectModal">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
                                         </div>
-                                    </div>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        This feild can't be Empty
                                     </div>
                                 </div>
                             </div>
@@ -338,6 +343,36 @@
                         </div>
                     </div>
                 </form>
+
+                <!-- Modal to Add New Tag -->
+                <div class="modal fade" id="multiSelectModal" tabindex="-1" role="dialog" aria-labelledby="multiSelectModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="multiSelectModalLabel">Add New Tag</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addMultiSelectOptionForm">
+                                    <div class="form-group">
+                                        <label for="newOptionText">Tag Name</label>
+                                        <input type="text" class="form-control" id="newOptionText" placeholder="Enter new tag name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newOptionValue">Tag Value</label>
+                                        <input type="text" class="form-control" id="newOptionValue" placeholder="Tag value">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="addNewOption">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -369,37 +404,111 @@
                 </div>
 
                 <script>
-                    document.getElementById('saveCategoryBtn').addEventListener('click', function() {
-                        var categoryName = document.getElementById('category_name').value;
-                        var categoryValue = document.getElementById('category_value').value;
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.getElementById("saveCategoryBtn").addEventListener("click", function() {
+                            var categoryName = document.getElementById("category_name").value.trim();
+                            var categoryValue = document.getElementById("category_value").value.trim();
 
-                        if (categoryName && categoryValue) {
+                            if (categoryName && categoryValue) {
+                                $.ajax({
+                                    url: "<?= base_url('blogs/add-category') ?>",
+                                    method: "POST",
+                                    data: {
+                                        category_name: categoryName,
+                                        category_value: categoryValue
+                                    },
+                                    dataType: "json",
+                                    success: function(response) {
+                                        if (response.success) {
+                                            var newOption = new Option(response.name, response.value);
+                                            document.getElementById("service_category").add(newOption);
+                                            document.getElementById("service_category").value = response.value;
+
+                                            $("#categoryModal").modal("hide");
+                                            document.getElementById("categoryForm").reset();
+                                        } else {
+                                            alert(response.message);
+                                        }
+                                    },
+                                    error: function(xhr, status, error) {
+                                        console.error("Category AJAX Error:", xhr.responseText);
+                                        alert("An error occurred while adding the category.");
+                                    }
+                                });
+                            } else {
+                                alert("Please fill in both fields.");
+                            }
+                        });
+                    });
+                </script>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.getElementById("addNewOption").addEventListener("click", function(event) {
+                            event.preventDefault();
+
+                            var tagName = $.trim($("#newOptionText").val());
+                            var tagValue = $.trim($("#newOptionValue").val());
+
+                            if (tagName === "" || tagValue === "") {
+                                alert("Please enter both Tag Name and Tag Value.");
+                                return;
+                            }
+
+                            console.log("Submitting tag:", tagName, tagValue);
+
                             $.ajax({
-                                url: "<?= base_url('blogs/add-category') ?>",
-                                method: "POST",
+                                url: "<?= base_url('blogs/add_new_tag') ?>",
+                                type: "POST",
                                 data: {
-                                    category_name: categoryName,
-                                    category_value: categoryValue
+                                    tag_name: tagName,
+                                    tag_value: tagValue,
+                                    "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
                                 },
+                                dataType: "json",
                                 success: function(response) {
-                                    if (response.success) {
-                                        var newOption = new Option(response.name, response.value);
-                                        document.getElementById('service_category').add(newOption);
-                                        document.getElementById('service_category').value = response.value;
+                                    console.log("AJAX Response:", response);
 
-                                        $('#categoryModal').modal('hide');
-                                        document.getElementById('categoryForm').reset();
+                                    if (response.status === "success") {
+                                        $(".custom-select-tags").append('<option value="' + tagValue + '" selected>' + tagName + '</option>');
+                                        $(".custom-select-tags").trigger("change");
+
+                                        $("#multiSelectModal").modal("hide");
+
+                                        $("#newOptionText").val("");
+                                        $("#newOptionValue").val("");
+
+                                        alert("Tag added successfully!");
                                     } else {
-                                        alert(response.message);
+                                        alert(response.message || "Failed to add tag. Please try again.");
                                     }
                                 },
-                                error: function() {
-                                    alert('An error occurred while adding the category.');
+                                error: function(xhr, status, error) {
+                                    console.error("AJAX Error:", xhr.responseText);
+                                    alert("Error: " + xhr.responseText);
                                 }
                             });
-                        } else {
-                            alert("Please fill in both fields.");
+                        });
+
+                        if ($.fn.select2) {
+                            $(".custom-select2").select2({
+                                placeholder: "Select tags",
+                                allowClear: true
+                            });
                         }
+                    });
+                </script>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let tagNameInput = document.getElementById("newOptionText");
+                        let tagValueInput = document.getElementById("newOptionValue");
+
+                        tagNameInput.addEventListener("input", function() {
+                            let tagName = tagNameInput.value.trim().toLowerCase();
+                            let tagValue = tagName.replace(/\s+/g, "-");
+                            tagValueInput.value = tagValue;
+                        });
                     });
                 </script>
 

@@ -761,6 +761,24 @@
 </script>
 
 <script>
+  function deleteProductcarousel(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete_product/' + id;
+      }
+    });
+  }
+</script>
+
+<script>
   $(document).ready(function() {
     $('.swiper-slide').on('click', function() {
       var storyId = $(this).data('story-id');
