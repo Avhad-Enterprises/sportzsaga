@@ -201,7 +201,7 @@
                             <thead>
                                 <tr>
                                     <th class="table-plus">ID</th>
-                                    <th>Title</th>
+                                    <th>Title </th>
                                     <th>Description</th>
                                     <th>Visibility</th>
                                     <th>Tags</th>
