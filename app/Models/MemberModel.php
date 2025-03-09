@@ -22,6 +22,7 @@ class MemberModel extends Model
         'updated_at',
         'is_deleted',
         'deleted_by',
+        'change_log',
         'deleted_at'
     ];
 
