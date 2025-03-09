@@ -4045,7 +4045,7 @@
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
 
-                if (validateaddForm()) {
+            
 
                     addBtn.disabled = true;
                     addBtn.innerHTML = "Updating...";
@@ -4074,7 +4074,7 @@
                             addBtn.disabled = false;
                             addBtn.innerHTML = "Update";
                         });
-                }
+             
             });
 
 
