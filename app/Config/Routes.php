@@ -153,7 +153,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('online_store/edit_members', 'Store::edit_members');
    $routes->post('online_store/update_members_order', 'Store::update_member_order');
    $routes->post('admin/update-footer', 'Store::updateFooter');
-   $routes->post('delete_carousel/(:num)', 'Store::delete_carousel/$1');
+   $routes->get('online_store/delete_carousel/(:num)', 'Store::delete_carousel/$1')
 
    // Route for adding or updating a policy
    $routes->post('policy/save', 'Store::add_policy');
@@ -555,3 +555,22 @@ $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
 $routes->post('Store/deleteBlog', 'Store::deleteBlog');
 
+$routes->post('online_store/save', 'Store::save');
+ 
+ 
+ //logs
+ $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+ $routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
+ $routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
+ 
+ 
+ //logs header page
+ $routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
+ $routes->get('online_store/deleted_pages', 'Store::online_store_logs');
+ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
+ 
+ 
+ 
+ //Marquee
+ $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
+ $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
