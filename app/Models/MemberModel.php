@@ -15,9 +15,16 @@ class MemberModel extends Model
         'member_pic',
         'member_email',
         'member_linkedin',
+        'visibility',
         'order',
-        'visibility'
+        'added_by',
+        'created_at',
+        'updated_at',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at'
     ];
+
     protected $useTimestamps = true;
 
     // Fetch single award by ID
@@ -40,5 +47,11 @@ class MemberModel extends Model
     public function UpdateMembersOrder($id, $position)
     {
         return $this->update($id, ['order' => $position]);
+    }
+
+    
+    public function Deletemembers($id, $data)
+    {
+        return $this->db->table('team_members')->where('id', $id)->update($data);
     }
 }
