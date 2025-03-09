@@ -2208,3 +2208,126 @@
     });
   });
 </script>
+
+
+
+
+
+<!-------------------------------------------------------------------- Home Carousel SweetDelete ----------------------------------------------------------------------------------->
+
+<script>
+  function confirmcarouseldelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete_carousel/' + id;
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmCarouselRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this carousel?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore_carousel/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+
+<!-------------------------------------------------------------------- Header Pages ----------------------------------------------------------------------------------->
+
+<script>
+  function confirmheaderdelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete_page/' + id;
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this carousel?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore_page/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!-------------------------------------------------------------------- marquee  ----------------------------------------------------------------------------------->
+
+<script>
+  function deletemarquee(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete_marquee/' + id;
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmMarqueeRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this carousel?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('online_store/restore_marquee/') ?>" + id;
+      }
+    });
+  }
+</script>
