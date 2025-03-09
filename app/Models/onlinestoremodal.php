@@ -110,7 +110,7 @@ class onlinestoremodal extends Model
 
     public function getAllMembers()
     {
-        return $this->db->table('team_members')->orderBy('order', 'ASC')->get()->getResultArray();
+       return $this->db->table('team_members')->where('is_deleted', 0)->orderBy('order', 'ASC')->get()->getResultArray();
     }
 
     public function updateAbout($data)
@@ -135,8 +135,13 @@ class onlinestoremodal extends Model
 
     public function getAllpolicies()
     {
-        return $this->db->table('policies')->get()->getResultArray();
+         return $this->db->table('policies')->where('is_deleted', 0)->get()->getResultArray();
     }
+
+     public function restorepolicies()
+     {
+         return $this->db->table('policies')->where('is_deleted', 1)->get()->getResultArray();
+     }
 
     public function getAllfooter()
     {
@@ -160,7 +165,7 @@ class onlinestoremodal extends Model
 
     public function getoslogo()
     {
-        return $this->db->table('home_logo')->get()->getResultArray();
+        return $this->db->table('home_logo')->where('is_deleted', 0)->get()->getResultArray();
     }
 
     public function getAllAvailableCollections()
@@ -288,9 +293,26 @@ class onlinestoremodal extends Model
 
     public function getAllonlineblogs()
     {
-        return $this->db->table('onlinestore_blogs')->get()->getResultArray();
+       return $this->db->table('onlinestore_blogs')->where('is_deleted', 0)->get()->getResultArray();
     }
 
+     public function RestoreRelBlog($id, $data)
+     {
+         return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
+ 
+     }
+
+    
+     public function getAlllogblogs()
+     {
+         return $this->db->table('onlinestore_blogs')->where('is_deleted', 1)->get()->getResultArray();
+     }
+ 
+ 
+     public function getAlllogsmembers()
+     {
+         return $this->db->table('team_members')->where('is_deleted', 1)->get()->getResultArray();
+     }
      public function getDeletedMarqueeTexts()
      {
          return $this->db->table('marquee_texts')
