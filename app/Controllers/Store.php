@@ -39,6 +39,25 @@ class Store extends BaseController
         return view('online_store');
     }
 
+
+
+ public function online_store_logs()
+     {
+         $db = \Config\Database::connect();
+         $builder = $db->table('home_logo');
+ 
+         $modal = new onlinestoremodal();
+ 
+         // Fetch only soft-deleted records
+         $data['logos'] = $builder->where('is_deleted', 1)->get()->getResultArray();
+         $data['blogs'] = $modal->getAlllogblogs();
+         $data['members'] = $modal->getAlllogsmembers();
+         $data['policies'] = $modal->restorepolicies();
+         return view('online_store_logs', $data);
+     }
+ 
+
+    
     public function edit_onlinestore()
     {
         $modal = new onlinestoremodal();
@@ -444,15 +463,24 @@ class Store extends BaseController
         }
     }
 
-    public function add_policy()
+  public function add_policy()
     {
         if ($this->request->isAJAX()) {
             $policyModel = new PolicyModel();
+            $session = session();
+
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'policy_name' => $this->request->getPost('policy_name'),
+                'policy_name'        => $this->request->getPost('policy_name'),
                 'policy_description' => $this->request->getPost('policy_description'),
-                'policy_link' => $this->request->getPost('policy_link'),
+                'policy_link'        => $this->request->getPost('policy_link'),
+                'added_by'           => $addedBy, // Storing both Name and ID
+                'updated_by'         => $addedBy, // Storing both Name and ID
             ];
 
             // Attempt to insert new policy data into the database
@@ -492,28 +520,44 @@ class Store extends BaseController
     }
 
 
-    public function delete_policy()
+ // sweet delete message function 
+    public function delete_policy($id)
     {
-        if ($this->request->isAJAX()) {
-            // Get the policy ID from the POST data
-            $policyId = $this->request->getPost('policy_id');
+        $policyModel = new PolicyModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
 
-            // Load the PolicyModel
-            $policyModel = new PolicyModel();
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
 
-            // Try to delete the policy
-            $deleted = $policyModel->delete($policyId);
-
-            if ($deleted) {
-                return $this->response->setJSON(['success' => true]);
-            } else {
-                return $this->response->setJSON(['success' => false]);
-            }
+        if ($policyModel->deletepolicy($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
         }
-
-        return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
 
+    public function Restorepolicy($id)
+    {
+        $policyModel = new policyModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($policyModel->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
+    }
     public function update_policy_order()
     {
         $policyModel = new PolicyModel();
@@ -1217,9 +1261,8 @@ class Store extends BaseController
         }
     }
 
-    public function add_members()
+     public function add_members()
     {
-
         // Initialize Google Cloud Storage
         $storage = new \Google\Cloud\Storage\StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
@@ -1228,17 +1271,25 @@ class Store extends BaseController
         $bucketName = 'sportzsaga_imgs';
         $bucket = $storage->bucket($bucketName);
 
-
         if ($this->request->isAJAX()) {
             $members_model = new MemberModel();
+            $session = session();
 
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'member_name' => $this->request->getPost('member_name'),
+                'member_name'       => $this->request->getPost('member_name'),
                 'member_occupation' => $this->request->getPost('member_occupation'),
-                'member_email' => $this->request->getPost('member_email'),
-                'member_linkedin' => $this->request->getPost('member_linkedin'),
-                'visibility' => $this->request->getPost('member_visibility')
+                'member_email'      => $this->request->getPost('member_email'),
+                'member_linkedin'   => $this->request->getPost('member_linkedin'),
+                'visibility'        => $this->request->getPost('member_visibility'),
+                'added_by'          => $addedBy, // Now storing both Name and ID
+                'created_at'        => date('Y-m-d H:i:s'),
+                'updated_at'        => date('Y-m-d H:i:s'),
             ];
 
             // Handle image upload
@@ -1256,14 +1307,15 @@ class Store extends BaseController
             }
 
             if ($members_model->insert($data)) {
-                return $this->response->setJSON(['success' => true, 'message' => 'Awards Added successfully.']);
+                return $this->response->setJSON(['success' => true, 'message' => 'Member added successfully.']);
             } else {
-                return $this->response->setJSON(['success' => false, 'message' => 'Failed to update Awards.']);
+                return $this->response->setJSON(['success' => false, 'message' => 'Failed to add member.']);
             }
         }
 
         return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
+
 
 
 
@@ -1375,11 +1427,19 @@ class Store extends BaseController
                 // Get public URL of the uploaded file
                 $fileUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
 
+                // Fetch user ID and name from session
+                $session = session();
+                $userId = $session->get('user_id') ?? 1;
+                $userName = $session->get('admin_name') ?? 'Admin';
+
+                $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
+
                 // Save file URL to database
                 $data = [
-                    'logo' => $fileUrl,
+                    'logo'       => $fileUrl,
                     'visibility' => $this->request->getPost('visibility'),
-                    'title' => $this->request->getPost('title')
+                    'title'      => $this->request->getPost('title'),
+                    'added_by'   => $addedBy, // Now storing both Name and ID
                 ];
                 $this->logoModel->insert($data);
 
@@ -1460,32 +1520,67 @@ class Store extends BaseController
 
 
 
-    // Delete Logo
-    public function deleteLogo()
+    // Soft delete a logo
+    public function deleteLogo($logoId)
     {
-        $logoId = $this->request->getPost('logo_id');
+        $userId = session()->get('user_id');
 
-        if ($logoId) {
-            $logoModel = new \App\Models\HomeLogoModel(); // ✅ Load the model
-
-            $logo = $logoModel->find($logoId);
-            if ($logo) {
-                // ✅ Delete logo file
-                $file = FCPATH . 'uploads/' . $logo['logo'];
-                if (is_file($file)) {
-                    unlink($file);
-                }
-
-                // ✅ Delete record from database
-                $logoModel->delete($logoId);
-
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Logo deleted successfully.']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
-            }
-        } else {
+        if (!$logoId) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
         }
+
+        $logoModel = new \App\Models\HomeLogoModel();
+
+        // Check if logo exists
+        $logo = $logoModel->find($logoId);
+        if (!$logo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
+        }
+
+        // Soft delete: update instead of deleting
+        $deletedBy = session()->get('admin_name') . '(' . $userId . ')';
+        $deletedAt = date('Y-m-d H:i:s');
+
+        $updateSuccess = $logoModel->update($logoId, [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => $deletedAt,
+        ]);
+
+        if (!$updateSuccess) {
+            log_message('error', "Failed to delete logo with ID: $logoId");
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete logo.']);
+        }
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Logo deleted successfully.']);
+    }
+
+
+    // View all deleted logos
+    public function deletedLogos()
+    {
+        $logoModel = new \App\Models\HomeLogoModel();
+        $data['logos'] = $logoModel->where('is_deleted', 1)->findAll();
+        return view('logos_deleted', $data);
+    }
+
+    // Restore a soft-deleted logo
+    public function restoreLogo($logoId)
+    {
+        $logoModel = new \App\Models\HomeLogoModel();
+        $logo = $logoModel->find($logoId);
+
+        if (!$logo) {
+            return redirect()->to('logos/deleted')->with('error', 'Logo not found.');
+        }
+
+        $logoModel->update($logoId, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Logo restored successfully.');
     }
 
 
@@ -2356,7 +2451,7 @@ class Store extends BaseController
         }
     }
 
-    public function saveBlogs()
+   public function saveBlogs()
     {
         try {
             if ($this->request->getMethod() !== 'post') {
@@ -2372,6 +2467,13 @@ class Store extends BaseController
             }
 
             $blogModel = new BlogModel();
+            $session = session();
+
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';  // Ensure you're using the correct session key
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Concatenating name and ID
 
             $data = [
                 'blogs_name'        => $this->request->getPost('blogs_name'),
@@ -2379,7 +2481,7 @@ class Store extends BaseController
                 'content_type'      => $contentType,
                 'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
                 'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
-                'added_by'          => session()->get('user_id') ?? 1,
+                'added_by'          => $addedBy, // Now saving both ID and Name
                 'created_at'        => date('Y-m-d H:i:s'),
                 'updated_at'        => date('Y-m-d H:i:s'),
             ];
@@ -2396,7 +2498,6 @@ class Store extends BaseController
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-
     public function updateBlog($id)
     {
         log_message('debug', 'Received blog ID: ' . $id); // Debugging
@@ -2442,25 +2543,43 @@ class Store extends BaseController
 
 
 
-    public function deleteBlog()
+   // sweet delete message function 
+    public function deleteBlog($id)
     {
-        $blogId = $this->request->getPost('id');
+        $blogModel = new BlogModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
 
-        if ($blogId) {
-            $db = \Config\Database::connect();
-            $builder = $db->table('onlinestore_blogs');
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
 
-            // Delete the blog entry
-            $delete = $builder->where('id', $blogId)->delete();
-
-            if ($delete) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog deleted successfully!']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete blog.']);
-            }
+        if ($blogModel->DeleteRelBlog($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
         }
+    }
 
-        return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+    public function RestoreBlog($id)
+    {
+        $blogModel = new BlogModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($blogModel->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
     }
 
 
@@ -2486,4 +2605,49 @@ class Store extends BaseController
 
         return view('online_store_logs', $data);
     }
+
+
+
+ // sweet delete message function 
+    public function deletemember($id)
+    {
+        $members_model = new MemberModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
+
+        if ($members_model->Deletemembers($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
+        }
+    }
+
+
+    public function Restoremember($id)
+    {
+        $members_model = new MemberModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($members_model->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
+    }
+
+
+
 }
