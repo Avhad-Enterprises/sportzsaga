@@ -19,7 +19,8 @@ class MarqueeTextModel extends Model
         'added_by',
         'updated_by',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'change_log'
     ];
 
     protected $useTimestamps = true;

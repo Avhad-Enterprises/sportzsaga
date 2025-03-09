@@ -19,7 +19,7 @@ class HeaderController extends Controller
         $this->db = \Config\Database::connect();
     }
 
-     public function add_new_page()
+    public function add_new_page()
     {
         $session = session();
         $request = $this->request;
@@ -172,9 +172,16 @@ class HeaderController extends Controller
     {
         // Load model
         $pageModel = new PageModel();
+        $session = session();
 
         // Validate Request
         if ($this->request->getMethod() === 'post') {
+            // Retrieve existing page data
+            $existingPage = $pageModel->find($id);
+            if (!$existingPage) {
+                return redirect()->to(base_url('online_store/edit'))->with('error', 'Page not found.');
+            }
+
             // Retrieve form inputs
             $data = [
                 'title' => $this->request->getPost('title'),
@@ -190,6 +197,7 @@ class HeaderController extends Controller
             $subtype = $this->request->getPost('subtype');
             $data['subtype'] = (!empty($subtype) && is_array($subtype)) ? implode(',', array_unique($subtype)) : '';
 
+            // Handle Specific Items (Maintain JSON structure)
             $specificItems = $this->request->getPost('specific_item');
             log_message('debug', 'Received Specific Items: ' . print_r($specificItems, true));
 
@@ -198,7 +206,6 @@ class HeaderController extends Controller
             if (!empty($subtype) && is_array($subtype)) {
                 foreach ($subtype as $index => $selectedSubtype) {
                     if (isset($specificItems[$index])) {
-                        // ✅ Flatten nested arrays and split comma-separated values
                         $flattenedItems = [];
 
                         foreach ($specificItems[$index] as $items) {
@@ -209,7 +216,6 @@ class HeaderController extends Controller
                             }
                         }
 
-                        // ✅ Remove duplicates and trim spaces
                         $uniqueItems = array_values(array_unique(array_map('trim', $flattenedItems)));
                         sort($uniqueItems);
 
@@ -227,14 +233,12 @@ class HeaderController extends Controller
             $imageFile = $this->request->getFile('image');
             if ($imageFile && $imageFile->isValid() && !$imageFile->hasMoved()) {
                 try {
-                    // Initialize Google Cloud Storage
                     $storage = new StorageClient([
                         'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                         'projectId' => 'peak-tide-441609-r1',
                     ]);
                     $bucket = $storage->bucket('sportzsaga_imgs');
 
-                    // Create a unique filename and upload the file
                     $imageName = uniqid() . '-' . $imageFile->getClientName();
                     $object = $bucket->upload(
                         fopen($imageFile->getTempName(), 'r'),
@@ -244,7 +248,6 @@ class HeaderController extends Controller
                         ]
                     );
 
-                    // Get the public URL of the uploaded image
                     $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
                     log_message('info', 'Image uploaded successfully: ' . $imageUrl);
 
@@ -255,25 +258,50 @@ class HeaderController extends Controller
                 }
             }
 
-            // Fetch existing image if no new image is uploaded
+            // Keep the existing image if no new one is uploaded
             if (empty($data['image'])) {
-                $existingPage = $pageModel->find($id);
-                if ($existingPage) {
-                    $data['image'] = $existingPage['image']; // Retain existing image
+                $data['image'] = $existingPage['image'];
+            }
+
+            // Track Changes for Change Log
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if ($existingPage[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingPage[$key],
+                        'new' => $value
+                    ];
                 }
             }
 
-            // Log the final update data
-            log_message('debug', 'Update Data: ' . print_r($data, true));
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingPage['change_log'], true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
 
-            // Update Page Data in the Database
-            $updateStatus = $pageModel->update($id, $data);
+                // Append new changes to the existing log
+                $existingChangeLog[] = [
+                    'updated_by' => $session->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
 
-            if ($updateStatus) {
-                return redirect()->to(base_url('online_store/edit'))->with('success', 'Page updated successfully.');
-            } else {
-                return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update the page.');
+                // Store the updated change log in JSON format
+                $data['change_log'] = json_encode($existingChangeLog);
+
+                // Update page in the database
+                $updateStatus = $pageModel->update($id, $data);
+
+                if ($updateStatus) {
+                    return redirect()->to(base_url('online_store/edit'))->with('success', 'Page updated successfully.');
+                } else {
+                    return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update the page.');
+                }
             }
+
+            return redirect()->to(base_url('online_store/edit'))->with('success', 'No changes were made.');
         }
 
         return redirect()->to(base_url('online_store/edit'));
