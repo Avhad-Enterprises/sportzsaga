@@ -8,10 +8,10 @@ class HomeLogoModel extends Model
 {
     protected $table = 'home_logo';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'logo', 'visibility', 'created_at', 'updated_at'];
+    protected $allowedFields = ['title', 'logo', 'visibility', 'created_at', 'updated_at', 'deleted_at', 'deleted_by', 'is_deleted', 'added_by'];
     protected $useTimestamps = true;
 
-     public function Restorelogo($logoId, $data)
+    public function Restorelogo($logoId, $data)
     {
         return $this->db->table('home_logo')->where('id', $logoId)->update($data);
 
