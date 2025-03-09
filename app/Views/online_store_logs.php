@@ -302,6 +302,234 @@
 
 
 
+                 <div class="card-box mb-30">
+                     <div class="pd-20">
+                         <h4 class="text-blue h4">Deleted Logos</h4>
+                     </div>
+                     <div class="pb-20">
+                         <table class="table hover data-table-export table-hover">
+                             <thead>
+                                 <tr>
+                                     <th>Title</th>
+                                     <th>Logo</th>
+                                     <th>Visibility</th>
+                                     <th>Created_at</th>
+                                     <th>Updated_at</th>
+                                     <th>Is deleted</th>
+                                     <th>Added_by</th>
+                                     <th>Deleted At</th>
+                                     <th>Deleted By</th>
+                                     <th>Actions</th>
+                                 </tr>
+                             </thead>
+ 
+                             <tbody>
+                                 <?php if (!empty($logos)): ?>
+                                     <?php foreach ($logos as $logo): ?>
+                                         <tr>
+                                             <td><?= esc(substr($logo['title'], 0, 50)) . (strlen($logo['title']) > 50 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc(substr($logo['logo'], 0, 20)) . (strlen($logo['logo']) > 20 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc($logo['visibility']) ?></td>
+                                             <td><?= esc($logo['created_at']) ?></td>
+                                             <td><?= esc($logo['updated_at']) ?></td>
+                                             <td><?= esc($logo['is_deleted']) ?></td>
+                                             <td><?= esc($logo['added_by']) ?></td>
+                                             <td><?= esc($logo['deleted_at']) ?></td>
+                                             <td><?= esc($logo['deleted_by']) ?></td>
+                                             <td>
+                                                 <a class="dropdown-item" href="javascript:void(0);"
+                                                     onclick="confirmlogoRestore(<?= esc($logo['id']) ?>)">
+                                                     <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                                 </a>
+                                             </td>
+                                         </tr>
+                                     <?php endforeach; ?>
+                                 <?php else: ?>
+                                     <tr>
+                                         <td colspan="10" class="text-center">No deleted logo found.</td>
+                                     </tr>
+                                 <?php endif; ?>
+                             </tbody>
+ 
+                         </table>
+                     </div>
+                 </div>
+ 
+                 <div class="card-box mb-30">
+                     <div class="pd-20">
+                         <h4 class="text-blue h4">Deleted blogs</h4>
+                     </div>
+                     <div class="pb-20">
+                         <table class="table hover data-table-export table-hover">
+                             <thead>
+                                 <tr>
+                                     <th>Title</th>
+                                     <th>Description</th>
+                                     <th>Content type</th>
+                                     <th>Blogs</th>
+                                     <th>Tags</th>
+                                     <th>Created At</th>
+                                     <th>Updated At</th>
+                                     <th>Updated By</th>
+                                     <th>Added By</th>
+                                     <th>Is deleted</th>
+                                     <th>Deleted At</th>
+                                     <th>Deleted By</th>
+                                     <th>Actions</th>
+                                 </tr>
+                             </thead>
+ 
+ 
+                             <tbody>
+                                 <?php if (!empty($blogs)): ?>
+                                     <?php foreach ($blogs as $blog): ?>
+                                         <tr>
+                                             <td><?= esc(substr($blog['blogs_name'], 0, 50)) . (strlen($blog['blogs_name']) > 50 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc(substr($blog['blogs_description'], 0, 20)) . (strlen($blog['blogs_description']) > 20 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc($blog['content_type']) ?></td>
+                                             <td><?= esc($blog['blogs']) ?></td>
+                                             <td><?= esc($blog['tags']) ?></td>
+                                             <td><?= esc($blog['created_at']) ?></td>
+                                             <td><?= esc($blog['updated_at']) ?></td>
+                                             <td><?= esc($blog['updated_by']) ?></td>
+                                             <td><?= esc($blog['added_by']) ?></td>
+                                             <td><?= esc($blog['is_deleted']) ?></td>
+                                             <td><?= esc($blog['deleted_at']) ?></td>
+                                             <td><?= esc($blog['deleted_by']) ?></td>
+                                             <td>
+                                                 <a class="dropdown-item" href="javascript:void(0);"
+                                                     onclick="confirmblogsRestore(<?= esc($blog['id']) ?>)">
+                                                     <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                                 </a>
+                                             </td>
+                                         </tr>
+                                     <?php endforeach; ?>
+                                 <?php else: ?>
+                                     <tr>
+                                         <td colspan="12" class="text-center">No deleted blog found.</td>
+                                     </tr>
+                                 <?php endif; ?>
+                             </tbody>
+ 
+                         </table>
+                     </div>
+                 </div>
+ 
+                 <div class="card-box mb-30">
+                     <div class="pd-20">
+                         <h4 class="text-blue h4">Deleted Members</h4>
+                     </div>
+                     <div class="pb-20">
+                         <table class="table hover data-table-export table-hover">
+                             <thead>
+                                 <tr>
+                                     <th>Member Name</th>
+                                     <th>Member Occupation</th>
+                                     <th>Member Email</th>
+                                     <th>Member Linkedin</th>
+                                     <th>Order</th>
+                                     <th>Created At</th>
+                                     <th>Updated At</th>
+                                     <th>Is Deleted</th>
+                                     <th>Deleted By</th>
+                                     <th>Deleted At</th>
+                                     <th>Actions</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <?php if (!empty($members)): ?>
+                                     <?php foreach ($members as $member): ?>
+                                         <tr>
+                                             <td><?= esc(substr($member['member_name'], 0, 50)) . (strlen($member['member_name']) > 50 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc(substr($member['member_occupation'], 0, 20)) . (strlen($member['member_occupation']) > 20 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc($member['member_email']) ?></td>
+                                             <td><?= esc($member['member_linkedin']) ?></td>
+                                             <td><?= esc($member['order']) ?></td>
+                                             <td><?= esc($member['created_at']) ?></td>
+                                             <td><?= esc($member['updated_at']) ?></td>
+                                             <td><?= esc($member['is_deleted']) ?></td>
+                                             <td><?= esc($member['deleted_by']) ?></td>
+                                             <td><?= esc($member['deleted_at']) ?></td>
+                                             <td>
+                                                 <a class="dropdown-item" href="javascript:void(0);"
+                                                     onclick="memberRestore(<?= esc($member['id']) ?>)">
+                                                     <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                                 </a>
+                                             </td>
+                                         </tr>
+                                     <?php endforeach; ?>
+                                 <?php else: ?>
+                                     <tr>
+                                         <td colspan="11" class="text-center">No deleted Member found.</td>
+                                     </tr>
+                                 <?php endif; ?>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+ 
+                 <div class="card-box mb-30">
+                     <div class="pd-20">
+                         <h4 class="text-blue h4">Deleted policies</h4>
+                     </div>
+                     <div class="pb-20">
+                         <table class="table hover data-table-export table-hover">
+                             <thead>
+                                 <tr>
+                                     <th>Policy Name</th>
+                                     <th>Policy Description</th>
+                                     <th>Policy Link</th>
+                                     <th>Is Deleted</th>
+                                     <th>Deleted By</th>
+                                     <th>Deleted At</th>
+                                     <th>Added By</th>
+                                     <th>Updated By</th>
+                                     <th>Created At</th>
+                                     <th>Updated At</th>
+                                     <th>Actions</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <?php if (!empty($policies)): ?>
+                                     <?php foreach ($policies as $policie): ?>
+                                         <tr>
+                                             <td><?= esc(substr($policie['policy_name'], 0, 50)) . (strlen($policie['policy_name']) > 50 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc(substr($policie['policy_description'], 0, 20)) . (strlen($policie['policy_description']) > 20 ? '...' : '') ?>
+                                             </td>
+                                             <td><?= esc($policie['policy_link']) ?></td>
+                                             <td><?= esc($policie['is_deleted']) ?></td>
+                                             <td><?= esc($policie['deleted_by']) ?></td>
+                                             <td><?= esc($policie['deleted_at']) ?></td>
+                                             <td><?= esc($policie['added_by']) ?></td>
+                                             <td><?= esc($policie['updated_by']) ?></td>
+                                             <td><?= esc($policie['created_at']) ?></td>
+                                             <td><?= esc($policie['updated_at']) ?></td>
+                                             <td>
+                                                 <a class="dropdown-item" href="javascript:void(0);"
+                                                     onclick="policyRestore(<?= esc($policie['id']) ?>)">
+                                                     <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                                 </a>
+                                             </td>
+                                         </tr>
+                                     <?php endforeach; ?>
+                                 <?php else: ?>
+                                     <tr>
+                                         <td colspan="11" class="text-center">No deleted policies found.</td>
+                                     </tr>
+                                 <?php endif; ?>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+
+
             </div>
         </div>
     </div>
