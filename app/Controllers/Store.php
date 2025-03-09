@@ -19,6 +19,7 @@ use App\Models\MemberModel;
 use App\Models\MarqueeTextModel;
 use App\Models\Productselection;
 use App\Models\BlogModel;
+use App\Models\PageModel;
 use Google\Cloud\Storage\StorageClient;
 
 class Store extends BaseController
@@ -38,6 +39,25 @@ class Store extends BaseController
         return view('online_store');
     }
 
+
+
+ public function online_store_logs()
+     {
+         $db = \Config\Database::connect();
+         $builder = $db->table('home_logo');
+ 
+         $modal = new onlinestoremodal();
+ 
+         // Fetch only soft-deleted records
+         $data['logos'] = $builder->where('is_deleted', 1)->get()->getResultArray();
+         $data['blogs'] = $modal->getAlllogblogs();
+         $data['members'] = $modal->getAlllogsmembers();
+         $data['policies'] = $modal->restorepolicies();
+         return view('online_store_logs', $data);
+     }
+ 
+
+    
     public function edit_onlinestore()
     {
         $modal = new onlinestoremodal();
@@ -162,9 +182,14 @@ class Store extends BaseController
     {
         $session = session();
 
-        log_message('info', 'addcarousel method started.');
+        // ✅ Fetch User ID from Session
+        $userId = $session->get('user_id');
 
-        // Google Cloud Storage Setup
+        if (!$userId) {
+            return redirect()->back()->with('error', 'User session not found. Please log in again.');
+        }
+
+        // ✅ Google Cloud Storage Setup
         try {
             log_message('info', 'Setting up Google Cloud Storage.');
             $storage = new \Google\Cloud\Storage\StorageClient([
@@ -175,11 +200,7 @@ class Store extends BaseController
             $bucket = $storage->bucket($bucketName);
         } catch (\Exception $e) {
             log_message('error', 'Google Cloud Storage setup failed: ' . $e->getMessage());
-            $session->setFlashdata('toast', [
-                'type' => 'error',
-                'message' => 'Failed to connect to Google Cloud Storage.',
-            ]);
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Failed to connect to Google Cloud Storage.');
         }
 
         $carouselImage = $this->request->getFile('carousel_image');
@@ -188,49 +209,33 @@ class Store extends BaseController
         $mobileImageUrl = '';
 
         try {
-            // Upload Carousel Image
+            // ✅ Upload Carousel Image
             if ($carouselImage && $carouselImage->isValid() && !$carouselImage->hasMoved()) {
                 log_message('info', 'Uploading carousel image.');
                 $carouselFileName = 'carousel/' . uniqid() . '_' . $carouselImage->getClientName();
                 $bucket->upload(
                     fopen($carouselImage->getTempName(), 'r'),
-                    [
-                        'name' => $carouselFileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $carouselFileName, 'predefinedAcl' => 'publicRead']
                 );
                 $carouselImageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $carouselFileName);
-                log_message('info', 'Carousel image uploaded: ' . $carouselImageUrl);
-            } else {
-                log_message('info', 'No valid carousel image provided.');
             }
 
-            // Upload Mobile Image
+            // ✅ Upload Mobile Image
             if ($mobileImage && $mobileImage->isValid() && !$mobileImage->hasMoved()) {
                 log_message('info', 'Uploading mobile image.');
                 $mobileFileName = 'carousel/mobile/' . uniqid() . '_' . $mobileImage->getClientName();
                 $bucket->upload(
                     fopen($mobileImage->getTempName(), 'r'),
-                    [
-                        'name' => $mobileFileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $mobileFileName, 'predefinedAcl' => 'publicRead']
                 );
                 $mobileImageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $mobileFileName);
-                log_message('info', 'Mobile image uploaded: ' . $mobileImageUrl);
-            } else {
-                log_message('info', 'No valid mobile image provided.');
             }
         } catch (\Exception $e) {
             log_message('error', 'Image upload failed: ' . $e->getMessage());
-            $session->setFlashdata('toast', [
-                'type' => 'error',
-                'message' => 'Failed to upload images: ' . $e->getMessage(),
-            ]);
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Failed to upload images.');
         }
 
-        // Prepare Carousel Data
+        // ✅ Prepare Carousel Data
         $carouselData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
@@ -240,12 +245,12 @@ class Store extends BaseController
             'image' => $carouselImageUrl,
             'image_mobile' => $mobileImageUrl,
             'visibility' => $this->request->getPost('carousel_visibility') == '1' ? 1 : 0,
-            'added_by' => $session->get('user_id'),
+            'added_by' => $userId,  // ✅ Store User ID who added the carousel
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
         $carouselModel = new onlinestoremodal();
-        if ($carouselModel->insert($carouselData, false)) { // Using false prevents re-insertion
+        if ($carouselModel->insert($carouselData)) {
             return redirect()->back()->with('success', 'Carousel added successfully!');
         } else {
             return redirect()->back()->with('error', 'Failed to save carousel data.');
@@ -342,21 +347,64 @@ class Store extends BaseController
     public function delete_carousel($id)
     {
         $db = \Config\Database::connect();
-        $builder = $db->table('carousels'); // ✅ Corrected table name
+        $builder = $db->table('carousels');
 
-        // Debug: Check if the ID exists before deleting
+        // Check if the carousel exists
         $existing = $builder->where('id', $id)->get()->getRow();
         if (!$existing) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Carousel not found.']);
+            return redirect()->to('online_store/edit')->with('error', 'Carousel not found.');
         }
 
-        // Attempt deletion
-        if ($builder->where('id', $id)->delete()) {
-            return $this->response->setJSON(['success' => true, 'message' => 'Carousel deleted successfully.']);
-        } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete carousel.']);
+        // Get the current user's ID for logging who deleted it
+        $userId = session()->get('user_id');
+        $deletedAt = date('Y-m-d H:i:s');
+
+        // Perform soft deletion by updating specific fields
+        $updateSuccess = $builder->where('id', $id)->update([
+            'is_deleted' => 1,         // Mark as deleted
+            'deleted_by' => $userId,   // Store who deleted it
+            'deleted_at' => $deletedAt // Record deletion timestamp
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete carousel. Please try again.');
         }
+
+        return redirect()->to('online_store/edit')->with('success', 'Carousel deleted successfully.');
     }
+
+
+    public function restore_carousel($id)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('carousels');
+
+        // Check if the carousel exists and is soft deleted
+        $existing = $builder->where('id', $id)->where('is_deleted', 1)->get()->getRow();
+        if (!$existing) {
+            return redirect()->to('carousels/deleted')->with('error', 'Carousel not found.');
+        }
+
+        // Restore the soft-deleted record
+        $builder->where('id', $id)->update([
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Carousel restored successfully.');
+    }
+
+
+
+
+
+
+
+
+
+
+    
 
     public function SaveHomeImage()
     {
@@ -415,15 +463,24 @@ class Store extends BaseController
         }
     }
 
-    public function add_policy()
+  public function add_policy()
     {
         if ($this->request->isAJAX()) {
             $policyModel = new PolicyModel();
+            $session = session();
+
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'policy_name' => $this->request->getPost('policy_name'),
+                'policy_name'        => $this->request->getPost('policy_name'),
                 'policy_description' => $this->request->getPost('policy_description'),
-                'policy_link' => $this->request->getPost('policy_link'),
+                'policy_link'        => $this->request->getPost('policy_link'),
+                'added_by'           => $addedBy, // Storing both Name and ID
+                'updated_by'         => $addedBy, // Storing both Name and ID
             ];
 
             // Attempt to insert new policy data into the database
@@ -463,28 +520,44 @@ class Store extends BaseController
     }
 
 
-    public function delete_policy()
+ // sweet delete message function 
+    public function delete_policy($id)
     {
-        if ($this->request->isAJAX()) {
-            // Get the policy ID from the POST data
-            $policyId = $this->request->getPost('policy_id');
+        $policyModel = new PolicyModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
 
-            // Load the PolicyModel
-            $policyModel = new PolicyModel();
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
 
-            // Try to delete the policy
-            $deleted = $policyModel->delete($policyId);
-
-            if ($deleted) {
-                return $this->response->setJSON(['success' => true]);
-            } else {
-                return $this->response->setJSON(['success' => false]);
-            }
+        if ($policyModel->deletepolicy($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
         }
-
-        return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
 
+    public function Restorepolicy($id)
+    {
+        $policyModel = new policyModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($policyModel->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
+    }
     public function update_policy_order()
     {
         $policyModel = new PolicyModel();
@@ -1188,9 +1261,8 @@ class Store extends BaseController
         }
     }
 
-    public function add_members()
+     public function add_members()
     {
-
         // Initialize Google Cloud Storage
         $storage = new \Google\Cloud\Storage\StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
@@ -1199,17 +1271,25 @@ class Store extends BaseController
         $bucketName = 'sportzsaga_imgs';
         $bucket = $storage->bucket($bucketName);
 
-
         if ($this->request->isAJAX()) {
             $members_model = new MemberModel();
+            $session = session();
 
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'member_name' => $this->request->getPost('member_name'),
+                'member_name'       => $this->request->getPost('member_name'),
                 'member_occupation' => $this->request->getPost('member_occupation'),
-                'member_email' => $this->request->getPost('member_email'),
-                'member_linkedin' => $this->request->getPost('member_linkedin'),
-                'visibility' => $this->request->getPost('member_visibility')
+                'member_email'      => $this->request->getPost('member_email'),
+                'member_linkedin'   => $this->request->getPost('member_linkedin'),
+                'visibility'        => $this->request->getPost('member_visibility'),
+                'added_by'          => $addedBy, // Now storing both Name and ID
+                'created_at'        => date('Y-m-d H:i:s'),
+                'updated_at'        => date('Y-m-d H:i:s'),
             ];
 
             // Handle image upload
@@ -1227,14 +1307,15 @@ class Store extends BaseController
             }
 
             if ($members_model->insert($data)) {
-                return $this->response->setJSON(['success' => true, 'message' => 'Awards Added successfully.']);
+                return $this->response->setJSON(['success' => true, 'message' => 'Member added successfully.']);
             } else {
-                return $this->response->setJSON(['success' => false, 'message' => 'Failed to update Awards.']);
+                return $this->response->setJSON(['success' => false, 'message' => 'Failed to add member.']);
             }
         }
 
         return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
+
 
 
 
@@ -1346,11 +1427,19 @@ class Store extends BaseController
                 // Get public URL of the uploaded file
                 $fileUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
 
+                // Fetch user ID and name from session
+                $session = session();
+                $userId = $session->get('user_id') ?? 1;
+                $userName = $session->get('admin_name') ?? 'Admin';
+
+                $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
+
                 // Save file URL to database
                 $data = [
-                    'logo' => $fileUrl,
+                    'logo'       => $fileUrl,
                     'visibility' => $this->request->getPost('visibility'),
-                    'title' => $this->request->getPost('title')
+                    'title'      => $this->request->getPost('title'),
+                    'added_by'   => $addedBy, // Now storing both Name and ID
                 ];
                 $this->logoModel->insert($data);
 
@@ -1431,32 +1520,67 @@ class Store extends BaseController
 
 
 
-    // Delete Logo
-    public function deleteLogo()
+    // Soft delete a logo
+    public function deleteLogo($logoId)
     {
-        $logoId = $this->request->getPost('logo_id');
+        $userId = session()->get('user_id');
 
-        if ($logoId) {
-            $logoModel = new \App\Models\HomeLogoModel(); // ✅ Load the model
-
-            $logo = $logoModel->find($logoId);
-            if ($logo) {
-                // ✅ Delete logo file
-                $file = FCPATH . 'uploads/' . $logo['logo'];
-                if (is_file($file)) {
-                    unlink($file);
-                }
-
-                // ✅ Delete record from database
-                $logoModel->delete($logoId);
-
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Logo deleted successfully.']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
-            }
-        } else {
+        if (!$logoId) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
         }
+
+        $logoModel = new \App\Models\HomeLogoModel();
+
+        // Check if logo exists
+        $logo = $logoModel->find($logoId);
+        if (!$logo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
+        }
+
+        // Soft delete: update instead of deleting
+        $deletedBy = session()->get('admin_name') . '(' . $userId . ')';
+        $deletedAt = date('Y-m-d H:i:s');
+
+        $updateSuccess = $logoModel->update($logoId, [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => $deletedAt,
+        ]);
+
+        if (!$updateSuccess) {
+            log_message('error', "Failed to delete logo with ID: $logoId");
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete logo.']);
+        }
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Logo deleted successfully.']);
+    }
+
+
+    // View all deleted logos
+    public function deletedLogos()
+    {
+        $logoModel = new \App\Models\HomeLogoModel();
+        $data['logos'] = $logoModel->where('is_deleted', 1)->findAll();
+        return view('logos_deleted', $data);
+    }
+
+    // Restore a soft-deleted logo
+    public function restoreLogo($logoId)
+    {
+        $logoModel = new \App\Models\HomeLogoModel();
+        $logo = $logoModel->find($logoId);
+
+        if (!$logo) {
+            return redirect()->to('logos/deleted')->with('error', 'Logo not found.');
+        }
+
+        $logoModel->update($logoId, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Logo restored successfully.');
     }
 
 
@@ -1919,26 +2043,41 @@ class Store extends BaseController
     }
 
 
-    public function saveMarqueeText()
+   public function saveMarqueeText()
     {
+        $session = session();
         $response = ['status' => 'error', 'message' => 'Something went wrong'];
+
+        
+        $userId = $session->get('user_id');
+
+        if (!$userId) {
+            $response['message'] = 'User session not found. Please log in again.';
+            return $this->response->setJSON($response);
+        }
+
+        log_message('debug', 'Session User ID: ' . $userId);
 
         $marqueeText = $this->request->getPost('marqueeText');
         $marqueeTextLink = $this->request->getPost('marqueeText_link');
         $textVisibility = $this->request->getPost('text_visibility');
 
-        // Validation (Optional)
+        // ✅ Validation
         if (empty($marqueeText)) {
             $response['message'] = 'Text field is required.';
             return $this->response->setJSON($response);
         }
 
+       
         $data = [
             'marqueeText' => $marqueeText,
             'marqueeText_link' => $marqueeTextLink,
             'text_visibility' => $textVisibility,
-            'added_by' => 1,
+            'added_by' => $userId,  
+            'created_at' => date('Y-m-d H:i:s'),
         ];
+
+        log_message('debug', 'Final Data to Insert: ' . print_r($data, true));
 
         $model = new MarqueeTextModel();
         if ($model->insert($data)) {
@@ -1950,6 +2089,7 @@ class Store extends BaseController
 
         return $this->response->setJSON($response);
     }
+
 
     public function GetMarqueeText($id)
     {
@@ -1966,11 +2106,47 @@ class Store extends BaseController
     public function delete_marquee($id)
     {
         $model = new MarqueeTextModel();
-        if ($model->delete($id)) {
-            return $this->response->setJSON(['status' => 'success', 'message' => 'Text deleted successfully']);
-        } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete text']);
+        $session = session();
+        $userId = $session->get('user_id'); 
+
+        
+        $marquee = $model->find($id);
+        if (!$marquee) {
+            return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
         }
+
+        
+        $updateSuccess = $model->update($id, [
+            'is_deleted' => 1,        
+            'deleted_by' => $userId,   
+            'deleted_at' => date('Y-m-d H:i:s')
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete marquee text. Please try again.');
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'Marquee text deleted successfully.');
+    }
+
+
+    public function restore_marquee($id)
+    {
+        $model = new MarqueeTextModel();
+
+        $marquee = $model->where('id', $id)->where('is_deleted', 1)->first();
+        if (!$marquee) {
+            return redirect()->to('marquees/deleted')->with('error', 'Marquee text not found.');
+        }
+
+      
+        $model->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Marquee text restored successfully.');
     }
 
     public function UpdateMarquee($id)
@@ -2052,6 +2228,58 @@ class Store extends BaseController
         }
     }
 
+
+
+
+
+    <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+
+     public function delete_page($id)
+    {
+        $pageModel = new PageModel();
+        $session = session();
+        $userId = $session->get('user_id'); 
+
+      
+        $page = $pageModel->find($id);
+        if (!$page) {
+            return redirect()->to('online_store/edit')->with('error', 'Page not found.');
+        }
+
+      
+        $updateSuccess = $pageModel->update($id, [
+            'is_deleted' => 1,      
+            'deleted_by' => $userId,   
+            'deleted_at' => date('Y-m-d H:i:s') 
+        ]);
+
+        if (!$updateSuccess) {
+            return redirect()->to('online_store/edit')->with('error', 'Failed to delete page. Please try again.');
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'Page deleted successfully.');
+    }
+
+
+    public function restore_page($id)
+    {
+        $pageModel = new PageModel();
+
+       
+        $page = $pageModel->where('id', $id)->where('is_deleted', 1)->first();
+        if (!$page) {
+            return redirect()->to('header_pages/deleted')->with('error', 'Page not found.');
+        }
+
+      
+        $pageModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ]);
+
+        return redirect()->to('online_store/edit')->with('success', 'Page restored successfully.');
+    }
 
 
 
@@ -2223,7 +2451,7 @@ class Store extends BaseController
         }
     }
 
-    public function saveBlogs()
+   public function saveBlogs()
     {
         try {
             if ($this->request->getMethod() !== 'post') {
@@ -2239,6 +2467,13 @@ class Store extends BaseController
             }
 
             $blogModel = new BlogModel();
+            $session = session();
+
+            // Fetch user ID and name from session
+            $userId = $session->get('user_id') ?? 1;
+            $userName = $session->get('admin_name') ?? 'Admin';  // Ensure you're using the correct session key
+
+            $addedBy = $userName . ' (' . $userId . ')'; // Concatenating name and ID
 
             $data = [
                 'blogs_name'        => $this->request->getPost('blogs_name'),
@@ -2246,7 +2481,7 @@ class Store extends BaseController
                 'content_type'      => $contentType,
                 'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
                 'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
-                'added_by'          => session()->get('user_id') ?? 1,
+                'added_by'          => $addedBy, // Now saving both ID and Name
                 'created_at'        => date('Y-m-d H:i:s'),
                 'updated_at'        => date('Y-m-d H:i:s'),
             ];
@@ -2263,7 +2498,6 @@ class Store extends BaseController
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-
     public function updateBlog($id)
     {
         log_message('debug', 'Received blog ID: ' . $id); // Debugging
@@ -2309,24 +2543,111 @@ class Store extends BaseController
 
 
 
-    public function deleteBlog()
+   // sweet delete message function 
+    public function deleteBlog($id)
     {
-        $blogId = $this->request->getPost('id');
+        $blogModel = new BlogModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
 
-        if ($blogId) {
-            $db = \Config\Database::connect();
-            $builder = $db->table('onlinestore_blogs');
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
 
-            // Delete the blog entry
-            $delete = $builder->where('id', $blogId)->delete();
-
-            if ($delete) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog deleted successfully!']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete blog.']);
-            }
+        if ($blogModel->DeleteRelBlog($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
         }
-
-        return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
     }
+
+    public function RestoreBlog($id)
+    {
+        $blogModel = new BlogModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($blogModel->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
+    }
+
+
+
+
+
+
+
+
+        
+    //<!---------------------------------------------------------------------------------- Logs ---------------------------------------------------------------------------------------->
+
+
+    public function online_store_logs()
+    {
+        $db = \Config\Database::connect();
+        $model = new onlinestoremodal();
+        $pageModel = new PageModel();
+
+        $data['pages'] = $model->getDeletedHeaderPages();
+        $data['marquees'] = $model->getDeletedMarqueeTexts();
+        $data['carousels'] = $model->getcarouselTexts();
+
+        return view('online_store_logs', $data);
+    }
+
+
+
+ // sweet delete message function 
+    public function deletemember($id)
+    {
+        $members_model = new MemberModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedby,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
+
+        if ($members_model->Deletemembers($id, $data)) {
+            return redirect()->back()->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to Delete.');
+        }
+    }
+
+
+    public function Restoremember($id)
+    {
+        $members_model = new MemberModel();
+        $session = session();
+        $deletedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($members_model->update($id, $data)) { // Use update() method
+            return redirect()->back()->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore.');
+        }
+    }
+
+
+
 }

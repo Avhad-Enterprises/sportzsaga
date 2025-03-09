@@ -19,9 +19,19 @@ class HeaderController extends Controller
         $this->db = \Config\Database::connect();
     }
 
-    public function add_new_page()
+     public function add_new_page()
     {
+        $session = session();
         $request = $this->request;
+
+        // ✅ Fetch User ID from Session
+        $userId = $session->get('user_id');
+
+        if (!$userId) {
+            return redirect()->back()->with('error', 'User session not found. Please log in again.');
+        }
+
+        log_message('debug', 'Session User ID: ' . $userId);
 
         // ✅ Log the raw form data
         log_message('debug', 'Raw Form Data: ' . print_r($request->getPost(), true));
@@ -91,7 +101,7 @@ class HeaderController extends Controller
             }
         }
 
-        // Prepare data for insertion into the database
+        // ✅ Prepare data for insertion into the database
         $data = [
             'title' => $request->getPost('title'),
             'link' => $request->getPost('link'),
@@ -100,6 +110,7 @@ class HeaderController extends Controller
             'subtype' => $subtypes_data,
             'specific_item' => $specific_item_data,
             'image' => $imageUrl,
+            'added_by' => $userId,  // ✅ Store User ID who added the page
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
@@ -113,6 +124,7 @@ class HeaderController extends Controller
             return redirect()->back()->with('error', 'Failed to add page.');
         }
     }
+
 
     public function get_items($type)
     {
@@ -267,24 +279,5 @@ class HeaderController extends Controller
         return redirect()->to(base_url('online_store/edit'));
     }
 
-
-
-    public function delete_page($id)
-    {
-        $pageModel = new PageModel();
-
-        // Check if the page exists
-        $page = $pageModel->find($id);
-        if (!$page) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Page not found'])->setStatusCode(404);
-        }
-
-        // Delete the page
-        if ($pageModel->delete($id)) {
-            return $this->response->setJSON(['success' => true, 'message' => 'Page deleted successfully'])->setStatusCode(200);
-        } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete page'])->setStatusCode(500);
-        }
-    }
 }
 
