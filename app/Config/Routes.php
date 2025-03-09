@@ -152,15 +152,14 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('online_store/add_members', 'Store::add_members');
    $routes->post('online_store/edit_members', 'Store::edit_members');
    $routes->post('online_store/update_members_order', 'Store::update_member_order');
+   $routes->get('online_store/deletemember/(:num)', 'Store::deletemember/$1');
    $routes->post('admin/update-footer', 'Store::updateFooter');
    $routes->get('online_store/delete_carousel/(:num)', 'Store::delete_carousel/$1')
 
    // Route for adding or updating a policy
    $routes->post('policy/save', 'Store::add_policy');
-   $routes->post('store/delete_policy', 'Store::delete_policy');
-
-   // Define route for updating a policy
-   $routes->post('store/edit', 'Store::edit_policy');
+   $routes->get('online_store/delete_policy/(:num)', 'Store::delete_policy/$1');
+   $routes->get('online_store/restore-policy/(:num)', 'Store::Restorepolicy/$1');
 
    // Define route for updating a policy
    $routes->post('store/edit', 'Store::edit_policy');
@@ -515,7 +514,8 @@ $routes->post('admin/collection/saveCollection', 'BlogSettingsController::saveCo
 
 //Home page
 $routes->post('home/saveLogo', 'Store::saveLogo');
-$routes->post('home/deleteLogo', 'Store::deleteLogo');
+$routes->get('online_store/delete-all-logo/(:num)', 'Store::deleteLogo/$1');
+ $routes->get('online_store/delete-all-logos/(:num)', 'Store::restoreLogo/$1');
 $routes->post('home/editLogo', 'Store::editLogo');
 
 //home collection
@@ -553,8 +553,14 @@ $routes->get('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 $routes->post('home-image/save', 'Store::save');
 $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
-$routes->post('Store/deleteBlog', 'Store::deleteBlog');
-
+$routes->get('online_store/delete-all-blogs/(:num)', 'Store::deleteBlog/$1');
+ $routes->get('online_store/restore-all-blogs/(:num)', 'Store::RestoreBlog/$1');
+ 
+ 
+ //logs 
+ $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+ 
+ $routes->get('online_store/restore-all-members/(:num)', 'Store::Restoremember/$1');
 $routes->post('online_store/save', 'Store::save');
  
  
@@ -574,3 +580,8 @@ $routes->post('online_store/save', 'Store::save');
  //Marquee
  $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
  $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
+
+
+
+
+
