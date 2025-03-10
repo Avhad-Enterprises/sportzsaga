@@ -4138,9 +4138,12 @@
                                                                 <i id="chevron--<?= $text['id'] ?>" class="fas fa-chevron-down"></i>
                                                             </button>
                                                             <!-- Delete Button -->
-                                                           <a href="javascript:void(0);"
-                                                             onclick="deletemarquee(<?= $text['id'] ?>)" class=""
-                                                             style="color: red; padding: 0;">
+                                                          <!-- Delete Button -->
+                                                        <a href="javascript:void(0);"
+                                                            onclick="deletemarquee(<?= $text['id'] ?>)" class=""
+                                                            style="color: red; padding: 0;">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
                                                         </div>
                                                     </div>
 

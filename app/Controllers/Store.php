@@ -45,7 +45,7 @@ class Store extends BaseController
      {
          $db = \Config\Database::connect();
          $builder = $db->table('home_logo');
- 
+
          $modal = new onlinestoremodal();
  
          // Fetch only soft-deleted records
@@ -53,7 +53,12 @@ class Store extends BaseController
          $data['blogs'] = $modal->getAlllogblogs();
          $data['members'] = $modal->getAlllogsmembers();
          $data['policies'] = $modal->restorepolicies();
+         $data['pages'] = $modal->getDeletedHeaderPages();
+         $data['marquees'] = $modal->getDeletedMarqueeTexts();
+         $data['carousels'] = $modal->getcarouselTexts();
+  
          return view('online_store_logs', $data);
+
      }
  
 
@@ -2232,7 +2237,7 @@ class Store extends BaseController
 
 
 
-    <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+   // <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
 
      public function delete_page($id)
     {
@@ -2593,19 +2598,7 @@ class Store extends BaseController
     //<!---------------------------------------------------------------------------------- Logs ---------------------------------------------------------------------------------------->
 
 
-    public function online_store_logs()
-    {
-        $db = \Config\Database::connect();
-        $model = new onlinestoremodal();
-        $pageModel = new PageModel();
-
-        $data['pages'] = $model->getDeletedHeaderPages();
-        $data['marquees'] = $model->getDeletedMarqueeTexts();
-        $data['carousels'] = $model->getcarouselTexts();
-
-        return view('online_store_logs', $data);
-    }
-
+   
 
 
  // sweet delete message function 

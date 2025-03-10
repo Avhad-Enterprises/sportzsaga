@@ -154,7 +154,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('online_store/update_members_order', 'Store::update_member_order');
    $routes->get('online_store/deletemember/(:num)', 'Store::deletemember/$1');
    $routes->post('admin/update-footer', 'Store::updateFooter');
-   $routes->get('online_store/delete_carousel/(:num)', 'Store::delete_carousel/$1')
+   $routes->get('online_store/delete_carousel/(:num)', 'Store::delete_carousel/$1');
 
    // Route for adding or updating a policy
    $routes->post('policy/save', 'Store::add_policy');
