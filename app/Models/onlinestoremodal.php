@@ -8,7 +8,7 @@ class onlinestoremodal extends Model
 {
     protected $table = 'carousels';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'description', 'selection_type', 'product_id', 'collection_id', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at', 'added_by', 'is_deleted', 'deleted_at', 'deleted_by'];
+    protected $allowedFields = ['title', 'description', 'selection_type', 'product_id', 'collection_id', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at', 'added_by', 'is_deleted', 'deleted_at', 'deleted_by','change_log','updated_by'];
     protected $useTimestamps = true;
 
     public function getabout()

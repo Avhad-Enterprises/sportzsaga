@@ -9,7 +9,7 @@ class PageModel extends Model
     protected $table = 'header_pages';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['title', 'link', 'visibility', 'page_type', 'subtype', 'specific_item', 'image', 'is_deleted', 'deleted_at', 'deleted_by','added_by'];
+    protected $allowedFields = ['title', 'link', 'visibility', 'page_type', 'subtype', 'specific_item', 'image', 'is_deleted', 'deleted_at', 'deleted_by','added_by','change_log'];
 
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

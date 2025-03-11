@@ -18,6 +18,7 @@ class os_collectionModel extends Model
         'image2',
         'title',
         'fav_product',
+        'change_log'
     ];
 
     public function getCollection()

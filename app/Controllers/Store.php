@@ -41,28 +41,28 @@ class Store extends BaseController
 
 
 
- public function online_store_logs()
-     {
-         $db = \Config\Database::connect();
-         $builder = $db->table('home_logo');
+    public function online_store_logs()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('home_logo');
 
-         $modal = new onlinestoremodal();
- 
-         // Fetch only soft-deleted records
-         $data['logos'] = $builder->where('is_deleted', 1)->get()->getResultArray();
-         $data['blogs'] = $modal->getAlllogblogs();
-         $data['members'] = $modal->getAlllogsmembers();
-         $data['policies'] = $modal->restorepolicies();
-         $data['pages'] = $modal->getDeletedHeaderPages();
-         $data['marquees'] = $modal->getDeletedMarqueeTexts();
-         $data['carousels'] = $modal->getcarouselTexts();
-  
-         return view('online_store_logs', $data);
+        $modal = new onlinestoremodal();
 
-     }
- 
+        // Fetch only soft-deleted records
+        $data['logos'] = $builder->where('is_deleted', 1)->get()->getResultArray();
+        $data['blogs'] = $modal->getAlllogblogs();
+        $data['members'] = $modal->getAlllogsmembers();
+        $data['policies'] = $modal->restorepolicies();
+        $data['pages'] = $modal->getDeletedHeaderPages();
+        $data['marquees'] = $modal->getDeletedMarqueeTexts();
+        $data['carousels'] = $modal->getcarouselTexts();
 
-    
+        return view('online_store_logs', $data);
+
+    }
+
+
+
     public function edit_onlinestore()
     {
         $modal = new onlinestoremodal();
@@ -266,14 +266,10 @@ class Store extends BaseController
     {
         $carouselModel = new onlinestoremodal();
         $session = session();
-
         $carousel = $carouselModel->find($id);
 
         if (!$carousel) {
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Carousel not found.',
-            ]);
+            return redirect()->to('online_store/edit')->with('error', 'Carousel not found.');
         }
 
         // File upload handling
@@ -311,10 +307,7 @@ class Store extends BaseController
                 $mobileImageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $mobileFileName);
             }
         } catch (\Exception $e) {
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Failed to upload images: ' . $e->getMessage(),
-            ]);
+            return redirect()->to('online_store/edit')->with('error', 'Failed to upload images: ' . $e->getMessage());
         }
 
         // Handle selection logic: If product is selected, collection should be NULL, and vice versa.
@@ -323,12 +316,12 @@ class Store extends BaseController
         $collectionId = $this->request->getPost('selected_collection') ?: null;
 
         if ($selectionType === 'product') {
-            $collectionId = null; // Reset collection_id if product is selected
+            $collectionId = null;
         } elseif ($selectionType === 'collection') {
-            $productId = null; // Reset product_id if collection is selected
+            $productId = null;
         }
 
-        $updateData = [
+        $newData = [
             'title' => $this->request->getPost('carousel_title'),
             'description' => $this->request->getPost('carousel_description'),
             'selection_type' => $selectionType,
@@ -341,13 +334,42 @@ class Store extends BaseController
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Update data in database
-        if ($carouselModel->update($id, $updateData)) {
-            return redirect()->back()->with('success', 'Carousel updated successfully!');
-        } else {
-            return redirect()->back()->with('error', 'Failed to update carousel data.');
+        // Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($carousel[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $carousel[$key],
+                    'new' => $value
+                ];
+            }
         }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($carousel['change_log'], true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $session->get('user_id'),
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Update the main carousel table with the new change log
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            $carouselModel->update($id, $newData);
+
+            return redirect()->to('online_store/edit')->with('success', 'Carousel updated successfully.');
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'No changes were made.');
     }
+
 
     public function delete_carousel($id)
     {
@@ -409,7 +431,7 @@ class Store extends BaseController
 
 
 
-    
+
 
     public function SaveHomeImage()
     {
@@ -468,7 +490,7 @@ class Store extends BaseController
         }
     }
 
-  public function add_policy()
+    public function add_policy()
     {
         if ($this->request->isAJAX()) {
             $policyModel = new PolicyModel();
@@ -481,11 +503,11 @@ class Store extends BaseController
             $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'policy_name'        => $this->request->getPost('policy_name'),
+                'policy_name' => $this->request->getPost('policy_name'),
                 'policy_description' => $this->request->getPost('policy_description'),
-                'policy_link'        => $this->request->getPost('policy_link'),
-                'added_by'           => $addedBy, // Storing both Name and ID
-                'updated_by'         => $addedBy, // Storing both Name and ID
+                'policy_link' => $this->request->getPost('policy_link'),
+                'added_by' => $addedBy, // Storing both Name and ID
+                'updated_by' => $addedBy, // Storing both Name and ID
             ];
 
             // Attempt to insert new policy data into the database
@@ -561,7 +583,7 @@ class Store extends BaseController
     }
     
 
- // sweet delete message function 
+    // sweet delete message function 
     public function delete_policy($id)
     {
         $policyModel = new PolicyModel();
@@ -1302,7 +1324,7 @@ class Store extends BaseController
         }
     }
 
-     public function add_members()
+    public function add_members()
     {
         // Initialize Google Cloud Storage
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -1323,14 +1345,14 @@ class Store extends BaseController
             $addedBy = $userName . ' (' . $userId . ')'; // Format: "Name (ID)"
 
             $data = [
-                'member_name'       => $this->request->getPost('member_name'),
+                'member_name' => $this->request->getPost('member_name'),
                 'member_occupation' => $this->request->getPost('member_occupation'),
-                'member_email'      => $this->request->getPost('member_email'),
-                'member_linkedin'   => $this->request->getPost('member_linkedin'),
-                'visibility'        => $this->request->getPost('member_visibility'),
-                'added_by'          => $addedBy, // Now storing both Name and ID
-                'created_at'        => date('Y-m-d H:i:s'),
-                'updated_at'        => date('Y-m-d H:i:s'),
+                'member_email' => $this->request->getPost('member_email'),
+                'member_linkedin' => $this->request->getPost('member_linkedin'),
+                'visibility' => $this->request->getPost('member_visibility'),
+                'added_by' => $addedBy, // Now storing both Name and ID
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             // Handle image upload
@@ -1540,10 +1562,10 @@ class Store extends BaseController
 
                 // Save file URL to database
                 $data = [
-                    'logo'       => $fileUrl,
+                    'logo' => $fileUrl,
                     'visibility' => $this->request->getPost('visibility'),
-                    'title'      => $this->request->getPost('title'),
-                    'added_by'   => $addedBy, // Now storing both Name and ID
+                    'title' => $this->request->getPost('title'),
+                    'added_by' => $addedBy, // Now storing both Name and ID
                 ];
                 $this->logoModel->insert($data);
 
@@ -1735,6 +1757,16 @@ class Store extends BaseController
     }
 
 
+
+
+
+
+
+
+
+
+
+
     //<!------------------------------------------------------------------------------------Home Collection------------------------------------------------------------------------------------------------------------>
     public function saveCollection()
     {
@@ -1785,6 +1817,17 @@ class Store extends BaseController
         ]);
     }
 
+
+
+
+
+
+
+
+
+
+
+
     //<!------------------------------------------------------------------------------------Home Products------------------------------------------------------------------------------------------------------------>
     public function saveProduct()
     {
@@ -1834,6 +1877,16 @@ class Store extends BaseController
             'message' => 'Invalid request.',
         ]);
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1890,6 +1943,25 @@ class Store extends BaseController
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //<!------------------------------------------------------------------------------------Home Carousel2Controllers------------------------------------------------------------------------------------------------------------>
     public function add()
     {
@@ -1939,19 +2011,28 @@ class Store extends BaseController
     {
         try {
             $model = new HomeCarousel2Model();
+            $session = session();
             $data = $this->request->getPost();
+
+            // Fetch existing record
+            $existingData = $model->find(1);
+            if (!$existingData) {
+                return redirect()->back()->with('error', 'Carousel data not found.');
+            }
 
             // Assign selected values to data array
             $data['select_link'] = $this->request->getPost('select_link');
             $data['selected_product'] = ($data['select_link'] === 'product') ? $this->request->getPost('selected_product') : null;
             $data['selected_collection'] = ($data['select_link'] === 'collection') ? $this->request->getPost('selected_collection') : null;
 
-            $storage = new StorageClient([
+            // Initialize Google Cloud Storage
+            $storage = new \Google\Cloud\Storage\StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
             $bucket = $storage->bucket('sportzsaga_imgs');
 
+            // Handle file uploads
             foreach (['image', 'image_mobile'] as $field) {
                 $file = $this->request->getFile($field);
                 if ($file && $file->isValid() && !$file->hasMoved()) {
@@ -1961,6 +2042,36 @@ class Store extends BaseController
                 }
             }
 
+            // Track changes
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if ($existingData[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingData[$key],
+                        'new' => $value
+                    ];
+                }
+            }
+
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingData['change_log'], true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new changes to the change log
+                $existingChangeLog[] = [
+                    'updated_by' => $session->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Save the updated change log back into the database
+                $data['change_log'] = json_encode($existingChangeLog);
+            }
+
+            // Update the database
             $model->update(1, $data);
 
             return redirect()->back()->with('success', 'Carousel updated successfully');
@@ -1970,6 +2081,7 @@ class Store extends BaseController
         }
     }
 
+
     public function delete($id)
     {
         $model = new HomeCarousel2Model();
@@ -1977,7 +2089,17 @@ class Store extends BaseController
         return redirect()->back()->with('message', 'Carousel deleted successfully');
     }
 
+
+
+
+
+
+
+
+
+
     //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
+  
     public function save()
     {
         try {
@@ -2058,148 +2180,14 @@ class Store extends BaseController
 
 
 
+//<!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
 
-
-
-
-
-
-
-
-
-    public function add_new_header_first()
-    {
-        // Validate and get POST data
-        $data = [
-            'title' => $this->request->getPost('header_first_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_first_visibility'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Insert new data
-        $headerFirstModel = new HeaderFirstModel();
-        $headerFirstModel->insert($data);
-
-        // Redirect to the same page to show the updated list (or wherever you want)
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    public function update_header_first($id)
-    {
-        // Validate and get updated data
-        $data = [
-            'title' => $this->request->getPost('header_first_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_first_visibility'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Update the header data
-        $headerFirstModel = new HeaderFirstModel();
-        $headerFirstModel->update($id, $data);
-
-        // Redirect back to the page to show the updated list
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    public function add_new_header_second()
-    {
-        // Get POST data directly
-        $data = [
-            'title' => $this->request->getPost('header_second_title'),
-            'header_first_id' => $this->request->getPost('header_first_id'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_second_visibility'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Insert the second header data
-        $headerSecondModel = new HeaderSecondModel();
-        $headerSecondModel->insert($data);
-
-        // Redirect back to the same page to show updated data
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    public function update_header_second($id)
-    {
-        // Get updated POST data directly
-        $data = [
-            'title' => $this->request->getPost('header_second_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_second_visibility'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Update the second header data
-        $headerSecondModel = new HeaderSecondModel();
-        $headerSecondModel->update($id, $data);
-
-        // Redirect back to the page to show the updated data
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    // Add New Third Header
-    public function add_new_header_third()
-    {
-        $data = [
-            'header_second_id' => $this->request->getPost('header_second_id'),
-            'title' => $this->request->getPost('header_third_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_third_visibility'),
-        ];
-
-        $model = new HeaderThirdModel();
-        $model->insert($data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Added');
-    }
-
-    // Update Third Header
-    public function update_header_third($id)
-    {
-        $data = [
-            'title' => $this->request->getPost('header_third_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_third_visibility'),
-        ];
-
-        $model = new HeaderThirdModel();
-        $model->update($id, $data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Updated');
-    }
-
-    // Add New Fourth Header
-    public function add_new_header_fourth()
-    {
-        $data = [
-            'header_third_id' => $this->request->getPost('header_third_id'),
-            'title' => $this->request->getPost('header_fourth_title'),
-            'collection_id' => $this->request->getPost('collection_id'),
-            'visibility' => $this->request->getPost('header_fourth_visibility'),
-            'added_by' => session()->get('user_id'),
-        ];
-
-        $model = new HeaderFourthModel();
-        $model->insert($data);
-
-        // Redirect or return success message
-        return redirect()->back()->with('success', 'Fourth Header Added');
-    }
-
-
-   public function saveMarqueeText()
+    public function saveMarqueeText()
     {
         $session = session();
         $response = ['status' => 'error', 'message' => 'Something went wrong'];
 
-        
+
         $userId = $session->get('user_id');
 
         if (!$userId) {
@@ -2219,12 +2207,12 @@ class Store extends BaseController
             return $this->response->setJSON($response);
         }
 
-       
+
         $data = [
             'marqueeText' => $marqueeText,
             'marqueeText_link' => $marqueeTextLink,
             'text_visibility' => $textVisibility,
-            'added_by' => $userId,  
+            'added_by' => $userId,
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -2258,18 +2246,18 @@ class Store extends BaseController
     {
         $model = new MarqueeTextModel();
         $session = session();
-        $userId = $session->get('user_id'); 
+        $userId = $session->get('user_id');
 
-        
+
         $marquee = $model->find($id);
         if (!$marquee) {
             return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
         }
 
-        
+
         $updateSuccess = $model->update($id, [
-            'is_deleted' => 1,        
-            'deleted_by' => $userId,   
+            'is_deleted' => 1,
+            'deleted_by' => $userId,
             'deleted_at' => date('Y-m-d H:i:s')
         ]);
 
@@ -2290,7 +2278,7 @@ class Store extends BaseController
             return redirect()->to('marquees/deleted')->with('error', 'Marquee text not found.');
         }
 
-      
+
         $model->update($id, [
             'is_deleted' => 0,
             'deleted_by' => null,
@@ -2303,6 +2291,7 @@ class Store extends BaseController
     public function UpdateMarquee($id)
     {
         $model = new MarqueeTextModel();
+        $session = session();
 
         // Validate the input
         $validation = \Config\Services::validation();
@@ -2313,34 +2302,69 @@ class Store extends BaseController
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Validation failed. Please check your input.',
-                'errors' => $validation->getErrors()
-            ]);
+            return redirect()->to('online_store/edit')->with('error', 'Validation failed. Please check your input.');
         }
 
-        // Prepare data for updating
-        $data = [
+        // Fetch the existing record
+        $existingData = $model->find($id);
+        if (!$existingData) {
+            return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
+        }
+
+        // Prepare new data
+        $newData = [
             'marqueeText' => $this->request->getPost('marqueeText'),
             'marqueeText_link' => $this->request->getPost('marqueeText_link'),
             'text_visibility' => $this->request->getPost('text_visibility'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        // Update the record
-        if ($model->update($id, $data)) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Text updated successfully.'
-            ]);
-        } else {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Failed to update text.'
-            ]);
+        // Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingData[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingData[$key],
+                    'new' => $value
+                ];
+            }
         }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($existingData['change_log'], true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append the new changes as a new JSON entry
+            $existingChangeLog[] = [
+                'updated_by' => $session->get('user_id'),
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Save back to the database
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // Update the database
+            if ($model->update($id, $newData)) {
+                return redirect()->to('online_store/edit')->with('success', 'Text updated successfully.');
+            } else {
+                return redirect()->to('online_store/edit')->with('error', 'Failed to update text.');
+            }
+        }
+
+        return redirect()->to('online_store/edit')->with('success', 'No changes were made.');
     }
+
+
+
+
+
+
+
+//<!-------------------------------------------------------------------------------------- Marquee Second Form -----------------------------------------------------------------------
 
     public function saveBottomText()
     {
@@ -2383,25 +2407,29 @@ class Store extends BaseController
 
 
 
-   // <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
 
-     public function delete_page($id)
+
+
+
+    // <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+
+    public function delete_page($id)
     {
         $pageModel = new PageModel();
         $session = session();
-        $userId = $session->get('user_id'); 
+        $userId = $session->get('user_id');
 
-      
+
         $page = $pageModel->find($id);
         if (!$page) {
             return redirect()->to('online_store/edit')->with('error', 'Page not found.');
         }
 
-      
+
         $updateSuccess = $pageModel->update($id, [
-            'is_deleted' => 1,      
-            'deleted_by' => $userId,   
-            'deleted_at' => date('Y-m-d H:i:s') 
+            'is_deleted' => 1,
+            'deleted_by' => $userId,
+            'deleted_at' => date('Y-m-d H:i:s')
         ]);
 
         if (!$updateSuccess) {
@@ -2416,13 +2444,13 @@ class Store extends BaseController
     {
         $pageModel = new PageModel();
 
-       
+
         $page = $pageModel->where('id', $id)->where('is_deleted', 1)->first();
         if (!$page) {
             return redirect()->to('header_pages/deleted')->with('error', 'Page not found.');
         }
 
-      
+
         $pageModel->update($id, [
             'is_deleted' => 0,
             'deleted_by' => null,
@@ -2602,7 +2630,21 @@ class Store extends BaseController
         }
     }
 
-   public function saveBlogs()
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //<!-------------------------------------------------------------------------------------- Blog ---------------------------------------------------------------------------->
+    public function saveBlogs()
     {
         try {
             if ($this->request->getMethod() !== 'post') {
@@ -2627,14 +2669,14 @@ class Store extends BaseController
             $addedBy = $userName . ' (' . $userId . ')'; // Concatenating name and ID
 
             $data = [
-                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_name' => $this->request->getPost('blogs_name'),
                 'blogs_description' => $this->request->getPost('blogs_description'),
-                'content_type'      => $contentType,
-                'blogs'             => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
-                'tags'              => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
-                'added_by'          => $addedBy, // Now saving both ID and Name
-                'created_at'        => date('Y-m-d H:i:s'),
-                'updated_at'        => date('Y-m-d H:i:s'),
+                'content_type' => $contentType,
+                'blogs' => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
+                'tags' => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
+                'added_by' => $addedBy, // Now saving both ID and Name
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             log_message('debug', 'Data before insert: ' . json_encode($data));
@@ -2671,13 +2713,13 @@ class Store extends BaseController
 
             // Prepare update data
             $data = [
-                'blogs_name'        => $this->request->getPost('blogs_name'),
+                'blogs_name' => $this->request->getPost('blogs_name'),
                 'blogs_description' => $this->request->getPost('blogs_description'),
-                'content_type'      => $content_type,
-                'blogs'             => ($content_type === 'blogs') ? json_encode($this->request->getPost('blogs') ?? []) : json_encode([]),
-                'tags'              => ($content_type === 'tags') ? json_encode($this->request->getPost('tags') ?? []) : json_encode([]),
-                'updated_by'        => session()->get('user_id'),
-                'updated_at'        => date('Y-m-d H:i:s')
+                'content_type' => $content_type, // Ensure content type is updated
+                'blogs' => ($content_type === 'blogs') ? json_encode($this->request->getPost('blogs') ?? []) : json_encode([]),
+                'tags' => ($content_type === 'tags') ? json_encode($this->request->getPost('tags') ?? []) : json_encode([]),
+                'updated_by' => session()->get('user_id'),
+                'updated_at' => date('Y-m-d H:i:s')
             ];
 
             // Track changes
@@ -2729,7 +2771,7 @@ class Store extends BaseController
 
 
 
-   // sweet delete message function 
+    // sweet delete message function 
     public function deleteBlog($id)
     {
         $blogModel = new BlogModel();
@@ -2775,14 +2817,14 @@ class Store extends BaseController
 
 
 
-        
+
     //<!---------------------------------------------------------------------------------- Logs ---------------------------------------------------------------------------------------->
 
 
-   
 
 
- // sweet delete message function 
+
+    // sweet delete message function 
     public function deletemember($id)
     {
         $members_model = new MemberModel();
