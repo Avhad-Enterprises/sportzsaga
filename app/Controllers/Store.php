@@ -526,26 +526,62 @@ class Store extends BaseController
         if ($this->request->isAJAX()) {
             $policyModel = new PolicyModel();
             $id = $this->request->getPost('policy_id');
-
-            $data = [
+    
+            // Fetch existing policy data
+            $existingPolicy = $policyModel->find($id);
+            if (!$existingPolicy) {
+                return $this->response->setJSON(['success' => false, 'message' => 'Policy not found.']);
+            }
+    
+            // New data from request
+            $newData = [
                 'policy_name' => $this->request->getPost('policy_name'),
                 'policy_description' => $this->request->getPost('policy_description'),
                 'policy_link' => $this->request->getPost('policy_link'),
+                'updated_by' => session()->get('user_id'), // Track who made the change
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
-
-            log_message('info', 'Policy ID: ' . $id);
-            log_message('info', 'Data to update: ' . json_encode($data));
-
-            if ($policyModel->updatePolicy($id, $data)) {
-                return $this->response->setJSON(['success' => true, 'message' => 'Policy updated successfully.']);
+    
+            // Track changes
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if ($existingPolicy[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingPolicy[$key], 
+                        'new' => $value
+                    ];
+                }
+            }
+    
+            if (!empty($changes)) {
+                // Store changes in JSON format in change_log column
+                $newData['change_log'] = json_encode([
+                    'updated_by' => session()->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ]);
+    
+                // Log changes (optional)
+                log_message('info', 'Policy ID: ' . $id . ' updated. Changes: ' . json_encode($changes));
+    
+                // Update policy
+                if ($policyModel->update($id, $newData)) {
+                    return $this->response->setJSON([
+                        'success' => true,
+                        'message' => 'Policy updated successfully.',
+                        'changes' => $changes, // Send back changes if needed
+                    ]);
+                } else {
+                    return $this->response->setJSON(['success' => false, 'message' => 'Failed to update policy.']);
+                }
             } else {
-                return $this->response->setJSON(['success' => false, 'message' => 'Failed to update policy.']);
+                return $this->response->setJSON(['success' => false, 'message' => 'No changes detected.']);
             }
         }
-
+    
         return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
-
+    
 
     // sweet delete message function 
     public function delete_policy($id)
@@ -1348,53 +1384,116 @@ class Store extends BaseController
 
     public function edit_members()
     {
-
-        // Initialize Google Cloud Storage
-        $storage = new \Google\Cloud\Storage\StorageClient([
-            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
-            'projectId' => 'peak-tide-441609-r1',
-        ]);
-        $bucketName = 'sportzsaga_imgs';
-        $bucket = $storage->bucket($bucketName);
-
-
-        if ($this->request->isAJAX()) {
-            $members_model = new MemberModel();
-
-            $id = $this->request->getPost('member_id');
-
-
-            $data = [
-                'member_name' => $this->request->getPost('member_name'),
-                'member_occupation' => $this->request->getPost('member_occupation'),
-                'member_email' => $this->request->getPost('member_email'),
-                'member_linkedin' => $this->request->getPost('member_linkedin'),
-                'visibility' => $this->request->getPost('member_visibility')
-            ];
-
-            // Handle image upload
-            $member_pic = $this->request->getFile('member_pic');
-            if ($member_pic && $member_pic->isValid() && !$member_pic->hasMoved()) {
-                $fileName = 'members/' . uniqid() . '_' . $member_pic->getClientName();
-                $object = $bucket->upload(
-                    fopen($member_pic->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $data['member_pic'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+        try {
+            // Initialize Google Cloud Storage
+            $storage = new \Google\Cloud\Storage\StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
+            ]);
+            $bucketName = 'sportzsaga_imgs';
+            $bucket = $storage->bucket($bucketName);
+    
+            if ($this->request->isAJAX()) {
+                $members_model = new MemberModel();
+                $id = $this->request->getPost('member_id');
+    
+                // Fetch existing member data
+                $existingMember = $members_model->find($id);
+                if (!$existingMember) {
+                    return $this->response->setJSON(['success' => false, 'message' => 'Member not found.']);
+                }
+    
+                // New Data
+                $data = [
+                    'member_name' => $this->request->getPost('member_name'),
+                    'member_occupation' => $this->request->getPost('member_occupation'),
+                    'member_email' => $this->request->getPost('member_email'),
+                    'member_linkedin' => $this->request->getPost('member_linkedin'),
+                    'visibility' => $this->request->getPost('member_visibility'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ];
+    
+                // Track changes
+                $changes = [];
+                foreach ($data as $key => $value) {
+                    if (trim(strval($existingMember[$key])) !== trim(strval($value))) {
+                        $changes[$key] = [
+                            'old' => $existingMember[$key],
+                            'new' => $value
+                        ];
+                    }
+                }
+    
+                // Handle image upload
+                $member_pic = $this->request->getFile('member_pic');
+                if ($member_pic && $member_pic->isValid() && !$member_pic->hasMoved()) {
+                    // Delete old image if exists
+                    if (!empty($existingMember['member_pic'])) {
+                        $oldFilePath = parse_url($existingMember['member_pic'], PHP_URL_PATH);
+                        $object = $bucket->object(ltrim($oldFilePath, '/'));
+                        if ($object->exists()) {
+                            $object->delete();
+                        }
+                    }
+    
+                    // Upload new image
+                    $fileName = 'members/' . uniqid() . '_' . $member_pic->getClientName();
+                    $object = $bucket->upload(
+                        fopen($member_pic->getTempName(), 'r'),
+                        [
+                            'name' => $fileName,
+                            'predefinedAcl' => 'publicRead',
+                        ]
+                    );
+    
+                    $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+                    $data['member_pic'] = $imageUrl;
+    
+                    // Track image change
+                    if ($existingMember['member_pic'] !== $imageUrl) {
+                        $changes['member_pic'] = [
+                            'old' => $existingMember['member_pic'],
+                            'new' => $imageUrl
+                        ];
+                    }
+                }
+    
+                // Fetch existing change log
+                $oldChangeLog = json_decode($existingMember['change_log'], true) ?? [];
+    
+                // Append changes if there are any
+                if (!empty($changes)) {
+                    $newChangeLogEntry = [
+                        'updated_by' => session()->get('user_id'),
+                        'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => $changes
+                    ];
+    
+                    $oldChangeLog[] = $newChangeLogEntry;
+                    $data['change_log'] = json_encode($oldChangeLog);
+    
+                    // Log changes
+                    log_message('info', 'Member ID: ' . $id . ' updated. Changes: ' . json_encode($changes));
+                }
+    
+                // Always update (even if no changes) to refresh `updated_at`
+                $members_model->update($id, $data);
+    
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Member updated successfully.',
+                    'changes' => $changes,
+                ]);
             }
-
-            if ($members_model->update($id, $data)) {
-                return $this->response->setJSON(['success' => true, 'message' => 'Awards Added successfully.']);
-            } else {
-                return $this->response->setJSON(['success' => false, 'message' => 'Failed to update Awards.']);
-            }
+    
+            return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
+        } catch (\Exception $e) {
+            log_message('error', 'Error updating member: ' . $e->getMessage());
+            return $this->response->setJSON(['success' => false, 'message' => 'An error occurred while updating the member.']);
         }
-
-        return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
+    
+    
 
     public function update_member_order()
     {
@@ -1485,27 +1584,45 @@ class Store extends BaseController
         try {
             // Get logo ID from request
             $logoId = $this->request->getPost('id');
-
+    
             // Initialize Google Cloud Storage
             $storage = new StorageClient([
-                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Update path to your service account JSON key
-                'projectId' => 'peak-tide-441609-r1', // Update with your Google Cloud project ID
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
             ]);
-            $bucketName = 'sportzsaga_imgs'; // Update with your bucket name
+            $bucketName = 'sportzsaga_imgs';
             $bucket = $storage->bucket($bucketName);
-
+    
             // Find the existing logo
             $existingLogo = $this->logoModel->find($logoId);
             if (!$existingLogo) {
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Logo not found.']);
             }
-
+    
+            // New Data
+            $newData = [
+                'title' => $this->request->getPost('title'),
+                'visibility' => $this->request->getPost('visibility'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+    
+            // Track changes
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if (trim(strval($existingLogo[$key])) !== trim(strval($value))) {
+                    $changes[$key] = [
+                        'old' => $existingLogo[$key],
+                        'new' => $value
+                    ];
+                }
+            }
+    
             // Check if a new file is uploaded
             $logo = $this->request->getFile('logo');
             $fileUrl = $existingLogo['logo']; // Default to old image URL
-
+    
             if ($logo && $logo->isValid() && !$logo->hasMoved()) {
-                // Delete the old logo from Google Cloud Storage
+                // Delete old logo from Google Cloud Storage
                 if (!empty($existingLogo['logo'])) {
                     $oldFilePath = parse_url($existingLogo['logo'], PHP_URL_PATH);
                     $object = $bucket->object(ltrim($oldFilePath, '/'));
@@ -1513,10 +1630,10 @@ class Store extends BaseController
                         $object->delete();
                     }
                 }
-
+    
                 // Generate unique filename
                 $fileName = 'logos/' . uniqid() . '_' . $logo->getClientName();
-
+    
                 // Upload new logo to Google Cloud Storage
                 $object = $bucket->upload(
                     fopen($logo->getTempName(), 'r'),
@@ -1525,25 +1642,54 @@ class Store extends BaseController
                         'predefinedAcl' => 'publicRead',
                     ]
                 );
-
+    
                 // Get public URL of the uploaded file
                 $fileUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+                $newData['logo'] = $fileUrl;
+    
+                // Track logo change
+                if ($existingLogo['logo'] !== $fileUrl) {
+                    $changes['logo'] = [
+                        'old' => $existingLogo['logo'],
+                        'new' => $fileUrl
+                    ];
+                }
             }
-
-            // Update logo data in the database
-            $data = [
-                'logo' => $fileUrl, // If no new file, the old logo remains
-                'visibility' => $this->request->getPost('visibility'),
-                'title' => $this->request->getPost('title')
-            ];
-            $this->logoModel->update($logoId, $data);
-
-            return $this->response->setJSON(['status' => 'success', 'message' => 'Logo updated successfully.', 'file_url' => $fileUrl]);
+    
+            // Fetch existing change log
+            $oldChangeLog = json_decode($existingLogo['change_log'], true) ?? [];
+    
+            // If changes exist, update and log them
+            if (!empty($changes)) {
+                // Append new changes instead of overwriting
+                $newChangeLogEntry = [
+                    'updated_by' => session()->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+    
+                $oldChangeLog[] = $newChangeLogEntry;
+                $newData['change_log'] = json_encode($oldChangeLog);
+    
+                // Log changes
+                log_message('info', 'Logo ID: ' . $logoId . ' updated. Changes: ' . json_encode($changes));
+            }
+    
+            // Always update (even if no changes) to refresh `updated_at`
+            $this->logoModel->update($logoId, $newData);
+    
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Logo updated successfully.',
+                'changes' => $changes,
+                'file_url' => $fileUrl
+            ]);
         } catch (\Exception $e) {
             log_message('error', 'Error updating logo: ' . $e->getMessage());
             return $this->response->setJSON(['status' => 'error', 'message' => 'An error occurred while updating the logo.']);
         }
     }
+    
 
 
 
@@ -2545,18 +2691,20 @@ class Store extends BaseController
             return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
+
     public function updateBlog($id)
-    {
+{
+    try {
         log_message('debug', 'Received blog ID: ' . $id); // Debugging
 
         if ($this->request->getMethod() === 'post') {
             $db = \Config\Database::connect();
             $builder = $db->table('onlinestore_blogs');
 
+            // Fetch existing blog data
             $blogData = $builder->where('id', $id)->get()->getRowArray();
-
             if (!$blogData) {
-                log_message('error', 'Blog not found for ID: ' . $id); // Log error
+                log_message('error', 'Blog not found for ID: ' . $id);
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Blog not found.']);
             }
 
@@ -2574,19 +2722,52 @@ class Store extends BaseController
                 'updated_at' => date('Y-m-d H:i:s')
             ];
 
-            log_message('debug', 'Updating blog ID: ' . $id . ' with data: ' . json_encode($data)); // Debugging
+            // Track changes
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if (trim(strval($blogData[$key])) !== trim(strval($value))) {
+                    $changes[$key] = [
+                        'old' => $blogData[$key],
+                        'new' => $value
+                    ];
+                }
+            }
 
+            // Fetch existing change log
+            $oldChangeLog = json_decode($blogData['change_log'], true) ?? [];
+
+            // Append new changes to change log
+            if (!empty($changes)) {
+                $newChangeLogEntry = [
+                    'updated_by' => session()->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                $oldChangeLog[] = $newChangeLogEntry;
+                $data['change_log'] = json_encode($oldChangeLog);
+
+                // Log changes
+                log_message('info', 'Blog ID: ' . $id . ' updated. Changes: ' . json_encode($changes));
+            }
+
+            // Always update even if no changes are detected (to refresh updated_at)
             $builder->where('id', $id)->update($data);
 
-            if ($db->affectedRows() > 0) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Blog updated successfully.']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'No changes made or update failed.']);
-            }
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Blog updated successfully.',
+                'changes' => $changes,
+            ]);
         }
 
         return $this->response->setStatusCode(400)->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+    } catch (\Exception $e) {
+        log_message('error', 'Error updating blog: ' . $e->getMessage());
+        return $this->response->setJSON(['status' => 'error', 'message' => 'An error occurred while updating the blog.']);
     }
+}
+
 
 
 
