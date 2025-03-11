@@ -23,7 +23,8 @@ class Footer_model extends Model
         'footer_payment_link1',
         'footer_payment_link2',
         'footer_payment_link3',
-        'updated_at'
+        'updated_at',
+        'change_log',
     ];
 
     public function updateFooterData($data)
