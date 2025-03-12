@@ -25,10 +25,12 @@ class Blogs extends BaseController
         $publicBlogCount = $model->countPublicBlogs();
         $publicBlogs = $model->getPublicBlogs();
         $privateBlogs = $model->getprivateBlogs();
+        $pendingCommentsCount = $model->getPendingComments();
         $data = [
             'blogCount' => $publicBlogCount,
             'posts' => $publicBlogs,
             'privateBlogs' => $privateBlogs,
+            'pendingComments' => $pendingCommentsCount,
         ];
 
         return view('blogs_view', $data);
@@ -93,7 +95,7 @@ class Blogs extends BaseController
     {
         // Load the model
         $model = new Blogs_model();
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         // Initialize Google Cloud Storage
         $storage = new StorageClient([
@@ -423,6 +425,10 @@ class Blogs extends BaseController
     {
         $Model = new blogs_model();
 
+        // Load session
+        $session = session();
+        $addedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
         // Get AJAX request data
         $tagName = $this->request->getPost('tag_name');
         $tagValue = $this->request->getPost('tag_value');
@@ -434,7 +440,10 @@ class Blogs extends BaseController
         // Insert into database
         $data = [
             'tag_name' => $tagName,
-            'tag_value' => $tagValue
+            'tag_value' => $tagValue,
+            'type' => 'Blogs',
+            'created_at' => date('Y-m-d H:i:s'),
+            'added_by' => $addedby,
         ];
 
         if ($Model->InsertNewBlogTag($data)) {
@@ -442,5 +451,59 @@ class Blogs extends BaseController
         } else {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to add tag']);
         }
+    }
+
+    public function GetComments()
+    {
+        $Model = new blogs_model();
+        $data['comments'] = $Model->GetComments();
+        if (!empty($data['comments'])) {
+            $blogid = $data['comments'][0]['blog_id'];
+            $data['posts'] = $Model->getblogcommentbyid($blogid);
+        } else {
+            $data['posts'] = null;
+        }
+        return view('blog_comments', $data);
+    }
+
+    public function approved($id)
+    {
+        $Model = new blogs_model();
+
+        // Insert into database
+        $data = [
+            'status' => 'approved',
+        ];
+
+
+        if ($Model->UpdateBlogCommentstatus($data)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Tag added successfully']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to add tag']);
+        }
+    }
+
+    public function UpdateCommentStatus()
+    {
+        if ($this->request->isAJAX()) {
+            $commentId = $this->request->getPost('comment_id');
+            $newStatus = $this->request->getPost('status');
+
+            if (!isset($commentId) || !in_array($newStatus, [0, 1, 2])) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+            }
+
+            $Model = new blogs_model();
+            $update = $Model->UpdateCommentStatus($commentId, $newStatus);
+
+            if ($update) {
+                $message = ($newStatus == 1) ? 'Comment Approved!' : 'Comment Rejected!';
+                return $this->response->setJSON(['status' => 'success', 'message' => $message]);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update status.']);
+            }
+        }
+
+        return redirect()->back();
     }
 }

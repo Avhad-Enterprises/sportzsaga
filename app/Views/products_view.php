@@ -101,14 +101,13 @@
                                 <h4>Products Table</h4>
                             </div>
                         </div>
+
                         <?php
                         $session = \Config\Services::session();
                         $userType = $session->get('admin_type');
                         ?>
 
-                        <!-- Check if the user type is 'super_admin_view' to show only the 'Add New' button -->
                         <?php if ($userType === 'super_admin_view'): ?>
-                            <!-- Element: 'Add New' Button -->
                             <div class="col-md-6 col-sm-12 text-right blogs-imex">
                                 <div class="dropdown">
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>admin-products/addnewproducts" role="button">
@@ -118,9 +117,7 @@
                             </div>
                         <?php endif; ?>
 
-                        <!-- If user type is not 'super_admin_view', show all elements -->
                         <?php if ($userType !== 'super_admin_view'): ?>
-                            <!-- Element-1: Buttons -->
                             <div class="col-md-6 col-sm-12 text-right blogs-imex">
                                 <div class="dropdown">
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>admin-products/addnewproducts" role="button">
@@ -137,13 +134,20 @@
                                         Export To Excel
                                     </a>
                                 </div>
+                                <div class="dropdown">
+                                    <a class="btn btn-primary fw-bold position-relative" href="<?= base_url(); ?>product_reviews" role="button">
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <?php if (!empty($pendingreviews) && $pendingreviews > 0): ?>
+                                            <span class="badge bg-warning text-dark "><?= esc($pendingreviews) ?></span>
+                                        <?php endif; ?>
+                                    </a>
+                                </div>
                             </div>
                         <?php endif; ?>
 
                     </div>
                 </div>
 
-                <!-- Page Main Content Start -->
                 <div class="card-box mb-30">
                     <div class="pd-20">
                         <h4 class="text-blue h4">Products</h4>
@@ -194,7 +198,20 @@
                                             </td>
                                             <td><?= $product['cost_price'] ?></td>
                                             <td>
-                                                <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7"><?= $product['product_tags'] ?></span>
+                                                <?php
+                                                $tags = json_decode($product['product_tags'], true);
+
+                                                if (!empty($tags) && is_array($tags)) :
+                                                    foreach ($tags as $tag) :
+                                                        $formattedTag = ucwords(str_replace('-', ' ', $tag));
+                                                ?>
+                                                        <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7"><?= esc($formattedTag) ?></span>
+                                                    <?php
+                                                    endforeach;
+                                                else :
+                                                    ?>
+                                                    <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">No Tags</span>
+                                                <?php endif; ?>
                                             </td>
                                             <td>
                                                 <a href="javascript:void(0);" onclick="confirmbproductDelete(<?= $product['product_id'] ?>)" data-color="#e95959">

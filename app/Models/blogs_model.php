@@ -380,4 +380,26 @@ class Blogs_model extends Model
     {
         return $this->db->table('tags')->insert($data);
     }
+
+    public function GetComments()
+    {
+        return $this->db->table('blog_comments')->get()->getResultArray();
+    }
+
+    public function getblogcommentbyid($blog_id)
+    {
+        return $this->where('blog_id', $blog_id)->first();
+    }
+
+    public function UpdateCommentStatus($commentId, $newStatus)
+    {
+        return $this->db->table('blog_comments')
+            ->where('id', $commentId)
+            ->update(['status' => $newStatus]);
+    }
+
+    public function getPendingComments()
+    {
+        return $this->db->table('blog_comments')->where('status', 0)->countAllResults();
+    }
 }

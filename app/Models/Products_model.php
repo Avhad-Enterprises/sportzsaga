@@ -598,4 +598,38 @@ class Products_model extends Model
     {
         return $this->db->table('collection')->where('collection_id', $collectionId)->get()->getRowArray();
     }
+
+    public function InsertNewProductTags($data)
+    {
+        return $this->db->table('tags')->insert($data);
+    }
+
+    public function GetallProductReviews()
+    {
+        return $this->db->table('product_reviews')->get()->getResultArray();
+    }
+
+    public function GetUserDetails($id)
+    {
+        return $this->db->table('users')->where('user_id', $id)->get()->getRowArray();
+    }
+
+    public function GetProductDetails($id)
+    {
+        return $this->db->table('products')->where('product_id', $id)->get()->getRowArray();
+    }
+
+    public function UpdateReviewStatus($reviewId, $updateData)
+    {
+        return $this->db->table('product_reviews')
+            ->where('id', $reviewId)
+            ->update($updateData);
+    }
+
+    public function CountpendingReviews()
+    {
+        return $this->db->table('product_reviews')
+            ->where('status', 0)
+            ->countAllResults();
+    }
 }

@@ -43,7 +43,7 @@ class Store extends BaseController
 
     public function online_store_logs()
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $builder = $db->table('home_logo');
 
         $modal = new onlinestoremodal();
@@ -373,7 +373,7 @@ class Store extends BaseController
 
     public function delete_carousel($id)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $builder = $db->table('carousels');
 
         // Check if the carousel exists
@@ -403,7 +403,7 @@ class Store extends BaseController
 
     public function restore_carousel($id)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $builder = $db->table('carousels');
 
         // Check if the carousel exists and is soft deleted
@@ -583,7 +583,6 @@ class Store extends BaseController
     }
     
 
-    // sweet delete message function 
     public function delete_policy($id)
     {
         $policyModel = new PolicyModel();
@@ -2674,7 +2673,7 @@ class Store extends BaseController
                 'content_type' => $contentType,
                 'blogs' => json_encode(array_filter(explode(',', $this->request->getPost('blogs')))),
                 'tags' => json_encode(array_filter(explode(',', $this->request->getPost('tags')))),
-                'added_by' => $addedBy, // Now saving both ID and Name
+                'added_by' => $addedBy,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
@@ -2695,10 +2694,10 @@ class Store extends BaseController
     public function updateBlog($id)
 {
     try {
-        log_message('debug', 'Received blog ID: ' . $id); // Debugging
+        log_message('debug', 'Received blog ID: ' . $id);
 
         if ($this->request->getMethod() === 'post') {
-            $db = \Config\Database::connect();
+            $db = db_connect();
             $builder = $db->table('onlinestore_blogs');
 
             // Fetch existing blog data
