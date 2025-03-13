@@ -37,7 +37,7 @@ class ReplyModel extends Model
 
     public function getUserIdByEmail($email)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $query = $db->query("SELECT user_id FROM users WHERE email = ?", [$email]);
         $result = $query->getRow();
         return $result ? $result->id : null;
@@ -45,7 +45,7 @@ class ReplyModel extends Model
 
     public function getTagsForMessage($message)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $tags = $db->table('cs_tags')->orderBy('priority', 'DESC')->get()->getResult();
 
         $matchedTags = [];
@@ -80,7 +80,7 @@ class ReplyModel extends Model
         if (empty($tags)) return null;
 
         $primaryTag = $tags[0];
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         $query = $db->query("
             SELECT agent_name 
@@ -99,7 +99,7 @@ class ReplyModel extends Model
 
     public function getAllAgents()
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('users')
             ->whereIn('account_type', ['employee', 'super_admin'])
             ->get()
@@ -109,7 +109,7 @@ class ReplyModel extends Model
 
     public function getAgent($msgNo)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_mails')
             ->where('msg_no', $msgNo)
             ->get()
@@ -118,7 +118,7 @@ class ReplyModel extends Model
 
     public function updateAgent($msgNo, $agentId, $userId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_mails')
             ->where('msg_no', $msgNo)
             ->update([
@@ -131,7 +131,7 @@ class ReplyModel extends Model
 
     public function updateTags($msgNo, $tags, $userId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_mails')
             ->where('msg_no', $msgNo)
             ->update([
@@ -143,7 +143,7 @@ class ReplyModel extends Model
 
     public function getMacrosByTags($tags)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $tagArray = explode(',', $tags);
 
         $query = $db->table('cs_macros')
@@ -157,14 +157,14 @@ class ReplyModel extends Model
 
     public function getAllMacros()
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $query = $db->table('cs_macros')->get();
         return $query->getResult();
     }
 
     /*public function getMacroContent($macroId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_macros')
                 ->where('id', $macroId)
                 ->get()
@@ -173,7 +173,7 @@ class ReplyModel extends Model
 
     public function getUserData($userId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('users')
             ->where('user_id', $userId)
             ->get()
@@ -438,7 +438,7 @@ class ReplyModel extends Model
     {
         log_message('info', 'Fetching all email and live chat conversations');
 
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         // Fetch email threads (Root emails - those without replied_to_msgno)
         $emailThreads = $db->table('cs_mails')
@@ -524,7 +524,7 @@ class ReplyModel extends Model
     {
         log_message('info', "Fetching unique tags for conversation ID: $id (Channel: $channel)");
 
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         // Query to fetch all messages related to the conversation
         if ($channel === 'email') {
@@ -561,7 +561,7 @@ class ReplyModel extends Model
 
     public function getDistinctValues()
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         return [
             'statuses' => $db->table('cs_mails')->select('DISTINCT(status) as status')->get()->getResultArray(),
@@ -572,7 +572,7 @@ class ReplyModel extends Model
 
     public function getTicketNumber($conversationId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $result = $db->table('cs_mails')
             ->select('ticket_no', 'ticket_status')
             ->where('msg_no', $conversationId)
@@ -585,7 +585,7 @@ class ReplyModel extends Model
 
     public function getTicketDetails($conversationId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_mails')
             ->select('ticket_no, ticket_status')
             ->where('msg_no', $conversationId)
@@ -598,7 +598,7 @@ class ReplyModel extends Model
     public function createTicket($conversationId)
     {
         $ticketNo = "TICKET-" . strtoupper(uniqid());
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         $db->table('cs_mails')
             ->where('msg_no', $conversationId)
@@ -613,7 +613,7 @@ class ReplyModel extends Model
 
     public function closeTicket($conversationId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         return $db->table('cs_mails')
             ->where('msg_no', $conversationId)
@@ -623,7 +623,7 @@ class ReplyModel extends Model
 
     public function openTicket($conversationId)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         return $db->table('cs_mails')
             ->where('msg_no', $conversationId)
@@ -633,7 +633,7 @@ class ReplyModel extends Model
 
     public function updateStatus($conversationId, $status)
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         return $db->table('cs_mails')
             ->where('msg_no', $conversationId)
             ->orWhere('session_id', $conversationId)
@@ -656,7 +656,7 @@ class ReplyModel extends Model
     {
         log_message('info', "Fetching conversations for view ID: $viewId");
 
-        $db = \Config\Database::connect();
+        $db = db_connect();
 
         // Fetch the saved view details
         $view = $db->table('saved_views')->where('id', $viewId)->get()->getRowArray();
@@ -764,5 +764,10 @@ class ReplyModel extends Model
     public function deleteView($viewId)
     {
         return $this->db->table('saved_views')->where('id', $viewId)->delete();
+    }
+
+    public function getContactUsData()
+    {
+        return $this->db->table('contact_us_form')->get()->getResultArray();
     }
 }

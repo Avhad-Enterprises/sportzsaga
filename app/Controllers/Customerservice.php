@@ -1495,4 +1495,12 @@ chmod -R 777 writable/uploads/email_attachments
             ]);
         }
     }
+
+    public function ContactUsData()
+    {
+        $model = new ReplyModel();
+        $data['inquiries'] = $model->getContactUsData();
+        return view('contactus_data', $data);
+    }
+    
 }

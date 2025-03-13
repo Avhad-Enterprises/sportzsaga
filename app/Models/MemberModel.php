@@ -50,7 +50,7 @@ class MemberModel extends Model
         return $this->update($id, ['order' => $position]);
     }
 
-    
+
     public function Deletemembers($id, $data)
     {
         return $this->db->table('team_members')->where('id', $id)->update($data);

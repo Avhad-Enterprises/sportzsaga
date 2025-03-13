@@ -64,6 +64,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('blogs/editmyblog/(:num)', 'Blogs::editmyblog/$1');
    $routes->post('blogs/add-category', 'Blogs::addCategory');
    $routes->post('blogs/add_new_tag', 'Blogs::AddNewTag');
+   $routes->get('blogs/comments', 'Blogs::GetComments');
+   $routes->post('blogs/comments/update_status', 'Blogs::UpdateCommentStatus');
 
    // Empolyee's Login/signup Controller;
    $routes->get('sendinvite', 'Registeredusers::sendinvite');
@@ -256,6 +258,7 @@ $routes->post('createView', 'Customerservice::createView');
 $routes->get('applyView/(:num)', 'Customerservice::applyView/$1');
 $routes->post('updateView', 'Customerservice::updateView');
 $routes->post('deleteView', 'Customerservice::deleteView');
+$routes->get('contact_us_data', 'Customerservice::ContactUsData');
 
 // Genrate Controller
 $routes->get('generate_report', 'GenerateController::index');
@@ -281,6 +284,9 @@ $routes->post('admin-products/importexceldata', 'Products::importexceldata');
 $routes->post('admin-products/check_sku', 'Products::check_sku');
 $routes->get('admin-products/(:segment)', 'Products::products_preview/$1');
 $routes->post('check-url', 'Products::checkUrl');
+$routes->post('products/AddNewProductTags', 'Products::AddNewProductTags');
+$routes->get('product_reviews' , 'Products::productReviews');
+$routes->post('products/reviews/update_status', 'Products::UpdateReviewStatus');
 
 // Pincode Mapping Controller
 $routes->get('pincode-mapping', 'Products::pincode_mapping');
@@ -355,8 +361,6 @@ $routes->post('bluedart_management/importShipmentData', 'Ordermanagement::import
 $routes->get('download-shipment-file', 'Ordermanagement::download_shipment_file');
 $routes->get('update-tracking', 'Ordermanagement::updateTrackingDetails');
 
-
-
 // Place Order/Add To Cart
 $routes->get('cart', 'Ordermanagement::cart');
 $routes->post('add_to_cart/(:num)', 'Ordermanagement::add_to_cart/$1');
@@ -376,12 +380,10 @@ $routes->get('view_attachment/(:any)', 'Customerservice::view_attachment/$1');
 $routes->get('fetchEmails', 'Customerservice::fetchEmails');
 $routes->get('process_new_emails', 'Customerservice::processNewEmails');
 $routes->get('statics', 'Customerservice::statics');
-
 $routes->get('fetchConversations', 'Customerservice::fetchConversations');
 $routes->get('conversation_view/(:any)/(:any)', 'Customerservice::customerConversationView/$1/$2');
 
-
-////Abandoned view
+//Abandoned view
 $routes->get('abandoned_view', 'AbandonedOrderController::index');
 $routes->get('abandoned-orders/send-email/(:num)', 'AbandonedOrderController::sendEmail/$1');
 $routes->post('update_email', 'Ordermanagement::update_email');
@@ -442,7 +444,6 @@ $routes->post('inventory/import', 'InventoryController::importCSV');
 $routes->get('warehouses/fetch', 'InventoryController::fetchWarehouses');
 $routes->post('product/storenewproduct', 'InventoryController::storenewproduct');
 $routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1');
-
 
 //purchase order
 $routes->get('purchase-order/index', 'PurchaseOrderController::index');
@@ -556,7 +557,6 @@ $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
 $routes->get('online_store/delete-all-blogs/(:num)', 'Store::deleteBlog/$1');
 $routes->get('online_store/restore-all-blogs/(:num)', 'Store::RestoreBlog/$1');
 
-
 //logs 
 $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
 
@@ -575,13 +575,6 @@ $routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
 $routes->get('online_store/deleted_pages', 'Store::online_store_logs');
 $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 
-
-
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
-
-
-
-
-

@@ -322,12 +322,11 @@
                                         <?php else: ?>
                                             <p class="text-danger">No tags available</p>
                                         <?php endif; ?>
-
-                                        <div class="input-group-append">
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectModal">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectModal">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

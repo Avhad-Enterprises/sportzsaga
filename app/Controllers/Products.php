@@ -23,6 +23,7 @@ class Products extends BaseController
     {
         $session = session();
         $model = new Products_model();
+        $data['pendingreviews'] = $model->CountpendingReviews();
 
         if ($session->get('admin_type') == 'seller') {
             $seller_id = $session->get('user_id');
@@ -240,7 +241,7 @@ class Products extends BaseController
         $data['users'] = $userModel->findAll();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->findAll();
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch All Products
         $allProducts = $model->getproductsdata();
@@ -371,6 +372,12 @@ class Products extends BaseController
         //     }
         // }
 
+        // Fetch the selected tags from the form
+        $productsTags = $this->request->getPost('product-tags');
+
+        // Convert the array into a JSON string (if not empty)
+        $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
+
         // Prepare data for insertion
         $data = [
             'product_title' => trim($this->request->getPost('product-name')),
@@ -396,7 +403,7 @@ class Products extends BaseController
             'tier_4' => trim($this->request->getPost('tier-4')),
             'url' => trim($this->request->getPost('url')),
             'delist' => trim($this->request->getPost('delist')),
-            'product_tags' => $this->request->getPost('product-tags'),
+            'product_tags' => $productsTagsJson,
             'meta_tag_title' => trim($this->request->getPost('meta-tag')),
             'meta_tag_description' => trim($this->request->getPost('meta-description')),
             'gift_wrap' => trim($this->request->getPost('gift_wrap')),
@@ -433,7 +440,10 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $tiersmodel = new tiersmodel();
-        $relatedProductModel = new RelatedProductModel(); // Load related product model
+        $tagModel = new TagModel();
+
+        // Fetch all tags
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
@@ -475,30 +485,6 @@ class Products extends BaseController
             $data['bullet_points'] = '';
         }
 
-        // ** Fetch related products both ways **
-        $relatedProductIds = $relatedProductModel->RelatedProducts($id);
-
-        // Fetch products where this product is in related_product_ids
-        $relatedProductsForThis = $relatedProductModel->where("related_product_ids LIKE", "%$id%")->findAll();
-
-        foreach ($relatedProductsForThis as $relatedRow) {
-            $relatedProductIds[] = $relatedRow['product_id'];
-        }
-
-        // Remove duplicates
-        $relatedProductIds = array_unique($relatedProductIds);
-
-        if (!empty($relatedProductIds)) {
-            $builder = \Config\Database::connect()->table('products');
-            $data['related_products'] = $builder
-                ->select('product_id, product_title, inventory, selling_price')
-                ->whereIn('product_id', $relatedProductIds)
-                ->get()
-                ->getResultArray();
-        } else {
-            $data['related_products'] = [];
-        }
-
         return view('edit_products_view', $data);
     }
 
@@ -535,6 +521,12 @@ class Products extends BaseController
             return redirect()->back()->with('error', 'The URL is already in use. Please use a different URL.');
         }
 
+        // Fetch the selected tags from the form
+        $productsTags = $this->request->getPost('product-tags');
+
+        // Convert the array into a JSON string (if not empty)
+        $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
+
         // Prepare product data for update
         $data = [
             'product_title' => $this->request->getPost('product-name'),
@@ -559,7 +551,7 @@ class Products extends BaseController
             'tier_3' => $this->request->getPost('tier-3'),
             'tier_4' => $this->request->getPost('tier-4'),
             'url' => $this->request->getPost('url'),
-            'product_tags' => $this->request->getPost('product-tags'),
+            'product_tags' => $productsTagsJson,
             'meta_tag_title' => $this->request->getPost('meta-tag'),
             'meta_tag_description' => $this->request->getPost('meta-description'),
             'label' => $this->request->getPost('product_label'),
@@ -1572,13 +1564,9 @@ class Products extends BaseController
         return view('add_pincodes_view');
     }
 
-    public function save_pincodes()
-    {
-    }
+    public function save_pincodes() {}
 
-    public function edit_pincode($id)
-    {
-    }
+    public function edit_pincode($id) {}
 
     public function delete_pincode($id)
     {
@@ -1596,7 +1584,7 @@ class Products extends BaseController
 
     public function checkUrl()
     {
-        $db = \Config\Database::connect();
+        $db = db_connect();
         $input = json_decode($this->request->getBody(), true);
 
         if (isset($input['url'])) {
@@ -1610,6 +1598,82 @@ class Products extends BaseController
 
         return $this->response->setJSON(['error' => 'Invalid input']);
     }
+
+    public function AddNewProductTags()
+    {
+        $Model = new Products_model();
+
+        // Load session
+        $session = session();
+        $addedby = $session->get('admin_name') . '(' . $session->get('user_id') . ')';
+
+        // Get AJAX request data
+        $productName = $this->request->getPost('product_name');
+        $productValue = $this->request->getPost('product_value');
+
+        if (empty($productName) || empty($productValue)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Product Name and Value are required']);
+        }
+
+        // Insert into database
+        $data = [
+            'tag_name' => $productName,
+            'tag_value' => $productValue,
+            'type' => 'Products',
+            'created_at' => date('Y-m-d H:i:s'),
+            'added_by' => $addedby,
+        ];
+
+        if ($Model->InsertNewProductTags($data)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Product added successfully']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to add product']);
+        }
+    }
+
+    public function productReviews()
+    {
+        $Model = new Products_model();
+        $data['productreviews'] = $Model->GetallProductReviews();
+        $userid = $data['productreviews'][0]['user_id'];
+        $apprid = $data['productreviews'][0]['approved_by'];
+        $data['user_details'] = $Model->GetUserDetails($userid);
+        $data['approved_by_details'] = $Model->GetUserDetails($apprid);
+        $product_id = $data['productreviews'][0]['product_id'];
+        $data['product_details'] = $Model->GetProductDetails($product_id);
+        return view('product_reviews_view', $data);
+    }
+
+    public function UpdateReviewStatus()
+    {
+        if ($this->request->isAJAX()) {
+            $session = session();
+            $userId = $session->get('user_id');
+
+            $reviewId = $this->request->getPost('review_id');
+            $newStatus = $this->request->getPost('status');
+
+            if (!isset($reviewId) || !in_array($newStatus, [0, 1, 2])) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
+            }
+
+            $Model = new Products_model();
+            $updateData = [
+                'status' => $newStatus,
+                'approved_by' => ($newStatus == 1) ? $userId : null,
+                'approved_at' => ($newStatus == 1) ? date('Y-m-d H:i:s') : null,
+            ];
+
+            $update = $Model->UpdateReviewStatus($reviewId, $updateData);
+
+            if ($update) {
+                $message = ($newStatus == 1) ? 'Review Approved!' : 'Review Rejected!';
+                return $this->response->setJSON(['status' => 'success', 'message' => $message]);
+            } else {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update status.']);
+            }
+        }
+
+        return redirect()->back();
+    }
 }
-
-

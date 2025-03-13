@@ -2451,7 +2451,7 @@
        text: "Do you want to restore this Member?",
        icon: 'warning',
        showCancelButton: true,
-       confirmButtonColor: '#28a745', // Green color for restore action
+       confirmButtonColor: '#28a745',
        cancelButtonColor: '#d33',
        confirmButtonText: 'Yes, restore it!'
      }).then((result) => {
@@ -2461,10 +2461,6 @@
      });
    }
  </script>
- 
- 
- 
- 
  
  
  <script>

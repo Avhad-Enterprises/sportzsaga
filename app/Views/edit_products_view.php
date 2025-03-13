@@ -405,16 +405,14 @@
                                 </div>
 
                                 <!-- Product Variant Section -->
-                                <div class="pd-20 card-box mb-30">
+                                <!-- <div class="pd-20 card-box mb-30">
                                     <div class="form-group">
                                         <label>Select Product Variant</label>
 
                                         <?php
-                                        // Decode the JSON stored in 'product_variant' column
                                         $selectedVariants = !empty($product['product_variant']) ? json_decode($product['product_variant'], true) : [];
                                         ?>
 
-                                        <!-- Multi-Select Dropdown -->
                                         <select class="custom-select2 form-control" id="productVariantDropdown" multiple="multiple" style="width: 100%; height: 38px">
                                             <optgroup label="Select Products">
                                                 <?php foreach ($all_products as $allproduct): ?>
@@ -425,13 +423,12 @@
                                             </optgroup>
                                         </select>
 
-                                        <!-- Container to Show Selected Products -->
                                         <div class="form-group my-3 mx-3">
                                             <input type="hidden" id="selectedVariants" name="selected_variants" value='<?= json_encode($selectedVariants) ?>'>
                                             <div class="row" id="selectedProductsContainer"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="pd-20 card-box mb-30">
                                     <!-- SERP Preview -->
@@ -606,11 +603,32 @@
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Tags</p>
-                                    <div class="mb-20">
+                                    <div class="form-group">
                                         <label>Add Tags</label>
-                                        <p>Press Enter To Separate Tags</p>
-                                        <input type="text" name="product-tags" value="<?= $product['product_tags'] ?>" data-role="tagsinput" />
+                                        <div class="input-group">
+                                            <?php
+                                            $selectedTags = json_decode($product['product_tags'], true);
+                                            ?>
+                                            <?php if (!empty($tags)): ?>
+                                                <select class="custom-select2 custom-select-tags form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
+                                                    <optgroup label="Available Tags">
+                                                        <?php foreach ($tags as $tag): ?>
+                                                            <option value="<?= esc($tag['tag_value']) ?>"
+                                                                <?= (!empty($selectedTags) && in_array($tag['tag_value'], $selectedTags)) ? 'selected' : '' ?>>
+                                                                <?= esc($tag['tag_name']) ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    </optgroup>
+                                                </select>
+                                            <?php else: ?>
+                                                <p class="text-danger">No tags available</p>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -630,28 +648,6 @@
                                     </div>
                                 </div>
 
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Related Products</p>
-                                    <div id="relatedProductsContainer">
-                                        <?php if (!empty($related_products)): ?>
-                                            <ul class="list-group">
-                                                <?php foreach ($related_products as $related): ?>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <div>
-                                                            <strong><?= esc($related['product_title']) ?></strong>
-                                                            <br>
-                                                            <span class="text-muted">Inventory: <?= esc($related['inventory']) ?></span> | 
-                                                            <span class="text-muted">Price: ₹<?= esc($related['selling_price']) ?></span>
-                                                        </div>
-                                                     
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        <?php else: ?>
-                                            <p>No related products found.</p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </form>
@@ -659,6 +655,106 @@
 
             </div>
         </div>
+
+        <!-- Modal to Add New Product -->
+        <div class="modal fade" id="multiSelectProductModal" tabindex="-1" role="dialog" aria-labelledby="multiSelectProductModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="multiSelectProductModalLabel">Add New Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addMultiSelectProductForm">
+                            <div class="form-group">
+                                <label for="newProductName">Product Name</label>
+                                <input type="text" class="form-control" id="newProductName" placeholder="Enter new product name">
+                            </div>
+                            <div class="form-group">
+                                <label for="newProductValue">Product Value</label>
+                                <input type="text" class="form-control" id="newProductValue" placeholder="Product value">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="addNewProduct">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("addNewProduct").addEventListener("click", function(event) {
+                    event.preventDefault();
+
+                    var productName = $.trim($("#newProductName").val());
+                    var productValue = $.trim($("#newProductValue").val());
+
+                    if (productName === "" || productValue === "") {
+                        alert("Please enter both Product Name and Product Value.");
+                        return;
+                    }
+
+                    console.log("Submitting product:", productName, productValue);
+
+                    $.ajax({
+                        url: "<?= base_url('products/AddNewProductTags') ?>",
+                        type: "POST",
+                        data: {
+                            product_name: productName,
+                            product_value: productValue,
+                            "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            console.log("AJAX Response:", response);
+
+                            if (response.status === "success") {
+                                $(".custom-select-products").append('<option value="' + productValue + '" selected>' + productName + '</option>');
+                                $(".custom-select-products").trigger("change");
+
+                                $("#multiSelectProductModal").modal("hide");
+
+                                $("#newProductName").val("");
+                                $("#newProductValue").val("");
+
+                                alert("Product added successfully!");
+                            } else {
+                                alert(response.message || "Failed to add product. Please try again.");
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("AJAX Error:", xhr.responseText);
+                            alert("Error: " + xhr.responseText);
+                        }
+                    });
+                });
+
+                if ($.fn.select2) {
+                    $(".custom-select2").select2({
+                        placeholder: "Select products",
+                        allowClear: true
+                    });
+                }
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let productNameInput = document.getElementById("newProductName");
+                let productValueInput = document.getElementById("newProductValue");
+
+                productNameInput.addEventListener("input", function() {
+                    let productName = productNameInput.value.trim().toLowerCase();
+                    let productValue = productName.replace(/\s+/g, "-");
+                    productValueInput.value = productValue;
+                });
+            });
+        </script>
 
         <!--chaitanya text editor -->
         <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
@@ -1187,5 +1283,4 @@
             }
         });
     });
-    
 </script>
