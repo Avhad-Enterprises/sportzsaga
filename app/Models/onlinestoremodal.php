@@ -91,7 +91,9 @@ class onlinestoremodal extends Model
 
     public function updateCart($data)
     {
-        return $this->db->table('cartpage')->where('id', 1)->update($data);
+        $this->db->table('cartpage')->where('id', 1)->update($data);
+        log_message('info', 'SQL Query: ' . $this->db->getLastQuery());
+        return $this->db->affectedRows() > 0;
     }
 
     public function getCheckoutData()
@@ -117,7 +119,41 @@ class onlinestoremodal extends Model
     
     public function update404($data)
     {
-        return $this->db->table('error_page')->where('id', 1)->update($data);
+        $db = $this->db->table('error_page');
+
+        // Fetch current record
+        $oldData = $db->where('id', 1)->get()->getRowArray();
+        if (!$oldData) {
+            return false; // No record found
+        }
+
+        // Check for changes
+        $changes = [];
+        foreach ($data as $key => $value) {
+            if (isset($oldData[$key]) && $oldData[$key] !== $value) {
+                $changes['previous'][$key] = $oldData[$key];
+                $changes['updated'][$key] = $value;
+            }
+        }
+
+        if (!empty($changes)) {
+            $changes['timestamp'] = date('Y-m-d H:i:s'); // Add timestamp
+
+            // Decode existing change_log JSON
+            $existingLog = json_decode($oldData['change_log'], true);
+            if (!is_array($existingLog)) {
+                $existingLog = []; // Initialize if null or invalid
+            }
+
+            // Append new log entry
+            $existingLog[] = $changes;
+
+            // Convert back to JSON and update data array
+            $data['change_log'] = json_encode($existingLog, JSON_PRETTY_PRINT);
+        }
+
+        // Update the table
+        return $db->where('id', 1)->update($data);
     }
 
     public function getAllMembers()
@@ -311,9 +347,7 @@ class onlinestoremodal extends Model
     public function RestoreRelBlog($id, $data)
     {
         return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
-
     }
-
 
     public function getAlllogblogs()
     {

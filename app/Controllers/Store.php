@@ -58,7 +58,6 @@ class Store extends BaseController
         $data['carousels'] = $modal->getcarouselTexts();
 
         return view('online_store_logs', $data);
-
     }
 
 
@@ -424,12 +423,6 @@ class Store extends BaseController
 
 
 
-
-
-
-
-
-    
     public function add_policy()
     {
         if ($this->request->isAJAX()) {
@@ -681,13 +674,32 @@ class Store extends BaseController
     public function update_about()
     {
         try {
+            log_message('info', 'update_about function triggered');
+
+            // Initialize session to get the logged-in user
+            $session = \Config\Services::session();
+            $updatedBy = $session->get('user_id'); // Get user ID from session
+
+            if (!$updatedBy) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'User is not logged in'
+                ]);
+            }
+
             // Initialize Google Cloud Storage
             $storage = new \Google\Cloud\Storage\StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
-            $bucketName = 'sportzsaga_imgs';
-            $bucket = $storage->bucket($bucketName);
+            $bucket = $storage->bucket('sportzsaga_imgs');
+
+            // Fetch existing data
+            $modal = new onlinestoremodal();
+            $existingData = $modal->getabout();
+            $existingData = $existingData ? (array)$existingData : [];
+
+            log_message('info', 'Existing Data: ' . json_encode($existingData));
 
             // Prepare data array
             $data = [
@@ -700,66 +712,66 @@ class Store extends BaseController
                 'subscribe_placeholder' => $this->request->getPost('subscribe_placeholder'),
                 'subscribe_btn' => $this->request->getPost('subscribe_btn'),
                 'blogs_title' => $this->request->getPost('blogs_title'),
-                'blogs' => $this->request->getPost('blogs')
+                'blogs' => $this->request->getPost('blogs'),
+                'updated_by' => $updatedBy, // Track who updated it
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             // Handle background image
             $bgFile = $this->request->getFile('about_bg');
             if ($bgFile && $bgFile->isValid() && !$bgFile->hasMoved()) {
                 $fileName = 'about/' . uniqid() . '_' . $bgFile->getClientName();
-                $object = $bucket->upload(
-                    fopen($bgFile->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $data['about_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+                $bucket->upload(fopen($bgFile->getTempName(), 'r'), ['name' => $fileName, 'predefinedAcl' => 'publicRead']);
+                $data['about_bg'] = "https://storage.googleapis.com/sportzsaga_imgs/$fileName";
             }
 
             // Handle icons
-            $iconsData = json_decode($this->request->getPost('icons_data'), true);
+            $iconsData = json_decode($this->request->getPost('icons_data'), true) ?? [];
             for ($i = 1; $i <= 5; $i++) {
-                $iconFile = $this->request->getFile('icon' . ($i) . '_file');
+                $iconFile = $this->request->getFile("icon{$i}_file");
                 if ($iconFile && $iconFile->isValid() && !$iconFile->hasMoved()) {
                     $fileName = 'icons/' . uniqid() . '_' . $iconFile->getClientName();
-                    $object = $bucket->upload(
-                        fopen($iconFile->getTempName(), 'r'),
-                        [
-                            'name' => $fileName,
-                            'predefinedAcl' => 'publicRead',
-                        ]
-                    );
-                    if (isset($iconsData[$i - 1])) {
-                        $iconsData[$i - 1]['icon'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
-                    }
+                    $bucket->upload(fopen($iconFile->getTempName(), 'r'), ['name' => $fileName, 'predefinedAcl' => 'publicRead']);
+                    $iconsData[$i - 1]['icon'] = "https://storage.googleapis.com/sportzsaga_imgs/$fileName";
                 }
-                $data['icon' . $i] = isset($iconsData[$i - 1]) ? json_encode($iconsData[$i - 1]) : null;
+                $data["icon{$i}"] = isset($iconsData[$i - 1]) ? json_encode($iconsData[$i - 1]) : null;
             }
 
             // Handle info data
-            $infoData = json_decode($this->request->getPost('info_data'), true);
-            if ($infoData) {
-                $data['info_data1'] = isset($infoData['info_data1']) ? json_encode($infoData['info_data1']) : null;
-                $data['info_data2'] = isset($infoData['info_data2']) ? json_encode($infoData['info_data2']) : null;
-                $data['info_data3'] = isset($infoData['info_data3']) ? json_encode($infoData['info_data3']) : null;
+            $infoData = json_decode($this->request->getPost('info_data'), true) ?? [];
+            foreach (['info_data1', 'info_data2', 'info_data3'] as $key) {
+                $data[$key] = isset($infoData[$key]) ? json_encode($infoData[$key]) : null;
             }
 
+            // Track changes
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if (isset($existingData[$key]) && trim(strval($existingData[$key])) !== trim(strval($value))) {
+                    $changes[$key] = ['old' => $existingData[$key], 'new' => $value];
+                }
+            }
 
-            $modal = new onlinestoremodal();
+            // Update change log only if there are changes
+            if (!empty($changes)) {
+                $oldChangeLog = json_decode($existingData['change_log'] ?? '[]', true) ?? [];
+                $oldChangeLog[] = [
+                    'updated_by' => $updatedBy,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+                $data['change_log'] = json_encode($oldChangeLog);
+                log_message('info', 'Updated by User ID: ' . $updatedBy . ', Changes: ' . json_encode($changes));
+            }
+
+            // Call update function
             $success = $modal->updateAbout($data);
+            log_message('info', 'Database Update Result: ' . json_encode($success));
 
-            if ($success) {
-                return $this->response->setJSON([
-                    'success' => true,
-                    'message' => 'About page updated successfully'
-                ]);
-            } else {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'No changes were made to the about page'
-                ]);
-            }
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => $success ? 'About page updated successfully' : 'No changes made',
+                'changes' => $changes
+            ]);
         } catch (\Exception $e) {
             log_message('error', 'Error updating about page: ' . $e->getMessage());
             return $this->response->setJSON([
@@ -769,21 +781,38 @@ class Store extends BaseController
         }
     }
 
-
-
-    //<!----------------------------------------------------------------------------- Contact -------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------- Contact -------------------------------------------------------------------------------->
+    
     public function update_contact()
     {
         try {
-            // Initialize Google Cloud Storage
-            $storage = new \Google\Cloud\Storage\StorageClient([
-                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
-                'projectId' => 'peak-tide-441609-r1',
-            ]);
-            $bucketName = 'sportzsaga_imgs';
-            $bucket = $storage->bucket($bucketName);
+            log_message('info', 'update_contact function triggered');
 
-            // Prepare data array
+            // Initialize session to get the logged-in user
+            $session = \Config\Services::session();
+            $updatedBy = $session->get('user_id'); // Get user ID from session
+
+            if (!$updatedBy) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'User is not logged in'
+                ]);
+            }
+
+            $db = \Config\Database::connect();
+            $builder = $db->table('contactpage');
+            $id = 1; // Always update ID 1
+
+            // Fetch existing contact data
+            $existingData = $builder->where('id', $id)->get()->getRowArray();
+            if (!$existingData) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Contact page not found.'
+                ]);
+            }
+
+            // Prepare data for update
             $data = [
                 'contact_title' => $this->request->getPost('contact_title'),
                 'contact_description' => $this->request->getPost('contact_description'),
@@ -804,47 +833,55 @@ class Store extends BaseController
                 'contact_subscribe_title' => $this->request->getPost('contact_subscribe_title'),
                 'contact_subscribe_subtitle' => $this->request->getPost('contact_subscribe_subtitle'),
                 'contact_subscribe_placeholder' => $this->request->getPost('contact_subscribe_placeholder'),
-                'contact_subscribe_btn' => $this->request->getPost('contact_subscribe_btn')
+                'contact_subscribe_btn' => $this->request->getPost('contact_subscribe_btn'),
+                'updated_by' => $updatedBy, // Track who updated it
+                'updated_at' => date('Y-m-d H:i:s')
             ];
 
-            // Handle background image
-            $bgFile = $this->request->getFile('contact_bg');
-            if ($bgFile && $bgFile->isValid() && !$bgFile->hasMoved()) {
-                $fileName = 'contact/' . uniqid() . '_' . $bgFile->getClientName();
-                $object = $bucket->upload(
-                    fopen($bgFile->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $data['contact_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+            // Track changes
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if (isset($existingData[$key]) && trim(strval($existingData[$key])) !== trim(strval($value))) {
+                    $changes[$key] = [
+                        'old' => $existingData[$key],
+                        'new' => $value
+                    ];
+                }
             }
 
+            // Fetch existing change log
+            $oldChangeLog = json_decode($existingData['change_log'] ?? '[]', true) ?? [];
 
-
-            $modal = new onlinestoremodal();
-            $success = $modal->updateContact($data);
-
-            if ($success) {
-                return $this->response->setJSON([
-                    'success' => true,
-                    'message' => 'Contact page updated successfully'
-                ]);
-            } else {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'No changes were made to the Contact page'
-                ]);
+            // Append new changes to change log
+            if (!empty($changes)) {
+                $oldChangeLog[] = [
+                    'updated_by' => $updatedBy,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+                $data['change_log'] = json_encode($oldChangeLog);
+                log_message('info', 'Contact page updated by User ID: ' . $updatedBy . '. Changes: ' . json_encode($changes));
             }
+
+            // Update database
+            $builder->where('id', $id)->update($data);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Contact page updated successfully.',
+                'changes' => $changes
+            ]);
         } catch (\Exception $e) {
-            log_message('error', 'Error updating Contact page: ' . $e->getMessage());
+            log_message('error', 'Error updating contact page: ' . $e->getMessage());
             return $this->response->setJSON([
                 'success' => false,
-                'message' => 'An error occurred while updating the Contact page'
+                'message' => 'An error occurred while updating the contact page.'
             ]);
         }
     }
+
+
+
 
     public function update_search()
     {
@@ -905,15 +942,15 @@ class Store extends BaseController
     public function update_cart()
     {
         try {
+            log_message('info', 'update_cart function triggered');
 
-            // Initialize Google Cloud Storage
-            $storage = new \Google\Cloud\Storage\StorageClient([
-                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
-                'projectId' => 'peak-tide-441609-r1',
-            ]);
-            $bucketName = 'sportzsaga_imgs';
-            $bucket = $storage->bucket($bucketName);
+            // Log all incoming POST data
+            log_message('info', 'Received POST Data: ' . json_encode($this->request->getPost()));
 
+            // Fetch existing data
+            $modal = new onlinestoremodal();
+            $existingData = $modal->getcartpage();
+            log_message('info', 'Existing Data: ' . json_encode($existingData));
 
             // Prepare data array
             $data = [
@@ -927,32 +964,43 @@ class Store extends BaseController
                 'note_info' => $this->request->getPost('note_info'),
                 'more_title' => $this->request->getPost('more_title'),
                 'cm_products' => $this->request->getPost('cm_products'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
-            // Handle background image
-            $bgFile = $this->request->getFile('offer_bg');
-            if ($bgFile && $bgFile->isValid() && !$bgFile->hasMoved()) {
-                $fileName = 'contact/' . uniqid() . '_' . $bgFile->getClientName();
-                $object = $bucket->upload(
-                    fopen($bgFile->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $data['offer_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+            log_message('info', 'Data to be updated: ' . json_encode($data));
+
+            // Handle change log
+            if ($existingData) {
+                // Get existing change log from the database
+                $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new changes to change log
+                $newChange = [
+                    'old' => $existingData,
+                    'new' => $data,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                ];
+                $existingChangeLog[] = $newChange;
+
+                // Store updated change log
+                $data['change_log'] = json_encode($existingChangeLog);
+                log_message('info', 'Updated Change Log: ' . json_encode($data['change_log']));
             }
 
+            // Update record
+            $affectedRows = $modal->updateCart($data);
+            log_message('info', 'Database update affected rows: ' . $affectedRows);
 
-            $modal = new onlinestoremodal();
-            $success = $modal->updateCart($data);
-
-            if ($success) {
+            if ($affectedRows) {
                 return $this->response->setJSON([
                     'success' => true,
                     'message' => 'Cart page updated successfully'
                 ]);
             } else {
+                log_message('error', 'No changes made to cart page.');
                 return $this->response->setJSON([
                     'success' => false,
                     'message' => 'No changes were made to the Cart page'
@@ -968,8 +1016,8 @@ class Store extends BaseController
     }
 
 
+    <!-------------------------------------------------------------------------------------- Checkout page ------------------------------------------------------------------------->
 
-    //<!-------------------------------------------------------------------------------------- Checkout page ------------------------------------------------------------------------->
 
     public function update_checkout()
     {
@@ -1831,14 +1879,42 @@ class Store extends BaseController
                 $existingRecord = $homeCollectionModel->find(1);
 
                 if ($existingRecord) {
+                    // Capture old data
+                    $oldCollection = $existingRecord['collection_id'];
+
+                    // Fetch existing change log and decode it
+                    $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+
+                    // Ensure it's an array
+                    if (!is_array($existingChangeLog)) {
+                        $existingChangeLog = [];
+                    }
+
+                    // Append new change entry
+                    $newChange = [
+                        'old' => $oldCollection,
+                        'new' => $favCollection,
+                        'timestamp' => date('Y-m-d H:i:s')
+                    ];
+
+                    $existingChangeLog[] = $newChange; // Append to the existing change log
+
                     // Update the existing record
-                    $homeCollectionModel->update(1, ['collection_id' => $favCollection]);
+                    $homeCollectionModel->update(1, [
+                        'collection_id' => $favCollection,
+                        'change_log' => json_encode($existingChangeLog)
+                    ]);
                     $message = 'Collections updated successfully.';
                 } else {
                     // Insert a new record with ID=1
                     $homeCollectionModel->insert([
                         'id' => 1,
                         'collection_id' => $favCollection,
+                        'change_log' => json_encode([[
+                            'old' => null,
+                            'new' => $favCollection,
+                            'timestamp' => date('Y-m-d H:i:s')
+                        ]])
                     ]);
                     $message = 'Collections saved successfully.';
                 }
@@ -1860,6 +1936,7 @@ class Store extends BaseController
             'message' => 'Invalid request.',
         ]);
     }
+
 
 
 
@@ -2192,21 +2269,23 @@ class Store extends BaseController
 
 
 
-    //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
-
-
+    <!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
 
     public function save()
     {
         try {
             helper(['form', 'url']);
-
-            // Log incoming data for debugging
+            $session = session(); // Get the session instance
+            $userId = $session->get('user_id'); // Retrieve user ID from session
+    
             log_message('info', 'Received Data: ' . json_encode($this->request->getPost()));
-
+    
             $homeImageModel = new \App\Models\HomeImageModel();
-
-            // Prepare data for saving
+    
+            // Fetch existing record (assuming ID=1)
+            $existingRecord = $homeImageModel->find(1);
+    
+            // Prepare new data for saving
             $data = [
                 'image_title1' => $this->request->getPost('image_title1'),
                 'description1' => $this->request->getPost('description1'),
@@ -2218,16 +2297,17 @@ class Store extends BaseController
                 'select_link2' => $this->request->getPost('select_link2'),
                 'selected_product2' => $this->request->getPost('select_link2') === 'product' ? $this->request->getPost('selected_product2') : null,
                 'selected_collection2' => $this->request->getPost('select_link2') === 'collection' ? $this->request->getPost('selected_collection2') : null,
-                'updated_at' => date('Y-m-d H:i:s'), // Add timestamp for updates
+                'updated_at' => date('Y-m-d H:i:s'),
+                'updated_by' => $userId, // Store the user ID who made the update
             ];
-
+    
             // Initialize Google Cloud Storage
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
             $bucket = $storage->bucket('sportzsaga_imgs');
-
+    
             // Handle file uploads
             foreach (['background_image1', 'background_image2'] as $field) {
                 $file = $this->request->getFile($field);
@@ -2243,40 +2323,53 @@ class Store extends BaseController
                     $data[$field] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
                 }
             }
-
+    
+            // Determine what has changed
+            $changedFields = [];
+            if ($existingRecord) {
+                foreach ($data as $key => $newValue) {
+                    $oldValue = $existingRecord[$key] ?? null;
+    
+                    // Only log changes if the new value is different from the old value
+                    if ($newValue !== $oldValue) {
+                        $changedFields[$key] = [
+                            'old' => $oldValue,
+                            'new' => $newValue,
+                        ];
+                    }
+                }
+            }
+    
+            // If there are changes, update the change_log
+            if (!empty($changedFields)) {
+                $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+    
+                // Append new change entry with only changed fields
+                $newChange = [
+                    'updated_by' => $userId,
+                    'changes' => $changedFields,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                ];
+    
+                $existingChangeLog[] = $newChange;
+                $data['change_log'] = json_encode($existingChangeLog);
+            }
+    
             // Save or update the data (assumes one row for home_image, always with ID=1)
             $homeImageModel->update(1, $data);
-
-            // Redirect to the edit form with a success message
+    
             return redirect()->to(base_url('online_store/edit'))->with('success', 'Data saved successfully.');
         } catch (\Exception $e) {
             log_message('error', 'Error saving data: ' . $e->getMessage());
-
-            // Redirect to the edit form with an error message
             return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save data: ' . $e->getMessage());
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //<!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
+    
+    
+    <!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
 
     public function saveMarqueeText()
     {
@@ -2547,18 +2640,7 @@ class Store extends BaseController
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    // <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
 
     public function delete_page($id)
     {
@@ -3010,7 +3092,4 @@ class Store extends BaseController
             return redirect()->back()->with('error', 'Failed to restore.');
         }
     }
-
-
-
 }

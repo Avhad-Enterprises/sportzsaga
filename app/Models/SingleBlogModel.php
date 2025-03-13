@@ -8,7 +8,7 @@ class SingleBlogModel extends Model
 {
     protected $table = 'singleblog_data';  // Adjusted to match your table name
     protected $primaryKey = 'id';      // Primary key
-    protected $allowedFields = ['page_title', 'related_blogs', 'tags', 'popular_posts', 'created_at', 'updated_at'];
+    protected $allowedFields = ['page_title', 'related_blogs', 'tags', 'popular_posts', 'created_at', 'updated_at', 'change_log'];
 
     /**
      * Fetch settings by ID.

@@ -16,6 +16,7 @@ class BlogSettingsModel extends Model
         'popular_tags',
         'popular_posts',
         'meta_title',
+        'change_log'
     ];
 
     // Enable timestamps

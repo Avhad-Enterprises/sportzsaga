@@ -8,5 +8,5 @@ class HomeCollectionModel extends Model
 {
     protected $table = 'home_collection';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['collection_id', 'collection_title'];
+    protected $allowedFields = ['collection_id', 'collection_title','change_log'];
 }

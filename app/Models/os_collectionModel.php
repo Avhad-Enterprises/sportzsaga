@@ -12,7 +12,7 @@ class os_collectionModel extends Model
     protected $useTimestamps = true; // Enable automatic timestamping
     protected $createdField = 'created_at'; // Field for record creation
     protected $updatedField = 'updated_at'; // Field for record updates
-  
+
     protected $allowedFields = [
         'image1',
         'image2',
@@ -28,13 +28,38 @@ class os_collectionModel extends Model
 
     public function saveOrUpdateCollection($data)
     {
-        // Check if ID 1 exists
-        if ($this->where('id', 1)->countAllResults() > 0) {
-            // Update the record with ID 1
+        // Fetch existing record with ID = 1
+        $existingRecord = $this->find(1);
+
+        if ($existingRecord) {
+            // Prepare change log
+            $changeLog = json_decode($existingRecord['change_log'], true) ?? [];
+
+            // Capture only changed fields
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if (isset($existingRecord[$key]) && $existingRecord[$key] != $value) {
+                    $changes['old'][$key] = $existingRecord[$key];
+                    $changes['new'][$key] = $value;
+                }
+            }
+
+            if (!empty($changes)) {
+                $changes['updated_at'] = date('Y-m-d H:i:s'); // Timestamp for log
+                $changeLog[] = $changes;
+            }
+
+            // Update the record with ID = 1, including the new change log
+            $data['change_log'] = json_encode($changeLog);
             return $this->update(1, $data);
         } else {
-            // Insert the first record
-            $data['id'] = 1; // Ensure ID 1 is set explicitly
+            // First-time insert with ID = 1
+            $data['id'] = 1;
+            $data['change_log'] = json_encode([[
+                'old' => null,
+                'new' => $data,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]]);
             return $this->insert($data);
         }
     }
