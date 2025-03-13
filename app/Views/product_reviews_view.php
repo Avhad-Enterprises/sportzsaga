@@ -122,9 +122,10 @@
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Product Reviews</h4>
+                        <h4 class="text-blue h4">Product Reviews </h4>
                     </div>
                     <div class="pb-20">
+
                         <table class="table hover data-table-export table-hover">
                             <thead>
                                 <tr>
@@ -132,6 +133,7 @@
                                     <th>User</th>
                                     <th>E-Mail</th>
                                     <th>Product</th>
+                                    <th>Rating</th> <!-- ✅ Added Rating Column -->
                                     <th>DateTime</th>
                                     <th>Approved By</th>
                                     <th>Status</th>
@@ -140,44 +142,75 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($productreviews as $productreview) : ?>
+                                    <?php
+                                    // ✅ Get user details
+                                    $user = $productreview['user_details'] ?? null;
+                                    $userName = isset($user['name']) ? esc($user['name']) : 'Unknown User';
+                                    $userEmail = isset($user['email']) ? esc($user['email']) : '-';
+
+                                    // ✅ Get product details
+                                    $product = $productreview['product_details'] ?? null;
+                                    $productTitle = isset($product['product_title']) ? esc($product['product_title']) : 'Unknown Product';
+
+                                    // ✅ Get approved by details
+                                    $approver = $productreview['approved_by_details'] ?? null;
+                                    $approvedBy = !empty($approver['name']) ? esc($approver['name']) : '-';
+
+                                    // ✅ Get rating
+                                    $rating = $productreview['rating'] ?? 0; // Default to 0 if not set
+
+                                    // ✅ Define status labels
+                                    $statusLabels = [
+                                        0 => ['label' => 'Pending', 'color' => 'badge-warning'],
+                                        1 => ['label' => 'Approved', 'color' => 'badge-success'],
+                                        2 => ['label' => 'Rejected', 'color' => 'badge-danger'],
+                                    ];
+
+                                    // ✅ Get status
+                                    $status = $productreview['status'] ?? 0; // Default to 'Pending'
+                                    $badge = $statusLabels[$status] ?? ['label' => 'Unknown', 'color' => 'badge-secondary'];
+                                    ?>
                                     <tr>
                                         <td><?= $productreview['id'] ?></td>
-                                        <td><?= esc($user_details['name']) ?></td>
-                                        <td><?= esc($user_details['email']) ?></td>
-                                        <td><?= esc($product_details['product_title']) ?></td>
-                                        <td><?= date('d M Y, h:i A', strtotime($productreview['created_at'])) ?></td>
-                                        <td><?= !empty($approved_by_details['name']) ? esc($approved_by_details['name']) : '-' ?></td>
+                                        <td><?= $userName ?></td>
+                                        <td><?= $userEmail ?></td>
+                                        <td><?= $productTitle ?></td>
+
+                                        <!-- ✅ Display Rating as Stars -->
                                         <td>
-                                            <?php
-                                            $statusLabels = [
-                                                0 => ['label' => 'Pending', 'color' => 'badge-warning'],
-                                                1 => ['label' => 'Approved', 'color' => 'badge-success'],
-                                                2 => ['label' => 'Rejected', 'color' => 'badge-danger'],
-                                            ];
+                                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                                <i class="fa-star rating-star <?= ($i <= $rating) ? 'fa-solid' : 'fa-regular' ?>"
+                                                    data-value="<?= $i ?>" style="color: #ffd700; font-size: 18px;"></i>
+                                            <?php endfor; ?>
+                                        </td>
 
-                                            $status = $productreview['status'];
-                                            $badge = $statusLabels[$status] ?? ['label' => 'Unknown', 'color' => 'badge-secondary'];
-                                            ?>
-
+                                        <td><?= date('d M Y, h:i A', strtotime($productreview['created_at'])) ?></td>
+                                        <td><?= $approvedBy ?></td>
+                                        <td>
                                             <span class="badge <?= esc($badge['color']) ?>">
                                                 <?= esc($badge['label']) ?>
                                             </span>
                                         </td>
                                         <td>
-                                            <?php if ($productreview['status'] == 1): ?>
+                                            <?php if ($status == 1): ?>
+                                                <!-- ✅ If Approved, Show Only Green Check -->
                                                 <i class="fa-regular fa-circle-check" style="color: #2ead00;"></i>
                                             <?php else: ?>
+                                                <!-- ✅ If Not Approved, Show Action Icons -->
                                                 <i class="fa-solid fa-circle-xmark mx-2 reject-review"
-                                                    data-id="<?= $productreview['id'] ?>" style="color: #bd0000; font-size: 20px; cursor: pointer;"></i>
+                                                    data-id="<?= $productreview['id'] ?>"
+                                                    style="color: #bd0000; font-size: 20px; cursor: pointer;"></i>
 
                                                 <i class="fa-solid fa-circle-check approve-review"
-                                                    data-id="<?= $productreview['id'] ?>" style="color: #008000; font-size: 20px; cursor: pointer;"></i>
+                                                    data-id="<?= $productreview['id'] ?>"
+                                                    style="color: #008000; font-size: 20px; cursor: pointer;"></i>
                                             <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
+
 
                     </div>
                 </div>
