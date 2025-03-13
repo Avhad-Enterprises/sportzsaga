@@ -611,12 +611,18 @@ class Products_model extends Model
 
     public function GetUserDetails($id)
     {
-        return $this->db->table('users')->where('user_id', $id)->get()->getRowArray();
+        if ($id) {
+            return $this->db->table('users')->where('user_id', $id)->get()->getRowArray();
+        }
+        return null;
     }
 
     public function GetProductDetails($id)
     {
-        return $this->db->table('products')->where('product_id', $id)->get()->getRowArray();
+        if ($id) {
+            return $this->db->table('products')->where('product_id', $id)->get()->getRowArray();
+        }
+        return null;
     }
 
     public function UpdateReviewStatus($reviewId, $updateData)

@@ -1634,15 +1634,19 @@ class Products extends BaseController
     public function productReviews()
     {
         $Model = new Products_model();
-        $data['productreviews'] = $Model->GetallProductReviews();
-        $userid = $data['productreviews'][0]['user_id'];
-        $apprid = $data['productreviews'][0]['approved_by'];
-        $data['user_details'] = $Model->GetUserDetails($userid);
-        $data['approved_by_details'] = $Model->GetUserDetails($apprid);
-        $product_id = $data['productreviews'][0]['product_id'];
-        $data['product_details'] = $Model->GetProductDetails($product_id);
+        $reviews = $Model->GetallProductReviews();
+
+        foreach ($reviews as &$review) {
+            $review['user_details'] = $Model->GetUserDetails($review['user_id']);
+            $review['approved_by_details'] = $Model->GetUserDetails($review['approved_by']);
+            $review['product_details'] = $Model->GetProductDetails($review['product_id']);
+        }
+
+        $data['productreviews'] = $reviews;
+
         return view('product_reviews_view', $data);
     }
+
 
     public function UpdateReviewStatus()
     {
