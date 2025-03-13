@@ -423,8 +423,6 @@ class Store extends BaseController
 
 
 
-
-
     public function add_policy()
     {
         if ($this->request->isAJAX()) {
@@ -578,94 +576,101 @@ class Store extends BaseController
     {
         $footerModel = new Footer_model();
         $request = $this->request;
+        $session = session();
+        $userId = strval($session->get('user_id')); // Store user ID as string for consistency
 
         if ($request->isAJAX()) {
-            // Initialize Google Cloud Storage
-            $storage = new \Google\Cloud\Storage\StorageClient([
-                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
-                'projectId' => 'peak-tide-441609-r1',
-            ]);
-            $bucketName = 'sportzsaga_imgs';
-            $bucket = $storage->bucket($bucketName);
-
-            // Prepare image paths for storage
-            $imagePaths = [];
-            $footerImage = $request->getFile('Footer_Image');
-            if ($footerImage && $footerImage->isValid() && !$footerImage->hasMoved()) {
-                $imageName = 'footer/' . uniqid() . '_' . $footerImage->getClientName();
-                $object = $bucket->upload(
-                    fopen($footerImage->getTempName(), 'r'),
-                    [
-                        'name' => $imageName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $imagePaths['footer_image'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $imageName);
-            } else {
-                // If no new image, keep the old image (you'll need to fetch the existing one from the database)
-                $existingFooter = $footerModel->find(1); // Assuming the footer ID is 1
-                $imagePaths['footer_image'] = $existingFooter['footer_image'] ?? '';
+            // Fetch existing footer data
+            $existingFooter = $footerModel->find(1); // Assuming footer ID is 1
+            if (!$existingFooter) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Footer data not found']);
             }
 
-            // Social Media Links
-            $facebook = $request->getPost('Facebook_link') ?? '';
-            $instagram = $request->getPost('Instagram_link') ?? '';
-            $twitter = $request->getPost('Twitter_link') ?? '';
-            $youtube = $request->getPost('Youtube_link') ?? '';
+            // Function to convert arrays to strings
+            function formatPostValue($value)
+            {
+                return is_array($value) ? implode(", ", $value) : trim($value);
+            }
 
-            // Handle Payment Methods (For Images and Links)
-            $paymentLinks = [];
-            $paymentImagePaths = [];
-            for ($i = 1; $i <= 3; $i++) {
-                $paymentLinks[] = $request->getPost("socialpayment_link{$i}") ?? '';
-                $paymentImage = $request->getFile("Footer_paymentImage{$i}");
-                if ($paymentImage && $paymentImage->isValid() && !$paymentImage->hasMoved()) {
-                    $imageName = 'payment/' . uniqid() . '_' . $paymentImage->getClientName();
-                    $object = $bucket->upload(
-                        fopen($paymentImage->getTempName(), 'r'),
-                        [
-                            'name' => $imageName,
-                            'predefinedAcl' => 'publicRead',
-                        ]
-                    );
-                    $paymentImagePaths["footer_payment_image{$i}"] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $imageName);
-                } else {
-                    // If no new payment image, keep the old image (fetch from database)
-                    $existingFooter = $footerModel->find(1); // Assuming the footer ID is 1
-                    $paymentImagePaths["footer_payment_image{$i}"] = $existingFooter["footer_payment_image{$i}"] ?? '';
+            // Prepare new form data, converting arrays to strings
+            $newData = [
+                'footer_email' => formatPostValue($request->getPost('Footer_mail')),
+                'footer_hours' => formatPostValue($request->getPost('Footer_Hours')),
+                'footer_name' => formatPostValue($request->getPost('Footer_payment')),
+                'facebook' => formatPostValue($request->getPost('Facebook_link')),
+                'instagram' => formatPostValue($request->getPost('Instagram_link')),
+                'twitter' => formatPostValue($request->getPost('Twitter_link')),
+                'youtube' => formatPostValue($request->getPost('Youtube_link')),
+                'footer_payment_link1' => formatPostValue($request->getPost('socialpayment_link1')),
+                'footer_payment_link2' => formatPostValue($request->getPost('socialpayment_link2')),
+                'footer_payment_link3' => formatPostValue($request->getPost('socialpayment_link3')),
+                'updated_by' => $userId,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            // Detect changes and store only the updated fields
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if ($existingFooter[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingFooter[$key] ?? 'N/A',
+                        'new' => $value
+                    ];
                 }
             }
 
-            // Data to update footer
-            $data = [
-                'footer_image' => $imagePaths['footer_image'] ?? '',
-                'footer_email' => $request->getPost('Footer_mail') ?? '',
-                'footer_hours' => $request->getPost('Footer_Hours') ?? '',
-                'footer_name' => $request->getPost('Footer_payment') ?? '',
-                'facebook' => $facebook,
-                'instagram' => $instagram,
-                'twitter' => $twitter,
-                'youtube' => $youtube,
-                'footer_payment_image1' => $paymentImagePaths['footer_payment_image1'] ?? '',
-                'footer_payment_image2' => $paymentImagePaths['footer_payment_image2'] ?? '',
-                'footer_payment_image3' => $paymentImagePaths['footer_payment_image3'] ?? '',
-                'footer_payment_link1' => $paymentLinks[0] ?? '',
-                'footer_payment_link2' => $paymentLinks[1] ?? '',
-                'footer_payment_link3' => $paymentLinks[2] ?? '',
-                'updated_at' => date('Y-m-d H:i:s')
+            // If no changes detected, return error response
+            if (empty($changes)) {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'message' => 'No changes detected.',
+                ]);
+            }
+
+            // Retrieve existing change log and format correctly
+            $existingChangeLog = json_decode($existingFooter['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = []; // Ensure it's an array
+            }
+
+            // Add the new change log entry
+            $newChangeLogEntry = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
             ];
 
-            // Update the footer data in the model
-            if ($footerModel->updateFooterData($data)) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Footer Updated Successfully']);
+            $existingChangeLog[] = $newChangeLogEntry; // Append to existing logs
+
+            // Save updated change log in correct format
+            $newData['change_log'] = json_encode($existingChangeLog, JSON_UNESCAPED_SLASHES);
+
+            log_message('info', 'Footer updated. Changes: ' . json_encode($changes));
+
+            // Update footer data in the model
+            if ($footerModel->update(1, $newData)) {
+                return $this->response->setJSON([
+                    'status' => 'success',
+                    'message' => 'Footer Updated Successfully',
+                    'change_log' => $existingChangeLog, // ✅ Returns properly formatted log
+                ]);
             } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Footer Update Failed']);
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'message' => 'Footer Update Failed',
+                ]);
             }
         }
 
         return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid Request']);
     }
 
+
+
+
+
+
+    //<!----------------------------------------------------------------------------- About Page -------------------------------------------------------------------------------->
     public function update_about()
     {
         try {
@@ -776,6 +781,8 @@ class Store extends BaseController
         }
     }
 
+    <!----------------------------------------------------------------------------- Contact -------------------------------------------------------------------------------->
+    
     public function update_contact()
     {
         try {
@@ -926,6 +933,12 @@ class Store extends BaseController
         }
     }
 
+
+
+
+
+
+    //<!----------------------------------------------------------------------------------- Cart Page ---------------------------------------------------------------------------->
     public function update_cart()
     {
         try {
@@ -1003,11 +1016,23 @@ class Store extends BaseController
     }
 
 
+    <!-------------------------------------------------------------------------------------- Checkout page ------------------------------------------------------------------------->
 
 
     public function update_checkout()
     {
         try {
+            $session = session();
+            $modal = new onlinestoremodal();
+
+            // Fetch existing record
+            $existingData = $modal->getCheckoutData();
+            if (!$existingData) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Checkout page data not found'
+                ]);
+            }
 
             // Prepare data array
             $data = [
@@ -1016,8 +1041,36 @@ class Store extends BaseController
                 'promocode_info' => $this->request->getPost('promocode_info')
             ];
 
+            // Track changes
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if ($existingData[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingData[$key],
+                        'new' => $value
+                    ];
+                }
+            }
 
-            $modal = new onlinestoremodal();
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingData['change_log'], true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new changes to the change log
+                $existingChangeLog[] = [
+                    'updated_by' => $session->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Save the updated change log back into the database
+                $data['change_log'] = json_encode($existingChangeLog);
+            }
+
+            // Update the checkout page
             $success = $modal->updateCheckout($data);
 
             if ($success) {
@@ -1041,9 +1094,25 @@ class Store extends BaseController
     }
 
 
+
+
+    //<!------------------------------------------------------------------------------------- Tracking page -------------------------------------------------------------------------->
+
+
     public function update_tracking()
     {
         try {
+            $session = session();
+            $modal = new onlinestoremodal();
+
+            // Fetch existing record
+            $existingData = $modal->getTrackingData();
+            if (!$existingData) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Tracking page data not found'
+                ]);
+            }
 
             // Initialize Google Cloud Storage
             $storage = new \Google\Cloud\Storage\StorageClient([
@@ -1052,7 +1121,6 @@ class Store extends BaseController
             ]);
             $bucketName = 'sportzsaga_imgs';
             $bucket = $storage->bucket($bucketName);
-
 
             // Prepare data array
             $data = [
@@ -1068,34 +1136,59 @@ class Store extends BaseController
                 'selected_posts' => $this->request->getPost('selected_posts'),
             ];
 
-            // Handle background image
+            // Handle background images
             $bnr_bg = $this->request->getFile('bnr_bg');
             if ($bnr_bg && $bnr_bg->isValid() && !$bnr_bg->hasMoved()) {
                 $fileName = 'contact/' . uniqid() . '_' . $bnr_bg->getClientName();
-                $object = $bucket->upload(
+                $bucket->upload(
                     fopen($bnr_bg->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $fileName, 'predefinedAcl' => 'publicRead']
                 );
                 $data['bnr_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
             }
+
             $mobbnr_bg = $this->request->getFile('mobbnr_bg');
             if ($mobbnr_bg && $mobbnr_bg->isValid() && !$mobbnr_bg->hasMoved()) {
                 $fileName = 'contact/' . uniqid() . '_' . $mobbnr_bg->getClientName();
-                $object = $bucket->upload(
+                $bucket->upload(
                     fopen($mobbnr_bg->getTempName(), 'r'),
-                    [
-                        'name' => $fileName,
-                        'predefinedAcl' => 'publicRead',
-                    ]
+                    ['name' => $fileName, 'predefinedAcl' => 'publicRead']
                 );
                 $data['mobbnr_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
             }
 
+            // Track changes and store each change as a separate entry
+            $changes = [];
+            foreach ($data as $key => $value) {
+                if ($existingData[$key] != $value) {
+                    $changes[] = [
+                        $key => [
+                            'old' => $existingData[$key],
+                            'new' => $value
+                        ]
+                    ];
+                }
+            }
 
-            $modal = new onlinestoremodal();
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingData['change_log'], true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new changes with separate array format
+                $existingChangeLog[] = [
+                    'updated_by' => $session->get('user_id'),
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Save the updated change log back into the database
+                $data['change_log'] = json_encode($existingChangeLog);
+            }
+
+            // Update the tracking page
             $success = $modal->updateTracking($data);
 
             if ($success) {
@@ -1118,6 +1211,9 @@ class Store extends BaseController
         }
     }
 
+
+
+    //<!------------------------------------------------------------------------------------- 404 page -------------------------------------------------------------------------->
     public function update_404()
     {
         try {
@@ -1274,6 +1370,10 @@ class Store extends BaseController
         }
     }
 
+
+
+
+    //<!------------------------------------------------------------------------------------- WISHLIST--------------------------------------------------------------------------
     public function update_wishlist()
     {
         try {
@@ -1918,6 +2018,8 @@ class Store extends BaseController
     {
         if ($this->request->isAJAX()) {
             $favBlog = $this->request->getPost('fav_blog'); // Comma-separated blog IDs
+            $session = session();
+            $userId = $session->get('user_id'); // Get logged-in user ID
 
             if (empty($favBlog)) {
                 return $this->response->setJSON([
@@ -1931,16 +2033,63 @@ class Store extends BaseController
             try {
                 // Check if an entry with ID=1 already exists
                 $existingRecord = $homeBlogModel->find(1);
+                $changes = [];
+                $message = '';
 
                 if ($existingRecord) {
-                    // Update the existing record
-                    $homeBlogModel->update(1, ['blog_id' => $favBlog]);
+                    // Track changes
+                    if ($existingRecord['blog_id'] != $favBlog) {
+                        $changes['blog_id'] = [
+                            'old' => $existingRecord['blog_id'],
+                            'new' => $favBlog
+                        ];
+                    }
+
+                    // If no changes, return
+                    if (empty($changes)) {
+                        return $this->response->setJSON([
+                            'success' => false,
+                            'message' => 'No changes detected.',
+                        ]);
+                    }
+
+                    // Retrieve and decode existing change log
+                    $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+
+                    // Append new change entry
+                    $newChangeEntry = [
+                        'updated_by' => $userId,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => $changes
+                    ];
+
+                    // Store the entire history as an array of JSON objects
+                    $existingChangeLog[] = $newChangeEntry;
+
+                    // Update the existing record with new change log
+                    $homeBlogModel->update(1, [
+                        'blog_id' => $favBlog,
+                        'updated_by' => $userId,
+                        'edited_at' => date('Y-m-d H:i:s'),
+                        'change_log' => json_encode($existingChangeLog) // Store as an array of JSON objects
+                    ]);
                     $message = 'Blogs updated successfully.';
                 } else {
-                    // Insert a new record with ID=1
+                    // First-time insert with an initial change log
+                    $newChangeLog = [
+                        [
+                            'updated_by' => $userId,
+                            'timestamp' => date('Y-m-d H:i:s'),
+                            'changes' => ['blog_id' => ['old' => null, 'new' => $favBlog]]
+                        ]
+                    ];
+
                     $homeBlogModel->insert([
                         'id' => 1,
                         'blog_id' => $favBlog,
+                        'updated_by' => $userId,
+                        'edited_at' => date('Y-m-d H:i:s'),
+                        'change_log' => json_encode($newChangeLog) // Store as an array of JSON objects
                     ]);
                     $message = 'Blogs saved successfully.';
                 }
@@ -1948,6 +2097,7 @@ class Store extends BaseController
                 return $this->response->setJSON([
                     'success' => true,
                     'message' => $message,
+                    'changes' => $changes,
                 ]);
             } catch (\Exception $e) {
                 return $this->response->setJSON([
@@ -2119,7 +2269,7 @@ class Store extends BaseController
 
 
 
-    //<!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
+    <!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
 
     public function save()
     {
@@ -2219,8 +2369,7 @@ class Store extends BaseController
     }
     
     
-
-    //<!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
 
     public function saveMarqueeText()
     {
@@ -2294,7 +2443,7 @@ class Store extends BaseController
             return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
         }
 
-
+        
         $updateSuccess = $model->update($id, [
             'is_deleted' => 1,
             'deleted_by' => $userId,
@@ -2409,43 +2558,89 @@ class Store extends BaseController
     public function saveBottomText()
     {
         $model = new onlinestoremodal();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
-        // Prepare the data
-        $data = [
-            'marqueebottomText1' => $this->request->getPost('marqueebottomText1'),
-            'marqueebottomDescription1' => $this->request->getPost('marqueebottomDescription1'),
-            'marqueebottomText2' => $this->request->getPost('marqueebottomText2'),
-            'marqueebottomDescription2' => $this->request->getPost('marqueebottomDescription2'),
-            'marqueebottomText3' => $this->request->getPost('marqueebottomText3'),
-            'marqueebottomDescription3' => $this->request->getPost('marqueebottomDescription3'),
+        // Sanitize inputs to remove unwanted `value="..."` wrappers
+        function cleanInput($input)
+        {
+            return trim(str_replace(['value="', '"'], '', htmlspecialchars_decode(strip_tags($input), ENT_QUOTES)));
+        }
+
+        $newData = [
+            'marqueebottomText1' => cleanInput($this->request->getPost('marqueebottomText1')),
+            'marqueebottomDescription1' => cleanInput($this->request->getPost('marqueebottomDescription1')),
+            'marqueebottomText2' => cleanInput($this->request->getPost('marqueebottomText2')),
+            'marqueebottomDescription2' => cleanInput($this->request->getPost('marqueebottomDescription2')),
+            'marqueebottomText3' => cleanInput($this->request->getPost('marqueebottomText3')),
+            'marqueebottomDescription3' => cleanInput($this->request->getPost('marqueebottomDescription3')),
             'updated_at' => date('Y-m-d H:i:s'),
-            'updated_by' => 1, // Placeholder for user ID
+            'updated_by' => $userId,
         ];
 
-        // Check if the row with ID 1 exists
+        // Fetch the existing row
         $existingRow = $model->db->table('marqueebottomtext')->where('id', 1)->get()->getRowArray();
 
         if ($existingRow) {
-            // If the row exists, update it
-            if ($model->db->table('marqueebottomtext')->update($data, ['id' => 1])) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Data updated successfully']);
-            } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update data']);
+            // Track changes (only if actual content is modified)
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                $existingValue = cleanInput($existingRow[$key] ?? '');
+
+                if ($existingValue !== $value) {
+                    $changes[$key] = [
+                        'old' => $existingValue,
+                        'new' => $value
+                    ];
+                }
             }
+
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingRow['change_log'] ?? '[]', true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new change log entry
+                $existingChangeLog[] = [
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Store changes in JSON format
+                $newData['change_log'] = json_encode($existingChangeLog, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+                // Update the existing row
+                if ($model->db->table('marqueebottomtext')->update($newData, ['id' => 1])) {
+                    return redirect()->back()->with('success', 'Bottom text updated successfully.');
+                } else {
+                    return redirect()->back()->with('error', 'Failed to update bottom text.');
+                }
+            }
+
+            return redirect()->back()->with('info', 'No changes detected.');
         } else {
-            // If the row doesn't exist, insert it with ID 1
-            $data['id'] = 1;
-            if ($model->db->table('marqueebottomtext')->insert($data)) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Data saved successfully']);
+            // Insert as new row if it doesn't exist
+            $newData['id'] = 1;
+            $newData['change_log'] = json_encode([
+                [
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => 'Initial data entry'
+                ]
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+            if ($model->db->table('marqueebottomtext')->insert($newData)) {
+                return redirect()->back()->with('success', 'Bottom text saved successfully.');
             } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save data']);
+                return redirect()->back()->with('error', 'Failed to save bottom text.');
             }
         }
     }
 
-
-
-    // <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
 
     public function delete_page($id)
     {

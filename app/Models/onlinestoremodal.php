@@ -96,9 +96,20 @@ class onlinestoremodal extends Model
         return $this->db->affectedRows() > 0;
     }
 
+    public function getCheckoutData()
+    {
+        return $this->db->table('checkoutpage')->where('id', 1)->get()->getRowArray();
+    }
+
     public function updateCheckout($data)
     {
         return $this->db->table('checkoutpage')->where('id', 1)->update($data);
+    }
+
+
+    public function getTrackingData()
+    {
+        return $this->db->table('trackingpage')->where('id', 1)->get()->getRowArray();
     }
 
     public function updateTracking($data)
@@ -106,46 +117,44 @@ class onlinestoremodal extends Model
         return $this->db->table('trackingpage')->where('id', 1)->update($data);
     }
     
-
     public function update404($data)
-{
-    $db = $this->db->table('error_page');
+    {
+        $db = $this->db->table('error_page');
 
-    // Fetch current record
-    $oldData = $db->where('id', 1)->get()->getRowArray();
-    if (!$oldData) {
-        return false; // No record found
-    }
-
-    // Check for changes
-    $changes = [];
-    foreach ($data as $key => $value) {
-        if (isset($oldData[$key]) && $oldData[$key] !== $value) {
-            $changes['previous'][$key] = $oldData[$key];
-            $changes['updated'][$key] = $value;
-        }
-    }
-
-    if (!empty($changes)) {
-        $changes['timestamp'] = date('Y-m-d H:i:s'); // Add timestamp
-
-        // Decode existing change_log JSON
-        $existingLog = json_decode($oldData['change_log'], true);
-        if (!is_array($existingLog)) {
-            $existingLog = []; // Initialize if null or invalid
+        // Fetch current record
+        $oldData = $db->where('id', 1)->get()->getRowArray();
+        if (!$oldData) {
+            return false; // No record found
         }
 
-        // Append new log entry
-        $existingLog[] = $changes;
+        // Check for changes
+        $changes = [];
+        foreach ($data as $key => $value) {
+            if (isset($oldData[$key]) && $oldData[$key] !== $value) {
+                $changes['previous'][$key] = $oldData[$key];
+                $changes['updated'][$key] = $value;
+            }
+        }
 
-        // Convert back to JSON and update data array
-        $data['change_log'] = json_encode($existingLog, JSON_PRETTY_PRINT);
+        if (!empty($changes)) {
+            $changes['timestamp'] = date('Y-m-d H:i:s'); // Add timestamp
+
+            // Decode existing change_log JSON
+            $existingLog = json_decode($oldData['change_log'], true);
+            if (!is_array($existingLog)) {
+                $existingLog = []; // Initialize if null or invalid
+            }
+
+            // Append new log entry
+            $existingLog[] = $changes;
+
+            // Convert back to JSON and update data array
+            $data['change_log'] = json_encode($existingLog, JSON_PRETTY_PRINT);
+        }
+
+        // Update the table
+        return $db->where('id', 1)->update($data);
     }
-
-    // Update the table
-    return $db->where('id', 1)->update($data);
-}
-
 
     public function getAllMembers()
     {
@@ -340,7 +349,6 @@ class onlinestoremodal extends Model
         return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
     }
 
-
     public function getAlllogblogs()
     {
         return $this->db->table('onlinestore_blogs')->where('is_deleted', 1)->get()->getResultArray();
@@ -393,4 +401,5 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
 }
