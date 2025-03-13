@@ -127,14 +127,16 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('discountcode', 'Home::discountcodegenerator');
    $routes->get('discountcodegenerator', 'Home::discountcodegenerator');
    $routes->get('addnewdiscountcode', 'Home::addnewdiscountcode');
-   $routes->get('discount_code_view', 'Home::discount_code_view');
+   $routes->get('discount_code_view', 'Home::viewtable');
    $routes->post('publishDiscountCode', 'Home::publishDiscountCode');
    $routes->post('update/(:num)', 'Home::update/$1');
-   $routes->get('delete/(:num)', 'Home::delete/$1');
    $routes->get('view/(:num)', 'Home::view/$1');
    $routes->get('exporttoexcel', 'Home::exportdiscountcode');
    $routes->get('importfromexcel', 'Home::importfromexcel');
    $routes->get('edit_discountcode_view/(:num)', 'Home::edit/$1');
+   $routes->get('delete/(:num)', 'Home::delete/$1'); // Soft delete a discount code
+   $routes->get('discountcodes_deleted', 'Home::deletedDiscountCodes'); // View deleted discount codes
+   $routes->get('discountcode/restore/(:num)', 'Home::restoreDiscountCode/$1'); // Restore a deleted discount code
 
    // Online Store
    $routes->get('online_store', 'Store::index');
@@ -285,7 +287,7 @@ $routes->post('admin-products/check_sku', 'Products::check_sku');
 $routes->get('admin-products/(:segment)', 'Products::products_preview/$1');
 $routes->post('check-url', 'Products::checkUrl');
 $routes->post('products/AddNewProductTags', 'Products::AddNewProductTags');
-$routes->get('product_reviews' , 'Products::productReviews');
+$routes->get('product_reviews', 'Products::productReviews');
 $routes->post('products/reviews/update_status', 'Products::UpdateReviewStatus');
 
 // Pincode Mapping Controller
@@ -401,8 +403,9 @@ $routes->get('bundle_view', 'BundleController::view');
 $routes->get('BundleController/edit/(:num)', 'BundleController::edit/$1');
 $routes->post('bundle/update/(:num)', 'BundleController::update/$1');
 $routes->get('BundleController/delete/(:num)', 'BundleController::delete/$1');
-$routes->get('bundle/deleted', 'BundleController::deleted');
-$routes->get('bundle/restore/(:num)', 'BundleController::restore/$1');
+$routes->get('bundle_deleted', 'BundleController::deleted');
+$routes->get('restore/(:num)', 'BundleController::restore/$1');
+
 
 $routes->get('bundlecollection_view', 'BundleController::viewcollection');
 $routes->get('bundlecollection_create', 'BundleController::indexcollection');
@@ -471,6 +474,9 @@ $routes->post('suppliers/suppliers/save', 'SupplierController::save');
 $routes->get('suppliers/edit/(:num)', 'SupplierController::edit/$1');
 $routes->post('suppliers/update/(:num)', 'SupplierController::update/$1');
 $routes->get('suppliers/delete/(:num)', 'SupplierController::delete/$1');
+$routes->get('suppliers_deleted', 'SupplierController::deletedSuppliers');
+$routes->get('suppliers/restore/(:num)', 'SupplierController::restoreSupplier/$1');
+
 
 //Tags
 $routes->post('Tags/save', 'Tags::save');
@@ -488,6 +494,9 @@ $routes->post('giftcard/publishGiftCard', 'Giftcard::publishGiftCard');
 $routes->get('giftcard/delete_gift_card/(:num)', 'Giftcard::deleteGiftCard/$1');
 $routes->get('giftcard/edit_giftcard_view/(:num)', 'Giftcard::editgiftcard/$1');
 $routes->post('giftcard/updateGiftCard/(:num)', 'Giftcard::updateGiftCard/$1');
+$routes->get('delete/(:num)', 'Giftcard::deleteGiftCard/$1'); // Soft delete a gift card
+$routes->get('giftcard_deleted', 'Giftcard::deletedGiftCards'); // View deleted gift cards
+$routes->get('bundlecollection/restoreGiftCard/(:num)', 'Giftcard::restoreGiftCard/$1'); // Restore a deleted gift card
 
 //Transfer
 $routes->get('transfer/create', 'TransferController::create');
@@ -550,7 +559,7 @@ $routes->post('online_store/add_new_product', 'Store::add_new_product');
 $routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
 $routes->get('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
-//home image
+//home imageF
 $routes->post('home-image/save', 'Store::save');
 $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');

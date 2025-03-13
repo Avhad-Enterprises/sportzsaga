@@ -109,103 +109,62 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
 
-
                 <div class="page-header">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Gift Card Table</h4>
+                                <h4>Deleted Discount Codes</h4>
                             </div>
-                            <nav aria-label="breadcrumb" role="navigation">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">
-                                        <a href="http://localhost/sportzsaga/dashboard">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        Gift Card
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-right blogs-imex">
-                            <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>addnew_giftcard_view"
-                                    role="button">
-                                    Add New
-                                </a>
-                            </div>
-                            <!-- <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>importfromexcel" role="button">
-                                    Import
-                                </a>
-                            </div>
-                            <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>exporttoexcel" role="button">
-                                    Export To Excel
-                                </a>
-                            </div> -->
-                            <!-- Logs Button (conditional) -->
-                            <div class="dropdown">
-                                <a class="btn btn-success fw-bold" href="<?= base_url('giftcard_deleted') ?>"
-                                    role="button">
-                                    Logs
-                                </a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
+
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Gift Card Table</h4>
+                        <h4 class="text-blue h4"></h4>
                     </div>
                     <div class="pb-20">
-                        <table class="table hover multiple-select-row data-table-export">
+                        <table class="table hover data-table-export table-hover">
                             <thead>
                                 <tr>
-                                    <th class="table-plus">Gift Card ID</th>
-                                    <th>Gift Card Code</th>
-                                    <th>Creation Date</th>
+                                    <th>Discount Code</th>
+                                    <th>Discount Value</th>
                                     <th>Expiration Date</th>
-                                    <th>Initial Value</th>
-                                    <th>Action</th>
+                                    <th>Deleted At</th>
+                                    <th>Deleted By</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($giftcards as $giftCard): ?>
+                                <?php foreach ($discount_codes as $discount): ?>
                                     <tr>
-                                        <td><?= $giftCard['gift_card_id'] ?></td>
-                                        <td><?= $giftCard['gift_card_code'] ?></td>
-                                        <td><?= $giftCard['creation_date'] ?></td>
-                                        <td><?= $giftCard['expiration_date'] ?></td>
-                                        <td><?= $giftCard['initial_value'] ?></td>
+                                        <td><?= esc($discount['code']) ?></td>
+                                        <td><?= esc($discount['discountValue']) ?>     <?= esc($discount['discountValue']) ?>
+                                        </td>
+                                        <td><?= esc(date('d/M/Y', strtotime($discount['expiration_date'] ?? ''))) ?></td>
+                                        <td><?= esc(date('d/M/Y h:i A', strtotime($discount['deleted_at'] ?? ''))) ?></td>
+                                        <td><?= esc($discount['deleted_by'] ?? 'N/A') ?></td>
                                         <td>
-                                            <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                                    href="#" role="button" data-toggle="dropdown">
-                                                    <i class="dw dw-more"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>giftcard/edit_giftcard_view/<?= $giftCard['gift_card_id'] ?>"><i
-                                                            class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>giftcard/delete_gift_card/<?= $giftCard['gift_card_id'] ?>"><i
-                                                            class="dw dw-delete-3"></i> Delete</a>
-                                                </div>
-                                            </div>
+                                            <a class="dropdown-item" href="javascript:void(0);"
+                                                onclick="confirmDiscountCodeRestore(<?= esc($discount['id']) ?>)">
+                                                <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Footer View Start -->
-                <?= $this->include('footer_view') ?>
-                <!-- Footer View End -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer View Start -->
+    <?= $this->include('footer_view') ?>
+    <!-- Footer View End -->
 </body>
 
 </html>

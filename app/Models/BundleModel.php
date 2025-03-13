@@ -11,7 +11,7 @@ class BundleModel extends Model
     protected $allowedFields = [
         'bundle_name', 'bundle_price', 'discount_type', 'discount_value', 
         'start_date', 'end_date', 'status', 'selected_products', 'badge_image',
-        'is_deleted', 'deleted_by', 'deleted_at', 'created_at', 'updated_at', 'updated_by'
+        'is_deleted', 'deleted_by', 'deleted_at', 'created_at', 'updated_at', 'updated_by','change_log'
     ];
 
     // Enable automatic timestamps

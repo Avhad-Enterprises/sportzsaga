@@ -165,16 +165,6 @@ class Giftcard extends BaseController
         }
     }
 
-    public function deleteGiftCard($gift_card_id)
-    {
-        $giftCardModel = new GiftModel();
-        if ($giftCardModel->delete($gift_card_id)) {
-
-            session()->setFlashdata('success', 'Gift card deleted successfully.');
-        }
-        return redirect()->to(base_url('giftcard_view'));
-    }
-
     public function editgiftcard($gift_card_id)
     {
         $model = new GiftModel();
@@ -201,6 +191,8 @@ class Giftcard extends BaseController
     public function updateGiftCard($gift_card_id)
     {
         $model = new GiftModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Fetch the existing gift card data before updating
         $existingGiftCard = $model->find($gift_card_id);
@@ -215,7 +207,7 @@ class Giftcard extends BaseController
         // Retrieve the security code from the request
         $new_security_code = $this->request->getPost('security_features');
 
-        // Check if a new security code is entered
+        // Check if a new security code is entered and is different from the existing one
         if (!empty($new_security_code) && !password_verify($new_security_code, $existingGiftCard['security_features'])) {
             $hashed_security_code = password_hash($new_security_code, PASSWORD_BCRYPT);
         } else {
@@ -223,7 +215,7 @@ class Giftcard extends BaseController
         }
 
         // Prepare updated data
-        $data = [
+        $newData = [
             'gift_card_code' => $this->request->getPost('gift_card_code') ?? $existingGiftCard['gift_card_code'],
             'initial_value' => $initial_value,
             'balance' => $balance, // Update balance only if the initial value changes
@@ -236,12 +228,47 @@ class Giftcard extends BaseController
             'restrictions' => $this->request->getPost('restrictions') ?? $existingGiftCard['restrictions'],
             'creation_date' => $this->request->getPost('creation_date') ?? $existingGiftCard['creation_date'],
             'expiration_date' => $this->request->getPost('expiration_date') ?? $existingGiftCard['expiration_date'],
+            'updated_by' => $userId,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
-        // Only update if data is changed
-        $model->update($gift_card_id, $data);
 
-        return redirect()->to(base_url('giftcard_view'))->with('success', 'Gift card updated successfully.');
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if (!array_key_exists($key, $existingGiftCard) || $existingGiftCard[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingGiftCard[$key] ?? 'N/A', // Use 'N/A' if key doesn't exist
+                    'new' => $value
+                ];
+            }
+        }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($existingGiftCard['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // Only update if data has changed
+            $model->update($gift_card_id, $newData);
+
+            return redirect()->to(base_url('giftcard_view'))->with('success', 'Gift card updated successfully.');
+        }
+
+        return redirect()->to(base_url('giftcard_view'))->with('info', 'No changes detected.');
     }
+
 
     public function submitGiftCardForm()
     {
@@ -266,4 +293,64 @@ class Giftcard extends BaseController
             return redirect()->to('giftcard_view')->with('error', 'Failed to send email. Error: ' . $emailError);
         }
     }
+
+
+    public function deleteGiftCard($gift_card_id)
+    {
+        $giftCardModel = new GiftModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Find the gift card by ID
+        $giftCard = $giftCardModel->find($gift_card_id);
+        if (!$giftCard) {
+            return redirect()->to('giftcard_view')->with('error', 'Gift card not found.');
+        }
+
+        // Get the admin details from the session
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft delete by updating the necessary fields
+        $giftCardModel->update($gift_card_id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Log who deleted it
+            'deleted_at' => date('Y-m-d H:i:s'), // Record deletion timestamp
+        ]);
+
+        return redirect()->to('giftcard_view')->with('success', 'Gift card deleted successfully.');
+    }
+
+    public function deletedGiftCards()
+    {
+        $giftCardModel = new GiftModel();
+
+        // Fetch all gift cards marked as deleted
+        $data['gift_cards'] = $giftCardModel->where('is_deleted', 1)->findAll();
+
+        // Return the view with deleted gift cards
+        return view('giftcard_deleted', $data);
+    }
+    public function restoreGiftCard($gift_card_id)
+    {
+        $giftCardModel = new GiftModel();
+
+        // Find the gift card by ID
+        $giftCard = $giftCardModel->find($gift_card_id);
+        if (!$giftCard) {
+            return redirect()->to('giftcard_view')->with('error', 'Gift card not found.');
+        }
+
+        // Restore the gift card by clearing deletion fields
+        $giftCardModel->update($gift_card_id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('giftcard_view')->with('success', 'Gift card restored successfully.');
+    }
+
+
+
+
 }

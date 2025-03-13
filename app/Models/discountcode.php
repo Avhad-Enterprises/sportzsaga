@@ -33,7 +33,7 @@ class discountcode extends Model
         'randomization_range',
         'code_deactivation',
         'discount_type',
-        'codeLength'
+        'codeLength','is_deleted', 'deleted_by', 'deleted_at','change_log','added_by'
     ];
 
     public function getDiscountCodesByStatus($status)
@@ -49,7 +49,7 @@ class discountcode extends Model
 
     public function getDiscountCodes()
     {
-        return $this->findAll();
+        return $this->where('is_deleted', 0)->findAll();
     }
 
     public function getDiscountCodeById($id)

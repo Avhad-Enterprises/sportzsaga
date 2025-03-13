@@ -207,7 +207,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>discountcodegenerator" class="no-chevron dropdown-toggle">
+                            <a href="<?= base_url(); ?>discount_code_view" class="no-chevron dropdown-toggle">
                                 <span class="micon dw dw-invoice"></span><span class="mtext">Discount Code</span>
                             </a>
                         </li>
