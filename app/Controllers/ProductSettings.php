@@ -28,49 +28,87 @@ class ProductSettings extends BaseController
     }
 
     public function save()
-    {
-        $productSettingModel = new ProductSettingModel();
+{
+    $productSettingModel = new ProductSettingModel();
 
-        // Get form data
-        $title = $this->request->getPost('productpagetitle');
-        $description = $this->request->getPost('Description');
-        $selectedProducts = $this->request->getPost('products') ?: []; // Array of selected product IDs, default to empty array
-        $selectedBundles = $this->request->getPost('bundles') ?: []; // Array of selected bundle IDs, default to empty array
+    // Get form data
+    $title = $this->request->getPost('productpagetitle');
+    $description = $this->request->getPost('Description');
+    $selectedProducts = $this->request->getPost('products') ?: []; // Array of selected product IDs
+    $selectedBundles = $this->request->getPost('bundles') ?: []; // Array of selected bundle IDs
 
-        // Convert arrays to comma-separated strings
-        $productIdsCsv = implode(',', $selectedProducts);
-        $bundleIdsCsv = implode(',', $selectedBundles);
+    // Convert arrays to comma-separated strings
+    $productIdsCsv = implode(',', $selectedProducts);
+    $bundleIdsCsv = implode(',', $selectedBundles);
 
-        // Prepare data for update
-        $data = [
-            'title' => $title,
-            'Description' => $description,
-            'product_id' => $productIdsCsv,
-            'bundle_id' => $bundleIdsCsv,
-            'added_by' => 1, // Replace with logged-in user ID if available (e.g., session()->get('user_id'))
+    // Prepare data for update
+    $data = [
+        'title' => $title,
+        'Description' => $description,
+        'product_id' => $productIdsCsv,
+        'bundle_id' => $bundleIdsCsv,
+        'added_by' => 1, // Replace with logged-in user ID if available
+    ];
+
+    // Check if record with ID = 1 exists
+    $existingRecord = $productSettingModel->find(1);
+
+    if ($existingRecord) {
+        // Prepare change log
+        $oldData = [
+            'title' => $existingRecord['title'],
+            'Description' => $existingRecord['Description'],
+            'product_id' => $existingRecord['product_id'],
+            'bundle_id' => $existingRecord['bundle_id'],
+            'added_by' => $existingRecord['added_by'],
         ];
 
-        // Update or Insert logic (assuming ID 1 exists; adjust as needed)
-        $existingRecord = $productSettingModel->find(1); // Check if record with ID 1 exists
-        if ($existingRecord) {
-            $updateStatus = $productSettingModel->update(1, $data);
-        } else {
-            $updateStatus = $productSettingModel->insert($data); // Insert if no record exists
+        // Fetch and decode existing change log
+        $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+        if (!is_array($existingChangeLog)) {
+            $existingChangeLog = [];
         }
 
-        // Prepare JSON response
-        if ($updateStatus !== false) {
-            return $this->response->setJSON([
-                'success' => true,
-                'message' => 'Settings saved successfully!'
-            ]);
-        } else {
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Failed to save settings. Please try again.'
-            ]);
-        }
+        // Append new change entry
+        $newChange = [
+            'old' => $oldData,
+            'new' => $data,
+            'timestamp' => date('Y-m-d H:i:s'),
+        ];
+
+        $existingChangeLog[] = $newChange; // Append to change log
+        $data['change_log'] = json_encode($existingChangeLog);
+
+        // Update existing record
+        $updateStatus = $productSettingModel->update(1, $data);
+    } else {
+        // First-time insert with ID = 1
+        $data['id'] = 1;
+        $data['change_log'] = json_encode([
+            [
+                'old' => null,
+                'new' => $data,
+                'timestamp' => date('Y-m-d H:i:s'),
+            ]
+        ]);
+
+        $updateStatus = $productSettingModel->insert($data);
     }
+
+    // Prepare JSON response
+    if ($updateStatus !== false) {
+        return $this->response->setJSON([
+            'success' => true,
+            'message' => 'Settings saved successfully!'
+        ]);
+    } else {
+        return $this->response->setJSON([
+            'success' => false,
+            'message' => 'Failed to save settings. Please try again.'
+        ]);
+    }
+}
+
 
     private function getProducts()
     {

@@ -8,7 +8,7 @@ class onlinestoremodal extends Model
 {
     protected $table = 'carousels';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'description', 'selection_type', 'product_id', 'collection_id', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at', 'added_by', 'is_deleted', 'deleted_at', 'deleted_by','change_log','updated_by'];
+    protected $allowedFields = ['title', 'description', 'selection_type', 'product_id', 'collection_id', 'image', 'image_mobile', 'visibility', 'created_at', 'updated_at', 'added_by', 'is_deleted', 'deleted_at', 'deleted_by', 'change_log', 'updated_by'];
     protected $useTimestamps = true;
 
     public function getabout()
@@ -91,7 +91,14 @@ class onlinestoremodal extends Model
 
     public function updateCart($data)
     {
-        return $this->db->table('cartpage')->where('id', 1)->update($data);
+        $this->db->table('cartpage')->where('id', 1)->update($data);
+        log_message('info', 'SQL Query: ' . $this->db->getLastQuery());
+        return $this->db->affectedRows() > 0;
+    }
+
+    public function getCheckoutData()
+    {
+        return $this->db->table('checkoutpage')->where('id', 1)->get()->getRowArray();
     }
 
     public function updateCheckout($data)
@@ -99,18 +106,59 @@ class onlinestoremodal extends Model
         return $this->db->table('checkoutpage')->where('id', 1)->update($data);
     }
 
+
+    public function getTrackingData()
+    {
+        return $this->db->table('trackingpage')->where('id', 1)->get()->getRowArray();
+    }
+
     public function updateTracking($data)
     {
         return $this->db->table('trackingpage')->where('id', 1)->update($data);
     }
+    
     public function update404($data)
     {
-        return $this->db->table('error_page')->where('id', 1)->update($data);
+        $db = $this->db->table('error_page');
+
+        // Fetch current record
+        $oldData = $db->where('id', 1)->get()->getRowArray();
+        if (!$oldData) {
+            return false; // No record found
+        }
+
+        // Check for changes
+        $changes = [];
+        foreach ($data as $key => $value) {
+            if (isset($oldData[$key]) && $oldData[$key] !== $value) {
+                $changes['previous'][$key] = $oldData[$key];
+                $changes['updated'][$key] = $value;
+            }
+        }
+
+        if (!empty($changes)) {
+            $changes['timestamp'] = date('Y-m-d H:i:s'); // Add timestamp
+
+            // Decode existing change_log JSON
+            $existingLog = json_decode($oldData['change_log'], true);
+            if (!is_array($existingLog)) {
+                $existingLog = []; // Initialize if null or invalid
+            }
+
+            // Append new log entry
+            $existingLog[] = $changes;
+
+            // Convert back to JSON and update data array
+            $data['change_log'] = json_encode($existingLog, JSON_PRETTY_PRINT);
+        }
+
+        // Update the table
+        return $db->where('id', 1)->update($data);
     }
 
     public function getAllMembers()
     {
-       return $this->db->table('team_members')->where('is_deleted', 0)->orderBy('order', 'ASC')->get()->getResultArray();
+        return $this->db->table('team_members')->where('is_deleted', 0)->orderBy('order', 'ASC')->get()->getResultArray();
     }
 
     public function updateAbout($data)
@@ -135,13 +183,13 @@ class onlinestoremodal extends Model
 
     public function getAllpolicies()
     {
-         return $this->db->table('policies')->where('is_deleted', 0)->get()->getResultArray();
+        return $this->db->table('policies')->where('is_deleted', 0)->get()->getResultArray();
     }
 
-     public function restorepolicies()
-     {
-         return $this->db->table('policies')->where('is_deleted', 1)->get()->getResultArray();
-     }
+    public function restorepolicies()
+    {
+        return $this->db->table('policies')->where('is_deleted', 1)->get()->getResultArray();
+    }
 
     public function getAllfooter()
     {
@@ -228,7 +276,7 @@ class onlinestoremodal extends Model
 
     public function getpages()
     {
-          return $this->db->table('header_pages')->where('is_deleted', 0)->get()->getResultArray();
+        return $this->db->table('header_pages')->where('is_deleted', 0)->get()->getResultArray();
     }
 
 
@@ -293,67 +341,65 @@ class onlinestoremodal extends Model
 
     public function getAllonlineblogs()
     {
-       return $this->db->table('onlinestore_blogs')->where('is_deleted', 0)->get()->getResultArray();
+        return $this->db->table('onlinestore_blogs')->where('is_deleted', 0)->get()->getResultArray();
     }
 
-     public function RestoreRelBlog($id, $data)
-     {
-         return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
- 
-     }
+    public function RestoreRelBlog($id, $data)
+    {
+        return $this->db->table('onlinestore_blogs')->where('id', $id)->update($data);
+    }
 
-    
-     public function getAlllogblogs()
-     {
-         return $this->db->table('onlinestore_blogs')->where('is_deleted', 1)->get()->getResultArray();
-     }
- 
- 
-     public function getAlllogsmembers()
-     {
-         return $this->db->table('team_members')->where('is_deleted', 1)->get()->getResultArray();
-     }
-     public function getDeletedMarqueeTexts()
-     {
-         return $this->db->table('marquee_texts')
-             ->select('marquee_texts.id, marquee_texts.marqueeText, marquee_texts.marqueeText_link, 
+    public function getAlllogblogs()
+    {
+        return $this->db->table('onlinestore_blogs')->where('is_deleted', 1)->get()->getResultArray();
+    }
+
+
+    public function getAlllogsmembers()
+    {
+        return $this->db->table('team_members')->where('is_deleted', 1)->get()->getResultArray();
+    }
+    public function getDeletedMarqueeTexts()
+    {
+        return $this->db->table('marquee_texts')
+            ->select('marquee_texts.id, marquee_texts.marqueeText, marquee_texts.marqueeText_link, 
                        marquee_texts.deleted_at, 
                        u1.name as deleted_by_name, 
                        u2.name as added_by_name')
-             ->join('users as u1', 'u1.user_id = marquee_texts.deleted_by', 'left') // Fetch deleted_by name
-             ->join('users as u2', 'u2.user_id = marquee_texts.added_by', 'left') // Fetch added_by name
-             ->where('marquee_texts.is_deleted', 1)
-             ->get()
-             ->getResultArray();
-     }
- 
- 
-     public function getcarouselTexts()
-     {
-         return $this->db->table('carousels')
-             ->select('carousels.id, carousels.title, carousels.description, carousels.selection_type, 
+            ->join('users as u1', 'u1.user_id = marquee_texts.deleted_by', 'left') // Fetch deleted_by name
+            ->join('users as u2', 'u2.user_id = marquee_texts.added_by', 'left') // Fetch added_by name
+            ->where('marquee_texts.is_deleted', 1)
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getcarouselTexts()
+    {
+        return $this->db->table('carousels')
+            ->select('carousels.id, carousels.title, carousels.description, carousels.selection_type, 
                        carousels.deleted_at, 
                        u1.name as deleted_by_name, 
                        u2.name as added_by_name')
-             ->join('users as u1', 'u1.user_id = carousels.deleted_by', 'left') // Fetch deleted_by name
-             ->join('users as u2', 'u2.user_id = carousels.added_by', 'left') // Fetch added_by name
-             ->where('carousels.is_deleted', 1)
-             ->get()
-             ->getResultArray();
-     }
- 
-     public function getDeletedHeaderPages()
-     {
-         return $this->db->table('header_pages')
-             ->select('header_pages.id, header_pages.title, header_pages.link, header_pages.subtype, header_pages.specific_item, 
+            ->join('users as u1', 'u1.user_id = carousels.deleted_by', 'left') // Fetch deleted_by name
+            ->join('users as u2', 'u2.user_id = carousels.added_by', 'left') // Fetch added_by name
+            ->where('carousels.is_deleted', 1)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getDeletedHeaderPages()
+    {
+        return $this->db->table('header_pages')
+            ->select('header_pages.id, header_pages.title, header_pages.link, header_pages.subtype, header_pages.specific_item, 
                    header_pages.deleted_at, 
                    u1.name as deleted_by_name, 
                    u2.name as added_by_name')
-             ->join('users as u1', 'u1.user_id = header_pages.deleted_by', 'left') // Fetch deleted_by name
-             ->join('users as u2', 'u2.user_id = header_pages.added_by', 'left') // Fetch added_by name
-             ->where('header_pages.is_deleted', 1)
-             ->get()
-             ->getResultArray();
-     }
- 
+            ->join('users as u1', 'u1.user_id = header_pages.deleted_by', 'left') // Fetch deleted_by name
+            ->join('users as u2', 'u2.user_id = header_pages.added_by', 'left') // Fetch added_by name
+            ->where('header_pages.is_deleted', 1)
+            ->get()
+            ->getResultArray();
+    }
+
 }

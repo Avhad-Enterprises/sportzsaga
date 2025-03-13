@@ -27,7 +27,8 @@ class HomeImageModel extends Model
         'added_by',
         'updated_by',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'change_log'
     ];
 
     // Method to fetch data for the form (row with id=1)

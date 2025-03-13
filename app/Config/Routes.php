@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -563,10 +563,12 @@ $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
 $routes->get('online_store/restore-all-members/(:num)', 'Store::Restoremember/$1');
 $routes->post('online_store/save', 'Store::save');
 
+
 //logs
 $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
 $routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
 $routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
+
 
 //logs header page
 $routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');

@@ -13,6 +13,7 @@ class EmailPopupModel extends Model
         'email_pop_up_mail_title',
         'email_pop_up_mail_text',
         'email_pop_up_mail_linktext',
-        'email_pop_up_description'
+        'email_pop_up_description',
+        'change_log'
     ];
 }
