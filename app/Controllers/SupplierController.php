@@ -25,7 +25,7 @@ class SupplierController extends BaseController
         $userId = $session->get('user_id');
 
         // Fetch all suppliers
-        $data['suppliers'] = $supplierModel->findAll();
+        $data['suppliers'] = $supplierModel->where('is_deleted', 0)->findAll();
 
         // Fetch permissions for the current user
         $db = \Config\Database::connect();
@@ -51,6 +51,8 @@ class SupplierController extends BaseController
 
     public function save()
     {
+        $session = session();
+        $userId = $session->get('user_id');
         $files = $this->request->getFiles();
         $fileNames = [];
 
@@ -59,8 +61,8 @@ class SupplierController extends BaseController
             foreach ($files['attachments'] as $file) {
                 if ($file->isValid() && !$file->hasMoved()) {
                     $fileName = $file->getRandomName();
-                    $file->move('uploads/suppliers', $fileName); // Save file to the directory
-                    $fileNames[] = $fileName; // Collect file names
+                    $file->move('uploads/suppliers', $fileName);
+                    $fileNames[] = $fileName;
                 } else {
                     log_message('error', 'File upload error: ' . $file->getError());
                 }
@@ -84,12 +86,11 @@ class SupplierController extends BaseController
             'account_number' => $this->request->getPost('account_number'),
             'ifsc_code' => $this->request->getPost('ifsc_code'),
             'payment_terms' => $this->request->getPost('payment_terms'),
-            'attachments' => json_encode($fileNames), // Store file names as JSON
+            'attachments' => json_encode($fileNames),
+            'added_by' => $userId,
+            'created_at' => date('Y-m-d H:i:s'),
         ];
 
-        log_message('debug', 'Data to Save: ' . json_encode($data));
-
-        // Save data
         if (!$this->supplierModel->save($data)) {
             return redirect()->back()->withInput()->with('error', 'Failed to save supplier data.');
         }
@@ -102,14 +103,12 @@ class SupplierController extends BaseController
         $session = session();
         $userId = $session->get('user_id');
 
-        // Fetch supplier data by ID
         $supplier = $this->supplierModel->find($id);
 
         if (!$supplier) {
             return redirect()->to('/suppliers')->with('error', 'Supplier not found.');
         }
 
-        // Fetch permissions for the current user
         $db = \Config\Database::connect();
         $permissions = $db->table('user_permissions')
             ->select('column_name')
@@ -119,29 +118,36 @@ class SupplierController extends BaseController
             ->get()
             ->getResultArray();
 
-        // Extract allowed fields
         $allowedFields = array_column($permissions, 'column_name');
 
-        // Pass supplier and permissions data to the view
         return view('supplier_edit_view', [
             'supplier' => $supplier,
-            'allowedFields' => array_flip($allowedFields) // Use array_flip for quick checks
+            'allowedFields' => array_flip($allowedFields)
         ]);
     }
 
 
     public function update($id)
     {
-        $file = $this->request->getFile('attachments');
-        $fileName = $this->request->getPost('existing_attachment');
+        $session = session();
+        $userId = $session->get('user_id');
+
+        // Fetch existing supplier data
+        $existingSupplier = $this->supplierModel->find($id);
+        if (!$existingSupplier) {
+            return redirect()->to('supplier_list_view')->with('error', 'Supplier not found.');
+        }
 
         // Handle file upload
+        $file = $this->request->getFile('attachments');
+        $fileName = $this->request->getPost('existing_attachment');
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $fileName = $file->getRandomName();
             $file->move('uploads/suppliers', $fileName);
         }
 
-        $data = [
+        // Prepare updated supplier data
+        $newData = [
             'supplier_name' => $this->request->getPost('supplier_name'),
             'supplier_code' => $this->request->getPost('supplier_code'),
             'contact_person' => $this->request->getPost('contact_person'),
@@ -157,19 +163,88 @@ class SupplierController extends BaseController
             'account_number' => $this->request->getPost('account_number'),
             'ifsc_code' => $this->request->getPost('ifsc_code'),
             'payment_terms' => $this->request->getPost('payment_terms'),
-            'remarks' => $this->request->getPost('remarks'),
             'attachments' => $fileName,
-            'status' => $this->request->getPost('status'),
         ];
 
-        $this->supplierModel->update($id, $data);
-        return redirect()->to('supplier_list_view')->with('success', 'Supplier updated successfully');
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingSupplier[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingSupplier[$key],
+                    'new' => $value
+                ];
+            }
+        }
+
+        if (!empty($changes)) {
+
+            $existingChangeLog = json_decode($existingSupplier['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+
+            if ($this->supplierModel->update($id, $newData)) {
+                return redirect()->to('supplier_list_view')->with('success', 'Supplier updated successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Failed to update supplier.');
+            }
+        }
+        return redirect()->back()->with('info', 'No changes detected.');
     }
+
 
     public function delete($id)
     {
-        $this->supplierModel->delete($id);
+        $session = session();
+        $userId = $session->get('user_id');
 
-        return redirect()->to('supplier_list_view')->with('success', 'Supplier deleted successfully');
+        $supplier = $this->supplierModel->find($id);
+        if (!$supplier) {
+            return redirect()->to('supplier_list_view')->with('error', 'Supplier not found.');
+        }
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        $this->supplierModel->update($id, [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->to('supplier_list_view')->with('success', 'Supplier deleted successfully.');
+    }
+
+
+    public function deletedSuppliers()
+    {
+        $data['suppliers'] = $this->supplierModel->where('is_deleted', 1)->findAll();
+        return view('suppliers_deleted', $data);
+    }
+
+
+    public function restoreSupplier($id)
+    {
+
+        $supplier = $this->supplierModel->find($id);
+        if (!$supplier) {
+            return redirect()->to('supplier_list_view')->with('error', 'Supplier not found.');
+        }
+
+        $this->supplierModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('supplier_list_view')->with('success', 'Supplier restored successfully.');
     }
 }

@@ -64,6 +64,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('blogs/editmyblog/(:num)', 'Blogs::editmyblog/$1');
    $routes->post('blogs/add-category', 'Blogs::addCategory');
    $routes->post('blogs/add_new_tag', 'Blogs::AddNewTag');
+   $routes->get('blogs/comments', 'Blogs::GetComments');
+   $routes->post('blogs/comments/update_status', 'Blogs::UpdateCommentStatus');
 
    // Empolyee's Login/signup Controller;
    $routes->get('sendinvite', 'Registeredusers::sendinvite');
@@ -125,14 +127,16 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('discountcode', 'Home::discountcodegenerator');
    $routes->get('discountcodegenerator', 'Home::discountcodegenerator');
    $routes->get('addnewdiscountcode', 'Home::addnewdiscountcode');
-   $routes->get('discount_code_view', 'Home::discount_code_view');
+   $routes->get('discount_code_view', 'Home::viewtable');
    $routes->post('publishDiscountCode', 'Home::publishDiscountCode');
    $routes->post('update/(:num)', 'Home::update/$1');
-   $routes->get('delete/(:num)', 'Home::delete/$1');
    $routes->get('view/(:num)', 'Home::view/$1');
    $routes->get('exporttoexcel', 'Home::exportdiscountcode');
    $routes->get('importfromexcel', 'Home::importfromexcel');
    $routes->get('edit_discountcode_view/(:num)', 'Home::edit/$1');
+   $routes->get('delete/(:num)', 'Home::delete/$1'); // Soft delete a discount code
+   $routes->get('discountcodes_deleted', 'Home::deletedDiscountCodes'); // View deleted discount codes
+   $routes->get('discountcode/restore/(:num)', 'Home::restoreDiscountCode/$1'); // Restore a deleted discount code
 
    // Online Store
    $routes->get('online_store', 'Store::index');
@@ -256,6 +260,7 @@ $routes->post('createView', 'Customerservice::createView');
 $routes->get('applyView/(:num)', 'Customerservice::applyView/$1');
 $routes->post('updateView', 'Customerservice::updateView');
 $routes->post('deleteView', 'Customerservice::deleteView');
+$routes->get('contact_us_data', 'Customerservice::ContactUsData');
 
 // Genrate Controller
 $routes->get('generate_report', 'GenerateController::index');
@@ -281,6 +286,9 @@ $routes->post('admin-products/importexceldata', 'Products::importexceldata');
 $routes->post('admin-products/check_sku', 'Products::check_sku');
 $routes->get('admin-products/(:segment)', 'Products::products_preview/$1');
 $routes->post('check-url', 'Products::checkUrl');
+$routes->post('products/AddNewProductTags', 'Products::AddNewProductTags');
+$routes->get('product_reviews', 'Products::productReviews');
+$routes->post('products/reviews/update_status', 'Products::UpdateReviewStatus');
 
 // Pincode Mapping Controller
 $routes->get('pincode-mapping', 'Products::pincode_mapping');
@@ -355,8 +363,6 @@ $routes->post('bluedart_management/importShipmentData', 'Ordermanagement::import
 $routes->get('download-shipment-file', 'Ordermanagement::download_shipment_file');
 $routes->get('update-tracking', 'Ordermanagement::updateTrackingDetails');
 
-
-
 // Place Order/Add To Cart
 $routes->get('cart', 'Ordermanagement::cart');
 $routes->post('add_to_cart/(:num)', 'Ordermanagement::add_to_cart/$1');
@@ -376,12 +382,10 @@ $routes->get('view_attachment/(:any)', 'Customerservice::view_attachment/$1');
 $routes->get('fetchEmails', 'Customerservice::fetchEmails');
 $routes->get('process_new_emails', 'Customerservice::processNewEmails');
 $routes->get('statics', 'Customerservice::statics');
-
 $routes->get('fetchConversations', 'Customerservice::fetchConversations');
 $routes->get('conversation_view/(:any)/(:any)', 'Customerservice::customerConversationView/$1/$2');
 
-
-////Abandoned view
+//Abandoned view
 $routes->get('abandoned_view', 'AbandonedOrderController::index');
 $routes->get('abandoned-orders/send-email/(:num)', 'AbandonedOrderController::sendEmail/$1');
 $routes->post('update_email', 'Ordermanagement::update_email');
@@ -399,8 +403,9 @@ $routes->get('bundle_view', 'BundleController::view');
 $routes->get('BundleController/edit/(:num)', 'BundleController::edit/$1');
 $routes->post('bundle/update/(:num)', 'BundleController::update/$1');
 $routes->get('BundleController/delete/(:num)', 'BundleController::delete/$1');
-$routes->get('bundle/deleted', 'BundleController::deleted');
-$routes->get('bundle/restore/(:num)', 'BundleController::restore/$1');
+$routes->get('bundle_deleted', 'BundleController::deleted');
+$routes->get('restore/(:num)', 'BundleController::restore/$1');
+
 
 $routes->get('bundlecollection_view', 'BundleController::viewcollection');
 $routes->get('bundlecollection_create', 'BundleController::indexcollection');
@@ -443,7 +448,6 @@ $routes->get('warehouses/fetch', 'InventoryController::fetchWarehouses');
 $routes->post('product/storenewproduct', 'InventoryController::storenewproduct');
 $routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1');
 
-
 //purchase order
 $routes->get('purchase-order/index', 'PurchaseOrderController::index');
 $routes->post('purchase_orders/save', 'PurchaseOrderController::save');
@@ -470,6 +474,9 @@ $routes->post('suppliers/suppliers/save', 'SupplierController::save');
 $routes->get('suppliers/edit/(:num)', 'SupplierController::edit/$1');
 $routes->post('suppliers/update/(:num)', 'SupplierController::update/$1');
 $routes->get('suppliers/delete/(:num)', 'SupplierController::delete/$1');
+$routes->get('suppliers_deleted', 'SupplierController::deletedSuppliers');
+$routes->get('suppliers/restore/(:num)', 'SupplierController::restoreSupplier/$1');
+
 
 //Tags
 $routes->post('Tags/save', 'Tags::save');
@@ -487,6 +494,9 @@ $routes->post('giftcard/publishGiftCard', 'Giftcard::publishGiftCard');
 $routes->get('giftcard/delete_gift_card/(:num)', 'Giftcard::deleteGiftCard/$1');
 $routes->get('giftcard/edit_giftcard_view/(:num)', 'Giftcard::editgiftcard/$1');
 $routes->post('giftcard/updateGiftCard/(:num)', 'Giftcard::updateGiftCard/$1');
+$routes->get('delete/(:num)', 'Giftcard::deleteGiftCard/$1'); // Soft delete a gift card
+$routes->get('giftcard_deleted', 'Giftcard::deletedGiftCards'); // View deleted gift cards
+$routes->get('bundlecollection/restoreGiftCard/(:num)', 'Giftcard::restoreGiftCard/$1'); // Restore a deleted gift card
 
 //Transfer
 $routes->get('transfer/create', 'TransferController::create');
@@ -549,13 +559,12 @@ $routes->post('online_store/add_new_product', 'Store::add_new_product');
 $routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
 $routes->get('online_store/delete_product/(:num)', 'Store::delete_product/$1');
 
-//home image
+//home imageF
 $routes->post('home-image/save', 'Store::save');
 $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
 $routes->get('online_store/delete-all-blogs/(:num)', 'Store::deleteBlog/$1');
 $routes->get('online_store/restore-all-blogs/(:num)', 'Store::RestoreBlog/$1');
-
 
 //logs 
 $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
@@ -575,13 +584,6 @@ $routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
 $routes->get('online_store/deleted_pages', 'Store::online_store_logs');
 $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 
-
-
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
-
-
-
-
-

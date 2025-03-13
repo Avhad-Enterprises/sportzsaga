@@ -115,14 +115,10 @@
                 <div class="">
                     <div class="clearfix mb-3">
                         <div class="pull-left d-flex align-items-center">
-                            <!-- Back Button -->
-                            <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
-                                <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
-                            </button>
+                            <i class="fa fa-arrow-left mx-3" onclick="goBack()"></i>
                             <h4 class="h4 mb-0">Add New Collection</h4>
                         </div>
                     </div>
-
                 </div>
 
                 <form id="newcollectionsview" method="post" action="<?= base_url('publishcollection') ?>"
@@ -393,7 +389,7 @@
                                     <div class="form-group">
                                         <label for="input1">Meta Title</label>
                                         <input type="text" name="collection-meta-title" class="form-control" id="input1"
-                                            placeholder=" Meta Title"  required>
+                                            placeholder=" Meta Title" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -404,7 +400,7 @@
                                     <div class="form-group">
                                         <label for="input2">Meta Description</label>
                                         <input type="text" name="collection-meta-description" class="form-control"
-                                            id="input2" placeholder=" Meta Description"  required>
+                                            id="input2" placeholder=" Meta Description" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -415,7 +411,7 @@
                                     <div class="form-group">
                                         <label for="url">URL</label>
                                         <input type="text" class="form-control" id="collection-url"
-                                            placeholder=" Meta URL" name="collection-url"  required>
+                                            placeholder=" Meta URL" name="collection-url" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -579,7 +575,7 @@
                     </div>
                 </div>
             </div>
-        `;
+            `;
             $('#conditionsList').append(conditionHtml);
             initializeSelect2(conditionCount);
             conditionCount++;
@@ -605,17 +601,17 @@
                     }
                 },
                 theme: "bootstrap",
-                width: 'resolve', // This allows the Select2 to use the full width of its container
-                dropdownAutoWidth: true, // This allows the dropdown to adjust its width based on content
-                containerCssClass: 'custom-select2-container', // Add this line
-                dropdownCssClass: 'custom-select2-dropdown' // Add this line
+                width: 'resolve',
+                dropdownAutoWidth: true,
+                containerCssClass: 'custom-select2-container',
+                dropdownCssClass: 'custom-select2-dropdown'
             });
         }
 
         function reinitializeAllSelect2() {
             $('.condition-value').each(function(index) {
-                $(this).select2('destroy'); // Destroy existing Select2
-                initializeSelect2(index); // Reinitialize
+                $(this).select2('destroy');
+                initializeSelect2(index);
             });
         }
 
@@ -810,7 +806,7 @@
                         setTimeout(function() {
                             row.find('.condition-operator').val(condition.operator);
                             row.find('.condition-value').val(condition.value);
-                        }, 500); // Wait for options to load
+                        }, 500);
                     });
                 }
                 if (data.conditionType) {

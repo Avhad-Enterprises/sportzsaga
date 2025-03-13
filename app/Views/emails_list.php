@@ -108,9 +108,14 @@
                                 <i class="fa-brands fa-instagram socialmes"></i>
                             </div>           
                             -->
-                            <button type="button" class="btn btn-primary" id="compose-email-btn" data-toggle="modal" data-target="#composeEmailModal">
+                            <button type="button" class="btn btn-primary mx-3" id="compose-email-btn" data-toggle="modal" data-target="#composeEmailModal">
                                 <i class="fa fa-envelope"></i> Compose New Email
                             </button>
+                            <a href="<?= base_url('contact_us_data') ?>">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fa fa-phone"></i> Contact Us
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>

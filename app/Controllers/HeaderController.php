@@ -16,7 +16,7 @@ class HeaderController extends Controller
     public function __construct()
     {
         $this->pageModel = new PageModel();
-        $this->db = \Config\Database::connect();
+        $this->db = db_connect();
     }
 
     public function add_new_page()
@@ -135,7 +135,7 @@ class HeaderController extends Controller
                 return $this->response->setStatusCode(400)->setJSON(['error' => 'Invalid type specified']);
             }
 
-            $db = \Config\Database::connect();
+            $db = db_connect();
             $tableMap = [
                 'collection' => ['table' => 'collection', 'id' => 'collection_id', 'title' => 'collection_title'],
                 'blogs' => ['table' => 'blogs', 'id' => 'blog_id', 'title' => 'blog_title'],

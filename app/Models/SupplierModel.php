@@ -25,9 +25,13 @@ class SupplierModel extends Model
         'account_number',
         'ifsc_code',
         'payment_terms',
-       
+        'change_log',
         'attachments',
-        
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'added_by',
+
     ];
 
     protected $useTimestamps = true;

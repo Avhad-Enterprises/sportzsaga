@@ -179,6 +179,15 @@
                                 </a>
                             </div>
                             <div class="dropdown">
+                                <a class="btn btn-primary fw-bold position-relative" href="<?= base_url(); ?>blogs/comments" role="button">
+                                    <i class="bi bi-chat-left-text-fill mx-1"></i>
+
+                                    <?php if (!empty($pendingComments) && $pendingComments > 0): ?>
+                                        <span class="badge bg-warning text-dark "><?= esc($pendingComments) ?></span>
+                                    <?php endif; ?>
+                                </a>
+                            </div>
+                            <div class="dropdown">
                                 <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>blogs/importfromexcel" role="button">
                                     Import
                                 </a>
@@ -229,7 +238,7 @@
                                                     <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7"><?= esc($formattedTag) ?></span>
                                                 <?php
                                                 endforeach;
-                                                else :
+                                            else :
                                                 ?>
                                                 <span class="badge badge-pill" data-bgcolor="#e7ebf5" data-color="#265ed7">No Tags</span>
                                             <?php endif; ?>

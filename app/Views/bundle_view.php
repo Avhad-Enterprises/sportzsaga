@@ -76,7 +76,7 @@
                             <!-- Logs Button (conditional) -->
                             <?php if ($canLogs): ?>
                                 <div class="dropdown">
-                                    <a class="btn btn-success fw-bold" href="<?= base_url('bundle/logs') ?>" role="button">
+                                    <a class="btn btn-success fw-bold" href="<?= base_url('bundle_deleted') ?>" role="button">
                                         Logs
                                     </a>
                                 </div>
