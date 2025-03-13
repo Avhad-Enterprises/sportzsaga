@@ -20,15 +20,20 @@ class GiftModel extends Model
         'security_features',
         'restrictions',
         'issued_by_id',
-        'issued_to_id'
+        'issued_to_id',
+        'change_log',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at'
     ];
 
     protected $useTimestamps = false;
 
     public function getAllGiftCards()
     {
-        return $this->findAll();
+        return $this->where('is_deleted', 0)->findAll();
     }
+
 
     public function updatemodel($gift_card_id, $data)
     {

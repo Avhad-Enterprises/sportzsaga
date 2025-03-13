@@ -198,14 +198,6 @@
                                         <div id="typeOfCode-error" class="error-message"></div>
                                     </div>
 
-                                    <!-- Code Length -->
-                                    <div class="form-group">
-                                        <label>Code Length (including Prefix and Suffix)</label>
-                                        <input type="number" class="form-control" name="codeLength" id="codeLength"
-                                            min="4" max="16" value="<?= $discountcode['codeLength'] ?>">
-                                        <div id="codeLength-error" class="error-message"></div>
-                                    </div>
-
                                     <!-- Prefix & Suffix -->
                                     <div class="form-group">
                                         <label>Prefix</label>

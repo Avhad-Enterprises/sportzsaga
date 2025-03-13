@@ -188,6 +188,8 @@ class BundleController extends Controller
     public function update($id)
     {
         $bundleModel = new BundleModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Fetch existing bundle data
         $bundle = $bundleModel->find($id);
@@ -206,6 +208,8 @@ class BundleController extends Controller
 
         // ✅ Handle badge image upload (if provided)
         $badgeImage = $this->request->getFile('badge_image');
+        $badgeImageUrl = $bundle['badge_image']; // Default to existing image
+
         if ($badgeImage && $badgeImage->isValid() && !$badgeImage->hasMoved()) {
             $oldBadgeImageUrl = $bundle['badge_image'];
 
@@ -235,9 +239,6 @@ class BundleController extends Controller
 
             // ✅ Generate Correct URL for Uploaded Image
             $badgeImageUrl = "https://storage.googleapis.com/{$bucketName}/bundles/badge_images/{$fileName}";
-        } else {
-            // ✅ If no new badge image is uploaded, keep the existing one
-            $badgeImageUrl = $bundle['badge_image'];
         }
 
         // ✅ Use a single discount input field for both percentage & fixed value
@@ -245,7 +246,7 @@ class BundleController extends Controller
         $discountValue = $this->request->getPost('discount_input'); // Single input field
 
         // Prepare updated bundle data
-        $bundleData = [
+        $newData = [
             'bundle_name' => $this->request->getPost('bundle_name'),
             'bundle_price' => $this->request->getPost('bundle_price'),
             'discount_type' => $discountType,
@@ -254,16 +255,50 @@ class BundleController extends Controller
             'end_date' => $this->request->getPost('end_date'),
             'status' => $this->request->getPost('status'),
             'selected_products' => implode(',', (array) $this->request->getPost('selected_products')),
-            'badge_image' => $badgeImageUrl
+            'badge_image' => $badgeImageUrl,
+            'updated_by' => $userId,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Update the bundle data
-        if ($bundleModel->update($id, $bundleData)) {
-            return redirect()->to('bundle_view')->with('success', 'Bundle updated successfully.');
-        } else {
-            return redirect()->back()->with('error', 'Failed to update bundle.');
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($bundle[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $bundle[$key],
+                    'new' => $value
+                ];
+            }
         }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($bundle['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // Update the bundle data
+            if ($bundleModel->update($id, $newData)) {
+                return redirect()->to('bundle_view')->with('success', 'Bundle updated successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Failed to update bundle.');
+            }
+        }
+
+        return redirect()->back()->with('info', 'No changes detected.');
     }
+
 
     public function delete($id)
     {
@@ -313,25 +348,49 @@ class BundleController extends Controller
         $bundle = $this->bundleModel->find($id);
 
         if (!$bundle) {
-            // Redirect if the bundle does not exist
             return redirect()->to('bundle/deleted')->with('error', 'Bundle not found.');
         }
 
         // Restore the bundle by clearing deletion fields
         $this->bundleModel->update($id, [
-            'is_deleted' => 0, // Mark as not deleted
-            'deleted_by' => null, // Clear who deleted it
-            'deleted_at' => null, // Clear deletion timestamp
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
         ]);
 
-        // Redirect to the bundles view with success message
         return redirect()->to('bundle_view')->with('success', 'Bundle restored successfully.');
     }
 
 
 
 
-    //productcollectionview
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //<!----------------------------------------------------------------------------productcollectionview--------------------------------------------------------------------------
     public function viewcollection()
     {
         $productCollectionModel = new \App\Models\ProductCollectionModel();
@@ -462,8 +521,11 @@ class BundleController extends Controller
     public function updateproductcollection($id)
     {
         $bundleModel = new ProductCollectionModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
         $validation = \Config\Services::validation();
 
+        // Define validation rules
         $validation->setRules([
             'bundle_name' => 'required|max_length[255]',
             'selling_price' => 'required|numeric',
@@ -482,6 +544,7 @@ class BundleController extends Controller
                 return redirect()->to('bundlecollection_view')->with('error', 'Bundle not found.');
             }
 
+            // Determine discount value
             $discountType = $this->request->getPost('discount_type');
             $discountValue = null;
 
@@ -495,7 +558,7 @@ class BundleController extends Controller
             $selectedProducts = $this->request->getPost('selected_products');
             $selectedCollection = $this->request->getPost('selected_collection');
 
-            $bundleData = [
+            $newData = [
                 'bundle_name' => $this->request->getPost('bundle_name'),
                 'selling_price' => $this->request->getPost('selling_price'),
                 'discount_type' => $discountType,
@@ -503,17 +566,53 @@ class BundleController extends Controller
                 'quantity' => $this->request->getPost('quantity'),
                 'selected_products' => is_array($selectedProducts) ? implode(',', $selectedProducts) : $selectedProducts,
                 'selected_collection' => is_array($selectedCollection) ? implode(',', $selectedCollection) : $selectedCollection,
+                'updated_by' => $userId,
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
-            if ($bundleModel->update($id, $bundleData)) {
-                return redirect()->to('bundlecollection_view')->with('success', 'Bundle updated successfully.');
-            } else {
-                return redirect()->back()->withInput()->with('error', 'Failed to update bundle.');
+            // ✅ Track changes
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if (isset($bundle[$key]) && $bundle[$key] != $value) { // ✅ Check if key exists before comparing
+                    $changes[$key] = [
+                        'old' => $bundle[$key],
+                        'new' => $value
+                    ];
+                }
             }
+
+
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($bundle['change_log'] ?? '[]', true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new change log entry
+                $existingChangeLog[] = [
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Store changes in JSON format
+                $newData['change_log'] = json_encode($existingChangeLog);
+
+                // Update the bundle data
+                if ($bundleModel->update($id, $newData)) {
+                    return redirect()->to('bundlecollection_view')->with('success', 'Bundle updated successfully.');
+                } else {
+                    return redirect()->back()->withInput()->with('error', 'Failed to update bundle.');
+                }
+            }
+
+            return redirect()->back()->with('info', 'No changes detected.');
         } else {
             return redirect()->back()->withInput()->with('error', $validation->getErrors());
         }
     }
+
 
     public function editProductCollection($bundleId)
     {

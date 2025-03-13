@@ -129,7 +129,7 @@
 
                         <div class="col-md-6 col-sm-12 text-right blogs-imex">
                             <div class="dropdown">
-                                <?php if (session()->get('admin_type') === 'employee' || session()->get('admin_type') === 'super_admin') : ?>
+                                <?php if (session()->get('admin_type') === 'employee' || session()->get('admin_type') === 'super_admin'): ?>
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>addnewdiscountcode"
                                         role="button">
                                         Create Discount Code
@@ -138,72 +138,81 @@
                             </div>
 
                             <div class="dropdown">
-                                <?php if (session()->get('admin_type') === 'super_admin') : ?>
+                                <?php if (session()->get('admin_type') === 'super_admin'): ?>
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>addnewdiscountcode"
                                         role="button">
                                         Create Offer
                                     </a>
                                 <?php endif; ?>
                             </div>
+
+                            <div class="dropdown">
+                                <a class="btn btn-success fw-bold" href="<?= base_url('discountcodes_deleted') ?>"
+                                    role="button">
+                                    Logs
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Discount Code Table</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover multiple-select-row data-table-export">
-                            <thead>
-                                <tr>
-                                    <th class="table-plus">ID</th>
-                                    <th>title</th>
-                                    <th>numberOfCodes</th>
-                                    <th>startDate</th>
-                                    <th>endDate</th>
-                                    <th>discountstatus
-                                    <th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+            </div>
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Discount Code Table</h4>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export">
+                        <thead>
+                            <tr>
+                                <th class="table-plus">ID</th>
+                                <th>title</th>
+                                <th>numberOfCodes</th>
+                                <th>startDate</th>
+                                <th>endDate</th>
+                                <th>discountstatus
+                                <th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                                <?php foreach ($discountcode as $code): ?>
-                                    <tr>
-                                        <td><?= $code['id'] ?></td>
-                                        <td><?= $code['title'] ?></td>
-                                        <td><?= $code['numberOfCodes'] ?></td>
-                                        <td><?= $code['startDate'] ?></td>
-                                        <td><?= $code['endDate'] ?></td>
-                                        <td><?= $code['discountstatus'] ?></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                                    href="#" role="button" data-toggle="dropdown">
-                                                    <i class="dw dw-more"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <!-----  <a class="dropdown-item"
+                            <?php foreach ($discountcode as $code): ?>
+                                <tr>
+                                    <td><?= $code['id'] ?></td>
+                                    <td><?= $code['title'] ?></td>
+                                    <td><?= $code['numberOfCodes'] ?></td>
+                                    <td><?= $code['startDate'] ?></td>
+                                    <td><?= $code['endDate'] ?></td>
+                                    <td><?= $code['discountstatus'] ?></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                                href="#" role="button" data-toggle="dropdown">
+                                                <i class="dw dw-more"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                                <!-----  <a class="dropdown-item"
                                                         href="<?= base_url() ?>view/<?= $code['id'] ?>"><i
                                                             class="dw dw-eye"></i> View</a> ----->
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>edit_discountcode_view/<?= $code['id'] ?>"><i
-                                                            class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>delete/<?= $code['id'] ?>"><i
-                                                            class="dw dw-delete-3"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
+                                            <a class="dropdown-item"
+                                                href="<?= base_url() ?>edit_discountcode_view/<?= $code['id'] ?>"><i
+                                                    class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item"
+                                                href="<?= base_url() ?>delete/<?= $code['id'] ?>"><i
+                                                    class="dw dw-delete-3"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>
