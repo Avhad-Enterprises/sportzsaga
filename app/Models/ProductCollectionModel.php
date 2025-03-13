@@ -25,7 +25,8 @@ class ProductCollectionModel extends Model
         'deleted_at',        // New field
         'created_at',        // New field (If you want to manage timestamps manually)
         'updated_at',        // New field (If you want to manage timestamps manually)
-        'updated_by'         // New field
+        'updated_by',
+        'change_log'    
     ];
     protected $useTimestamps = true;  
 }
