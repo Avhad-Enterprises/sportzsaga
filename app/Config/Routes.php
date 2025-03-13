@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -515,7 +515,7 @@ $routes->post('admin/collection/saveCollection', 'BlogSettingsController::saveCo
 //Home page
 $routes->post('home/saveLogo', 'Store::saveLogo');
 $routes->get('online_store/delete-all-logo/(:num)', 'Store::deleteLogo/$1');
- $routes->get('online_store/delete-all-logos/(:num)', 'Store::restoreLogo/$1');
+$routes->get('online_store/delete-all-logos/(:num)', 'Store::restoreLogo/$1');
 $routes->post('home/editLogo', 'Store::editLogo');
 
 //home collection
@@ -554,32 +554,32 @@ $routes->post('home-image/save', 'Store::save');
 $routes->post('Store/saveBlogs', 'Store::saveBlogs');
 $routes->post('update-blog/(:num)', 'Store::updateBlog/$1');
 $routes->get('online_store/delete-all-blogs/(:num)', 'Store::deleteBlog/$1');
- $routes->get('online_store/restore-all-blogs/(:num)', 'Store::RestoreBlog/$1');
- 
- 
- //logs 
- $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
- 
- $routes->get('online_store/restore-all-members/(:num)', 'Store::Restoremember/$1');
+$routes->get('online_store/restore-all-blogs/(:num)', 'Store::RestoreBlog/$1');
+
+
+//logs 
+$routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+
+$routes->get('online_store/restore-all-members/(:num)', 'Store::Restoremember/$1');
 $routes->post('online_store/save', 'Store::save');
- 
- 
- //logs
- $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
- $routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
- $routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
- 
- 
- //logs header page
- $routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
- $routes->get('online_store/deleted_pages', 'Store::online_store_logs');
- $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
- 
- 
- 
- //Marquee
- $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
- $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
+
+
+//logs
+$routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+$routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
+$routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
+
+
+//logs header page
+$routes->get('online_store/delete_page/(:num)', 'Store::delete_page/$1');
+$routes->get('online_store/deleted_pages', 'Store::online_store_logs');
+$routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
+
+
+
+//Marquee
+$routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
+$routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
 
 
 

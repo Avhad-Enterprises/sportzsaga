@@ -21,7 +21,8 @@ class BlogModel extends Model
         'updated_at',
         'is_deleted',
         'deleted_by',
-        'deleted_at'
+        'deleted_at',
+        'change_log'
     ];
 
      public function DeleteRelBlog($id, $data)
