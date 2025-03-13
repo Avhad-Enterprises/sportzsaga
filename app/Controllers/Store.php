@@ -781,7 +781,7 @@ class Store extends BaseController
     }
 
     // Contact
-    
+
     public function update_contact()
     {
         try {
@@ -943,6 +943,10 @@ class Store extends BaseController
         try {
             log_message('info', 'update_cart function triggered');
 
+            // Retrieve user ID from session
+            $session = session();
+            $userId = $session->get('user_id');
+
             // Log all incoming POST data
             log_message('info', 'Received POST Data: ' . json_encode($this->request->getPost()));
 
@@ -951,7 +955,7 @@ class Store extends BaseController
             $existingData = $modal->getcartpage();
             log_message('info', 'Existing Data: ' . json_encode($existingData));
 
-            // Prepare data array
+            // Prepare new data array
             $data = [
                 'cart_title' => $this->request->getPost('cart_title'),
                 'offer_title' => $this->request->getPost('offer_title'),
@@ -968,25 +972,44 @@ class Store extends BaseController
 
             log_message('info', 'Data to be updated: ' . json_encode($data));
 
-            // Handle change log
+            // Check for changes
+            $changedFields = [];
             if ($existingData) {
-                // Get existing change log from the database
-                $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
-                if (!is_array($existingChangeLog)) {
-                    $existingChangeLog = [];
+                foreach ($data as $key => $newValue) {
+                    $oldValue = $existingData[$key] ?? null;
+                    if ($newValue !== $oldValue) {
+                        $changedFields[$key] = [
+                            'old' => $oldValue,
+                            'new' => $newValue,
+                        ];
+                    }
                 }
 
-                // Append new changes to change log
-                $newChange = [
-                    'old' => $existingData,
-                    'new' => $data,
-                    'timestamp' => date('Y-m-d H:i:s'),
-                ];
-                $existingChangeLog[] = $newChange;
+                if (!empty($changedFields)) {
+                    // Get existing change log from the database
+                    $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
+                    if (!is_array($existingChangeLog)) {
+                        $existingChangeLog = [];
+                    }
 
-                // Store updated change log
-                $data['change_log'] = json_encode($existingChangeLog);
-                log_message('info', 'Updated Change Log: ' . json_encode($data['change_log']));
+                    // Append only changed fields
+                    $newChange = [
+                        'changes' => $changedFields,
+                        'updated_by' => $userId,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                    ];
+                    $existingChangeLog[] = $newChange;
+
+                    // Store updated change log
+                    $data['change_log'] = json_encode($existingChangeLog);
+                    log_message('info', 'Updated Change Log: ' . json_encode($data['change_log']));
+                } else {
+                    log_message('info', 'No changes detected, skipping update.');
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'No changes were made to the Cart page'
+                    ]);
+                }
             }
 
             // Update record
@@ -1013,7 +1036,6 @@ class Store extends BaseController
             ]);
         }
     }
-
 
     // Checkout page
 
@@ -1871,6 +1893,8 @@ class Store extends BaseController
             }
 
             $homeCollectionModel = new HomeCollectionModel();
+            $session = session();
+            $userId = $session->get('user_id'); // Get user ID from session
 
             try {
                 // Check if an entry with ID=1 already exists
@@ -1880,47 +1904,62 @@ class Store extends BaseController
                     // Capture old data
                     $oldCollection = $existingRecord['collection_id'];
 
-                    // Fetch existing change log and decode it
-                    $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+                    // Only proceed if there is a change
+                    if ($oldCollection !== $favCollection) {
+                        // Fetch existing change log and decode it
+                        $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
 
-                    // Ensure it's an array
-                    if (!is_array($existingChangeLog)) {
-                        $existingChangeLog = [];
+                        // Ensure it's an array
+                        if (!is_array($existingChangeLog)) {
+                            $existingChangeLog = [];
+                        }
+
+                        // Append new change entry
+                        $newChange = [
+                            'old' => $oldCollection,
+                            'new' => $favCollection,
+                            'updated_by' => $userId,
+                            'timestamp' => date('Y-m-d H:i:s')
+                        ];
+
+                        $existingChangeLog[] = $newChange; // Append to the existing change log
+
+                        // Update the existing record
+                        $homeCollectionModel->update(1, [
+                            'collection_id' => $favCollection,
+                            'change_log' => json_encode($existingChangeLog)
+                        ]);
+
+                        return $this->response->setJSON([
+                            'success' => true,
+                            'message' => 'Collections updated successfully.',
+                        ]);
+                    } else {
+                        return $this->response->setJSON([
+                            'success' => false,
+                            'message' => 'No changes detected.',
+                        ]);
                     }
-
-                    // Append new change entry
-                    $newChange = [
-                        'old' => $oldCollection,
-                        'new' => $favCollection,
-                        'timestamp' => date('Y-m-d H:i:s')
-                    ];
-
-                    $existingChangeLog[] = $newChange; // Append to the existing change log
-
-                    // Update the existing record
-                    $homeCollectionModel->update(1, [
-                        'collection_id' => $favCollection,
-                        'change_log' => json_encode($existingChangeLog)
-                    ]);
-                    $message = 'Collections updated successfully.';
                 } else {
                     // Insert a new record with ID=1
                     $homeCollectionModel->insert([
                         'id' => 1,
                         'collection_id' => $favCollection,
-                        'change_log' => json_encode([[
-                            'old' => null,
-                            'new' => $favCollection,
-                            'timestamp' => date('Y-m-d H:i:s')
-                        ]])
+                        'change_log' => json_encode([
+                            [
+                                'old' => null,
+                                'new' => $favCollection,
+                                'updated_by' => $userId,
+                                'timestamp' => date('Y-m-d H:i:s')
+                            ]
+                        ])
                     ]);
-                    $message = 'Collections saved successfully.';
-                }
 
-                return $this->response->setJSON([
-                    'success' => true,
-                    'message' => $message,
-                ]);
+                    return $this->response->setJSON([
+                        'success' => true,
+                        'message' => 'Collections saved successfully.',
+                    ]);
+                }
             } catch (\Exception $e) {
                 return $this->response->setJSON([
                     'success' => false,
@@ -1934,18 +1973,6 @@ class Store extends BaseController
             'message' => 'Invalid request.',
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     //<!------------------------------------------------------------------------------------Home Products------------------------------------------------------------------------------------------------------------>
     public function saveProduct()
@@ -2266,14 +2293,14 @@ class Store extends BaseController
             helper(['form', 'url']);
             $session = session(); // Get the session instance
             $userId = $session->get('user_id'); // Retrieve user ID from session
-    
+
             log_message('info', 'Received Data: ' . json_encode($this->request->getPost()));
-    
+
             $homeImageModel = new \App\Models\HomeImageModel();
-    
+
             // Fetch existing record (assuming ID=1)
             $existingRecord = $homeImageModel->find(1);
-    
+
             // Prepare new data for saving
             $data = [
                 'image_title1' => $this->request->getPost('image_title1'),
@@ -2289,14 +2316,14 @@ class Store extends BaseController
                 'updated_at' => date('Y-m-d H:i:s'),
                 'updated_by' => $userId, // Store the user ID who made the update
             ];
-    
+
             // Initialize Google Cloud Storage
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
             $bucket = $storage->bucket('sportzsaga_imgs');
-    
+
             // Handle file uploads
             foreach (['background_image1', 'background_image2'] as $field) {
                 $file = $this->request->getFile($field);
@@ -2312,13 +2339,13 @@ class Store extends BaseController
                     $data[$field] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
                 }
             }
-    
+
             // Determine what has changed
             $changedFields = [];
             if ($existingRecord) {
                 foreach ($data as $key => $newValue) {
                     $oldValue = $existingRecord[$key] ?? null;
-    
+
                     // Only log changes if the new value is different from the old value
                     if ($newValue !== $oldValue) {
                         $changedFields[$key] = [
@@ -2328,28 +2355,28 @@ class Store extends BaseController
                     }
                 }
             }
-    
+
             // If there are changes, update the change_log
             if (!empty($changedFields)) {
                 $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
                 if (!is_array($existingChangeLog)) {
                     $existingChangeLog = [];
                 }
-    
+
                 // Append new change entry with only changed fields
                 $newChange = [
                     'updated_by' => $userId,
                     'changes' => $changedFields,
                     'timestamp' => date('Y-m-d H:i:s'),
                 ];
-    
+
                 $existingChangeLog[] = $newChange;
                 $data['change_log'] = json_encode($existingChangeLog);
             }
-    
+
             // Save or update the data (assumes one row for home_image, always with ID=1)
             $homeImageModel->update(1, $data);
-    
+
             return redirect()->to(base_url('online_store/edit'))->with('success', 'Data saved successfully.');
         } catch (\Exception $e) {
             log_message('error', 'Error saving data: ' . $e->getMessage());
@@ -2429,7 +2456,7 @@ class Store extends BaseController
             return redirect()->to('online_store/edit')->with('error', 'Marquee text not found.');
         }
 
-        
+
         $updateSuccess = $model->update($id, [
             'is_deleted' => 1,
             'deleted_by' => $userId,
@@ -2880,7 +2907,6 @@ class Store extends BaseController
             // Fetch user ID and name from session
             $userId = $session->get('user_id') ?? 1;
             $userName = $session->get('admin_name') ?? 'Admin';  // Ensure you're using the correct session key
-
             $addedBy = $userName . ' (' . $userId . ')'; // Concatenating name and ID
 
             $data = [
@@ -2909,12 +2935,12 @@ class Store extends BaseController
 
     public function updateBlog($id)
     {
-    try {
-        log_message('debug', 'Received blog ID: ' . $id);
+        try {
+            log_message('debug', 'Received blog ID: ' . $id);
 
-        if ($this->request->getMethod() === 'post') {
-            $db = db_connect();
-            $builder = $db->table('onlinestore_blogs');
+            if ($this->request->getMethod() === 'post') {
+                $db = db_connect();
+                $builder = $db->table('onlinestore_blogs');
 
                 // Fetch existing blog data
                 $blogData = $builder->where('id', $id)->get()->getRowArray();

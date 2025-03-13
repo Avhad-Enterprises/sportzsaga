@@ -13,20 +13,24 @@ class EmailPopupController extends ResourceController
         $request = service('request');
         $model = new EmailPopupModel();
         $id = 1; // Always update ID 1
-    
+
         if ($request->isAJAX()) {
+            // Retrieve user ID from session
+            $session = session();
+            $userId = $session->get('user_id');
+
             // Initialize Google Cloud Storage
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
-    
+
             $bucketName = 'sportzsaga_imgs';
             $bucket = $storage->bucket($bucketName);
-    
+
             // Fetch existing record
             $existingData = $model->find($id);
-    
+
             // Check if a new image is uploaded
             $imageFile = $request->getFile('email_pop_up_image');
             if ($imageFile && $imageFile->isValid() && !$imageFile->hasMoved()) {
@@ -38,13 +42,11 @@ class EmailPopupController extends ResourceController
                         'predefinedAcl' => 'publicRead',
                     ]
                 );
-    
                 $imagePath = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $imageName);
             } else {
-                // If no new image, retain the existing one
                 $imagePath = $existingData ? $existingData['email_pop_up_image'] : '';
             }
-    
+
             // Prepare new data
             $data = [
                 'email_pop_up_image' => $imagePath,
@@ -53,33 +55,41 @@ class EmailPopupController extends ResourceController
                 'email_pop_up_mail_linktext' => $request->getPost('email_pop_up_mail_linktext'),
                 'email_pop_up_description' => $request->getPost('email_pop_up_description'),
             ];
-    
+
+            // Track only changed fields
+            $changedFields = [];
             if ($existingData) {
-                // Prepare change log
-                $oldData = [
-                    'email_pop_up_image' => $existingData['email_pop_up_image'],
-                    'email_pop_up_mail_title' => $existingData['email_pop_up_mail_title'],
-                    'email_pop_up_mail_text' => $existingData['email_pop_up_mail_text'],
-                    'email_pop_up_mail_linktext' => $existingData['email_pop_up_mail_linktext'],
-                    'email_pop_up_description' => $existingData['email_pop_up_description'],
-                ];
-    
-                // Fetch and decode existing change log
-                $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
-                if (!is_array($existingChangeLog)) {
-                    $existingChangeLog = [];
+                foreach ($data as $key => $newValue) {
+                    $oldValue = $existingData[$key] ?? null;
+                    if ($newValue !== $oldValue) {
+                        $changedFields[$key] = [
+                            'old' => $oldValue,
+                            'new' => $newValue,
+                        ];
+                    }
                 }
-    
-                // Append new change entry
-                $newChange = [
-                    'old' => $oldData,
-                    'new' => $data,
-                    'timestamp' => date('Y-m-d H:i:s'),
-                ];
-    
-                $existingChangeLog[] = $newChange;
-                $data['change_log'] = json_encode($existingChangeLog);
-    
+
+                if (!empty($changedFields)) {
+                    // Fetch and decode existing change log
+                    $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
+                    if (!is_array($existingChangeLog)) {
+                        $existingChangeLog = [];
+                    }
+
+                    // Append only changed fields to change log
+                    $newChange = [
+                        'changes' => $changedFields,
+                        'updated_by' => $userId,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                    ];
+                    $existingChangeLog[] = $newChange;
+
+                    // Store updated change log
+                    $data['change_log'] = json_encode($existingChangeLog);
+                } else {
+                    return $this->response->setJSON(['status' => 'info', 'message' => 'No changes detected.']);
+                }
+
                 // Update existing record
                 $updateStatus = $model->update($id, $data);
             } else {
@@ -87,15 +97,15 @@ class EmailPopupController extends ResourceController
                 $data['id'] = $id;
                 $data['change_log'] = json_encode([
                     [
-                        'old' => null,
-                        'new' => $data,
+                        'changes' => $data,
+                        'updated_by' => $userId,
                         'timestamp' => date('Y-m-d H:i:s'),
                     ]
                 ]);
-    
+
                 $updateStatus = $model->insert($data);
             }
-    
+
             // Prepare JSON response
             if ($updateStatus !== false) {
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Data saved successfully!']);
@@ -103,8 +113,7 @@ class EmailPopupController extends ResourceController
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save data.']);
             }
         }
-    
+
         return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid request.']);
     }
-    
 }

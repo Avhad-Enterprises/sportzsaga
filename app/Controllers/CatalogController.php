@@ -475,7 +475,7 @@ class CatalogController extends Controller
     public function viewcompanylist()
     {
         $companyModel = new CompanyModel();
-        $data['companies'] = $companyModel->findAll();
+        $data['companies'] = $companyModel->where('is_deleted', 0)->findAll();
         return view('company_view', $data);
     }
 
@@ -497,8 +497,15 @@ class CatalogController extends Controller
     public function update_company($id)
     {
         $model = new CompanyModel();
-        $user_ids = $this->request->getPost('user_ids');
-        $tags = $this->request->getPost('product-tags');
+        $session = session();
+        $updatedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
+
+        // Fetch existing company data
+        $existingCompany = $model->find($id);
+        if (!$existingCompany) {
+            return redirect()->to('company_view')->with('error', 'Company not found.');
+        }
+
         // Retrieve and process address fields
         $address = [
             'street' => $this->request->getPost('street'),
@@ -507,30 +514,101 @@ class CatalogController extends Controller
             'country' => $this->request->getPost('country'),
             'postal_code' => $this->request->getPost('postal_code'),
         ];
+        $encodedAddress = json_encode($address);
 
-        // Prepare other fields for update
-        $data = [
+        // Prepare updated fields
+        $newData = [
             'company_name' => $this->request->getPost('company_name'),
-            'user_ids' => implode(',', $this->request->getPost('user_ids')),
-            'tags' => !empty($this->request->getPost('product-tags')) ? implode(',', $this->request->getPost('product-tags')) : null,
-            'address' => json_encode($address), // Encode the address as JSON
+            'user_ids' => !empty($this->request->getPost('user_ids')) ? implode(',', $this->request->getPost('user_ids')) : '',
+            'tags' => !empty($this->request->getPost('product-tags')) ? implode(',', $this->request->getPost('product-tags')) : '',
+            'address' => $encodedAddress,
             'notes' => $this->request->getPost('notes'),
             'apply_for_credit' => $this->request->getPost('apply_for_credit'),
             'registration_number' => $this->request->getPost('registration_number'),
             'principal_director' => $this->request->getPost('principal_director'),
+            'updated_by' => $updatedBy,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
-        $model->updatecompaniesdata($id, $data);
-        return redirect()->to('company_view')->with('success', 'updated successfully!');
+
+        // Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingCompany[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingCompany[$key],
+                    'new' => $value
+                ];
+            }
+        }
+
+        // If no changes, avoid unnecessary update
+        if (empty($changes)) {
+            return redirect()->to('company_view')->with('info', 'No changes detected.');
+        }
+
+        // Fetch existing change log
+        $changeLog = !empty($existingCompany['change_log']) ? json_decode($existingCompany['change_log'], true) : [];
+        if (!is_array($changeLog)) {
+            $changeLog = [];
+        }
+
+        // Append new change entry
+        $changeLog[] = [
+            'changes' => $changes,
+            'updated_by' => $updatedBy,
+
+        ];
+
+        // Update data including change log
+        $newData['change_log'] = json_encode($changeLog);
+        $model->update($id, $newData);
+
+        return redirect()->to('company_view')->with('success', 'Updated successfully!');
     }
 
-    public function deletecompany($id)
+    public function deleteCompany($id)
     {
-        $catalogModel = new CompanyModel();
-        if ($catalogModel->delete($id)) {
-            return redirect()->to('company_view')->with('success', 'deleted successfully.');
+        $companyModel = new CompanyModel();
+        $session = session();
+        $deletedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
+
+        // Prepare data for soft delete
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
+
+        if ($companyModel->updateCompanyStatus($id, $data)) {
+            return redirect()->to('company_view')->with('success', 'Deleted successfully!');
         } else {
             return redirect()->to('company_view')->with('error', 'Failed to delete.');
         }
+    }
+
+    public function restoreCompany($id)
+    {
+        $companyModel = new CompanyModel();
+
+        // Prepare data for restoring
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        if ($companyModel->updateCompanyStatus($id, $data)) {
+            return redirect()->to('company_view')->with('success', 'Restored successfully!');
+        } else {
+            return redirect()->to('company_view')->with('error', 'Failed to restore.');
+        }
+    }
+
+    public function companylogs()
+    {
+        $model = new CompanyModel();
+        $data['companies'] = $model->getAlllogscompany();
+        return view('company_logs_view', $data);
     }
 
     public function importCSV()

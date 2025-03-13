@@ -30,7 +30,10 @@ class Home extends BaseController
 
     public function publishDiscountCode()
     {
-        $model = new discountcode();
+        $model = new Discountcode();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userName = $session->get('admin_name'); // Get logged-in user's name
 
         // Get POST data
         $title = $this->request->getPost('title');
@@ -65,7 +68,6 @@ class Home extends BaseController
             'prefix' => $prefix,
             'suffix' => $suffix,
             'codeLength' => $codelength,
-            'code' => $code,
             'discount_type' => $discountType,
             'discountValue' => $discountValue,
             'minimumPurchaseRequirement' => $minimumPurchaseRequirement,
@@ -76,8 +78,9 @@ class Home extends BaseController
             'discountStatus' => $discountStatus,
             'auto_expiration_notification' => $autoExpirationNotification,
             'notification_period' => $notificationPeriod,
+            'added_by' => $userName . ' (' . $userId . ')', // Store admin name and ID
+            'created_at' => date('Y-m-d H:i:s'),
         ];
-
 
         try {
             $model->db->transStart();
@@ -113,6 +116,8 @@ class Home extends BaseController
         }
     }
 
+
+
     private function generateExcelFile($codes, $title)
     {
         $spreadsheet = new Spreadsheet();
@@ -145,11 +150,6 @@ class Home extends BaseController
         return view('addnew_discountcode_view');
     }
 
-    public function discount_code_view()
-    {
-        return view('discount_code_view');
-    }
-
     public function view($id)
     {
         $discountCodeModel = new discountcode();
@@ -168,73 +168,141 @@ class Home extends BaseController
     {
         // Load the model
         $discountCodeModel = new discountcode();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Fetch existing discount code data
+        $existingDiscountCode = $discountCodeModel->find($id);
+        if (!$existingDiscountCode) {
+            return redirect()->to('discountcodegenerator')->with('error', 'Discount code not found.');
+        }
 
         // Retrieve POST data
-        $title = $this->request->getPost('title');
-        $typeOfCode = $this->request->getPost('typeOfCode');
-        $numberOfCodes = $this->request->getPost('numberOfCodes');
-        $prefix = $this->request->getPost('prefix');
-        $suffix = $this->request->getPost('suffix');
-        $code = $this->request->getPost('code');
-        $codelength = $this->request->getPost('codeLength');
-        $discountType = $this->request->getPost('discount_type');
-        $discountValue = $this->request->getPost('discountValue');
-        $minimumPurchaseRequirement = $this->request->getPost('minimumPurchaseRequirement');
-        $customerEligibility = $this->request->getPost('customerEligibility');
-        $maximumDiscountUses = $this->request->getPost('maximumDiscountUses');
-        $limitPerCustomer = $this->request->getPost('limitPerCustomer');
-        $startDate = $this->request->getPost('startDate');
-        $endDate = $this->request->getPost('endDate');
-        $discountstatus = $this->request->getPost('discountstatus');
-
-        $exclusionRules = $this->request->getPost('exclusion_rules');
-        $usageTracking = $this->request->getPost('usage_tracking') ? 1 : 0;
-        $autoExpirationNotification = $this->request->getPost('auto_expiration_notification') ? 1 : 0;
-        $notificationPeriod = $this->request->getPost('notification_period');
-        $randomizationOption = $this->request->getPost('randomization_option') ? 1 : 0;
-        $randomizationRange = $this->request->getPost('randomization_range');
-        $codeDeactivation = $this->request->getPost('code_deactivation') ? 1 : 0;
-
-        // Prepare the data to be updated
-        $discountCodeData = [
-            'title' => $title,
-            'typeOfCode' => $typeOfCode,
-            'numberOfCodes' => $numberOfCodes,
-            'prefix' => $prefix,
-            'suffix' => $suffix,
-            'code' => $code,
-            'codeLength' => $codelength,
-            'discount_type' => $discountType,
-            'discountValue' => $discountValue,
-            'minimumPurchaseRequirement' => $minimumPurchaseRequirement,
-            'customerEligibility' => $customerEligibility,
-            'maximumDiscountUses' => $maximumDiscountUses,
-            'limitPerCustomer' => $limitPerCustomer,
-            'startDate' => $startDate,
-            'endDate' => $endDate,
-            'discountstatus' => $discountstatus,
-            'exclusion_rules' => $exclusionRules,
-            'usage_tracking' => $usageTracking,
-            'auto_expiration_notification' => $autoExpirationNotification,
-            'notification_period' => $notificationPeriod,
-            'randomization_option' => $randomizationOption,
-            'randomization_range' => $randomizationRange,
-            'code_deactivation' => $codeDeactivation,
+        $newData = [
+            'title' => $this->request->getPost('title'),
+            'typeOfCode' => $this->request->getPost('typeOfCode'),
+            'numberOfCodes' => $this->request->getPost('numberOfCodes'),
+            'prefix' => $this->request->getPost('prefix'),
+            'suffix' => $this->request->getPost('suffix'),
+            'code' => $this->request->getPost('code'),            
+            'discount_type' => $this->request->getPost('discount_type'),
+            'discountValue' => $this->request->getPost('discountValue'),
+            'minimumPurchaseRequirement' => $this->request->getPost('minimumPurchaseRequirement'),
+            'customerEligibility' => $this->request->getPost('customerEligibility'),
+            'maximumDiscountUses' => $this->request->getPost('maximumDiscountUses'),
+            'limitPerCustomer' => $this->request->getPost('limitPerCustomer'),
+            'startDate' => $this->request->getPost('startDate'),
+            'endDate' => $this->request->getPost('endDate'),
+            'discountstatus' => $this->request->getPost('discountstatus'),
+            'exclusion_rules' => $this->request->getPost('exclusion_rules'),
+            'usage_tracking' => $this->request->getPost('usage_tracking') ? 1 : 0,
+            'auto_expiration_notification' => $this->request->getPost('auto_expiration_notification') ? 1 : 0,
+            'notification_period' => $this->request->getPost('notification_period'),
+            'randomization_option' => $this->request->getPost('randomization_option') ? 1 : 0,
+            'randomization_range' => $this->request->getPost('randomization_range'),
+            'code_deactivation' => $this->request->getPost('code_deactivation') ? 1 : 0,            
         ];
 
-        if ($discountCodeModel->updateDiscountCode($id, $discountCodeData)) {
-            return redirect()->to('discountcodegenerator');
-        } else {
-            return redirect()->back()->with('error', 'Update failed');
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingDiscountCode[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingDiscountCode[$key],
+                    'new' => $value
+                ];
+            }
         }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($existingDiscountCode['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // Update the discount code data
+            if ($discountCodeModel->update($id, $newData)) {
+                return redirect()->to('discountcodegenerator')->with('success', 'Discount code updated successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Update failed.');
+            }
+        }
+
+        return redirect()->back()->with('info', 'No changes detected.');
     }
+
 
     public function delete($id)
     {
         $discountCodeModel = new discountcode();
-        $discountCodeModel->deletecode($id);
-        return redirect()->to('discountcodegenerator');
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Find the discount code by ID
+        $discountCode = $discountCodeModel->find($id);
+        if (!$discountCode) {
+            return redirect()->to('discountcodegenerator')->with('error', 'Discount code not found.');
+        }
+
+        // Get the admin details from the session
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft delete by updating the necessary fields
+        $discountCodeModel->update($id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Log who deleted it
+            'deleted_at' => date('Y-m-d H:i:s'), // Record deletion timestamp
+        ]);
+
+        return redirect()->to('discountcodegenerator')->with('success', 'Discount code deleted successfully.');
     }
+
+
+    public function deletedDiscountCodes()
+    {
+        $discountCodeModel = new discountcode();
+
+        // Fetch all discount codes marked as deleted
+        $data['discount_codes'] = $discountCodeModel->where('is_deleted', 1)->findAll();
+
+        // Return the view with deleted discount codes
+        return view('discountcodes_deleted', $data);
+    }
+
+
+    public function restoreDiscountCode($id)
+    {
+        $discountCodeModel = new discountcode();
+
+        // Find the discount code by ID
+        $discountCode = $discountCodeModel->find($id);
+        if (!$discountCode) {
+            return redirect()->to('discountcodegenerator')->with('error', 'Discount code not found.');
+        }
+
+        // Restore the discount code by clearing deletion fields
+        $discountCodeModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('discountcodegenerator')->with('success', 'Discount code restored successfully.');
+    }
+
+
+
 
     public function saveDiscountCode()
     {

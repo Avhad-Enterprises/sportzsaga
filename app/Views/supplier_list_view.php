@@ -125,6 +125,12 @@
                                 role="button">
                                 Add Supplier
                             </a>
+                            <div class="dropdown">
+                                <a class="btn btn-success fw-bold" href="<?= base_url('suppliers_deleted') ?>"
+                                    role="button">
+                                    Logs
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,7 +149,6 @@
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>City</th>
-
                                     <th>Actions</th>
                                 </tr>
                             </thead>
