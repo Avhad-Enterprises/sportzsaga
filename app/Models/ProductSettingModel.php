@@ -8,7 +8,7 @@ class ProductSettingModel extends Model
 {
     protected $table = 'product_setting';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'product_id', 'Description', 'is_deleted', 'deleted_by', 'deleted_at', 'added_by', 'updated_by', 'created_at', 'updated_at', 'bundle_id'];
+    protected $allowedFields = ['title', 'product_id', 'Description', 'is_deleted', 'deleted_by', 'deleted_at', 'added_by', 'updated_by', 'created_at', 'updated_at', 'bundle_id', 'change_log'];
 
     public function getSettings($productIdsCsv)
     {
