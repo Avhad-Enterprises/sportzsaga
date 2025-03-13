@@ -28,86 +28,111 @@ class ProductSettings extends BaseController
     }
 
     public function save()
-{
-    $productSettingModel = new ProductSettingModel();
+    {
+        $productSettingModel = new ProductSettingModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get user ID from session
 
-    // Get form data
-    $title = $this->request->getPost('productpagetitle');
-    $description = $this->request->getPost('Description');
-    $selectedProducts = $this->request->getPost('products') ?: []; // Array of selected product IDs
-    $selectedBundles = $this->request->getPost('bundles') ?: []; // Array of selected bundle IDs
+        // Get form data
+        $title = $this->request->getPost('productpagetitle');
+        $description = $this->request->getPost('Description');
+        $selectedProducts = $this->request->getPost('products') ?: []; // Array of selected product IDs
+        $selectedBundles = $this->request->getPost('bundles') ?: []; // Array of selected bundle IDs
 
-    // Convert arrays to comma-separated strings
-    $productIdsCsv = implode(',', $selectedProducts);
-    $bundleIdsCsv = implode(',', $selectedBundles);
+        // Convert arrays to comma-separated strings
+        $productIdsCsv = implode(',', $selectedProducts);
+        $bundleIdsCsv = implode(',', $selectedBundles);
 
-    // Prepare data for update
-    $data = [
-        'title' => $title,
-        'Description' => $description,
-        'product_id' => $productIdsCsv,
-        'bundle_id' => $bundleIdsCsv,
-        'added_by' => 1, // Replace with logged-in user ID if available
-    ];
+        // Check if record with ID = 1 exists
+        $existingRecord = $productSettingModel->find(1);
 
-    // Check if record with ID = 1 exists
-    $existingRecord = $productSettingModel->find(1);
+        if ($existingRecord) {
+            // Track changes only if there are modifications
+            $changes = [];
 
-    if ($existingRecord) {
-        // Prepare change log
-        $oldData = [
-            'title' => $existingRecord['title'],
-            'Description' => $existingRecord['Description'],
-            'product_id' => $existingRecord['product_id'],
-            'bundle_id' => $existingRecord['bundle_id'],
-            'added_by' => $existingRecord['added_by'],
-        ];
+            if ($existingRecord['title'] !== $title) {
+                $changes['title'] = ['old' => $existingRecord['title'], 'new' => $title];
+            }
+            if ($existingRecord['Description'] !== $description) {
+                $changes['Description'] = ['old' => $existingRecord['Description'], 'new' => $description];
+            }
+            if ($existingRecord['product_id'] !== $productIdsCsv) {
+                $changes['product_id'] = ['old' => $existingRecord['product_id'], 'new' => $productIdsCsv];
+            }
+            if ($existingRecord['bundle_id'] !== $bundleIdsCsv) {
+                $changes['bundle_id'] = ['old' => $existingRecord['bundle_id'], 'new' => $bundleIdsCsv];
+            }
 
-        // Fetch and decode existing change log
-        $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
-        if (!is_array($existingChangeLog)) {
-            $existingChangeLog = [];
+            // Proceed only if there are actual changes
+            if (!empty($changes)) {
+                // Fetch and decode existing change log
+                $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+
+                // Ensure it's an array
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new change entry
+                $newChange = [
+                    'changes' => $changes,
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                ];
+
+                $existingChangeLog[] = $newChange; // Append to change log
+
+                // Update only modified fields
+                $updateData = [
+                    'title' => $title,
+                    'Description' => $description,
+                    'product_id' => $productIdsCsv,
+                    'bundle_id' => $bundleIdsCsv,
+                    'change_log' => json_encode($existingChangeLog),
+                ];
+
+                $productSettingModel->update(1, $updateData);
+
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Settings updated successfully!',
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'No changes detected.',
+                ]);
+            }
+        } else {
+            // Insert new record with ID = 1
+            $insertData = [
+                'id' => 1,
+                'title' => $title,
+                'Description' => $description,
+                'product_id' => $productIdsCsv,
+                'bundle_id' => $bundleIdsCsv,
+                'change_log' => json_encode([
+                    [
+                        'changes' => [
+                            'title' => ['old' => null, 'new' => $title],
+                            'Description' => ['old' => null, 'new' => $description],
+                            'product_id' => ['old' => null, 'new' => $productIdsCsv],
+                            'bundle_id' => ['old' => null, 'new' => $bundleIdsCsv],
+                        ],
+                        'updated_by' => $userId,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                    ]
+                ])
+            ];
+
+            $productSettingModel->insert($insertData);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Settings saved successfully!',
+            ]);
         }
-
-        // Append new change entry
-        $newChange = [
-            'old' => $oldData,
-            'new' => $data,
-            'timestamp' => date('Y-m-d H:i:s'),
-        ];
-
-        $existingChangeLog[] = $newChange; // Append to change log
-        $data['change_log'] = json_encode($existingChangeLog);
-
-        // Update existing record
-        $updateStatus = $productSettingModel->update(1, $data);
-    } else {
-        // First-time insert with ID = 1
-        $data['id'] = 1;
-        $data['change_log'] = json_encode([
-            [
-                'old' => null,
-                'new' => $data,
-                'timestamp' => date('Y-m-d H:i:s'),
-            ]
-        ]);
-
-        $updateStatus = $productSettingModel->insert($data);
     }
-
-    // Prepare JSON response
-    if ($updateStatus !== false) {
-        return $this->response->setJSON([
-            'success' => true,
-            'message' => 'Settings saved successfully!'
-        ]);
-    } else {
-        return $this->response->setJSON([
-            'success' => false,
-            'message' => 'Failed to save settings. Please try again.'
-        ]);
-    }
-}
 
 
     private function getProducts()

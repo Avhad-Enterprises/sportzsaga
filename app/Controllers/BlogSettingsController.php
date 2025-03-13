@@ -42,6 +42,8 @@ class BlogSettingsController extends BaseController
     public function save()
     {
         $model = new BlogSettingsModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Retrieve user ID from session
 
         try {
             log_message('debug', 'POST Data: ' . json_encode($this->request->getPost()));
@@ -60,45 +62,53 @@ class BlogSettingsController extends BaseController
 
             // Fetch existing record (assuming ID=1)
             $existingRecord = $model->find(1);
+            $changedFields = [];
 
-            // Process change log
             if ($existingRecord) {
-                $oldData = [
-                    'blogs_title' => $existingRecord['blogs_title'],
-                    'popular_tags' => $existingRecord['popular_tags'],
-                    'popular_posts' => $existingRecord['popular_posts'],
-                ];
-
-                // Fetch and decode existing change log
-                $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
-                if (!is_array($existingChangeLog)) {
-                    $existingChangeLog = [];
+                // Compare old and new data, only storing changes
+                foreach ($data as $key => $newValue) {
+                    $oldValue = $existingRecord[$key] ?? null;
+                    if ($newValue !== $oldValue) {
+                        $changedFields[$key] = [
+                            'old' => $oldValue,
+                            'new' => $newValue,
+                        ];
+                    }
                 }
 
-                // Append new change entry
-                $newChange = [
-                    'old' => $oldData,
-                    'new' => $data,
-                    'timestamp' => date('Y-m-d H:i:s'),
-                ];
+                if (!empty($changedFields)) {
+                    // Fetch and decode existing change log
+                    $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+                    if (!is_array($existingChangeLog)) {
+                        $existingChangeLog = [];
+                    }
 
-                $existingChangeLog[] = $newChange; // Append to the existing change log
-                $data['change_log'] = json_encode($existingChangeLog);
+                    // Append new change entry with only changed fields
+                    $newChange = [
+                        'updated_by' => $userId, // Log user ID
+                        'changes' => $changedFields,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                    ];
+
+                    $existingChangeLog[] = $newChange;
+                    $data['change_log'] = json_encode($existingChangeLog);
+                }
+
+                // Update record with ID = 1
+                $model->update(1, $data);
+
+                return $this->response->setJSON(['success' => true, 'message' => 'Settings updated successfully.']);
             } else {
                 // First-time save, initialize change log
                 $data['change_log'] = json_encode([[
-                    'old' => null,
-                    'new' => $data,
+                    'updated_by' => $userId,
+                    'changes' => $data, // Log all initial data
                     'timestamp' => date('Y-m-d H:i:s'),
                 ]]);
-            }
 
-            // Save or update settings
-            if ($model->update(1, $data)) {
+                $model->insert(['id' => 1] + $data);
+
                 return $this->response->setJSON(['success' => true, 'message' => 'Settings saved successfully.']);
-            } else {
-                log_message('error', 'Database save failed.');
-                return $this->response->setJSON(['success' => false, 'message' => 'Failed to save settings.']);
             }
         } catch (\Exception $e) {
             log_message('error', 'Error saving settings: ' . $e->getMessage());
@@ -111,81 +121,93 @@ class BlogSettingsController extends BaseController
 
 
 
+
     public function saveCollection()
     {
         if ($this->request->isAJAX()) {
+            $session = session();
+            $userId = $session->get('user_id'); // Retrieve user ID from session
+
             $title = $this->request->getPost('title');
             $favproduct = $this->request->getPost('fav_product');
-    
+
             // Handle image uploads
             $image1 = $this->request->getFile('image1');
             $image2 = $this->request->getFile('image2');
-    
+
             $image1Name = $image1 && $image1->isValid() ? $image1->store() : null;
             $image2Name = $image2 && $image2->isValid() ? $image2->store() : null;
-    
+
             // Validate input
             if (empty($title)) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Title is required']);
             }
-    
+
             $collectionModel = new \App\Models\os_collectionModel();
-    
+
             // Always check for ID = 1
             $existingRecord = $collectionModel->find(1);
-    
+
+            // Prepare new data
             $data = [
                 'image1' => $image1Name ?? ($existingRecord['image1'] ?? null),
                 'image2' => $image2Name ?? ($existingRecord['image2'] ?? null),
                 'title' => $title,
                 'fav_product' => $favproduct,
             ];
-    
+
+            $changedFields = [];
+
             if ($existingRecord) {
-                // Prepare change log
-                $oldData = [
-                    'image1' => $existingRecord['image1'],
-                    'image2' => $existingRecord['image2'],
-                    'title' => $existingRecord['title'],
-                    'fav_product' => $existingRecord['fav_product'],
-                ];
-    
-                // Fetch and decode existing change log
-                $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
-                if (!is_array($existingChangeLog)) {
-                    $existingChangeLog = [];
+                // Compare old and new data, only storing changes
+                foreach ($data as $key => $newValue) {
+                    $oldValue = $existingRecord[$key] ?? null;
+
+                    if ($newValue !== $oldValue) {
+                        $changedFields[$key] = [
+                            'old' => $oldValue,
+                            'new' => $newValue,
+                        ];
+                    }
                 }
-    
-                // Append new change entry
-                $newChange = [
-                    'old' => $oldData,
-                    'new' => $data,
-                    'timestamp' => date('Y-m-d H:i:s'),
-                ];
-    
-                $existingChangeLog[] = $newChange; // Append to change log
-                $data['change_log'] = json_encode($existingChangeLog);
-    
+
+                if (!empty($changedFields)) {
+                    // Fetch and decode existing change log
+                    $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+                    if (!is_array($existingChangeLog)) {
+                        $existingChangeLog = [];
+                    }
+
+                    // Append new change entry with only changed fields
+                    $newChange = [
+                        'changes' => $changedFields,
+                        'updated_by' => $userId, // Log user ID
+                        'timestamp' => date('Y-m-d H:i:s'),
+                    ];
+
+                    $existingChangeLog[] = $newChange;
+                    $data['change_log'] = json_encode($existingChangeLog);
+                }
+
                 // Update existing record with ID = 1
                 $collectionModel->update(1, $data);
-    
+
                 return $this->response->setJSON(['success' => true, 'message' => 'Collection updated successfully']);
             } else {
-                // Insert a new record with ID = 1
+                // Insert new record with ID = 1
                 $data['id'] = 1;
-                $data['change_log'] = json_encode([[ 
-                    'old' => null,
-                    'new' => $data,
+                $data['change_log'] = json_encode([[
+                    'updated_by' => $userId,
+                    'changes' => $data, // Log all initial data
                     'timestamp' => date('Y-m-d H:i:s'),
                 ]]);
-    
+
                 $collectionModel->insert($data);
-    
+
                 return $this->response->setJSON(['success' => true, 'message' => 'Collection saved successfully']);
             }
         }
-    
+
         throw new \CodeIgniter\Exceptions\PageNotFoundException();
     }
-    
 }

@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -179,7 +179,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('company_view', 'CatalogController::viewcompanylist');
    $routes->get('companies/edit_company/(:num)', 'CatalogController::editcompany/$1');
    $routes->post('company/update_company/(:num)', 'CatalogController::update_company/$1');
-   $routes->get('companies/deletecompany/(:num)', 'CatalogController::deletecompany/$1');
+   $routes->get('companies/deletecompany/(:num)', 'CatalogController::deleteCompany/$1');
+   $routes->get('restorecompany/(:num)', 'CatalogController::restoreCompany/$1');
+   $routes->get('company_logs_view', 'CatalogController::companylogs');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
 

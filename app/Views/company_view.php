@@ -130,6 +130,12 @@
                                     Export to Excel
                                 </a>
                             </div>
+                            <div class="dropdown">
+                                <a class="btn btn-success" href="<?= base_url('company_logs_view'); ?>"
+                                    role="button">
+                                   Logs
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -170,9 +176,9 @@
                                                     <a class="dropdown-item"
                                                         href="<?= base_url(); ?>companies/edit_company/<?= $company['id'] ?>"><i
                                                             class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url(); ?>companies/deletecompany/<?= $company['id'] ?>"><i
-                                                            class="dw dw-delete-3"></i> Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="companyDelete(<?= $company['id'] ?>)">
+                                                        <i class="dw dw-delete-3"></i> Delete
+                                                    </a>
                                                 </div>
                                             </div>
                                         </td>

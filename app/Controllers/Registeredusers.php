@@ -304,23 +304,77 @@ class Registeredusers extends BaseController
     public function updateuserdata($id)
     {
         $model = new Registerusers_model();
+        $session = session();
+        $userId = $session->get('user_id'); // Get user ID from session
 
+        // Fetch existing user data
+        $existingRecord = $model->find($id);
+        if (!$existingRecord) {
+            return redirect()->to('/registeredusers')->with('error', 'User not found.');
+        }
+
+        // Get new data from request
         $name = $this->request->getPost('name');
         $email = $this->request->getPost('email');
         $phone_no = $this->request->getPost('phoneno');
         $guestconpassval = $this->request->getPost('confirmpassword');
 
-        $data = [
-            'name' => $name,
-            'email' => $email,
-            'phone_no' => $phone_no,
-            'password' => $guestconpassval
-        ];
+        // Track changes only if there are modifications
+        $changes = [];
 
-        $model->updateusermodel($id, $data);
+        if ($existingRecord['name'] !== $name) {
+            $changes['name'] = ['old' => $existingRecord['name'], 'new' => $name];
+        }
+        if ($existingRecord['email'] !== $email) {
+            $changes['email'] = ['old' => $existingRecord['email'], 'new' => $email];
+        }
+        if ($existingRecord['phone_no'] !== $phone_no) {
+            $changes['phone_no'] = ['old' => $existingRecord['phone_no'], 'new' => $phone_no];
+        }
+        if (!empty($guestconpassval) && $existingRecord['password'] !== $guestconpassval) {
+            $changes['password'] = ['old' => '********', 'new' => '********']; // Mask passwords for security
+        }
 
-        return redirect()->to('/registeredusers')->with('success', 'User updated successfully.');
+        // Proceed only if there are actual changes
+        if (!empty($changes)) {
+            // Fetch and decode existing change log
+            $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+
+            // Ensure it's an array
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change entry
+            $newChange = [
+                'changes' => $changes,
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+            ];
+
+            $existingChangeLog[] = $newChange; // Append to change log
+
+            // Prepare update data
+            $updateData = [
+                'name' => $name,
+                'email' => $email,
+                'phone_no' => $phone_no,
+                'change_log' => json_encode($existingChangeLog),
+            ];
+
+            if (!empty($guestconpassval)) {
+                $updateData['password'] = $guestconpassval;
+            }
+
+            // Update record
+            $model->update($id, $updateData);
+
+            return redirect()->to('/registeredusers')->with('success', 'User updated successfully.');
+        } else {
+            return redirect()->to('/registeredusers')->with('info', 'No changes detected.');
+        }
     }
+
 
     public function employee()
     {
@@ -365,25 +419,79 @@ class Registeredusers extends BaseController
     }
 
     public function updateempolyee($id)
-    {
-        $model = new Registerusers_model();
+{
+    $model = new Registerusers_model();
+    $session = session();
+    $userId = $session->get('user_id'); // Get user ID from session
 
-        $name = $this->request->getPost('name');
-        $email = $this->request->getPost('email');
-        $phone_no = $this->request->getPost('phoneno');
-        $guestconpassval = $this->request->getPost('confirmpassword');
+    // Fetch existing employee data
+    $existingRecord = $model->find($id);
+    if (!$existingRecord) {
+        return redirect()->to('employee')->with('error', 'Employee not found.');
+    }
 
-        $data = [
+    // Get new data from request
+    $name = $this->request->getPost('name');
+    $email = $this->request->getPost('email');
+    $phone_no = $this->request->getPost('phoneno');
+    $guestconpassval = $this->request->getPost('confirmpassword');
+
+    // Track changes only if there are modifications
+    $changes = [];
+
+    if ($existingRecord['name'] !== $name) {
+        $changes['name'] = ['old' => $existingRecord['name'], 'new' => $name];
+    }
+    if ($existingRecord['email'] !== $email) {
+        $changes['email'] = ['old' => $existingRecord['email'], 'new' => $email];
+    }
+    if ($existingRecord['phone_no'] !== $phone_no) {
+        $changes['phone_no'] = ['old' => $existingRecord['phone_no'], 'new' => $phone_no];
+    }
+    if (!empty($guestconpassval) && $existingRecord['password'] !== $guestconpassval) {
+        $changes['password'] = ['old' => '********', 'new' => '********']; // Mask passwords for security
+    }
+
+    // Proceed only if there are actual changes
+    if (!empty($changes)) {
+        // Fetch and decode existing change log
+        $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
+
+        // Ensure it's an array
+        if (!is_array($existingChangeLog)) {
+            $existingChangeLog = [];
+        }
+
+        // Append new change entry
+        $newChange = [
+            'changes' => $changes,
+            'updated_by' => $userId,
+            'timestamp' => date('Y-m-d H:i:s'),
+        ];
+
+        $existingChangeLog[] = $newChange; // Append to change log
+
+        // Prepare update data
+        $updateData = [
             'name' => $name,
             'email' => $email,
             'phone_no' => $phone_no,
-            'password' => $guestconpassval
+            'change_log' => json_encode($existingChangeLog),
         ];
 
-        $model->updateempolyee($id, $data);
+        if (!empty($guestconpassval)) {
+            $updateData['password'] = $guestconpassval;
+        }
+
+        // Update record
+        $model->update($id, $updateData);
 
         return redirect()->to('employee')->with('success', 'Employee updated successfully.');
+    } else {
+        return redirect()->to('employee')->with('info', 'No changes detected.');
     }
+}
+
 
     public function sellers()
     {
