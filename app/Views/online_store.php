@@ -139,7 +139,7 @@
                                                 <button class="visit-btn">Edit</button>
                                             </a>
                                             <a href="<?= base_url() ?>online_store/online_store_logs">
-                                                <button class="btn btn-success">Logs</button> <!-- ✅ Green Button -->
+                                                <button class="btn btn-success">Logs</button> 
                                             </a>
                                         </div>
                                     </div>
