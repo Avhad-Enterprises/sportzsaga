@@ -781,7 +781,7 @@ class Store extends BaseController
         }
     }
 
-    <!----------------------------------------------------------------------------- Contact -------------------------------------------------------------------------------->
+    // Contact
     
     public function update_contact()
     {
@@ -1016,8 +1016,7 @@ class Store extends BaseController
     }
 
 
-    <!-------------------------------------------------------------------------------------- Checkout page ------------------------------------------------------------------------->
-
+    // Checkout page
 
     public function update_checkout()
     {
@@ -2260,16 +2259,7 @@ class Store extends BaseController
         return redirect()->back()->with('message', 'Carousel deleted successfully');
     }
 
-
-
-
-
-
-
-
-
-
-    <!-----------------------------------------------------------------------------------------Home Image -------------------------------------------------------------------------------->
+    // Home Image
 
     public function save()
     {
@@ -2367,9 +2357,6 @@ class Store extends BaseController
             return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save data: ' . $e->getMessage());
         }
     }
-    
-    
-    <!------------------------------------------------------------------------------ Marquee Text ------------------------------------------------------------------------------>
 
     public function saveMarqueeText()
     {
@@ -2640,7 +2627,7 @@ class Store extends BaseController
         }
     }
 
-    <!---------------------------------------------------------------------- Header pages Delete ---------------------------------------------------------------------------------------------------------->
+    // Header pages Delete
 
     public function delete_page($id)
     {
