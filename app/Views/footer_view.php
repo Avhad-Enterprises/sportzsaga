@@ -2499,3 +2499,47 @@
      });
    }
  </script>
+
+
+
+<!--------------------------------------------------------------------------dashboard delete button-------------------------------------------------------------------------------> 
+
+
+<script>
+   function companyDelete(id) {
+     Swal.fire({
+       title: 'Are you sure?',
+       text: "You won't be able to revert this!",
+       icon: 'warning',
+       showCancelButton: true,
+       confirmButtonColor: '#3085d6',
+       cancelButtonColor: '#d33',
+       confirmButtonText: 'Yes, delete it!'
+     }).then((result) => {
+       if (result.isConfirmed) {
+         window.location.href = "<?= base_url('companies/deletecompany/') ?>" + id;
+       }
+     });
+   }
+ </script>
+ 
+ 
+ <script>
+   function companyRestore(id) {
+     Swal.fire({
+       title: 'Are you sure?',
+       text: "Do you want to restore this Member?",
+       icon: 'warning',
+       showCancelButton: true,
+       confirmButtonColor: '#28a745', // Green color for restore action
+       cancelButtonColor: '#d33',
+       confirmButtonText: 'Yes, restore it!'
+     }).then((result) => {
+       if (result.isConfirmed) {
+         window.location.href = "<?= base_url('restorecompany/') ?>" + id;
+       }
+     });
+   }
+ </script>
+
+

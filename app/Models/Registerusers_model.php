@@ -73,6 +73,12 @@ class Registerusers_model extends Model
         'seller_gst_number',
         'reset_token',
         'reset_token_expiry',
+        'updated_by',
+        'change_log',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'added_by'
     ];
     protected $useTimestamps = true;
 
