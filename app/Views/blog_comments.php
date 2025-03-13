@@ -164,11 +164,15 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <i class="fa-solid fa-circle-xmark mx-2 reject-comment"
-                                                data-id="<?= $comment['id'] ?>" style="color: #bd0000; font-size: 20px; cursor: pointer;"></i>
+                                            <?php if ($comment['status'] == 1): ?>
+                                                <i class="fa-regular fa-circle-check" style="color: #2ead00;"></i>
+                                            <?php else: ?>
+                                                <i class="fa-solid fa-circle-xmark mx-2 reject-comment"
+                                                    data-id="<?= $comment['id'] ?>" style="color: #bd0000; font-size: 20px; cursor: pointer;"></i>
 
-                                            <i class="fa-solid fa-circle-check approve-comment"
-                                                data-id="<?= $comment['id'] ?>" style="color: #008000; font-size: 20px; cursor: pointer;"></i>
+                                                <i class="fa-solid fa-circle-check approve-comment"
+                                                    data-id="<?= $comment['id'] ?>" style="color: #008000; font-size: 20px; cursor: pointer;"></i>
+                                            <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
