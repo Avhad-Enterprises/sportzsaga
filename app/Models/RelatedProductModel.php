@@ -16,7 +16,13 @@ class RelatedProductModel extends Model
         'conditions',
         'sort_by',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'change_log',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'added_by',
+        'updated_by',
     ];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
@@ -53,7 +59,8 @@ class RelatedProductModel extends Model
 
         $relatedProducts = $db->table('related_products rp')
             ->select('rp.id, rp.collection_ids, rp.related_product_ids, rp.selection_method, rp.created_at,
-            (SELECT collection_title FROM collection c WHERE FIND_IN_SET(c.collection_id, rp.collection_ids) LIMIT 1) AS collection_title')
+        (SELECT collection_title FROM collection c WHERE FIND_IN_SET(c.collection_id, rp.collection_ids) LIMIT 1) AS collection_title')
+            ->where('rp.is_deleted', 0) // ✅ Only fetch non-deleted products
             ->orderBy('rp.created_at', 'DESC')
             ->get()
             ->getResultArray();
@@ -67,6 +74,7 @@ class RelatedProductModel extends Model
             if (!empty($productIds) && is_array($productIds)) {
                 // Get first product title as fallback if no collection is present
                 $firstProduct = $productModel->where('product_id', $productIds[0])
+                    ->where('is_deleted', 0) // ✅ Ensure product is not deleted
                     ->select('product_title')
                     ->first();
 
@@ -78,6 +86,7 @@ class RelatedProductModel extends Model
 
         return $relatedProducts;
     }
+
 
 
     public function RelatedProducts($productId)
@@ -92,6 +101,11 @@ class RelatedProductModel extends Model
         }
 
         return is_array($relatedProductIds) ? $relatedProductIds : [];
-  
-    }    
+
+    }
+
+    public function getActiveProducts()
+    {
+        return $this->where('is_deleted', 0)->findAll();
+    }
 }

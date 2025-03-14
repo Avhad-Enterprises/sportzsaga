@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -200,8 +200,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('admin-products/deleterelatedproduct/(:num)', 'RelatedproductController::deleteRelatedProduct/$1');
    $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
    $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
-   $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
    $routes->post('RelatedproductController/fetchProducts', 'RelatedproductController::fetchProducts'); // Fetch products dynamically
+   $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
+   $routes->get('relatedproduct_deleted', 'RelatedproductController::deletedRelatedProducts'); // View deleted catalogs
+   $routes->get('relatedproduct/restore/(:num)', 'RelatedproductController::restoreProduct/$1'); // Restore a deleted catalog
+
 });
 
 
@@ -427,6 +430,9 @@ $routes->get('edit_catalog_form/(:num)', 'CatalogController::edit/$1');
 $routes->post('catalog/update/(:num)', 'CatalogController::update/$1');
 $routes->get('catalog/delete/(:num)', 'CatalogController::delete/$1');
 $routes->post('catalog/checkDuplicateUsers', 'CatalogController::checkDuplicateUsers');
+$routes->get('catalog_deleted', 'CatalogController::deletedCatalogs'); // View deleted catalogs
+$routes->get('catalog/restore/(:num)', 'CatalogController::restoreCatalog/$1'); // Restore a deleted catalog
+
 
 //Customer Segment
 $routes->get('add_new_customersegment', 'CatalogController::add_new');
