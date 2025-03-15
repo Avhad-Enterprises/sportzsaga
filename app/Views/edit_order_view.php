@@ -101,450 +101,300 @@
                     <div class="clearfix">
                         <div class="d-flex justify-content-between row">
                             <div class="col">
-                                <h4 class="text-blue h4">Order <?= $order['order_number'] ?><?= ( !$order['amz_order_id'] ? '' : ' | Amazon Order ID :'.$order['amz_order_id']) ?></h4>
+                                <h4 class="text-blue h4">Order <?= $order['order_number'] ?><?= (!$order['amz_order_id'] ? '' : ' | Amazon Order ID :' . $order['amz_order_id']) ?></h4>
                                 <p class="">Edit My Order</p>
                             </div>
                             <div class="text-right col row">
-                            <div class="col">
-                                <p>
-                                    <strong>Channel : </strong><?= $order['channel'] ?><br>
-                                    <strong>Total Ammount : </strong>₹<?= $order['total_amount'] ?>
-                                </p>
-                            </div>
-                            <div class="col">
-                                <p>
-                                    <strong>Received : </strong>₹<?= $order['received'] ?><br>
-                                    <strong>Balance : </strong>₹<?= $order['balance'] ?>
-                                </p>
-                            </div>
+                                <div class="col">
+                                    <p>
+                                        <strong>Channel : </strong><?= $order['channel'] ?><br>
+                                        <strong>Total Ammount : </strong>₹<?= $order['total_amount'] ?>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p>
+                                        <strong>Received : </strong>₹<?= $order['received'] ?><br>
+                                        <strong>Balance : </strong>₹<?= $order['balance'] ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                    <!-- Edit Order Form -->
-                    <form id="editOrderForm" method="post" action="<?= base_url(); ?>ordermanagement/updateorder/<?= $order['order_id'] ?>" enctype="multipart/form-data" class="needs-validation" novalidate>
-                        <!-- Hidden Fields -->
-                        <input type="hidden" id="finalTotalPrice" name="final_total_price" value="<?= $order['total_amount'] ?>" />
-                        <input type="hidden" id="finalShipmentCharges" name="final_shipment_charges" value="<?= $order['shipping_amount'] ?>" />
-                        <input type="hidden" id="finalTotalDiscount" name="final_total_discount" value="<?= ( $refirnediscount > 0 ? 0 : $order['discount_amount']) ?>" />
-                        <input type="hidden" id="cgst" name="cgst" value="<?= $order['cgst'] ?>" />
-                        <input type="hidden" id="sgst" name="sgst" value="<?= $order['sgst'] ?>" />
-                        <input type="hidden" id="igst" name="igst" value="<?= $order['igst'] ?>" />
-                        <input type="hidden" id="previous_total_amount" name="previous_total_amount" value="<?= $order['total_amount'] ?>" />
+                <!-- Edit Order Form -->
+                <form id="editOrderForm" method="post" action="<?= base_url(); ?>ordermanagement/updateorder/<?= $order['order_id'] ?>" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <!-- Hidden Fields -->
+                    <input type="hidden" id="finalTotalPrice" name="final_total_price" value="<?= $order['total_amount'] ?>" />
+                    <input type="hidden" id="finalShipmentCharges" name="final_shipment_charges" value="<?= $order['shipping_amount'] ?>" />
+                    <input type="hidden" id="finalTotalDiscount" name="final_total_discount" value="<?= ($refirnediscount > 0 ? 0 : $order['discount_amount']) ?>" />
+                    <input type="hidden" id="cgst" name="cgst" value="<?= $order['cgst'] ?>" />
+                    <input type="hidden" id="sgst" name="sgst" value="<?= $order['sgst'] ?>" />
+                    <input type="hidden" id="igst" name="igst" value="<?= $order['igst'] ?>" />
+                    <input type="hidden" id="previous_total_amount" name="previous_total_amount" value="<?= $order['total_amount'] ?>" />
 
-                        <!-- Publish and Reset Buttons -->
-                        <div class="mb-3 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-dark btn-lg-4" style="margin-right: 10px;">Update</button>
-                            <button type="reset" class="btn btn-dark btn-lg-4">Reset</button>
-                        </div>
+                    <!-- Publish and Reset Buttons -->
+                    <div class="mb-3 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-dark btn-lg-4" style="margin-right: 10px;">Update</button>
+                        <!--<button type="reset" class="btn btn-dark btn-lg-4">Reset</button>-->
+                    </div>
 
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="pd-20 card-box mb-30">
-                                    <div class="row d-flex p-3 justify-content-between">
-                                        <p class="text-blue mb-30">Product's Info</p>
-                                        
-                                        <div class="form-group mb-3">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?= $order['is_international_order'] == 1 ? 'checked' : '' ?> id="internationalOrder" name="is_international_order">
-                                                <label class="custom-control-label" for="internationalOrder"><strong>International Order</strong></label>
-                                            </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="pd-20 card-box mb-30">
+                                <div class="row d-flex p-3 justify-content-between">
+                                    <p class="text-blue mb-30">Product's Info</p>
+
+                                    <div class="form-group mb-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" <?= $order['is_international_order'] == 1 ? 'checked' : '' ?> id="internationalOrder" name="is_international_order">
+                                            <label class="custom-control-label" for="internationalOrder"><strong>International Order</strong></label>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- Button Group in Same Line with Gaps -->
-                                    <div class="form-group d-flex justify-content-start">
-                                        <!-- Add Product Button -->
-                                        <button type="button" class="btn btn-outline-secondary add-product-btn"
-                                            data-toggle="modal" data-target="#productModal" style="margin-right: 10px;">
-                                            Add Product
-                                        </button>
+                                <!-- Button Group in Same Line with Gaps -->
+                                <div class="form-group d-flex justify-content-start">
+                                    <!-- Add Product Button -->
+                                    <button type="button" class="btn btn-outline-secondary add-product-btn"
+                                        data-toggle="modal" data-target="#productModal" style="margin-right: 10px;">
+                                        Add Product
+                                    </button>
 
-                                        <!-- Apply Discount Button -->
-                                        <button type="button" class="btn btn-outline-secondary add-product-btn"
-                                            data-toggle="modal" data-target="#discountModal" style="margin-right: 10px;">
-                                            Apply Discount
-                                        </button>
+                                    <!-- Apply Discount Button -->
+                                    <button type="button" class="btn btn-outline-secondary add-product-btn"
+                                        data-toggle="modal" data-target="#discountModal" style="margin-right: 10px;">
+                                        Apply Discount
+                                    </button>
 
-                                        <!-- Add Shipment Charges Button -->
-                                        <button type="button" class="btn btn-outline-secondary add-product-btn"
-                                            data-toggle="modal" data-target="#shipmentModal">
-                                            Add Shipment Charges
-                                        </button>
-                                    </div>
+                                    <!-- Add Shipment Charges Button -->
+                                    <button type="button" class="btn btn-outline-secondary add-product-btn"
+                                        data-toggle="modal" data-target="#shipmentModal">
+                                        Add Shipment Charges
+                                    </button>
+                                </div>
 
-                                    <!-- Product Selection Modal -->
-                                    <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="productModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="productModalLabel">Select Products</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                <!-- Product Selection Modal -->
+                                <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="productModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="productModalLabel">Select Products</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                                                <div class="form-group">
+                                                    <label for="productSearch">Search Products</label>
+                                                    <input type="text" id="productSearch" class="form-control"
+                                                        placeholder="Search products...">
                                                 </div>
-                                                <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
-                                                    <div class="form-group">
-                                                        <label for="productSearch">Search Products</label>
-                                                        <input type="text" id="productSearch" class="form-control"
-                                                            placeholder="Search products...">
-                                                    </div>
-                                                    <div class="form-group" id="modalProductList">
-                                                        <?php foreach ($products as $index => $product): 
-                                                            // Fetch saved product details from the order data if they exist
-                                                            $existingProduct = null;
-                                                            foreach ($order['product_details'] as $orderProduct) {
-                                                                if ($orderProduct['product_id'] == $product['product_id']) {
-                                                                    $existingProduct = $orderProduct;
-                                                                    break;
-                                                                }
+                                                <div class="form-group" id="modalProductList">
+                                                    <?php foreach ($products as $index => $product):
+                                                        // Fetch saved product details from the order data if they exist
+                                                        $existingProduct = null;
+                                                        foreach ($order['product_details'] as $orderProduct) {
+                                                            if ($orderProduct['product_id'] == $product['product_id']) {
+                                                                $existingProduct = $orderProduct;
+                                                                break;
                                                             }
-                                                            
-                                                            $savedQuantity = $existingProduct['quantity'] ?? 1; // Default quantity is 1
-                                                            $savedDiscount = $existingProduct['discount'] ?? 0; // Calculate per-item discount
-                                                        ?>
-                                                            <div class="custom-control custom-checkbox product-item"
-                                                                style="<?= $index >= 5 ? 'display:none;' : '' ?>">
-                                                                <input type="checkbox"
-                                                                    class="custom-control-input modal-product-checkbox"
-                                                                    id="modalProduct<?= $product['product_id'] ?>"
-                                                                    name="selected_products[]"
-                                                                    value="<?= $product['product_id'] ?>"
-                                                                    data-price="<?= $product['selling_price'] ?>"
-                                                                    data-image="<?= $product['product_image'] ?>"
-                                                                
-                                                                    <?php if ($existingProduct): ?>checked<?php endif; ?>
-                                                                    
-                                                                >
+                                                        }
 
-                                                                <label class="custom-control-label products-lists"
-                                                                    for="modalProduct<?= $product['product_id'] ?>">
-                                                                    <img src="<?= $product['product_image'] ?>"
-                                                                        alt="<?= $product['product_title'] ?>"
-                                                                        style="width: 50px; height: auto; margin-right: 10px;">
-                                                                    <?= $product['product_title'] ?>
-                                                                    
-                                                                    <div class="form-group">
-                                                                        <label>Price (₹)</label>
-                                                                        <input type="number"
-                                                                            name="product_price[<?= $product['product_id'] ?>]"
-                                                                            value="<?= ($product['selling_price'] > 0 ? ($product['selling_price'] ?? 0 ) : ($existingProduct['selling_price'] ?? 0 ) ) ?>"  min="0" step="0.01"
-                                                                            placeholder="Price ₹" class="discount-input">
-                                                                    </div>
+                                                        $savedQuantity = $existingProduct['quantity'] ?? 1; // Default quantity is 1
+                                                        $savedDiscount = $existingProduct['discount'] ?? 0; // Calculate per-item discount
+                                                    ?>
+                                                        <div class="custom-control custom-checkbox product-item"
+                                                            style="<?= $index >= 5 ? 'display:none;' : '' ?>">
+                                                            <input type="checkbox"
+                                                                class="custom-control-input modal-product-checkbox"
+                                                                id="modalProduct<?= $product['product_id'] ?>"
+                                                                name="selected_products[]"
+                                                                value="<?= $product['product_id'] ?>"
+                                                                data-price="<?= $product['selling_price'] ?>"
+                                                                data-image="<?= $product['product_image'] ?>"
 
-                                                                    <div
-                                                                        class="quantity-control d-inline-flex align-items-center">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary qty-btn"
-                                                                            id="decreaseQuantity<?= $product['product_id'] ?>">-</button>
-                                                                        <input type="number"
-                                                                            name="modal_quantity[<?= $product['product_id'] ?>]"
-                                                                            value="<?= $savedQuantity ?>"  min="1" class="form-control qty-input"
-                                                                            id="quantity<?= $product['product_id'] ?>"
-                                                                            style="width: 60px; text-align: center; margin: 0 5px;">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary qty-btn"
-                                                                            id="increaseQuantity<?= $product['product_id'] ?>">+</button>
-                                                                    </div>
+                                                                <?php if ($existingProduct): ?>checked<?php endif; ?>>
 
-                                                                    <div class="form-group">
-                                                                        <label
-                                                                            for="product_discount[<?= $product['product_id'] ?>]"
-                                                                            class="discount-title">Add Discount (₹)</label>
-                                                                        <input type="number"
-                                                                            name="product_discount[<?= $product['product_id'] ?>]"
-                                                                            value="<?= ($savedDiscount/$savedQuantity) ?>"  min="0" step="0.01"
-                                                                            placeholder="Discount ₹" class="discount-input">
-                                                                    </div>
+                                                            <label class="custom-control-label products-lists"
+                                                                for="modalProduct<?= $product['product_id'] ?>">
+                                                                <img src="<?= $product['product_image'] ?>"
+                                                                    alt="<?= $product['product_title'] ?>"
+                                                                    style="width: 50px; height: auto; margin-right: 10px;">
+                                                                <?= $product['product_title'] ?>
 
-                                                                    <!-- Hidden fields to store discounted prices -->
-                                                                    <input type="hidden"
-                                                                        name="discounted_price[<?= $product['product_id'] ?>]"
-                                                                        id="discountedPrice<?= $product['product_id'] ?>"
-                                                                        value="<?= $existingProduct['discounted_price'] ?? 0 ?>">
-                                                                    <input type="hidden"
-                                                                        name="discount_amount[<?= $product['product_id'] ?>]"
-                                                                        id="discountAmount<?= $product['product_id'] ?>"
-                                                                         value="<?= $existingProduct['discount'] ?? 0 ?>">
-                                                                </label>
-                                                            </div>
-                                                        <?php endforeach; ?>
+                                                                <div class="form-group">
+                                                                    <label>Price (₹)</label>
+                                                                    <input type="number"
+                                                                        name="product_price[<?= $product['product_id'] ?>]"
+                                                                        value="<?= ($product['selling_price'] > 0 ? ($product['selling_price'] ?? 0) : ($existingProduct['selling_price'] ?? 0)) ?>" min="0" step="0.01"
+                                                                        placeholder="Price ₹" class="discount-input">
+                                                                </div>
 
-                                                    </div>
+                                                                <div
+                                                                    class="quantity-control d-inline-flex align-items-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary qty-btn"
+                                                                        id="decreaseQuantity<?= $product['product_id'] ?>">-</button>
+                                                                    <input type="number"
+                                                                        name="modal_quantity[<?= $product['product_id'] ?>]"
+                                                                        value="<?= $savedQuantity ?>" min="1" class="form-control qty-input"
+                                                                        id="quantity<?= $product['product_id'] ?>"
+                                                                        style="width: 60px; text-align: center; margin: 0 5px;">
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary qty-btn"
+                                                                        id="increaseQuantity<?= $product['product_id'] ?>">+</button>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="product_discount[<?= $product['product_id'] ?>]"
+                                                                        class="discount-title">Add Discount (₹)</label>
+                                                                    <input type="number"
+                                                                        name="product_discount[<?= $product['product_id'] ?>]"
+                                                                        value="<?= ($savedDiscount / $savedQuantity) ?>" min="0" step="0.01"
+                                                                        placeholder="Discount ₹" class="discount-input">
+                                                                </div>
+
+                                                                <!-- Hidden fields to store discounted prices -->
+                                                                <input type="hidden"
+                                                                    name="discounted_price[<?= $product['product_id'] ?>]"
+                                                                    id="discountedPrice<?= $product['product_id'] ?>"
+                                                                    value="<?= $existingProduct['discounted_price'] ?? 0 ?>">
+                                                                <input type="hidden"
+                                                                    name="discount_amount[<?= $product['product_id'] ?>]"
+                                                                    id="discountAmount<?= $product['product_id'] ?>"
+                                                                    value="<?= $existingProduct['discount'] ?? 0 ?>">
+                                                            </label>
+                                                        </div>
+                                                    <?php endforeach; ?>
+
                                                 </div>
+                                            </div>
 
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary"
-                                                        id="confirmSelectionBtn">Add Selected Products</button>
-                                                </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    id="confirmSelectionBtn">Add Selected Products</button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- Selected Products Table -->
-                                    <div class="form-group">
-                                        <table class="table table-striped price-table">
-                                            <thead>
+                                <!-- Selected Products Table -->
+                                <div class="form-group">
+                                    <table class="table table-striped price-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="table-plus">ID</th>
+                                                <th>Product Name</th>
+                                                <th>Price/Unit</th>
+                                                <th>Discount</th>
+                                                <th>Quantity</th>
+                                                <th>Original Price</th>
+                                                <th>Discounted Price</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productTableBodyedit">
+                                            <?php foreach ($order['product_details'] as $product): ?>
                                                 <tr>
-                                                    <th class="table-plus">ID</th>
-                                                    <th>Product Name</th>
-                                                    <th>Price/Unit</th>
-                                                    <th>Discount</th>
-                                                    <th>Quantity</th>
-                                                    <th>Original Price</th>
-                                                    <th>Discounted Price</th>
-                                                    <th>Action</th>
+                                                    <td><?= $product['product_id'] ?></td>
+                                                    <td><?= $product['product_title'] ?></td>
+                                                    <td>₹<?= $product['selling_price'] ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['selling_price'] * 0.012) : '' ?> </td>
+                                                    <td>₹<?= ($product['discount'] / $product['quantity']) ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['discount'] / $product['quantity'] * 0.012) : '' ?> </td>
+                                                    <td><?= $product['quantity'] ?></td>
+                                                    <td><span style="text-decoration: line-through; color: red;">&#8377;<?= $product['subtotal']  ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['subtotal'] * 0.012) : '' ?> </span></td>
+                                                    <td><span style="font-weight: bold; color: green;">&#8377;<?= $product['discounted_price'] ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['discounted_price'] * 0.012) : '' ?> </span></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="<?= $product['product_id'] ?>">Remove</button>
+                                                    </td>
                                                 </tr>
-                                            </thead>
-                                            <tbody id="productTableBodyedit">
-                                                <?php foreach ($order['product_details'] as $product): ?>
-                                                    <tr>
-                                                        <td><?= $product['product_id'] ?></td>
-                                                        <td><?= $product['product_title'] ?></td>
-                                                        <td>₹<?= $product['selling_price'] ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['selling_price'] * 0.012) : '' ?> </td>
-                                                        <td>₹<?= ($product['discount']/$product['quantity']) ?>  <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['discount']/$product['quantity'] * 0.012) : '' ?> </td>
-                                                        <td><?= $product['quantity'] ?></td>
-                                                        <td><span style="text-decoration: line-through; color: red;">&#8377;<?= $product['subtotal']  ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['subtotal'] * 0.012) : '' ?> </span></td>
-                                                        <td><span style="font-weight: bold; color: green;">&#8377;<?= $product['discounted_price'] ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['discounted_price'] * 0.012) : '' ?> </span></td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="<?= $product['product_id'] ?>">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                                <?=($order['payment_status'] == 'partial_cod' ? 
-                                                    '<tr id="partial_cod_row">
+                                            <?php endforeach; ?>
+                                            <?= ($order['payment_status'] == 'partial_cod' ?
+                                                '<tr id="partial_cod_row">
                                                         <td>#</td>
                                                         <td>Partial COD</td>
-                                                        <td>'.( $order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300').'</td>
-                                                        <td>'.( $order['is_international_order'] == 1 ? '₹0 / $0' : '₹0').'</td>
+                                                        <td>' . ($order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300') . '</td>
+                                                        <td>' . ($order['is_international_order'] == 1 ? '₹0 / $0' : '₹0') . '</td>
                                                         <td>1</td>
-                                                        <td><span style="text-decoration: line-through; color: red;">'.( $order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300').'</span></td>
-                                                        <td><span style="font-weight: bold; color: green;">'.( $order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300').'</span></td>
+                                                        <td><span style="text-decoration: line-through; color: red;">' . ($order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300') . '</span></td>
+                                                        <td><span style="font-weight: bold; color: green;">' . ($order['is_international_order'] == 1 ? '₹1300 / $15.6' : '₹300') . '</span></td>
                                                         <td>
                                                             <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="partial_cod">Remove</button>
                                                         </td>
-                                                    </tr>' : '')?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- Discount Modal -->
-                                    <div class="modal fade" id="discountModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="discountModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="discountModalLabel">Apply Discount</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-
-
-                                                    <!-- Discount Code Options -->
-                                                    <div class="mb-3">
-                                                        <label for="discountOption">Choose Discount Option:</label>
-                                                        <select id="discountOption" class="form-control">
-                                                            <option value="auto">Apply All Eligible Automatic Discounts
-                                                            </option>
-                                                            <option value="custom">Add Custom Order Discount</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <hr>
-
-                                                   <!-- Discount Type -->
-                                                    <label for="discountType">Discount Type:</label>
-                                                    <select id="discountType" name="discount_type" class="form-control">
-                                                        <option value="value" >Value (₹)</option>
-                                                        <option value="percentage">Percentage (%)</option>
-                                                    </select>
-
-                                                    <hr>
-
-                                                    <!-- Discount Amount -->
-                                                    <label for="discountAmount">Enter Discount:</label>
-                                                    <input type="number" id="discountAmount" name="discount_value" value="<?= ( $refirnediscount > 0 ? 0 : $order['discount_amount'])?>" class="form-control" min="0"
-                                                        step="0.01">
-
-                                                    <hr>
-
-                                                    <!-- Discount Code -->
-                                                    <label for="discountCode">Enter Discount Code:</label>
-                                                    <input type="text" id="discountCode" class="form-control"
-                                                        name="discount_code" placeholder="Enter code here">
-
-                                                    <hr>
-
-                                                    <label for="discountReason">Reason for Discount:</label>
-                                                    <textarea id="discountReason" class="form-control form-control-sm"
-                                                        rows="3" name="discount_reason"
-                                                        placeholder="Enter reason for the discount"><?= $order['discount_reason'] ?></textarea>
-
-
-
-                                                    <hr>
-
-
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-secondary me-2"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary" id="applyDiscount">Apply
-                                                        Discount</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <!-- Shipment Modal -->
-                                    <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog" aria-labelledby="shipmentModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <label for="deliveryPartnerSelect">Select Delivery Partner:</label>
-                                                    <select id="deliveryPartnerSelect" class="form-control">
-                                                        <option value="">-- Select a Delivery Partner --</option>
-                                                        <?php foreach ($delivery_partner as $partner): ?>
-                                                            <option 
-                                                                value="<?= $partner['cost'] ?>" 
-                                                                data-pincode="<?= $partner['area_pincode'] ?>" 
-                                                                data-pickup="<?= $partner['pickup'] ?>" 
-                                                                data-delivery="<?= $partner['delivery'] ?>" 
-                                                                data-cod="<?= $partner['cod'] ?>">
-                                                                <?= $partner['delivery_partner'] ?> - ₹<?= $partner['cost'] ?>
-                                                            </option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <label for="gst">GST (%):</label>
-                                                            <input type="number" id="gst" class="form-control" value="18">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="gstCharges">GST value (₹):</label>
-                                                            <input type="number" readonly id="gstCharges" class="form-control" value="0">
-                                                        </div>
-                                                    </div>
-
-                                                    <label for="shipmentChargesModal">Final Shipment Charges (₹):</label>
-                                                    <input type="number" id="shipmentChargesModal" class="form-control" min="0" step="0.01" value="<?= $order['shipping_amount'] ?>">
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-secondary me-2" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary" id="applyShipmentCharges">Apply Charges</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class=" pd-20 card-box mb-30">
-                                    <!-- Table for Price and Discount Info -->
-                                    <table class="table table-bordered table-striped">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th colspan="5" class="text-center"
-                                                    style="font-size: 16px; font-weight: bold;">Price Details</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">Total Discount Applied</th>
-                                                <td id="totalDiscountAppliedDisplay" class="text-right">₹<?= $order['discount_amount'] ?> <?= ( ($refirnediscount > 0) ? '(Product Level)' : '(Invoice Level)') ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">CGST (6%)</th>
-                                                <td id="cgstDisplay"  class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['cgst'] ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">SGST (6%)</th>
-                                                <td id="sgstDisplay"   class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['sgst'] ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">IGST (12%)</th>
-                                                <td id="igstDisplay"   class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['igst'] ?></td>
-                                            </tr>
-
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">Shipment Charges</th>
-                                                <td id="shipmentChargesDisplay" class="text-right">₹<?= $order['shipping_amount'] ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="4" style="font-size: 14px;">Total</th>
-                                                <td id="totalPriceedit" class="text-right">₹<?= $order['total_amount'] ?>  <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? $order['usd_total'] : '' ?> </td>
-                                            </tr>
-                                        </tfoot>
+                                                    </tr>' : '') ?>
+                                        </tbody>
                                     </table>
-                                    <p id="saved"></p>
                                 </div>
-
-
-
-
-                                
-
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue mb-30">Payment</p>
-                                    <div class="row">
-                                        <div class="col-md" <?= $order['is_international_order'] == 1 ? '' : 'style="display: none;"' ?> id="international-currency">
-                                            <div class="form-group">
-                                                <label for="currency">Currency</label>
-                                                <select class="form-control" name="currency"
-                                                    style="width: 100%; height: 50px;" id="currency" required>
-                                                    <option value="INR"  <?= $order['currency'] == 'INR' ? 'selected' : '' ?>>INR</option>
-                                                    <option value="USD"  <?= $order['currency'] == 'USD' ? 'selected' : '' ?>>USD</option>
-                                                </select>
+                                <!-- Discount Modal -->
+                                <div class="modal fade" id="discountModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="discountModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="discountModalLabel">Apply Discount</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
                                             </div>
-                                        </div>
-                                        <!-- Payment Method Section -->
-                                        <div class="col-md">
-                                            <div class="form-group">
-                                                <label for="paymentMethodSelect">Select Payment Mode</label>
-                                                <div class="input-group">
-                                                    <select class="form-control rounded" name="payment-method" 
-                                                        style="width: 100%; height: 50px;" id="paymentMethodSelect">
-                                                        <option value="cash" <?= $order['payment_method'] == 'cash' ? 'selected' : '' ?>>Cash</option>
-                                                        <option value="link" <?= $order['payment_method'] == 'link' ? 'selected' : '' ?>>Gateway</option>
-                                                        <option value="bank" <?= $order['payment_method'] == 'bank' ? 'selected' : '' ?>>Net Banking / UPI</option>
+                                            <div class="modal-body">
+
+
+                                                <!-- Discount Code Options -->
+                                                <div class="mb-3">
+                                                    <label for="discountOption">Choose Discount Option:</label>
+                                                    <select id="discountOption" class="form-control">
+                                                        <option value="auto">Apply All Eligible Automatic Discounts
+                                                        </option>
+                                                        <option value="custom">Add Custom Order Discount</option>
                                                     </select>
-                                                    <input class="form-control" value="<?= $order['payment_ref'] ?>" 
-                                                        style="height: 50px; display: <?= $order['payment_method'] !== 'cash' ? 'block' : 'none'; ?>" 
-                                                        placeholder="Ref No" type="text" id="ref_no" name="ref_no" 
-                                                        <?= $order['payment_method'] === 'bank' ? 'required' : '' ?>>
                                                 </div>
-                                            </div>
-                                        </div>
 
-                                        <!-- Payment Status Section -->
-                                        <div class="col-md">
-                                            <div class="form-group">
-                                                <label for="paymentStatusSelect">Payment Status</label>
-                                                <select class="form-control" name="payment-status"
-                                                    style="width: 100%; height: 50px;" id="paymentStatusSelect" required>
-                                                    <option value="Pending"  <?= $order['payment_status'] == 'Pending' ? 'selected' : '' ?>>Pending</option>
-                                                    <option value="Paid" <?= $order['payment_status'] == 'Paid' ? 'selected' : '' ?>>Prepaid</option>
-                                                    <option value="partial_cod" <?= $order['payment_status'] == 'partial_cod' ? 'selected' : '' ?>>Partial COD</option>
+                                                <hr>
+
+                                                <!-- Discount Type -->
+                                                <label for="discountType">Discount Type:</label>
+                                                <select id="discountType" name="discount_type" class="form-control">
+                                                    <option value="value">Value (₹)</option>
+                                                    <option value="percentage">Percentage (%)</option>
                                                 </select>
-                                                <div class="invalid-feedback">
-                                                    Please select payment status.
-                                                </div>
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
+
+                                                <hr>
+
+                                                <!-- Discount Amount -->
+                                                <label for="discountAmount">Enter Discount:</label>
+                                                <input type="number" id="discountAmount" name="discount_value" value="<?= ($refirnediscount > 0 ? 0 : $order['discount_amount']) ?>" class="form-control" min="0"
+                                                    step="0.01">
+
+                                                <hr>
+
+                                                <!-- Discount Code -->
+                                                <label for="discountCode">Enter Discount Code:</label>
+                                                <input type="text" id="discountCode" class="form-control"
+                                                    name="discount_code" placeholder="Enter code here">
+
+                                                <hr>
+
+                                                <label for="discountReason">Reason for Discount:</label>
+                                                <textarea id="discountReason" class="form-control form-control-sm"
+                                                    rows="3" name="discount_reason"
+                                                    placeholder="Enter reason for the discount"><?= $order['discount_reason'] ?></textarea>
+
+
+
+                                                <hr>
+
+
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-end">
+                                                <button type="button" class="btn btn-secondary me-2"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" id="applyDiscount">Apply
+                                                    Discount</button>
                                             </div>
                                         </div>
                                     </div>
@@ -552,74 +402,222 @@
 
 
 
+                                <!-- Shipment Modal -->
+                                <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog" aria-labelledby="shipmentModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label for="deliveryPartnerSelect">Select Delivery Partner:</label>
+                                                <select id="deliveryPartnerSelect" class="form-control">
+                                                    <option value="">-- Select a Delivery Partner --</option>
+                                                    <?php foreach ($delivery_partner as $partner): ?>
+                                                        <option
+                                                            value="<?= $partner['cost'] ?>"
+                                                            data-pincode="<?= $partner['area_pincode'] ?>"
+                                                            data-pickup="<?= $partner['pickup'] ?>"
+                                                            data-delivery="<?= $partner['delivery'] ?>"
+                                                            data-cod="<?= $partner['cod'] ?>">
+                                                            <?= $partner['delivery_partner'] ?> - ₹<?= $partner['cost'] ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label for="gst">GST (%):</label>
+                                                        <input type="number" id="gst" class="form-control" value="18">
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="gstCharges">GST value (₹):</label>
+                                                        <input type="number" readonly id="gstCharges" class="form-control" value="0">
+                                                    </div>
+                                                </div>
 
+                                                <label for="shipmentChargesModal">Final Shipment Charges (₹):</label>
+                                                <input type="number" id="shipmentChargesModal" class="form-control" min="0" step="0.01" value="<?= $order['shipping_amount'] ?>">
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-end">
+                                                <button type="button" class="btn btn-secondary me-2" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" id="applyShipmentCharges">Apply Charges</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="col-md-3">
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue mb-30 d-flex justify-content-between align-items-center">
-                                        Select /Add Customer
-                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#addCustomerModal">
-                                            <i class="fas fa-plus"></i> <!-- Plus icon -->
-                                        </button>
-                                    </p>
+                            <div class=" pd-20 card-box mb-30">
+                                <!-- Table for Price and Discount Info -->
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th colspan="5" class="text-center"
+                                                style="font-size: 16px; font-weight: bold;">Price Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">Total Discount Applied</th>
+                                            <td id="totalDiscountAppliedDisplay" class="text-right">₹<?= $order['discount_amount'] ?> <?= (($refirnediscount > 0) ? '(Product Level)' : '(Invoice Level)') ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">CGST (6%)</th>
+                                            <td id="cgstDisplay" class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['cgst'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">SGST (6%)</th>
+                                            <td id="sgstDisplay" class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['sgst'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">IGST (12%)</th>
+                                            <td id="igstDisplay" class="text-right"><?= $order['is_international_order'] == 1 ? 'Not Applicable' : '₹' . $order['igst'] ?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">Shipment Charges</th>
+                                            <td id="shipmentChargesDisplay" class="text-right">₹<?= $order['shipping_amount'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" style="font-size: 14px;">Total</th>
+                                            <td id="totalPriceedit" class="text-right">₹<?= $order['total_amount'] ?> <?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? $order['usd_total'] : '' ?> </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <p id="saved"></p>
+                            </div>
 
 
-                                    <div class="form-group">
-                                        <label for="CustomerSelect">Select</label>
-                                        <select class="custom-select2 form-control" name="order-customer-name"
-                                            style="width: 100%; height: 38px" id="CustomerSelect" required>
-                                            <option value="">Select</option>
-                                            <?php foreach ($users as $user): ?>
-                                                <option value="<?= $user['user_id'] ?>" <?= $order['user_id'] == $user['user_id'] ? 'selected' : '' ?>><?= $user['name'] ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        <div class="invalid-feedback">Select Customer</div>
-                                        <div class="valid-feedback">Looks good!</div>
+
+
+
+
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue mb-30">Payment</p>
+                                <div class="row">
+                                    <div class="col-md" <?= $order['is_international_order'] == 1 ? '' : 'style="display: none;"' ?> id="international-currency">
+                                        <div class="form-group">
+                                            <label for="currency">Currency</label>
+                                            <select class="form-control" name="currency"
+                                                style="width: 100%; height: 50px;" id="currency" required>
+                                                <option value="INR" <?= $order['currency'] == 'INR' ? 'selected' : '' ?>>INR</option>
+                                                <option value="USD" <?= $order['currency'] == 'USD' ? 'selected' : '' ?>>USD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Payment Method Section -->
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="paymentMethodSelect">Select Payment Mode</label>
+                                            <div class="input-group">
+                                                <select class="form-control rounded" name="payment-method"
+                                                    style="width: 100%; height: 50px;" id="paymentMethodSelect">
+                                                    <option value="cash" <?= $order['payment_method'] == 'cash' ? 'selected' : '' ?>>Cash</option>
+                                                    <option value="link" <?= $order['payment_method'] == 'link' ? 'selected' : '' ?>>Gateway</option>
+                                                    <option value="bank" <?= $order['payment_method'] == 'bank' ? 'selected' : '' ?>>Net Banking / UPI</option>
+                                                </select>
+                                                <input class="form-control" value="<?= $order['payment_ref'] ?>"
+                                                    style="height: 50px; display: <?= $order['payment_method'] !== 'cash' ? 'block' : 'none'; ?>"
+                                                    placeholder="Ref No" type="text" id="ref_no" name="ref_no"
+                                                    <?= $order['payment_method'] === 'bank' ? 'required' : '' ?>>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="orderCustomerPhone">Phone No.</label>
-                                        <input class="form-control" type="text" name="order-customer-phone" 
+                                    <!-- Payment Status Section -->
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="paymentStatusSelect">Payment Status</label>
+                                            <select class="form-control" name="payment-status"
+                                                style="width: 100%; height: 50px;" id="paymentStatusSelect" required>
+                                                <option value="Pending" <?= $order['payment_status'] == 'Pending' ? 'selected' : '' ?>>Pending</option>
+                                                <option value="Paid" <?= $order['payment_status'] == 'Paid' ? 'selected' : '' ?>>Prepaid</option>
+                                                <option value="partial_cod" <?= $order['payment_status'] == 'partial_cod' ? 'selected' : '' ?>>Partial COD</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select payment status.
+                                            </div>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue mb-30 d-flex justify-content-between align-items-center">
+                                    Select/Add Customer
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                        data-target="#addCustomerModal">
+                                        <i class="fas fa-plus"></i> <!-- Plus icon -->
+                                    </button>
+                                </p>
+
+
+                                <div class="form-group">
+                                    <label for="CustomerSelect">Select</label>
+                                    <select class="custom-select2 form-control" name="order-customer-name"
+                                        style="width: 100%; height: 38px" id="CustomerSelect" required>
+                                        <option value="">Select</option>
+                                        <?php foreach ($users as $user): ?>
+                                            <option value="<?= $user['user_id'] ?>" <?= $order['user_id'] == $user['user_id'] ? 'selected' : '' ?>><?= $user['name'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <div class="invalid-feedback">SelectCustomer</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="orderCustomerPhone">Phone No.</label>
+                                    <input class="form-control" type="text" name="order-customer-phone"
                                         id="orderCustomerPhone" value="<?= $order['customer_phone'] ?>" />
 
-                                        <label for="orderCustomerEmail">E-Mail</label>
-                                        <input class="form-control" type="text" name="order-customer-email" 
+                                    <label for="orderCustomerEmail">E-Mail</label>
+                                    <input class="form-control" type="text" name="order-customer-email"
                                         id="orderCustomerEmail" value="<?= $order['customer_email'] ?>" />
 
-                                        <label for="Pincode">Pincode</label>
-                                        <input class="form-control" type="number" name="pincode"
-                                         id="orderCustomerPincode" value="<?= $order['pincode'] ?>" />
+                                    <label for="Pincode">Pincode</label>
+                                    <input class="form-control" type="number" name="pincode"
+                                        id="orderCustomerPincode" value="<?= $order['pincode'] ?>" />
 
-                                        <label for="customer-city">City</label>
-                                        <input class="form-control" type="text" name="order-city"  value="<?= $order['city'] ?>"
-                                         id="orderCustomerCity"  />
+                                    <label for="customer-city">City</label>
+                                    <input class="form-control" type="text" name="order-city" value="<?= $order['city'] ?>"
+                                        id="orderCustomerCity" />
 
-                                        <label for="customer-state">State</label>
-                                        <input class="form-control" type="text" name="order-state"  value="<?= $order['state'] ?>"
-                                        id="orderCustomerState"   />  
+                                    <label for="customer-state">State</label>
+                                    <input class="form-control" type="text" name="order-state" value="<?= $order['state'] ?>"
+                                        id="orderCustomerState" />
 
-                                        <div  <?= $order['is_international_order'] == 1 ? '' : 'style="display: none;"' ?>  id="international-country">
-                                            <label for="country">Country</label>
-                                            <input class="form-control" type="text" name="country"
-                                             id="orderCustomerCountry" value="<?= $order['country'] ?>" >
-                                        </div>
-
-                                        <label for="address_information">Address</label>
-                                        <textarea class="form-control" name="address_information"
-                                            id="orderCustomerAddress"><?= $order['customer_address'] ?></textarea>
-
-                                            
-                                        <label for="order-customergstin">GSTIN</label>
-                                        <input type="text" class="form-control" value="<?= $order['customer_gstin'] ?>" id="orderCustomergstin" name="order-customergstin" >
-                            
+                                    <div <?= $order['is_international_order'] == 1 ? '' : 'style="display: none;"' ?> id="international-country">
+                                        <label for="country">Country</label>
+                                        <input class="form-control" type="text" name="country"
+                                            id="orderCustomerCountry" value="<?= $order['country'] ?>">
                                     </div>
+
+                                    <label for="address_information">Address</label>
+                                    <textarea class="form-control" name="address_information"
+                                        id="orderCustomerAddress"><?= $order['customer_address'] ?></textarea>
+
+
+                                    <label for="order-customergstin">GSTIN</label>
+                                    <input type="text" class="form-control" value="<?= $order['customer_gstin'] ?>" id="orderCustomergstin" name="order-customergstin">
+
                                 </div>
                             </div>
                         </div>
-                    </form>
-                
+                    </div>
+                </form>
+
             </div>
         </div>
         <!-- Page Main Content End -->
@@ -659,7 +657,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="customergstin">GSTIN</label>
-                                <input type="text" class="form-control" id="customergstin" name="customergstin" >
+                                <input type="text" class="form-control" id="customergstin" name="customergstin">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -716,7 +714,7 @@
         const discountOptionSelect = document.getElementById('discountOption'); // Discount option selector
         const customDiscountSection = document.getElementById('customDiscountSection'); // Custom discount section
         const shipmentModal = document.getElementById('shipmentModal'); // Shipment modal
-        const discountTypeSelect = document.getElementById('discountType');  // Discount type (percentage/fixed)
+        const discountTypeSelect = document.getElementById('discountType'); // Discount type (percentage/fixed)
         const partialCodId = 'partial_cod_row'; // Unique ID for the Partial COD row
         const partialCodAmount = 300; // Fixed Partial COD amount
         const paymentMethodSelect = document.getElementById("paymentMethodSelect");
@@ -736,29 +734,8 @@
         let shipmentCharges = 0; // Variable for shipment charges 
         let discountAppliedAt = 'invoice';
 
-        // Add this JavaScript code
-        document.getElementById('newcollectionsview').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Check if any products are selected
-            const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
-            const customer  = document.querySelectorAll('input[name="order-customer-name"]');
-            
-            if (selectedProducts.length === 0) {
-                alert('Please select at least one product before publishing the order.');
-                return false;
-            }
-            if (customer.length === 0) {
-                alert('Please select customer before publishing the order.');
-                return false;
-            }
-            
-            // If products are selected, proceed with form submission
-            this.submit();
-        });
 
-
-        paymentMethodSelect.addEventListener("change", function () {
+        paymentMethodSelect.addEventListener("change", function() {
             if (paymentMethodSelect.value === "link") {
                 //openRazorpayCheckout();
                 refNoInput.style.display = "none";
@@ -804,7 +781,7 @@
             }
         }
 
-                /**
+        /**
          * Removes the Partial COD row from the product table.
          */
         function removePartialCodRow() {
@@ -865,7 +842,9 @@
 
 
         function calculateGST(totalDiscountedPrice) {
-            let cgst = 0, sgst = 0, igst = 0;
+            let cgst = 0,
+                sgst = 0,
+                igst = 0;
             const isInternational = internationalCheckbox.checked;
 
 
@@ -888,8 +867,7 @@
                     document.getElementById('sgst').value = 0;
                     document.getElementById('igst').value = 0;
                 }
-            }
-            else{
+            } else {
                 if (CustomerState.value === 'Maharashtra') {
                     cgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
                     sgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
@@ -945,7 +923,7 @@
                 customDiscountSection.style.display = 'block'; // Show custom discount section
             }
         }
-        
+
 
         internationalCheckbox.addEventListener('change', () => {
             preserveSelectedProducts();
@@ -975,7 +953,7 @@
                 totalDiscountedPrice += subtotal;
 
                 discountOnProduct += productDiscount * productQuantity;
-                
+
 
                 const productRow = document.createElement('tr');
                 productRow.innerHTML = `
@@ -993,13 +971,13 @@
                 productTableBody.appendChild(productRow);
             });
 
-            
+
 
             const gstAmount = calculateGST(totalDiscountedPrice);
             const Total = totalDiscountedPrice + discountOnProduct + totalDiscount + shipmentCharges;
             const finalTotal = totalDiscountedPrice + shipmentCharges;
-            
-            
+
+
             /*
             // Apply total discount if set
             if (discountAppliedAt === 'invoice') {
@@ -1030,14 +1008,14 @@
             //document.getElementById('finalTotalPrice').value = totalDiscountedPrice.toFixed(2);
             document.getElementById('finalShipmentCharges').value = shipmentCharges.toFixed(2);
             document.getElementById('finalTotalDiscount').value = totalDiscount.toFixed(2);
-            if(Total != finalTotal){
+            if (Total != finalTotal) {
                 document.getElementById('saved').innerHTML = `You saved <span style="font-weight: bold; color: green;">${( isInternational ? `$${((Total - finalTotal) * USD_EXCHANGE_RATE).toFixed(2)}` : `₹${(Total - finalTotal).toFixed(2)}`)} </span>`;
             }
         }
-        
+
         paymentStatusSelect.addEventListener('change', () => {
             if (paymentStatusSelect.value === 'partial_cod') {
-                
+
                 addOrUpdatePartialCodRow();
             } else {
                 removePartialCodRow();
@@ -1085,7 +1063,7 @@
                 totalDiscount = parseFloat(discountAmountInput.value) || 0;
                 discountAppliedAt = 'invoice';
                 selectedProducts.forEach(product => (product.discount = 0)); // Reset product-level discounts
-                
+
             } else if (type === 'product') {
                 totalDiscount = 0; // Reset invoice-level discount
                 discountAppliedAt = 'product';
@@ -1107,7 +1085,7 @@
             }
 
             // Example: Updating discount fields dynamically
-            productTableBody.addEventListener('change', function (event) {
+            productTableBody.addEventListener('change', function(event) {
                 const target = event.target;
                 if (event.target.name.startsWith('product_discount')) {
                     applyDiscount('product');
@@ -1154,7 +1132,7 @@
             syncCheckboxes(); // Sync checkboxes
             $('#productModal').modal('hide');
         });
-        
+
 
         // Initialize Select2 for Delivery Partner with z-index fix
         $('#deliveryPartnerSelect').select2({
@@ -1165,7 +1143,7 @@
             escapeMarkup: (markup) => markup, // Allow custom HTML rendering
             templateResult: formatDeliveryPartner, // Custom display for dropdown
             templateSelection: formatDeliveryPartnerSelection, // Custom display for selected item
-            matcher: function (params, data) {
+            matcher: function(params, data) {
                 if ($.trim(params.term) === '') {
                     return data;
                 }
@@ -1187,28 +1165,28 @@
         function calculateAndUpdateGST() {
             const baseAmount = parseFloat($('#deliveryPartnerSelect').val()) || 0;
             const gstPercentage = parseFloat($('#gst').val()) || 18;
-            
+
             // Calculate GST amount
             const gstAmount = (baseAmount * gstPercentage) / 100;
-            
+
             // Calculate final amount including GST
             const finalAmount = baseAmount + gstAmount;
-            
+
             // Update the GST charges input
             $('#gstCharges').val(gstAmount.toFixed(2));
-            
+
             // Update the final shipment charges
             $('#shipmentChargesModal').val(finalAmount.toFixed(2));
         }
 
         // Event Listener for Delivery Partner Selection
-        $('#deliveryPartnerSelect').on('select2:select', function (e) {
+        $('#deliveryPartnerSelect').on('select2:select', function(e) {
             const selectedOption = e.params.data.element;
             const selectedCost = $(selectedOption).val();
             const pickup = ($(selectedOption.element).data('pickup') || '').toLowerCase();
             const delivery = ($(selectedOption.element).data('delivery') || '').toLowerCase();
             const cod = ($(selectedOption.element).data('cod') || '').toLowerCase();
-            
+
             $('#shipmentChargesModal').val(selectedCost);
             calculateAndUpdateGST();
             /*
@@ -1223,7 +1201,7 @@
         });
 
         // Event Listener to clear shipment charges when dropdown is cleared
-        $('#deliveryPartnerSelect').on('select2:clear', function () {
+        $('#deliveryPartnerSelect').on('select2:clear', function() {
             $('#gstCharges').val('0');
             $('#shipmentChargesModal').val('0');
         });
@@ -1268,7 +1246,7 @@
         });
 
         // Remove product from the table
-        productTableBody.addEventListener('click', function (e) {
+        productTableBody.addEventListener('click', function(e) {
             if (e.target.classList.contains('remove-product-btn')) {
                 const productId = e.target.getAttribute('data-product-id');
 
@@ -1285,18 +1263,20 @@
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Handle customer selection
-            $('#CustomerSelect').change(function () {
+            $('#CustomerSelect').change(function() {
                 var userId = $(this).val();
 
                 if (userId) {
                     $.ajax({
                         url: "<?= base_url('getCustomerDetails') ?>",
                         type: "GET",
-                        data: { user_id: userId },
+                        data: {
+                            user_id: userId
+                        },
                         dataType: "json",
-                        success: function (data) {
+                        success: function(data) {
                             if (data) {
                                 $('#orderCustomerPhone').val(data.phone_no);
                                 $('#orderCustomerEmail').val(data.email);
@@ -1316,7 +1296,7 @@
                                 clearCustomerFields();
                             }
                         },
-                        error: function () {
+                        error: function() {
                             console.error('An error occurred while fetching customer details.');
                             clearCustomerFields();
                         }
@@ -1327,12 +1307,12 @@
             });
 
             // Handle pincode input for autofetch city and state
-            $('#orderCustomerPincode').on('input', function () {
+            $('#orderCustomerPincode').on('input', function() {
                 const pincode = $(this).val();
                 if (pincode.length === 6) {
                     fetchCityStateByPincode(pincode);
                 } else {
-                    
+
                 }
             });
 
@@ -1341,7 +1321,7 @@
                     url: `<?= base_url('getCityStateByPincode/') ?>${pincode}`,
                     type: "GET",
                     dataType: "json",
-                    success: function (data) {
+                    success: function(data) {
                         if (data.city && data.state) {
                             $('#orderCustomerCity').val(data.city);
                             $('#orderCustomerState').val(data.state);
@@ -1350,13 +1330,13 @@
                             updateProductTable(); // Recalculate total after removing a product
                             syncCheckboxes();
                         } else {
-                            
+
                             alert('City and State not found for the given Pincode.');
                         }
                     },
-                    error: function () {
+                    error: function() {
                         console.error('Error fetching city and state for the pincode.');
-                        
+
                     }
                 });
             }
@@ -1389,12 +1369,12 @@
                 }
 
                 fetch('<?= base_url('discount/applyDiscount') ?>', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'discountCode=' + encodeURIComponent(discountCode)
-                })
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'discountCode=' + encodeURIComponent(discountCode)
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
@@ -1460,7 +1440,7 @@
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         let duplicateCount = 1; // Counter for duplicate forms
 
         // Detect if the page is refreshed
@@ -1479,7 +1459,7 @@
         }
 
         // When the Duplicate button is clicked
-        $('#duplicateFormBtn').click(function () {
+        $('#duplicateFormBtn').click(function() {
             // Save current form data
             var formData = $('#newcollectionsview').serializeArray();
             var tableData = $('#productTableBodyedit').html();
@@ -1531,7 +1511,7 @@
             var totalPrice = sessionStorage.getItem(type + 'TotalPrice');
 
             // Restore form fields
-            formData.forEach(function (item) {
+            formData.forEach(function(item) {
                 var element = $('[name="' + item.name + '"]');
                 if (element.attr('type') === 'checkbox' || element.attr('type') === 'radio') {
                     element.prop('checked', element.val() === item.value);
@@ -1551,11 +1531,14 @@
         // Function to add a "Back to First Form" button
         function addBackToFirstFormButton() {
             var backButton = $('<button class="btn btn-light" id="backToFirstFormBtn">Back to First Form</button>');
-            backButton.css({ margin: '20px 0', display: 'block' });
+            backButton.css({
+                margin: '20px 0',
+                display: 'block'
+            });
             $('#newcollectionsview').before(backButton);
 
             // On click, load the original form data
-            backButton.click(function () {
+            backButton.click(function() {
                 // Clear duplicate data
                 sessionStorage.removeItem('duplicatedFormData');
                 sessionStorage.removeItem('duplicatedTableData');
@@ -1572,7 +1555,10 @@
         // Function to add a title for the duplicated form
         function addDuplicateTitle(duplicateNumber) {
             var title = $('<h3 class="form-title">Form Duplicate #' + duplicateNumber + '</h3>');
-            title.css({ margin: '10px 0', color: '#333' });
+            title.css({
+                margin: '10px 0',
+                color: '#333'
+            });
             $('#newcollectionsview').before(title);
         }
     });
@@ -1580,8 +1566,8 @@
 
 <script>
     // Decrease quantity button functionality
-    document.querySelectorAll('.qty-btn').forEach(function (button) {
-        button.addEventListener('click', function () {
+    document.querySelectorAll('.qty-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
             var quantityInput = this.closest('.quantity-control').querySelector('.qty-input');
             var currentQuantity = parseInt(quantityInput.value);
 
@@ -1592,7 +1578,6 @@
             }
         });
     });
-
 </script>
 
 <style>
@@ -1656,7 +1641,7 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const pincodeInput = document.getElementById('pincode');
         const customerCityInput = document.createElement('input');
         const customerStateInput = document.createElement('input');
@@ -1683,7 +1668,7 @@
         `;
         cityGroup.after(stateGroup);
 
-        pincodeInput.addEventListener('input', function () {
+        pincodeInput.addEventListener('input', function() {
             const pincode = pincodeInput.value;
 
             if (pincode.length === 6) {
