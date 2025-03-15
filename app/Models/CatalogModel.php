@@ -23,6 +23,12 @@ class CatalogModel extends Model
         'select_company',
         'select_customer_segment', 
         'product_rules',
+        'change_log',        
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'added_by',
+        'updated_by',
     ];
     protected $useTimestamps = true;
 }

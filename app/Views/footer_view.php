@@ -2601,3 +2601,88 @@
     });
   }
 </script>
+
+
+
+
+
+
+<!--------------------------------------------------------------- Catalog --------------------------------------------------------------------------------------------------------->
+
+<script>
+  function confirmCatalogDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This action will mark the catalog as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('catalog/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmCatalogRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this catalog?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('catalog/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!--------------------------------------------------------------- Related Products --------------------------------------------------------------------------------------------------------->
+
+<script>
+  function confirmRelatedProductDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the product as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.post("<?= base_url('relatedproduct/deleteProduct') ?>", { product_id: id }, function (response) {
+          if (response.status === 'success') {
+            Swal.fire('Deleted!', response.message, 'success').then(() => location.reload());
+          } else {
+            Swal.fire('Error!', response.message, 'error');
+          }
+        }, 'json');
+      }
+    });
+  }
+
+  function confirmRelatedProductRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this product?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('relatedproduct/restore/') ?>" + id;
+      }
+    });
+  }
+</script>

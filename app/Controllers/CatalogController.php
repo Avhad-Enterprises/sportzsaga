@@ -42,6 +42,9 @@ class CatalogController extends Controller
         $companyModel = new \App\Models\CompanyModel();
         $segmentModel = new \App\Models\CustomerSegmentModel();
 
+        $session = session();
+        $userName = $session->get('admin_name'); // ✅ Get the logged-in user's name
+
         if ($this->request->getMethod() === 'post') {
             // Basic catalog data
             $catalogData = [
@@ -50,6 +53,8 @@ class CatalogController extends Controller
                 'discount_value' => (float) ($this->request->getPost('discount_value') ?? 0),
                 'overall_adjustment' => $this->request->getPost('overall_adjustment') ?? '',
                 'status' => $this->request->getPost('status') ?? 'inactive',
+                'added_by' => $userName, // ✅ Store the username who is adding this catalog
+                'created_at' => date('Y-m-d H:i:s'),
             ];
 
             // Handle arrays
@@ -61,34 +66,24 @@ class CatalogController extends Controller
             $productRules = $this->request->getPost('product_rules') ?? [];
             $processedProductRules = [];
             $selectedProducts = [];
-            $quantityRules = [
-                'increment' => 0,
-                'minimum' => 0,
-                'maximum' => 0
-            ];
+            $quantityRules = ['increment' => 0, 'minimum' => 0, 'maximum' => 0];
 
             if (is_array($productRules)) {
                 foreach ($productRules as $rule) {
                     if (isset($rule['product_id'])) {
-                        // Add to processed product rules array
                         $processedProductRules[] = [
                             'product_id' => $rule['product_id'],
                             'increment' => (int) ($rule['increment'] ?? 0),
                             'minimum' => (int) ($rule['minimum'] ?? 0),
                             'maximum' => (int) ($rule['maximum'] ?? 0),
                             'quantity' => (int) ($rule['quantity'] ?? 0),
-                            'price' => (float) ($rule['price'] ?? 0)
+                            'price' => (float) ($rule['price'] ?? 0),
                         ];
-
-                        // Add to selected products array
                         $selectedProducts[] = $rule['product_id'];
-
-                        // Update quantity rules with the last entry's values
-                        // You might want to modify this logic if you need different behavior
                         $quantityRules = [
                             'increment' => (int) ($rule['increment'] ?? 0),
                             'minimum' => (int) ($rule['minimum'] ?? 0),
-                            'maximum' => (int) ($rule['maximum'] ?? 0)
+                            'maximum' => (int) ($rule['maximum'] ?? 0),
                         ];
                     }
                 }
@@ -173,6 +168,7 @@ class CatalogController extends Controller
     }
 
 
+
     public function index()
     {
         $catalogModel = new CatalogModel();
@@ -182,7 +178,7 @@ class CatalogController extends Controller
         $db = db_connect();
 
         // Fetch all catalogs
-        $catalogs = $catalogModel->findAll();
+        $catalogs = $catalogModel->where('is_deleted', 0)->findAll();
 
         // Fetch product names for each catalog
         foreach ($catalogs as &$catalog) {
@@ -261,15 +257,26 @@ class CatalogController extends Controller
     {
         $catalogModel = new CatalogModel();
         $productModel = new \App\Models\ProductModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Fetch existing catalog data before update
+        $existingCatalog = $catalogModel->find($id);
+
+        if (!$existingCatalog) {
+            return redirect()->to('catalog_view')->with('error', 'Catalog not found.');
+        }
 
         if ($this->request->getMethod() === 'post') {
             // Basic catalog data
-            $catalogData = [
+            $newData = [
                 'catalog_name' => $this->request->getPost('catalog_name') ?? '',
                 'discount_type' => $this->request->getPost('discount_type') ?? '',
                 'discount_value' => (float) ($this->request->getPost('discount_value') ?? 0),
                 'overall_adjustment' => $this->request->getPost('overall_adjustment') ?? '',
                 'status' => $this->request->getPost('status') ?? 'inactive',
+                'updated_by' => $userId,
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             // Handle arrays
@@ -281,33 +288,24 @@ class CatalogController extends Controller
             $productRules = $this->request->getPost('product_rules') ?? [];
             $processedProductRules = [];
             $selectedProducts = [];
-            $quantityRules = [
-                'increment' => 0,
-                'minimum' => 0,
-                'maximum' => 0
-            ];
+            $quantityRules = ['increment' => 0, 'minimum' => 0, 'maximum' => 0];
 
             if (is_array($productRules)) {
                 foreach ($productRules as $rule) {
                     if (isset($rule['product_id'])) {
-                        // Add to processed product rules array
                         $processedProductRules[] = [
                             'product_id' => $rule['product_id'],
                             'increment' => (int) ($rule['increment'] ?? 0),
                             'minimum' => (int) ($rule['minimum'] ?? 0),
                             'maximum' => (int) ($rule['maximum'] ?? 0),
                             'quantity' => (int) ($rule['quantity'] ?? 0),
-                            'price' => (float) ($rule['price'] ?? 0)
+                            'price' => (float) ($rule['price'] ?? 0),
                         ];
-
-                        // Add to selected products array
                         $selectedProducts[] = $rule['product_id'];
-
-                        // Update quantity rules with the last entry's values
                         $quantityRules = [
                             'increment' => (int) ($rule['increment'] ?? 0),
                             'minimum' => (int) ($rule['minimum'] ?? 0),
-                            'maximum' => (int) ($rule['maximum'] ?? 0)
+                            'maximum' => (int) ($rule['maximum'] ?? 0),
                         ];
                     }
                 }
@@ -337,17 +335,17 @@ class CatalogController extends Controller
                     $currentSellingPrice = (float) ($product['selling_price'] ?? 0);
                     $calculatedSellingPrice = $currentSellingPrice;
 
-                    if ($catalogData['overall_adjustment'] === 'decrease') {
-                        if ($catalogData['discount_type'] === 'percent') {
-                            $calculatedSellingPrice -= ($currentSellingPrice * $catalogData['discount_value']) / 100;
+                    if ($newData['overall_adjustment'] === 'decrease') {
+                        if ($newData['discount_type'] === 'percent') {
+                            $calculatedSellingPrice -= ($currentSellingPrice * $newData['discount_value']) / 100;
                         } else {
-                            $calculatedSellingPrice -= $catalogData['discount_value'];
+                            $calculatedSellingPrice -= $newData['discount_value'];
                         }
-                    } elseif ($catalogData['overall_adjustment'] === 'increase') {
-                        if ($catalogData['discount_type'] === 'percent') {
-                            $calculatedSellingPrice += ($currentSellingPrice * $catalogData['discount_value']) / 100;
+                    } elseif ($newData['overall_adjustment'] === 'increase') {
+                        if ($newData['discount_type'] === 'percent') {
+                            $calculatedSellingPrice += ($currentSellingPrice * $newData['discount_value']) / 100;
                         } else {
-                            $calculatedSellingPrice += $catalogData['discount_value'];
+                            $calculatedSellingPrice += $newData['discount_value'];
                         }
                     }
 
@@ -357,51 +355,109 @@ class CatalogController extends Controller
             }
 
             // Prepare final catalog data
-            $catalogData['products'] = implode(',', $selectedProducts);
-            $catalogData['publish_for'] = implode(',', $publishFor);
-            $catalogData['selling_price'] = json_encode($updatedSellingPrices);
-            $catalogData['product_rules'] = json_encode($processedProductRules);
-            $catalogData['quantity_rules'] = json_encode($quantityRules);
-            $catalogData['volume_pricing'] = json_encode($processedVolumePricing);
-            $catalogData['select_customer_segment'] = implode(',', $selectcustomersegment);
-            $catalogData['select_company'] = implode(',', $selectcompany);
+            $newData['products'] = implode(',', $selectedProducts);
+            $newData['publish_for'] = implode(',', $publishFor);
+            $newData['selling_price'] = json_encode($updatedSellingPrices);
+            $newData['product_rules'] = json_encode($processedProductRules);
+            $newData['quantity_rules'] = json_encode($quantityRules);
+            $newData['volume_pricing'] = json_encode($processedVolumePricing);
+            $newData['select_customer_segment'] = implode(',', $selectcustomersegment);
+            $newData['select_company'] = implode(',', $selectcompany);
 
-            try {
-                // Validate required fields
-                if (empty($catalogData['catalog_name'])) {
-                    return redirect()->back()->with('error', 'Catalog name is required.');
+            // ✅ **Track Changes**
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if ($existingCatalog[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $existingCatalog[$key],
+                        'new' => $value
+                    ];
+                }
+            }
+
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($existingCatalog['change_log'] ?? '[]', true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
                 }
 
-                // Log the final data being updated
-                log_message('debug', 'Updating Catalog ID ' . $id . ' with Data: ' . print_r($catalogData, true));
+                // Append new change log entry
+                $existingChangeLog[] = [
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
 
-                // Attempt to update
-                if ($catalogModel->update($id, $catalogData)) {
+                // Store changes in JSON format
+                $newData['change_log'] = json_encode($existingChangeLog);
+
+                // Update the catalog data
+                if ($catalogModel->update($id, $newData)) {
                     return redirect()->to('catalog_view')->with('success', 'Catalog updated successfully.');
                 } else {
-                    log_message('error', 'Validation Errors: ' . print_r($catalogModel->errors(), true));
-                    return redirect()->back()->with('error', 'Failed to update catalog: ' . implode(', ', $catalogModel->errors()));
+                    return redirect()->back()->with('error', 'Failed to update catalog.');
                 }
-            } catch (\Exception $e) {
-                log_message('error', 'Database Error: ' . $e->getMessage());
-                return redirect()->back()->with('error', 'Database error occurred: ' . $e->getMessage());
             }
+
+            return redirect()->back()->with('info', 'No changes detected.');
         }
 
         return redirect()->back()->with('error', 'Invalid request method.');
     }
 
 
+
     public function delete($id)
+    {
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+        $catalogModel = new CatalogModel();
+
+        // Fetch existing catalog entry
+        $catalog = $catalogModel->find($id);
+        if (!$catalog) {
+            return redirect()->to('catalog_view')->with('error', 'Catalog not found.');
+        }
+
+        // Save the admin name and ID
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft deletion by updating fields
+        $catalogModel->update($id, [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->to('catalog_view')->with('success', 'Catalog deleted successfully.');
+    }
+
+    public function deletedCatalogs()
+    {
+        $catalogModel = new CatalogModel();
+        $data['catalogs'] = $catalogModel->where('is_deleted', 1)->findAll();
+        return view('catalog_deleted', $data);
+    }
+
+    public function restoreCatalog($id)
     {
         $catalogModel = new CatalogModel();
 
-        // Delete the catalog by ID
-        if ($catalogModel->delete($id)) {
-            return redirect()->to('catalog_view')->with('success', 'Catalog deleted successfully.');
-        } else {
-            return redirect()->to('catalog_view')->with('error', 'Failed to delete catalog.');
+        // Fetch catalog
+        $catalog = $catalogModel->find($id);
+        if (!$catalog) {
+            return redirect()->to('catalog_view')->with('error', 'Catalog not found.');
         }
+
+        // Restore the catalog by resetting deletion fields
+        $catalogModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('catalog_view')->with('success', 'Catalog restored successfully.');
     }
 
 

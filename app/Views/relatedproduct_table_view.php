@@ -121,6 +121,11 @@
                                     role="button">
                                     Create Related Product
                                 </a>
+                                <a class="btn btn-success fw-bold" href="<?= base_url('relatedproduct_deleted') ?>"
+                                    role="button">
+                                    Logs
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -214,12 +219,5 @@
 
 </body>
 
-<script>
-    function confirmRelatedProductDelete(productId) {
-        if (confirm("Are you sure you want to delete this related product?")) {
-            window.location.href = "<?= base_url('admin-products/deleterelatedproduct/') ?>" + productId;
-        }
-    }
-</script>
 
 </html>

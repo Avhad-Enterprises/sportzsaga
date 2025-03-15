@@ -102,107 +102,57 @@
     <!-- Header View Start -->
     <?= $this->include('left_view') ?>
     <!-- Header View End -->
+
     <div class="mobile-menu-overlay"></div>
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="title">
-                                <h4>Catalogs</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-right">
-                            <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url('catalog/create') ?>"
-                                    role="button">
-                                    Add Catalog
-                                </a>
-
-                                <a class="btn btn-success fw-bold" href="<?= base_url('catalog_deleted') ?>"
-                                    role="button">
-                                    Logs
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Catalog List</h4>
+                        <h4 class="text-blue h4">Deleted Suppliers</h4>
                     </div>
                     <div class="pb-20">
-                        <table class="table">
+                        <table class="table hover data-table-export table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Catalog Name</th>
-                                    <th>Discount Type</th>
-                                    <th>Discount Value</th>
-                                    <th>Products</th>
-                                    <th>Action</th>
+                                    <th>selection method</th>
+                                    <th>condition type</th>
+                                    <th>conditions</th>
+                                    <th>Deleted At</th>
+                                    <th>Deleted By</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($catalogs as $catalog): ?>
-                                    <tr>
-                                        <td><?= $catalog['id'] ?></td>
-                                        <td><?= $catalog['catalog_name'] ?></td>
-                                        <td><?= $catalog['discount_type'] ?></td>
-                                        <td><?= $catalog['discount_value'] ?></td>
-                                        <td>
-                                            <?php if (!empty($catalog['product_title'])): ?>
-                                                <?php foreach ($catalog['product_title'] as $product): ?>
-                                                    <span class=""><?= esc($product['product_title']) ?></span><br>
-                                                <?php endforeach; ?>
-                                            <?php else: ?>
-                                                <span class="badge badge-secondary">No Products</span>
-                                            <?php endif; ?>
-                                        </td>
-
-
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                                    href="#" role="button" data-toggle="dropdown">
-                                                    <i class="dw dw-more"></i>
+                                <?php if (!empty($related_products)): ?>
+                                    <?php foreach ($related_products as $related_product): ?>
+                                        <tr>
+                                            <td><?= esc($related_product['selection_method']) ?></td>
+                                            <td><?= esc($related_product['condition_type']) ?></td>
+                                            <td><?= esc($related_product['conditions']) ?></td>
+                                            <td><?= esc($related_product['deleted_at'] ?? 'N/A') ?></td>
+                                            <td><?= esc($related_product['deleted_by'] ?? 'N/A') ?></td>
+                                            <td>
+                                                <a class="dropdown-item" href="javascript:void(0);"
+                                                    onclick="confirmRelatedProductRestore(<?= esc($related_product['id']) ?>)">
+                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url('edit_catalog_form/' . $catalog['id']) ?>">
-                                                        <i class="dw dw-edit2"></i> Edit
-                                                    </a>
-                                                    <?php if (!empty($catalog['canDelete']) && $catalog['canDelete']): ?>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            onclick="confirmCatalogDelete(<?= $catalog['id']; ?>)">
-                                                            <i class="dw dw-delete2" style="color: red;"></i> Delete
-                                                        </a>
-                                                    <?php endif; ?>
-
-
-                                                </div>
-                                            </div>
-                                        </td>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="6" class="text-center">No deleted suppliers found.</td>
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-
+                <!-- Footer View Start -->
+                <?= $this->include('footer_view') ?>
+                <!-- Footer View End -->
 
 </body>
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
-
-</html>
