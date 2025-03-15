@@ -55,7 +55,13 @@ class Blogs_model extends Model
         'blog_mobile_image',
         'publish_date_and_time',
         'end_date_and_time',
-        'publish_for'
+        'publish_for',
+        'created_at',
+        'updated_at',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'change_log'
     ];
 
     // Enable pagination
@@ -401,5 +407,17 @@ class Blogs_model extends Model
     public function getPendingComments()
     {
         return $this->db->table('blog_comments')->where('status', 0)->countAllResults();
+    }
+
+
+
+    public function updateblog($blog_id, $data)
+    {
+        return $this->db->table('blogs')->where('blog_id', $blog_id)->update($data);
+    }
+
+    public function getAlllogblog()
+    {
+        return $this->db->table('blogs')->where('is_deleted', 1)->get()->getResultArray();
     }
 }

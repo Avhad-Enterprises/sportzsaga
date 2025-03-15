@@ -140,6 +140,12 @@
                                     Export to Excel
                                 </a>
                             </div>
+                            <div class="dropdown">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>customersegment_logs_view"
+                                    role="button">
+                                    Logs
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,7 +227,7 @@
                                                         href="<?= base_url(); ?>customer_segments/editsegment/<?= $segment['segment_id'] ?>"><i
                                                             class="dw dw-edit2"></i> Edit</a>
                                                     <a class="dropdown-item" href="javascript:void(0);"
-                                                        onclick="confirmSegmentDelete(<?= $segment['segment_id'] ?>)">
+                                                        onclick="customersegmentDelete(<?= $segment['segment_id'] ?>)">
                                                         <i class="dw dw-delete-3"></i> Delete
                                                     </a>
 

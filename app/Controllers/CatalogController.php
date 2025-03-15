@@ -778,24 +778,6 @@ class CatalogController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //---------------------------------------------------------------Customer Segment------------------------------------------------------------------------------------------->
     public function add_new()
     {
@@ -991,7 +973,7 @@ class CatalogController extends Controller
     public function viewcustomersegment()
     {
         $companyModel = new CustomerSegmentModel();
-        $data['segments'] = $companyModel->findAll();
+        $data['segments'] = $companyModel->where('is_deleted', 0)->findAll();
         return view('customer_segment_view', $data);
     }
 
@@ -1016,11 +998,11 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function updatesegment($id)
+    public function updateSegment($id)
     {
-        // Initialize the models
         $segmentModel = new CustomerSegmentModel();
         $userModel = new Registerusers_model();
+        $session = session();
 
         // Retrieve existing segment
         $existingSegment = $segmentModel->find($id);
@@ -1029,110 +1011,150 @@ class CatalogController extends Controller
         }
 
         // Retrieve form data
-        $segmentName = $this->request->getPost('segment_name');
-        $segmentDescription = $this->request->getPost('segment_description');
-        $segmentType = $this->request->getPost('segment_type');
-        $createdBy = $this->request->getPost('created_by');
-        $filters = $this->request->getPost();
-
-        // Extract specific filter values
-        $filterData = [];
-        if (!empty($filters['age_min']) || !empty($filters['age_max'])) {
-            $filterData['age'] = [
-                'min' => $filters['age_min'] ?? null,
-                'max' => $filters['age_max'] ?? null,
-            ];
-        }
-        if (!empty($filters['gender'])) {
-            $filterData['gender'] = $filters['gender'];
-        }
-        if (!empty($filters['country']) || !empty($filters['state']) || !empty($filters['city']) || !empty($filters['postal_code'])) {
-            $filterData['location'] = [
-                'country' => $filters['country'] ?? null,
-                'state' => $filters['state'] ?? null,
-                'city' => $filters['city'] ?? null,
-                'postal_code' => $filters['postal_code'] ?? null,
-            ];
-        }
-        if (!empty($filters['language'])) {
-            $filterData['language'] = $filters['language'];
-        }
-        if (!empty($filters['purchase_min']) || !empty($filters['purchase_max'])) {
-            $filterData['purchase_value'] = [
-                'min' => $filters['purchase_min'] ?? null,
-                'max' => $filters['purchase_max'] ?? null,
-            ];
-        }
-        if (!empty($filters['orders_min']) || !empty($filters['orders_max'])) {
-            $filterData['orders'] = [
-                'min' => $filters['orders_min'] ?? null,
-                'max' => $filters['orders_max'] ?? null,
-            ];
-        }
-
-        // Fetch filtered users based on filters
-        $query = $userModel->select('user_id');
-        if (!empty($filterData['age']['min'])) {
-            $query->where('DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob)), "%Y") + 0 >=', $filterData['age']['min']);
-        }
-        if (!empty($filterData['age']['max'])) {
-            $query->where('DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob)), "%Y") + 0 <=', $filterData['age']['max']);
-        }
-        if (!empty($filterData['gender'])) {
-            $query->where('gender', $filterData['gender']);
-        }
-        if (!empty($filterData['location']['country'])) {
-            $query->where('country', $filterData['location']['country']);
-        }
-        if (!empty($filterData['location']['state'])) {
-            $query->where('state', $filterData['location']['state']);
-        }
-        if (!empty($filterData['location']['city'])) {
-            $query->where('city', $filterData['location']['city']);
-        }
-        if (!empty($filterData['location']['pincode'])) {
-            $query->where('pincode', $filterData['location']['pincode']);
-        }
-        if (!empty($filterData['language'])) {
-            $query->where('preferred_language', $filterData['language']);
-        }
-        if (!empty($filterData['purchase_value']['min'])) {
-            $query->where('total_spend >=', $filterData['purchase_value']['min']);
-        }
-        if (!empty($filterData['purchase_value']['max'])) {
-            $query->where('total_spend <=', $filterData['purchase_value']['max']);
-        }
-        if (!empty($filterData['orders']['min'])) {
-            $query->where('total_orders >=', $filterData['orders']['min']);
-        }
-        if (!empty($filterData['orders']['max'])) {
-            $query->where('total_orders <=', $filterData['orders']['max']);
-        }
-
-        $filteredUsers = $query->findAll();
-
-        // Prepare filtered user IDs
-        $filteredUserIds = array_column($filteredUsers, 'user_id');
-
-        // Prepare data for update
-        $data = [
-            'segment_name' => $segmentName,
-            'segment_description' => $segmentDescription,
-            'segment_type' => $segmentType,
-            'created_by' => $createdBy,
-            'filters' => !empty($filterData) ? json_encode($filterData) : null,
-            'filtered_users' => !empty($filteredUserIds) ? implode(',', $filteredUserIds) : null,
+        $updatedData = [];
+        $changeLog = [];
+        $segmentFields = [
+            'segment_name',
+            'segment_description',
+            'segment_type',
+            'created_by'
         ];
 
-        // Update the database
-        if ($segmentModel->update($id, $data)) {
-            return redirect()->to('customer_segment_view')->with('success', 'Customer segment updated successfully.');
-        } else {
-            return redirect()->back()->withInput()->with('error', 'Failed to update customer segment.');
+        foreach ($segmentFields as $field) {
+            $newValue = $this->request->getPost($field);
+            if ($newValue !== $existingSegment[$field]) {
+                $updatedData[$field] = $newValue;
+                $changeLog[$field] = ['old' => $existingSegment[$field], 'new' => $newValue];
+            }
         }
+
+        // Capture `updated_by`
+        $updatedData['updated_by'] = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
+
+        // Process filters if present
+        $filters = $this->request->getPost();
+        $filterData = [];
+
+        $filterKeys = [
+            'age' => ['age_min', 'age_max'],
+            'gender' => ['gender'],
+            'location' => ['country', 'state', 'city', 'postal_code'],
+            'language' => ['language'],
+            'purchase_value' => ['purchase_min', 'purchase_max'],
+            'orders' => ['orders_min', 'orders_max']
+        ];
+
+        foreach ($filterKeys as $key => $fields) {
+            $values = array_filter(array_map(fn($f) => $filters[$f] ?? null, $fields));
+            if (!empty($values)) {
+                $filterData[$key] = count($values) > 1 ? $values : reset($values);
+            }
+        }
+
+        $newFilterJson = json_encode($filterData);
+        if ($newFilterJson !== $existingSegment['filters']) {
+            $updatedData['filters'] = !empty($filterData) ? $newFilterJson : null;
+            $changeLog['filters'] = ['old' => json_decode($existingSegment['filters'], true), 'new' => $filterData];
+        }
+
+        // Fetch filtered users if filters changed
+        if (isset($updatedData['filters'])) {
+            $query = $userModel->select('user_id');
+
+            if (!empty($filterData['age']['min'])) {
+                $query->where('DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob)), "%Y") + 0 >=', $filterData['age']['min']);
+            }
+            if (!empty($filterData['age']['max'])) {
+                $query->where('DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob)), "%Y") + 0 <=', $filterData['age']['max']);
+            }
+            foreach (['gender', 'language'] as $column) {
+                if (!empty($filterData[$column])) {
+                    $query->where($column, $filterData[$column]);
+                }
+            }
+            foreach ($filterData['location'] ?? [] as $key => $value) {
+                if (!empty($value)) {
+                    $query->where($key, $value);
+                }
+            }
+            foreach (['purchase_value', 'orders'] as $key) {
+                foreach (['min' => '>=', 'max' => '<='] as $limit => $operator) {
+                    if (!empty($filterData[$key][$limit])) {
+                        $query->where($key, $operator, $filterData[$key][$limit]);
+                    }
+                }
+            }
+
+            $filteredUsers = $query->get()->getResultArray();
+            $newFilteredUsers = implode(',', array_column($filteredUsers, 'user_id'));
+            if ($newFilteredUsers !== $existingSegment['filtered_users']) {
+                $updatedData['filtered_users'] = $newFilteredUsers;
+                $changeLog['filtered_users'] = ['old' => $existingSegment['filtered_users'], 'new' => $newFilteredUsers];
+            }
+        }
+
+        // Maintain complete change log history
+        $existingChangeLog = json_decode($existingSegment['change_log'], true) ?? [];
+        if (!is_array($existingChangeLog)) {
+            $existingChangeLog = [];
+        }
+        if (!empty($changeLog)) {
+            $existingChangeLog[] = [
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+                'changes' => $changeLog,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+            $updatedData['change_log'] = json_encode($existingChangeLog);
+        }
+
+        // Update only if there are changes
+        if (!empty($updatedData)) {
+            if ($segmentModel->update($id, $updatedData)) {
+                return redirect()->to('customer_segment_view')->with('success', 'Customer segment updated successfully.');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Failed to update customer segment.');
+            }
+        }
+        return redirect()->to('customer_segment_view')->with('info', 'No changes were made.');
+    }
+
+
+    public function customersegmentlogs()
+    {
+        $model = new CustomerSegmentModel();
+        $data['segments'] = $model->getAlllogsegment();
+        return view('customersegment_logs_view', $data);
     }
 
     public function deletesegment($segment_id)
+    {
+        $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
+        $session = session();
+        $deletedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
+
+        // Check if the segment exists
+        $segment = $segmentModel->find($segment_id);
+        if (!$segment) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
+        }
+
+        // Prepare data for soft delete
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
+
+        // Update the segment instead of hard delete
+        if ($segmentModel->updateCustomersegment($segment_id, $data)) {
+            return redirect()->to('customer_segment_view')->with('success', 'Deleted successfully!');
+        } else {
+            return redirect()->to('customer_segment_view')->with('error', 'Segment not deleted!');
+        }
+    }
+
+    // Restore function for soft-deleted segments
+    public function restoreSegment($segment_id)
     {
         $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
 
@@ -1142,11 +1164,18 @@ class CatalogController extends Controller
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
 
-        // Delete the segment
-        if ($segmentModel->delete($segment_id)) {
-            return $this->response->setJSON(['status' => 'success', 'message' => 'Segment deleted successfully.']);
+        // Prepare data for restoring
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        // Restore the segment
+        if ($segmentModel->updateCustomersegment($segment_id, $data)) {
+            return redirect()->to('customer_segment_view')->with('success', 'Segment restored successfully.');
         } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete segment.']);
+            return redirect()->to('customer_segment_view')->with('error', 'Failed to restore segment.');
         }
     }
 }
