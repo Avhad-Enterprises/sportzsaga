@@ -125,6 +125,11 @@
                                 Add Purchase Order
                             </a>
 
+                            <a class="btn btn-success fw-bold" href="<?= base_url('purchaseorder_deleted') ?>"
+                                role="button">
+                                Logs
+                            </a>
+
                             <!-- Import Purchase Orders Button -->
                             <button type="button" class="btn btn-primary mr-2" data-toggle="modal"
                                 data-target="#importModal">
@@ -135,6 +140,7 @@
                             <a href="<?= base_url('po/exportpo') ?>" class="btn btn-success">
                                 Export Purchase Orders
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -201,14 +207,12 @@
                                                 class="btn btn-sm btn-warning">Edit</a>
 
                                             <?php if (in_array('delete', $allowedActions)): ?>
-                                                <a href="<?= base_url('purchase-order/delete/' . $order['id']) ?>"
-                                                    class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');">
+                                                <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                                    onclick="confirmPurchaseOrderDelete(<?= $order['id']; ?>);">
                                                     Delete
                                                 </a>
                                             <?php endif; ?>
-
                                         </td>
-
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

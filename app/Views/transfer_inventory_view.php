@@ -117,6 +117,11 @@
                         <div class="col-md-6 text-right">
                             <a class="btn btn-primary fw-bold" href="<?= base_url('transfer/create') ?>">Add New
                                 Transfer</a>
+
+                            <a class="btn btn-success fw-bold" href="<?= base_url('transfer_deleted') ?>"
+                                role="button">
+                                Logs
+                            </a>
                         </div>
                     </div>
                 </div>

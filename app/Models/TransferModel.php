@@ -32,6 +32,12 @@ class TransferModel extends Model
         'additional_documents',
         'created_at',
         'updated_at',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'updated_by',
+        'change_log',
+        'added_by',
     ];
 
     protected $useTimestamps = true;

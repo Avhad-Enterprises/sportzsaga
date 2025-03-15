@@ -454,7 +454,10 @@ $routes->get('inventory/export', 'InventoryController::exportCSV');
 $routes->post('inventory/import', 'InventoryController::importCSV');
 $routes->get('warehouses/fetch', 'InventoryController::fetchWarehouses');
 $routes->post('product/storenewproduct', 'InventoryController::storenewproduct');
-$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1');
+$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1'); // Soft delete
+$routes->get('inventory_deleted', 'InventoryController::deletedInventory'); // View deleted records
+$routes->get('inventory/restore/(:num)', 'InventoryController::restore/$1'); // Restore deleted record
+
 
 //purchase order
 $routes->get('purchase-order/index', 'PurchaseOrderController::index');
@@ -466,6 +469,9 @@ $routes->get('po/exportpo', 'PurchaseOrderController::exportpo');
 $routes->get('purchaseorder/import', 'PurchaseOrderController::importCSV');
 $routes->post('purchaseorder/import', 'PurchaseOrderController::importCSV');
 $routes->get('purchase-order/delete/(:num)', 'PurchaseOrderController::delete/$1');
+$routes->get('purchaseorder_deleted', 'PurchaseOrderController::deleted');
+$routes->get('purchase-order/restore/(:num)', 'PurchaseOrderController::restore/$1');
+
 
 //user access control
 $routes->get('permissions/fetchUsers', 'PermissionsController::fetchUsers');
@@ -513,6 +519,9 @@ $routes->post('transfer/store', 'TransferController::store');
 $routes->get('transfer/edit/(:num)', 'TransferController::edit/$1');
 $routes->post('transfer/update/(:num)', 'TransferController::update/$1');
 $routes->get('transfer/delete/(:num)', 'TransferController::delete/$1');
+$routes->get('transfer_deleted', 'TransferController::deleted'); // View deleted transfers
+$routes->get('transfer/restore/(:num)', 'TransferController::restore/$1'); // Restore a transfer
+
 
 
 //Header Pages

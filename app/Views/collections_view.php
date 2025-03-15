@@ -35,43 +35,57 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i
+                                class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i
+                                class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
+                                aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i
+                                class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i
+                                class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -108,7 +122,8 @@
                         <!-- Always display the "Create Collection" button -->
                         <div class="col-md-6 col-sm-12 text-right blogs-imex">
                             <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>addnewcollection" role="button">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>addnewcollection"
+                                    role="button">
                                     Create Collection
                                 </a>
                             </div>
@@ -122,7 +137,7 @@
                         <h4 class="text-blue h4"></h4>
                     </div>
                     <div class="pb-20">
-                        <?php if ($userType !== 'super_admin_view') : ?>
+                        <?php if ($userType !== 'super_admin_view'): ?>
                             <!-- Element-2: Collections Table -->
                             <table class="table hover data-table-export">
                                 <thead>
@@ -135,20 +150,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($collections as $collection) : ?>
+                                    <?php foreach ($collections as $collection): ?>
                                         <tr class="product-row">
                                             <td><?= $collection['collection_id'] ?></td>
                                             <td>
-                                                <a class="b_line" href="<?= base_url() ?>editcollections/<?= $collection['collection_id'] ?>"><?= $collection['collection_title'] ?></a>
-                                                <span class="view-icon"><a target="_blank" href="<?= base_url() ?>collections/<?= $collection['url'] ?>"><i class="dw dw-eye view-icon"></i></a></span>
+                                                <a class="b_line"
+                                                    href="<?= base_url() ?>editcollections/<?= $collection['collection_id'] ?>"><?= $collection['collection_title'] ?></a>
+                                                <span class="view-icon"><a target="_blank"
+                                                        href="<?= base_url() ?>collections/<?= $collection['url'] ?>"><i
+                                                            class="dw dw-eye view-icon"></i></a></span>
                                             </td>
                                             <td>
                                                 <?= substr($collection['collection_description'], 0, 70) . (strlen($collection['collection_description']) > 50 ? '...' : '') ?>
                                             </td>
                                             <td><?php $date = new DateTime($collection['publish_date_and_time']);
-                                                echo $date->format('d-F-Y h:i A'); ?></td>
+                                            echo $date->format('d-F-Y h:i A'); ?></td>
                                             <td>
-                                                <a href="javascript:void(0);" onclick="confirmbcollectionDelete(<?= $collection['collection_id'] ?>)" data-color="#e95959">
+                                                <a href="javascript:void(0);"
+                                                    onclick="confirmbcollectionDelete(<?= $collection['collection_id'] ?>)"
+                                                    data-color="#e95959">
                                                     <i class="icon-copy dw dw-delete-3"></i>
                                                 </a>
                                             </td>

@@ -38,8 +38,8 @@ class TransferController extends Controller
         $session = session();
         $userId = $session->get('user_id');
 
-        // Fetch all transfer records
-        $transfers = $transferModel->findAll();
+        // Fetch only active (non-deleted) transfer records
+        $transfers = $transferModel->where('is_deleted', 0)->findAll();
 
         // Fetch user's permissions for transfers
         $permissions = $db->table('user_permissions')
@@ -64,6 +64,8 @@ class TransferController extends Controller
     public function store()
     {
         $transferModel = new TransferModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Initialize Google Cloud Storage client
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -82,19 +84,19 @@ class TransferController extends Controller
             $file = $this->request->getFile($field);
 
             if ($file && $file->isValid() && !$file->hasMoved()) {
-                $fileName = $file->getClientName();
+                $fileName = 'transfers/' . uniqid() . '_' . $file->getClientName();
                 $fileTempPath = $file->getTempName();
 
                 // Upload to Google Cloud Storage
                 $object = $bucket->upload(
                     fopen($fileTempPath, 'r'),
                     [
-                        'name' => 'transfers/' . $fileName, // Adjust folder structure as needed
+                        'name' => $fileName, // Adjust folder structure as needed
                         'predefinedAcl' => 'publicRead',
                     ]
                 );
 
-                $uploadedImages[$field] = sprintf('https://storage.googleapis.com/%s/transfers/%s', $bucketName, $fileName);
+                $uploadedImages[$field] = sprintf('https://storage.googleapis.com/%s/%s', $bucketName, $fileName);
             } else {
                 $uploadedImages[$field] = null;
             }
@@ -121,9 +123,11 @@ class TransferController extends Controller
             'batch_number' => $this->request->getPost('batch_number'),
             'lot_number' => $this->request->getPost('lot_number'),
             'insurance' => $this->request->getPost('insurance'),
-            'checks' => implode(',', $this->request->getPost('checks')),
+            'checks' => is_array($this->request->getPost('checks')) ? implode(',', $this->request->getPost('checks')) : null,
             'digital_signature' => $uploadedImages['digital_signature'], // Link from Google Cloud Storage
             'additional_documents' => $uploadedImages['additional_documents'], // Link from Google Cloud Storage
+            'added_by' => $userId, // Save the user who added the entry
+            'added_at' => date('Y-m-d H:i:s') // Timestamp when added
         ];
 
         // Insert data into the database
@@ -177,9 +181,18 @@ class TransferController extends Controller
     public function update($id)
     {
         $transferModel = new TransferModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Fetch existing transfer data
+        $transfer = $transferModel->find($id);
+
+        if (!$transfer) {
+            return redirect()->to('transfer_inventory_view')->with('error', 'Transfer record not found.');
+        }
 
         // Prepare data for update
-        $data = [
+        $newData = [
             'giver' => $this->request->getPost('giver'),
             'receiver' => $this->request->getPost('receiver'),
             'transfer_order_number' => $this->request->getPost('transfer_order_number'),
@@ -197,6 +210,8 @@ class TransferController extends Controller
             'destination_location' => $this->request->getPost('destination_location'),
             'uom' => $this->request->getPost('uom'),
             'insurance' => $this->request->getPost('insurance'),
+            'updated_by' => $userId,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         // Handle file uploads for digital_signature and additional_documents
@@ -204,7 +219,7 @@ class TransferController extends Controller
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getRandomName();
                 $file->move(WRITEPATH . 'uploads/', $newName);
-                $data['digital_signature'] = $newName;
+                $newData['digital_signature'] = $newName;
             }
         }
 
@@ -212,23 +227,99 @@ class TransferController extends Controller
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getRandomName();
                 $file->move(WRITEPATH . 'uploads/', $newName);
-                $data['additional_documents'] = $newName;
+                $newData['additional_documents'] = $newName;
             }
         }
 
-        // Update transfer record
-        $transferModel->update($id, $data);
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($transfer[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $transfer[$key],
+                    'new' => $value
+                ];
+            }
+        }
 
-        return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record updated successfully!');
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($transfer['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // Update the transfer data
+            if ($transferModel->update($id, $newData)) {
+                return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record updated successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Failed to update transfer record.');
+            }
+        }
+
+        return redirect()->back()->with('info', 'No changes detected.');
     }
 
 
     public function delete($id)
     {
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
         $transferModel = new TransferModel();
 
-        $transferModel->delete($id);
+        // Fetch existing transfer entry
+        $transfer = $transferModel->find($id);
+        if (!$transfer) {
+            return redirect()->to('transfer_inventory_view')->with('error', 'Transfer record not found.');
+        }
 
-        return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record deleted successfully!');
+        // Save the admin name and ID
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft deletion by updating fields
+        $transferModel->update($id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Track who deleted
+            'deleted_at' => date('Y-m-d H:i:s'), // Record timestamp
+        ]);
+
+        return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record deleted successfully.');
     }
+    public function deleted()
+    {
+        $transferModel = new TransferModel();
+        $data['transfers'] = $transferModel->where('is_deleted', 1)->findAll();
+
+        return view('transfer_deleted', $data); // Load deleted transfers view
+    }
+    public function restore($id)
+    {
+        $transferModel = new TransferModel();
+
+        // Fetch transfer record
+        $transfer = $transferModel->find($id);
+        if (!$transfer) {
+            return redirect()->to('transfer/deleted')->with('error', 'Transfer record not found.');
+        }
+
+        // Restore the transfer record by clearing deletion fields
+        $transferModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record restored successfully.');
+    }
+
 }

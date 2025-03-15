@@ -682,6 +682,37 @@ class Products extends BaseController
         return view('view_products_view', $data);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  <!------------------------------------------------------------- Collections --------------------------------------------------------------------
+
     public function collections()
     {
         $model = new Products_model();
@@ -1381,6 +1412,21 @@ class Products extends BaseController
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------- Inventory -----------------------------------------------------------------------------------------------------
     public function inventory()
     {
         $session = session();
