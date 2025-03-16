@@ -116,8 +116,6 @@ class Home extends BaseController
         }
     }
 
-
-
     private function generateExcelFile($codes, $title)
     {
         $spreadsheet = new Spreadsheet();
@@ -184,7 +182,7 @@ class Home extends BaseController
             'numberOfCodes' => $this->request->getPost('numberOfCodes'),
             'prefix' => $this->request->getPost('prefix'),
             'suffix' => $this->request->getPost('suffix'),
-            'code' => $this->request->getPost('code'),            
+            'code' => $this->request->getPost('code'),
             'discount_type' => $this->request->getPost('discount_type'),
             'discountValue' => $this->request->getPost('discountValue'),
             'minimumPurchaseRequirement' => $this->request->getPost('minimumPurchaseRequirement'),
@@ -200,7 +198,7 @@ class Home extends BaseController
             'notification_period' => $this->request->getPost('notification_period'),
             'randomization_option' => $this->request->getPost('randomization_option') ? 1 : 0,
             'randomization_range' => $this->request->getPost('randomization_range'),
-            'code_deactivation' => $this->request->getPost('code_deactivation') ? 1 : 0,            
+            'code_deactivation' => $this->request->getPost('code_deactivation') ? 1 : 0,
         ];
 
         // ✅ Track changes

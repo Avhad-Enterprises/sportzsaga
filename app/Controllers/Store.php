@@ -781,11 +781,9 @@ class Store extends BaseController
     }
 
     // Contact
-
     public function update_contact()
     {
         try {
-            // Initialize Google Cloud Storage
             $storage = new \Google\Cloud\Storage\StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
@@ -795,7 +793,6 @@ class Store extends BaseController
 
             log_message('info', 'update_contact function triggered');
 
-            // Initialize session to get the logged-in user
             $session = \Config\Services::session();
             $updatedBy = $session->get('user_id');
 
@@ -810,7 +807,6 @@ class Store extends BaseController
             $builder = $db->table('contactpage');
             $id = 1;
 
-            // Fetch existing contact data
             $existingData = $builder->where('id', $id)->get()->getRowArray();
             if (!$existingData) {
                 return $this->response->setJSON([
@@ -819,7 +815,6 @@ class Store extends BaseController
                 ]);
             }
 
-            // Prepare data for update
             $data = [
                 'contact_title' => $this->request->getPost('contact_title'),
                 'contact_description' => $this->request->getPost('contact_description'),
@@ -901,9 +896,6 @@ class Store extends BaseController
         }
     }
 
-
-
-
     public function update_search()
     {
         try {
@@ -954,12 +946,8 @@ class Store extends BaseController
         }
     }
 
-
-
-
-
-
     //<!----------------------------------------------------------------------------------- Cart Page ---------------------------------------------------------------------------->
+    
     public function update_cart()
     {
         try {
