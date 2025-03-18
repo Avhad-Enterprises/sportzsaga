@@ -17,10 +17,23 @@ class CustomerSegmentModel extends Model
         'created_by',
         'filters',
         'filtered_users',
+        'is_deleted',
+        'change_log'
     ];
 
     // Enable automatic timestamps
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
+
+
+    public function updateCustomersegment($id, $data)
+    {
+        return $this->db->table('customer_segments')->where('segment_id', $id)->update($data);
+    }
+
+    public function getAlllogsegment()
+    {
+        return $this->db->table('customer_segments')->where('is_deleted', 1)->get()->getResultArray();
+    }
 }

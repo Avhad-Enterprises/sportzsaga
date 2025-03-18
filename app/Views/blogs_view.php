@@ -197,6 +197,12 @@
                                     Export To Excel
                                 </a>
                             </div>
+                            <div class="dropdown">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>blog_logs_view"
+                                    role="button">
+                                    Logs
+                                </a>
+                            </div>
                         </div>
 
                     </div>
@@ -247,7 +253,7 @@
                                         <td><?php $date = new DateTime($post['publish_date_and_time']);
                                             echo $date->format('d-F-Y h:i A'); ?></td>
                                         <td>
-                                            <a class="dropdown-item" href="javascript:void(0);" onclick="confirmbblogDelete(<?= $post['blog_id'] ?>)" data-color="#e95959"><i class="dw dw-delete-3"></i></a>
+                                            <a class="dropdown-item" href="javascript:void(0);" onclick="blogDelete(<?= $post['blog_id'] ?>)" data-color="#e95959"><i class="dw dw-delete-3"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

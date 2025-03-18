@@ -781,15 +781,20 @@ class Store extends BaseController
     }
 
     // Contact
-
     public function update_contact()
     {
         try {
+            $storage = new \Google\Cloud\Storage\StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
+            ]);
+            $bucketName = 'sportzsaga_imgs';
+            $bucket = $storage->bucket($bucketName);
+
             log_message('info', 'update_contact function triggered');
 
-            // Initialize session to get the logged-in user
             $session = \Config\Services::session();
-            $updatedBy = $session->get('user_id'); // Get user ID from session
+            $updatedBy = $session->get('user_id');
 
             if (!$updatedBy) {
                 return $this->response->setJSON([
@@ -800,9 +805,8 @@ class Store extends BaseController
 
             $db = \Config\Database::connect();
             $builder = $db->table('contactpage');
-            $id = 1; // Always update ID 1
+            $id = 1;
 
-            // Fetch existing contact data
             $existingData = $builder->where('id', $id)->get()->getRowArray();
             if (!$existingData) {
                 return $this->response->setJSON([
@@ -811,7 +815,6 @@ class Store extends BaseController
                 ]);
             }
 
-            // Prepare data for update
             $data = [
                 'contact_title' => $this->request->getPost('contact_title'),
                 'contact_description' => $this->request->getPost('contact_description'),
@@ -836,6 +839,20 @@ class Store extends BaseController
                 'updated_by' => $updatedBy, // Track who updated it
                 'updated_at' => date('Y-m-d H:i:s')
             ];
+
+            // Handle background image
+            $bgFile = $this->request->getFile('contact_bg');
+            if ($bgFile && $bgFile->isValid() && !$bgFile->hasMoved()) {
+                $fileName = 'contact/' . uniqid() . '_' . $bgFile->getClientName();
+                $object = $bucket->upload(
+                    fopen($bgFile->getTempName(), 'r'),
+                    [
+                        'name' => $fileName,
+                        'predefinedAcl' => 'publicRead',
+                    ]
+                );
+                $data['contact_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+            }
 
             // Track changes
             $changes = [];
@@ -878,9 +895,6 @@ class Store extends BaseController
             ]);
         }
     }
-
-
-
 
     public function update_search()
     {
@@ -932,12 +946,8 @@ class Store extends BaseController
         }
     }
 
-
-
-
-
-
     //<!----------------------------------------------------------------------------------- Cart Page ---------------------------------------------------------------------------->
+    
     public function update_cart()
     {
         try {
@@ -1112,9 +1122,6 @@ class Store extends BaseController
             ]);
         }
     }
-
-
-
 
     //<!------------------------------------------------------------------------------------- Tracking page -------------------------------------------------------------------------->
 

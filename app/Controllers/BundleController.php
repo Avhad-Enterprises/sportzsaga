@@ -323,9 +323,9 @@ class BundleController extends Controller
 
         // Perform soft deletion by updating specific fields
         $this->bundleModel->update($id, [
-            'is_deleted' => 1, // Mark the bundle as deleted
-            'deleted_by' => $deletedBy, // Log who deleted it
-            'deleted_at' => date('Y-m-d H:i:s'), // Record deletion timestamp
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
         ]);
 
         // Redirect to the bundles view with success message

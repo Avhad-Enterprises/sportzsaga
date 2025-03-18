@@ -394,6 +394,10 @@ class Registeredusers extends BaseController
     public function update_profile($user_id)
     {
         $userModel = new Registerusers_model();
+        $session = session();
+
+        // Fetch current user data
+        $currentUser = $userModel->find($user_id);
 
         // Get the POST data
         $data = [
@@ -411,86 +415,115 @@ class Registeredusers extends BaseController
             'landmark' => $this->request->getPost('landmark'),
         ];
 
-        // Update user data
-        $userModel->updateusermodel($user_id, $data);
+        // **CHANGE LOG FUNCTIONALITY**
+        $changeLog = [];
+        foreach ($data as $key => $value) {
+            if ($value != $currentUser[$key]) {
+                $changeLog[$key] = ['old' => $currentUser[$key], 'new' => $value];
+            }
+        }
 
-        // Redirect to the profile page or any other page
-        return redirect()->to('profile')->with('success', 'Profile updated successfully.');
+        // If there are changes, log them
+        if (!empty($changeLog)) {
+            $newLogEntry = [
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+                'changes' => $changeLog,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            // Retrieve existing change log and append new changes
+            $existingChangeLog = json_decode($currentUser['change_log'], true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            $existingChangeLog[] = $newLogEntry; // Append new entry
+
+            $data['change_log'] = json_encode($existingChangeLog); // Save updated change log
+        }
+
+        // **Update only if there are changes**
+        if (!empty($changeLog)) {
+            $userModel->updateusermodel($user_id, $data);
+            return redirect()->to('profile')->with('success', 'Profile updated successfully.');
+        } else {
+            return redirect()->to('profile')->with('info', 'No changes were made.');
+        }
     }
 
     public function updateempolyee($id)
-{
-    $model = new Registerusers_model();
-    $session = session();
-    $userId = $session->get('user_id'); // Get user ID from session
+    {
+        $model = new Registerusers_model();
+        $session = session();
+        $userId = $session->get('user_id'); // Get user ID from session
 
-    // Fetch existing employee data
-    $existingRecord = $model->find($id);
-    if (!$existingRecord) {
-        return redirect()->to('employee')->with('error', 'Employee not found.');
-    }
-
-    // Get new data from request
-    $name = $this->request->getPost('name');
-    $email = $this->request->getPost('email');
-    $phone_no = $this->request->getPost('phoneno');
-    $guestconpassval = $this->request->getPost('confirmpassword');
-
-    // Track changes only if there are modifications
-    $changes = [];
-
-    if ($existingRecord['name'] !== $name) {
-        $changes['name'] = ['old' => $existingRecord['name'], 'new' => $name];
-    }
-    if ($existingRecord['email'] !== $email) {
-        $changes['email'] = ['old' => $existingRecord['email'], 'new' => $email];
-    }
-    if ($existingRecord['phone_no'] !== $phone_no) {
-        $changes['phone_no'] = ['old' => $existingRecord['phone_no'], 'new' => $phone_no];
-    }
-    if (!empty($guestconpassval) && $existingRecord['password'] !== $guestconpassval) {
-        $changes['password'] = ['old' => '********', 'new' => '********']; // Mask passwords for security
-    }
-
-    // Proceed only if there are actual changes
-    if (!empty($changes)) {
-        // Fetch and decode existing change log
-        $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
-
-        // Ensure it's an array
-        if (!is_array($existingChangeLog)) {
-            $existingChangeLog = [];
+        // Fetch existing employee data
+        $existingRecord = $model->find($id);
+        if (!$existingRecord) {
+            return redirect()->to('employee')->with('error', 'Employee not found.');
         }
 
-        // Append new change entry
-        $newChange = [
-            'changes' => $changes,
-            'updated_by' => $userId,
-            'timestamp' => date('Y-m-d H:i:s'),
-        ];
+        // Get new data from request
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $phone_no = $this->request->getPost('phoneno');
+        $guestconpassval = $this->request->getPost('confirmpassword');
 
-        $existingChangeLog[] = $newChange; // Append to change log
+        // Track changes only if there are modifications
+        $changes = [];
 
-        // Prepare update data
-        $updateData = [
-            'name' => $name,
-            'email' => $email,
-            'phone_no' => $phone_no,
-            'change_log' => json_encode($existingChangeLog),
-        ];
-
-        if (!empty($guestconpassval)) {
-            $updateData['password'] = $guestconpassval;
+        if ($existingRecord['name'] !== $name) {
+            $changes['name'] = ['old' => $existingRecord['name'], 'new' => $name];
+        }
+        if ($existingRecord['email'] !== $email) {
+            $changes['email'] = ['old' => $existingRecord['email'], 'new' => $email];
+        }
+        if ($existingRecord['phone_no'] !== $phone_no) {
+            $changes['phone_no'] = ['old' => $existingRecord['phone_no'], 'new' => $phone_no];
+        }
+        if (!empty($guestconpassval) && $existingRecord['password'] !== $guestconpassval) {
+            $changes['password'] = ['old' => '********', 'new' => '********']; // Mask passwords for security
         }
 
-        // Update record
-        $model->update($id, $updateData);
+        // Proceed only if there are actual changes
+        if (!empty($changes)) {
+            // Fetch and decode existing change log
+            $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
 
-        return redirect()->to('employee')->with('success', 'Employee updated successfully.');
-    } else {
-        return redirect()->to('employee')->with('info', 'No changes detected.');
+            // Ensure it's an array
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change entry
+            $newChange = [
+                'changes' => $changes,
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+            ];
+
+            $existingChangeLog[] = $newChange; // Append to change log
+
+            // Prepare update data
+            $updateData = [
+                'name' => $name,
+                'email' => $email,
+                'phone_no' => $phone_no,
+                'change_log' => json_encode($existingChangeLog),
+            ];
+
+            if (!empty($guestconpassval)) {
+                $updateData['password'] = $guestconpassval;
+            }
+
+            // Update record
+            $model->update($id, $updateData);
+
+            return redirect()->to('employee')->with('success', 'Employee updated successfully.');
+        } else {
+            return redirect()->to('employee')->with('info', 'No changes detected.');
+        }
     }
-}
 
 
     public function sellers()

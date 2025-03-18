@@ -330,11 +330,11 @@
                                             <td><?= esc(substr($logo['logo'], 0, 20)) . (strlen($logo['logo']) > 20 ? '...' : '') ?>
                                             </td>
                                             <td><?= esc($logo['visibility']) ?></td>
-                                            <td><?= esc($logo['created_at']) ?></td>
-                                            <td><?= esc($logo['updated_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($logo['created_at']))) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($logo['updated_at']))) ?></td>
                                             <td><?= esc($logo['is_deleted']) ?></td>
                                             <td><?= esc($logo['added_by']) ?></td>
-                                            <td><?= esc($logo['deleted_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($logo['deleted_at']))) ?></td>
                                             <td><?= esc($logo['deleted_by']) ?></td>
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
@@ -391,12 +391,12 @@
                                             <td><?= esc($blog['content_type']) ?></td>
                                             <td><?= esc($blog['blogs']) ?></td>
                                             <td><?= esc($blog['tags']) ?></td>
-                                            <td><?= esc($blog['created_at']) ?></td>
-                                            <td><?= esc($blog['updated_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($blog['created_at']))) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($blog['updated_at']))) ?></td>
                                             <td><?= esc($blog['updated_by']) ?></td>
                                             <td><?= esc($blog['added_by']) ?></td>
                                             <td><?= esc($blog['is_deleted']) ?></td>
-                                            <td><?= esc($blog['deleted_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($blog['deleted_at']))) ?></td>
                                             <td><?= esc($blog['deleted_by']) ?></td>
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
@@ -449,11 +449,11 @@
                                             <td><?= esc($member['member_email']) ?></td>
                                             <td><?= esc($member['member_linkedin']) ?></td>
                                             <td><?= esc($member['order']) ?></td>
-                                            <td><?= esc($member['created_at']) ?></td>
-                                            <td><?= esc($member['updated_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['created_at']))) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['updated_at']))) ?></td>
                                             <td><?= esc($member['is_deleted']) ?></td>
                                             <td><?= esc($member['deleted_by']) ?></td>
-                                            <td><?= esc($member['deleted_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['deleted_at']))) ?></td>
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
                                                     onclick="memberRestore(<?= esc($member['id']) ?>)">
@@ -484,12 +484,12 @@
                                     <th>Policy Description</th>
                                     <th>Policy Link</th>
                                     <th>Is Deleted</th>
+                                    <th>Added By</th>
+                                    <th>Created At</th>
+                                    <th>Updated By</th>
+                                    <th>Updated At</th>
                                     <th>Deleted By</th>
                                     <th>Deleted At</th>
-                                    <th>Added By</th>
-                                    <th>Updated By</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -499,16 +499,19 @@
                                         <tr>
                                             <td><?= esc(substr($policie['policy_name'], 0, 50)) . (strlen($policie['policy_name']) > 50 ? '...' : '') ?>
                                             </td>
-                                            <td><?= esc(substr($policie['policy_description'], 0, 20)) . (strlen($policie['policy_description']) > 20 ? '...' : '') ?>
+                                            <td>
+                                                <div style="max-width: 200px; overflow-x: auto; white-space: nowrap;">
+                                                    <?= esc($policie['policy_description']) ?>
+                                                </div>
                                             </td>
                                             <td><?= esc($policie['policy_link']) ?></td>
                                             <td><?= esc($policie['is_deleted']) ?></td>
-                                            <td><?= esc($policie['deleted_by']) ?></td>
-                                            <td><?= esc($policie['deleted_at']) ?></td>
                                             <td><?= esc($policie['added_by']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['created_at']))) ?></td>
                                             <td><?= esc($policie['updated_by']) ?></td>
-                                            <td><?= esc($policie['created_at']) ?></td>
-                                            <td><?= esc($policie['updated_at']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['updated_at']))) ?></td>
+                                            <td><?= esc($policie['deleted_by']) ?></td>
+                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['deleted_at']))) ?></td>
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
                                                     onclick="policyRestore(<?= esc($policie['id']) ?>)">

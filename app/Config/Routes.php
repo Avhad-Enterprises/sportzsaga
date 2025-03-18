@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -55,7 +55,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('blogs/exporttoexcel', 'Blogs::exporttoexcel');
    $routes->get('blogs/importfromexcel', 'Blogs::importfromexcel');
    $routes->post('blogs/importexceldata', 'Blogs::importexceldata');
+
    $routes->get('blogs/deleteblog/(:num)', 'Blogs::deleteblog/$1');
+   $routes->get('blog_logs_view', 'Blogs::bloglogs');
+   $routes->get('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
+
    $routes->get('blogs/editblog/(:num)', 'Blogs::editblog/$1');
    $routes->post('blogs/updateblogdata/(:num)', 'Blogs::updateblogdata/$1');
    $routes->get('blogs/addnewblog', 'Blogs::addnewblog');
@@ -441,7 +445,9 @@ $routes->post('customer_segment/savesegmentdata', 'CatalogController::savesegmen
 $routes->get('customer_segment_view', 'CatalogController::viewcustomersegment');
 $routes->get('customer_segments/editsegment/(:num)', 'CatalogController::editsegment/$1');
 $routes->post('customer_segment/updatesegment/(:num)', 'CatalogController::updatesegment/$1');
-$routes->post('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->get('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->get('customer_segment/restore/(:num)', 'CatalogController::restoresegment/$1');
+$routes->get('customersegment_logs_view', 'CatalogController::customersegmentlogs');
 
 //inventory
 $routes->get('inventory/create', 'InventoryController::create');
