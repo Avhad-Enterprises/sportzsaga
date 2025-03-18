@@ -121,6 +121,12 @@
                                     role="button">
                                     Add Catalog
                                 </a>
+
+                                <a class="btn btn-success fw-bold" href="<?= base_url('catalog_deleted') ?>"
+                                    role="button">
+                                    Logs
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -172,11 +178,12 @@
                                                         <i class="dw dw-edit2"></i> Edit
                                                     </a>
                                                     <?php if (!empty($catalog['canDelete']) && $catalog['canDelete']): ?>
-                                                        <a class="dropdown-item"
-                                                            href="<?= base_url('catalog/delete/' . $catalog['id']) ?>">
-                                                            <i class="dw dw-delete2"></i> Delete
+                                                        <a href="javascript:void(0);" class="dropdown-item"
+                                                            onclick="confirmCatalogDelete(<?= $catalog['id']; ?>)">
+                                                            <i class="dw dw-delete2" style="color: red;"></i> Delete
                                                         </a>
                                                     <?php endif; ?>
+
 
                                                 </div>
                                             </div>

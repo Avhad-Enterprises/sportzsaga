@@ -419,7 +419,7 @@ class Customerservice extends Controller
 
             $inbox = imap_open($hostname, $username, $password);
             if (!$inbox) {
-                throw new Exception('Cannot connect to email server');
+                throw new \Exception('Cannot connect to email server');
             }
 
             $threadData = [];
@@ -505,11 +505,12 @@ class Customerservice extends Controller
             log_message('info', 'Email thread processing completed successfully');
 
             return view('email_view', ['thread' => $threadData, 'email' => $threadData[0]]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             log_message('error', 'Error processing email thread: ' . $e->getMessage());
             return view('error_view', ['error' => $e->getMessage()]);
         }
     }
+
 
 
     public function customerConversationView($id, $channel)
@@ -549,7 +550,7 @@ class Customerservice extends Controller
 
                 $inbox = imap_open($hostname, $username, $password);
                 if (!$inbox) {
-                    throw new Exception('Cannot connect to email server');
+                    throw new \Exception('Cannot connect to email server');
                 }
             }
 
@@ -622,7 +623,7 @@ class Customerservice extends Controller
                     $allTags = array_merge($allTags, $tagsArray);
                 }
                 $uniqueTags = array_unique(array_map('trim', $allTags));
-                $tags = $tagModel->findAll();  // Fetch all tags from the tags table
+                $tags = $tagModel->findAll();
                 // Prepare message data
                 $threadData[] = [
                     'msg_no' => $message['msg_no'] ?? $message['session_id'],
@@ -660,7 +661,7 @@ class Customerservice extends Controller
                 'ticketNo' => $ticketNo,
                 'ticketStatus' => $ticketStatus
             ]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             log_message('error', "Error processing conversation: " . $e->getMessage());
             return view('error_view', ['error' => $e->getMessage()]);
         }
@@ -1502,5 +1503,4 @@ chmod -R 777 writable/uploads/email_attachments
         $data['inquiries'] = $model->getContactUsData();
         return view('contactus_data', $data);
     }
-    
 }

@@ -46,10 +46,62 @@ class Products extends BaseController
 
     public function deleteproduct($id)
     {
-        $blogModel = new Products_model();
-        $blogModel->deleteProduct($id);
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+        $productModel = new Products_model();
+
+        // Find the product by ID
+        $product = $productModel->find($id);
+
+        if (!$product) {
+            return redirect()->to('admin-products')->with('error', 'Product not found.');
+        }
+
+        // Get the current admin details from the session
+        $deletedBy = $session->get('admin_name') . '(' . $userId . ')';
+
+        // Perform soft deletion by updating specific fields
+        $productModel->update($id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Track who deleted
+            'deleted_at' => date('Y-m-d H:i:s'), // Record timestamp
+        ]);
+
         return redirect()->to('admin-products')->with('success', 'Product deleted successfully.');
     }
+
+    public function deletedproducts()
+    {
+        $productModel = new Products_model();
+
+        // Fetch all products marked as deleted
+        $data['products'] = $productModel->where('is_deleted', 1)->findAll();
+
+        // Return the view with deleted products
+        return view('product_deleted', $data);
+    }
+
+    public function restoreproduct($id)
+    {
+        $productModel = new Products_model();
+
+        // Find the product by ID
+        $product = $productModel->find($id);
+
+        if (!$product) {
+            return redirect()->to('admin-products/deleted')->with('error', 'Product not found.');
+        }
+
+        // Restore the product by clearing deletion fields
+        $productModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('admin-products')->with('success', 'Product restored successfully.');
+    }
+
 
     public function exporttoexcel()
     {
@@ -241,7 +293,7 @@ class Products extends BaseController
         $data['users'] = $userModel->findAll();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
 
         // Fetch All Products
         $allProducts = $model->getproductsdata();
@@ -266,6 +318,7 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Initialize Google Cloud Storage client
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -276,7 +329,7 @@ class Products extends BaseController
         $bucketName = 'mkv_imagesbackend';
         $bucket = $storage->bucket($bucketName);
 
-        // Get weight and weight unit
+        // Get dimensions & weight
         $length = trim($this->request->getPost('length'));
         $breadth = trim($this->request->getPost('breadth'));
         $height = trim($this->request->getPost('height'));
@@ -286,16 +339,16 @@ class Products extends BaseController
         $primaryImage = null;
         $primaryImageFile = $this->request->getFile('product-image');
         if ($primaryImageFile && $primaryImageFile->isValid() && !$primaryImageFile->hasMoved()) {
-            $imageName = $primaryImageFile->getClientName();
+            $imageName = 'products/' . uniqid() . '_' . $primaryImageFile->getClientName();
             $imageTempPath = $primaryImageFile->getTempName();
-            $object = $bucket->upload(
+            $bucket->upload(
                 fopen($imageTempPath, 'r'),
                 [
-                    'name' => 'products/' . $imageName,
+                    'name' => $imageName,
                     'predefinedAcl' => 'publicRead',
                 ]
             );
-            $primaryImage = sprintf('https://storage.googleapis.com/%s/products/%s', $bucketName, $imageName);
+            $primaryImage = sprintf('https://storage.googleapis.com/%s/%s', $bucketName, $imageName);
         }
 
         // Handle additional images
@@ -304,81 +357,47 @@ class Products extends BaseController
         if ($moreImages) {
             foreach ($moreImages as $image) {
                 if ($image->isValid() && !$image->hasMoved()) {
-                    $imageName = $image->getClientName();
+                    $imageName = 'products/more_images/' . uniqid() . '_' . $image->getClientName();
                     $imageTempPath = $image->getTempName();
-                    $object = $bucket->upload(
+                    $bucket->upload(
                         fopen($imageTempPath, 'r'),
                         [
-                            'name' => 'products/more_images/' . $imageName,
+                            'name' => $imageName,
                             'predefinedAcl' => 'publicRead',
                         ]
                     );
-                    $additionalImages[] = sprintf('https://storage.googleapis.com/%s/products/more_images/%s', $bucketName, $imageName);
+                    $additionalImages[] = sprintf('https://storage.googleapis.com/%s/%s', $bucketName, $imageName);
                 }
             }
         }
 
-        // Prepare product URL
+        // Prepare product URL & Check for duplicates
         $url = trim($this->request->getPost('url'));
-
-        // Check if URL is already present
         if ($model->where('url', $url)->countAllResults() > 0) {
             return redirect()->back()->with('error', 'The URL is already in use. Please use a different URL.');
         }
 
-        // Get form data
+        // Prepare FAQs
         $faqQuestions = $this->request->getPost('faq_question');
         $faqAnswers = $this->request->getPost('faq_answer');
-        // $variantNames = $this->request->getPost('variant_name');
-        // $variantPrices = $this->request->getPost('variant_price');
-        // $productSkus = $this->request->getPost('product_sku');
-
-        // Prepare FAQs as an associative array
         $faqs = [];
         if ($faqQuestions && $faqAnswers) {
             foreach ($faqQuestions as $index => $question) {
                 if (!empty($question) && isset($faqAnswers[$index]) && !empty($faqAnswers[$index])) {
-                    $faqs[] = [
-                        'question' => $question,
-                        'answer' => $faqAnswers[$index]
-                    ];
+                    $faqs[] = ['question' => $question, 'answer' => $faqAnswers[$index]];
                 }
             }
         }
 
-        // Prepare Bullet Points as a JSON-encoded array
+        // Prepare Bullet Points as JSON
         $bulletPoints = $this->request->getPost('product-bullet-points');
-        $bulletPointsJson = null;
-        if (!empty($bulletPoints)) {
-            if (is_string($bulletPoints)) {
-                $bulletPointsArray = array_filter(explode(',', $bulletPoints), 'trim');
-                $bulletPointsJson = json_encode(array_values($bulletPointsArray));
-            } elseif (is_array($bulletPoints)) {
-                $bulletPointsJson = json_encode(array_filter($bulletPoints, 'trim'));
-            }
-        }
+        $bulletPointsJson = !empty($bulletPoints) ? json_encode(array_filter(explode(',', $bulletPoints))) : null;
 
-        // Prepare Variants as an associative array including SKU
-        // $variants = [];
-        // if ($variantNames && $variantPrices && $productSkus) {
-        //     foreach ($variantNames as $index => $variant) {
-        //         if (!empty($variant) && isset($variantPrices[$index]) && !empty($variantPrices[$index]) && isset($productSkus[$index]) && !empty($productSkus[$index])) {
-        //             $variants[] = [
-        //                 'name' => $variant,
-        //                 'price' => $variantPrices[$index],
-        //                 'sku' => $productSkus[$index] // Add SKU to the variant data
-        //             ];
-        //         }
-        //     }
-        // }
-
-        // Fetch the selected tags from the form
+        // Fetch selected tags & convert to JSON
         $productsTags = $this->request->getPost('product-tags');
-
-        // Convert the array into a JSON string (if not empty)
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
 
-        // Prepare data for insertion
+        // Prepare product data for insertion
         $data = [
             'product_title' => trim($this->request->getPost('product-name')),
             'amz_product_id' => trim($this->request->getPost('amz_product_id')),
@@ -421,12 +440,9 @@ class Products extends BaseController
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
             'bullet_points' => $bulletPointsJson,
+            'added_by' => $userId, // Store the user who added it
+            'created_at' => date('Y-m-d H:i:s') // Store creation timestamp
         ];
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-        // die();
 
         // Insert the new product into the database
         if ($model->addNewProduct($data)) {
@@ -436,6 +452,7 @@ class Products extends BaseController
         }
     }
 
+
     public function editproduct($id)
     {
         $model = new Products_model();
@@ -443,7 +460,7 @@ class Products extends BaseController
         $tagModel = new TagModel();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
@@ -492,6 +509,8 @@ class Products extends BaseController
     public function updateProduct($id)
     {
         $model = new Products_model();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Fetch the existing product
         $existingProduct = $model->find($id);
@@ -523,12 +542,10 @@ class Products extends BaseController
 
         // Fetch the selected tags from the form
         $productsTags = $this->request->getPost('product-tags');
-
-        // Convert the array into a JSON string (if not empty)
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
 
         // Prepare product data for update
-        $data = [
+        $newData = [
             'product_title' => $this->request->getPost('product-name'),
             'amz_product_id' => trim($this->request->getPost('amz_product_id')),
             'secondary_title' => $this->request->getPost('second-name'),
@@ -560,59 +577,62 @@ class Products extends BaseController
             'accessories' => $this->request->getPost('accessories-checked'),
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
+            'updated_by' => $userId,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Handle the primary product image
+        // ✅ Handle product image upload
         $image = $this->request->getFile('product-new-image');
         if ($image && $image->isValid() && !$image->hasMoved()) {
-            $imageName = $image->getClientName();
-            $imageTempPath = $image->getTempName();
-            $object = $bucket->upload(
-                fopen($imageTempPath, 'r'),
-                [
-                    'name' => 'products/' . $imageName,
-                    'predefinedAcl' => 'publicRead',
-                ]
-            );
-            $data['product_image'] = sprintf('https://storage.googleapis.com/%s/products/%s', $bucketName, $imageName);
+            $imageName = 'products/' . uniqid() . '_' . $image->getClientName();
+            $bucket->upload(fopen($image->getTempName(), 'r'), [
+                'name' => $imageName,
+                'predefinedAcl' => 'publicRead',
+            ]);
+            $newData['product_image'] = sprintf('https://storage.googleapis.com/%s/%s', $bucketName, $imageName);
         } else {
-            $data['product_image'] = $existingProduct['product_image'];
+            $newData['product_image'] = $existingProduct['product_image'];
         }
 
-        // Fetch current images
-        $existingImages = json_decode($existingProduct['more_images'], true) ?? [];
-        $currentImages = $this->request->getPost('current_images') ?? [];
-        $removedImages = json_decode($this->request->getPost('removed_images'), true) ?? [];
-        $newImages = [];
-
-        // Process uploaded additional images
-        $uploadedFiles = $this->request->getFiles();
-        if (!empty($uploadedFiles['additional_images'])) {
-            foreach ($uploadedFiles['additional_images'] as $file) {
-                if ($file->isValid() && !$file->hasMoved()) {
-                    $imageName = $file->getClientName();
-                    $imageTempPath = $file->getTempName();
-                    $object = $bucket->upload(
-                        fopen($imageTempPath, 'r'),
-                        [
-                            'name' => 'products/' . $imageName,
-                            'predefinedAcl' => 'publicRead',
-                        ]
-                    );
-                    $newImages[] = sprintf('https://storage.googleapis.com/%s/products/%s', $bucketName, $imageName);
-                }
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingProduct[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingProduct[$key],
+                    'new' => $value
+                ];
             }
         }
 
-        // Update the `more_images` column by removing deleted images and adding new ones
-        $finalImages = array_unique(array_merge(array_diff($existingImages, $removedImages), $currentImages, $newImages));
-        $data['more_images'] = json_encode($finalImages);
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($existingProduct['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
 
-        // Get the FAQ data from the form
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+        }
+
+        // ✅ Handle Bullet Points
+        $bulletPoints = $this->request->getPost('product-bullet-points');
+        if (!empty($bulletPoints)) {
+            $bulletPointsJson = is_array($bulletPoints) ? json_encode(array_filter($bulletPoints)) : json_encode(array_filter(explode(',', $bulletPoints)));
+            $newData['bullet_points'] = $bulletPointsJson;
+        }
+
+        // ✅ Handle FAQs
         $faqQuestions = $this->request->getPost('faq_question');
         $faqAnswers = $this->request->getPost('faq_answer');
-
-        // Check if FAQs are provided
         if (!empty($faqQuestions) && !empty($faqAnswers)) {
             $faqs = [];
             foreach ($faqQuestions as $index => $question) {
@@ -621,31 +641,41 @@ class Products extends BaseController
                     'answer' => $faqAnswers[$index]
                 ];
             }
-
-            // Store the FAQs as a JSON string
-            $data['faqs'] = json_encode($faqs);
+            $newData['faqs'] = json_encode($faqs);
         }
 
-        // Handle Bullet Points
-        $bulletPoints = $this->request->getPost('product-bullet-points');
-        $bulletPointsJson = null;
-        if (!empty($bulletPoints)) {
-            if (is_string($bulletPoints)) {
-                $bulletPointsArray = array_filter(explode(',', $bulletPoints), 'trim');
-                $bulletPointsJson = json_encode(array_values($bulletPointsArray));
-            } elseif (is_array($bulletPoints)) {
-                $bulletPointsJson = json_encode(array_filter($bulletPoints, 'trim'));
+        // ✅ Handle additional images
+        $existingImages = json_decode($existingProduct['more_images'], true) ?? [];
+        $currentImages = $this->request->getPost('current_images') ?? [];
+        $removedImages = json_decode($this->request->getPost('removed_images'), true) ?? [];
+        $newImages = [];
+
+        $uploadedFiles = $this->request->getFiles();
+        if (!empty($uploadedFiles['additional_images'])) {
+            foreach ($uploadedFiles['additional_images'] as $file) {
+                if ($file->isValid() && !$file->hasMoved()) {
+                    $imageName = 'products/' . uniqid() . '_' . $file->getClientName();
+                    $bucket->upload(fopen($file->getTempName(), 'r'), [
+                        'name' => $imageName,
+                        'predefinedAcl' => 'publicRead',
+                    ]);
+                    $newImages[] = sprintf('https://storage.googleapis.com/%s/%s', $bucketName, $imageName);
+                }
             }
         }
-        $data['bullet_points'] = $bulletPointsJson;
+
+        // Update `more_images` column
+        $finalImages = array_unique(array_merge(array_diff($existingImages, $removedImages), $currentImages, $newImages));
+        $newData['more_images'] = json_encode($finalImages);
 
         // Update the product in the database
-        if ($model->updateproductdata($data, $id)) {
+        if ($model->update($id, $newData)) {
             return redirect()->to('admin-products')->with('success', 'Product updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update product.');
         }
     }
+
 
     public function viewproduct($slug)
     {
@@ -682,6 +712,37 @@ class Products extends BaseController
         return view('view_products_view', $data);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //  <!------------------------------------------------------------- Collections --------------------------------------------------------------------
+
     public function collections()
     {
         $model = new Products_model();
@@ -691,10 +752,78 @@ class Products extends BaseController
 
     public function deletecollection($id)
     {
-        $blogModel = new Products_model();
-        $blogModel->deletecollections($id);
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
+        // Retrieve the collection details
+        $collection = $this->model->getCollectionById($id);
+
+        if (!$collection) {
+            return redirect()->to('collection')->with('error', 'Collection not found.');
+        }
+
+        // Save the admin name and ID
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft deletion by updating fields
+        $this->model->updateCollection($id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Track who deleted
+            'deleted_at' => date('Y-m-d H:i:s'), // Record timestamp
+        ]);
+
         return redirect()->to('collections')->with('success', 'Collection deleted successfully.');
     }
+
+    public function deletedcollections()
+    {
+        $data['collection'] = $this->model->getDeletedCollections();
+        return view('collection_deleted', $data);
+    }
+
+
+    public function restorecollection($id)
+    {
+        $db = \Config\Database::connect(); // Connect to the database
+
+        // Check if the collection exists
+        $collection = $db->table('collection')->where('collection_id', $id)->get()->getRowArray();
+
+        if (!$collection) {
+            return redirect()->to('collections/deleted')->with('error', 'Collection not found.');
+        }
+
+        // Restore the collection by updating the `is_deleted` field
+        $updated = $db->table('collection')->where('collection_id', $id)->update([
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        if ($updated) {
+            return redirect()->to('collections')->with('success', 'Collection restored successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to restore collection.');
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //------------------------------------------------------------------------------------- Tags -----------------------------------------------------------------------------------
 
     public function addtags($id)
     {
@@ -794,6 +923,9 @@ class Products extends BaseController
     {
         $this->logger->info('publishCollection method called');
 
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+
         $storage = new StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
             'projectId' => 'peak-tide-441609-r1',
@@ -861,7 +993,6 @@ class Products extends BaseController
         $conditionType = $this->request->getPost('conditionType');
         $sortBy = $this->request->getPost('sortBy');
 
-
         // Retrieve product IDs based on the selection method
         if ($selectMethod === 'automated') {
             $productIds = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
@@ -901,11 +1032,15 @@ class Products extends BaseController
             'collout_title' => $colloutTitle,
             'collout_image' => $colloutImageName,
             'collout_link' => $colloutLink,
+            'added_by' => $userId, // ✅ Store User ID who created the collection
+            'created_at' => date('Y-m-d H:i:s') // ✅ Save Timestamp
         ];
 
+        // Insert the data and return response
         $collectionId = $this->model->addNewCollectiondata($data);
         return $this->response->setJSON(['success' => true, 'collection_id' => $collectionId]);
     }
+
 
     public function getSelectedProducts($collectionId)
     {
@@ -1026,6 +1161,9 @@ class Products extends BaseController
         $this->logger->info('updateCollection method called for collection ID: ' . $collectionId);
 
         try {
+            $session = session();
+            $userId = $session->get('user_id'); // Get logged-in user ID
+
             // Retrieve the collection
             $collection = $this->model->getCollectionById($collectionId);
             if (!$collection) {
@@ -1039,7 +1177,6 @@ class Products extends BaseController
             ]);
             $bucketName = 'mkv_imagesbackend';
             $bucket = $storage->bucket($bucketName);
-
 
             // Handle images
             $newImageName = $collection['collection_pc_image'];
@@ -1058,7 +1195,6 @@ class Products extends BaseController
                     ]
                 );
                 $newImageName = sprintf('https://storage.googleapis.com/%s/collections/pc/%s', $bucketName, $imageName);
-                $this->logger->info('New PC image uploaded: ' . $newImageName);
             }
 
             $mobImage = $this->request->getFile('collection-mob-image');
@@ -1073,7 +1209,6 @@ class Products extends BaseController
                     ]
                 );
                 $newmobImageName = sprintf('https://storage.googleapis.com/%s/collections/mobile/%s', $bucketName, $mobImageName);
-                $this->logger->info('New mobile image uploaded: ' . $newmobImageName);
             }
 
             $colloutImage = $this->request->getFile('collout_image');
@@ -1088,7 +1223,6 @@ class Products extends BaseController
                     ]
                 );
                 $newColloutImageName = sprintf('https://storage.googleapis.com/%s/collections/collouts/%s', $bucketName, $colloutImgName);
-                $this->logger->info('New Collout image uploaded: ' . $newColloutImageName);
             }
 
             // Handle selection method
@@ -1097,11 +1231,6 @@ class Products extends BaseController
             $conditionType = $this->request->getPost('conditionType');
             $sortBy = $this->request->getPost('sortBy');
 
-            $this->logger->info('Select Method: ' . $selectMethod);
-            $this->logger->info('Conditions: ' . json_encode($conditions));
-            $this->logger->info('Condition Type: ' . $conditionType);
-            $this->logger->info('sortBy: ' . $sortBy);
-
             $productIds = [];
             if ($selectMethod === 'automated') {
                 $productIds = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
@@ -1109,8 +1238,6 @@ class Products extends BaseController
             } elseif ($selectMethod === 'manual') {
                 $productIds = $this->request->getPost('products') ?? [];
             }
-
-            $this->logger->info('Product IDs: ' . json_encode($productIds));
 
             if (empty($productIds)) {
                 throw new \Exception('No products selected.');
@@ -1122,7 +1249,7 @@ class Products extends BaseController
             $publishFor = $this->request->getPost('publish_for');
 
             // Prepare data for update
-            $data = [
+            $newData = [
                 'collection_title' => $this->request->getPost('collection-name'),
                 'product_ids' => implode(',', $productIds),
                 'sort_method' => $sortBy,
@@ -1149,14 +1276,41 @@ class Products extends BaseController
                 'end_date_and_time' => $endDateTime,
                 'recurrence' => $recurrence,
                 'publish_for' => $publishFor,
+                'updated_by' => $userId, // ✅ Save User ID Who Updated
+                'updated_at' => date('Y-m-d H:i:s'), // ✅ Save Update Timestamp
             ];
 
-            $this->logger->info('Updated collection data: ' . json_encode($data));
+            // ✅ Track changes in `change_log`
+            $changes = [];
+            foreach ($newData as $key => $value) {
+                if ($collection[$key] != $value) {
+                    $changes[$key] = [
+                        'old' => $collection[$key],
+                        'new' => $value
+                    ];
+                }
+            }
 
-            // Update collection in database
-            $this->model->updateCollection($collectionId, $data);
+            if (!empty($changes)) {
+                // Retrieve existing change log
+                $existingChangeLog = json_decode($collection['change_log'] ?? '[]', true);
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
 
-            $this->logger->info('Collection updated successfully.');
+                // Append new change log entry
+                $existingChangeLog[] = [
+                    'updated_by' => $userId,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes
+                ];
+
+                // Store changes in JSON format
+                $newData['change_log'] = json_encode($existingChangeLog);
+            }
+
+            // ✅ Update collection in database
+            $this->model->updateCollection($collectionId, $newData);
 
             return $this->response->setJSON(['success' => true, 'message' => 'Collection updated successfully']);
         } catch (\Exception $e) {
@@ -1164,6 +1318,7 @@ class Products extends BaseController
             return $this->response->setJSON(['error' => $e->getMessage()])->setStatusCode(500);
         }
     }
+
 
     private function getPaginatedFilteredProducts($productIds, $perPage, $page, $collectionId, $filters)
     {
@@ -1381,6 +1536,21 @@ class Products extends BaseController
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ---------------------------------------------------------------- Inventory -----------------------------------------------------------------------------------------------------
     public function inventory()
     {
         $session = session();
@@ -1564,9 +1734,13 @@ class Products extends BaseController
         return view('add_pincodes_view');
     }
 
-    public function save_pincodes() {}
+    public function save_pincodes()
+    {
+    }
 
-    public function edit_pincode($id) {}
+    public function edit_pincode($id)
+    {
+    }
 
     public function delete_pincode($id)
     {

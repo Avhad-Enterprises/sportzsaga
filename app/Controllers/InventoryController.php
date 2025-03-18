@@ -61,6 +61,12 @@ class InventoryController extends BaseController
     public function store()
     {
         $inventoryModel = new InventoryModel();
+        $session = session();
+
+        // Get logged-in user details
+        $userId = $session->get('user_id');
+        $adminName = $session->get('admin_name'); // Assuming admin_name exists in session
+        $addedBy = $adminName . ' (' . $userId . ')'; // Format: "Admin Name (UserID)"
 
         // Collecting data from the form
         $productId = $this->request->getPost('product_id');
@@ -146,6 +152,8 @@ class InventoryController extends BaseController
                 'custom_labels' => $customLabels,
                 'fifo_lifo' => $fifoLifo,
                 'stock_rotation' => $stockRotation,
+                'added_by' => $addedBy, // ✅ Store who added this inventory
+                'created_at' => date('Y-m-d H:i:s'), // ✅ Timestamp
             ];
 
             $inventoryModel->insert($data);
@@ -153,6 +161,7 @@ class InventoryController extends BaseController
 
         return redirect()->to('inventory_list_view')->with('success', 'Inventory saved successfully.');
     }
+
 
 
     public function inventoryList()
@@ -171,11 +180,12 @@ class InventoryController extends BaseController
 
         $userPermissions = array_column($permissions, 'action');
 
-        // Fetch inventory data
+        // Fetch inventory data **only where is_deleted = 0**
         $query = $db->table('inventory i')
             ->select('i.id, p.product_id, p.product_title, i.sku, i.stock_quantity, i.category, i.supplier, w.name as warehouse_name, w.location as warehouse_location')
             ->join('products p', 'p.product_id = i.product_id', 'inner')
             ->join('warehouses w', 'w.id = i.warehouse_id', 'inner')
+            ->where('i.is_deleted', 0) // ✅ Only fetch records where is_deleted = 0
             ->get();
 
         $data['inventoryData'] = $query->getResultArray();
@@ -185,6 +195,7 @@ class InventoryController extends BaseController
 
         return view('inventory_list_view', $data);
     }
+
 
     public function exportCSV()
     {
@@ -399,9 +410,19 @@ class InventoryController extends BaseController
     public function update($id)
     {
         $inventoryModel = new InventoryModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+        $adminName = $session->get('admin_name'); // Get admin name
 
-        // Collect form data
-        $data = [
+        // Fetch existing inventory data
+        $inventory = $inventoryModel->find($id);
+
+        if (!$inventory) {
+            return redirect()->to('inventory_list_view')->with('error', 'Inventory record not found.');
+        }
+
+        // New data collected from form
+        $newData = [
             'product_id' => $this->request->getPost('product_id'),
             'warehouse_id' => $this->request->getPost('warehouse_id'),
             'inventory_count' => $this->request->getPost('inventory_count'),
@@ -438,18 +459,49 @@ class InventoryController extends BaseController
             'custom_labels' => $this->request->getPost('custom_labels'),
             'fifo_lifo' => $this->request->getPost('fifo_lifo'),
             'stock_rotation' => $this->request->getPost('stock_rotation'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'updated_by' => $adminName . ' (' . $userId . ')', // ✅ Track who updated
+            'updated_at' => date('Y-m-d H:i:s'), // ✅ Store update timestamp
         ];
 
-        // Update the record
-        $updated = $inventoryModel->update($id, $data);
-
-        if ($updated) {
-            return redirect()->to(base_url('inventory_list_view'))->with('success', 'Inventory updated successfully.');
-        } else {
-            return redirect()->back()->with('error', 'Failed to update inventory.');
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($inventory[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $inventory[$key],
+                    'new' => $value
+                ];
+            }
         }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($inventory['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $adminName . ' (' . $userId . ')',
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+
+            // ✅ Update the inventory data
+            if ($inventoryModel->update($id, $newData)) {
+                return redirect()->to('inventory_list_view')->with('success', 'Inventory updated successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Failed to update inventory.');
+            }
+        }
+
+        return redirect()->back()->with('info', 'No changes detected.');
     }
+
 
     public function fetchWarehouses()
     {
@@ -486,10 +538,55 @@ class InventoryController extends BaseController
 
     public function delete($id)
     {
-        $transferModel = new InventoryModel();
+        $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
+        $inventoryModel = new InventoryModel();
 
-        $transferModel->delete($id);
+        // Fetch existing inventory record
+        $inventory = $inventoryModel->find($id);
+        if (!$inventory) {
+            return redirect()->to('inventory_list_view')->with('error', 'Inventory record not found.');
+        }
 
-        return redirect()->to('inventory_list_view')->with('success', 'Inventory record deleted successfully!');
+        // Save the admin name and ID
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
+
+        // Perform soft deletion by updating fields
+        $inventoryModel->update($id, [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->to('inventory_list_view')->with('success', 'Inventory record marked as deleted.');
     }
+
+    public function restore($id)
+    {
+        $inventoryModel = new InventoryModel();
+
+        // Fetch inventory record
+        $inventory = $inventoryModel->find($id);
+        if (!$inventory) {
+            return redirect()->to('inventory/deleted')->with('error', 'Inventory record not found.');
+        }
+
+        // Restore the inventory record by clearing deletion fields
+        $inventoryModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('inventory_list_view')->with('success', 'Inventory record restored successfully.');
+    }
+
+    public function deletedInventory()
+    {
+        $inventoryModel = new InventoryModel();
+        $data['inventory'] = $inventoryModel->where('is_deleted', 1)->findAll();
+
+        return view('inventory_deleted', $data);
+    }
+
 }

@@ -2,7 +2,6 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
-
 <body>
 
     <!-- Header View Start -->
@@ -105,139 +104,55 @@
     <!-- Header View End -->
 
     <div class="mobile-menu-overlay"></div>
+
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-
-                <!-- Page Header -->
-                <div class="page-header">
-                    <div class="row">
-                        <!-- Page Title -->
-                        <div class="col-md-6 col-sm-12">
-                            <div class="title">
-                                <h4>Inventory Management</h4>
-                            </div>
-                        </div>
-                        <!-- Buttons Row -->
-                        <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
-                            <!-- Add Inventory Button -->
-                            <a class="btn btn-primary fw-bold mr-2" href="<?= base_url('inventory/create') ?>"
-                                role="button">
-                                Add Inventory
-                            </a>
-
-                            <a class="btn btn-success fw-bold" href="<?= base_url('inventory_deleted') ?>"
-                                role="button">
-                                Logs
-                            </a>
-
-                            <!-- Import Inventory Button (conditional) -->
-                            <?php if ($canImport): ?>
-                                <button type="button" class="btn btn-primary mr-2" data-toggle="modal"
-                                    data-target="#importModal">
-                                    Import Inventory
-                                </button>
-                            <?php endif; ?>
-
-                            <!-- Export Inventory Button (conditional) -->
-                            <?php if ($canExport): ?>
-                                <a href="<?= base_url('inventory/export') ?>" class="btn btn-success">Export Inventory</a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Inventory Table -->
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Inventory Details</h4>
+                        <h4 class="text-blue h4">Deleted products</h4>
                     </div>
                     <div class="pb-20">
-                        <table class="table table-bordered table-striped">
+                        <table class="table hover data-table-export table-hover">
                             <thead>
                                 <tr>
-                                    <th>Product ID</th>
-                                    <th>Product Title</th>
-
-                                    <th>Warehouse Name</th>
-                                    <th>Warehouse Location</th>
-
+                                    <th>Title</th>
+                                    <th>description</th>
+                                    <th>product_status</th>
+                                    <th>Deleted At</th>
+                                    <th>Deleted By</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($inventoryData as $inventory): ?>
+                                <?php if (!empty($products)): ?>
+                                    <?php foreach ($products as $product): ?>
+                                        <tr>
+                                            <td><?= esc($product['product_title']) ?></td>
+                                            <td><?= esc($product['product_description']) ?></td>
+                                            <td><?= esc($product['product_status']) ?></td>
+                                            <td><?= esc($product['deleted_at'] ?? 'N/A') ?></td>
+                                            <td><?= esc($product['deleted_by'] ?? 'N/A') ?></td>
+                                            <td>
+                                                <a class="dropdown-item" href="javascript:void(0);"
+                                                    onclick="confirmProductRestore(<?= esc($product['product_id']) ?>)">
+                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
                                     <tr>
-                                        <td><?= $inventory['product_id'] ?></td>
-                                        <td><?= $inventory['product_title'] ?></td>
-
-                                        <td><?= $inventory['warehouse_name'] ?></td>
-                                        <td><?= $inventory['warehouse_location'] ?></td>
-
-                                        <td>
-                                            <!-- Edit Button -->
-                                            <a href="<?= base_url('inventory/edit/' . $inventory['id']) ?>"
-                                                class="btn btn-sm btn-warning">Edit</a>
-
-                                            <!-- Delete Button (only visible if user has permission) -->
-                                            <?php if ($canDelete): ?>
-                                                <a href="<?= base_url('inventory/delete/' . $inventory['id']) ?>"
-                                                    class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Are you sure?');">Delete</a>
-                                            <?php endif; ?>
-                                        </td>
-
+                                        <td colspan="6" class="text-center">No deleted suppliers found.</td>
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Modal Structure for File Upload -->
-                <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="importModalLabel">Import Inventory</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- File Upload Form -->
-                                <form method="post" action="<?= base_url('inventory/import') ?>"
-                                    enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="csv_file">Upload CSV File</label>
-                                        <input type="file" name="csv_file" id="csv_file" class="form-control-file"
-                                            required>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Upload</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Footer View Start -->
+                <?= $this->include('footer_view') ?>
+                <!-- Footer View End -->
 
-                <!-- Required Bootstrap 4 or 5 Scripts -->
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-            </div>
-
-        </div>
-    </div>
-    </div>
-
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
 </body>
-
-</html>

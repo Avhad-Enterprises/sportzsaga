@@ -12,14 +12,11 @@ class PurchaseOrderModel extends Model
         'po_number',
         'order_date',
         'supplier_name',
-        
         'product_name',
-       
         'quantity',
         'unit_price',
         'total_price',
         'warehouse_name',
-    
         'expected_delivery_date',
         'shipping_address',
         'shipping_method',
@@ -31,7 +28,15 @@ class PurchaseOrderModel extends Model
         'remarks',
         'attachments',
         'tax',
-        'discount'
+        'discount',
+        'created_at',
+        'updated_at',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'updated_by',
+        'change_log',
+        'added_by',
     ];                                                  // Fields that can be inserted/updated
     protected $useTimestamps = true;                    // Automatically manage created_at and updated_at timestamps
     protected $createdField = 'created_at';             // Custom field for creation timestamp

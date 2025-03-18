@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -55,7 +55,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('blogs/exporttoexcel', 'Blogs::exporttoexcel');
    $routes->get('blogs/importfromexcel', 'Blogs::importfromexcel');
    $routes->post('blogs/importexceldata', 'Blogs::importexceldata');
+
    $routes->get('blogs/deleteblog/(:num)', 'Blogs::deleteblog/$1');
+   $routes->get('blog_logs_view', 'Blogs::bloglogs');
+   $routes->get('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
+
    $routes->get('blogs/editblog/(:num)', 'Blogs::editblog/$1');
    $routes->post('blogs/updateblogdata/(:num)', 'Blogs::updateblogdata/$1');
    $routes->get('blogs/addnewblog', 'Blogs::addnewblog');
@@ -94,6 +98,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_1/(:num)', 'Tiers::edit_tier_1/$1');
    $routes->post('tiers/update_tier_1/(:num)', 'Tiers::update_tier_1/$1');
    $routes->get('tiers/deleteTier/(:num)', 'Tiers::deleteTier/$1');
+   $routes->get('tier1_deleted', 'Tiers::deletedTiers'); // View deleted tiers
+   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1'); // Restore deleted tier
 
 
    $routes->get('tiers/add_tier_2/(:num)', 'Tiers::add_tier_2/$1');
@@ -103,6 +109,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_2/(:num)', 'Tiers::edit_tier_2/$1');
    $routes->post('tiers/update_tier_2/(:num)', 'Tiers::update_tier_2/$1');
    $routes->get('tiers/deleteTier2/(:num)', 'Tiers::deleteTier2/$1');
+   $routes->get('tier2_deleted', 'Tiers::deletedTiers2');
+   $routes->get('tiers/restore_tier_2/(:num)', 'Tiers::restoreTier2/$1');
+
 
    $routes->get('tiers/add_tier_3/(:num)', 'Tiers::add_tier_3/$1');
    $routes->get('tiers/new_tier_3/(:num)', 'Tiers::new_tier_3/$1');
@@ -110,6 +119,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_3/(:num)', 'Tiers::edit_tier_3/$1');
    $routes->post('tiers/update_tier_3/(:num)', 'Tiers::update_tier_3/$1');
    $routes->get('tiers/deleteTier3/(:num)', 'Tiers::deleteTier3/$1');
+   $routes->get('tier3_deleted', 'Tiers::deletedTiers3');
+   $routes->get('tiers/restore_tier_3/(:num)', 'Tiers::restoreTier3/$1');
 
 
    $routes->get('tiers/add_tier_4/(:num)', 'Tiers::add_tier_4/$1');
@@ -117,6 +128,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('tiers/publish_tier_4/(:num)', 'Tiers::publish_tier_4/$1');
    $routes->get('tiers/edit_tier_4/(:num)', 'Tiers::edit_tier_4/$1');
    $routes->post('tiers/update_tier_4/(:num)', 'Tiers::update_tier_4/$1');
+   $routes->get('tier4_deleted', 'Tiers::deletedTiers4');
+   $routes->get('tiers/restore_tier_4/(:num)', 'Tiers::restoreTier4/$1');
 
    // Tier 2 in Add Products Page
    $routes->post('tiers/get_tier2', 'Tiers::get_tier2');
@@ -200,8 +213,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('admin-products/deleterelatedproduct/(:num)', 'RelatedproductController::deleteRelatedProduct/$1');
    $routes->get('admin-products/edit_related_product/(:num)', 'RelatedproductController::editRelatedProduct/$1');
    $routes->post('admin-products/updaterelatedproduct/(:num)', 'RelatedproductController::updateRelatedProduct/$1');
-   $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
    $routes->post('RelatedproductController/fetchProducts', 'RelatedproductController::fetchProducts'); // Fetch products dynamically
+   $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
+   $routes->get('relatedproduct_deleted', 'RelatedproductController::deletedRelatedProducts'); // View deleted catalogs
+   $routes->get('relatedproduct/restore/(:num)', 'RelatedproductController::restoreProduct/$1'); // Restore a deleted catalog
+
 });
 
 
@@ -291,6 +307,8 @@ $routes->post('check-url', 'Products::checkUrl');
 $routes->post('products/AddNewProductTags', 'Products::AddNewProductTags');
 $routes->get('product_reviews', 'Products::productReviews');
 $routes->post('products/reviews/update_status', 'Products::UpdateReviewStatus');
+$routes->get('product_deleted', 'Products::deletedproducts'); // View deleted products
+$routes->get('products/restoreproduct/(:num)', 'Products::restoreproduct/$1'); // Restore product
 
 // Pincode Mapping Controller
 $routes->get('pincode-mapping', 'Products::pincode_mapping');
@@ -325,6 +343,12 @@ $routes->get('getSelectedProducts/(:num)', 'Products::getSelectedProducts/$1');
 $routes->post('getProductsByIds', 'Products::getProductsByIds');
 $routes->get('collections/(:any)', 'Products::collectionview/$1');
 $routes->get('collections/(:any)', 'Products::collectionview/$1');
+$routes->get('collection_deleted', 'Products::deletedcollections');
+$routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
+
+
+
+
 
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
@@ -427,6 +451,9 @@ $routes->get('edit_catalog_form/(:num)', 'CatalogController::edit/$1');
 $routes->post('catalog/update/(:num)', 'CatalogController::update/$1');
 $routes->get('catalog/delete/(:num)', 'CatalogController::delete/$1');
 $routes->post('catalog/checkDuplicateUsers', 'CatalogController::checkDuplicateUsers');
+$routes->get('catalog_deleted', 'CatalogController::deletedCatalogs'); // View deleted catalogs
+$routes->get('catalog/restore/(:num)', 'CatalogController::restoreCatalog/$1'); // Restore a deleted catalog
+
 
 //Customer Segment
 $routes->get('add_new_customersegment', 'CatalogController::add_new');
@@ -435,7 +462,9 @@ $routes->post('customer_segment/savesegmentdata', 'CatalogController::savesegmen
 $routes->get('customer_segment_view', 'CatalogController::viewcustomersegment');
 $routes->get('customer_segments/editsegment/(:num)', 'CatalogController::editsegment/$1');
 $routes->post('customer_segment/updatesegment/(:num)', 'CatalogController::updatesegment/$1');
-$routes->post('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->get('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->get('customer_segment/restore/(:num)', 'CatalogController::restoresegment/$1');
+$routes->get('customersegment_logs_view', 'CatalogController::customersegmentlogs');
 
 //inventory
 $routes->get('inventory/create', 'InventoryController::create');
@@ -448,7 +477,10 @@ $routes->get('inventory/export', 'InventoryController::exportCSV');
 $routes->post('inventory/import', 'InventoryController::importCSV');
 $routes->get('warehouses/fetch', 'InventoryController::fetchWarehouses');
 $routes->post('product/storenewproduct', 'InventoryController::storenewproduct');
-$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1');
+$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1'); // Soft delete
+$routes->get('inventory_deleted', 'InventoryController::deletedInventory'); // View deleted records
+$routes->get('inventory/restore/(:num)', 'InventoryController::restore/$1'); // Restore deleted record
+
 
 //purchase order
 $routes->get('purchase-order/index', 'PurchaseOrderController::index');
@@ -460,6 +492,9 @@ $routes->get('po/exportpo', 'PurchaseOrderController::exportpo');
 $routes->get('purchaseorder/import', 'PurchaseOrderController::importCSV');
 $routes->post('purchaseorder/import', 'PurchaseOrderController::importCSV');
 $routes->get('purchase-order/delete/(:num)', 'PurchaseOrderController::delete/$1');
+$routes->get('purchaseorder_deleted', 'PurchaseOrderController::deleted');
+$routes->get('purchase-order/restore/(:num)', 'PurchaseOrderController::restore/$1');
+
 
 //user access control
 $routes->get('permissions/fetchUsers', 'PermissionsController::fetchUsers');
@@ -507,6 +542,9 @@ $routes->post('transfer/store', 'TransferController::store');
 $routes->get('transfer/edit/(:num)', 'TransferController::edit/$1');
 $routes->post('transfer/update/(:num)', 'TransferController::update/$1');
 $routes->get('transfer/delete/(:num)', 'TransferController::delete/$1');
+$routes->get('transfer_deleted', 'TransferController::deleted'); // View deleted transfers
+$routes->get('transfer/restore/(:num)', 'TransferController::restore/$1'); // Restore a transfer
+
 
 
 //Header Pages
@@ -589,3 +627,23 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

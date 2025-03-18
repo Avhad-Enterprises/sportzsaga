@@ -2601,3 +2601,428 @@
     });
   }
 </script>
+
+
+
+
+
+
+<!--------------------------------------------------------------- Catalog --------------------------------------------------------------------------------------------------------->
+
+<script>
+  function confirmCatalogDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This action will mark the catalog as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('catalog/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmCatalogRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this catalog?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green color for restore action
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('catalog/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!--------------------------------------------------------------- Related Products --------------------------------------------------------------------------------------------------------->
+
+<script>
+  function confirmRelatedProductDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the product as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.post("<?= base_url('relatedproduct/deleteProduct') ?>", {
+          product_id: id
+        }, function (response) {
+          if (response.status === 'success') {
+            Swal.fire('Deleted!', response.message, 'success').then(() => location.reload());
+          } else {
+            Swal.fire('Error!', response.message, 'error');
+          }
+        }, 'json');
+      }
+    });
+  }
+
+  function confirmRelatedProductRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this product?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('relatedproduct/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+<!------------------------------------------------------------------------- Inventory ------------------------------------------------------------------------------------------->
+
+<script>
+  function confirmInventoryDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the inventory record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('inventory/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmInventoryRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this inventory record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('inventory/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+<!---------------------------------------------------- Transfer Inventory Soft Delete Script ----------------------------------------------------->
+
+<script>
+  function confirmTransferDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the transfer record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red color for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('transfer/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmTransferRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this transfer record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('transfer/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+<!---------------------------------------------------- Purchase Order Soft Delete Script ----------------------------------------------------->
+
+<script>
+  function confirmPurchaseOrderDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the purchase order as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('purchase-order/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmPurchaseOrderRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this purchase order?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('purchase-order/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!-------------------------------------------------------------------------------------------- Tier 1 Soft Delete Script ----------------------------------------------------------------------->
+
+<script>
+  function confirmTierDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 1 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tier/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmTierRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 1 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tier/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!----------------------------------------------------------------------------------- Tier 2 Soft Delete Script ------------------------------------------------------------------------------->
+<script>
+  function confirmTier2Delete(tier_2_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 2 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_2/') ?>" + tier_2_id;
+      }
+    });
+  }
+
+  function confirmTier2Restore(tier_2_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 2 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_2/') ?>" + tier_2_id;
+      }
+    });
+  }
+</script>
+
+
+<!------------------------------------------------------------------------------------ Tier 3 Soft Delete Script ------------------------------------------------------------------------------------->
+<script>
+  function confirmTier3Delete(tier_3_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 3 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_3/') ?>" + tier_3_id;
+      }
+    });
+  }
+
+  function confirmTier3Restore(tier_3_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 3 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_3/') ?>" + tier_3_id;
+      }
+    });
+  }
+</script>
+
+
+
+
+
+<!---------------------------------------------------------------------------------------- Tier 4 Soft Delete Script --------------------------------------------------------------------------------->
+<script>
+  function confirmTier4Delete(tier_4_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 4 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_4/') ?>" + tier_4_id;
+      }
+    });
+  }
+
+  function confirmTier4Restore(tier_4_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 4 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_4/') ?>" + tier_4_id;
+      }
+    });
+  }
+</script>
+
+
+
+
+<!---------------------------------------------------- Collection Soft Delete Script ----------------------------------------------------->
+<script>
+  function confirmCollectionDelete(collection_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the collection record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('collections/deletecollection/') ?>" + collection_id;
+      }
+    });
+  }
+
+  function confirmCollectionRestore(collection_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this collection?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let restoreUrl = "<?= base_url('restorecollection/') ?>" + collection_id;
+        console.log("Restoring Collection:", restoreUrl); // Debugging
+        window.location.href = restoreUrl;
+      }
+    });
+  }
+</script>
+
+
+
+
+<!---------------------------------------------------- Product Soft Delete Script ----------------------------------------------------->
+<script>
+  function confirmProductDelete(product_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the product record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('admin-products/deleteproduct/(:num)') ?>" + product_id;
+      }
+    });
+  }
+
+  function confirmProductRestore(product_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this product?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let restoreUrl = "<?= base_url('products/restoreproduct/') ?>" + product_id;
+        console.log("Restoring Product:", restoreUrl); // Debugging
+        window.location.href = restoreUrl;
+      }
+    });
+  }
+</script>

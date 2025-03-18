@@ -47,15 +47,9 @@
     }
 </style>
 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <!-- Head View Start -->
-    <?= $this->include('head_view') ?>
-    <!-- Head View End -->
-</head>
+<!-- Head View Start -->
+<?= $this->include('head_view') ?>
+<!-- Head View End -->
 
 <body>
 
@@ -153,6 +147,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Header View Start -->
+    <?= $this->include('left_view') ?>
+    <!-- Header View End -->
 
     <div class="mobile-menu-overlay"></div>
 

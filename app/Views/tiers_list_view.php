@@ -35,43 +35,57 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i
+                                class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i
+                                class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
+                                aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i
+                                class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i
+                                class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -104,15 +118,21 @@
                         </div>
                         <div class="col-md-6 col-sm-12 text-right blogs-imex">
                             <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>tiers/new_tier_1" role="button">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>tiers/new_tier_1"
+                                    role="button">
                                     Add
+                                </a>
+                            </div>
+
+                            <div class="dropdown">
+                                <a class="btn btn-success fw-bold" href="<?= base_url('tier1_deleted') ?>"
+                                    role="button">
+                                    Logs
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
@@ -129,20 +149,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($tiers as $tier) : ?>
+                                <?php foreach ($tiers as $tier): ?>
                                     <tr>
                                         <td><?= $tier['tier_1_id'] ?></td>
                                         <td><?= $tier['tier_name'] ?></td>
                                         <td><?= $tier['tier_value'] ?></td>
                                         <td>
                                             <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                                    href="#" role="button" data-toggle="dropdown">
                                                     <i class="dw dw-more"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item" href="<?= base_url() ?>tiers/add_tier_2/<?= $tier['tier_1_id'] ?>"><i class="dw dw-eye"></i> Add Tier 2</a>
-                                                    <a class="dropdown-item" href="<?= base_url() ?>tiers/edit_tier_1/<?= $tier['tier_1_id'] ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item" href="<?= base_url() ?>tiers/deleteTier/<?= $tier['tier_1_id'] ?>"><i class="dw dw-edit2"></i> Delete</a>
+                                                    <a class="dropdown-item"
+                                                        href="<?= base_url() ?>tiers/add_tier_2/<?= $tier['tier_1_id'] ?>"><i
+                                                            class="dw dw-eye"></i> Add Tier 2</a>
+                                                    <a class="dropdown-item"
+                                                        href="<?= base_url() ?>tiers/edit_tier_1/<?= $tier['tier_1_id'] ?>"><i
+                                                            class="dw dw-edit2"></i> Edit</a>
+                                                    <a class="dropdown-item"
+                                                        href="<?= base_url() ?>tiers/deleteTier/<?= $tier['tier_1_id'] ?>"><i
+                                                            class="dw dw-edit2"></i> Delete</a>
                                                 </div>
                                             </div>
                                         </td>

@@ -23,7 +23,7 @@ class Blogs extends BaseController
     {
         $model = new blogs_model();
         $publicBlogCount = $model->countPublicBlogs();
-        $publicBlogs = $model->getPublicBlogs();
+        $publicBlogs = $model->where('is_deleted', 0)->getPublicBlogs();
         $privateBlogs = $model->getprivateBlogs();
         $pendingCommentsCount = $model->getPendingComments();
         $data = [
@@ -39,9 +39,65 @@ class Blogs extends BaseController
     public function deleteblog($blog_id)
     {
         $blogModel = new blogs_model();
-        $blogModel->deletePost($blog_id);
-        return redirect()->to('admin_blogs')->with('success', 'Blog deleted successfully.');
+        $session = session();
+        $deletedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
+
+        // Check if the blog exists
+        $blog = $blogModel->find($blog_id);
+        if (!$blog) {
+            return redirect()->to('admin_blogs')->with('error', 'Blog not found.');
+        }
+
+        // Prepare data for soft delete
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $deletedBy,
+            'deleted_at' => date('Y-m-d H:i:s'),
+        ];
+
+        // Update the blog instead of hard delete
+        if ($blogModel->updateblog($blog_id, $data)) {
+            return redirect()->to('admin_blogs')->with('success', 'Blog deleted successfully.');
+        } else {
+            return redirect()->to('admin_blogs')->with('error', 'Failed to delete blog.');
+        }
     }
+
+
+    public function restoreBlog($blog_id)
+    {
+        $blogModel = new blogs_model();
+
+        // Check if the blog exists
+        $blog = $blogModel->find($blog_id);
+        if (!$blog) {
+            return redirect()->to('admin_blogs')->with('error', 'Blog not found.');
+        }
+
+        // Prepare data for restoring
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ];
+
+        // Restore the blog
+        if ($blogModel->updateblog($blog_id, $data)) {
+            return redirect()->to('admin_blogs')->with('success', 'Blog restored successfully.');
+        } else {
+            return redirect()->to('admin_blogs')->with('error', 'Failed to restore blog.');
+        }
+    }
+
+
+    public function bloglogs()
+    {
+        $model = new blogs_model();
+        $data['blogs'] = $model->getAlllogblog();
+        return view('blog_logs_view', $data);
+    }
+
+
 
     public function addnewblog()
     {
@@ -210,6 +266,7 @@ class Blogs extends BaseController
     {
         $model = new blogs_model();
         $blog = $model->find($blog_id);
+        $session = session();
 
         $title = $this->request->getPost('blog-title');
         $description = $this->request->getPost('blog-description');
@@ -224,23 +281,19 @@ class Blogs extends BaseController
 
         // Initialize Google Cloud Storage client
         $storage = new StorageClient([
-            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Path to your Google Cloud credentials file
-            'projectId' => 'peak-tide-441609-r1', // Your project ID
+            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+            'projectId' => 'peak-tide-441609-r1',
         ]);
-        $bucketName = 'mkv_imagesbackend'; // Your Google Cloud bucket name
+        $bucketName = 'mkv_imagesbackend';
         $bucket = $storage->bucket($bucketName);
 
         // Handle main image upload
         if ($updateimage->isValid() && !$updateimage->hasMoved()) {
             $updateimagename = $updateimage->getClientName();
             $filePath = $updateimage->getTempName();
-            // Upload to Google Cloud Storage
             $object = $bucket->upload(
                 fopen($filePath, 'r'),
-                [
-                    'name' => 'blogs/main_images/' . $updateimagename,
-                    'predefinedAcl' => 'publicRead', // Public access
-                ]
+                ['name' => 'blogs/main_images/' . $updateimagename, 'predefinedAcl' => 'publicRead']
             );
             $updateimagename = sprintf('https://storage.googleapis.com/%s/blogs/main_images/%s', $bucketName, $updateimagename);
         } else {
@@ -251,26 +304,20 @@ class Blogs extends BaseController
         if ($updatemobileimage->isValid() && !$updatemobileimage->hasMoved()) {
             $updatemobileimagename = $updatemobileimage->getClientName();
             $filePath = $updatemobileimage->getTempName();
-            // Upload to Google Cloud Storage
             $object = $bucket->upload(
                 fopen($filePath, 'r'),
-                [
-                    'name' => 'blogs/mobile_images/' . $updatemobileimagename,
-                    'predefinedAcl' => 'publicRead', // Public access
-                ]
+                ['name' => 'blogs/mobile_images/' . $updatemobileimagename, 'predefinedAcl' => 'publicRead']
             );
             $updatemobileimagename = sprintf('https://storage.googleapis.com/%s/blogs/mobile_images/%s', $bucketName, $updatemobileimagename);
         } else {
             $updatemobileimagename = $currentMobileImage;
         }
 
-        // Fetch the selected tags from the form
+        // Fetch selected tags
         $blogTags = $this->request->getPost('blog-tags');
-
-        // Convert the array into a JSON string (if not empty)
         $blogTagsJson = !empty($blogTags) ? json_encode($blogTags) : json_encode([]);
 
-        // Handle additional images (section images)
+        // Prepare data for update
         $blogData = [
             'blog_title' => $title,
             'blog_description' => $description,
@@ -287,7 +334,7 @@ class Blogs extends BaseController
             'blog_metaurl' => $this->request->getPost('blog-meta-url'),
         ];
 
-        // Handle section images upload
+        // Handle section images
         for ($i = 1; $i <= 10; $i++) {
             $fileKey = 'section_image_' . $i;
             $file = $this->request->getFile($fileKey);
@@ -300,31 +347,58 @@ class Blogs extends BaseController
             } elseif ($file && $file->isValid() && !$file->hasMoved()) {
                 $fileName = $file->getClientName();
                 $filePath = $file->getTempName();
-                // Upload to Google Cloud Storage
                 $object = $bucket->upload(
                     fopen($filePath, 'r'),
-                    [
-                        'name' => 'blogs/section_images/' . $fileName,
-                        'predefinedAcl' => 'publicRead', // Public access
-                    ]
+                    ['name' => 'blogs/section_images/' . $fileName, 'predefinedAcl' => 'publicRead']
                 );
                 $blogData[$fileKey] = sprintf('https://storage.googleapis.com/%s/blogs/section_images/%s', $bucketName, $fileName);
             } else {
                 $blogData[$fileKey] = $currentImage;
             }
 
-            // Section title and description
             $sectionTitleKey = 'section_title_' . $i;
             $sectionDescriptionKey = 'section_description_' . $i;
             $blogData[$sectionTitleKey] = $this->request->getPost($sectionTitleKey);
             $blogData[$sectionDescriptionKey] = $this->request->getPost($sectionDescriptionKey);
         }
 
-        // Update the blog data in the database
-        $model->updatablogsdata($blog_id, $blogData);
+        // **CHANGE LOG FUNCTIONALITY**
+        $changeLog = [];
+        foreach ($blogData as $key => $value) {
+            if ($value != $blog[$key]) {
+                $changeLog[$key] = ['old' => $blog[$key], 'new' => $value];
+            }
+        }
 
-        return redirect()->to('admin_blogs')->with('success', 'Your blog has been updated successfully!');
+        // If there are changes, log them
+        if (!empty($changeLog)) {
+            $newLogEntry = [
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+                'changes' => $changeLog,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            // Retrieve existing change log and append new changes
+            $existingChangeLog = json_decode($blog['change_log'], true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            $existingChangeLog[] = $newLogEntry; // Append new entry
+
+            $blogData['change_log'] = json_encode($existingChangeLog); // Save updated change log
+        }
+
+        // **Update only if there are changes**
+        if (!empty($changeLog)) {
+            $model->updatablogsdata($blog_id, $blogData);
+            return redirect()->to('admin_blogs')->with('success', 'Your blog has been updated successfully!');
+        } else {
+            return redirect()->to('admin_blogs')->with('info', 'No changes were made.');
+        }
     }
+
+
 
     public function exporttoexcel()
     {
