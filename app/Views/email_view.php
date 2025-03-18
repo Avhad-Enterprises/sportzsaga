@@ -504,7 +504,7 @@
                                         <?= $email['userdata']['phone_no'] ?? 'Not Available'  ?>
                                     </p>
                                     <p> <strong>Address: </strong><br>
-                                        <?= $email['userdata']['address_information'] ?? 'Not Available'  ?>
+                                        <?= $email['userdata']['address_one'] ?? 'Not Available'  ?><?= $email['userdata']['address_two'] ?? 'Not Available'  ?>
                                     </p>
                                     <div class="row">
                                         <div class="col-md">

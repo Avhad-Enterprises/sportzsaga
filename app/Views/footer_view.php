@@ -36,6 +36,7 @@
 <script src="<?= base_url(); ?>vendors/scripts/dashboard.js"></script>
 <script src="<?= base_url(); ?>js/form-validation.js"></script>
 <script src="<?= base_url(); ?>js/online-store.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
 <!-- Include dragscroll library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
 <!-- Quill.js JS -->

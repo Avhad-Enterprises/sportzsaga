@@ -101,11 +101,11 @@ class ReplyModel extends Model
     {
         $db = db_connect();
         return $db->table('users')
+            ->select('user_id, name, profile_img, agent_status')
             ->whereIn('account_type', ['employee', 'super_admin'])
             ->get()
             ->getResult();
     }
-
 
     public function getAgent($msgNo)
     {
