@@ -947,11 +947,19 @@ class Store extends BaseController
     }
 
     //<!----------------------------------------------------------------------------------- Cart Page ---------------------------------------------------------------------------->
-    
+
     public function update_cart()
     {
         try {
             log_message('info', 'update_cart function triggered');
+
+            // Initialize Google Cloud Storage
+            $storage = new \Google\Cloud\Storage\StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
+            ]);
+            $bucketName = 'sportzsaga_imgs';
+            $bucket = $storage->bucket($bucketName);
 
             // Retrieve user ID from session
             $session = session();
@@ -979,6 +987,20 @@ class Store extends BaseController
                 'cm_products' => $this->request->getPost('cm_products'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
+
+            // Handle background image
+            $bgFile = $this->request->getFile('offer_bg');
+            if ($bgFile && $bgFile->isValid() && !$bgFile->hasMoved()) {
+                $fileName = 'contact/' . uniqid() . '_' . $bgFile->getClientName();
+                $object = $bucket->upload(
+                    fopen($bgFile->getTempName(), 'r'),
+                    [
+                        'name' => $fileName,
+                        'predefinedAcl' => 'publicRead',
+                    ]
+                );
+                $data['offer_bg'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $fileName);
+            }
 
             log_message('info', 'Data to be updated: ' . json_encode($data));
 
@@ -2857,6 +2879,25 @@ class Store extends BaseController
             return redirect()->back()->with('success', 'Product updated successfully!');
         } else {
             return redirect()->back()->with('error', 'Failed to update product.');
+        }
+    }
+
+    public function reorder_products()
+    {
+        $requestData = $this->request->getJSON(true);
+        $productModel = new onlinestoremodal();
+
+        if (!isset($requestData['reorderedProducts']) || empty($requestData['reorderedProducts'])) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'No data provided']);
+        }
+
+        try {
+            foreach ($requestData['reorderedProducts'] as $product) {
+                $productModel->UpdateProductOrder($product['id'], ['display_order' => $product['position']]);
+            }
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Product order updated']);
+        } catch (\Exception $e) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update product order.']);
         }
     }
 

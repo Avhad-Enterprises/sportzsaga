@@ -116,7 +116,7 @@ class onlinestoremodal extends Model
     {
         return $this->db->table('trackingpage')->where('id', 1)->update($data);
     }
-    
+
     public function update404($data)
     {
         $db = $this->db->table('error_page');
@@ -307,7 +307,7 @@ class onlinestoremodal extends Model
 
     public function Getproductsection()
     {
-        return $this->db->table('products_section')->where('is_deleted', 0)->where('visibility', 1)->get()->getResultArray();
+        return $this->db->table('products_section')->where('is_deleted', 0)->where('visibility', 1)->orderBy('display_order', 'ASC')->get()->getResultArray();
     }
 
     public function GetProductsData()
@@ -338,6 +338,14 @@ class onlinestoremodal extends Model
             ->where('id', $id)
             ->update($data);
     }
+
+    public function UpdateProductOrder($productId, $data)
+    {
+        return $this->db->table('products_section')
+            ->where('id', $productId)
+            ->update($data);
+    }
+
 
     public function getAllonlineblogs()
     {
@@ -401,5 +409,4 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
-
 }

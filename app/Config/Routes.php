@@ -598,6 +598,7 @@ $routes->get('online_store/fetch_collections', 'Store::fetch_collections');
 $routes->post('online_store/add_new_product', 'Store::add_new_product');
 $routes->post('online_store/update_product/(:num)', 'Store::update_product/$1');
 $routes->get('online_store/delete_product/(:num)', 'Store::delete_product/$1');
+$routes->post('online_store/reorder_products', 'Store::reorder_products');
 
 //home imageF
 $routes->post('home-image/save', 'Store::save');

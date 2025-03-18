@@ -216,9 +216,10 @@ class Customerservice extends Controller
         try {
             log_message('info', 'Starting email processing');
 
-            $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
-            $username = 'support@driphunter.in';
-            $password = 's@Tz6Vw5*Ju4Lq';
+            // ✅ Gmail IMAP Configuration
+            $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+            $username = 'adityapatil93564@gmail.com';
+            $password = 'tbhz kenk gsgj lzjs'; // Use App Password, NOT your Gmail password
 
             $inbox = imap_open($hostname, $username, $password);
             if (!$inbox) {
@@ -412,10 +413,10 @@ class Customerservice extends Controller
             $conversationThread = $model->getCompleteThread($msgno);
             log_message('info', 'Found ' . count($conversationThread) . ' messages in complete thread');
 
-            // IMAP connection for received messages
-            $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
-            $username = 'support@driphunter.in';
-            $password = 's@Tz6Vw5*Ju4Lq';
+            // ✅ Gmail IMAP Configuration
+            $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+            $username = 'adityapatil93564@gmail.com';
+            $password = 'tbhz kenk gsgj lzjs'; // Use App Password, NOT your Gmail password
 
             $inbox = imap_open($hostname, $username, $password);
             if (!$inbox) {
@@ -521,7 +522,6 @@ class Customerservice extends Controller
         $ordermodel = new Ordermanagement_model();
         $tagModel = new TagModel();
 
-
         try {
             // Fetch conversation based on channel type
             if ($channel === 'email') {
@@ -536,7 +536,6 @@ class Customerservice extends Controller
             $attachments = [];
             $allTags = [];
 
-
             // Fetch ticket number
             $ticketDetails = $model->getTicketDetails($id);
             $ticketNo = $ticketDetails['ticket_no'] ?? null;
@@ -544,9 +543,10 @@ class Customerservice extends Controller
 
             // Initialize IMAP connection only if the channel is email
             if ($channel === 'email') {
-                $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
-                $username = 'support@driphunter.in';
-                $password = 's@Tz6Vw5*Ju4Lq';
+                // ✅ Gmail IMAP Configuration
+                $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+                $username = 'adityapatil93564@gmail.com';
+                $password = 'tbhz kenk gsgj lzjs'; // Use App Password, NOT your Gmail password
 
                 $inbox = imap_open($hostname, $username, $password);
                 if (!$inbox) {
@@ -651,6 +651,11 @@ class Customerservice extends Controller
 
             //print_r($threadData);exit();
             log_message('info', "Conversation processing completed successfully");
+
+            // echo '<pre>';
+            // print_r($threadData);
+            // echo '</pre>';
+            // exit();
 
             return view('email_view', [
                 'thread' => $threadData,
@@ -850,9 +855,10 @@ class Customerservice extends Controller
         $db = \Config\Database::connect();
 
         // Get the original email from IMAP server
-        $hostname = '{imap.hostinger.com:993/imap/ssl}INBOX';
-        $username = 'support@driphunter.in';
-        $password = 's@Tz6Vw5*Ju4Lq';
+        // ✅ Gmail IMAP Configuration
+        $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+        $username = 'adityapatil93564@gmail.com';
+        $password = 'tbhz kenk gsgj lzjs';
         $inbox = imap_open($hostname, $username, $password) or die('Cannot connect to Hostinger email: ' . imap_last_error());
 
         $overview = imap_fetch_overview($inbox, $uid, 0);
@@ -1137,7 +1143,7 @@ chmod -R 777 writable/uploads/email_attachments
             // If not an internal note, send an actual email
             if ($replyType !== 'internal_note') {
                 $email = \Config\Services::email();
-                $email->setFrom('support@driphunter.in', 'DripHunter Support');
+                $email->setFrom('adityapatil93564@gmail.com', 'Sportzsaga Support');
                 $email->setTo(explode(',', $toEmails));
 
                 if (!empty($ccEmails)) {
@@ -1251,7 +1257,7 @@ chmod -R 777 writable/uploads/email_attachments
             // Process each conversation to extract unique tags
             foreach ($conversations as &$conversation) {
                 $conversation['unique_tags'] = $this->replyModel->getUniqueTagsForConversation($conversation['id'], $conversation['channel']);
-                $conversation['ticket_no'] = $this->replyModel->getTicketNumber($conversation['id']); // Fetch ticket number if exists
+                $conversation['ticket_no'] = $this->replyModel->getTicketNumber($conversation['id']);
             }
 
             log_message('info', 'Processed ' . count($conversations) . ' conversations with unique tags.');
@@ -1461,7 +1467,7 @@ chmod -R 777 writable/uploads/email_attachments
 
             // **Send Email**
             $email = \Config\Services::email();
-            $email->setFrom('support@driphunter.in', 'DripHunter Support');
+            $email->setFrom('adityapatil93564@gmail.com', 'Sportzsaga Support');
             $email->setTo(explode(',', $toEmails));
 
             if (!empty($ccEmails)) {

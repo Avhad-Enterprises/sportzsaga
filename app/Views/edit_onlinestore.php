@@ -1122,7 +1122,7 @@
         });
     </script>
 
-    
+
     <!----------------------------------------------------------------------------------------ALL blog------------------------------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -4024,36 +4024,36 @@
                 //const orderedIds = Array.from(container.children).map((child) => child.dataset.id);
                 const formData = new FormData(addteamsform);
 
-            
 
-                    addBtn.disabled = true;
-                    addBtn.innerHTML = "Updating...";
 
-                    fetch("<?= base_url('online_store/add_members') ?>", {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                "X-Requested-With": "XMLHttpRequest"
-                            },
-                        })
-                        .then((response) => response.json())
-                        .then((data) => {
-                            if (data.success) {
-                                showToast("Member Added successfully!", "success");
-                                location.reload();
-                            } else {
-                                showToast(data.message || "Failed to Add Member.", "error");
-                            }
-                        })
-                        .catch((error) => {
-                            console.error("Error:", error);
-                            showToast("An error occurred. Please try again.", "error");
-                        })
-                        .finally(() => {
-                            addBtn.disabled = false;
-                            addBtn.innerHTML = "Update";
-                        });
-             
+                addBtn.disabled = true;
+                addBtn.innerHTML = "Updating...";
+
+                fetch("<?= base_url('online_store/add_members') ?>", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            showToast("Member Added successfully!", "success");
+                            location.reload();
+                        } else {
+                            showToast(data.message || "Failed to Add Member.", "error");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        showToast("An error occurred. Please try again.", "error");
+                    })
+                    .finally(() => {
+                        addBtn.disabled = false;
+                        addBtn.innerHTML = "Update";
+                    });
+
             });
 
 
@@ -4796,7 +4796,7 @@
                     });
             }
 
-            
+
         });
     </script>
 
@@ -5381,6 +5381,68 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var productList = document.getElementById("productBoxContainer");
+
+            new Sortable(productList, {
+                animation: 150,
+                ghostClass: "sortable-ghost",
+                handle: ".handle", // Dragging enabled via handle
+                onEnd: function(evt) {
+                    let reorderedIds = [];
+                    document.querySelectorAll(".ProductBox").forEach((product, index) => {
+                        let productId = product.getAttribute("data-id");
+                        reorderedIds.push({
+                            id: productId,
+                            position: index + 1
+                        });
+                    });
+
+                    // Send new order to the server via AJAX
+                    fetch("<?= base_url('online_store/reorder_products') ?>", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                reorderedProducts: reorderedIds
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === "success") {
+                                showToast(data.message, "success");
+                            } else {
+                                showToast(data.message, "error");
+                            }
+                        })
+                        .catch(error => {
+                            showToast("An error occurred while updating product order.", "error");
+                            console.error("Error:", error);
+                        });
+                }
+            });
+        });
+
+        // ✅ Function to Show Toast Notification
+        function showToast(message, type) {
+            let backgroundColor = type === "success" ? "#000000" : "linear-gradient(to right, #FF5F6D, #FFC371)";
+
+            Toastify({
+                text: message,
+                duration: 5000,
+                close: true,
+                gravity: "bottom",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: backgroundColor,
+                }
+            }).showToast();
+        }
     </script>
 
 </body>
