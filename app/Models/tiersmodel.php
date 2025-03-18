@@ -8,11 +8,11 @@ class tiersmodel extends Model
 {
     protected $table = 'tier_1';
     protected $primaryKey = 'tier_1_id';
-    protected $allowedFields = ['tier_value', 'tier_name', 'tier_link'];
+    protected $allowedFields = ['tier_value', 'tier_name', 'tier_link','updated_by','change_log','deleted_at','is_deleted','deleted_at','deleted_by','updated_at','added_by'];
 
     public function getAllTiers()
     {
-        return $this->findAll();
+        return $this->where('is_deleted', 0)->findAll();
     }
 
     public function gettierbyid($id)
@@ -32,7 +32,7 @@ class tiersmodel extends Model
 
     public function getAllTier2($id)
     {
-        $tier_2 = $this->db->table('tier_2')->where('tier_1_id', $id)->get()->getResultArray();
+        $tier_2 = $this->db->table('tier_2')->where('tier_1_id', $id)->where('is_deleted' ,0)->get()->getResultArray();
         return $tier_2;
     }
 
@@ -121,7 +121,7 @@ class tiersmodel extends Model
 
     public function getAllTier3($id)
     {
-        $tier_3 = $this->db->table('tier_3')->where('tier_2_id', $id)->get()->getResultArray();
+        $tier_3 = $this->db->table('tier_3')->where('tier_2_id', $id)->where('is_deleted' ,0)->get()->getResultArray();
         return $tier_3;
     }
 

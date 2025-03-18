@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -98,6 +98,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_1/(:num)', 'Tiers::edit_tier_1/$1');
    $routes->post('tiers/update_tier_1/(:num)', 'Tiers::update_tier_1/$1');
    $routes->get('tiers/deleteTier/(:num)', 'Tiers::deleteTier/$1');
+   $routes->get('tier1_deleted', 'Tiers::deletedTiers'); // View deleted tiers
+   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1'); // Restore deleted tier
 
 
    $routes->get('tiers/add_tier_2/(:num)', 'Tiers::add_tier_2/$1');
@@ -107,6 +109,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_2/(:num)', 'Tiers::edit_tier_2/$1');
    $routes->post('tiers/update_tier_2/(:num)', 'Tiers::update_tier_2/$1');
    $routes->get('tiers/deleteTier2/(:num)', 'Tiers::deleteTier2/$1');
+   $routes->get('tier2_deleted', 'Tiers::deletedTiers2');
+   $routes->get('tiers/restore_tier_2/(:num)', 'Tiers::restoreTier2/$1');
+
 
    $routes->get('tiers/add_tier_3/(:num)', 'Tiers::add_tier_3/$1');
    $routes->get('tiers/new_tier_3/(:num)', 'Tiers::new_tier_3/$1');
@@ -114,6 +119,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_3/(:num)', 'Tiers::edit_tier_3/$1');
    $routes->post('tiers/update_tier_3/(:num)', 'Tiers::update_tier_3/$1');
    $routes->get('tiers/deleteTier3/(:num)', 'Tiers::deleteTier3/$1');
+   $routes->get('tier3_deleted', 'Tiers::deletedTiers3');
+   $routes->get('tiers/restore_tier_3/(:num)', 'Tiers::restoreTier3/$1');
 
 
    $routes->get('tiers/add_tier_4/(:num)', 'Tiers::add_tier_4/$1');
@@ -121,6 +128,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('tiers/publish_tier_4/(:num)', 'Tiers::publish_tier_4/$1');
    $routes->get('tiers/edit_tier_4/(:num)', 'Tiers::edit_tier_4/$1');
    $routes->post('tiers/update_tier_4/(:num)', 'Tiers::update_tier_4/$1');
+   $routes->get('tier4_deleted', 'Tiers::deletedTiers4');
+   $routes->get('tiers/restore_tier_4/(:num)', 'Tiers::restoreTier4/$1');
 
    // Tier 2 in Add Products Page
    $routes->post('tiers/get_tier2', 'Tiers::get_tier2');
@@ -298,6 +307,8 @@ $routes->post('check-url', 'Products::checkUrl');
 $routes->post('products/AddNewProductTags', 'Products::AddNewProductTags');
 $routes->get('product_reviews', 'Products::productReviews');
 $routes->post('products/reviews/update_status', 'Products::UpdateReviewStatus');
+$routes->get('product_deleted', 'Products::deletedproducts'); // View deleted products
+$routes->get('products/restoreproduct/(:num)', 'Products::restoreproduct/$1'); // Restore product
 
 // Pincode Mapping Controller
 $routes->get('pincode-mapping', 'Products::pincode_mapping');
@@ -332,6 +343,12 @@ $routes->get('getSelectedProducts/(:num)', 'Products::getSelectedProducts/$1');
 $routes->post('getProductsByIds', 'Products::getProductsByIds');
 $routes->get('collections/(:any)', 'Products::collectionview/$1');
 $routes->get('collections/(:any)', 'Products::collectionview/$1');
+$routes->get('collection_deleted', 'Products::deletedcollections');
+$routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
+
+
+
+
 
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
@@ -610,3 +627,23 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

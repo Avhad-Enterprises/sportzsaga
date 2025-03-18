@@ -56,12 +56,20 @@ class Products_model extends Model
         'publish_date_and_time',
         'end_date_and_time',
         'recurrence',
-        'publish_for'
+        'publish_for',
+        'updated_by',
+        'change_log',
+        'deleted_at',
+        'is_deleted',
+        'deleted_at',
+        'deleted_by',
+        'updated_at',
+        'added_by'
     ];
 
     public function getproductsdata()
     {
-        return $this->db->table('products')->get()->getResultArray();
+        return $this->db->table('products')->where('is_deleted', 0)->get()->getResultArray();
     }
 
     public function getPublicProducts()
@@ -159,9 +167,20 @@ class Products_model extends Model
 
     public function getcollectionsdata()
     {
-        $collections = $this->db->table('collection')->get()->getResultArray();
-        return $collections;
+        return $this->db->table('collection')
+            ->where('is_deleted', 0) // ✅ Move 'where' before 'get'
+            ->get()
+            ->getResultArray();
     }
+
+    public function getDeletedCollections()
+    {
+        return $this->db->table('collection')
+            ->where('is_deleted', 1) // ✅ Correct placement of where()
+            ->get() // ✅ Execute query first
+            ->getResultArray(); // ✅ Fetch results properly
+    }
+
 
     public function deletecollections($id)
     {
