@@ -78,7 +78,8 @@ class Registerusers_model extends Model
         'is_deleted',
         'deleted_by',
         'deleted_at',
-        'added_by'
+        'added_by',
+        'agent_status',
     ];
     protected $useTimestamps = true;
 

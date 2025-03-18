@@ -127,6 +127,12 @@
                                     Create Collection
                                 </a>
                             </div>
+                            <div class="dropdown">
+                                <a class="btn btn-success fw-bold" href="<?= base_url('collection_deleted') ?>"
+                                    role="button">
+                                    Logs
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -146,6 +152,7 @@
                                         <th>Collection Title</th>
                                         <th>Collection Description</th>
                                         <th>Created</th>
+                                        <th>Added by</th>
                                         <th class="datatable-nosort">Actions</th>
                                     </tr>
                                 </thead>
@@ -165,9 +172,10 @@
                                             </td>
                                             <td><?php $date = new DateTime($collection['publish_date_and_time']);
                                             echo $date->format('d-F-Y h:i A'); ?></td>
+                                            <td><?= $collection['added_by'] ?></td>
                                             <td>
                                                 <a href="javascript:void(0);"
-                                                    onclick="confirmbcollectionDelete(<?= $collection['collection_id'] ?>)"
+                                                    onclick="confirmCollectionDelete(<?= $collection['collection_id'] ?>)"
                                                     data-color="#e95959">
                                                     <i class="icon-copy dw dw-delete-3"></i>
                                                 </a>

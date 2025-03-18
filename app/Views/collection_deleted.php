@@ -108,88 +108,51 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="title">
-                                <h4>Tier</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-right blogs-imex">
-                            <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>tiers/new_tier_1"
-                                    role="button">
-                                    Add
-                                </a>
-                            </div>
-
-                            <div class="dropdown">
-                                <a class="btn btn-success fw-bold" href="<?= base_url('tier1_deleted') ?>"
-                                    role="button">
-                                    Logs
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Tier - 1</h4>
+                        <h4 class="text-blue h4">Deleted Collection</h4>
                     </div>
                     <div class="pb-20">
-                        <table class="table">
+                        <table class="table hover data-table-export table-hover">
                             <thead>
                                 <tr>
-                                    <th class="table-plus">ID</th>
-                                    <th>Tier Name</th>
-                                    <th>Tier Value</th>
-                                    <th>Action</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Collection Type</th>
+                                    <th>Deleted At</th>
+                                    <th>Deleted By</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($tiers as $tier): ?>
-                                    <tr>
-                                        <td><?= $tier['tier_1_id'] ?></td>
-                                        <td><?= $tier['tier_name'] ?></td>
-                                        <td><?= $tier['tier_value'] ?></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                                    href="#" role="button" data-toggle="dropdown">
-                                                    <i class="dw dw-more"></i>
+                                <?php if (!empty($collection)): ?>
+                                    <?php foreach ($collection as $tier): ?>
+                                        <tr>
+                                            <td><?= esc($tier['collection_title']) ?></td>
+                                            <td><?= esc($tier['collection_description']) ?></td>
+                                            <td><?= esc($tier['collection_type']) ?></td>
+                                            <td><?= esc($tier['deleted_at'] ?? 'N/A') ?></td>
+                                            <td><?= esc($tier['deleted_by'] ?? 'N/A') ?></td>
+                                            <td>
+                                                <a class="dropdown-item" href="javascript:void(0);"
+                                                    onclick="confirmCollectionRestore(<?= esc($tier['collection_id']) ?>)">
+                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>tiers/add_tier_2/<?= $tier['tier_1_id'] ?>"><i
-                                                            class="dw dw-eye"></i> Add Tier 2</a>
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>tiers/edit_tier_1/<?= $tier['tier_1_id'] ?>"><i
-                                                            class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item"
-                                                        href="<?= base_url() ?>tiers/deleteTier/<?= $tier['tier_1_id'] ?>"><i
-                                                            class="dw dw-edit2"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="6" class="text-center">No deleted suppliers found.</td>
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-
-                <!-- Export Datatable End -->
-            </div>
-        </div>
-    </div>
+                <!-- Footer View Start -->
+                <?= $this->include('footer_view') ?>
+                <!-- Footer View End -->
 
 </body>
-
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
-
-</html>

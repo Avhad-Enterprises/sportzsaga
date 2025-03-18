@@ -36,6 +36,7 @@
 <script src="<?= base_url(); ?>vendors/scripts/dashboard.js"></script>
 <script src="<?= base_url(); ?>js/form-validation.js"></script>
 <script src="<?= base_url(); ?>js/online-store.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
 <!-- Include dragscroll library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
 <!-- Quill.js JS -->
@@ -53,7 +54,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>js/custom.js"></script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Function to show toast
     function showToast(message, type) {
       let backgroundColor = (type === 'success') ?
@@ -71,7 +72,7 @@
         style: {
           background: backgroundColor,
         },
-        onClick: function() {}
+        onClick: function () { }
       }).showToast();
     }
 
@@ -153,7 +154,7 @@
 <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Initialize Quill Editor
     const quill = new Quill('#quillEditor', {
       theme: 'snow',
@@ -187,14 +188,14 @@
     const form = document.getElementById('AddnewProductsForm');
     const textarea = document.getElementById('product-description');
 
-    form.addEventListener('submit', function() {
+    form.addEventListener('submit', function () {
       textarea.value = quill.root.innerHTML; // Set Quill content to textarea
     });
   });
 </script>
 
 <script>
-  document.getElementById('metaFieldsToggle').addEventListener('click', function() {
+  document.getElementById('metaFieldsToggle').addEventListener('click', function () {
     var metaFieldsCollapse = document.getElementById('metaFieldsCollapse');
     if (metaFieldsCollapse.classList.contains('show')) {
       metaFieldsCollapse.classList.remove('show');
@@ -209,7 +210,7 @@
 <script>
   function previewImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('image-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -221,7 +222,7 @@
 <script>
   function previewLogo(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('logo-image-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -233,7 +234,7 @@
 <script>
   function dripspotpreviewImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('dripspot-image-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -387,12 +388,12 @@
 </script>
 
 <script>
-  document.getElementById("productType").addEventListener("change", function() {
+  document.getElementById("productType").addEventListener("change", function () {
     var selectedType = this.value;
     var additionalFields = document.querySelectorAll(".additional-fields");
 
     // Hide all additional fields initially
-    additionalFields.forEach(function(field) {
+    additionalFields.forEach(function (field) {
       field.style.display = "none";
     });
 
@@ -404,9 +405,9 @@
 </script>
 
 <script>
-  document.getElementById('productCategory').addEventListener('change', function() {
+  document.getElementById('productCategory').addEventListener('change', function () {
     // Hide all additional fields
-    document.querySelectorAll('.additional-fields').forEach(function(element) {
+    document.querySelectorAll('.additional-fields').forEach(function (element) {
       element.style.display = 'none';
     });
 
@@ -437,7 +438,7 @@
 </script>
 
 <script>
-  document.getElementById('main-category').addEventListener('change', function() {
+  document.getElementById('main-category').addEventListener('change', function () {
     var clothingSubcategories = document.getElementById('clothing-subcategories');
     if (this.value === 'clothing') {
       clothingSubcategories.classList.remove('hidden');
@@ -448,7 +449,7 @@
     }
   });
 
-  document.getElementById('clothing-category').addEventListener('change', function() {
+  document.getElementById('clothing-category').addEventListener('change', function () {
     var topwearSubcategories = document.getElementById('topwear-subcategories');
     if (this.value === 'topwear') {
       topwearSubcategories.classList.remove('hidden');
@@ -458,7 +459,7 @@
     }
   });
 
-  document.getElementById('topwear-category').addEventListener('change', function() {
+  document.getElementById('topwear-category').addEventListener('change', function () {
     var tshirtsSubcategories = document.getElementById('shirt-subcategories');
     if (this.value === 'tshirt') {
       tshirtsSubcategories.classList.remove('hidden');
@@ -506,13 +507,13 @@
 </script>
 
 <script>
-  document.querySelectorAll('.image-input').forEach(function(input) {
-    input.addEventListener('change', function(event) {
+  document.querySelectorAll('.image-input').forEach(function (input) {
+    input.addEventListener('change', function (event) {
       var previewId = 'image-preview' + event.target.id.replace('image', '');
       var previewElement = document.getElementById(previewId);
 
       var reader = new FileReader();
-      reader.onload = function() {
+      reader.onload = function () {
         previewElement.src = reader.result;
         previewElement.style.display = 'block';
       };
@@ -523,34 +524,34 @@
 
 
 <script>
-  document.getElementById("image1").addEventListener("change", function() {
+  document.getElementById("image1").addEventListener("change", function () {
     // Show the next image upload field
     document.getElementById("image2Upload").style.display = "block";
   });
 
-  document.getElementById("image2").addEventListener("change", function() {
+  document.getElementById("image2").addEventListener("change", function () {
     // Show the next image upload field
     document.getElementById("image3Upload").style.display = "block";
   });
 
-  document.getElementById("image3").addEventListener("change", function() {
+  document.getElementById("image3").addEventListener("change", function () {
     // Show the next image upload field
     document.getElementById("image4Upload").style.display = "block";
   });
 
-  document.getElementById("image4").addEventListener("change", function() {
+  document.getElementById("image4").addEventListener("change", function () {
     // Show the next image upload field
     document.getElementById("image5Upload").style.display = "block";
   });
 
-  document.getElementById("image5").addEventListener("change", function() {
+  document.getElementById("image5").addEventListener("change", function () {
     // Show the next image upload field
     document.getElementById("image6Upload").style.display = "block";
   });
 </script>
 
 <script>
-  document.getElementById('tier-1').addEventListener('change', function() {
+  document.getElementById('tier-1').addEventListener('change', function () {
     var tier2 = document.getElementById('tier-2');
     if (this.value === 'Clothing') {
       tier2.removeAttribute('disabled');
@@ -561,7 +562,7 @@
     }
   });
 
-  document.getElementById('tier-2').addEventListener('change', function() {
+  document.getElementById('tier-2').addEventListener('change', function () {
     var tier3 = document.getElementById('tier-3');
     if (this.value === 'Topwear') {
       tier3.removeAttribute('disabled');
@@ -572,7 +573,7 @@
     }
   });
 
-  document.getElementById('tier-3').addEventListener('change', function() {
+  document.getElementById('tier-3').addEventListener('change', function () {
     var tier4 = document.getElementById('tier-4');
     if (this.value === 'T-Shirt') {
       tier4.removeAttribute('disabled');
@@ -585,8 +586,8 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    $('#submitNewFieldBtn').click(function() {
+  $(document).ready(function () {
+    $('#submitNewFieldBtn').click(function () {
       var title = $('#newFieldTitle').val();
       if (title) {
         $.ajax({
@@ -596,7 +597,7 @@
             title: title
           },
           dataType: 'json',
-          success: function(response) {
+          success: function (response) {
             if (response.success) {
               $('#dynamicFields').append('<div class="form-group"><label>' + response.field_label + '</label><input type="text" class="form-control" name="' + response.field_name + '" placeholder="Enter ' + response.field_label + '" required></div>');
               $('#newFieldTitle').val(''); // Clear the input field
@@ -604,7 +605,7 @@
               alert(response.message);
             }
           },
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             console.error(xhr, status, error);
             alert('Request failed: ' + status);
           }
@@ -779,18 +780,18 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    $('.swiper-slide').on('click', function() {
+  $(document).ready(function () {
+    $('.swiper-slide').on('click', function () {
       var storyId = $(this).data('story-id');
 
       $.ajax({
         url: '<?= base_url('stories/getStoryContent') ?>/' + storyId,
         method: 'GET',
         dataType: 'json',
-        success: function(response) {
+        success: function (response) {
           $('.storymainshow').removeClass('hidden').html(response.content);
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
           console.error(error);
         }
       });
@@ -800,11 +801,11 @@
 
 
 <script>
-  window.onload = function() {
+  window.onload = function () {
     var successMessage = document.getElementById('success-message');
     if (successMessage) {
       successMessage.style.display = 'block';
-      setTimeout(function() {
+      setTimeout(function () {
         successMessage.style.display = 'none';
       }, 2000); // 2000 milliseconds = 2 seconds
     }
@@ -826,8 +827,8 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    $('#tags').change(function(e) {
+  $(document).ready(function () {
+    $('#tags').change(function (e) {
       e.preventDefault(); // Prevent the default form submission
       $('#newcollectionsview').submit(); // Manually submit the form
     });
@@ -846,15 +847,15 @@
 
 <script>
   // JavaScript for disabling form submissions if there are invalid fields
-  (function() {
+  (function () {
     'use strict'
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
 
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-      .forEach(function(form) {
-        form.addEventListener('submit', function(event) {
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
@@ -867,12 +868,12 @@
 </script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Function to filter products based on search input
-    $('#productSearch').on('keyup', function() {
+    $('#productSearch').on('keyup', function () {
       var searchText = $(this).val().toLowerCase();
 
-      $('.product-item').each(function() {
+      $('.product-item').each(function () {
         var productTitle = $(this).text().toLowerCase();
         var isVisible = productTitle.indexOf(searchText) > -1;
         $(this).toggle(isVisible); // Show/hide based on search match
@@ -880,9 +881,9 @@
     });
   });
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Handle product selection checkboxes
-    $('.product-checkbox').change(function() {
+    $('.product-checkbox').change(function () {
       updateSelectedProductsTable();
     });
 
@@ -891,7 +892,7 @@
       $('#productTableBody').empty();
       var totalPrice = 0;
 
-      $('.product-checkbox:checked').each(function() {
+      $('.product-checkbox:checked').each(function () {
         var productId = $(this).val();
         var productName = $(this).next('label').text().split(' - ')[0]; // Extract product name
         var productPrice = parseFloat($(this).data('price'));
@@ -917,8 +918,8 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    $('#table_name').change(function() {
+  $(document).ready(function () {
+    $('#table_name').change(function () {
       var tableName = $(this).val();
       $('#loader').show(); // Show the loader
       $('#columns_container').html(''); // Clear the columns container
@@ -928,11 +929,11 @@
         data: {
           table_name: tableName
         },
-        success: function(response) {
+        success: function (response) {
           var columns = response;
           var columnsHtml = '';
           for (var i = 0; i < columns.length; i++) {
-            var displayName = columns[i].replace(/_/g, ' ').replace(/\b\w/g, function(char) {
+            var displayName = columns[i].replace(/_/g, ' ').replace(/\b\w/g, function (char) {
               return char.toUpperCase();
             });
             columnsHtml += '<div class="col-md-6"><div class="custom-control custom-checkbox mb-3">' +
@@ -942,7 +943,7 @@
           $('#columns_container').html(columnsHtml);
           $('#loader').hide(); // Hide the loader
         },
-        error: function() {
+        error: function () {
           $('#loader').hide(); // Hide the loader in case of an error
           alert('Failed to fetch columns.');
         }
@@ -952,9 +953,9 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.task-row').forEach(function(row) {
-      row.addEventListener('click', function(event) {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.task-row').forEach(function (row) {
+      row.addEventListener('click', function (event) {
         if (event.target.closest('.no-modal')) {
           event.stopPropagation();
         } else {
@@ -1093,7 +1094,7 @@
     }
 
     // Apply discount
-    $('#applyDiscount').on('click', function() {
+    $('#applyDiscount').on('click', function () {
       let discountAmount = parseFloat($('#discountAmount').val());
       let totalPrice = parseFloat($('#totalPrice').data('original-total'));
 
@@ -1110,7 +1111,7 @@
     // Update total price in the table
     function updateTotalPrice() {
       let totalPrice = 0;
-      $('#productTableBody tr').each(function() {
+      $('#productTableBody tr').each(function () {
         let productPrice = parseFloat($(this).find('td:nth-child(4)').text().replace('₹', ''));
         totalPrice += productPrice;
       });
@@ -1127,30 +1128,30 @@
 </script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Update customer name and email
-    $('input[name="order-customer-name"]').on('input', function() {
+    $('input[name="order-customer-name"]').on('input', function () {
       $('#displayCustomerName').text($(this).val());
     });
 
-    $('input[name="order-customer-email"]').on('input', function() {
+    $('input[name="order-customer-email"]').on('input', function () {
       $('#displayCustomerEmail').text($(this).val());
     });
 
-    $('input[name="order-customer-phone"]').on('input', function() {
+    $('input[name="order-customer-phone"]').on('input', function () {
       $('#displayCustomerPhone').text($(this).val());
     });
 
-    $('textarea[name="customer-address"]').on('input', function() {
+    $('textarea[name="customer-address"]').on('input', function () {
       $('#displayCustomerAddress').text($(this).val());
     });
 
     // Update selected products and total price
-    $(document).on('change', '.product-checkbox', function() {
+    $(document).on('change', '.product-checkbox', function () {
       var selectedProducts = '';
       var totalPrice = 0;
 
-      $('.product-checkbox:checked').each(function() {
+      $('.product-checkbox:checked').each(function () {
         var productId = $(this).val();
         var productTitle = $(this).closest('.product-item').find('label').text();
         var productPrice = parseFloat($(this).data('price'));
@@ -1164,7 +1165,7 @@
     });
 
     // Update payment method
-    $('#paymentMethodSelect').change(function() {
+    $('#paymentMethodSelect').change(function () {
       $('#displayPaymentMethod').text($(this).find('option:selected').text());
     });
   });
@@ -1173,7 +1174,7 @@
 <script>
   let colorIndex = 1;
 
-  document.getElementById('add-color-option').addEventListener('click', function() {
+  document.getElementById('add-color-option').addEventListener('click', function () {
     const colorOptionsContainer = document.getElementById('color-options');
     const newColorOption = document.createElement('div');
     newColorOption.classList.add('row', 'color-option');
@@ -1203,7 +1204,7 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const sectionsContainer = document.getElementById('sections-container');
     const addSectionBtn = document.getElementById('add-section-btn');
     let sectionCount = 1;
@@ -1211,7 +1212,7 @@
     // Initialize Quill for the first section
     initializeQuill(sectionCount);
 
-    addSectionBtn.addEventListener('click', function() {
+    addSectionBtn.addEventListener('click', function () {
       if (sectionCount >= 10) {
         alert('You can only add up to 10 sections.');
         return;
@@ -1276,7 +1277,7 @@
       });
 
       // Handle the hidden input value
-      quill.on('text-change', function() {
+      quill.on('text-change', function () {
         const descriptionInput = document.getElementById(`description-${count}`);
         descriptionInput.value = quill.root.innerHTML; // Store HTML content in the hidden input
       });
@@ -1286,7 +1287,7 @@
   // Preview and remove image functions
   function previewSectionImage(event, sectionId) {
     const reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       const imagePreview = document.getElementById(`image-preview-${sectionId}`);
       const previewContainer = document.getElementById(`image-preview-container-${sectionId}`);
       imagePreview.src = reader.result;
@@ -1308,7 +1309,7 @@
 <script>
   function previewImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var imagePreview = document.getElementById('image-preview');
       var imageRemoveBtn = document.getElementById('image-remove-btn');
       imagePreview.src = reader.result;
@@ -1331,17 +1332,17 @@
 </script>
 
 <script>
-  document.getElementById('meta-title').addEventListener('input', function() {
+  document.getElementById('meta-title').addEventListener('input', function () {
     document.getElementById('serp-title').textContent = this.value || 'Sample Meta Title';
   });
 
-  document.getElementById('meta-description').addEventListener('input', function() {
+  document.getElementById('meta-description').addEventListener('input', function () {
     document.getElementById('serp-description').textContent = this.value || 'Sample Meta Description goes here. It includes your target keyword naturally and is under 160 characters.';
   });
 
   const urlPrefix = "https://www.driphunter.in/";
 
-  document.getElementById('meta-url').addEventListener('input', function() {
+  document.getElementById('meta-url').addEventListener('input', function () {
     const userUrl = this.value || 'sample-title';
     document.getElementById('serp-url').textContent = urlPrefix + userUrl;
     document.getElementById('serp-url').href = urlPrefix + userUrl;
@@ -1528,9 +1529,9 @@
     $('#loading-modal').modal('show');
 
     fetch("<?= site_url('public/instagram/scheduleAllPosts') ?>", {
-        method: "POST",
-        body: formData
-      })
+      method: "POST",
+      body: formData
+    })
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -1557,10 +1558,10 @@
   }
 
   // Add event listener to the "Save Schedule post" button
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const saveButton = document.querySelector('a[onclick="ScheduleAllPost()"]');
     if (saveButton) {
-      saveButton.addEventListener('click', function(event) {
+      saveButton.addEventListener('click', function (event) {
         event.preventDefault();
         ScheduleAllPost();
       });
@@ -1569,7 +1570,7 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector('.carousel');
     const indicators = document.querySelectorAll('.indicator');
 
@@ -1620,7 +1621,7 @@
       const file = files[i];
       const reader = new FileReader();
 
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         const img = document.createElement('img');
         img.src = e.target.result;
         img.style.width = '100px'; // Adjust width as needed
@@ -1634,14 +1635,14 @@
 </script>
 
 <script>
-  document.querySelector('.left-chevron').addEventListener('click', function() {
+  document.querySelector('.left-chevron').addEventListener('click', function () {
     document.querySelector('.Allcategorypills').scrollBy({
       left: -200, // Adjust the value as needed
       behavior: 'smooth'
     });
   });
 
-  document.querySelector('.right-chevron').addEventListener('click', function() {
+  document.querySelector('.right-chevron').addEventListener('click', function () {
     document.querySelector('.Allcategorypills').scrollBy({
       left: 200, // Adjust the value as needed
       behavior: 'smooth'
@@ -1651,7 +1652,7 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const desktopCarousel = document.querySelector('.carousel-desktop');
     const mobileCarousel = document.querySelector('.carousel-mobile');
     const indicators = document.querySelectorAll('.indicator');
@@ -1733,19 +1734,19 @@
 </script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
 
-    $('.BrandShow img').on('click', function() {
+    $('.BrandShow img').on('click', function () {
       $('#brandModal').fadeIn();
       $('body').css('overflow', 'hidden');
     });
 
-    $('.Brands-Close-Button').on('click', function() {
+    $('.Brands-Close-Button').on('click', function () {
       $('#brandModal').fadeOut();
       $('body').css('overflow', 'auto');
     });
 
-    $(window).on('click', function(event) {
+    $(window).on('click', function (event) {
       if ($(event.target).is('#brandModal')) {
         $('#brandModal').fadeOut();
         $('body').css('overflow', 'auto');
@@ -1807,7 +1808,7 @@
   }
 
   // Generate CAPTCHA when the page loads
-  window.onload = function() {
+  window.onload = function () {
     generateCaptcha(); // Automatically show CAPTCHA on page load
   }
 
@@ -1825,7 +1826,7 @@
 </script>
 
 <script>
-  document.getElementById('inviteType').addEventListener('change', function() {
+  document.getElementById('inviteType').addEventListener('change', function () {
     var type = this.value;
     document.getElementById('employeeFields').style.display = (type === 'employee') ? 'block' : 'none';
     document.getElementById('sellerFields').style.display = (type === 'seller') ? 'block' : 'none';
@@ -1835,7 +1836,7 @@
 <script>
   function dripspotpcpreviewImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('dripspot-pc-image-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -1845,7 +1846,7 @@
 
   function dripspotmobilepreviewImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('dripspot-mobile-image-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -1855,14 +1856,14 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const celebrityPosts = document.querySelectorAll('.celebrity-post');
     const mainPostImage = document.getElementById('main-post-image');
     const mainPostDetails = document.getElementById('main-post-details');
     const totalPriceElement = document.querySelector('.totalPrice');
 
     celebrityPosts.forEach(post => {
-      post.addEventListener('click', function() {
+      post.addEventListener('click', function () {
         const celebImage = this.getAttribute('data-image');
         const celebName = this.getAttribute('data-name');
         const dateOfUpload = this.getAttribute('data-date_of_upload');
@@ -1902,7 +1903,7 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const productNameInput = document.querySelector('input[name="product-name"]');
     const productDescriptionInput = document.querySelector('textarea[name="product-short-description"]');
     const seoUrlInput = document.querySelector('input[name="url"]');
@@ -1916,13 +1917,13 @@
         .replace(/^-+|-+$/g, '');
     }
 
-    productNameInput.addEventListener('input', function() {
+    productNameInput.addEventListener('input', function () {
       const title = productNameInput.value;
       seoTitleInput.value = title;
       seoUrlInput.value = generateSlug(title);
     });
 
-    productDescriptionInput.addEventListener('input', function() {
+    productDescriptionInput.addEventListener('input', function () {
       const description = productDescriptionInput.value;
       seoDescriptionInput.value = description;
     });
@@ -1934,7 +1935,7 @@
     var reader = new FileReader();
     var imagePreview = document.getElementById('dripspot-image-preview-mobile');
 
-    reader.onload = function() {
+    reader.onload = function () {
       imagePreview.src = reader.result;
       imagePreview.style.display = 'block';
     };
@@ -1946,7 +1947,7 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.querySelector("input[name='blog-title']");
     const metaUrlInput = document.querySelector("input[name='blog-meta-url']");
 
@@ -1959,7 +1960,7 @@
         .replace(/-+/g, "-");
     }
 
-    titleInput.addEventListener("input", function() {
+    titleInput.addEventListener("input", function () {
       let title = titleInput.value;
 
       if (title.length > 0) {
@@ -1983,7 +1984,7 @@
     if (file) {
       const reader = new FileReader();
 
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         imagePreview.src = e.target.result;
         removeIcon.style.display = 'block';
       }
@@ -2000,7 +2001,7 @@
   const tierValueInput = document.getElementById('tier_value');
   const linkInput = document.getElementById('link');
 
-  tierNameInput.addEventListener('input', function() {
+  tierNameInput.addEventListener('input', function () {
     // Get the current value and transform it
     const tierName = this.value.toLowerCase().replace(/'/g, ''); // Remove apostrophes
     const tierValueTransformed = tierName.replace(/\s+/g, '_');
@@ -2013,7 +2014,7 @@
 </script>
 
 <script>
-  document.getElementById('editAddress').addEventListener('click', function() {
+  document.getElementById('editAddress').addEventListener('click', function () {
     var form = document.getElementById('addressForm');
     if (form.style.display === "none") {
       form.style.display = "block";
@@ -2024,8 +2025,8 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    $('#edit-password-btn').click(function() {
+  $(document).ready(function () {
+    $('#edit-password-btn').click(function () {
       if ($('#new-password-fields').is(':visible')) {
         $('#new-password-fields').slideUp();
         $('#current-password').attr('disabled', 'disabled');
@@ -2040,9 +2041,9 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   });
@@ -2093,13 +2094,13 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Select all forms in the admin panel
     const forms = document.querySelectorAll('form');
 
     forms.forEach(form => {
       // Add an event listener for 'keypress' on the form
-      form.addEventListener('keypress', function(event) {
+      form.addEventListener('keypress', function (event) {
         // Check if the pressed key is Enter
         if (event.key === 'Enter') {
           // Prevent form submission when Enter is pressed
@@ -2111,7 +2112,7 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Get the modal and elements
     var modal = document.getElementById('imageModal');
     var modalImage = document.getElementById('modalImage');
@@ -2121,20 +2122,20 @@
     var images = document.querySelectorAll('.img-thumbnail');
 
     // When an image is clicked, open the modal and display the image
-    images.forEach(function(img) {
-      img.addEventListener('click', function() {
+    images.forEach(function (img) {
+      img.addEventListener('click', function () {
         modal.style.display = "block";
         modalImage.src = this.src;
       });
     });
 
     // Close the modal when the close button is clicked
-    closeButton.addEventListener('click', function() {
+    closeButton.addEventListener('click', function () {
       modal.style.display = "none";
     });
 
     // Close the modal when anywhere outside the image is clicked
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
       if (event.target === modal) {
         modal.style.display = "none";
       }
@@ -2145,7 +2146,7 @@
 <script>
   function previewpccollectionImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('image-collpc-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -2155,7 +2156,7 @@
 
   function previewmobilecollectionImage(event) {
     var reader = new FileReader();
-    reader.onload = function() {
+    reader.onload = function () {
       var output = document.getElementById('image-collmob-preview');
       output.src = reader.result;
       output.style.display = 'block';
@@ -2165,22 +2166,22 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById("profile-picture");
     const errorMessage = document.getElementById("error-message");
     const form = document.getElementById("profile-picture-form");
 
-    fileInput.addEventListener("change", function() {
+    fileInput.addEventListener("change", function () {
       const file = this.files[0];
       if (!file) return;
 
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         const img = new Image();
         img.src = e.target.result;
 
-        img.onload = function() {
+        img.onload = function () {
           // Validate Dimensions
           if (img.width !== 300 || img.height !== 300) {
             errorMessage.innerText = "Image must be exactly 300 x 300 pixels.";
@@ -2201,7 +2202,7 @@
       };
     });
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
       if (errorMessage.innerText !== "") {
         event.preventDefault(); // Prevent form submission if error exists
       }
@@ -2387,8 +2388,8 @@
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`<?= base_url('online_store/delete-all-logo/') ?>${logoId}`, {
-            method: 'GET'
-          })
+          method: 'GET'
+        })
           .then(response => response.json())
           .then(data => {
             Swal.fire('Deleted!', data.message, 'success');
@@ -2661,7 +2662,7 @@
       if (result.isConfirmed) {
         $.post("<?= base_url('relatedproduct/deleteProduct') ?>", {
           product_id: id
-        }, function(response) {
+        }, function (response) {
           if (response.status === 'success') {
             Swal.fire('Deleted!', response.message, 'success').then(() => location.reload());
           } else {
@@ -2792,6 +2793,236 @@
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "<?= base_url('purchase-order/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!-------------------------------------------------------------------------------------------- Tier 1 Soft Delete Script ----------------------------------------------------------------------->
+
+<script>
+  function confirmTierDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 1 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tier/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmTierRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 1 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tier/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+
+
+<!----------------------------------------------------------------------------------- Tier 2 Soft Delete Script ------------------------------------------------------------------------------->
+<script>
+  function confirmTier2Delete(tier_2_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 2 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_2/') ?>" + tier_2_id;
+      }
+    });
+  }
+
+  function confirmTier2Restore(tier_2_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 2 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_2/') ?>" + tier_2_id;
+      }
+    });
+  }
+</script>
+
+
+<!------------------------------------------------------------------------------------ Tier 3 Soft Delete Script ------------------------------------------------------------------------------------->
+<script>
+  function confirmTier3Delete(tier_3_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 3 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_3/') ?>" + tier_3_id;
+      }
+    });
+  }
+
+  function confirmTier3Restore(tier_3_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 3 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_3/') ?>" + tier_3_id;
+      }
+    });
+  }
+</script>
+
+
+
+
+
+<!---------------------------------------------------------------------------------------- Tier 4 Soft Delete Script --------------------------------------------------------------------------------->
+<script>
+  function confirmTier4Delete(tier_4_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the Tier 4 record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/delete_tier_4/') ?>" + tier_4_id;
+      }
+    });
+  }
+
+  function confirmTier4Restore(tier_4_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this Tier 4 record?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('tiers/restore_tier_4/') ?>" + tier_4_id;
+      }
+    });
+  }
+</script>
+
+
+
+
+<!---------------------------------------------------- Collection Soft Delete Script ----------------------------------------------------->
+<script>
+  function confirmCollectionDelete(collection_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the collection record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('collections/deletecollection/') ?>" + collection_id;
+      }
+    });
+  }
+
+  function confirmCollectionRestore(collection_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this collection?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let restoreUrl = "<?= base_url('restorecollection/') ?>" + collection_id;
+        console.log("Restoring Collection:", restoreUrl); // Debugging
+        window.location.href = restoreUrl;
+      }
+    });
+  }
+</script>
+
+
+
+
+<!---------------------------------------------------- Product Soft Delete Script ----------------------------------------------------->
+<script>
+  function confirmProductDelete(product_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the product record as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('admin-products/deleteproduct/(:num)') ?>" + product_id;
+      }
+    });
+  }
+
+  function confirmProductRestore(product_id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this product?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let restoreUrl = "<?= base_url('products/restoreproduct/') ?>" + product_id;
+        console.log("Restoring Product:", restoreUrl); // Debugging
+        window.location.href = restoreUrl;
       }
     });
   }

@@ -2,6 +2,28 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
+<style>
+    .view-btn {
+        position: relative;
+        display: inline-block;
+        padding-right: 35px;
+    }
+
+    .edit-icon {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        cursor: pointer;
+        color: #212529;
+    }
+
+    .view-btn:hover .edit-icon {
+        display: inline;
+    }
+</style>
+
 <body>
 
     <!-- Header View Start -->
@@ -120,66 +142,36 @@
                     </div>
                 </div>
                 <!-- Page Main Content Start -->
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card-box pd-20 mb-30">
-                            <div class="pd-10">
-                                <h6 class="text-blue h6">Notifications</h6>
-                                <div class=" height-100-p pd-10 min-height-200px">
 
-                                </div>
-                            </div>
-                        </div>
+                <div class="d-flex justify-content-between mb-30">
+                    <div class="col"
+                        style="
+                            width: 100%;
+                            overflow-x: auto;
+                            scrollbar-width: none;
+                            display: flex;
+                            gap: 5px;
+                        "
+                        id="views">
+                        <?php foreach ($views as $view): ?>
+                            <a class="btn border apply-view view-btn" data-id="<?= $view['id'] ?>">
+                                <?= esc($view['name']) ?>
+                                <i class="icon-copy fa fa-edit edit-icon edit-view"
+                                    data-id="<?= $view['id'] ?>"
+                                    data-name="<?= esc($view['name']) ?>"
+                                    data-status="<?= esc($view['status_filter']) ?>"
+                                    data-status-operand="<?= esc($view['status_operand']) ?>"
+                                    data-channel="<?= esc($view['channel_filter']) ?>"
+                                    data-channel-operand="<?= esc($view['channel_operand']) ?>"
+                                    data-user="<?= esc($view['assignee_filter']) ?>"
+                                    data-user-operand="<?= esc($view['assignee_operand']) ?>"
+                                    title="Edit View"></i>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card-box mb-30">
-                            <div class="pd-10">
-                                <h6 class="text-blue h6">Agents</h6>
-                                <div class=" height-100-p pd-10 min-height-200px">
-                                    <div class="d-flex justify-content-between pb-10">
-                                        <!--<div class="h5 mb-0">Agents</div>
-                                         <div class="dropdown">
-                                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" data-color="#1b3133" href="#" role="button" data-toggle="dropdown">
-                                                <i class="dw dw-more"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                                <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                    <div class="user-list">
-                                        <ul>
-                                            <?php if (!empty($agents)): ?>
-                                                <?php foreach ($agents as $agent): ?>
-                                                    <li class="d-flex align-items-center justify-content-between">
-                                                        <div class="name-avatar d-flex align-items-center pr-2">
-                                                            <div class="avatar mr-2 flex-shrink-0">
-                                                                <img src="<?= $agent->profile_img ?>" style="object-fit: cover;aspect-ratio: 1;" class="border-radius-100 box-shadow" width="50" height="50" alt="" />
-                                                            </div>
-                                                            <div class="txt">
-                                                                <span class="badge badge-pill badge-sm" data-bgcolor="#e7ebf5" data-color="#265ed7">Available</span>
-                                                                <div class="font-14 weight-600"><?= $agent->name ?></div>
-                                                                <div class="font-12 weight-500" data-color="#b2b1b6">
-                                                                    Customer Service Agent
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            <?php else: ?>
-                                                <li>No Agents found.</li>
-                                            <?php endif; ?>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pb-20">
-                            </div>
-                        </div>
-                    </div>
+                    <a class="btn btn-primary ml-3" id="toggle-create-view">Create View</a>
                 </div>
+
                 <div id="create-view-form" class="card-box pd-20 mb-30" style="display: none;">
                     <h4 class="text-blue h4">Manage View</h4>
                     <input type="hidden" id="edit-view-id">
@@ -256,173 +248,162 @@
                     </div>
                 </div>
 
-
-                <style>
-                    .view-btn {
-                        position: relative;
-                        display: inline-block;
-                        padding-right: 35px;
-                        /* Space for the edit button */
-                    }
-
-                    .edit-icon {
-                        position: absolute;
-                        right: 5px;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        display: none;
-                        cursor: pointer;
-                        color: #212529;
-                    }
-
-                    .view-btn:hover .edit-icon {
-                        display: inline;
-                    }
-                </style>
-
-                <div class="d-flex justify-content-between mb-30">
-                    <div class="col"
-                        style="
-                            width: 100%;
-                            overflow-x: auto;
-                            scrollbar-width: none;
-                            display: flex;
-                            gap: 5px;
-                        "
-                        id="views">
-                        <?php foreach ($views as $view): ?>
-                            <a class="btn border apply-view view-btn" data-id="<?= $view['id'] ?>">
-                                <?= esc($view['name']) ?>
-                                <i class="icon-copy fa fa-edit edit-icon edit-view"
-                                    data-id="<?= $view['id'] ?>"
-                                    data-name="<?= esc($view['name']) ?>"
-                                    data-status="<?= esc($view['status_filter']) ?>"
-                                    data-status-operand="<?= esc($view['status_operand']) ?>"
-                                    data-channel="<?= esc($view['channel_filter']) ?>"
-                                    data-channel-operand="<?= esc($view['channel_operand']) ?>"
-                                    data-user="<?= esc($view['assignee_filter']) ?>"
-                                    data-user-operand="<?= esc($view['assignee_operand']) ?>"
-                                    title="Edit View"></i>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                    <a class="btn btn-primary ml-3" id="toggle-create-view">Add View</a>
-                </div>
-
-                <div class="card-box mb-30">
-                    <div class="pd-20 row">
-                        <div class="col-5">
-                            <h4 class="text-blue h4">Recent Conversations</h4>
-                        </div>
-                        <div class="col d-flex justify-content-end"></div>
-                    </div>
-
-                    <div class="pb-20">
-                        <table id="manage-table" class="table dataTable hover max-width nowrap data-table-export">
-                            <thead>
-                                <tr>
-                                    <th class="dt-body-center">
-                                        <div class="dt-checkbox">
-                                            <input type="checkbox" id="select-all-emails">
-                                            <span class="dt-checkbox-label"></span>
-                                        </div>
-                                    </th>
-                                    <th class="table-plus">Conversations</th>
-                                    <th>Tags</th>
-                                    <th>Customer Details</th>
-                                    <th>Assigned User</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($conversations)): ?>
-                                    <?php foreach ($conversations as $conversation): ?>
-                                        <tr id="conversation-<?= esc($conversation['id']) ?>"> <!-- Unique ID for each row -->
-                                            <td class="dt-body-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-box mb-30">
+                            <div class="pd-20 row">
+                                <div class="col-5">
+                                    <h4 class="text-blue h4">Recent Conversations</h4>
+                                </div>
+                                <div class="col d-flex justify-content-end"></div>
+                            </div>
+                            <div class="pb-20">
+                                <table id="manage-table" class="table dataTable hover max-width nowrap data-table-export">
+                                    <thead>
+                                        <tr>
+                                            <th class="dt-body-center">
                                                 <div class="dt-checkbox">
-                                                    <input type="checkbox" class="email-checkbox" name="selected_emails[]" value="<?= esc($conversation['id']) ?>">
+                                                    <input type="checkbox" id="select-all-emails">
                                                     <span class="dt-checkbox-label"></span>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="email-thread mb-3">
-                                                    <div class="name-avatar d-flex align-items-center pr-2">
-                                                        <div class="txt w-100">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                                <div class="font-14 weight-600">
-                                                                    <!-- Display Chat or Email Icon -->
-                                                                    <?php if ($conversation['channel'] === 'livechat'): ?>
-                                                                        <span class="badge badge-success">Live Chat</span>
-                                                                        <a href="<?= base_url('conversation_view/' . esc($conversation['id']) . '/' . esc($conversation['channel'])); ?>">
-                                                                            <?= esc($conversation['subject']) ?>
-                                                                        </a>
-                                                                    <?php else: ?>
-                                                                        <span class="badge badge-primary">Email</span>
-                                                                        <a href="<?= base_url('conversation_view/' . esc($conversation['id']) . '/' . esc($conversation['channel'])); ?>">
-                                                                            <?= esc($conversation['subject']) ?>
-                                                                        </a>
-                                                                    <?php endif; ?>
-                                                                </div>
-                                                                <small class="text-muted">
-                                                                    <?= timeAgo($conversation['email_date']) ?>
-                                                                </small>
-                                                            </div>
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                                <div class="font-12 weight-600 text-dark">
-                                                                    <?= $conversation['from_email'] ? 'From:' . esc($conversation['from_email']) : '' ?>
+                                            </th>
+                                            <th class="table-plus">Conversations</th>
+                                            <th>Tags</th>
+                                            <th>Customer Details</th>
+                                            <th>Assigned User</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (!empty($conversations)): ?>
+                                            <?php foreach ($conversations as $conversation): ?>
+                                                <tr id="conversation-<?= esc($conversation['id']) ?>"> <!-- Unique ID for each row -->
+                                                    <td class="dt-body-center">
+                                                        <div class="dt-checkbox">
+                                                            <input type="checkbox" class="email-checkbox" name="selected_emails[]" value="<?= esc($conversation['id']) ?>">
+                                                            <span class="dt-checkbox-label"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="email-thread mb-3">
+                                                            <div class="name-avatar d-flex align-items-center pr-2">
+                                                                <div class="txt w-100">
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <div class="font-14 weight-600">
+                                                                            <!-- Display Chat or Email Icon -->
+                                                                            <?php if ($conversation['channel'] === 'livechat'): ?>
+                                                                                <span class="badge badge-success">Live Chat</span>
+                                                                                <a href="<?= base_url('conversation_view/' . esc($conversation['id']) . '/' . esc($conversation['channel'])); ?>">
+                                                                                    <?= esc($conversation['subject']) ?>
+                                                                                </a>
+                                                                            <?php else: ?>
+                                                                                <span class="badge badge-primary">Email</span>
+                                                                                <a href="<?= base_url('conversation_view/' . esc($conversation['id']) . '/' . esc($conversation['channel'])); ?>">
+                                                                                    <?= esc($conversation['subject']) ?>
+                                                                                </a>
+                                                                            <?php endif; ?>
+                                                                        </div>
+                                                                        <small class="text-muted">
+                                                                            <?= timeAgo($conversation['email_date']) ?>
+                                                                        </small>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <div class="font-12 weight-600 text-dark">
+                                                                            <?= $conversation['from_email'] ? 'From:' . esc($conversation['from_email']) : '' ?>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </td>
+                                                    <td>
+                                                        <?php if (!empty($conversation['unique_tags'])): ?>
+                                                            <?php foreach ($conversation['unique_tags'] as $tag): ?>
+                                                                <span class="badge badge-pill badge-primary">
+                                                                    <?= esc($tag) ?>
+                                                                </span>
+                                                            <?php endforeach; ?>
+                                                        <?php endif; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= esc($conversation['customer_name']) ?: '{Guest}' ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php if (!empty($conversation['assigned_agent'])): ?>
+                                                            <span class="badge badge-pill badge-info">
+                                                                Agent: <?= esc($conversation['assigned_agent']) ?>
+                                                            </span>
+                                                        <?php endif; ?>
+                                                    </td>
+                                                    <td>
+                                                        <select class="status-dropdown form-control" data-id="<?= esc($conversation['id']) ?>">
+                                                            <option value="new" <?= $conversation['status'] === 'new' ? 'selected' : '' ?>>New</option>
+                                                            <option value="processing" <?= $conversation['status'] === 'processing' ? 'selected' : '' ?>>Processing</option>
+                                                            <option value="resolved" <?= $conversation['status'] === 'resolved' ? 'selected' : '' ?>>Resolved</option>
+                                                            <option value="active" <?= $conversation['status'] === 'active' ? 'selected' : '' ?>>Active</option>
+                                                            <option value="unresolved" <?= $conversation['status'] === 'unresolved' ? 'selected' : '' ?>>Unresolved</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <?php if (empty($conversation['ticket_no'])): ?>
+                                                            <a class="btn btn-primary btn-sm create-ticket" data-id="<?= esc($conversation['id']) ?>">Create Ticket</a>
+                                                        <?php else: ?>
+                                                            <?php if ($conversation['ticket_status'] === 'opened'): ?>
+                                                                <a class="btn btn-danger btn-sm close-ticket" data-id="<?= esc($conversation['id']) ?>">Close Ticket</a>
+                                                            <?php else: ?>
+                                                                <a class="btn btn-success btn-sm open-ticket" data-id="<?= esc($conversation['id']) ?>">Reopen Ticket</a>
+                                                            <?php endif; ?>
+                                                        <?php endif; ?>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <tr>No conversations found.</tr>
+                                        <?php endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="card-box mb-30 user-list p-3">
+                            <div class="">
+                                <h4 class="text-blue h4">Active Agents</h4>
+                            </div>
+                            <ul>
+                                <?php if (!empty($agents)): ?>
+                                    <?php foreach ($agents as $agent): ?>
+                                        <li class="d-flex align-items-center justify-content-between">
+                                            <div class="name-avatar d-flex align-items-center pr-2">
+                                                <div class="avatar mr-2 flex-shrink-0">
+                                                    <?php
+                                                    // ✅ Use default image if profile image is empty
+                                                    $profileImage = !empty($agent->profile_img) ? $agent->profile_img : 'https://storage.googleapis.com/mkv_imagesbackend/imaages/usericon.jpg';
+                                                    ?>
+                                                    <img src="<?= esc($profileImage) ?>" style="object-fit: cover; aspect-ratio: 1;" class="border-radius-100 box-shadow" width="50" height="50" alt="Agent Image" />
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <?php if (!empty($conversation['unique_tags'])): ?>
-                                                    <?php foreach ($conversation['unique_tags'] as $tag): ?>
-                                                        <span class="badge badge-pill badge-primary">
-                                                            <?= esc($tag) ?>
-                                                        </span>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                            </td>
-                                            <td>
-                                                <?= esc($conversation['customer_name']) ?: '{Guest}' ?>
-                                            </td>
-                                            <td>
-                                                <?php if (!empty($conversation['assigned_agent'])): ?>
-                                                    <span class="badge badge-pill badge-info">
-                                                        Agent: <?= esc($conversation['assigned_agent']) ?>
+                                                <div class="txt">
+                                                    <div class="font-14 weight-600"><?= esc($agent->name) ?></div>
+
+                                                    <!-- ✅ Show Status in Color-Coded Badge -->
+                                                    <?php
+                                                    $status = strtolower($agent->status);
+                                                    $statusBadgeColor = ($status === 'active') ? 'badge-success' : 'badge-danger';
+                                                    ?>
+                                                    <span class="badge badge-pill <?= $statusBadgeColor ?>">
+                                                        <?= ucfirst(esc($agent->status)) ?>
                                                     </span>
-                                                <?php endif; ?>
-                                            </td>
-                                            <td>
-                                                <select class="status-dropdown form-control" data-id="<?= esc($conversation['id']) ?>">
-                                                    <option value="new" <?= $conversation['status'] === 'new' ? 'selected' : '' ?>>New</option>
-                                                    <option value="processing" <?= $conversation['status'] === 'processing' ? 'selected' : '' ?>>Processing</option>
-                                                    <option value="resolved" <?= $conversation['status'] === 'resolved' ? 'selected' : '' ?>>Resolved</option>
-                                                    <option value="active" <?= $conversation['status'] === 'active' ? 'selected' : '' ?>>Active</option>
-                                                    <option value="unresolved" <?= $conversation['status'] === 'unresolved' ? 'selected' : '' ?>>Unresolved</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <?php if (empty($conversation['ticket_no'])): ?>
-                                                    <a class="btn btn-primary btn-sm create-ticket" data-id="<?= esc($conversation['id']) ?>">Create Ticket</a>
-                                                <?php else: ?>
-                                                    <?php if ($conversation['ticket_status'] === 'opened'): ?>
-                                                        <a class="btn btn-danger btn-sm close-ticket" data-id="<?= esc($conversation['id']) ?>">Close Ticket</a>
-                                                    <?php else: ?>
-                                                        <a class="btn btn-success btn-sm open-ticket" data-id="<?= esc($conversation['id']) ?>">Reopen Ticket</a>
-                                                    <?php endif; ?>
-                                                <?php endif; ?>
-                                            </td>
-                                        </tr>
+                                                </div>
+                                            </div>
+                                        </li>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>No conversations found.</tr>
+                                    <li>No Agents found.</li>
                                 <?php endif; ?>
-                            </tbody>
-                        </table>
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
 

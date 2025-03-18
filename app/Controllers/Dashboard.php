@@ -40,6 +40,9 @@ class Dashboard extends BaseController
             if (in_array($user['account_type'], ['employee', 'seller', 'super_admin', 'super_admin_view'])) {
                 if (password_verify($password, $user['password'])) {
 
+                    // Mark agent as "active" upon login
+                    $userModel->update($user['user_id'], ['agent_status' => 'active']);
+
                     // Initialize Google Cloud Storage
                     $storage = new \Google\Cloud\Storage\StorageClient([
                         'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
@@ -69,7 +72,8 @@ class Dashboard extends BaseController
                         'admin_email' => $user['email'],
                         'admin_type' => $user['account_type'],
                         'admin_logged_in' => TRUE,
-                        'profile_picture' => $profileImage
+                        'profile_picture' => $profileImage,
+                        'status' => 'active'
                     ];
 
                     // Additional session data for specific account types
@@ -283,17 +287,24 @@ class Dashboard extends BaseController
         $userId = $session->get('user_id');
         $accountType = $session->get('admin_type');
 
-        if ($userId && $accountType == 'employee') {
-            // Record logout time
-            $loginModel = new UserLoginsModel();
-            $loginModel->where('user_id', $userId)
-                ->orderBy('login_time', 'DESC')
-                ->set(['logout_time' => date('Y-m-d H:i:s')])
-                ->limit(1)
-                ->update();
+        if ($userId) {
+            $userModel = new Registerusers_model();
+
+            // ✅ Mark agent as "inactive" upon logout
+            $userModel->update($userId, ['agent_status' => 'inactive']);
+
+            // ✅ If the user is an employee, record logout time
+            if ($accountType == 'employee') {
+                $loginModel = new UserLoginsModel();
+                $loginModel->where('user_id', $userId)
+                    ->orderBy('login_time', 'DESC')
+                    ->set(['logout_time' => date('Y-m-d H:i:s')])
+                    ->limit(1)
+                    ->update();
+            }
         }
 
-        $session->destroy(); // Destroy all session data
+        $session->destroy(); // ✅ Destroy all session data
         return redirect()->to('admin')->with('success', 'Logged out successfully.');
     }
 
