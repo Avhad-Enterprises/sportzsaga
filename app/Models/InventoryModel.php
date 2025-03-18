@@ -50,5 +50,12 @@ class InventoryModel extends Model
         'stock_rotation',
         'created_at',
         'updated_at',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'created_at',
+        'updated_by',
+        'change_log',
+        'added_by'
     ];
 }

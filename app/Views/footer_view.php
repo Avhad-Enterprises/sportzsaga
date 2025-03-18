@@ -2689,33 +2689,29 @@
   }
 </script>
 
-<!---------------------------------------------------------------customer segment --------------------------------------------------------------------------------------------------------->
-
+<!------------------------------------------------------------------------- Inventory ------------------------------------------------------------------------------------------->
 
 <script>
-  function customersegmentDelete(id) {
+  function confirmInventoryDelete(id) {
     Swal.fire({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "This will mark the inventory record as deleted!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "<?= base_url('customer_segment/deletesegment/') ?>" + id;
+        window.location.href = "<?= base_url('inventory/delete/') ?>" + id;
       }
     });
   }
-</script>
 
-
-<script>
-  function customersegmentRestore(id) {
+  function confirmInventoryRestore(id) {
     Swal.fire({
       title: 'Are you sure?',
-      text: "Do you want to restore this Member?",
+      text: "Do you want to restore this inventory record?",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#28a745',
@@ -2723,48 +2719,79 @@
       confirmButtonText: 'Yes, restore it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "<?= base_url('customer_segment/restore/') ?>" + id;
+        window.location.href = "<?= base_url('inventory/restore/') ?>" + id;
       }
     });
   }
 </script>
 
-<!--------------------------------------------------------------- blogs --------------------------------------------------------------------------------------------------------->
-
-
+<!---------------------------------------------------- Transfer Inventory Soft Delete Script ----------------------------------------------------->
 
 <script>
-  function blogDelete(blog_id) {
+  function confirmTransferDelete(id) {
     Swal.fire({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "This will mark the transfer record as deleted!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#d33', // Red color for delete
+      cancelButtonColor: '#3085d6',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "<?= base_url('blogs/deleteblog/') ?>" + blog_id;
+        window.location.href = "<?= base_url('transfer/delete/') ?>" + id;
       }
     });
   }
-</script>
 
-
-<script>
-  function blogRestore(blog_id) {
+  function confirmTransferRestore(id) {
     Swal.fire({
       title: 'Are you sure?',
-      text: "Do you want to restore this Member?",
+      text: "Do you want to restore this transfer record?",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#28a745',
+      confirmButtonColor: '#28a745', // Green for restore
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, restore it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "<?= base_url('blogs/restore/') ?>" + blog_id;
+        window.location.href = "<?= base_url('transfer/restore/') ?>" + id;
+      }
+    });
+  }
+</script>
+
+<!---------------------------------------------------- Purchase Order Soft Delete Script ----------------------------------------------------->
+
+<script>
+  function confirmPurchaseOrderDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will mark the purchase order as deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33', // Red for delete
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('purchase-order/delete/') ?>" + id;
+      }
+    });
+  }
+
+  function confirmPurchaseOrderRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to restore this purchase order?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#28a745', // Green for restore
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "<?= base_url('purchase-order/restore/') ?>" + id;
       }
     });
   }

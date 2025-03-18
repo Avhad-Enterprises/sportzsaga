@@ -42,7 +42,7 @@ class PurchaseOrderController extends Controller
         $allowedActions = array_column($permissions, 'action');
 
         // Fetch purchase orders
-        $data['purchase_orders'] = $this->purchaseOrderModel->findAll();
+        $data['purchase_orders'] = $this->purchaseOrderModel->where('is_deleted', 0)->findAll();
 
         // Pass permissions to the view
         $data['allowedActions'] = $allowedActions;
@@ -75,6 +75,7 @@ class PurchaseOrderController extends Controller
     public function save()
     {
         $session = session();
+        $userId = $session->get('user_id'); // Get the logged-in user ID
 
         // Google Cloud Storage Setup
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -142,11 +143,13 @@ class PurchaseOrderController extends Controller
             'attachments' => $filePath,
             'tax' => $this->request->getPost('tax'),
             'discount' => $this->request->getPost('discount'),
+            'added_by' => $userId, // Track who added the Purchase Order
+            'added_at' => date('Y-m-d H:i:s') // Store the timestamp
         ];
 
         // Save the data to the database
         $purchaseOrderModel = new PurchaseOrderModel();
-        if (!$purchaseOrderModel->InsertPurchaseOrderData($data)) {
+        if (!$purchaseOrderModel->insert($data)) {
             return redirect()->back()->withInput()->with('error', 'Failed to save the purchase order.');
         }
 
@@ -202,6 +205,7 @@ class PurchaseOrderController extends Controller
     public function update($id)
     {
         $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
         $purchaseOrderModel = new PurchaseOrderModel();
 
         // Get existing data
@@ -238,7 +242,8 @@ class PurchaseOrderController extends Controller
             }
         }
 
-        $data = [
+        // Prepare updated data
+        $newData = [
             'po_number' => $this->request->getPost('po_number'),
             'order_date' => $this->request->getPost('order_date'),
             'supplier_name' => $this->request->getPost('supplier_name'),
@@ -259,13 +264,44 @@ class PurchaseOrderController extends Controller
             'tax' => $this->request->getPost('tax'),
             'discount' => $this->request->getPost('discount'),
             'attachments' => $filePath, // Keep previous file if no new file is uploaded
+            'updated_by' => $userId, // Track who updated the Purchase Order
+            'updated_at' => date('Y-m-d H:i:s') // Store the timestamp
         ];
 
+        // ✅ Track changes
+        $changes = [];
+        foreach ($newData as $key => $value) {
+            if ($existingOrder[$key] != $value) {
+                $changes[$key] = [
+                    'old' => $existingOrder[$key],
+                    'new' => $value
+                ];
+            }
+        }
+
+        if (!empty($changes)) {
+            // Retrieve existing change log
+            $existingChangeLog = json_decode($existingOrder['change_log'] ?? '[]', true);
+            if (!is_array($existingChangeLog)) {
+                $existingChangeLog = [];
+            }
+
+            // Append new change log entry
+            $existingChangeLog[] = [
+                'updated_by' => $userId,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $changes
+            ];
+
+            // Store changes in JSON format
+            $newData['change_log'] = json_encode($existingChangeLog);
+        }
+
         // Log data before update
-        log_message('info', 'Updating Purchase Order: ' . json_encode($data));
+        log_message('info', 'Updating Purchase Order: ' . json_encode($newData));
 
         // Update the purchase order
-        if (!$purchaseOrderModel->update($id, $data)) {
+        if (!$purchaseOrderModel->update($id, $newData)) {
             log_message('error', 'Database update failed: ' . json_encode($purchaseOrderModel->errors()));
             return redirect()->back()->withInput()->with('error', 'Failed to update the purchase order.');
         }
@@ -428,6 +464,7 @@ class PurchaseOrderController extends Controller
     public function delete($id)
     {
         $session = session();
+        $userId = $session->get('user_id'); // Get logged-in user ID
         $purchaseOrderModel = new PurchaseOrderModel();
 
         // Fetch the purchase order details
@@ -435,6 +472,9 @@ class PurchaseOrderController extends Controller
         if (!$order) {
             return redirect()->to('/purchase-order/index')->with('error', 'Purchase order not found.');
         }
+
+        // Save the admin name and ID
+        $deletedBy = $session->get('admin_name') . ' (' . $userId . ')';
 
         // Google Cloud Storage Setup
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -461,11 +501,42 @@ class PurchaseOrderController extends Controller
             }
         }
 
-        // Delete the purchase order from the database
-        if ($purchaseOrderModel->delete($id)) {
-            return redirect()->to('po_list_view')->with('success', 'Purchase order deleted successfully.');
-        } else {
-            return redirect()->to('po_list_view')->with('error', 'Failed to delete purchase order.');
-        }
+        // Perform soft deletion by updating fields instead of deleting
+        $purchaseOrderModel->update($id, [
+            'is_deleted' => 1, // Mark as deleted
+            'deleted_by' => $deletedBy, // Track who deleted
+            'deleted_at' => date('Y-m-d H:i:s'), // Record timestamp
+        ]);
+
+        return redirect()->to('po_list_view')->with('success', 'Purchase order deleted successfully.');
     }
+
+    public function deleted()
+    {
+        $purchaseOrderModel = new PurchaseOrderModel();
+        $data['purchaseOrders'] = $purchaseOrderModel->where('is_deleted', 1)->findAll();
+
+        return view('purchaseorder_deleted', $data); // Load deleted purchase orders view
+    }
+
+    public function restore($id)
+    {
+        $purchaseOrderModel = new PurchaseOrderModel();
+
+        // Fetch the deleted purchase order
+        $order = $purchaseOrderModel->find($id);
+        if (!$order) {
+            return redirect()->to('purchase-order/deleted')->with('error', 'Purchase order not found.');
+        }
+
+        // Restore the purchase order by clearing deletion fields
+        $purchaseOrderModel->update($id, [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null,
+        ]);
+
+        return redirect()->to('po_list_view')->with('success', 'Purchase order restored successfully.');
+    }
+
 }
