@@ -114,6 +114,16 @@
                 <form id="giftcardform" method="post"
                     action="<?= base_url('giftcard/updateGiftCard/' . $giftCard['gift_card_id']) ?>"
                     enctype="multipart/form-data" class="needs-validation" novalidate>
+
+                    <div class="d-flex justify-content-end">
+                        <a href="<?= base_url() ?>giftcard/giftcard_logs/<?= $giftCard['gift_card_id'] ?>"
+                            class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                            data-placement="top" title="View Gift Card Logs">
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                        </a>
+                    </div>
+
+
                     <div class="row">
                         <!-- First Column Start (col-md-6) -->
                         <div class="col-md-6">
@@ -163,7 +173,7 @@
 
                                 <script>
                                     // JavaScript to update hidden field when a customer is selected
-                                    document.getElementById('issued_to').addEventListener('change', function() {
+                                    document.getElementById('issued_to').addEventListener('change', function () {
                                         var selectedOption = this.options[this.selectedIndex];
                                         var issuedToIdInput = document.getElementById('issued_to_id');
 
@@ -195,18 +205,30 @@
                         <div class="col-md-6">
                             <div class="pd-20 card-box mb-30">
                                 <p class="text-blue mb-30">More Gift Card Details</p>
-
                                 <div class="form-group">
                                     <label for="initial_value">Initial Value</label>
-                                    <input type="number" class="form-control" id="initial_value" name="initial_value"
-                                        value="<?= $giftCard['initial_value'] ?>" required>
+                                    <select class="form-control" id="initial_value" name="initial_value" required>
+                                        <option value="">Select Initial Value</option>
+                                        <option value="500" <?= ($giftCard['initial_value'] == 500) ? 'selected' : '' ?>>
+                                            500</option>
+                                        <option value="1000" <?= ($giftCard['initial_value'] == 1000) ? 'selected' : '' ?>>
+                                            1000</option>
+                                        <option value="2000" <?= ($giftCard['initial_value'] == 2000) ? 'selected' : '' ?>>
+                                            2000</option>
+                                        <option value="3000" <?= ($giftCard['initial_value'] == 3000) ? 'selected' : '' ?>>
+                                            3000</option>
+                                        <option value="4000" <?= ($giftCard['initial_value'] == 4000) ? 'selected' : '' ?>>
+                                            4000</option>
+                                        <option value="5000" <?= ($giftCard['initial_value'] == 5000) ? 'selected' : '' ?>>
+                                            5000</option>
+                                    </select>
                                 </div>
 
                                 <!-- Hidden Balance Field -->
                                 <input type="hidden" id="balance" name="balance" value="<?= $giftCard['balance'] ?>">
 
                                 <script>
-                                    document.getElementById('initial_value').addEventListener('input', function() {
+                                    document.getElementById('initial_value').addEventListener('change', function () {
                                         document.getElementById('balance').value = this.value;
                                     });
                                 </script>
@@ -227,7 +249,6 @@
                                         name="security_features" value="<?= $giftCard['security_features'] ?>">
                                 </div>
 
-
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit">Update Gift Card</button>
                                 </div>
@@ -245,12 +266,12 @@
 
     <script>
         // Form validation for Bootstrap 4
-        (function() {
+        (function () {
             'use strict'
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 var forms = document.getElementsByClassName('needs-validation')
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault()
                             event.stopPropagation()

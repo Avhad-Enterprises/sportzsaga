@@ -2,12 +2,13 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
-
 <body>
 
     <!-- Header View Start -->
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <div class="right-sidebar">
         <div class="sidebar-title">
@@ -106,89 +107,71 @@
 
     <div class="mobile-menu-overlay"></div>
 
-    <!-- Page Main Content Start -->
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Default Basic Forms Start -->
-                <div class="">
-                    <div class="clearfix mb-3">
-                        <div class="pull-left d-flex align-items-center">
-                            <!-- Back Button -->
-                            <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
-                                <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
-                            </button>
-                            <h4 class="h4 mb-0">Add New Blog</h4>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="pd-20 card-box mb-30">
+                            <h4 class="text-blue mb-30">Tier 4 Update Timeline</h4>
+                            <div class="timeline">
+                                <?php if (!empty($updates)): ?>
+                                    <?php foreach (array_reverse($updates) as $update): ?>
+                                        <!-- Display latest updates first -->
+                                        <?php if (!isset($update['updated_at']) || !isset($update['updated_by']))
+                                            continue; ?>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-badge">
+                                                <i class="fas fa-user-edit"></i>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Tier 4 Updated</h5>
+                                                        <p class="card-text">
+                                                            <strong>Updated By:</strong>
+                                                            <?= htmlspecialchars($update['updated_by']) ?> <br>
+                                                            <strong>Updated At:</strong>
+                                                            <?= date('d M Y h:i A', strtotime($update['updated_at'])) ?>
+                                                        </p>
+                                                        <h6 class="card-subtitle mt-2">Changes:</h6>
+                                                        <ul class="mb-0">
+                                                            <?php if (!empty($update['changes'])): ?>
+                                                                <?php foreach ($update['changes'] as $field => $change): ?>
+                                                                    <li>
+                                                                        <strong><?= ucfirst(str_replace('_', ' ', $field)) ?>:</strong>
+                                                                        <span
+                                                                            class="text-muted"><?= htmlspecialchars($change['old']) ?></span>
+                                                                        →
+                                                                        <span
+                                                                            class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                    </li>
+                                                                <?php endforeach; ?>
+                                                            <?php else: ?>
+                                                                <li>No changes recorded.</li>
+                                                            <?php endif; ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <p>No updates found.</p>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="pd-20 card-box mb-30">
-
-                    <?php foreach ($tier_4 as $tier): ?>
-
-
-                        <div class="d-flex justify-content-end">
-                            <a href="<?= base_url() ?>tiers/logs_tier4/<?= $tier['tier_4_id'] ?>"
-                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
-                                data-placement="top" title="View Inventory Logs">
-                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
-                            </a>
-                        </div>
-
-                        <form id="edittierform" method="post"
-                            action="<?= base_url('tiers/update_tier_4/' . $tier['tier_4_id']) ?>"
-                            enctype="multipart/form-data" class="needs-validation" novalidate>
-                            <input type="hidden" name="tier_3_id" value="<?= $tier['tier_3_id'] ?>">
-
-                            <div class="form-group row">
-                                <div class="col-sm">
-                                    <label>Tier Name</label>
-                                    <input class="form-control" id="tier_name" name="tier_name"
-                                        value="<?= $tier['tier_name'] ?>" type="text" placeholder="Name" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be Empty</div>
-                                </div>
-
-                                <div class="col-sm">
-                                    <label>Tier Value</label>
-                                    <input class="form-control" id="tier_value" name="tier_value"
-                                        value="<?= $tier['tier_value'] ?>" type="text" placeholder="Value" readonly
-                                        required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be Empty</div>
-                                </div>
-
-                                <div class="col-sm">
-                                    <label for="link">Link</label>
-                                    <input type="text" class="form-control" id="link" name="tier_link"
-                                        value="<?= $tier['tier_4_link'] ?>" placeholder="Link" readonly required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">This field can't be Empty</div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <button value="submit" class="btn btn-primary btn-lg">Update</button>
-                            </div>
-                        </form>
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-        <!-- Page Main Content End -->
-
-        <!-- Footer View Start -->
-        <?= $this->include('footer_view') ?>
-        <!-- Footer View End -->
-
-        <script>
-            function goBack() {
-                // Redirects to the previous page in browser history
-                window.history.back();
-            }
-        </script>
+    </div>
 
 </body>
+
+<!-- Footer View Start -->
+<?= $this->include('footer_view') ?>
+<!-- Footer View End -->
 
 </html>

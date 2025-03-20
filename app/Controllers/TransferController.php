@@ -182,7 +182,7 @@ class TransferController extends Controller
     {
         $transferModel = new TransferModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing transfer data
         $transfer = $transferModel->find($id);
@@ -210,7 +210,7 @@ class TransferController extends Controller
             'destination_location' => $this->request->getPost('destination_location'),
             'uom' => $this->request->getPost('uom'),
             'insurance' => $this->request->getPost('insurance'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -251,7 +251,7 @@ class TransferController extends Controller
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -320,6 +320,72 @@ class TransferController extends Controller
         ]);
 
         return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record restored successfully.');
+    }
+
+
+
+    public function transfer_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_transfer_logs_view', ['updates' => []]); // No transfer ID provided
+        }
+
+        // Fetch transfer details
+        $query = $db->table('transfer_inventory')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_transfer_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_transfer_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_transfer_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getTransferChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('transfer_inventory')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
     }
 
 }

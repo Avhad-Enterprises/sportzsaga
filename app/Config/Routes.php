@@ -70,6 +70,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('blogs/add_new_tag', 'Blogs::AddNewTag');
    $routes->get('blogs/comments', 'Blogs::GetComments');
    $routes->post('blogs/comments/update_status', 'Blogs::UpdateCommentStatus');
+   $routes->get('blogs/logs/(:num)', 'Blogs::blog_change_logs/$1');
+   $routes->get('blogs/logs', 'Blogs::blog_change_logs'); // Default route
+
 
    // Empolyee's Login/signup Controller;
    $routes->get('sendinvite', 'Registeredusers::sendinvite');
@@ -90,18 +93,20 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('instagram/refreshScheduledPosts', 'InstagramController::refreshScheduledPosts');
    $routes->post('instagram/scheduleAllPosts', 'InstagramController::scheduleAllPosts');
 
-   // Tiers Controller
+   // Tier 1 Controller
    $routes->get('tiers', 'Tiers::tiers');
-
    $routes->get('tiers/new_tier_1', 'Tiers::new_tier_1');
    $routes->post('tiers/publish_tier_1', 'Tiers::publish_tier_1');
    $routes->get('tiers/edit_tier_1/(:num)', 'Tiers::edit_tier_1/$1');
    $routes->post('tiers/update_tier_1/(:num)', 'Tiers::update_tier_1/$1');
    $routes->get('tiers/deleteTier/(:num)', 'Tiers::deleteTier/$1');
-   $routes->get('tier1_deleted', 'Tiers::deletedTiers'); // View deleted tiers
-   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1'); // Restore deleted tier
+   $routes->get('tier1_deleted', 'Tiers::deletedTiers'); 
+   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1'); 
+   $routes->get('tiers/logs/(:num)', 'Tiers::tier_change_logs/$1');
+   $routes->get('tiers/logs', 'Tiers::tier_change_logs'); 
 
 
+   // Tier 2 Controller
    $routes->get('tiers/add_tier_2/(:num)', 'Tiers::add_tier_2/$1');
    $routes->get('tiers/get_tier_2/(:num)', 'Tiers::get_tier_2/$1');
    $routes->get('tiers/new_tier_2/(:num)', 'Tiers::new_tier_2/$1');
@@ -111,8 +116,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/deleteTier2/(:num)', 'Tiers::deleteTier2/$1');
    $routes->get('tier2_deleted', 'Tiers::deletedTiers2');
    $routes->get('tiers/restore_tier_2/(:num)', 'Tiers::restoreTier2/$1');
+   $routes->get('tiers/logs_tier2/(:num)', 'Tiers::tier2_change_logs/$1');
+   $routes->get('tiers/logs_tier2', 'Tiers::tier2_change_logs'); 
 
 
+   // Tier 3 Controller
    $routes->get('tiers/add_tier_3/(:num)', 'Tiers::add_tier_3/$1');
    $routes->get('tiers/new_tier_3/(:num)', 'Tiers::new_tier_3/$1');
    $routes->post('tiers/publish_tier_3/(:num)', 'Tiers::publish_tier_3/$1');
@@ -121,8 +129,11 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/deleteTier3/(:num)', 'Tiers::deleteTier3/$1');
    $routes->get('tier3_deleted', 'Tiers::deletedTiers3');
    $routes->get('tiers/restore_tier_3/(:num)', 'Tiers::restoreTier3/$1');
+   $routes->get('tiers/logs_tier3/(:num)', 'Tiers::tier3_change_logs/$1');
+   $routes->get('tiers/logs_tier3', 'Tiers::tier3_change_logs'); // Default route
 
 
+   // Tier 4 Controller
    $routes->get('tiers/add_tier_4/(:num)', 'Tiers::add_tier_4/$1');
    $routes->get('tiers/new_tier_4/(:num)', 'Tiers::new_tier_4/$1');
    $routes->post('tiers/publish_tier_4/(:num)', 'Tiers::publish_tier_4/$1');
@@ -130,6 +141,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('tiers/update_tier_4/(:num)', 'Tiers::update_tier_4/$1');
    $routes->get('tier4_deleted', 'Tiers::deletedTiers4');
    $routes->get('tiers/restore_tier_4/(:num)', 'Tiers::restoreTier4/$1');
+   $routes->get('tiers/logs_tier4/(:num)', 'Tiers::tier4_change_logs/$1');
+   $routes->get('tiers/logs_tier4', 'Tiers::tier4_change_logs'); // Default route
+
 
    // Tier 2 in Add Products Page
    $routes->post('tiers/get_tier2', 'Tiers::get_tier2');
@@ -150,6 +164,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('delete/(:num)', 'Home::delete/$1'); // Soft delete a discount code
    $routes->get('discountcodes_deleted', 'Home::deletedDiscountCodes'); // View deleted discount codes
    $routes->get('discountcode/restore/(:num)', 'Home::restoreDiscountCode/$1'); // Restore a deleted discount code
+   $routes->get('discountcode/discount_logs/(:num)', 'Home::discountcode_change_logs/$1');
+   $routes->get('discountcode/discount_logs', 'Home::discountcode_change_logs'); // Default route
+
 
    // Online Store
    $routes->get('online_store', 'Store::index');
@@ -431,6 +448,9 @@ $routes->post('bundle/update/(:num)', 'BundleController::update/$1');
 $routes->get('BundleController/delete/(:num)', 'BundleController::delete/$1');
 $routes->get('bundle_deleted', 'BundleController::deleted');
 $routes->get('restore/(:num)', 'BundleController::restore/$1');
+$routes->get('bundle/bundle_logs/(:num)', 'BundleController::bundle_change_logs/$1');
+$routes->get('bundle/bundle_logs', 'BundleController::bundle_change_logs'); // Default route
+
 
 
 $routes->get('bundlecollection_view', 'BundleController::viewcollection');
@@ -441,6 +461,9 @@ $routes->post('bundle/updateproductcollection/(:num)', 'BundleController::update
 $routes->get('BundleController/deleteproductcollection/(:num)', 'BundleController::deleteproductcollection/$1');
 $routes->get('bundlecollection/deletedcollection', 'BundleController::deletedcollection'); // View all deleted projects
 $routes->get('bundlecollection/restorecollection/(:num)', 'BundleController::restorecollection/$1'); // Restore a specific project
+$routes->get('bundle/bundle_product_logs/(:num)', 'BundleController::bundle_product_change_logs/$1');
+$routes->get('bundle/bundle_product_logs', 'BundleController::bundle_product_change_logs'); // Default route
+
 
 //catlogs
 $routes->get('catalog_form', 'CatalogController::create');
@@ -480,6 +503,9 @@ $routes->post('product/storenewproduct', 'InventoryController::storenewproduct')
 $routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1'); // Soft delete
 $routes->get('inventory_deleted', 'InventoryController::deletedInventory'); // View deleted records
 $routes->get('inventory/restore/(:num)', 'InventoryController::restore/$1'); // Restore deleted record
+$routes->get('inventory/inventory_logs/(:num)', 'InventoryController::inventory_change_logs/$1');
+$routes->get('inventory/inventory_logs', 'InventoryController::inventory_change_logs'); // Default route
+
 
 
 //purchase order
@@ -494,6 +520,9 @@ $routes->post('purchaseorder/import', 'PurchaseOrderController::importCSV');
 $routes->get('purchase-order/delete/(:num)', 'PurchaseOrderController::delete/$1');
 $routes->get('purchaseorder_deleted', 'PurchaseOrderController::deleted');
 $routes->get('purchase-order/restore/(:num)', 'PurchaseOrderController::restore/$1');
+$routes->get('purchase_orders/order_logs/(:num)', 'PurchaseOrderController::order_change_logs/$1');
+$routes->get('purchase_orders/order_logs', 'PurchaseOrderController::order_change_logs'); // Default route
+
 
 
 //user access control
@@ -513,6 +542,9 @@ $routes->post('suppliers/update/(:num)', 'SupplierController::update/$1');
 $routes->get('suppliers/delete/(:num)', 'SupplierController::delete/$1');
 $routes->get('suppliers_deleted', 'SupplierController::deletedSuppliers');
 $routes->get('suppliers/restore/(:num)', 'SupplierController::restoreSupplier/$1');
+$routes->get('suppliers/logs/(:num)', 'SupplierController::supplier_change_logs/$1');
+$routes->get('suppliers/logs', 'SupplierController::supplier_change_logs'); // Default route
+
 
 
 //Tags
@@ -534,6 +566,9 @@ $routes->post('giftcard/updateGiftCard/(:num)', 'Giftcard::updateGiftCard/$1');
 $routes->get('delete/(:num)', 'Giftcard::deleteGiftCard/$1'); // Soft delete a gift card
 $routes->get('giftcard_deleted', 'Giftcard::deletedGiftCards'); // View deleted gift cards
 $routes->get('bundlecollection/restoreGiftCard/(:num)', 'Giftcard::restoreGiftCard/$1'); // Restore a deleted gift card
+$routes->get('giftcard/giftcard_logs/(:num)', 'GiftCard::giftcard_change_logs/$1');
+$routes->get('giftcard/giftcard_logs', 'GiftCard::giftcard_change_logs'); // Default route
+
 
 //Transfer
 $routes->get('transfer/create', 'TransferController::create');
@@ -544,6 +579,9 @@ $routes->post('transfer/update/(:num)', 'TransferController::update/$1');
 $routes->get('transfer/delete/(:num)', 'TransferController::delete/$1');
 $routes->get('transfer_deleted', 'TransferController::deleted'); // View deleted transfers
 $routes->get('transfer/restore/(:num)', 'TransferController::restore/$1'); // Restore a transfer
+$routes->get('transfer/transfer_logs/(:num)', 'TransferController::transfer_change_logs/$1');
+$routes->get('transfer/transfer_logs', 'TransferController::transfer_change_logs'); // Default route
+
 
 
 

@@ -126,6 +126,16 @@
                 <div class="pd-20 card-box mb-30">
                     <form id="supplierEditForm" method="post"
                         action="<?= base_url('suppliers/update/' . $supplier['id']) ?>" enctype="multipart/form-data">
+
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>suppliers/logs/<?= $supplier['id'] ?>"
+                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm"
+                                data-toggle="tooltip" data-placement="top" title="View Inventory Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
+
                         <!-- Supplier Information -->
                         <h5>Supplier Information</h5>
                         <div class="form-group row">

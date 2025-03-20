@@ -125,6 +125,14 @@
                         action="<?= base_url('purchase_orders/update/' . $purchaseOrder['id']) ?>"
                         enctype="multipart/form-data">
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>purchase_orders/order_logs/<?= $purchaseOrder['id'] ?>"
+                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm"
+                                data-toggle="tooltip" data-placement="top" title="View Order Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
                         <!-- Purchase Order Details -->
                         <div class="form-group row">
                             <?php if (in_array('po_number', $allowedFields)): ?>
@@ -363,9 +371,11 @@
                             </div>
                         <?php endif; ?>
 
-                        <div class="text-right">
+                        <!-- Add spacing before the submit button -->
+                        <div class="text-right mt-4"> <!-- Added 'mt-4' for extra spacing -->
                             <button type="submit" class="btn btn-primary">Update Order</button>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -189,7 +189,7 @@ class BundleController extends Controller
     {
         $bundleModel = new BundleModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing bundle data
         $bundle = $bundleModel->find($id);
@@ -256,7 +256,7 @@ class BundleController extends Controller
             'status' => $this->request->getPost('status'),
             'selected_products' => implode(',', (array) $this->request->getPost('selected_products')),
             'badge_image' => $badgeImageUrl,
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -280,7 +280,7 @@ class BundleController extends Controller
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -362,8 +362,72 @@ class BundleController extends Controller
     }
 
 
+    public function bundle_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_bundle_logs_view', ['updates' => []]); // If no ID is provided, return an empty view
+        }
+
+        // Fetch the change logs from the database
+        $query = $db->table('bundles')->select('change_log')->where('bundle_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_bundle_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_bundle_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_bundle_logs_view', ['updates' => []]); // Return empty if no logs are found
+    }
 
 
+
+
+    public function getBundleChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('bundles')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 
@@ -522,7 +586,6 @@ class BundleController extends Controller
     {
         $bundleModel = new ProductCollectionModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
         $validation = \Config\Services::validation();
 
         // Define validation rules
@@ -566,7 +629,7 @@ class BundleController extends Controller
                 'quantity' => $this->request->getPost('quantity'),
                 'selected_products' => is_array($selectedProducts) ? implode(',', $selectedProducts) : $selectedProducts,
                 'selected_collection' => is_array($selectedCollection) ? implode(',', $selectedCollection) : $selectedCollection,
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
 
@@ -581,7 +644,6 @@ class BundleController extends Controller
                 }
             }
 
-
             if (!empty($changes)) {
                 // Retrieve existing change log
                 $existingChangeLog = json_decode($bundle['change_log'] ?? '[]', true);
@@ -591,7 +653,7 @@ class BundleController extends Controller
 
                 // Append new change log entry
                 $existingChangeLog[] = [
-                    'updated_by' => $userId,
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -711,4 +773,72 @@ class BundleController extends Controller
 
         return redirect()->to('bundlecollection_view')->with('success', 'Product collection restored successfully.');
     }
+
+
+    public function bundle_product_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_bundleline_logs_view', ['updates' => []]); // No bundle ID provided
+        }
+
+        // Fetch bundle details
+        $query = $db->table('product_collections')->select('change_log')->where('bundle_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_bundleline_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_bundleline_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_bundleline_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getBundleProductChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('product_collections')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
 }

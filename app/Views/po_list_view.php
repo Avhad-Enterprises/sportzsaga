@@ -120,18 +120,19 @@
                         <!-- Buttons Row -->
                         <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
                             <!-- Add Purchase Order Button -->
-                            <a class="btn btn-primary fw-bold mr-2" href="<?= base_url('purchase-order/index') ?>"
+                            <a class="btn btn-primary fw-bold mr-3" href="<?= base_url('purchase-order/index') ?>"
                                 role="button">
                                 Add Purchase Order
                             </a>
 
-                            <a class="btn btn-success fw-bold" href="<?= base_url('purchaseorder_deleted') ?>"
+                            <!-- Logs Button -->
+                            <a class="btn btn-success fw-bold mr-3" href="<?= base_url('purchaseorder_deleted') ?>"
                                 role="button">
                                 Logs
                             </a>
 
                             <!-- Import Purchase Orders Button -->
-                            <button type="button" class="btn btn-primary mr-2" data-toggle="modal"
+                            <button type="button" class="btn btn-primary mr-3" data-toggle="modal"
                                 data-target="#importModal">
                                 Import Purchase Orders
                             </button>
@@ -140,8 +141,8 @@
                             <a href="<?= base_url('po/exportpo') ?>" class="btn btn-success">
                                 Export Purchase Orders
                             </a>
-
                         </div>
+
                     </div>
                 </div>
 

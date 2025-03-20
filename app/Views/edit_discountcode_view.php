@@ -159,183 +159,181 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
                 <!-- Discount Code Edit Form Start -->
-                <div class="pd-20 card-box mb-30">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="text-blue h4">Discount Codes</h4>
-                            <p class="mb-30">Edit Discount Code</p>
+
+
+                <form id="newdiscountcodeform" action="<?= base_url('update/' . $discountcode['id']) ?>" method="post">
+
+                    <div class="d-flex justify-content-end">
+                        <a href="<?= base_url() ?>discountcode/discount_logs/<?= $discountcode['id'] ?>"
+                            class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                            data-placement="top" title="View Inventory Logs">
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                        </a>
+                    </div>
+
+
+                    <div class="row">
+                        <!-- Left Side -->
+                        <div class="col-md-8">
+                            <div class="pd-20 card-box mb-30">
+                                <h4 class="text-blue h5">Edit Discount Code</h4>
+
+                                <!-- Title -->
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input class="form-control" name="title" type="text"
+                                        value="<?= $discountcode['title'] ?>" required>
+                                    <div id="title-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Type of Code -->
+                                <div class="form-group">
+                                    <label>Type of Code</label>
+                                    <select class="form-control" name="typeOfCode" id="typeOfCode" required>
+                                        <option value="" disabled>Select type of Discount code</option>
+                                        <option value="numeric" <?= ($discountcode['typeOfCode'] === 'numeric') ? 'selected' : '' ?>>Numeric</option>
+                                        <option value="alphabetic" <?= ($discountcode['typeOfCode'] === 'alphabetic') ? 'selected' : '' ?>>Alphabetic</option>
+                                        <option value="alphanumeric" <?= ($discountcode['typeOfCode'] === 'alphanumeric') ? 'selected' : '' ?>>
+                                            Alphanumeric</option>
+                                    </select>
+                                    <div id="typeOfCode-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Prefix & Suffix -->
+                                <div class="form-group">
+                                    <label>Prefix</label>
+                                    <input class="form-control" name="prefix" type="text"
+                                        value="<?= $discountcode['prefix'] ?>">
+                                    <div id="prefix-error" class="error-message"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Suffix</label>
+                                    <input class="form-control" type="text" name="suffix"
+                                        value="<?= $discountcode['suffix'] ?>">
+                                    <div id="suffix-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Generated Code -->
+                                <div class="form-group">
+                                    <label>Generated Code</label>
+                                    <div class="input-group">
+                                        <input class="form-control" name="code" type="text" id="generatedCode"
+                                            value="<?= $discountcode['code'] ?>" readonly>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" style="cursor: pointer;"
+                                                onclick="generateCode()">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="code-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Number of Codes -->
+                                <div class="form-group">
+                                    <label>Number of Codes</label>
+                                    <input class="form-control" name="numberOfCodes" type="number"
+                                        value="<?= $discountcode['numberOfCodes'] ?>">
+                                    <div id="numberOfCodes-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Start & End Date -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Start Date</label>
+                                        <input type="date" class="form-control" name="startDate" id="date1"
+                                            value="<?= $discountcode['startDate'] ?>">
+                                        <div id="startDate-error" class="error-message text-danger"></div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>End Date</label>
+                                        <input type="date" class="form-control" name="endDate" id="date2"
+                                            value="<?= $discountcode['endDate'] ?>">
+                                        <div id="endDate-error" class="error-message text-danger"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Discount Status -->
+                                <div class="form-group">
+                                    <label>Discount Status</label>
+                                    <input id="discountstatus" class="form-control" name="discountstatus"
+                                        value="<?= $discountcode['discountstatus'] ?>" readonly>
+                                    <div id="discountstatus-error" class="error-message"></div>
+                                </div>
+
+                                <!-- Discount Type & Value -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="discount_type">Discount Type</label>
+                                        <select id="discount_type" class="form-control" name="discount_type">
+                                            <option value="value" <?= ($discountcode['discount_type'] == 'value') ? 'selected' : '' ?>>Discount Value</option>
+                                            <option value="percentage" <?= ($discountcode['discount_type'] == 'percentage') ? 'selected' : '' ?>>Discount Percentage</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label>Discount Value</label>
+                                        <input class="form-control" type="number" step="0.01" name="discountValue"
+                                            value="<?= $discountcode['discountValue'] ?>">
+                                        <div id="discountValue-error" class="error-message"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Eligibility -->
+                                <div class="form-group">
+                                    <label>Customer Eligibility</label>
+                                    <select class="form-control" name="customerEligibility">
+                                        <option value="New" <?= $discountcode['customerEligibility'] == 'New' ? 'selected' : '' ?>>New Customers Only</option>
+                                        <option value="Returning" <?= $discountcode['customerEligibility'] == 'Returning' ? 'selected' : '' ?>>Returning Customers Only</option>
+                                        <option value="All" <?= $discountcode['customerEligibility'] == 'All' ? 'selected' : '' ?>>All Customers</option>
+                                        <option value="VIP" <?= $discountcode['customerEligibility'] == 'VIP' ? 'selected' : '' ?>>VIP Customers</option>
+                                    </select>
+                                    <div id="customerEligibility-error" class="error-message"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side -->
+                        <div class="col-md-4">
+                            <!-- Minimum Purchase Requirement -->
+                            <div class="pd-20 card-box mb-30">
+                                <label>Minimum Purchase Requirement</label>
+                                <input class="form-control" type="number" step="0.01" name="minimumPurchaseRequirement"
+                                    value="<?= $discountcode['minimumPurchaseRequirement'] ?>">
+                                <div id="minimumPurchaseRequirement-error" class="error-message"></div>
+                            </div>
+
+                            <!-- Maximum Discount Uses -->
+                            <div class="pd-20 card-box mb-30">
+                                <label>Maximum Discount Uses</label>
+                                <input class="form-control" name="maximumDiscountUses" type="number"
+                                    value="<?= $discountcode['maximumDiscountUses'] ?>">
+                                <div id="maximumDiscountUses-error" class="error-message"></div>
+                            </div>
+
+                            <!-- Limit Per Customer -->
+                            <div class="pd-20 card-box mb-30">
+                                <label>Limit Per Customer</label>
+                                <input class="form-control" name="limitPerCustomer" type="number"
+                                    value="<?= $discountcode['limitPerCustomer'] ?>">
+                                <div id="limitPerCustomer-error" class="error-message"></div>
+                            </div>
+
+                            <!-- Exclusion Rules -->
+                            <div class="pd-20 card-box mb-30">
+                                <label>Exclusion Rules</label>
+                                <textarea class="form-control"
+                                    name="exclusion_rules"><?= $discountcode['exclusion_rules'] ?></textarea>
+                                <div id="exclusion-rules-error" class="error-message"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <form id="newdiscountcodeform" action="<?= base_url('update/' . $discountcode['id']) ?>" method="post">
-                        <div class="row">
-                            <!-- Left Side -->
-                            <div class="col-md-8">
-                                <div class="pd-20 card-box mb-30">
-                                    <h4 class="text-blue h5">Edit Discount Code</h4>
-
-                                    <!-- Title -->
-                                    <div class="form-group">
-                                        <label>Title</label>
-                                        <input class="form-control" name="title" type="text"
-                                            value="<?= $discountcode['title'] ?>" required>
-                                        <div id="title-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Type of Code -->
-                                    <div class="form-group">
-                                        <label>Type of Code</label>
-                                        <select class="form-control" name="typeOfCode" id="typeOfCode" required>
-                                            <option value="" disabled>Select type of Discount code</option>
-                                            <option value="numeric" <?= ($discountcode['typeOfCode'] === 'numeric') ? 'selected' : '' ?>>Numeric</option>
-                                            <option value="alphabetic" <?= ($discountcode['typeOfCode'] === 'alphabetic') ? 'selected' : '' ?>>Alphabetic</option>
-                                            <option value="alphanumeric"
-                                                <?= ($discountcode['typeOfCode'] === 'alphanumeric') ? 'selected' : '' ?>>
-                                                Alphanumeric</option>
-                                        </select>
-                                        <div id="typeOfCode-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Prefix & Suffix -->
-                                    <div class="form-group">
-                                        <label>Prefix</label>
-                                        <input class="form-control" name="prefix" type="text"
-                                            value="<?= $discountcode['prefix'] ?>">
-                                        <div id="prefix-error" class="error-message"></div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Suffix</label>
-                                        <input class="form-control" type="text" name="suffix"
-                                            value="<?= $discountcode['suffix'] ?>">
-                                        <div id="suffix-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Generated Code -->
-                                    <div class="form-group">
-                                        <label>Generated Code</label>
-                                        <div class="input-group">
-                                            <input class="form-control" name="code" type="text" id="generatedCode"
-                                                value="<?= $discountcode['code'] ?>" readonly>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" style="cursor: pointer;"
-                                                    onclick="generateCode()">
-                                                    <i class="fas fa-sync-alt"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div id="code-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Number of Codes -->
-                                    <div class="form-group">
-                                        <label>Number of Codes</label>
-                                        <input class="form-control" name="numberOfCodes" type="number"
-                                            value="<?= $discountcode['numberOfCodes'] ?>">
-                                        <div id="numberOfCodes-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Start & End Date -->
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label>Start Date</label>
-                                            <input type="date" class="form-control" name="startDate" id="date1"
-                                                value="<?= $discountcode['startDate'] ?>">
-                                            <div id="startDate-error" class="error-message text-danger"></div>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>End Date</label>
-                                            <input type="date" class="form-control" name="endDate" id="date2"
-                                                value="<?= $discountcode['endDate'] ?>">
-                                            <div id="endDate-error" class="error-message text-danger"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Discount Status -->
-                                    <div class="form-group">
-                                        <label>Discount Status</label>
-                                        <input id="discountstatus" class="form-control" name="discountstatus"
-                                            value="<?= $discountcode['discountstatus'] ?>" readonly>
-                                        <div id="discountstatus-error" class="error-message"></div>
-                                    </div>
-
-                                    <!-- Discount Type & Value -->
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="discount_type">Discount Type</label>
-                                            <select id="discount_type" class="form-control" name="discount_type">
-                                                <option value="value" <?= ($discountcode['discount_type'] == 'value') ? 'selected' : '' ?>>Discount Value</option>
-                                                <option value="percentage"
-                                                    <?= ($discountcode['discount_type'] == 'percentage') ? 'selected' : '' ?>>Discount Percentage</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group col-md-6">
-                                            <label>Discount Value</label>
-                                            <input class="form-control" type="number" step="0.01" name="discountValue"
-                                                value="<?= $discountcode['discountValue'] ?>">
-                                            <div id="discountValue-error" class="error-message"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Customer Eligibility -->
-                                    <div class="form-group">
-                                        <label>Customer Eligibility</label>
-                                        <select class="form-control" name="customerEligibility">
-                                            <option value="New" <?= $discountcode['customerEligibility'] == 'New' ? 'selected' : '' ?>>New Customers Only</option>
-                                            <option value="Returning"
-                                                <?= $discountcode['customerEligibility'] == 'Returning' ? 'selected' : '' ?>>Returning Customers Only</option>
-                                            <option value="All" <?= $discountcode['customerEligibility'] == 'All' ? 'selected' : '' ?>>All Customers</option>
-                                            <option value="VIP" <?= $discountcode['customerEligibility'] == 'VIP' ? 'selected' : '' ?>>VIP Customers</option>
-                                        </select>
-                                        <div id="customerEligibility-error" class="error-message"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Right Side -->
-                            <div class="col-md-4">
-                                <!-- Minimum Purchase Requirement -->
-                                <div class="pd-20 card-box mb-30">
-                                    <label>Minimum Purchase Requirement</label>
-                                    <input class="form-control" type="number" step="0.01"
-                                        name="minimumPurchaseRequirement"
-                                        value="<?= $discountcode['minimumPurchaseRequirement'] ?>">
-                                    <div id="minimumPurchaseRequirement-error" class="error-message"></div>
-                                </div>
-
-                                <!-- Maximum Discount Uses -->
-                                <div class="pd-20 card-box mb-30">
-                                    <label>Maximum Discount Uses</label>
-                                    <input class="form-control" name="maximumDiscountUses" type="number"
-                                        value="<?= $discountcode['maximumDiscountUses'] ?>">
-                                    <div id="maximumDiscountUses-error" class="error-message"></div>
-                                </div>
-
-                                <!-- Limit Per Customer -->
-                                <div class="pd-20 card-box mb-30">
-                                    <label>Limit Per Customer</label>
-                                    <input class="form-control" name="limitPerCustomer" type="number"
-                                        value="<?= $discountcode['limitPerCustomer'] ?>">
-                                    <div id="limitPerCustomer-error" class="error-message"></div>
-                                </div>
-
-                                <!-- Exclusion Rules -->
-                                <div class="pd-20 card-box mb-30">
-                                    <label>Exclusion Rules</label>
-                                    <textarea class="form-control"
-                                        name="exclusion_rules"><?= $discountcode['exclusion_rules'] ?></textarea>
-                                    <div id="exclusion-rules-error" class="error-message"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <button class="btn btn-primary btn-lg" type="submit">Save Changes</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Discount Code Edit Form End -->
+                    <div class="mb-3">
+                        <button class="btn btn-primary btn-lg" type="submit">Save Changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -419,7 +417,7 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const date1 = document.getElementById('date1');
             const date2 = document.getElementById('date2');
             const startDateError = document.getElementById('startDate-error');
@@ -428,7 +426,7 @@
             const today = new Date().toISOString().split('T')[0];
             date1.setAttribute('min', today);
 
-            date1.addEventListener('change', function() {
+            date1.addEventListener('change', function () {
                 const startDate = new Date(date1.value);
                 const endDate = new Date(date2.value);
 
@@ -441,7 +439,7 @@
                 }
             });
 
-            date2.addEventListener('change', function() {
+            date2.addEventListener('change', function () {
                 const startDate = new Date(date1.value);
                 const endDate = new Date(date2.value);
 
@@ -456,7 +454,7 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const startDateInput = document.getElementById("date1");
             const endDateInput = document.getElementById("date2");
             const discountStatusInput = document.getElementById("discountstatus");

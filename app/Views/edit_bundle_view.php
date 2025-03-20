@@ -127,6 +127,15 @@
                     <!-- Assuming `$bundle` contains existing data for the bundle -->
                     <form id="editbundleform" method="post"
                         action="<?= base_url('bundle/update/' . $bundle['bundle_id']) ?>" enctype="multipart/form-data">
+
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url('bundle/bundle_logs/' . $bundle['bundle_id']) ?>"
+                                class="btn btn-outline-primary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                                data-placement="top" title="View Bundle Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
                         <div class="form-group row">
                             <?php if (isset($allowedColumns['bundle_name'])): ?>
                                 <div class="col-sm">
@@ -259,7 +268,7 @@
 
 <script>
     // Initialize select2 plugin
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.select2').select2({
             placeholder: 'Search and select products',
             allowClear: true
@@ -268,7 +277,7 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const discountInput = document.getElementById('discount_input');
         const discountTypeInputs = document.querySelectorAll('input[name="discount_type"]');
 
@@ -295,10 +304,10 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('editbundleform');
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             let valid = true;
 
             // Clear previous error messages
@@ -419,7 +428,7 @@
         }
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.select2').select2({
             placeholder: 'Search and select products',
             allowClear: true
@@ -428,7 +437,7 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const selectedProducts = document.getElementById('selected_products');
         const bundlePriceField = document.querySelector('input[name="bundle_price"]');
 
@@ -460,7 +469,7 @@
         selectedProducts.addEventListener('change', calculateTotalPrice);
 
         // Ensure calculation works with Select2
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.select2').select2({
                 placeholder: 'Search and select products',
                 allowClear: true

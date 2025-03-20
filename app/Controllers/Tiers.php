@@ -52,7 +52,7 @@ class Tiers extends BaseController
     {
         $model = new tiersmodel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing tier data
         $tier = $model->find($id);
@@ -66,7 +66,7 @@ class Tiers extends BaseController
             'tier_name' => $this->request->getPost('tier_name'),
             'tier_value' => $this->request->getPost('tier_value'),
             'tier_link' => $this->request->getPost('tier_link'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -90,7 +90,7 @@ class Tiers extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -163,6 +163,67 @@ class Tiers extends BaseController
         return redirect()->to('tiers_list_view')->with('success', 'Tier 1 restored successfully.');
     }
 
+    public function tier_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_tier1_logs_view', ['updates' => []]); // No Tier ID provided
+        }
+
+        // Fetch Tier details
+        $query = $db->table('tier_1')->select('change_log')->where('tier_1_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_tier1_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_tier1_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_tier1_logs_view', ['updates' => []]); // No logs found
+    }
+    public function getTierChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('tier_1')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 
@@ -227,7 +288,7 @@ class Tiers extends BaseController
     {
         $db = \Config\Database::connect();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing tier data
         $tier = $db->table('tier_2')->where('tier_2_id', $id)->get()->getRowArray();
@@ -241,7 +302,7 @@ class Tiers extends BaseController
             'tier_name' => $this->request->getPost('tier_name'),
             'tier_value' => $this->request->getPost('tier_value'),
             'tier_2_link' => $this->request->getPost('tier_link'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -265,7 +326,7 @@ class Tiers extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -338,6 +399,67 @@ class Tiers extends BaseController
     }
 
 
+    public function tier2_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_tier2_logs_view', ['updates' => []]); // No Tier ID provided
+        }
+
+        // Fetch Tier details
+        $query = $db->table('tier_2')->select('change_log')->where('tier_2_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_tier2_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_tier2_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_tier2_logs_view', ['updates' => []]); // No logs found
+    }
+    public function getTier2ChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('tier_2')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 
@@ -401,7 +523,7 @@ class Tiers extends BaseController
     {
         $db = \Config\Database::connect();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing tier data
         $tier = $db->table('tier_3')->where('tier_3_id', $id)->get()->getRowArray();
@@ -415,7 +537,7 @@ class Tiers extends BaseController
             'tier_name' => $this->request->getPost('tier_name'),
             'tier_value' => $this->request->getPost('tier_value'),
             'tier_3_link' => $this->request->getPost('tier_link'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -439,7 +561,7 @@ class Tiers extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -514,6 +636,67 @@ class Tiers extends BaseController
 
 
 
+    public function tier3_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_tier3_logs_view', ['updates' => []]); // No Tier ID provided
+        }
+
+        // Fetch Tier details
+        $query = $db->table('tier_3')->select('change_log')->where('tier_3_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_tier3_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_tier3_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_tier3_logs_view', ['updates' => []]); // No logs found
+    }
+    public function getTier3ChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('tier_3')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 
@@ -598,7 +781,7 @@ class Tiers extends BaseController
             'tier_name' => $this->request->getPost('tier_name'),
             'tier_value' => $this->request->getPost('tier_value'),
             'tier_4_link' => $this->request->getPost('tier_link'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -622,7 +805,7 @@ class Tiers extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -693,6 +876,69 @@ class Tiers extends BaseController
         ]);
 
         return redirect()->to('tiers_list_view')->with('success', 'Tier 4 restored successfully.');
+    }
+
+    public function tier4_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_tier4_logs_view', ['updates' => []]); // No Tier ID provided
+        }
+
+        // Fetch Tier 4 details
+        $query = $db->table('tier_4')->select('change_log')->where('tier_4_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_tier4_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_tier4_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_tier4_logs_view', ['updates' => []]); // No logs found
+    }
+
+    public function getTier4ChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('tier_4')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
     }
 
 

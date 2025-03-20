@@ -406,7 +406,7 @@ class Blogs_model extends Model
 
     public function getPendingComments()
     {
-        return $this->db->table('blog_comments')->where('status', 0)->countAllResults();
+        return $this->db->table('blog_comments')->where('user_status', 0)->countAllResults();
     }
 
 
