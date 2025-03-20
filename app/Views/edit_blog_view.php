@@ -107,6 +107,12 @@
                             <button value="submit" class="btn btn-primary btn-lg">Update</button>
                         </div>
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>Blogs/Blogs_logs/<?= $post['blog_id'] ?>" class="px-2">
+                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
+                            </a>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="pd-20 card-box mb-30">

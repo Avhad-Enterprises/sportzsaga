@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -37,8 +37,16 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('sellers/editsellers/(:num)', 'Registeredusers::editseller/$1');
    $routes->post('sellers/updateseller/(:num)', 'Registeredusers::updateseller/$1');
    $routes->post('update_profile/(:num)', 'Registeredusers::update_profile/$1');
+   $routes->get('update_profile/profile_logs/(:num)', 'Registeredusers::profile_change_logs/$1');
    $routes->get('users/view_all_orders/(:num)', 'Registeredusers::view_all_orders/$1');
    $routes->get('edit/user/(:num)', 'Registeredusers::user_details/$1');
+   $routes->get('registeredusers/customer_logs/(:num)', 'Registeredusers::customer_change_logs/$1');
+   $routes->get('registeredusers/customer_logs', 'Registeredusers::customer_change_logs'); // Default route
+   $routes->get('registeredusers/employee_logs/(:num)', 'Registeredusers::employee_change_logs/$1');
+   $routes->get('registeredusers/employee_logs', 'Registeredusers::employee_change_logs'); // Default route
+
+
+
 
    // Loyality Points
    $routes->get('registeredusers/loyality_points_history/(:num)', 'Registeredusers::loyality_points_history/$1');
@@ -72,6 +80,10 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('blogs/comments/update_status', 'Blogs::UpdateCommentStatus');
    $routes->get('blogs/logs/(:num)', 'Blogs::blog_change_logs/$1');
    $routes->get('blogs/logs', 'Blogs::blog_change_logs'); // Default route
+
+
+   $routes->get('Blogs/Blogs_logs/(:num)', 'Blogs::Blogs_logs/$1');
+   
 
 
    // Empolyee's Login/signup Controller;
@@ -214,8 +226,9 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('company_logs_view', 'CatalogController::companylogs');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
+   $routes->get('company/company_logs/(:num)', 'CatalogController::company_logs/$1');
 
-   //related products
+   //related productsSSS
    $routes->get('addnew_related_product', 'RelatedproductController::index');
    $routes->get('admin-products/getDistinctFieldValues', 'RelatedproductController::getDistinctFieldValues');
    $routes->post('admin-products/getProductsByConditions', 'RelatedproductController::getProductsByConditions');
@@ -265,6 +278,7 @@ $routes->post('warehouse/addLocation', 'Dashboard::addLocation');
 $routes->get('warehouse/getLocation/(:any)', 'Dashboard::getLocation/$1');
 $routes->post('warehouse/editLocation', 'Dashboard::editLocation');
 $routes->post('warehouse/deleteLocation/(:any)', 'Dashboard::deleteLocation/$1');
+
 
 //cusomer sevice Controller
 $routes->get('customer_email_view/(:num)', 'Customerservice::customerEmailView/$1');
@@ -488,6 +502,7 @@ $routes->post('customer_segment/updatesegment/(:num)', 'CatalogController::updat
 $routes->get('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
 $routes->get('customer_segment/restore/(:num)', 'CatalogController::restoresegment/$1');
 $routes->get('customersegment_logs_view', 'CatalogController::customersegmentlogs');
+$routes->get('customersegment/customersegment_logs/(:num)', 'CatalogController::customersegment_logs/$1');
 
 //inventory
 $routes->get('inventory/create', 'InventoryController::create');
@@ -666,23 +681,3 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

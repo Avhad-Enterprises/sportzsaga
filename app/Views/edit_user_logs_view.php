@@ -8,6 +8,8 @@
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <div class="right-sidebar">
         <div class="sidebar-title">
             <h3 class="weight-600 font-16 text-blue">
@@ -88,108 +90,74 @@
     <!-- Header View Start -->
     <?= $this->include('left_view') ?>
     <!-- Header View End -->
-
     <div class="mobile-menu-overlay"></div>
-
     <!-- Page Main Content Start -->
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <!-- Default Basic Forms Start -->
-                <div class="pd-20 card-box mb-30">
+                <!-- Back Button -->
+                <div class="mb-3">
+                    <a href="<?= base_url() ?>registeredusers" class="px-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <!-- Centered Content -->
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="row justify-content-center w-100">
+                        <div class="col-md-9">
+                            <div class="pd-20 card-box mb-30">
+                                <h4 class="text-blue mb-30 text-center">User Update Timeline</h4>
+                                <div class="timeline">
+                                    <?php if (!empty($updates)): ?>
+                                        <?php foreach ($updates as $update): ?>
+                                            <?php if (!isset($update['updated_at']) || !isset($update['updated_by'])) continue; ?>
 
-                    <?php foreach ($employes as $employe) : ?>
-                        <form id="" method="post" action="<?= base_url('employee/updateempolyee/' . $employe['user_id']) ?>" class="needs-validation" novalidate>
-
-                        <div class="d-flex justify-content-end">
-                            <a href="<?= base_url() ?>registeredusers/employee_logs/<?= $employe['user_id'] ?>" class="px-2">
-                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
-                            </a>
+                                            <div class="timeline-item">
+                                                <div class="timeline-badge">
+                                                    <i class="fas fa-user-edit"></i>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">User Updated</h5>
+                                                            <p class="card-text">
+                                                                <strong>Updated By:</strong> <?= htmlspecialchars($update['updated_by']) ?> <br>
+                                                                <strong>Updated At:</strong> <?= date('d M Y h:i A', strtotime($update['updated_at'])) ?>
+                                                            </p>
+                                                            <h6 class="card-subtitle mt-2">Changes:</h6>
+                                                            <ul class="mb-0">
+                                                                <?php if (!empty($update['changes'])): ?>
+                                                                    <?php foreach ($update['changes'] as $field => $change): ?>
+                                                                        <li>
+                                                                            <strong><?= ucfirst(str_replace('_', ' ', $field)) ?>:</strong>
+                                                                            <span class="text-muted"><?= htmlspecialchars($change['old']) ?></span> →
+                                                                            <span class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                        </li>
+                                                                    <?php endforeach; ?>
+                                                                <?php else: ?>
+                                                                    <li>No changes recorded.</li>
+                                                                <?php endif; ?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <p class="text-center">No updates found.</p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Text</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" name="name" value="<?= $employe['name'] ?>" type="text" placeholder="Johnny Brown" required />
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Email</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" name="email" value="<?= $employe['email'] ?>" type="email" required />
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    This feild can't be Empty
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Telephone</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" name="phoneno" value="<?= $employe['phone_no'] ?>" type="tel" required />
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    This feild can't be Empty
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Password</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" value="<?= $employe['password'] ?>" type="text" disabled />
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">New Password</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" type="password" required />
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    This feild can't be Empty
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Repeat New Password</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input class="form-control" name="confirmpassword" type="text" required />
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    This feild can't be Empty
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12 col-md-10">
-                                    <button type="submit" class="btn btn-lg btn-primary">
-                                        Update
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Page Main Content End -->
-
-
-        <!-- Footer View Start -->
-        <?= $this->include('footer_view') ?>
-        <!-- Footer View End -->
-
+    </div>
+    <!-- Page Main Content End -->
 </body>
+<!-- Footer View Start -->
+<?= $this->include('footer_view') ?>
+<!-- Footer View End -->
 
 </html>
