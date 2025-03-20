@@ -1178,4 +1178,57 @@ class CatalogController extends Controller
             return redirect()->to('customer_segment_view')->with('error', 'Failed to restore segment.');
         }
     }
+
+    public function company_logs($companyId)
+    {
+        $companyModel = new \App\Models\CompanyModel();
+
+        // Get the company details
+        $company = $companyModel->find($companyId);
+
+        if (!$company) {
+            return redirect()->to('company')->with('error', 'Company not found');
+        }
+
+        // Get the change logs for this company
+        $updates = $companyModel->getCompanyChangeLogs($companyId);
+
+        $data = [
+            'title' => 'Company Update History',
+            'company' => $company,
+            'updates' => $updates
+        ];
+
+        // Return the view with the data
+        return view('edit_company_logs_view', $data);
+    }
+
+    public function customersegment_logs($segmentId)
+    {
+        $model = new CustomerSegmentModel();
+        $changeLogJson = $model->getChangeLog($segmentId);
+
+        if (!empty($changeLogJson)) {
+            // Decode the JSON string
+            $changeLogArray = json_decode($changeLogJson, true);
+            $updates = [];
+
+            if (is_array($changeLogArray)) {
+                // Convert nested changes into an indexed array
+                foreach ($changeLogArray as $key => $log) {
+                    if (is_array($log) && isset($log['updated_at'], $log['updated_by'])) {
+                        $updates[] = $log;
+                    }
+                }
+                // Sort updates by timestamp (latest first)
+                usort($updates, function ($a, $b) {
+                    return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+                });
+            }
+        } else {
+            $updates = [];
+        }
+
+        return view('edit_customersegment_logs_view', ['updates' => $updates]);
+    }
 }

@@ -122,6 +122,12 @@
                         action="<?= base_url('company/update_company/' . $company['id']) ?>"
                         enctype="multipart/form-data">
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>company/company_logs/<?= $company['id'] ?>" class="px-2">
+                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
+                            </a>
+                        </div>
+
                         <!-- Company Name -->
                         <div class="form-group">
                             <label for="company_name">Company Name</label>

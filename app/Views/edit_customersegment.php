@@ -122,6 +122,13 @@
                         action="<?= base_url('customer_segment/updatesegment/' . $segment['segment_id']) ?>"
                         enctype="multipart/form-data">
 
+
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>customersegment/customersegment_logs/<?= $segment['segment_id'] ?>" class="px-2">
+                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
+                            </a>
+                        </div>
+
                         <!-- Segment Name -->
                         <div class="form-group">
                             <label for="segment_name">Segment Name</label>
