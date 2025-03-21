@@ -67,15 +67,8 @@ class Store extends BaseController
         $data['carousels'] = $modal->findall();
         $data['marquees'] = $modal->getMarquees();
         $data['home_collections'] = $modal->getHomeCollections();
-
-        return view('online_store_history', $data);
-    }
-
-    public function online_store_history()
-    {
-
-        $modal = new onlinestoremodal();
         $data['home_carousel2'] = $modal->getHomecarousel2();
+
         return view('online_store_history', $data);
     }
 
