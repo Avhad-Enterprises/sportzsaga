@@ -106,12 +106,13 @@
     <!-- Header View End -->
 
     <div class="mobile-menu-overlay"></div>
+
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
 
                 <div class="w-100">
-                    <a href="<?= base_url() ?>supplier_list_view" class="px-2 d-inline-block">
+                    <a href="<?= base_url() ?>relatedproduct_table_view" class="px-2 d-inline-block">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -119,24 +120,23 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="pd-20 card-box mb-30">
-                            <h4 class="text-blue mb-30">Supplier Update Timeline</h4>
+                            <h4 class="text-blue mb-30">Related Product Update Timeline</h4>
                             <div class="timeline">
                                 <?php if (!empty($updates)): ?>
-                                    <?php foreach (array_reverse($updates) as $update): ?> <!-- Reverse array order -->
+                                    <?php foreach (array_reverse($updates) as $update): ?> <!-- Latest first -->
                                         <?php if (!isset($update['updated_at']) || !isset($update['updated_by']))
                                             continue; ?>
 
                                         <div class="timeline-item">
                                             <div class="timeline-badge">
-                                                <i class="fas fa-user-edit"></i>
+                                                <i class="fas fa-tags"></i>
                                             </div>
                                             <div class="timeline-content">
                                                 <div class="card">
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier Updated</h5>
+                                                        <h5 class="card-title">Catalog Updated</h5>
                                                         <p class="card-text">
-                                                            <strong>Updated By:</strong>
-                                                            <?= htmlspecialchars($update['updated_by']) ?> <br>
+                                                            <strong>Updated By:</strong> <?= esc($update['updated_by']) ?> <br>
                                                             <strong>Updated At:</strong>
                                                             <?= date('d M Y h:i A', strtotime($update['updated_at'])) ?>
                                                         </p>
@@ -146,11 +146,9 @@
                                                                 <?php foreach ($update['changes'] as $field => $change): ?>
                                                                     <li>
                                                                         <strong><?= ucfirst(str_replace('_', ' ', $field)) ?>:</strong>
-                                                                        <span
-                                                                            class="text-muted"><?= htmlspecialchars($change['old']) ?></span>
+                                                                        <span class="text-muted"><?= esc($change['old']) ?></span>
                                                                         →
-                                                                        <span
-                                                                            class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                        <span class="text-success"><?= esc($change['new']) ?></span>
                                                                     </li>
                                                                 <?php endforeach; ?>
                                                             <?php else: ?>
@@ -172,6 +170,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 <!-- Footer View Start -->

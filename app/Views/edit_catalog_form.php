@@ -122,6 +122,14 @@
                 <div class="pd-20 card-box mb-30">
                     <form method="post" action="<?= base_url('catalog/update/' . $catalog['id']) ?>">
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>catalog/catalog_logs/<?= $catalog['id'] ?>"
+                                class="btn btn-outline-primary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                                data-placement="top" title="View Catalog Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
                         <!-- Catalog Name -->
                         <div class="form-group">
                             <label for="catalog_name">Catalog Name</label>

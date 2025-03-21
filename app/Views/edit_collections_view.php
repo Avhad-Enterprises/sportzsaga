@@ -36,43 +36,57 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i
+                                class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i
+                                class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
+                                aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i
+                                class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i
+                                class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -111,14 +125,25 @@
 
                 </div>
                 <div class="pd-20 mb-30">
-                    <form id="editCollectionForm" action="<?= base_url('updateCollection/' . $collection['collection_id']) ?>" method="POST">
+                    <form id="editCollectionForm"
+                        action="<?= base_url('updateCollection/' . $collection['collection_id']) ?>" method="POST">
+
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url('collection/collection_logs/' . $collection['collection_id']) ?>"
+                                class="btn btn-outline-primary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                                data-placement="top" title="View Collection Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Collection Details</p>
                                     <div class="form-group">
                                         <label for="title">Collection Title</label>
-                                        <input type="text" class="form-control" id="title" name="collection-name" value="<?= $collection['collection_title'] ?>" required>
+                                        <input type="text" class="form-control" id="title" name="collection-name"
+                                            value="<?= $collection['collection_title'] ?>" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -129,7 +154,8 @@
 
                                     <div class="form-group">
                                         <label for="description">Collection Description</label>
-                                        <textarea class="form-control" id="description" name="collection-description" required> <?= $collection['collection_description'] ?></textarea>
+                                        <textarea class="form-control" id="description" name="collection-description"
+                                            required> <?= $collection['collection_description'] ?></textarea>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -142,9 +168,13 @@
                                     <div class="form-group row">
                                         <div class="col-sm-8">
                                             <label for="image">Image for PC</label>
-                                            <input type="file" class="form-control" id="collection-pc-image" value="<?= $collection['collection_pc_image'] ?>" name="collection-pc-image" onchange="previewpccollectionImage(event)">
+                                            <input type="file" class="form-control" id="collection-pc-image"
+                                                value="<?= $collection['collection_pc_image'] ?>"
+                                                name="collection-pc-image" onchange="previewpccollectionImage(event)">
                                             <div class="collection_pc_preview">
-                                                <img id="image-collpc-preview" src="<?= ($collection['collection_pc_image']) ?>" alt="Image pc Preview">
+                                                <img id="image-collpc-preview"
+                                                    src="<?= ($collection['collection_pc_image']) ?>"
+                                                    alt="Image pc Preview">
                                             </div>
                                             <div class="valid-feedback">
                                                 Looks good!
@@ -155,9 +185,14 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="image">Image for Mobile</label>
-                                            <input type="file" class="form-control" id="collection-mob-image" value="<?= $collection['collection_mob_image'] ?>" name="collection-mob-image" onchange="previewmobilecollectionImage(event)">
+                                            <input type="file" class="form-control" id="collection-mob-image"
+                                                value="<?= $collection['collection_mob_image'] ?>"
+                                                name="collection-mob-image"
+                                                onchange="previewmobilecollectionImage(event)">
                                             <div class="collection_mob_preview">
-                                                <img id="image-collmob-preview" src="<?= ($collection['collection_mob_image']) ?>" alt="Image mob Preview">
+                                                <img id="image-collmob-preview"
+                                                    src="<?= ($collection['collection_mob_image']) ?>"
+                                                    alt="Image mob Preview">
                                             </div>
                                             <div class="valid-feedback">
                                                 Looks good!
@@ -171,7 +206,8 @@
                                     <div class="form-group row">
                                         <div class="col-sm">
                                             <label for="url">Collection Type</label>
-                                            <select class="custom-select form-control" id="collection_type" name="collection_type" style="width: 100%; height: 38px" required>
+                                            <select class="custom-select form-control" id="collection_type"
+                                                name="collection_type" style="width: 100%; height: 38px" required>
                                                 <option value="">Select</option>
                                                 <option value="tshirts" <?= $collection['collection_type'] == 'tshirts' ? 'selected' : '' ?>>T-shirts</option>
                                                 <option value="shoes" <?= $collection['collection_type'] == 'shoes' ? 'selected' : '' ?>>Shoes</option>
@@ -186,7 +222,8 @@
                                         </div>
                                         <div class="col-sm">
                                             <label for="theme_template">Theme Template</label>
-                                            <input type="file" class="form-control" id="theme_template" name="theme_template" disabled>
+                                            <input type="file" class="form-control" id="theme_template"
+                                                name="theme_template" disabled>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -203,12 +240,18 @@
                                             <p class="text-blue">Select Products</p>
                                         </div>
                                         <div class="col-md-8 row">
-                                            <div id="Automated" <?= $collection['select_method'] === 'automated' ? '' : 'style="display: none;"' ?> class="custom-control col custom-radio mb-5">
-                                                <input type="radio" id="customRadio4" name="selectMethod" class="custom-control-input" value="automated" <?= $collection['select_method'] === 'automated' ? 'checked' : '' ?>>
+                                            <div id="Automated" <?= $collection['select_method'] === 'automated' ? '' : 'style="display: none;"' ?>
+                                                class="custom-control col custom-radio mb-5">
+                                                <input type="radio" id="customRadio4" name="selectMethod"
+                                                    class="custom-control-input" value="automated"
+                                                    <?= $collection['select_method'] === 'automated' ? 'checked' : '' ?>>
                                                 <label class="custom-control-label" for="customRadio4">Automated</label>
                                             </div>
-                                            <div id="Manual" <?= $collection['select_method'] === 'manual' ? '' : 'style="display: none;"' ?> class="custom-control col custom-radio mb-5">
-                                                <input type="radio" id="customRadio5" name="selectMethod" class="custom-control-input" value="manual" <?= $collection['select_method'] === 'manual' ? 'checked' : '' ?>>
+                                            <div id="Manual" <?= $collection['select_method'] === 'manual' ? '' : 'style="display: none;"' ?>
+                                                class="custom-control col custom-radio mb-5">
+                                                <input type="radio" id="customRadio5" name="selectMethod"
+                                                    class="custom-control-input" value="manual"
+                                                    <?= $collection['select_method'] === 'manual' ? 'checked' : '' ?>>
                                                 <label class="custom-control-label" for="customRadio5">Manual</label>
                                             </div>
                                         </div>
@@ -223,12 +266,16 @@
                                                             <h3>Include</h3> products which satisfies:
                                                         </label>
                                                         <div class="custom-control col custom-radio">
-                                                            <input type="radio" id="allConditions" name="conditionType" value="all" class="custom-control-input">
-                                                            <label class="custom-control-label" for="allConditions">All Conditions</label>
+                                                            <input type="radio" id="allConditions" name="conditionType"
+                                                                value="all" class="custom-control-input">
+                                                            <label class="custom-control-label" for="allConditions">All
+                                                                Conditions</label>
                                                         </div>
                                                         <div class="custom-control col custom-radio">
-                                                            <input type="radio" id="anyCondition" name="conditionType" value="any" class="custom-control-input">
-                                                            <label class="custom-control-label" for="anyCondition">Any Condition</label>
+                                                            <input type="radio" id="anyCondition" name="conditionType"
+                                                                value="any" class="custom-control-input">
+                                                            <label class="custom-control-label" for="anyCondition">Any
+                                                                Condition</label>
                                                         </div>
                                                     </div>
                                                     <div id="conditions-container" class="mb-4">
@@ -237,19 +284,23 @@
                                                     <div id="conditionsList"></div>
                                                     <div class="form-row" style=" justify-content: space-between;">
                                                         <div class="col-3">
-                                                            <button type="button" class="btn col-12 mt-2 btn-secondary" id="addCondition">Add Condition</button>
+                                                            <button type="button" class="btn col-12 mt-2 btn-secondary"
+                                                                id="addCondition">Add Condition</button>
                                                         </div>
                                                         <div class="col-7">
-                                                            <input type="text" class="form-control mt-2" name="sortbystatus" id="sortbystatus" readonly>
+                                                            <input type="text" class="form-control mt-2"
+                                                                name="sortbystatus" id="sortbystatus" readonly>
                                                         </div>
-                                                        <div class="col-2 d-flex justify-content-end form-row text-right">
+                                                        <div
+                                                            class="col-2 d-flex justify-content-end form-row text-right">
                                                             <div id="loader" class="mt-2" style="display: none;">
                                                                 <div class="spinner-border" role="status">
                                                                     <span class="sr-only">Loading...</span>
                                                                 </div>
                                                                 <!-- You can replace this with a spinner or any other loading indicator -->
                                                             </div>
-                                                            <i class="icon-copy mt-2 btn btn-dark refresh fa fa-refresh" aria-hidden="true"></i>
+                                                            <i class="icon-copy mt-2 btn btn-dark refresh fa fa-refresh"
+                                                                aria-hidden="true"></i>
                                                         </div>
                                                         <div id="loader" class="mt-2" style="display: none;">
                                                             <div class="spinner-border" role="status">
@@ -300,7 +351,8 @@
                                     <div id="manualSection" <?= $collection['select_method'] === 'manual' ? '' : 'style="display: none;"' ?>>
                                         <div class="form-group">
                                             <label class="" for="searchProducts">Search Products here:</label>
-                                            <input type="text" id="searchProducts" class="form-control" placeholder="Search products...">
+                                            <input type="text" id="searchProducts" class="form-control"
+                                                placeholder="Search products...">
                                         </div>
                                     </div>
 
@@ -309,11 +361,14 @@
                                         <div id="loader" style="display: none;">
                                             <p>Loading...</p>
                                         </div>
-                                        <div id="productsContainer" style=" overflow-y: auto; max-height: 582px; scrollbar-width: thin;" class="mt-4">
+                                        <div id="productsContainer"
+                                            style=" overflow-y: auto; max-height: 582px; scrollbar-width: thin;"
+                                            class="mt-4">
                                             <table class="table" id="productstable">
                                                 <thead>
                                                     <tr>
-                                                        <th class=" dt-body-center" id="selectAllHeader" style="display: none;">
+                                                        <th class=" dt-body-center" id="selectAllHeader"
+                                                            style="display: none;">
                                                             <div class="dt-checkbox">
                                                                 <input type="checkbox" id="select_all">
                                                                 <span class="dt-checkbox-label"></span>
@@ -337,31 +392,29 @@
                                     <p class="text-blue mb-30">Collection visibility</p>
                                     <div class="form-group">
                                         <div id="Visibile" class="custom-control col custom-radio mb-5">
-                                            <input type="radio" id="visibile" name="visibility" class="custom-control-input" value="visibile" <?= $collection['collection_visibility'] == 'visibile' ? 'checked' : '' ?>>
+                                            <input type="radio" id="visibile" name="visibility"
+                                                class="custom-control-input" value="visibile"
+                                                <?= $collection['collection_visibility'] == 'visibile' ? 'checked' : '' ?>>
                                             <label class="custom-control-label" for="visibile">Visibile</label>
                                         </div>
                                         <div id="Hidden" class="custom-control col custom-radio mb-5">
-                                            <input type="radio" id="hidden" name="visibility" class="custom-control-input" value="hidden" <?= $collection['collection_visibility'] == 'hidden' ? 'checked' : '' ?>>
+                                            <input type="radio" id="hidden" name="visibility"
+                                                class="custom-control-input" value="hidden"
+                                                <?= $collection['collection_visibility'] == 'hidden' ? 'checked' : '' ?>>
                                             <label class="custom-control-label" for="hidden">Hidden</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="publish_date_and_time">Publish Date and Time</label>
-                                        <input
-                                            type="datetime-local"
-                                            name="publish_date_and_time"
-                                            id="publish_date_and_time"
-                                            class="form-control"
+                                        <input type="datetime-local" name="publish_date_and_time"
+                                            id="publish_date_and_time" class="form-control"
                                             value="<?= isset($collection['publish_date_and_time']) ? date('Y-m-d\TH:i', strtotime($collection['publish_date_and_time'])) : '' ?>">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="end_date_and_time">End Date and Time</label>
-                                        <input
-                                            type="datetime-local"
-                                            name="end_date_and_time"
-                                            id="end_date_and_time"
+                                        <input type="datetime-local" name="end_date_and_time" id="end_date_and_time"
                                             class="form-control"
                                             value="<?= isset($collection['end_date_and_time']) ? date('Y-m-d\TH:i', strtotime($collection['end_date_and_time'])) : '' ?>">
                                     </div>
@@ -369,8 +422,10 @@
                                     <div class="form-group">
                                         <label for="recurrence">Recurrence</label>
                                         <select name="recurrence" id="recurrence" class="form-control">
-                                            <option value="" <?= empty($collection['recurrence']) ? 'selected' : '' ?>>Select Recurrence</option>
-                                            <option value="monthly" <?= isset($collection['recurrence']) && $collection['recurrence'] == 'monthly' ? 'selected' : '' ?>>Monthly</option>
+                                            <option value="" <?= empty($collection['recurrence']) ? 'selected' : '' ?>>
+                                                Select Recurrence</option>
+                                            <option value="monthly" <?= isset($collection['recurrence']) && $collection['recurrence'] == 'monthly' ? 'selected' : '' ?>>Monthly
+                                            </option>
                                             <option value="weekly" <?= isset($collection['recurrence']) && $collection['recurrence'] == 'weekly' ? 'selected' : '' ?>>Weekly</option>
                                             <option value="daily" <?= isset($collection['recurrence']) && $collection['recurrence'] == 'daily' ? 'selected' : '' ?>>Daily</option>
                                             <option value="yearly" <?= isset($collection['recurrence']) && $collection['recurrence'] == 'yearly' ? 'selected' : '' ?>>Yearly</option>
@@ -381,9 +436,11 @@
                                     <div class="form-group">
                                         <label for="publish_for">Publish For</label>
                                         <select name="publish_for" id="publish_for" class="form-control">
-                                            <option value="" <?= empty($collection['publish_for']) ? 'selected' : '' ?>>Select User</option>
+                                            <option value="" <?= empty($collection['publish_for']) ? 'selected' : '' ?>>
+                                                Select User</option>
                                             <?php foreach ($users as $user): ?>
-                                                <option value="<?= $user['user_id']; ?>" <?= isset($collection['publish_for']) && $collection['publish_for'] == $user['user_id'] ? 'selected' : '' ?>>
+                                                <option value="<?= $user['user_id']; ?>"
+                                                    <?= isset($collection['publish_for']) && $collection['publish_for'] == $user['user_id'] ? 'selected' : '' ?>>
                                                     <?= $user['name']; ?>
                                                 </option>
                                             <?php endforeach; ?>
@@ -396,7 +453,9 @@
                                     <div class="card card-body">
                                         <div class="form-group">
                                             <label for="input1">Meta Title</label>
-                                            <input type="text" name="collection-meta-title" class="form-control" id="input1" placeholder=" Meta Title" value="<?= $collection['meta_tag_title'] ?>" readonly required>
+                                            <input type="text" name="collection-meta-title" class="form-control"
+                                                id="input1" placeholder=" Meta Title"
+                                                value="<?= $collection['meta_tag_title'] ?>" readonly required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -406,7 +465,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="input2">Meta Description</label>
-                                            <input type="text" name="collection-meta-description" class="form-control" id="input2" placeholder=" Meta Description" readonly value="<?= $collection['coll_meta_tag_description'] ?>" required>
+                                            <input type="text" name="collection-meta-description" class="form-control"
+                                                id="input2" placeholder=" Meta Description" readonly
+                                                value="<?= $collection['coll_meta_tag_description'] ?>" required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -416,7 +477,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="url">URL</label>
-                                            <input type="text" class="form-control" id="collection-url" placeholder=" Meta URL" name="collection-url" value="<?= $collection['url'] ?>" readonly required>
+                                            <input type="text" class="form-control" id="collection-url"
+                                                placeholder=" Meta URL" name="collection-url"
+                                                value="<?= $collection['url'] ?>" readonly required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -482,7 +545,9 @@
                                             <option value="oldest">Oldest</option>
                                         </select>
                                     </div>
-                                    <div id="selectedProducts" style=" overflow-y: auto; max-height: 652px; scrollbar-width: thin;" class=" list-group list-group-flush"></div>
+                                    <div id="selectedProducts"
+                                        style=" overflow-y: auto; max-height: 652px; scrollbar-width: thin;"
+                                        class=" list-group list-group-flush"></div>
                                 </div>
                             </div>
                         </div>
@@ -504,7 +569,7 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
 
         const collectionTitleInput = document.querySelector('input[name="collection-name"]');
         const collectionDescriptionInput = document.querySelector('textarea[name="collection-description"]');
@@ -519,13 +584,13 @@
                 .replace(/^-+|-+$/g, '');
         }
 
-        collectionTitleInput.addEventListener('input', function() {
+        collectionTitleInput.addEventListener('input', function () {
             const title = collectionTitleInput.value;
             metacollectionTitleInput.value = title;
             metacollectionUrlInput.value = generateSlug(title);
         });
 
-        collectionDescriptionInput.addEventListener('input', function() {
+        collectionDescriptionInput.addEventListener('input', function () {
             const description = collectionDescriptionInput.value;
             metacollectionDescriptionInput.value = description;
         });
@@ -541,7 +606,7 @@
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         let conditionCount = 0;
         const baseUrl = '<?= base_url() ?>';
         let collectionConditions = <?= json_encode($collection['collection_conditions']) ?> || {
@@ -551,7 +616,7 @@
 
         // Populate existing conditions
         if (collectionConditions && collectionConditions.conditions) {
-            collectionConditions.conditions.forEach(function(condition, index) {
+            collectionConditions.conditions.forEach(function (condition, index) {
                 addConditionRow(condition.field, condition.operator, condition.value);
             });
         }
@@ -600,8 +665,8 @@
             conditionCount++;
             console.log('Existing condition added');
 
-            $(`.condition-row[data-index="${conditionCount-1}"] .condition-field`).trigger('change');
-            $(`.condition-row[data-index="${conditionCount-1}"] .condition-operator`).trigger('change');
+            $(`.condition-row[data-index="${conditionCount - 1}"] .condition-field`).trigger('change');
+            $(`.condition-row[data-index="${conditionCount - 1}"] .condition-operator`).trigger('change');
 
 
 
@@ -643,13 +708,13 @@
             console.log('New condition added');
 
             // Trigger change event to load operators and values
-            $(`.condition-row[data-index="${conditionCount-1}"] .condition-field`).trigger('change');
+            $(`.condition-row[data-index="${conditionCount - 1}"] .condition-field`).trigger('change');
         }
 
         function initializeSelect2(index) {
             $(`.condition-row[data-index="${index}"] .condition-value`).select2({
                 tags: true,
-                createTag: function(params) {
+                createTag: function (params) {
                     return {
                         id: params.term,
                         text: params.term,
@@ -657,7 +722,7 @@
                     }
                 },
                 language: {
-                    noResults: function() {
+                    noResults: function () {
                         return "Type to add a custom value";
                     }
                 },
@@ -670,17 +735,17 @@
         }
 
         function reinitializeAllSelect2() {
-            $('.condition-value').each(function(index) {
+            $('.condition-value').each(function (index) {
                 $(this).select2('destroy'); // Destroy existing Select2
                 initializeSelect2(index); // Reinitialize
             });
         }
 
-        $(window).on('load', function() {
+        $(window).on('load', function () {
             reinitializeAllSelect2();
         });
 
-        $('#addCondition').click(function() {
+        $('#addCondition').click(function () {
             let lastField = $('.condition-field').last().val();
             addCondition(lastField);
             updateProductTable();
@@ -688,7 +753,7 @@
 
 
         // Event listener for removing a condition
-        $(document).on('click', '.remove-condition', function() {
+        $(document).on('click', '.remove-condition', function () {
             $(this).closest('.condition-row').remove();
             console.log('Condition removed, updating product table');
             updateProductTable();
@@ -696,7 +761,7 @@
 
 
         // Event listener for field change
-        $(document).on('change', '.condition-field', function() {
+        $(document).on('change', '.condition-field', function () {
             let row = $(this).closest('.condition-row');
             let field = $(this).val();
             let operatorSelect = row.find('.condition-operator');
@@ -740,9 +805,9 @@
                 }
 
                 // Load values for the selected field
-                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function(data) {
+                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function (data) {
                     valueSelect.empty().append('<option value="">Select Value</option>');
-                    data.forEach(function(item) {
+                    data.forEach(function (item) {
                         if (field === 'cost_price') {
                             // Add default value options for cost_price
                             valueSelect.append(`
@@ -760,7 +825,7 @@
         });
 
         // Event listener for operator change
-        $(document).on('change', '.condition-operator', function() {
+        $(document).on('change', '.condition-operator', function () {
             let row = $(this).closest('.condition-row');
             let field = row.find('.condition-field').val();
             let operator = $(this).val();
@@ -779,9 +844,9 @@
             `);
             } else {
                 // Reload values for other operators
-                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function(data) {
+                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function (data) {
                     valueSelect.empty().append('<option value="">Select Value</option>');
-                    data.forEach(function(item) {
+                    data.forEach(function (item) {
                         valueSelect.append(`<option value="${item[field]}">${item[field]}</option>`);
                     });
                     valueSelect.trigger('change');
@@ -790,7 +855,7 @@
         });
 
 
-        $(document).on('select2:open', '.condition-value', function() {
+        $(document).on('select2:open', '.condition-value', function () {
             let row = $(this).closest('.condition-row');
             let operator = row.find('.condition-operator').val();
 
@@ -801,7 +866,7 @@
             }
         });
 
-        $(document).on('select2:select', '.condition-value', function(e) {
+        $(document).on('select2:select', '.condition-value', function (e) {
             updateProductTable();
         });
 
@@ -809,7 +874,7 @@
 
         function updateProductTable() {
             let conditions = [];
-            $('.condition-row').each(function() {
+            $('.condition-row').each(function () {
                 let field = $(this).find('.condition-field').val();
                 let operator = $(this).find('.condition-operator').val();
                 let value = $(this).find('.condition-value').val();
@@ -834,14 +899,14 @@
                         conditionType: conditionType
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.error) {
                             console.error('Error:', response.error);
                             alert('An error occurred while fetching products. Please check the console for details.');
                         } else {
                             let tableBody = $('#productsTable tbody');
                             tableBody.empty();
-                            response.products.forEach(function(product) {
+                            response.products.forEach(function (product) {
                                 tableBody.append(`
                                 <tr class="selected-product-item" draggable="true">
                                     <td>${product.product_title}</td>
@@ -852,7 +917,7 @@
                             });
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', status, error);
                         alert('An error occurred while fetching products. Please check the console for details.');
                     }
@@ -862,7 +927,7 @@
 
 
         // Initialize the first condition and product table on page load
-        $(document).ready(function() {
+        $(document).ready(function () {
             console.log('Page loaded, initializing first condition and product table');
             if (conditionCount === 0) {
                 addCondition();
@@ -873,13 +938,13 @@
 
         // Load existing conditions if editing
         <?php if (isset($collection_id)): ?>
-            $.get(`${baseUrl}getConditions/${collection_id}`, function(data) {
+            $.get(`${baseUrl}getConditions/${collection_id}`, function (data) {
                 if (data.conditions) {
-                    data.conditions.forEach(function(condition) {
+                    data.conditions.forEach(function (condition) {
                         addCondition();
                         let row = $('.condition-row').last();
                         row.find('.condition-field').val(condition.field).trigger('change');
-                        setTimeout(function() {
+                        setTimeout(function () {
                             row.find('.condition-operator').val(condition.operator);
                             row.find('.condition-value').val(condition.value);
                         }, 500); // Wait for options to load
@@ -894,13 +959,13 @@
 
 
         // Form submission
-        $('#editCollectionForm').submit(function(e) {
+        $('#editCollectionForm').submit(function (e) {
             e.preventDefault();
             let formData = new FormData(this);
 
             // Add conditions to formData
             let conditions = [];
-            $('.condition-row').each(function() {
+            $('.condition-row').each(function () {
                 let condition = {
                     field: $(this).find('.condition-field').val(),
                     operator: $(this).find('.condition-operator').val(),
@@ -920,7 +985,7 @@
                 processData: false,
                 contentType: false,
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     if (response.success) {
                         alert('Collection saved successfully!');
                         window.location.href = `${baseUrl}collections`;
@@ -928,7 +993,7 @@
                         alert('Error: ' + (response.error || 'Unknown error occurred'));
                     }
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     console.error('AJAX Error:', status, error);
                     alert('An error occurred while saving the collection. Please check the console for details.');
                 }
@@ -938,7 +1003,7 @@
 
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         let selectedProducts = [];
         let automatedProducts = [];
         let sortableInstance = null;
@@ -960,7 +1025,7 @@
                 }
                 sortableInstance = new Sortable(selectedProductsElement, {
                     animation: 150,
-                    onEnd: function() {
+                    onEnd: function () {
                         updateProductOrder('manual');
                     }
                 });
@@ -982,7 +1047,7 @@
                 }
                 sortableTableInstance = new Sortable(productsTableBody, {
                     animation: 150,
-                    onEnd: function() {
+                    onEnd: function () {
                         updateProductOrder('automated');
                     }
                 });
@@ -997,11 +1062,11 @@
             let productIds;
 
             if (section === 'manual') {
-                productIds = $('#selectedProducts .selected-product-item').map(function() {
+                productIds = $('#selectedProducts .selected-product-item').map(function () {
                     return $(this).data('id');
                 }).get();
             } else if (section === 'automated') {
-                productIds = $('#productsTable tbody tr').map(function() {
+                productIds = $('#productsTable tbody tr').map(function () {
                     return $(this).data('id');
                 }).get();
             }
@@ -1024,7 +1089,7 @@
                 return;
             }
 
-            items.sort(function(a, b) {
+            items.sort(function (a, b) {
                 const aData = $(a).data();
                 const bData = $(b).data();
 
@@ -1052,13 +1117,13 @@
             });
 
             container.empty();
-            $.each(items, function(_, item) {
+            $.each(items, function (_, item) {
                 container.append(item);
             });
         }
 
         // Handle sorting for manual section
-        $('#sortProducts').change(function() {
+        $('#sortProducts').change(function () {
             const sortBy = $(this).val();
             const $container = $('#selectedProducts');
             const $items = $container.children('.selected-product-item').get();
@@ -1082,7 +1147,7 @@
 
 
         // Handle sorting for automated section
-        $('#sortProductsAutomated').change(function() {
+        $('#sortProductsAutomated').change(function () {
             const sortBy = $(this).val();
             const $container = $('#productsTable tbody');
             const $items = $container.children('tr').get();
@@ -1167,7 +1232,7 @@
         }
 
         // Handle product checkbox change (Manual section)
-        $(document).on('change', '.product-checkbox', function() {
+        $(document).on('change', '.product-checkbox', function () {
             const $row = $(this).closest('tr');
             const productId = $(this).val();
             const productTitle = $row.find('td:nth-child(2)').text();
@@ -1186,7 +1251,7 @@
 
 
         // Handle product removal (Manual section)
-        $(document).on('click', '.remove-product', function() {
+        $(document).on('click', '.remove-product', function () {
             const productId = $(this).data('id');
             $(`#productstable input[value="${productId}"]`).prop('checked', false);
             removeProductFromSelection(productId);
@@ -1211,7 +1276,7 @@
             showLoader(); // Show loader before making the AJAX call
 
             let conditions = [];
-            $('.condition-row').each(function() {
+            $('.condition-row').each(function () {
                 let condition = {
                     field: $(this).find('.condition-field').val(),
                     operator: $(this).find('.condition-operator').val(),
@@ -1237,7 +1302,7 @@
                         sortBy: $('#sortProductsAutomated').val()
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         console.log('Server response:', response);
                         let tableBody = $('#productsTable tbody');
                         tableBody.empty();
@@ -1248,7 +1313,7 @@
                         } else if (response.products && Array.isArray(response.products) && response.products.length > 0) {
                             console.log('Products found:', response.products.length);
                             automatedProducts = sortProductsByMethod(response.products);
-                            automatedProducts.forEach(function(product) {
+                            automatedProducts.forEach(function (product) {
                                 tableBody.append(`
                                 <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                     <td>${product.product_title}</td>
@@ -1265,7 +1330,7 @@
                         }
                         hideLoader(); // Hide loader after processing the response
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('AJAX Error:', status, error);
                         let tableBody = $('#productsTable tbody');
                         tableBody.empty();
@@ -1291,7 +1356,7 @@
                         productIds: initialProductIds
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.products && Array.isArray(response.products)) {
                             selectedProducts = response.products.map(product => ({
                                 id: product.product_id,
@@ -1305,7 +1370,7 @@
                             console.error('Invalid response format or empty products array');
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error('Error loading initial products:', status, error);
                     }
                 });
@@ -1325,7 +1390,7 @@
                 url: `${baseUrl}getAllProducts`,
                 type: 'GET',
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     console.log('All products response:', response);
                     let tableBody = $('#productsTable tbody');
                     tableBody.empty();
@@ -1333,7 +1398,7 @@
                     if (response.products && Array.isArray(response.products) && response.products.length > 0) {
                         console.log('All products found:', response.products.length);
                         automatedProducts = response.products;
-                        automatedProducts.forEach(function(product) {
+                        automatedProducts.forEach(function (product) {
                             tableBody.append(`
                             <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
                                 <td>${product.product_title}</td>
@@ -1351,7 +1416,7 @@
                     }
                     hideLoader(); // Hide loader after processing the response
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     console.error('AJAX Error when fetching all products:', status, error);
                     let tableBody = $('#productsTable tbody');
                     tableBody.empty();
@@ -1362,7 +1427,7 @@
         }
 
         // Initialize page
-        $('input[name="selectMethod"]').change(function() {
+        $('input[name="selectMethod"]').change(function () {
             if ($(this).val() === 'automated') {
                 $('#automatedSection').show();
                 $('#manualSection').hide();
@@ -1383,7 +1448,7 @@
         initSortableTable();
 
         // Event listeners for condition changes
-        $(document).on('change', '.condition-field, .condition-operator, .condition-value, input[name="conditionType"]', function() {
+        $(document).on('change', '.condition-field, .condition-operator, .condition-value, input[name="conditionType"]', function () {
             console.log('Condition changed, updating product table');
             updateProductTable();
         });
@@ -1393,12 +1458,12 @@
             const selectedMethod = $('input[name="selectMethod"]:checked').val();
 
             if (selectedMethod === 'manual') {
-                const manualProductIds = $('#selectedProducts .selected-product-item').map(function() {
+                const manualProductIds = $('#selectedProducts .selected-product-item').map(function () {
                     return $(this).data('id');
                 }).get();
                 sortbyInput.value = JSON.stringify(manualProductIds);
             } else if (selectedMethod === 'automated') {
-                const automatedProductIds = $('#productsTable tbody tr').map(function() {
+                const automatedProductIds = $('#productsTable tbody tr').map(function () {
                     return $(this).data('id');
                 }).get();
                 sortbyInput.value = JSON.stringify(automatedProductIds);
@@ -1413,7 +1478,7 @@
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         var baseUrl = '<?= base_url() ?>';
         var selectedProducts = [];
         var collectionId = '<?= $collection['collection_id'] ?>';
@@ -1421,7 +1486,7 @@
         var sortOrder = <?= json_encode($sortOrder) ?>; // Get the sort order from PHP
 
         // Toggle between automated and manual method
-        $('input[name="selectMethod"]').change(function() {
+        $('input[name="selectMethod"]').change(function () {
             var method = $(this).val();
             if (method === 'automated') {
                 $('#automatedSection').show();
@@ -1453,13 +1518,13 @@
                 url: baseUrl + 'getAllProducts',
                 method: 'GET',
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     productsTableBody.empty();
 
                     // Sort the products based on sortOrder
                     var sortedProducts = sortProductsByOrder(response, sortOrder);
 
-                    $.each(sortedProducts, function(index, product) {
+                    $.each(sortedProducts, function (index, product) {
                         var isChecked = productIds.includes(product.product_id) ? 'checked' : '';
                         productsTableBody.append(
                             `<tr>
@@ -1480,7 +1545,7 @@
                     });
                     updateSelectedProductsView();
                 },
-                complete: function() {
+                complete: function () {
                     loader.hide();
                 }
             });
@@ -1489,14 +1554,14 @@
         // Function to sort products based on sortOrder
         function sortProductsByOrder(products, order) {
             var productMap = {};
-            products.forEach(function(product) {
+            products.forEach(function (product) {
                 productMap[product.product_id] = product;
             });
 
             var sortedProducts = [];
 
             // First, add products in the order specified by sortOrder
-            order.forEach(function(productId) {
+            order.forEach(function (productId) {
                 if (productMap[productId]) {
                     sortedProducts.push(productMap[productId]);
                     delete productMap[productId];
@@ -1504,7 +1569,7 @@
             });
 
             // Then, add any remaining products that weren't in sortOrder
-            Object.values(productMap).forEach(function(product) {
+            Object.values(productMap).forEach(function (product) {
                 sortedProducts.push(product);
             });
 
@@ -1513,7 +1578,7 @@
 
         // Function to update checkboxes based on selectedProducts
         function updateCheckboxes() {
-            $('.product-checkbox').each(function() {
+            $('.product-checkbox').each(function () {
                 var productId = $(this).val();
                 $(this).prop('checked', selectedProducts.some(p => p.id === productId));
             });
@@ -1535,7 +1600,7 @@
         }
 
         // Handle individual checkbox change
-        $(document).on('change', '.product-checkbox', function() {
+        $(document).on('change', '.product-checkbox', function () {
             var productId = $(this).val();
             var productTitle = $(this).closest('tr').find('td:nth-child(2)').text();
             var productPrice = $(this).closest('tr').find('td:nth-child(3)').text();
@@ -1564,13 +1629,13 @@
 
         // Function to remove product from selectedProducts
         function removeProductFromSelection(productId) {
-            selectedProducts = selectedProducts.filter(function(product) {
+            selectedProducts = selectedProducts.filter(function (product) {
                 return product.id.toString() !== productId.toString();
             });
         }
 
         // Remove selected products individually when clicking the remove button
-        $(document).on('click', '.remove-product', function() {
+        $(document).on('click', '.remove-product', function () {
             var productId = $(this).data('id');
             removeProductFromSelection(productId);
 
@@ -1581,13 +1646,13 @@
         });
 
         // Handle 'select all' checkbox change
-        $('#select_all').change(function() {
+        $('#select_all').change(function () {
             var isChecked = $(this).prop('checked');
             var visibleCheckboxes = $('#productstable tbody tr:visible .product-checkbox');
 
             visibleCheckboxes.prop('checked', isChecked);
 
-            visibleCheckboxes.each(function() {
+            visibleCheckboxes.each(function () {
                 var productId = $(this).val();
                 var productTitle = $(this).closest('tr').find('td:nth-child(2)').text();
                 var productPrice = $(this).closest('tr').find('td:nth-child(3)').text();
@@ -1604,9 +1669,9 @@
         });
 
         // Search products
-        $('#searchProducts').on('input', function() {
+        $('#searchProducts').on('input', function () {
             var searchTerm = $(this).val().toLowerCase();
-            $('#productstable tbody tr').each(function() {
+            $('#productstable tbody tr').each(function () {
                 var title = $(this).find('td:nth-child(2)').text().toLowerCase();
                 $(this).toggle(title.includes(searchTerm));
             });
@@ -1630,7 +1695,7 @@
 <script>
     function previewColloutImage(event) {
         const reader = new FileReader();
-        reader.onload = function() {
+        reader.onload = function () {
             const preview = document.getElementById('collout_image_preview');
             preview.src = reader.result;
             preview.style.display = 'block';

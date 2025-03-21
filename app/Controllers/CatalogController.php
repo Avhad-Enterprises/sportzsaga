@@ -258,7 +258,7 @@ class CatalogController extends Controller
         $catalogModel = new CatalogModel();
         $productModel = new \App\Models\ProductModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing catalog data before update
         $existingCatalog = $catalogModel->find($id);
@@ -275,7 +275,7 @@ class CatalogController extends Controller
                 'discount_value' => (float) ($this->request->getPost('discount_value') ?? 0),
                 'overall_adjustment' => $this->request->getPost('overall_adjustment') ?? '',
                 'status' => $this->request->getPost('status') ?? 'inactive',
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
 
@@ -384,7 +384,7 @@ class CatalogController extends Controller
 
                 // Append new change log entry
                 $existingChangeLog[] = [
-                    'updated_by' => $userId,
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -459,6 +459,82 @@ class CatalogController extends Controller
 
         return redirect()->to('catalog_view')->with('success', 'Catalog restored successfully.');
     }
+
+
+
+
+    public function catalog_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_catalog_logs_view', ['updates' => []]); // No catalog ID provided
+        }
+
+        $query = $db->table('catalogs')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_catalog_logs_view', ['updates' => []]);
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_catalog_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_catalog_logs_view', ['updates' => []]);
+    }
+
+
+
+    public function getCatalogChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('catalogs')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return [];
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+
+        return [];
+    }
+
+
+
+
+
+
+
+
 
 
 

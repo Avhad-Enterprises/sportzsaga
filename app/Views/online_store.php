@@ -118,13 +118,15 @@
                                 <!-- Desktop View -->
                                 <div class="preview desktop-view">
                                     <p class="preview-title">Desktop View</p>
-                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0"
+                                        class="preview-iframe"></iframe>
                                 </div>
 
                                 <!-- Mobile View -->
                                 <div class="preview mobile-view">
                                     <p class="preview-title">Mobile View</p>
-                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0" class="preview-iframe"></iframe>
+                                    <iframe src="https://test-zone.xyz/sportz_saga/" frameborder="0"
+                                        class="preview-iframe"></iframe>
                                 </div>
                             </div>
                             <div class="row">
@@ -139,7 +141,10 @@
                                                 <button class="visit-btn">Edit</button>
                                             </a>
                                             <a href="<?= base_url() ?>online_store/online_store_logs">
-                                                <button class="btn btn-success">Logs</button> 
+                                                <button class="btn btn-success">Logs</button>
+                                            </a>
+                                            <a href="<?= base_url() ?>online_store/online_store_history">
+                                                <button class="btn btn-danger">History</button>
                                             </a>
                                         </div>
                                     </div>
