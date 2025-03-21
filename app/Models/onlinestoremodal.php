@@ -409,4 +409,24 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
+
+
+    public function getMarquees()
+    {
+        return $this->db->table('marquee_texts')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getHomeCollections()
+    {
+        return $this->db->table('home_collection')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
 }

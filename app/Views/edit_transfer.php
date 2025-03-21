@@ -114,9 +114,7 @@
                         <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
                             <i class="fa fa-arrow-left"></i> Back
                         </button>
-                        <h4 class="h4 mb-0">Add Inventory</h4>
-
-
+                        <h4 class="h4 mb-0">Add Transfer</h4>
                     </div>
                 </div>
 
