@@ -577,7 +577,7 @@ class Products extends BaseController
             'accessories' => $this->request->getPost('accessories-checked'),
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -614,7 +614,7 @@ class Products extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -1734,13 +1734,9 @@ class Products extends BaseController
         return view('add_pincodes_view');
     }
 
-    public function save_pincodes()
-    {
-    }
+    public function save_pincodes() {}
 
-    public function edit_pincode($id)
-    {
-    }
+    public function edit_pincode($id) {}
 
     public function delete_pincode($id)
     {
@@ -1853,5 +1849,12 @@ class Products extends BaseController
         }
 
         return redirect()->back();
+    }
+
+    public function product_logs($product_id)
+    {
+        $productModel = new Products_model();
+        $updates = $productModel->getProductLogs($product_id);
+        return view('product_change_logs_view', ['updates' => $updates]);
     }
 }

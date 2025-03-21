@@ -529,12 +529,9 @@
                         </table>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
     <!-- Footer View End -->

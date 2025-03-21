@@ -268,7 +268,7 @@
 
 <script>
     // Initialize select2 plugin
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.select2').select2({
             placeholder: 'Search and select products',
             allowClear: true
@@ -277,7 +277,7 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const discountInput = document.getElementById('discount_input');
         const discountTypeInputs = document.querySelectorAll('input[name="discount_type"]');
 
@@ -304,10 +304,10 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('editbundleform');
 
-        form.addEventListener('submit', function (event) {
+        form.addEventListener('submit', function(event) {
             let valid = true;
 
             // Clear previous error messages
@@ -428,7 +428,7 @@
         }
     });
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.select2').select2({
             placeholder: 'Search and select products',
             allowClear: true
@@ -437,7 +437,7 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const selectedProducts = document.getElementById('selected_products');
         const bundlePriceField = document.querySelector('input[name="bundle_price"]');
 
@@ -469,7 +469,7 @@
         selectedProducts.addEventListener('change', calculateTotalPrice);
 
         // Ensure calculation works with Select2
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.select2').select2({
                 placeholder: 'Search and select products',
                 allowClear: true

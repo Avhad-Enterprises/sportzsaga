@@ -101,11 +101,16 @@
                     <?php foreach ($employes as $employe) : ?>
                         <form id="" method="post" action="<?= base_url('employee/updateempolyee/' . $employe['user_id']) ?>" class="needs-validation" novalidate>
 
-                        <div class="d-flex justify-content-end">
-                            <a href="<?= base_url() ?>registeredusers/employee_logs/<?= $employe['user_id'] ?>" class="px-2">
-                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
-                            </a>
-                        </div>
+                            <div class="d-flex justify-content-end">
+                                <a href="<?= base_url() ?>registeredusers/employee_logs/<?= $employe['user_id'] ?>"
+                                    class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                    style="width: 32px; height: 32px;"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="View Employee Logs">
+                                    <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                                </a>
+                            </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Text</label>

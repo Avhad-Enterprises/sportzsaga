@@ -141,6 +141,9 @@
                                             <a href="<?= base_url() ?>online_store/online_store_logs">
                                                 <button class="btn btn-success">Logs</button> 
                                             </a>
+                                            <a href="<?= base_url() ?>online_store/online_store_history">
+                                                <button class="btn btn-success">History</button> 
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -409,4 +409,27 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
+    public function getHomecarousel2()
+    {
+        return $this->db->table('home_carousel2')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getChangeLog($carousel_id)
+    {
+        $result = $this->db->table('home_carousel2')
+            ->select('change_log')
+            ->where('id', $carousel_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            return json_decode($result->change_log, true); // Decode correctly
+        }
+
+        return [];
+    }
 }

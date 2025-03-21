@@ -124,8 +124,13 @@
 
 
                         <div class="d-flex justify-content-end">
-                            <a href="<?= base_url() ?>customersegment/customersegment_logs/<?= $segment['segment_id'] ?>" class="px-2">
-                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="font-weight: 900;"></i>
+                            <a href="<?= base_url() ?>customersegment/customersegment_logs/<?= $segment['segment_id'] ?>"
+                                class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="View Customer Segment Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
                             </a>
                         </div>
 

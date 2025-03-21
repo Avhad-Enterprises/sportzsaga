@@ -83,7 +83,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
 
 
    $routes->get('Blogs/Blogs_logs/(:num)', 'Blogs::Blogs_logs/$1');
-   
+
 
 
    // Empolyee's Login/signup Controller;
@@ -112,10 +112,10 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tiers/edit_tier_1/(:num)', 'Tiers::edit_tier_1/$1');
    $routes->post('tiers/update_tier_1/(:num)', 'Tiers::update_tier_1/$1');
    $routes->get('tiers/deleteTier/(:num)', 'Tiers::deleteTier/$1');
-   $routes->get('tier1_deleted', 'Tiers::deletedTiers'); 
-   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1'); 
+   $routes->get('tier1_deleted', 'Tiers::deletedTiers');
+   $routes->get('tier/restore/(:num)', 'Tiers::restoreTier/$1');
    $routes->get('tiers/logs/(:num)', 'Tiers::tier_change_logs/$1');
-   $routes->get('tiers/logs', 'Tiers::tier_change_logs'); 
+   $routes->get('tiers/logs', 'Tiers::tier_change_logs');
 
 
    // Tier 2 Controller
@@ -129,7 +129,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('tier2_deleted', 'Tiers::deletedTiers2');
    $routes->get('tiers/restore_tier_2/(:num)', 'Tiers::restoreTier2/$1');
    $routes->get('tiers/logs_tier2/(:num)', 'Tiers::tier2_change_logs/$1');
-   $routes->get('tiers/logs_tier2', 'Tiers::tier2_change_logs'); 
+   $routes->get('tiers/logs_tier2', 'Tiers::tier2_change_logs');
 
 
    // Tier 3 Controller
@@ -326,6 +326,7 @@ $routes->get('vendors', 'brands::vendors');
 $routes->get('admin-products', 'Products');
 $routes->get('admin-products/deleteproduct/(:num)', 'Products::deleteproduct/$1');
 $routes->get('admin-products/editproduct/(:num)', 'Products::editproduct/$1');
+$routes->get('admin-products/admin-products_logs/(:num)', 'Products::product_logs/$1');
 $routes->post('admin_products/updateproduct/(:num)', 'Products::updateproduct/$1');
 $routes->get('admin-products/addnewproducts', 'Products::addnewproducts');
 $routes->post('admin-products/publishproduct', 'Products::publishproduct');
@@ -376,10 +377,6 @@ $routes->get('collections/(:any)', 'Products::collectionview/$1');
 $routes->get('collections/(:any)', 'Products::collectionview/$1');
 $routes->get('collection_deleted', 'Products::deletedcollections');
 $routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
-
-
-
-
 
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
@@ -669,6 +666,7 @@ $routes->post('online_store/save', 'Store::save');
 
 //logs
 $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+$routes->get('online_store/online_store_history', 'Store::online_store_history');
 $routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
 $routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
 
@@ -681,3 +679,10 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 //Marquee
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
+
+
+
+
+//history change log
+
+$routes->get('Carousel2/Carousel2_history/(:num)', 'Store::Carousel2_history/$1');
