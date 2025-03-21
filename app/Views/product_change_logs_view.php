@@ -3,9 +3,12 @@
 <!-- Head View End -->
 
 <body>
+
     <!-- Header View Start -->
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <div class="right-sidebar">
         <div class="sidebar-title">
@@ -89,91 +92,74 @@
     <!-- Header View End -->
 
     <div class="mobile-menu-overlay"></div>
-
     <!-- Page Main Content Start -->
-
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="title">
-                                <h4>Customer Segment Logs</h4>
+                <!-- Back Button -->
+                <div class="mb-3">
+                    <a href="<?= base_url() ?>admin-products" class="px-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <!-- Centered Content -->
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="row justify-content-center w-100">
+                        <div class="col-md-9">
+                            <div class="pd-20 card-box mb-30">
+                                <h4 class="text-blue mb-30 text-center">product Update Timeline</h4>
+                                <div class="timeline">
+                                    <?php if (!empty($updates)): ?>
+                                        <?php foreach ($updates as $update): ?>
+                                            <?php if (!isset($update['changes']['updated_at']['new']) || !isset($update['changes']['updated_by']['new'])) continue; ?>
+
+                                            <div class="timeline-item mb-3"> <!-- Added margin-bottom for better spacing -->
+                                                <div class="timeline-badge">
+                                                    <i class="fas fa-user-edit"></i>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">product Updated</h5>
+                                                            <p class="card-text">
+                                                                <strong>Updated By:</strong> <?= htmlspecialchars($update['changes']['updated_by']['new'] ?? 'N/A') ?> <br>
+                                                                <strong>Updated At:</strong> <?= isset($update['changes']['updated_at']['new']) ? date('d M Y h:i A', strtotime($update['changes']['updated_at']['new'])) : 'N/A' ?>
+
+                                                            </p>
+                                                            <h6 class="card-subtitle mt-2">Changes:</h6>
+                                                            <ul class="mb-0">
+                                                                <?php if (!empty($update['changes'])): ?>
+                                                                    <?php foreach ($update['changes'] as $field => $change): ?>
+                                                                        <li>
+                                                                            <strong><?= ucfirst(str_replace('_', ' ', $field)) ?>:</strong>
+                                                                            <span class="text-muted"><?= htmlspecialchars($change['old']) ?></span> →
+                                                                            <span class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                        </li>
+                                                                    <?php endforeach; ?>
+                                                                <?php else: ?>
+                                                                    <li>No changes recorded.</li>
+                                                                <?php endif; ?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <p class="text-center">No updates found.</p>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Customer Segment</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover data-table-export table-hover">
-                            <thead>
-                                <tr>
-                                    <th>segment_id</th>
-                                    <th>name</th>
-                                    <th>description</th>
-                                    <th>type</th>
-                                    <th>created_by</th>
-                                    <th>filters</th>
-                                    <th>Deleted By</th>
-                                    <th>filtered_users</th>
-                                    <th>Deleted At</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($segments)): ?>
-                                    <?php foreach ($segments as $segment): ?>
-                                        <tr>
-                                            <td><?= esc(substr($segment['segment_id'], 0, 50)) . (strlen($segment['segment_id']) > 50 ? '...' : '') ?>
-                                            </td>
-                                            <td><?= esc(substr($segment['segment_name'], 0, 20)) . (strlen($segment['segment_name']) > 20 ? '...' : '') ?>
-                                            </td>
-                                            <td style="word-wrap: break-word; white-space: normal; max-width: 200px;">
-                                                <?= esc($segment['segment_description']) ?>
-                                            </td>
-                                            <td><?= esc($segment['segment_type']) ?></td>
-                                            <td><?= esc($segment['created_by']) ?></td>
-                                            <td style="word-wrap: break-word; white-space: normal; max-width: 200px;"><?= esc($segment['filters']) ?></td>
-                                            <td><?= esc($segment['deleted_by']) ?></td>
-                                            <td><?= esc($segment['filtered_users']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($segment['deleted_at']))) ?></td>
-                                            <td>
-                                                <a class="dropdown-item" href="javascript:void(0);"
-                                                    onclick="customersegmentRestore(<?= esc($segment['segment_id']) ?>)">
-                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <tr>
-                                        <td colspan="20" class="text-center">No deleted segment found.</td>
-                                    </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
-            <!-- Export Datatable End -->
         </div>
     </div>
-    </div>
-
     <!-- Page Main Content End -->
-
-
-
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
-
 </body>
+<!-- Footer View Start -->
+<?= $this->include('footer_view') ?>
+<!-- Footer View End -->
 
 </html>

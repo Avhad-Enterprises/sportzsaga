@@ -146,6 +146,9 @@
                                             <a href="<?= base_url() ?>online_store/online_store_history">
                                                 <button class="btn btn-danger">History</button>
                                             </a>
+                                            <a href="<?= base_url() ?>online_store/online_store_history">
+                                                <button class="btn btn-success">History</button> 
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -328,6 +328,7 @@ $routes->get('vendors', 'brands::vendors');
 $routes->get('admin-products', 'Products');
 $routes->get('admin-products/deleteproduct/(:num)', 'Products::deleteproduct/$1');
 $routes->get('admin-products/editproduct/(:num)', 'Products::editproduct/$1');
+$routes->get('admin-products/admin-products_logs/(:num)', 'Products::product_logs/$1');
 $routes->post('admin_products/updateproduct/(:num)', 'Products::updateproduct/$1');
 $routes->get('admin-products/addnewproducts', 'Products::addnewproducts');
 $routes->post('admin-products/publishproduct', 'Products::publishproduct');
@@ -380,13 +381,7 @@ $routes->get('collection_deleted', 'Products::deletedcollections');
 $routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
 
 $routes->get('collection/collection_logs/(:num)', 'Products::collection_change_logs/$1');
-$routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs'); // Default route
-
-
-
-
-
-
+$routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs');
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
 // Order Management
@@ -682,6 +677,7 @@ $routes->post('online_store/save', 'Store::save');
 
 //logs
 $routes->get('online_store/online_store_logs', 'Store::online_store_logs');
+$routes->get('online_store/online_store_history', 'Store::online_store_history');
 $routes->get('online_store/deleted_carousels', 'Store::online_store_logs');
 $routes->get('online_store/restore_carousel/(:num)', 'Store::restore_carousel/$1');
 
@@ -695,10 +691,9 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
 
+//history change log
 
+$routes->get('Carousel2/Carousel2_history/(:num)', 'Store::Carousel2_history/$1');
 $routes->get('online_store/online_store_history', 'Store::online_store_history');
-
-
-
 $routes->get('home-collection/collection_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
-$routes->get('home-collection/collection_change_logs/', 'Store::home_collection_change_logs'); // Default route
+$routes->get('home-collection/collection_change_logs/', 'Store::home_collection_change_logs');

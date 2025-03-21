@@ -71,6 +71,15 @@ class Store extends BaseController
         return view('online_store_history', $data);
     }
 
+    public function online_store_history()
+    {
+
+        $modal = new onlinestoremodal();
+        $data['home_carousel2'] = $modal->getHomecarousel2();
+        return view('online_store_history', $data);
+    }
+
+
 
     public function edit_onlinestore()
     {
@@ -3428,16 +3437,18 @@ class Store extends BaseController
         }
     }
 
+    public function Carousel2_history($carousel_id)
+    {
+        $carouselModel = new \App\Models\onlinestoremodal();
 
+        // Fetch change log
+        $updates = $carouselModel->getChangeLog($carousel_id);
 
+        if (empty($updates)) {
+            echo "No updates found!";
+            exit;
+        }
 
-
-
-
-
-
-
-
-
-
+        return view('carousel2_change_logs_view', ['updates' => $updates]);
+    }
 }
