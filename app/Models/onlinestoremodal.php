@@ -413,6 +413,12 @@ class onlinestoremodal extends Model
     public function getHomecarousel2()
     {
         return $this->db->table('home_carousel2')
+    }
+
+
+    public function getMarquees()
+    {
+        return $this->db->table('marquee_texts')
             ->orderBy('updated_at', 'DESC')
             ->get()
             ->getResultArray();
@@ -431,5 +437,13 @@ class onlinestoremodal extends Model
         }
 
         return [];
+    }
+
+    public function getHomeCollections()
+    {
+        return $this->db->table('home_collection')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
     }
 }

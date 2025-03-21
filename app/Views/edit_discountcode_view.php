@@ -160,13 +160,12 @@
             <div class="min-height-200px">
                 <!-- Discount Code Edit Form Start -->
 
-
                 <form id="newdiscountcodeform" action="<?= base_url('update/' . $discountcode['id']) ?>" method="post">
 
                     <div class="d-flex justify-content-end">
                         <a href="<?= base_url() ?>discountcode/discount_logs/<?= $discountcode['id'] ?>"
                             class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
-                            data-placement="top" title="View Inventory Logs">
+                            data-placement="top" title="View Discount Code Logs">
                             <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
                         </a>
                     </div>

@@ -60,6 +60,16 @@ class Store extends BaseController
         return view('online_store_logs', $data);
     }
 
+    public function online_store_history()
+    {
+        $modal = new onlinestoremodal();
+
+        $data['carousels'] = $modal->findall();
+        $data['marquees'] = $modal->getMarquees();
+        $data['home_collections'] = $modal->getHomeCollections();
+
+        return view('online_store_history', $data);
+    }
 
     public function online_store_history()
     {
@@ -191,6 +201,10 @@ class Store extends BaseController
         return view('edit_onlinestore', $data);
     }
 
+
+
+
+    //----------------------------------------------------------------------------- Carousel ---------------------------------------------------------------------------
     public function addcarousel()
     {
         $session = session();
@@ -432,6 +446,96 @@ class Store extends BaseController
 
 
 
+    public function carousel_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_carousel_logs_view', ['updates' => []]); // No bundle ID provided
+        }
+
+        // Fetch bundle details
+        $query = $db->table('carousels')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_carousel_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_carousel_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_carousel_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getcarouselChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('carousels')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //---------------------------------------------------------------------------------- Policy --------------------------------------------------------------------------------
     public function add_policy()
     {
         if ($this->request->isAJAX()) {
@@ -705,7 +809,7 @@ class Store extends BaseController
             // Fetch existing data
             $modal = new onlinestoremodal();
             $existingData = $modal->getabout();
-            $existingData = $existingData ? (array)$existingData : [];
+            $existingData = $existingData ? (array) $existingData : [];
 
             log_message('info', 'Existing Data: ' . json_encode($existingData));
 
@@ -2012,6 +2116,75 @@ class Store extends BaseController
         ]);
     }
 
+    public function home_collection_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('collection_change_logs', ['updates' => []]); // No bundle ID provided
+        }
+
+        // Fetch bundle details
+        $query = $db->table('home_collection')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('collection_change_logs', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('collection_change_logs', ['updates' => $updates]);
+        }
+
+        return view('collection_change_logs', ['updates' => []]); // No logs found
+    }
+
+
+    public function gethome_collectionChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('home_collection')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
+
+
+
     //<!------------------------------------------------------------------------------------Home Products------------------------------------------------------------------------------------------------------------>
     public function saveProduct()
     {
@@ -2422,6 +2595,18 @@ class Store extends BaseController
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+    //<!------------------------------------------------------------------------- Marquee text ----------------------------------------------------------------------------------------------->
     public function saveMarqueeText()
     {
         $session = session();
@@ -2599,7 +2784,71 @@ class Store extends BaseController
     }
 
 
+    public function marquee_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
 
+        if ($id === null) {
+            return view('marquee_change_logs', ['updates' => []]); // No bundle ID provided
+        }
+
+        // Fetch bundle details
+        $query = $db->table('marquee_texts')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('marquee_change_logs', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('marquee_change_logs', ['updates' => $updates]);
+        }
+
+        return view('marquee_change_logs', ['updates' => []]); // No logs found
+    }
+
+
+    public function getmarqueeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('marquee_texts')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 
@@ -2691,7 +2940,33 @@ class Store extends BaseController
         }
     }
 
-    // Header pages Delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //---------------------------------------------------------------------------------------- Header pages Delete-------------------------------------------------------------------------------
 
     public function delete_page($id)
     {

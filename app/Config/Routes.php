@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) {});
+$routes->group('', ['filter' => 'employee'], function ($routes) { });
 
-$routes->group('', ['filter' => 'seller'], function ($routes) {});
+$routes->group('', ['filter' => 'seller'], function ($routes) { });
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -247,6 +247,8 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->post('relatedproduct/deleteProduct', 'RelatedproductController::deleteProduct');
    $routes->get('relatedproduct_deleted', 'RelatedproductController::deletedRelatedProducts'); // View deleted catalogs
    $routes->get('relatedproduct/restore/(:num)', 'RelatedproductController::restoreProduct/$1'); // Restore a deleted catalog
+   $routes->get('relatedproduct/relatedproduct_logs/(:num)', 'RelatedproductController::related_product_change_logs/$1');
+   $routes->get('relatedproduct/relatedproduct_logs', 'RelatedproductController::getrelatedProductChangeLogs'); // Default route
 
 });
 
@@ -378,6 +380,8 @@ $routes->get('collections/(:any)', 'Products::collectionview/$1');
 $routes->get('collection_deleted', 'Products::deletedcollections');
 $routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
 
+$routes->get('collection/collection_logs/(:num)', 'Products::collection_change_logs/$1');
+$routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs');
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
 // Order Management
@@ -487,6 +491,9 @@ $routes->get('catalog/delete/(:num)', 'CatalogController::delete/$1');
 $routes->post('catalog/checkDuplicateUsers', 'CatalogController::checkDuplicateUsers');
 $routes->get('catalog_deleted', 'CatalogController::deletedCatalogs'); // View deleted catalogs
 $routes->get('catalog/restore/(:num)', 'CatalogController::restoreCatalog/$1'); // Restore a deleted catalog
+$routes->get('catalog/catalog_logs/(:num)', 'CatalogController::catalog_change_logs/$1');
+$routes->get('catalog/catalog_logs', 'CatalogController::catalog_change_logs'); // Optional fallback route
+
 
 
 //Customer Segment
@@ -632,6 +639,8 @@ $routes->post('carousel2/add', 'Store::add');
 $routes->post('carousel2/update_carsecond/(:num)', 'Store::update_carsecond/$1');
 $routes->get('carousel2/delete/(:num)', 'Store::delete/$1');
 $routes->post('home-image/save-home-image', 'Store::SaveHomeImage');
+$routes->get('carousel/carousel_change_logs/(:num)', 'Store::carousel_change_logs/$1');
+$routes->get('carousel/carousel_change_logs', 'Store::carousel_change_logs'); // Default route
 $routes->get('/unauthorized', 'PermissionsController::unauthorized');
 
 //New
@@ -641,6 +650,8 @@ $routes->post('marquee-text/save-marquee', 'Store::saveMarqueeText');
 $routes->get('marquee-text/GetMarqueeText/(:num)', 'Store::GetMarqueeText/$1');
 $routes->delete('marquee-text/delete-marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->post('marquee-text/UpdateMarquee/(:num)', 'Store::UpdateMarquee/$1');
+$routes->get('marquee/marquee_change_logs/(:num)', 'Store::marquee_change_logs/$1');
+$routes->get('marquee/marquee_change_logs', 'Store::marquee_change_logs'); // Default route
 
 //Homeproductsection 
 $routes->get('online_store/fetch_products', 'Store::fetch_products');
@@ -680,9 +691,9 @@ $routes->get('online_store/restore_page/(:num)', 'Store::restore_page/$1');
 $routes->get('online_store/delete_marquee/(:num)', 'Store::delete_marquee/$1');
 $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1');
 
-
-
-
 //history change log
 
 $routes->get('Carousel2/Carousel2_history/(:num)', 'Store::Carousel2_history/$1');
+$routes->get('online_store/online_store_history', 'Store::online_store_history');
+$routes->get('home-collection/collection_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
+$routes->get('home-collection/collection_change_logs/', 'Store::home_collection_change_logs');

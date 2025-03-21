@@ -120,7 +120,7 @@
                 </div>
 
 
-                <!-------------------------------------------------------------------------------Carousel2 Form -------------------------------------------------------------------------------------->
+                <!-------------------------------------------------------------------------------Carousel Form -------------------------------------------------------------------------------------->
 
 
                 <div class="card-box mb-30">
@@ -133,42 +133,131 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Updated At</th>
-
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (!empty($home_carousel2)): ?>
-                                    <?php foreach ($home_carousel2 as $home_carousel): ?>
+                                <?php if (!empty($carousels)): ?>
+                                    <?php foreach (array_reverse($carousels) as $carousel): ?>
                                         <tr>
                                             <td>
-                                                <a href="<?= base_url('Carousel2/Carousel2_history/' . $home_carousel['id']) ?>">
-                                                    <?= esc(substr($home_carousel['title'], 0, 50)) . (strlen($home_carousel['title']) > 50 ? '...' : '') ?>
+                                                <a href="<?= base_url('carousel/carousel_change_logs/' . $carousel['id']) ?>"
+                                                    class="text-primary">
+                                                    <?= esc(substr($carousel['title'], 0, 50)) . (strlen($carousel['title']) > 50 ? '...' : '') ?>
                                                 </a>
                                             </td>
                                             <td>
-                                                <?= isset($home_carousel['updated_at'])
-                                                    ? esc(date('d/M/Y h:i A', strtotime($home_carousel['updated_at'])))
+                                                <?= isset($carousel['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($carousel['updated_at'])))
                                                     : 'N/A' ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: ?>
                                     <tr>
-                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                        <td colspan="3" class="text-center">No deleted carousels found.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
+
                         </table>
-
-
                     </div>
                 </div>
+
+
+
+
+
+                <!-------------------------------------------------------------------------------- Marque --------------------------------------------------------------------------------------------->
+
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Marquee Texts</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Marquee Text</th>
+                                    <th>Updated At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($marquees)): ?>
+                                <?php foreach (array_reverse($marquees) as $marquee): ?>
+                                <tr>
+                                    <td>
+                                        <a href="<?= base_url('marquee/marquee_change_logs/' . $marquee['id']) ?>"
+                                            class="text-primary">
+                                            <?= esc(substr($marquee['marqueeText'], 0, 50)) . (strlen($marquee['marqueeText']) > 50 ? '...' : '') ?>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <?= isset($marquee['updated_at'])
+                                            ? esc(date('d/M/Y h:i A', strtotime($marquee['updated_at'])))
+                                            : 'N/A' ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <?php else: ?>
+                                <tr>
+                                    <td colspan="2" class="text-center">No updated marquee texts found.</td>
+                                </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!---------------------------------------------------------------------------- Home Collection --------------------------------------------------------------------------------------->
+
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Home Collections</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Collection ID</th>
+                                    <th>Updated At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($home_collections)): ?>
+                                <?php foreach (array_reverse($home_collections) as $item): ?>
+                                <tr>
+                                    <td>
+                                        <a href="<?= base_url('home-collection/collection_change_logs/' . $item['id']) ?>"
+                                            class="text-primary">
+                                            <?= esc(substr($item['id'], 0, 50)) . (strlen($item['id']) > 50 ? '...' : '') ?>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <?= isset($item['updated_at'])
+                                            ? esc(date('d/M/Y h:i A', strtotime($item['updated_at'])))
+                                            : 'N/A' ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <?php else: ?>
+                                <tr>
+                                    <td colspan="2" class="text-center">No updated home collections found.</td>
+                                </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-    <!-- Footer View Start -->
-    <?= $this->include('footer_view') ?>
-    <!-- Footer View End -->
+        <!-- Footer View Start -->
+        <?= $this->include('footer_view') ?>
+        <!-- Footer View End -->
+
 </body>
 
 </html>

@@ -121,8 +121,6 @@
 
 
                 <!-------------------------------------------------------------------------------Carousel Form -------------------------------------------------------------------------------------->
-
-
                 <div class="card-box mb-30">
                     <div class="pd-20">
                         <h4 class="text-blue h4">Carousels</h4>
@@ -142,22 +140,20 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($carousels)): ?>
-                                    <?php foreach ($carousels as $carousel): ?>
+                                    <?php foreach (array_reverse($carousels) as $carousel): ?>
                                         <tr>
                                             <td><?= esc(substr($carousel['title'], 0, 50)) . (strlen($carousel['title']) > 50 ? '...' : '') ?>
                                             </td>
                                             <td><?= esc(substr($carousel['description'], 0, 20)) . (strlen($carousel['description']) > 20 ? '...' : '') ?>
                                             </td>
                                             <td><?= esc($carousel['selection_type']) ?></td>
-                                            <td><?= esc($carousel['added_by_name'] ?? 'N/A') ?></td> <!-- Show Added By Name -->
+                                            <td><?= esc($carousel['added_by_name'] ?? 'N/A') ?></td>
                                             <td>
                                                 <?= isset($carousel['deleted_at'])
                                                     ? esc(date('d/M/Y h:i A', strtotime($carousel['deleted_at'])))
                                                     : 'N/A' ?>
                                             </td>
-
                                             <td><?= esc($carousel['deleted_by_name'] ?? 'N/A') ?></td>
-                                            <!-- Show Deleted By Name -->
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
                                                     onclick="confirmCarouselRestore(<?= esc($carousel['id']) ?>)">
@@ -171,10 +167,13 @@
                                         <td colspan="7" class="text-center">No deleted carousels found.</td>
                                     </tr>
                                 <?php endif; ?>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+
 
 
                 <!--------------------------------------------------------------------------------------------- Header Pages --------------------------------------------------------------------------------->
@@ -199,48 +198,49 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($pages)): ?>
-                                    <?php foreach ($pages as $page): ?>
-                                        <tr>
-                                            <td>
-                                                <?= esc($page['title']) ?>
-                                            </td>
-                                            <td>
-                                                <?= esc($page['link']) ?>
-                                            </td>
-                                            <td>
-                                                <?= esc($page['subtype']) ?>
-                                            </td>
-                                            <td>
-                                                <?= esc($page['specific_item']) ?>
-                                            </td>
-                                            <td>
-                                                <?= esc($page['added_by_name'] ?? 'N/A') ?>
-                                            </td> <!-- Show Added By Name -->
-                                            <td>
-                                                <?= isset($page['deleted_at'])
-                                                    ? esc(date('d/M/Y h:i A', strtotime($page['deleted_at'])))
-                                                    : 'N/A' ?>
-                                            </td>
-
-                                            <td><?= esc($page['deleted_by_name'] ?? 'N/A') ?></td> <!-- Show Deleted By Name -->
-                                            <td>
-                                                <a class="dropdown-item" href="javascript:void(0);"
-                                                    onclick="confirmRestore(<?= esc($page['id']) ?>)">
-                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                <?php foreach (array_reverse($pages) as $page): ?>
+                                <tr>
+                                    <td>
+                                        <?= esc($page['title']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($page['link']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($page['subtype']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($page['specific_item']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($page['added_by_name'] ?? 'N/A') ?>
+                                    </td>
+                                    <td>
+                                        <?= isset($page['deleted_at'])
+                                            ? esc(date('d/M/Y h:i A', strtotime($page['deleted_at'])))
+                                            : 'N/A' ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($page['deleted_by_name'] ?? 'N/A') ?>
+                                    </td>
+                                    <td>
+                                        <a class="dropdown-item" href="javascript:void(0);"
+                                            onclick="confirmRestore(<?= esc($page['id']) ?>)">
+                                            <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>
-                                        <td colspan="8" class="text-center">No deleted pages found.</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="8" class="text-center">No deleted pages found.</td>
+                                </tr>
                                 <?php endif; ?>
                             </tbody>
+
                         </table>
                     </div>
                 </div>
-
 
 
 
@@ -264,24 +264,28 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($marquees)): ?>
-                                    <?php foreach ($marquees as $marquee): ?>
-                                        <tr>
+                                <?php foreach ($marquees as $marquee): ?>
+                                     <tr>
                                             <td>
                                                 <?= esc(substr($marquee['marqueeText'], 0, 50)) . (strlen($marquee['marqueeText']) > 50 ? '...' : '') ?>
                                             </td>
-                                            <td>
+
+                                            <td>                                                
                                                 <?= esc($marquee['marqueeText_link'] ?? 'N/A') ?>
                                             </td>
+
                                             <td>
                                                 <?= esc($marquee['added_by_name'] ?? 'N/A') ?>
-                                            </td> <!-- Show Added By Name -->
+                                            </td> 
+
                                             <td>
                                                 <?= isset($marquee['deleted_at'])
                                                     ? esc(date('d/M/Y h:i A', strtotime($marquee['deleted_at'])))
                                                     : 'N/A' ?>
                                             </td>
+
                                             <td><?= esc($marquee['deleted_by_name'] ?? 'N/A') ?></td>
-                                            <!-- Show Deleted By Name -->
+                                            
                                             <td>
                                                 <a class="dropdown-item" href="javascript:void(0);"
                                                     onclick="confirmMarqueeRestore(<?= esc($marquee['id']) ?>)">
@@ -300,6 +304,15 @@
                     </div>
                 </div>
 
+
+
+
+
+
+
+
+
+                <!-------------------------------------------------------------------------------------------------- logos delete ---------------------------------------------------------------------------------------->
                 <div class="card-box mb-30">
                     <div class="pd-20">
                         <h4 class="text-blue h4">Logos</h4>
@@ -354,6 +367,13 @@
                         </table>
                     </div>
                 </div>
+
+
+
+
+
+
+                <!--------------------------------------------------------------------------------------- Blogs ---------------------------------------------------------------------------------->
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
@@ -417,6 +437,15 @@
                     </div>
                 </div>
 
+
+
+
+
+
+
+
+
+                <!------------------------------------------------------------------------------ Members --------------------------------------------------------------------------------------->
                 <div class="card-box mb-30">
                     <div class="pd-20">
                         <h4 class="text-blue h4">Members</h4>
@@ -440,38 +469,66 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($members)): ?>
-                                    <?php foreach ($members as $member): ?>
-                                        <tr>
-                                            <td><?= esc(substr($member['member_name'], 0, 50)) . (strlen($member['member_name']) > 50 ? '...' : '') ?>
-                                            </td>
-                                            <td><?= esc(substr($member['member_occupation'], 0, 20)) . (strlen($member['member_occupation']) > 20 ? '...' : '') ?>
-                                            </td>
-                                            <td><?= esc($member['member_email']) ?></td>
-                                            <td><?= esc($member['member_linkedin']) ?></td>
-                                            <td><?= esc($member['order']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['created_at']))) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['updated_at']))) ?></td>
-                                            <td><?= esc($member['is_deleted']) ?></td>
-                                            <td><?= esc($member['deleted_by']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($member['deleted_at']))) ?></td>
-                                            <td>
-                                                <a class="dropdown-item" href="javascript:void(0);"
-                                                    onclick="memberRestore(<?= esc($member['id']) ?>)">
-                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                <?php foreach ($members as $member): ?>
+                                <tr>
+                                    <td>
+                                        <?= esc(substr($member['member_name'], 0, 50)) . (strlen($member['member_name']) > 50 ? '...' : '') ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(substr($member['member_occupation'], 0, 20)) . (strlen($member['member_occupation']) > 20 ? '...' : '') ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($member['member_email']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($member['member_linkedin']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($member['order']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($member['created_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($member['updated_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($member['is_deleted']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($member['deleted_by']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($member['deleted_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <a class="dropdown-item" href="javascript:void(0);"
+                                            onclick="memberRestore(<?= esc($member['id']) ?>)">
+                                            <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>
-                                        <td colspan="11" class="text-center">No deleted Member found.</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="11" class="text-center">No deleted Member found.</td>
+                                </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
+
+
+
+
+
+
+
+
+
+                <!------------------------------------------------------------------------------------- Policies --------------------------------------------------------------------------------------------------->
                 <div class="card-box mb-30">
                     <div class="pd-20">
                         <h4 class="text-blue h4">policies</h4>
@@ -495,35 +552,52 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($policies)): ?>
-                                    <?php foreach ($policies as $policie): ?>
-                                        <tr>
-                                            <td><?= esc(substr($policie['policy_name'], 0, 50)) . (strlen($policie['policy_name']) > 50 ? '...' : '') ?>
-                                            </td>
-                                            <td>
-                                                <div style="max-width: 200px; overflow-x: auto; white-space: nowrap;">
-                                                    <?= esc($policie['policy_description']) ?>
-                                                </div>
-                                            </td>
-                                            <td><?= esc($policie['policy_link']) ?></td>
-                                            <td><?= esc($policie['is_deleted']) ?></td>
-                                            <td><?= esc($policie['added_by']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['created_at']))) ?></td>
-                                            <td><?= esc($policie['updated_by']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['updated_at']))) ?></td>
-                                            <td><?= esc($policie['deleted_by']) ?></td>
-                                            <td><?= esc(date('d-M-Y h:i A', strtotime($policie['deleted_at']))) ?></td>
-                                            <td>
-                                                <a class="dropdown-item" href="javascript:void(0);"
-                                                    onclick="policyRestore(<?= esc($policie['id']) ?>)">
-                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                <?php foreach ($policies as $policie): ?>
+                                <tr>
+                                    <td>
+                                        <?= esc(substr($policie['policy_name'], 0, 50)) . (strlen($policie['policy_name']) > 50 ? '...' : '') ?>
+                                    </td>
+                                    <td>
+                                        <div style="max-width: 200px; overflow-x: auto; white-space: nowrap;">
+                                            <?= esc($policie['policy_description']) ?>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <?= esc($policie['policy_link']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($policie['is_deleted']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($policie['added_by']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($policie['created_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($policie['updated_by']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($policie['updated_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc($policie['deleted_by']) ?>
+                                    </td>
+                                    <td>
+                                        <?= esc(date('d-M-Y h:i A', strtotime($policie['deleted_at']))) ?>
+                                    </td>
+                                    <td>
+                                        <a class="dropdown-item" href="javascript:void(0);"
+                                            onclick="policyRestore(<?= esc($policie['id']) ?>)">
+                                            <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>
-                                        <td colspan="11" class="text-center">No deleted policies found.</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="11" class="text-center">No deleted policies found.</td>
+                                </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>

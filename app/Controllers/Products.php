@@ -807,6 +807,71 @@ class Products extends BaseController
         }
     }
 
+    public function collection_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_collection_logs_view', ['updates' => []]); // No bundle ID provided
+        }
+
+        // Fetch bundle details
+        $query = $db->table('collection')->select('change_log')->where('collection_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_collection_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_collection_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_collection_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getcollectionChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('collection')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 
 

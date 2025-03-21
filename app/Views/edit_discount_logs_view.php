@@ -110,6 +110,13 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
+
+                <div class="w-100">
+                    <a href="<?= base_url() ?>discountcodegenerator" class="px-2 d-inline-block">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
                 <div class="row">
                     <div class="col-md-9">
                         <div class="pd-20 card-box mb-30">
