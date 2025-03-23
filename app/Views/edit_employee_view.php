@@ -97,14 +97,21 @@
             <div class="min-height-200px">
                 <!-- Default Basic Forms Start -->
                 <div class="pd-20 card-box mb-30">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="text-blue h4">Edit User Info</h4>
-                            <p class="mb-30">User Information</p>
-                        </div>
-                    </div>
+
                     <?php foreach ($employes as $employe) : ?>
                         <form id="" method="post" action="<?= base_url('employee/updateempolyee/' . $employe['user_id']) ?>" class="needs-validation" novalidate>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="<?= base_url() ?>registeredusers/employee_logs/<?= $employe['user_id'] ?>"
+                                    class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                    style="width: 32px; height: 32px;"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="View Employee Logs">
+                                    <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                                </a>
+                            </div>
+
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Text</label>
                                 <div class="col-sm-6 col-md-6">

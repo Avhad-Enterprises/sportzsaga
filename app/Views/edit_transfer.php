@@ -114,15 +114,23 @@
                         <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
                             <i class="fa fa-arrow-left"></i> Back
                         </button>
-                        <h4 class="h4 mb-0">Add Inventory</h4>
-
-
+                        <h4 class="h4 mb-0">Add Transfer</h4>
                     </div>
                 </div>
 
                 <div class="pd-20 card-box mb-30">
                     <form method="post" action="<?= base_url('transfer/update/' . $transfer['id']) ?>"
                         enctype="multipart/form-data">
+                    
+                    
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>transfer/transfer_logs/<?= $transfer['id'] ?>"
+                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm"
+                                data-toggle="tooltip" data-placement="top" title="View Transfer Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+                        
                         <!-- Transfer Information -->
                         <div class="card mb-4">
                             <div class="card-header">Edit Transfer Information</div>

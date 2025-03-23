@@ -8,6 +8,7 @@ use App\Models\Products_model;
 use CodeIgniter\Controller;
 use CodeIgniter\Database\BaseConnection;
 use Google\Cloud\Storage\StorageClient;
+
 class HeaderController extends Controller
 {
     protected $pageModel;
@@ -95,7 +96,6 @@ class HeaderController extends Controller
                 // Get the public URL of the uploaded image
                 $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
                 log_message('info', 'Image uploaded successfully: ' . $imageUrl);
-
             } catch (\Exception $e) {
                 log_message('error', 'Error uploading image: ' . $e->getMessage());
             }
@@ -170,41 +170,35 @@ class HeaderController extends Controller
 
     public function update_page($id)
     {
-        // Load model
         $pageModel = new PageModel();
         $session = session();
+        $userId = strval($session->get('user_id'));
+        $userName = $session->get('admin_name') ?? $session->get('user_name');
+        $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
 
-        // Validate Request
         if ($this->request->getMethod() === 'post') {
-            // Retrieve existing page data
             $existingPage = $pageModel->find($id);
             if (!$existingPage) {
                 return redirect()->to(base_url('online_store/edit'))->with('error', 'Page not found.');
             }
 
-            // Retrieve form inputs
+            // Prepare new form data
             $data = [
-                'title' => $this->request->getPost('title'),
-                'link' => $this->request->getPost('link'),
-                'visibility' => $this->request->getPost('visibility'),
+                'title' => trim($this->request->getPost('title')),
+                'link' => trim($this->request->getPost('link')),
+                'visibility' => trim($this->request->getPost('visibility')),
             ];
 
-            // Handle Page Type (Multiple Selection)
-            $pageType = $this->request->getPost('page_type');
-            $data['page_type'] = (!empty($pageType)) ? implode(',', array_unique(explode(',', $pageType))) : '';
-
-            // Handle Subtype (Multiple Selection)
-            $subtype = $this->request->getPost('subtype');
-            $data['subtype'] = (!empty($subtype) && is_array($subtype)) ? implode(',', array_unique($subtype)) : '';
+            // Handle Page Type & Subtype
+            $data['page_type'] = $this->request->getPost('page_type') ? implode(',', array_unique(explode(',', $this->request->getPost('page_type')))) : '';
+            $data['subtype'] = $this->request->getPost('subtype') ? implode(',', array_unique($this->request->getPost('subtype'))) : '';
 
             // Handle Specific Items (Maintain JSON structure)
             $specificItems = $this->request->getPost('specific_item');
-            log_message('debug', 'Received Specific Items: ' . print_r($specificItems, true));
-
             $formattedSpecificItems = [];
 
-            if (!empty($subtype) && is_array($subtype)) {
-                foreach ($subtype as $index => $selectedSubtype) {
+            if (!empty($data['subtype'])) {
+                foreach (explode(',', $data['subtype']) as $index => $selectedSubtype) {
                     if (isset($specificItems[$index])) {
                         $flattenedItems = [];
 
@@ -226,10 +220,9 @@ class HeaderController extends Controller
                 }
             }
 
-            $data['specific_item'] = !empty($formattedSpecificItems) ? json_encode($formattedSpecificItems) : json_encode([]);
-            log_message('debug', 'Formatted Specific Items Before Update: ' . print_r($data['specific_item'], true));
+            $data['specific_item'] = json_encode(!empty($formattedSpecificItems) ? $formattedSpecificItems : []);
 
-            // Handle image upload with Google Cloud Storage (GCS)
+            // Handle Image Upload (Google Cloud Storage)
             $imageFile = $this->request->getFile('image');
             if ($imageFile && $imageFile->isValid() && !$imageFile->hasMoved()) {
                 try {
@@ -240,19 +233,13 @@ class HeaderController extends Controller
                     $bucket = $storage->bucket('sportzsaga_imgs');
 
                     $imageName = uniqid() . '-' . $imageFile->getClientName();
-                    $object = $bucket->upload(
-                        fopen($imageFile->getTempName(), 'r'),
-                        [
-                            'name' => 'pages/' . $imageName,
-                            'predefinedAcl' => 'publicRead',
-                        ]
-                    );
+                    $bucket->upload(fopen($imageFile->getTempName(), 'r'), [
+                        'name' => 'pages/' . $imageName,
+                        'predefinedAcl' => 'publicRead',
+                    ]);
 
-                    $imageUrl = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
-                    log_message('info', 'Image uploaded successfully: ' . $imageUrl);
-
-                    $data['image'] = $imageUrl; // Update image URL in database
-
+                    $data['image'] = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), 'pages/' . $imageName);
+                    log_message('info', 'Image uploaded successfully: ' . $data['image']);
                 } catch (\Exception $e) {
                     log_message('error', 'Error uploading image: ' . $e->getMessage());
                 }
@@ -263,12 +250,12 @@ class HeaderController extends Controller
                 $data['image'] = $existingPage['image'];
             }
 
-            // Track Changes for Change Log
+            // Track Changes (Exclude `updated_by`)
             $changes = [];
             foreach ($data as $key => $value) {
                 if ($existingPage[$key] != $value) {
                     $changes[$key] = [
-                        'old' => $existingPage[$key],
+                        'old' => $existingPage[$key] ?? 'N/A',
                         'new' => $value
                     ];
                 }
@@ -276,25 +263,22 @@ class HeaderController extends Controller
 
             if (!empty($changes)) {
                 // Retrieve existing change log
-                $existingChangeLog = json_decode($existingPage['change_log'], true);
+                $existingChangeLog = json_decode($existingPage['change_log'] ?? '[]', true);
                 if (!is_array($existingChangeLog)) {
                     $existingChangeLog = [];
                 }
 
-                // Append new changes to the existing log
+                // Append new changes
                 $existingChangeLog[] = [
-                    'updated_by' => $session->get('user_id'),
+                    'updated_by' => $updatedBy,
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
 
-                // Store the updated change log in JSON format
-                $data['change_log'] = json_encode($existingChangeLog);
+                $data['change_log'] = json_encode($existingChangeLog, JSON_UNESCAPED_SLASHES);
 
-                // Update page in the database
-                $updateStatus = $pageModel->update($id, $data);
-
-                if ($updateStatus) {
+                // Update page data
+                if ($pageModel->update($id, $data)) {
                     return redirect()->to(base_url('online_store/edit'))->with('success', 'Page updated successfully.');
                 } else {
                     return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to update the page.');
@@ -306,6 +290,4 @@ class HeaderController extends Controller
 
         return redirect()->to(base_url('online_store/edit'));
     }
-
 }
-

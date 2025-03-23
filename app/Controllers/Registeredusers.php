@@ -305,7 +305,7 @@ class Registeredusers extends BaseController
     {
         $model = new Registerusers_model();
         $session = session();
-        $userId = $session->get('user_id'); // Get user ID from session
+
 
         // Fetch existing user data
         $existingRecord = $model->find($id);
@@ -348,7 +348,7 @@ class Registeredusers extends BaseController
             // Append new change entry
             $newChange = [
                 'changes' => $changes,
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
             ];
 
@@ -498,7 +498,7 @@ class Registeredusers extends BaseController
             // Append new change entry
             $newChange = [
                 'changes' => $changes,
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
             ];
 
@@ -791,5 +791,122 @@ class Registeredusers extends BaseController
         $model = new loyalitypointsvalues();
         $data['loyalty_point'] = $model->GetLoyalityPointData();
         return view('points_form_view', $data);
+    }
+
+
+    public function customer_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_user_logs_view', ['updates' => []]); // No user ID provided
+        }
+
+        // Fetch user details
+        $query = $db->table('users')->select('change_log')->where('user_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_user_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract updates only if they have a timestamp
+                if (isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes'    => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            // Sort updates by `updated_at` (latest first)
+            usort($updates, function ($a, $b) {
+                return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+            });
+
+            return view('edit_user_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_user_logs_view', ['updates' => []]); // No logs found
+    }
+
+    public function employee_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_employee_logs_view', ['updates' => []]); // No user ID provided
+        }
+
+        // Fetch user details
+        $query = $db->table('users')->select('change_log')->where('user_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_employee_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract updates only if they have a timestamp
+                if (isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes'    => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            // Sort updates by `updated_at` (latest first)
+            usort($updates, function ($a, $b) {
+                return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+            });
+
+            return view('edit_employee_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_employee_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function profile_change_logs($userId)
+    {
+        $model = new Registerusers_model();
+        $changeLogJson = $model->getChangeLog($userId);
+
+        $updates = [];
+
+        if (!empty($changeLogJson)) {
+            // Decode JSON into an associative array
+            $changeLogArray = json_decode($changeLogJson, true);
+
+            if (is_array($changeLogArray)) {
+                // Convert nested change logs into a sequential array
+                foreach ($changeLogArray as $key => $log) {
+                    if (is_array($log) && isset($log['updated_at'], $log['updated_by'])) {
+                        $updates[] = $log;
+                    }
+                }
+
+                // Sort updates by `updated_at` (latest first)
+                usort($updates, function ($a, $b) {
+                    return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+                });
+            }
+        }
+
+        return view('profile_change_logs_view', ['updates' => $updates]);
     }
 }

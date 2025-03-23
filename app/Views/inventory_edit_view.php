@@ -124,6 +124,14 @@
                 <div class="pd-20 card-box mb-30">
                     <form method="post" action="<?= base_url('inventory/update/' . $inventory['id']) ?>">
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>inventory/inventory_logs/<?= $inventory['id'] ?>"
+                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm"
+                                data-toggle="tooltip" data-placement="top" title="View Inventory Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+                        
                         <!-- Basic Information -->
                         <div class="card mb-3">
                             <div class="card-header">Basic Information</div>
@@ -209,7 +217,8 @@
                                                         <?php foreach ($warehouses as $warehouse): ?>
                                                             <tr>
                                                                 <td class="text-center">
-                                                                    <?= htmlspecialchars($warehouse['id']) ?></td>
+                                                                    <?= htmlspecialchars($warehouse['id']) ?>
+                                                                </td>
                                                                 <td><?= htmlspecialchars($warehouse['name']) ?></td>
                                                                 <td><?= htmlspecialchars($warehouse['location']) ?></td>
                                                                 <td class="text-center">

@@ -115,9 +115,9 @@
                             <thead>
                                 <tr>
                                     <th>segment_id</th>
-                                    <th>segment_name</th>
-                                    <th>segment_description</th>
-                                    <th>segment_type</th>
+                                    <th>name</th>
+                                    <th>description</th>
+                                    <th>type</th>
                                     <th>created_by</th>
                                     <th>filters</th>
                                     <th>Deleted By</th>

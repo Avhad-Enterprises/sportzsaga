@@ -107,6 +107,17 @@
                             <button value="submit" class="btn btn-primary btn-lg">Update</button>
                         </div>
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>Blogs/Blogs_logs/<?= $post['blog_id'] ?>"
+                                class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="View Blog Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                            </a>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="pd-20 card-box mb-30">

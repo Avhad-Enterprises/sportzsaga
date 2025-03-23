@@ -58,7 +58,8 @@
                             <div class="dropdown">
                                 <!-- Import Button (conditional) -->
                                 <?php if ($canImport): ?>
-                                    <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>productcollections/import" role="button">
+                                    <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>productcollections/import"
+                                        role="button">
                                         Import
                                     </a>
                                 <?php endif; ?>
@@ -67,20 +68,22 @@
                             <div class="dropdown">
                                 <!-- Export Button (conditional) -->
                                 <?php if ($canExport): ?>
-                                    <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>productcollections/exporttoexcel" role="button">
+                                    <a class="btn btn-primary fw-bold"
+                                        href="<?= base_url(); ?>productcollections/exporttoexcel" role="button">
                                         Export To Excel
                                     </a>
                                 <?php endif; ?>
                             </div>
 
-                            <!-- Logs Button (conditional) -->
-                            <?php if ($canLogs): ?>
-                                <div class="dropdown">
-                                    <a class="btn btn-success fw-bold" href="<?= base_url('bundlecollection/deletedcollection') ?>" role="button">
+                            <div class="dropdown">
+                                <!-- Logs Button (conditional) -->
+                                <?php if ($canLogs): ?>
+                                    <a class="btn btn-success fw-bold"
+                                        href="<?= base_url('bundlecollection/deletedcollection') ?>" role="button">
                                         Logs
                                     </a>
-                                </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
                                             // Loop through the products array
                                             if (!empty($bundle['product_titles'])):
                                                 foreach ($bundle['product_titles'] as $product):
-                                            ?>
+                                                    ?>
                                                     <?= esc($product) ?><br>
                                                 <?php endforeach; ?>
 
@@ -134,15 +137,18 @@
                                         <td><?= ucfirst(esc($bundle['discount_type'])) ?></td>
                                         <td>
                                             <div class="dropdown">
-                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                                <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                                    href="#" role="button" data-toggle="dropdown">
                                                     <i class="dw dw-more"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item" href="<?= base_url('BundleController/editproductcollection/' . $bundle['bundle_id']); ?>">
+                                                    <a class="dropdown-item"
+                                                        href="<?= base_url('BundleController/editproductcollection/' . $bundle['bundle_id']); ?>">
                                                         <i class="dw dw-edit2"></i> Edit
                                                     </a>
                                                     <?php if ($canDelete): ?>
-                                                        <a class="dropdown-item" href="<?= base_url('BundleController/deleteproductcollection/' . $bundle['bundle_id']); ?>">
+                                                        <a class="dropdown-item"
+                                                            href="<?= base_url('BundleController/deleteproductcollection/' . $bundle['bundle_id']); ?>">
                                                             <i class="dw dw-delete-3"></i> Delete
                                                         </a>
                                                     <?php endif; ?>

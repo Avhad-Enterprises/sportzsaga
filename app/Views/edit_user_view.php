@@ -8,6 +8,8 @@
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <div class="right-sidebar">
         <div class="sidebar-title">
             <h3 class="weight-600 font-16 text-blue">
@@ -96,18 +98,24 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
                 <!-- Default Basic Forms Start -->
-                <div class="">
-                    <div class="clearfix">
-                        <div class="pull-left mb-2">
-                            <a href="<?= base_url() ?>registeredusers" class="px-2">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <!-- Left Button -->
+                    <a href="<?= base_url() ?>registeredusers" class="px-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
                 </div>
-
                 <?php foreach ($users as $user) : ?>
                     <form id="usereditform" method="post" action="<?= base_url('registeredusers/updateuserdata/' . $user['user_id']) ?>" class="needs-validation" novalidate>
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>registeredusers/customer_logs/<?= $user['user_id'] ?>"
+                                class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="View Customer Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                            </a>
+                        </div>
                         <div class="row">
                             <div class="col-md-8">
 
@@ -657,7 +665,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     <?php endforeach; ?>
                                 <?php else: ?>
                                     <p>No order activity found.</p>

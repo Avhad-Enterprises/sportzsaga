@@ -411,7 +411,7 @@ class InventoryController extends BaseController
     {
         $inventoryModel = new InventoryModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
         $adminName = $session->get('admin_name'); // Get admin name
 
         // Fetch existing inventory data
@@ -459,8 +459,8 @@ class InventoryController extends BaseController
             'custom_labels' => $this->request->getPost('custom_labels'),
             'fifo_lifo' => $this->request->getPost('fifo_lifo'),
             'stock_rotation' => $this->request->getPost('stock_rotation'),
-            'updated_by' => $adminName . ' (' . $userId . ')', // ✅ Track who updated
-            'updated_at' => date('Y-m-d H:i:s'), // ✅ Store update timestamp
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         // ✅ Track changes
@@ -483,7 +483,7 @@ class InventoryController extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $adminName . ' (' . $userId . ')',
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -587,6 +587,76 @@ class InventoryController extends BaseController
         $data['inventory'] = $inventoryModel->where('is_deleted', 1)->findAll();
 
         return view('inventory_deleted', $data);
+    }
+
+
+
+
+
+
+    public function inventory_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_inventory_logs_view', ['updates' => []]); // No inventory ID provided
+        }
+
+        // Fetch inventory details
+        $query = $db->table('inventory')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_inventory_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_inventory_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_inventory_logs_view', ['updates' => []]); // No logs found
+    }
+
+    public function getInventoryChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('inventory')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
     }
 
 }

@@ -31,15 +31,24 @@ class ProductSettings extends BaseController
     {
         $productSettingModel = new ProductSettingModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get user ID from session
+
+        // Fetch user details from session
+        $userId = $session->get('user_id');
+        $userName = $session->get('admin_name') ?? $session->get('user_name'); // Try both session keys
+
+        // Use dynamic user information
+        $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
+
+        // Log session variables for debugging (remove in production)
+        log_message('debug', 'User ID: ' . $userId);
+        log_message('debug', 'User Name: ' . $userName);
 
         // Get form data
         $title = $this->request->getPost('productpagetitle');
         $description = $this->request->getPost('Description');
-        $selectedProducts = $this->request->getPost('products') ?: []; // Array of selected product IDs
-        $selectedBundles = $this->request->getPost('bundles') ?: []; // Array of selected bundle IDs
+        $selectedProducts = $this->request->getPost('products') ?: [];
+        $selectedBundles = $this->request->getPost('bundles') ?: [];
 
-        // Convert arrays to comma-separated strings
         $productIdsCsv = implode(',', $selectedProducts);
         $bundleIdsCsv = implode(',', $selectedBundles);
 
@@ -47,7 +56,6 @@ class ProductSettings extends BaseController
         $existingRecord = $productSettingModel->find(1);
 
         if ($existingRecord) {
-            // Track changes only if there are modifications
             $changes = [];
 
             if ($existingRecord['title'] !== $title) {
@@ -63,26 +71,20 @@ class ProductSettings extends BaseController
                 $changes['bundle_id'] = ['old' => $existingRecord['bundle_id'], 'new' => $bundleIdsCsv];
             }
 
-            // Proceed only if there are actual changes
             if (!empty($changes)) {
-                // Fetch and decode existing change log
                 $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
-
-                // Ensure it's an array
                 if (!is_array($existingChangeLog)) {
                     $existingChangeLog = [];
                 }
 
-                // Append new change entry
                 $newChange = [
-                    'changes' => $changes,
-                    'updated_by' => $userId,
+                    'updated_by' => $updatedBy,
                     'timestamp' => date('Y-m-d H:i:s'),
+                    'changes' => $changes,
                 ];
 
-                $existingChangeLog[] = $newChange; // Append to change log
+                $existingChangeLog[] = $newChange;
 
-                // Update only modified fields
                 $updateData = [
                     'title' => $title,
                     'Description' => $description,
@@ -104,7 +106,6 @@ class ProductSettings extends BaseController
                 ]);
             }
         } else {
-            // Insert new record with ID = 1
             $insertData = [
                 'id' => 1,
                 'title' => $title,
@@ -113,16 +114,16 @@ class ProductSettings extends BaseController
                 'bundle_id' => $bundleIdsCsv,
                 'change_log' => json_encode([
                     [
+                        'updated_by' => $updatedBy,
+                        'timestamp' => date('Y-m-d H:i:s'),
                         'changes' => [
                             'title' => ['old' => null, 'new' => $title],
                             'Description' => ['old' => null, 'new' => $description],
                             'product_id' => ['old' => null, 'new' => $productIdsCsv],
                             'bundle_id' => ['old' => null, 'new' => $bundleIdsCsv],
                         ],
-                        'updated_by' => $userId,
-                        'timestamp' => date('Y-m-d H:i:s'),
                     ]
-                ])
+                ]),
             ];
 
             $productSettingModel->insert($insertData);
@@ -133,6 +134,7 @@ class ProductSettings extends BaseController
             ]);
         }
     }
+
 
 
     private function getProducts()

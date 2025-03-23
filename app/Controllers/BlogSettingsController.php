@@ -127,6 +127,14 @@ class BlogSettingsController extends BaseController
         if ($this->request->isAJAX()) {
             $session = session();
             $userId = $session->get('user_id'); // Retrieve user ID from session
+            $userName = $session->get('admin_name') ?? $session->get('user_name'); // Fetch dynamic user name
+
+            // Ensure updated_by field is correctly formatted
+            $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
+
+            // Debug log to check session data (remove in production)
+            log_message('debug', 'User ID: ' . $userId);
+            log_message('debug', 'User Name: ' . $userName);
 
             $title = $this->request->getPost('title');
             $favproduct = $this->request->getPost('fav_product');
@@ -135,8 +143,8 @@ class BlogSettingsController extends BaseController
             $image1 = $this->request->getFile('image1');
             $image2 = $this->request->getFile('image2');
 
-            $image1Name = $image1 && $image1->isValid() ? $image1->store() : null;
-            $image2Name = $image2 && $image2->isValid() ? $image2->store() : null;
+            $image1Name = ($image1 && $image1->isValid()) ? $image1->store() : null;
+            $image2Name = ($image2 && $image2->isValid()) ? $image2->store() : null;
 
             // Validate input
             if (empty($title)) {
@@ -144,12 +152,13 @@ class BlogSettingsController extends BaseController
             }
 
             $collectionModel = new \App\Models\os_collectionModel();
+            $fixedId = 1; // Always using ID = 1
 
-            // Always check for ID = 1
-            $existingRecord = $collectionModel->find(1);
+            // Fetch existing record
+            $existingRecord = $collectionModel->find($fixedId);
 
             // Prepare new data
-            $data = [
+            $newData = [
                 'image1' => $image1Name ?? ($existingRecord['image1'] ?? null),
                 'image2' => $image2Name ?? ($existingRecord['image2'] ?? null),
                 'title' => $title,
@@ -160,7 +169,7 @@ class BlogSettingsController extends BaseController
 
             if ($existingRecord) {
                 // Compare old and new data, only storing changes
-                foreach ($data as $key => $newValue) {
+                foreach ($newData as $key => $newValue) {
                     $oldValue = $existingRecord[$key] ?? null;
 
                     if ($newValue !== $oldValue) {
@@ -178,31 +187,40 @@ class BlogSettingsController extends BaseController
                         $existingChangeLog = [];
                     }
 
-                    // Append new change entry with only changed fields
+                    // Append new change entry
                     $newChange = [
-                        'changes' => $changedFields,
-                        'updated_by' => $userId, // Log user ID
+                        'updated_by' => $updatedBy, // Corrected user info
                         'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => $changedFields,
                     ];
 
                     $existingChangeLog[] = $newChange;
-                    $data['change_log'] = json_encode($existingChangeLog);
+                    $newData['change_log'] = json_encode($existingChangeLog);
+
+                    // Update the record
+                    $collectionModel->update($fixedId, $newData);
+
+                    return $this->response->setJSON(['success' => true, 'message' => 'Collection updated successfully']);
+                } else {
+                    return $this->response->setJSON(['success' => true, 'message' => 'No changes detected.']);
                 }
-
-                // Update existing record with ID = 1
-                $collectionModel->update(1, $data);
-
-                return $this->response->setJSON(['success' => true, 'message' => 'Collection updated successfully']);
             } else {
                 // Insert new record with ID = 1
-                $data['id'] = 1;
-                $data['change_log'] = json_encode([[
-                    'updated_by' => $userId,
-                    'changes' => $data, // Log all initial data
-                    'timestamp' => date('Y-m-d H:i:s'),
-                ]]);
+                $newData['id'] = $fixedId;
+                $newData['change_log'] = json_encode([
+                    [
+                        'updated_by' => $updatedBy,
+                        'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => [
+                            'title' => ['old' => null, 'new' => $title],
+                            'fav_product' => ['old' => null, 'new' => $favproduct],
+                            'image1' => ['old' => null, 'new' => $image1Name],
+                            'image2' => ['old' => null, 'new' => $image2Name],
+                        ],
+                    ]
+                ]);
 
-                $collectionModel->insert($data);
+                $collectionModel->insert($newData);
 
                 return $this->response->setJSON(['success' => true, 'message' => 'Collection saved successfully']);
             }

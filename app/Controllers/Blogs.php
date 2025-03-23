@@ -580,4 +580,29 @@ class Blogs extends BaseController
 
         return redirect()->back();
     }
+
+
+    public function Blogs_logs($blogId)
+    {
+        $blogModel = new blogs_model();
+        
+        // Get the blog post details
+        $post = $blogModel->find($blogId);
+        
+        if (!$post) {
+            return redirect()->to('blogs')->with('error', 'Blog post not found');
+        }
+        
+        // Get the change logs for this blog
+        $updates = $blogModel->getBlogChangeLogs($blogId);
+        
+        $data = [
+            'title' => 'Blog Update History',
+            'post' => $post,
+            'updates' => $updates
+        ];
+        
+        // Return the view with the data
+        return view('edit_blog_logs_view', $data);
+    }
 }

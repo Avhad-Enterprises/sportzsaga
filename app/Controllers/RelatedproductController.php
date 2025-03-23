@@ -18,6 +18,8 @@ class RelatedproductController extends Controller
         $this->model = new Products_model();
         $this->logger = service('logger');
     }
+
+
     public function index()
     {
         $db = \Config\Database::connect();
@@ -25,9 +27,10 @@ class RelatedproductController extends Controller
         $builder = $db->table('collection');
         $data['collections'] = $builder->select('collection_id, collection_title')->get()->getResultArray();
 
-        $data['fields'] = ['product_title', 'product_tags', 'cost_price', 'size']; 
+        $data['fields'] = ['product_title', 'product_tags', 'cost_price', 'size'];
         return view('addnew_related_product', $data);
     }
+
 
     public function fetchProducts()
     {
@@ -39,7 +42,7 @@ class RelatedproductController extends Controller
         }
 
         $builder = $db->table('collection');
-        $builder->select('product_ids'); 
+        $builder->select('product_ids');
         $collection = $builder->where('collection_id', $collectionId)->get()->getRowArray();
 
         if (!$collection || empty($collection['product_ids'])) {
@@ -57,10 +60,11 @@ class RelatedproductController extends Controller
     }
 
 
+
     public function saveRelatedProducts()
     {
         $session = session();
-        $userId = $session->get('user_id'); 
+        $userId = $session->get('user_id');
 
         if (!$userId) {
             return redirect()->to('relatedproduct_table_view')->with('error', 'User session expired. Please log in again.');
@@ -75,7 +79,7 @@ class RelatedproductController extends Controller
 
         if (!empty($collectionId)) {
             $selectMethod = 'collection';
-       
+
             $db = \Config\Database::connect();
             $builder = $db->table('collection');
             $builder->select('product_ids');
@@ -85,7 +89,7 @@ class RelatedproductController extends Controller
                 $productIds = explode(',', $collection['product_ids']);
             }
         } else {
-      
+
             if ($selectMethod === 'automated') {
                 $productIds = $this->model->getProductsByConditions($conditions, $conditionType, $sortBy);
                 $productIds = array_column($productIds, 'product_id');
@@ -93,7 +97,7 @@ class RelatedproductController extends Controller
                 $productIds = $this->request->getPost('products') ?? [];
             }
         }
-      
+
         if (empty($productIds)) {
             return redirect()->to('relatedproduct_table_view')->with('error', 'No related products selected.');
         }
@@ -105,7 +109,7 @@ class RelatedproductController extends Controller
             'condition_type' => $conditionType ?? null,
             'conditions' => json_encode($conditions ?? []),
             'sort_by' => $sortBy ?? null,
-            'added_by' => $userId, 
+            'added_by' => $userId,
             'created_at' => date('Y-m-d H:i:s')
         ];
 
@@ -115,6 +119,8 @@ class RelatedproductController extends Controller
         return redirect()->to('relatedproduct_table_view')->with('success', 'Related products saved successfully.');
     }
 
+
+
     public function getDistinctFieldValues()
     {
         $model = new Products_model();
@@ -122,6 +128,8 @@ class RelatedproductController extends Controller
         $values = $model->getDistinctFieldValues($field);
         return $this->response->setJSON($values);
     }
+
+
 
     public function saveConditions()
     {
@@ -132,12 +140,16 @@ class RelatedproductController extends Controller
         return $this->response->setJSON(['success' => $result]);
     }
 
+
+
     public function getConditions($collectionId)
     {
         $model = new Products_model();
         $conditions = $model->getConditions($collectionId);
         return $this->response->setJSON($conditions);
     }
+
+
 
     public function getProductDates()
     {
@@ -147,12 +159,16 @@ class RelatedproductController extends Controller
         return $this->response->setJSON($dates);
     }
 
+
+
     public function getAllProducts()
     {
         $model = new Products_model();
         $products = $model->findAll();
         return $this->response->setJSON($products);
     }
+
+
 
     public function getProductsByConditions()
     {
@@ -180,6 +196,7 @@ class RelatedproductController extends Controller
     }
 
 
+
     public function tableview()
     {
         $model = new RelatedProductModel();
@@ -187,6 +204,8 @@ class RelatedproductController extends Controller
 
         return view('relatedproduct_table_view', $data);
     }
+
+
 
     public function deleteRelatedProduct($id)
     {
@@ -198,6 +217,8 @@ class RelatedproductController extends Controller
             return redirect()->to('relatedproduct_table_view')->with('error', 'Failed to delete related product.');
         }
     }
+
+
 
     public function editRelatedProduct($id)
     {
@@ -247,10 +268,12 @@ class RelatedproductController extends Controller
         return view('edit_related_product', $data);
     }
 
+
+
     public function updateRelatedProduct($id)
     {
         $session = session();
-        $userId = $session->get('user_id');
+
 
         $model = new RelatedProductModel();
         $productModel = new Products_model();
@@ -299,7 +322,7 @@ class RelatedproductController extends Controller
             'condition_type' => $conditionType ?? null,
             'conditions' => json_encode($conditions ?? []),
             'sort_by' => $sortBy ?? null,
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -321,7 +344,7 @@ class RelatedproductController extends Controller
             }
 
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -337,6 +360,7 @@ class RelatedproductController extends Controller
 
         return redirect()->back()->with('info', 'No changes detected.');
     }
+
 
 
     public function deleteProduct()
@@ -368,6 +392,7 @@ class RelatedproductController extends Controller
     }
 
 
+
     public function deletedRelatedProducts()
     {
         $relatedProductModel = new RelatedProductModel();
@@ -375,22 +400,74 @@ class RelatedproductController extends Controller
         return view('relatedproduct_deleted', $data);
     }
 
+
     public function restoreProduct($id)
     {
         $relatedProductModel = new RelatedProductModel();
-
         $product = $relatedProductModel->find($id);
         if (!$product) {
             return redirect()->to('relatedproduct_table_view')->with('error', 'Product not found.');
         }
-
         $relatedProductModel->update($id, [
             'is_deleted' => 0,
             'deleted_by' => null,
             'deleted_at' => null,
         ]);
-
         return redirect()->to('relatedproduct_table_view')->with('success', 'Product restored successfully.');
     }
 
+
+    public function related_product_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_relatedproduct_logs_view', ['updates' => []]);
+        }
+        $query = $db->table('related_products')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_relatedproduct_logs_view', ['updates' => []]);
+            }
+            $updates = [];
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+            return view('edit_relatedproduct_logs_view', ['updates' => $updates]);
+        }
+        return view('edit_relatedproduct_logs_view', ['updates' => []]);
+    }
+
+
+    public function getrelatedProductChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('related_products')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return [];
+            }
+            $updates = [];
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+            return $updates;
+        }
+        return [];
+    }
 }

@@ -406,7 +406,7 @@ class Blogs_model extends Model
 
     public function getPendingComments()
     {
-        return $this->db->table('blog_comments')->where('status', 0)->countAllResults();
+        return $this->db->table('blog_comments')->where('user_status', 0)->countAllResults();
     }
 
 
@@ -419,5 +419,31 @@ class Blogs_model extends Model
     public function getAlllogblog()
     {
         return $this->db->table('blogs')->where('is_deleted', 1)->get()->getResultArray();
+    }
+
+
+
+    public function getBlogChangeLogs($blogId)
+    {
+        $blog = $this->find($blogId);
+        
+        if (!$blog || empty($blog['change_log'])) {
+            return [];
+        }
+        
+        // Decode the JSON stored in change_log column
+        $changeLogs = json_decode($blog['change_log'], true);
+        
+        // If it's not an array (invalid JSON or empty), return empty array
+        if (!is_array($changeLogs)) {
+            return [];
+        }
+        
+        // Sort by updated_at in descending order (newest first)
+        usort($changeLogs, function($a, $b) {
+            return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+        });
+        
+        return $changeLogs;
     }
 }

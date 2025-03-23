@@ -14,7 +14,8 @@ class CollectionProducts_model extends Model
         'brand',
         'cost_price',
         'selling_price',
-        'product_image'
+        'product_image',
+        
     ];
 
     public function getcollectionproducts($collection_id)

@@ -130,6 +130,14 @@
                     <input type="hidden" name="related_product_ids" id="related_product_ids"
                         value="<?= htmlspecialchars(json_encode($relatedProduct['related_product_ids']), ENT_QUOTES, 'UTF-8') ?>">
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url('relatedproduct/relatedproduct_logs/' . $relatedProduct['id']) ?>"
+                                class="btn btn-outline-primary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                                data-placement="top" title="View Relatedproduct Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
                     <div class="row">
                         <div class="col-md-8">
                             <div class="col-md-8">
