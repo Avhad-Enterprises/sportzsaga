@@ -259,7 +259,7 @@
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Carousels</h4>
+                        <h4 class="text-blue h4">Carousels 2</h4>
                     </div>
                     <div class="pb-20">
                         <table class="table hover data-table-export table-hover">
@@ -297,6 +297,792 @@
                 </div>
 
 
+                <!-------------------------------------------------------------------------------logo Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Logo</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($home_logos)): ?>
+                                    <?php foreach ($home_logos as $home_logo): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('logo/logo_history/' . $home_logo['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($home_logo['title'], 0, 50)) . (strlen($home_logo['title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($home_logo['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($home_logo['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------image Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">home_image</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($home_images)): ?>
+                                    <?php foreach ($home_images as $home_image): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('image/image_history/' . $home_image['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($home_image['image_title1'], 0, 50)) . (strlen($home_image['image_title1']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($home_image['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($home_image['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------home blog Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Home Blog</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($home_blogs)): ?>
+                                    <?php foreach ($home_blogs as $home_blog): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('home_blog/home_blog_history/' . $home_blog['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($home_blog['id'], 0, 50)) . (strlen($home_blog['id']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($home_blog['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($home_blog['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------blog 1 Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Blog 1</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($blog_settings)): ?>
+                                    <?php foreach ($blog_settings as $blog_setting): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('blog_setting/blog_setting_history/' . $blog_setting['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($blog_setting['blogs_title'], 0, 50)) . (strlen($blog_setting['blogs_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($blog_setting['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($blog_setting['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------blog 2 Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Blog 2</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($onlinestore_blogs)): ?>
+                                    <?php foreach ($onlinestore_blogs as $onlinestore_blog): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('onlinestore_blog/onlinestore_blog_history/' . $onlinestore_blog['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($onlinestore_blog['blogs_name'], 0, 50)) . (strlen($onlinestore_blog['blogs_name']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($onlinestore_blog['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($onlinestore_blog['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------single blog Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">single blog</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($singleblog_datas)): ?>
+                                    <?php foreach ($singleblog_datas as $singleblog_data): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('singleblog_data/singleblog_history/' . $singleblog_data['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($singleblog_data['page_title'], 0, 50)) . (strlen($singleblog_data['page_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($singleblog_data['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($singleblog_data['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------collection Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">collection </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($os_collections)): ?>
+                                    <?php foreach ($os_collections as $os_collection): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('os_collection/os_collection_history/' . $os_collection['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($os_collection['title'], 0, 50)) . (strlen($os_collection['title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($os_collection['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($os_collection['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------product Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">product </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($product_settings)): ?>
+                                    <?php foreach ($product_settings as $product_setting): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('product_setting/product_setting_history/' . $product_setting['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($product_setting['title'], 0, 50)) . (strlen($product_setting['title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($product_setting['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($product_setting['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------policy Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">policy </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($policies)): ?>
+                                    <?php foreach ($policies as $policie): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('policie/policie_history/' . $policie['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($policie['policy_name'], 0, 50)) . (strlen($policie['policy_name']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($policie['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($policie['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------Footer Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Footer </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($footer_datas)): ?>
+                                    <?php foreach ($footer_datas as $footer_data): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('footer/footer_history/' . $footer_data['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($footer_data['footer_name'], 0, 50)) . (strlen($footer_data['footer_name']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($footer_data['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($footer_data['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------Header Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Header </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($header_pages)): ?>
+                                    <?php foreach ($header_pages as $header_page): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('header_page/header_page_history/' . $header_page['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($header_page['title'], 0, 50)) . (strlen($header_page['title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($header_page['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($header_page['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------email pop up Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Email pop up </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($email_pop_ups)): ?>
+                                    <?php foreach ($email_pop_ups as $email_pop_up): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('email_pop_up/email_pop_up_history/' . $email_pop_up['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($email_pop_up['email_pop_up_mail_title'], 0, 50)) . (strlen($email_pop_up['email_pop_up_mail_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($email_pop_up['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($email_pop_up['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------about Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">About us </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($aboutpages)): ?>
+                                    <?php foreach ($aboutpages as $aboutpage): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('aboutpage/aboutpage_history/' . $aboutpage['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($aboutpage['about_title'], 0, 50)) . (strlen($aboutpage['about_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($aboutpage['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($aboutpage['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------about Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Contact </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($contactpages)): ?>
+                                    <?php foreach ($contactpages as $contactpage): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('contactpage/contactpage_history/' . $contactpage['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($contactpage['contact_title'], 0, 50)) . (strlen($contactpage['contact_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($contactpage['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($contactpage['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------Cart Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Cart </h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($cartpages)): ?>
+                                    <?php foreach ($cartpages as $cartpage): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('cartpage/cartpage_history/' . $cartpage['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($cartpage['cart_title'], 0, 50)) . (strlen($cartpage['cart_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($cartpage['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($cartpage['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------Checkout Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Checkout</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($checkoutpages)): ?>
+                                    <?php foreach ($checkoutpages as $checkoutpage): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('checkoutpage/checkoutpage_history/' . $checkoutpage['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($checkoutpage['checkout_title'], 0, 50)) . (strlen($checkoutpage['checkout_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($checkoutpage['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($checkoutpage['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------------tracking Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Tracking</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($trackingpages)): ?>
+                                    <?php foreach ($trackingpages as $trackingpage): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('trackingpage/trackingpage_history/' . $trackingpage['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($trackingpage['tracking_title'], 0, 50)) . (strlen($trackingpage['tracking_title']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($trackingpage['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($trackingpage['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------404 page Form -------------------------------------------------------------------------------------->
+
+                <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">404 page</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($error_pages)): ?>
+                                    <?php foreach ($error_pages as $error_page): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('error_page/error_page_history/' . $error_page['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($error_page['error_head'], 0, 50)) . (strlen($error_page['error_head']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($error_page['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($error_page['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                  <!-------------------------------------------------------------------------------our team page Form -------------------------------------------------------------------------------------->
+
+                  <div class="card-box mb-30">
+                    <div class="pd-20">
+                        <h4 class="text-blue h4">Our Team</h4>
+                    </div>
+                    <div class="pb-20">
+                        <table class="table hover data-table-export table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (!empty($team_members)): ?>
+                                    <?php foreach ($team_members as $team_member): ?>
+                                        <tr>
+                                            <td>
+                                                <a href="<?= base_url('team_members/team_member_history/' . $team_member['id']) ?>" class="text-primary">
+                                                    <?= esc(substr($team_member['member_name'], 0, 50)) . (strlen($team_member['member_name']) > 50 ? '...' : '') ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <?= isset($team_member['updated_at'])
+                                                    ? esc(date('d/M/Y h:i A', strtotime($team_member['updated_at'])))
+                                                    : 'N/A' ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="7" class="text-center">No deleted carousels found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
             </div>
         </div>

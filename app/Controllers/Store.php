@@ -68,7 +68,25 @@ class Store extends BaseController
         $data['marquees'] = $modal->getMarquees();
         $data['home_collections'] = $modal->getHomeCollections();
         $data['home_carousel2'] = $modal->getHomecarousel2();
-
+        $data['home_logos'] = $modal->getlogohistory();
+        $data['home_images'] = $modal->getimagehistory();
+        $data['home_blogs'] = $modal->gethome_bloghistory();
+        $data['blog_settings'] = $modal->getblog1history();
+        $data['onlinestore_blogs'] = $modal->getblog2history();
+        $data['singleblog_datas'] = $modal->getsinglebloghistory();
+        $data['os_collections'] = $modal->getcollectionhistory();
+        $data['product_settings'] = $modal->getproducthistory();
+        $data['policies'] = $modal->getpolicieshistory();
+        $data['footer_datas'] = $modal->getfooterhistory();
+        $data['header_pages'] = $modal->getheaderhistory();
+        $data['email_pop_ups'] = $modal->getemailhistory();
+        $data['aboutpages'] = $modal->getabouthistory();
+        $data['contactpages'] = $modal->getcontacthistory();
+        $data['cartpages'] = $modal->getcartpagehistory();
+        $data['checkoutpages'] = $modal->getcheckouthistory();
+        $data['trackingpages'] = $modal->gettrackinghistory();
+        $data['team_members'] = $modal->getour_teamhistory();
+        $data['error_pages'] = $modal->get404pagehistory();
         return view('online_store_history', $data);
     }
 
@@ -563,6 +581,7 @@ class Store extends BaseController
     public function edit_policy()
     {
         if ($this->request->isAJAX()) {
+            $session = session();
             $policyModel = new PolicyModel();
             $id = $this->request->getPost('policy_id');
 
@@ -572,18 +591,26 @@ class Store extends BaseController
                 return $this->response->setJSON(['success' => false, 'message' => 'Policy not found.']);
             }
 
+            // Retrieve user details
+            $userId = $session->get('user_id');
+            $userName = $session->get('admin_name') ?? $session->get('user_name'); // Get admin_name or fallback to user_name
+            $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
+
             // New data from request
             $newData = [
                 'policy_name' => $this->request->getPost('policy_name'),
                 'policy_description' => $this->request->getPost('policy_description'),
                 'policy_link' => $this->request->getPost('policy_link'),
-                'updated_by' => session()->get('user_id'), // Track who made the change
+                'updated_by' => $updatedBy,
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
 
-            // Track changes
+            // Track changes (excluding updated_by & updated_at)
             $changes = [];
             foreach ($newData as $key => $value) {
+                if (in_array($key, ['updated_by', 'updated_at'])) {
+                    continue; // Skip tracking these fields
+                }
                 if ($existingPolicy[$key] != $value) {
                     $changes[$key] = [
                         'old' => $existingPolicy[$key],
@@ -593,22 +620,30 @@ class Store extends BaseController
             }
 
             if (!empty($changes)) {
-                // Store changes in JSON format in change_log column
-                $newData['change_log'] = json_encode([
-                    'updated_by' => session()->get('user_id'),
+                // Fetch existing change log
+                $existingChangeLog = !empty($existingPolicy['change_log']) ? json_decode($existingPolicy['change_log'], true) : [];
+                if (!is_array($existingChangeLog)) {
+                    $existingChangeLog = [];
+                }
+
+                // Append new change entry
+                $newChange = [
+                    'updated_by' => $updatedBy,
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
-                ]);
+                ];
 
-                // Log changes (optional)
-                log_message('info', 'Policy ID: ' . $id . ' updated. Changes: ' . json_encode($changes));
+                $existingChangeLog[] = $newChange; // Append to logs
+
+                // Store updated change log
+                $newData['change_log'] = json_encode($existingChangeLog);
 
                 // Update policy
                 if ($policyModel->update($id, $newData)) {
                     return $this->response->setJSON([
                         'success' => true,
                         'message' => 'Policy updated successfully.',
-                        'changes' => $changes, // Send back changes if needed
+                        'changes' => $changes, // Send back only actual changes
                     ]);
                 } else {
                     return $this->response->setJSON(['success' => false, 'message' => 'Failed to update policy.']);
@@ -620,6 +655,7 @@ class Store extends BaseController
 
         return $this->response->setJSON(['success' => false, 'message' => 'Invalid request.']);
     }
+
 
 
     public function delete_policy($id)
@@ -682,22 +718,24 @@ class Store extends BaseController
         $footerModel = new Footer_model();
         $request = $this->request;
         $session = session();
-        $userId = strval($session->get('user_id')); // Store user ID as string for consistency
+        $userId = strval($session->get('user_id'));
+        $userName = $session->get('admin_name') ?? $session->get('user_name'); // Get admin_name or fallback to user_name
+        $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
 
         if ($request->isAJAX()) {
             // Fetch existing footer data
-            $existingFooter = $footerModel->find(1); // Assuming footer ID is 1
+            $existingFooter = $footerModel->find(1); // Footer ID = 1
             if (!$existingFooter) {
                 return $this->response->setJSON(['status' => 'error', 'message' => 'Footer data not found']);
             }
 
-            // Function to convert arrays to strings
+            // Function to format post values
             function formatPostValue($value)
             {
                 return is_array($value) ? implode(", ", $value) : trim($value);
             }
 
-            // Prepare new form data, converting arrays to strings
+            // Prepare new form data
             $newData = [
                 'footer_email' => formatPostValue($request->getPost('Footer_mail')),
                 'footer_hours' => formatPostValue($request->getPost('Footer_Hours')),
@@ -709,11 +747,9 @@ class Store extends BaseController
                 'footer_payment_link1' => formatPostValue($request->getPost('socialpayment_link1')),
                 'footer_payment_link2' => formatPostValue($request->getPost('socialpayment_link2')),
                 'footer_payment_link3' => formatPostValue($request->getPost('socialpayment_link3')),
-                'updated_by' => $userId,
-                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
-            // Detect changes and store only the updated fields
+            // Detect changes (excluding `updated_by` & `updated_at`)
             $changes = [];
             foreach ($newData as $key => $value) {
                 if ($existingFooter[$key] != $value) {
@@ -724,7 +760,6 @@ class Store extends BaseController
                 }
             }
 
-            // If no changes detected, return error response
             if (empty($changes)) {
                 return $this->response->setJSON([
                     'status' => 'error',
@@ -732,27 +767,27 @@ class Store extends BaseController
                 ]);
             }
 
-            // Retrieve existing change log and format correctly
+            // Retrieve existing change log
             $existingChangeLog = json_decode($existingFooter['change_log'] ?? '[]', true);
             if (!is_array($existingChangeLog)) {
                 $existingChangeLog = []; // Ensure it's an array
             }
 
-            // Add the new change log entry
+            // Append new change entry
             $newChangeLogEntry = [
-                'updated_by' => $userId,
+                'updated_by' => $updatedBy,
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
 
-            $existingChangeLog[] = $newChangeLogEntry; // Append to existing logs
+            $existingChangeLog[] = $newChangeLogEntry; // Append changes
 
-            // Save updated change log in correct format
+            // Store updated change log
             $newData['change_log'] = json_encode($existingChangeLog, JSON_UNESCAPED_SLASHES);
 
             log_message('info', 'Footer updated. Changes: ' . json_encode($changes));
 
-            // Update footer data in the model
+            // Update footer data
             if ($footerModel->update(1, $newData)) {
                 return $this->response->setJSON([
                     'status' => 'success',
@@ -775,6 +810,7 @@ class Store extends BaseController
 
 
 
+
     //<!----------------------------------------------------------------------------- About Page -------------------------------------------------------------------------------->
     public function update_about()
     {
@@ -783,14 +819,8 @@ class Store extends BaseController
 
             // Initialize session to get the logged-in user
             $session = \Config\Services::session();
-            $updatedBy = $session->get('user_id'); // Get user ID from session
 
-            if (!$updatedBy) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'User is not logged in'
-                ]);
-            }
+
 
             // Initialize Google Cloud Storage
             $storage = new \Google\Cloud\Storage\StorageClient([
@@ -818,8 +848,8 @@ class Store extends BaseController
                 'subscribe_btn' => $this->request->getPost('subscribe_btn'),
                 'blogs_title' => $this->request->getPost('blogs_title'),
                 'blogs' => $this->request->getPost('blogs'),
-                'updated_by' => $updatedBy, // Track who updated it
-                'updated_at' => date('Y-m-d H:i:s'),
+                'updated_by' =>  $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+
             ];
 
             // Handle background image
@@ -828,6 +858,9 @@ class Store extends BaseController
                 $fileName = 'about/' . uniqid() . '_' . $bgFile->getClientName();
                 $bucket->upload(fopen($bgFile->getTempName(), 'r'), ['name' => $fileName, 'predefinedAcl' => 'publicRead']);
                 $data['about_bg'] = "https://storage.googleapis.com/sportzsaga_imgs/$fileName";
+            } else {
+                // Keep existing image if no new image is uploaded
+                $data['about_bg'] = $existingData['about_bg'] ?? null;
             }
 
             // Handle icons
@@ -839,20 +872,24 @@ class Store extends BaseController
                     $bucket->upload(fopen($iconFile->getTempName(), 'r'), ['name' => $fileName, 'predefinedAcl' => 'publicRead']);
                     $iconsData[$i - 1]['icon'] = "https://storage.googleapis.com/sportzsaga_imgs/$fileName";
                 }
-                $data["icon{$i}"] = isset($iconsData[$i - 1]) ? json_encode($iconsData[$i - 1]) : null;
+                $data["icon{$i}"] = isset($iconsData[$i - 1]) ? json_encode($iconsData[$i - 1]) : ($existingData["icon{$i}"] ?? null);
             }
 
             // Handle info data
             $infoData = json_decode($this->request->getPost('info_data'), true) ?? [];
             foreach (['info_data1', 'info_data2', 'info_data3'] as $key) {
-                $data[$key] = isset($infoData[$key]) ? json_encode($infoData[$key]) : null;
+                $data[$key] = isset($infoData[$key]) ? json_encode($infoData[$key]) : ($existingData[$key] ?? null);
             }
 
-            // Track changes
+            // Track changes properly
             $changes = [];
             foreach ($data as $key => $value) {
-                if (isset($existingData[$key]) && trim(strval($existingData[$key])) !== trim(strval($value))) {
-                    $changes[$key] = ['old' => $existingData[$key], 'new' => $value];
+                $oldValue = isset($existingData[$key]) ? trim(strval($existingData[$key])) : null;
+                $newValue = isset($value) ? trim(strval($value)) : null;
+
+                // Skip unchanged values, also handle null cases properly
+                if ($oldValue !== $newValue) {
+                    $changes[$key] = ['old' => $oldValue ?? '', 'new' => $newValue ?? ''];
                 }
             }
 
@@ -860,12 +897,11 @@ class Store extends BaseController
             if (!empty($changes)) {
                 $oldChangeLog = json_decode($existingData['change_log'] ?? '[]', true) ?? [];
                 $oldChangeLog[] = [
-                    'updated_by' => $updatedBy,
+                    'updated_by' =>  $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
                 $data['change_log'] = json_encode($oldChangeLog);
-                log_message('info', 'Updated by User ID: ' . $updatedBy . ', Changes: ' . json_encode($changes));
             }
 
             // Call update function
@@ -886,6 +922,7 @@ class Store extends BaseController
         }
     }
 
+
     // Contact
     public function update_contact()
     {
@@ -900,14 +937,8 @@ class Store extends BaseController
             log_message('info', 'update_contact function triggered');
 
             $session = \Config\Services::session();
-            $updatedBy = $session->get('user_id');
 
-            if (!$updatedBy) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'User is not logged in'
-                ]);
-            }
+
 
             $db = \Config\Database::connect();
             $builder = $db->table('contactpage');
@@ -942,8 +973,7 @@ class Store extends BaseController
                 'contact_subscribe_subtitle' => $this->request->getPost('contact_subscribe_subtitle'),
                 'contact_subscribe_placeholder' => $this->request->getPost('contact_subscribe_placeholder'),
                 'contact_subscribe_btn' => $this->request->getPost('contact_subscribe_btn'),
-                'updated_by' => $updatedBy, // Track who updated it
-                'updated_at' => date('Y-m-d H:i:s')
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
             ];
 
             // Handle background image
@@ -977,12 +1007,11 @@ class Store extends BaseController
             // Append new changes to change log
             if (!empty($changes)) {
                 $oldChangeLog[] = [
-                    'updated_by' => $updatedBy,
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
                 $data['change_log'] = json_encode($oldChangeLog);
-                log_message('info', 'Contact page updated by User ID: ' . $updatedBy . '. Changes: ' . json_encode($changes));
             }
 
             // Update database
@@ -1069,7 +1098,7 @@ class Store extends BaseController
 
             // Retrieve user ID from session
             $session = session();
-            $userId = $session->get('user_id');
+
 
             // Log all incoming POST data
             log_message('info', 'Received POST Data: ' . json_encode($this->request->getPost()));
@@ -1091,7 +1120,7 @@ class Store extends BaseController
                 'note_info' => $this->request->getPost('note_info'),
                 'more_title' => $this->request->getPost('more_title'),
                 'cm_products' => $this->request->getPost('cm_products'),
-                'updated_at' => date('Y-m-d H:i:s'),
+
             ];
 
             // Handle background image
@@ -1132,9 +1161,9 @@ class Store extends BaseController
 
                     // Append only changed fields
                     $newChange = [
-                        'changes' => $changedFields,
-                        'updated_by' => $userId,
+                        'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                         'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => $changedFields,
                     ];
                     $existingChangeLog[] = $newChange;
 
@@ -1219,7 +1248,7 @@ class Store extends BaseController
 
                 // Append new changes to the change log
                 $existingChangeLog[] = [
-                    'updated_by' => $session->get('user_id'),
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -1334,7 +1363,7 @@ class Store extends BaseController
 
                 // Append new changes with separate array format
                 $existingChangeLog[] = [
-                    'updated_by' => $session->get('user_id'),
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -1643,6 +1672,8 @@ class Store extends BaseController
             if ($this->request->isAJAX()) {
                 $members_model = new MemberModel();
                 $id = $this->request->getPost('member_id');
+                $session = session();
+
 
                 // Fetch existing member data
                 $existingMember = $members_model->find($id);
@@ -1657,7 +1688,7 @@ class Store extends BaseController
                     'member_email' => $this->request->getPost('member_email'),
                     'member_linkedin' => $this->request->getPost('member_linkedin'),
                     'visibility' => $this->request->getPost('member_visibility'),
-                    'updated_at' => date('Y-m-d H:i:s'),
+
                 ];
 
                 // Track changes
@@ -1711,7 +1742,7 @@ class Store extends BaseController
                 // Append changes if there are any
                 if (!empty($changes)) {
                     $newChangeLogEntry = [
-                        'updated_by' => session()->get('user_id'),
+                        'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                         'timestamp' => date('Y-m-d H:i:s'),
                         'changes' => $changes
                     ];
@@ -2248,7 +2279,7 @@ class Store extends BaseController
         if ($this->request->isAJAX()) {
             $favBlog = $this->request->getPost('fav_blog'); // Comma-separated blog IDs
             $session = session();
-            $userId = $session->get('user_id'); // Get logged-in user ID
+
 
             if (empty($favBlog)) {
                 return $this->response->setJSON([
@@ -2287,7 +2318,7 @@ class Store extends BaseController
 
                     // Append new change entry
                     $newChangeEntry = [
-                        'updated_by' => $userId,
+                        'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                         'timestamp' => date('Y-m-d H:i:s'),
                         'changes' => $changes
                     ];
@@ -2298,7 +2329,7 @@ class Store extends BaseController
                     // Update the existing record with new change log
                     $homeBlogModel->update(1, [
                         'blog_id' => $favBlog,
-                        'updated_by' => $userId,
+                        'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                         'edited_at' => date('Y-m-d H:i:s'),
                         'change_log' => json_encode($existingChangeLog) // Store as an array of JSON objects
                     ]);
@@ -2307,7 +2338,7 @@ class Store extends BaseController
                     // First-time insert with an initial change log
                     $newChangeLog = [
                         [
-                            'updated_by' => $userId,
+                            'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                             'timestamp' => date('Y-m-d H:i:s'),
                             'changes' => ['blog_id' => ['old' => null, 'new' => $favBlog]]
                         ]
@@ -2316,7 +2347,7 @@ class Store extends BaseController
                     $homeBlogModel->insert([
                         'id' => 1,
                         'blog_id' => $favBlog,
-                        'updated_by' => $userId,
+                        'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                         'edited_at' => date('Y-m-d H:i:s'),
                         'change_log' => json_encode($newChangeLog) // Store as an array of JSON objects
                     ]);
@@ -2496,7 +2527,6 @@ class Store extends BaseController
         try {
             helper(['form', 'url']);
             $session = session(); // Get the session instance
-            $userId = $session->get('user_id'); // Retrieve user ID from session
 
             log_message('info', 'Received Data: ' . json_encode($this->request->getPost()));
 
@@ -2518,7 +2548,7 @@ class Store extends BaseController
                 'selected_product2' => $this->request->getPost('select_link2') === 'product' ? $this->request->getPost('selected_product2') : null,
                 'selected_collection2' => $this->request->getPost('select_link2') === 'collection' ? $this->request->getPost('selected_collection2') : null,
                 'updated_at' => date('Y-m-d H:i:s'),
-                'updated_by' => $userId, // Store the user ID who made the update
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')', // Store the user ID who made the update
             ];
 
             // Initialize Google Cloud Storage
@@ -2569,7 +2599,7 @@ class Store extends BaseController
 
                 // Append new change entry with only changed fields
                 $newChange = [
-                    'updated_by' => $userId,
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'changes' => $changedFields,
                     'timestamp' => date('Y-m-d H:i:s'),
                 ];
@@ -2587,14 +2617,6 @@ class Store extends BaseController
             return redirect()->to(base_url('online_store/edit'))->with('error', 'Failed to save data: ' . $e->getMessage());
         }
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -3198,18 +3220,6 @@ class Store extends BaseController
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     //<!-------------------------------------------------------------------------------------- Blog ---------------------------------------------------------------------------->
     public function saveBlogs()
     {
@@ -3284,7 +3294,7 @@ class Store extends BaseController
                     'content_type' => $content_type, // Ensure content type is updated
                     'blogs' => ($content_type === 'blogs') ? json_encode($this->request->getPost('blogs') ?? []) : json_encode([]),
                     'tags' => ($content_type === 'tags') ? json_encode($this->request->getPost('tags') ?? []) : json_encode([]),
-                    'updated_by' => session()->get('user_id'),
+                    'updated_by' => session('admin_name') . ' (' . session('user_id') . ')',
                     'updated_at' => date('Y-m-d H:i:s')
                 ];
 
@@ -3305,7 +3315,7 @@ class Store extends BaseController
                 // Append new changes to change log
                 if (!empty($changes)) {
                     $newChangeLogEntry = [
-                        'updated_by' => session()->get('user_id'),
+                        'updated_by' => session('admin_name') . ' (' . session('user_id') . ')',
                         'timestamp' => date('Y-m-d H:i:s'),
                         'changes' => $changes
                     ];
@@ -3437,11 +3447,203 @@ class Store extends BaseController
         // Fetch change log
         $updates = $carouselModel->getChangeLog($carousel_id);
 
-        if (empty($updates)) {
-            echo "No updates found!";
-            exit;
-        }
-
         return view('carousel2_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function logo_history($logo_id)
+    {
+        $logomodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $logomodel->getLogochange($logo_id);
+
+
+        return view('home_logo_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function image_history($image_id)
+    {
+        $imagemodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $imagemodel->getimagechange($image_id);
+
+        return view('home_image_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function home_blog_history($home_blog_id)
+    {
+        $blogmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $blogmodel->gethome_blogchange($home_blog_id);
+
+        return view('home_blog_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function blog1_history($blog1_id)
+    {
+        $blog1model = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $blog1model->getblog1change($blog1_id);
+
+        return view('blog1_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function blog2_history($blog2_id)
+    {
+        $blog2model = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $blog2model->getblog2change($blog2_id);
+
+        return view('blog2_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function singleblog_history($singleblog_id)
+    {
+        $singleblogmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $singleblogmodel->getsingleblogchange($singleblog_id);
+
+        return view('single_blog_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function collection_history($collection_id)
+    {
+        $collectionmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $collectionmodel->getcollectionchange($collection_id);
+
+        return view('os_collection_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function product_history($product_id)
+    {
+        $productmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $productmodel->getproductchange($product_id);
+
+        return view('os_product_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function policies_history($policies_id)
+    {
+        $policiesmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $policiesmodel->getpolicieschange($policies_id);
+
+        return view('os_policies_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function Footer_history($Footer_id)
+    {
+        $Footermodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $Footermodel->getfooterchange($Footer_id);
+
+        return view('os_Footer_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function Header_history($Header_id)
+    {
+        $Headermodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $Headermodel->getheaderchange($Header_id);
+
+        return view('os_Header_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function email_pop_up_history($email_id)
+    {
+        $emailmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $emailmodel->getemailchange($email_id);
+
+        return view('os_email_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function about_history($about_id)
+    {
+        $aboutmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $aboutmodel->getaboutchange($about_id);
+
+        return view('os_about_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function contact_history($contact_id)
+    {
+        $contactmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $contactmodel->getcontactchange($contact_id);
+
+        return view('os_contact_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function cart_history($cart_id)
+    {
+        $cartmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $cartmodel->getcartpagechange($cart_id);
+
+        return view('os_cart_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function checkout_history($checkout_id)
+    {
+        $checkoutmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $checkoutmodel->getcheckoutchange($checkout_id);
+
+        return view('os_checkout_change_logs_view', ['updates' => $updates]);
+    }
+
+
+    public function tracking_history($tracking_id)
+    {
+        $trackingmodel = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $trackingmodel->gettrackingchange($tracking_id);
+
+        return view('os_tracking_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function errorpage_history($error_id)
+    {
+        $model = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $model->get404pagechange($error_id);
+
+        return view('os_404_change_logs_view', ['updates' => $updates]);
+    }
+
+    public function team_history($team_id)
+    {
+        $model = new \App\Models\onlinestoremodal();
+
+        // Fetch change log
+        $updates = $model->getour_teamchange($team_id);
+
+        return view('os_our_team_change_logs_view', ['updates' => $updates]);
     }
 }
