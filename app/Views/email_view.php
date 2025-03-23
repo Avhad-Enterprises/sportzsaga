@@ -161,7 +161,7 @@
                                                 <div class="message-content">
                                                     <?php if ($message['message_type'] === 'internal_note'): ?>
                                                         <div class="internal-note">
-                                                            <?= nl2br($message['full_message']) ?>
+                                                            <?= ($message['full_message']) ?>
                                                         </div>
                                                     <?php else: ?>
                                                         <div class="email-body">

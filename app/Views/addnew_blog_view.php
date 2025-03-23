@@ -311,17 +311,13 @@
                                 <div class="form-group">
                                     <label>Add Tags</label>
                                     <div class="input-group">
-                                        <?php if (!empty($tags)): ?>
-                                            <select class="custom-select2 custom-select-tags form-control" name="blog-tags[]" multiple="multiple" style="width: 80%">
-                                                <optgroup label="Available Tags">
-                                                    <?php foreach ($tags as $tag): ?>
-                                                        <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
-                                                    <?php endforeach; ?>
-                                                </optgroup>
-                                            </select>
-                                        <?php else: ?>
-                                            <p class="text-danger">No tags available</p>
-                                        <?php endif; ?>
+                                        <select class="custom-select2 custom-select-tags form-control" name="blog-tags[]" multiple="multiple" style="width: 80%">
+                                            <optgroup label="Available Tags">
+                                                <?php foreach ($tags as $tag): ?>
+                                                    <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
+                                                <?php endforeach; ?>
+                                            </optgroup>
+                                        </select>
                                     </div>
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectModal">
