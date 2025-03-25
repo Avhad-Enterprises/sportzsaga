@@ -231,7 +231,7 @@ class Ordermanagement extends BaseController
 
 
 
-        $customer = $userModel->find($customer_id);
+        $customer = $userModel->where('user_id', $customer_id)->first();
         if (!$customer) {
             session()->setFlashdata('error', 'Customer not found.');
             return redirect()->back()->withInput();
@@ -2760,4 +2760,7 @@ class Ordermanagement extends BaseController
             'updated_shipments' => $updatedShipments
         ]);
     }
+
+
+    
 }

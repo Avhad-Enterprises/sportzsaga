@@ -160,11 +160,13 @@
                             <div class="pd-20 card-box mb-30">
                                 <div class="row d-flex p-3 justify-content-between">
                                     <p class="text-blue mb-30">Product's Info</p>
-                                    
+
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="internationalOrder" name="is_international_order">
-                                            <label class="custom-control-label" for="internationalOrder"><strong>International Order</strong></label>
+                                            <input type="checkbox" class="custom-control-input" id="internationalOrder"
+                                                name="is_international_order">
+                                            <label class="custom-control-label"
+                                                for="internationalOrder"><strong>International Order</strong></label>
                                         </div>
                                     </div>
                                 </div>
@@ -211,8 +213,7 @@
                                                 </div>
                                                 <div class="form-group" id="modalProductList">
                                                     <?php foreach ($products as $index => $product): ?>
-                                                        <div class="custom-control custom-checkbox product-item"
-                                                            style="<?= $index >= 5 ? 'display:none;' : '' ?>">
+                                                        <div class="custom-control custom-checkbox product-item">
                                                             <input type="checkbox"
                                                                 class="custom-control-input modal-product-checkbox"
                                                                 id="modalProduct<?= $product['product_id'] ?>"
@@ -375,13 +376,16 @@
                                 </div>
 
                                 <!-- Shipment Modal -->
-                                
-                                <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog" aria-labelledby="shipmentModalLabel" aria-hidden="true">
+
+                                <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="shipmentModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">×</span>
                                                 </button>
                                             </div>
@@ -390,11 +394,10 @@
                                                 <select id="deliveryPartnerSelect" class="form-control">
                                                     <option value="">-- Select a Delivery Partner --</option>
                                                     <?php foreach ($delivery_partner as $partner): ?>
-                                                        <option 
-                                                            value="<?= $partner['cost'] ?>" 
-                                                            data-pincode="<?= $partner['area_pincode'] ?>" 
-                                                            data-pickup="<?= $partner['pickup'] ?>" 
-                                                            data-delivery="<?= $partner['delivery'] ?>" 
+                                                        <option value="<?= $partner['cost'] ?>"
+                                                            data-pincode="<?= $partner['area_pincode'] ?>"
+                                                            data-pickup="<?= $partner['pickup'] ?>"
+                                                            data-delivery="<?= $partner['delivery'] ?>"
                                                             data-cod="<?= $partner['cod'] ?>">
                                                             <?= $partner['delivery_partner'] ?> - ₹<?= $partner['cost'] ?>
                                                         </option>
@@ -407,16 +410,20 @@
                                                     </div>
                                                     <div class="col">
                                                         <label for="gstCharges">GST value (₹):</label>
-                                                        <input type="number" readonly id="gstCharges" class="form-control" value="0">
+                                                        <input type="number" readonly id="gstCharges"
+                                                            class="form-control" value="0">
                                                     </div>
                                                 </div>
 
                                                 <label for="shipmentChargesModal">Final Shipment Charges (₹):</label>
-                                                <input type="number" id="shipmentChargesModal" class="form-control" min="0" step="0.01" value="0">
+                                                <input type="number" id="shipmentChargesModal" class="form-control"
+                                                    min="0" step="0.01" value="0">
                                             </div>
                                             <div class="modal-footer d-flex justify-content-end">
-                                                <button type="button" class="btn btn-secondary me-2" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary" id="applyShipmentCharges">Apply Charges</button>
+                                                <button type="button" class="btn btn-secondary me-2"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    id="applyShipmentCharges">Apply Charges</button>
                                             </div>
                                         </div>
                                     </div>
@@ -439,15 +446,15 @@
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">CGST (6%)</th>
-                                            <td id="cgstDisplay"  class="text-right">₹0.00</td>
+                                            <td id="cgstDisplay" class="text-right">₹0.00</td>
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">SGST (6%)</th>
-                                            <td id="sgstDisplay"   class="text-right">₹0.00</td>
+                                            <td id="sgstDisplay" class="text-right">₹0.00</td>
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">IGST (12%)</th>
-                                            <td id="igstDisplay"   class="text-right">₹0.00</td>
+                                            <td id="igstDisplay" class="text-right">₹0.00</td>
                                         </tr>
 
                                         <tr>
@@ -484,12 +491,14 @@
                                             <label for="paymentMethodSelect">Select Payment Mode</label>
                                             <div class="input-group">
                                                 <select class="form-control rounded" name="payment-method"
-                                                    style="width: 100%; height: 50px;" id="paymentMethodSelect" >
+                                                    style="width: 100%; height: 50px;" id="paymentMethodSelect">
                                                     <option value="cash">Cash</option>
                                                     <option value="link">Gateway</option>
                                                     <option value="bank">Net Banking / UPI</option>
                                                 </select>
-                                                <input class="form-control" style="width: 100%; height: 50px; display:none" placeholder="Ref No" type="text" id="ref_no" name="ref_no">
+                                                <input class="form-control"
+                                                    style="width: 100%; height: 50px; display:none" placeholder="Ref No"
+                                                    type="text" id="ref_no" name="ref_no">
                                             </div>
                                         </div>
                                     </div>
@@ -554,24 +563,26 @@
                                     <input class="form-control" type="number" name="pincode" id="orderCustomerPincode">
 
                                     <label for="customer-city">City</label>
-                                    <input class="form-control" type="text" name="order-city" id="orderCustomerCity" >
+                                    <input class="form-control" type="text" name="order-city" id="orderCustomerCity">
 
                                     <label for="customer-state">State</label>
-                                    <input class="form-control" type="text" name="order-state" id="orderCustomerState" >
-                                    
+                                    <input class="form-control" type="text" name="order-state" id="orderCustomerState">
+
                                     <div style="display: none;" id="international-country">
                                         <label for="country">Country</label>
-                                        <input class="form-control" type="text" name="country" id="orderCustomerCountry" >
+                                        <input class="form-control" type="text" name="country"
+                                            id="orderCustomerCountry">
                                     </div>
 
                                     <label for="address_information">Address</label>
                                     <textarea class="form-control" name="address_information"
                                         id="orderCustomerAddress"></textarea>
 
-                                        
+
                                     <label for="order-customergstin">GSTIN</label>
-                                    <input type="text" class="form-control" id="orderCustomergstin" name="order-customergstin" >
-                            
+                                    <input type="text" class="form-control" id="orderCustomergstin"
+                                        name="order-customergstin">
+
                                 </div>
 
 
@@ -620,7 +631,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="customergstin">GSTIN</label>
-                                <input type="text" class="form-control" id="customergstin" name="customergstin" >
+                                <input type="text" class="form-control" id="customergstin" name="customergstin">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -636,7 +647,8 @@
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
         <!-- Razorpay Modal -->
-        <div class="modal fade" id="razorpayModal" tabindex="-1" role="dialog" aria-labelledby="razorpayModalLabel" aria-hidden="true">
+        <div class="modal fade" id="razorpayModal" tabindex="-1" role="dialog" aria-labelledby="razorpayModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -696,31 +708,26 @@
         let totalDiscountApplied = false; // Flag to track if total discount is applied
         let shipmentCharges = 0; // Variable for shipment charges
         let discountAppliedAt = null;
-        
+
         // Add this JavaScript code
-        document.getElementById('newcollectionsview').addEventListener('submit', function(e) {
+        document.getElementById('newcollectionsview').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Check if any products are selected
             const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
-            const customer  = document.querySelectorAll('input[name="order-customer-name"]');
-            
+            const customer = document.querySelectorAll('input[name="order-customer-name"]');
+
             if (selectedProducts.length === 0) {
                 alert('Please select at least one product before publishing the order.');
                 return false;
             }
-            if (customer.length === 0) {
-                alert('Please select customer before publishing the order.');
-                return false;
-            }
-            
             // If products are selected, proceed with form submission
             this.submit();
         });
 
         const draftFormBtn = document.getElementById('draftFormBtn');
         const draftForm = document.getElementById('newcollectionsview');
-        
+
         $('#draftFormBtn').on('click', function (e) {
             e.preventDefault();
 
@@ -733,35 +740,31 @@
                     'X-Requested-With': 'XMLHttpRequest'  // Mark as AJAX request
                 }
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    alert(data.message || 'Draft saved successfully.');
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
-                } else {
-                    alert(data.message || 'Failed to save draft order.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while saving the draft.');
-            });
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(data.message || 'Draft saved successfully.');
+                        if (data.redirect) {
+                            window.location.href = data.redirect;
+                        }
+                    } else {
+                        alert(data.message || 'Failed to save draft order.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while saving the draft.');
+                });
         });
 
 
-
-
-        // Update ref_no visibility based on payment method
         paymentMethodSelect.addEventListener("change", function () {
             if (paymentMethodSelect.value === "link") {
-                //openRazorpayCheckout();
                 refNoInput.style.display = "none";
                 refNoInput.required = false;
                 refNoInput.value = "";
@@ -774,6 +777,7 @@
                 refNoInput.required = true;
             }
         });
+
 
         // Initialize on page load
         if (paymentMethodSelect.value !== "cash") {
@@ -792,11 +796,11 @@
                 newRow.innerHTML = `
                     <td>#</td>
                     <td>Partial COD</td>
-                    <td>${( isInternational ? `₹1300 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300')}</td>
+                    <td>${(isInternational ? `₹1300 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300')}</td>
                     <td>₹0</td>
                     <td>1</td>
-                    <td><span style="text-decoration: line-through; color: red;"> ${( isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
-                    <td><span style="font-weight: bold; color: green;"> ${( isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
+                    <td><span style="text-decoration: line-through; color: red;"> ${(isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
+                    <td><span style="font-weight: bold; color: green;"> ${(isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
                     <td>
                         <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="partial_cod">Remove</button>
                     </td>
@@ -857,7 +861,7 @@
             finalTotalPriceInput.value = totalDiscountedPrice.toFixed(2);
             totalPriceEl.innerHTML = `
                 <span style="text-decoration: line-through; color: red; margin-right: 10px;">₹${(totalDiscountedPrice + (discountAppliedAt === 'invoice' ? totalDiscount : productLevelDiscount)).toFixed(2)}</span>
-                <span style="font-weight: bold; color: green;">₹${totalDiscountedPrice.toFixed(2)}  ${( isInternational ? `  /   $${(totalDiscountedPrice * USD_EXCHANGE_RATE).toFixed(2)}` : '')}</span>
+                <span style="font-weight: bold; color: green;">₹${totalDiscountedPrice.toFixed(2)}  ${(isInternational ? `  /   $${(totalDiscountedPrice * USD_EXCHANGE_RATE).toFixed(2)}` : '')}</span>
             `;
 
             // Update discount information in the footer
@@ -892,7 +896,7 @@
                     document.getElementById('igst').value = 0;
                 }
             }
-            else{
+            else {
                 if (CustomerState.value === 'Maharashtra') {
                     cgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
                     sgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
@@ -958,7 +962,7 @@
             const isInternational = internationalCheckbox.checked;
             Internationalcurrency.style.display = isInternational ? '' : 'none';
             Internationalcountry.style.display = isInternational ? '' : 'none';
-            
+
             selectedProducts.forEach(product => {
                 let productPrice = product.price;
                 if (isInternational) {
@@ -972,17 +976,17 @@
                 totalDiscountedPrice += subtotal;
 
                 discountOnProduct += productDiscount * productQuantity;
-                
+
 
                 const productRow = document.createElement('tr');
                 productRow.innerHTML = `
                     <td>${product.id}</td>
                     <td>${product.name}</td>
-                    <td>₹${productPrice} ${( isInternational ? ` / $${(productPrice * USD_EXCHANGE_RATE)}` : '')}</td>
-                    <td>₹${productDiscount} ${( isInternational ? ` / $${(productDiscount * USD_EXCHANGE_RATE)}` : '')}</td>
+                    <td>₹${productPrice} ${(isInternational ? ` / $${(productPrice * USD_EXCHANGE_RATE)}` : '')}</td>
+                    <td>₹${productDiscount} ${(isInternational ? ` / $${(productDiscount * USD_EXCHANGE_RATE)}` : '')}</td>
                     <td>${productQuantity}</td>
-                    <td><span style="text-decoration: line-through; color: red;">&#8377;${(productPrice * productQuantity).toFixed(2)} ${( isInternational ? ` / $${(productPrice * productQuantity * USD_EXCHANGE_RATE)}` : '')}</span></td>
-                    <td><span style="font-weight: bold; color: green;">&#8377;${subtotal.toFixed(2)} ${( isInternational ? ` / $${(subtotal * USD_EXCHANGE_RATE)}` : '')}</span></td>
+                    <td><span style="text-decoration: line-through; color: red;">&#8377;${(productPrice * productQuantity).toFixed(2)} ${(isInternational ? ` / $${(productPrice * productQuantity * USD_EXCHANGE_RATE)}` : '')}</span></td>
+                    <td><span style="font-weight: bold; color: green;">&#8377;${subtotal.toFixed(2)} ${(isInternational ? ` / $${(subtotal * USD_EXCHANGE_RATE)}` : '')}</span></td>
                     <td>
                         <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="${product.id}">Remove</button>
                     </td>
@@ -990,7 +994,7 @@
                 productTableBody.appendChild(productRow);
             });
 
-            
+
 
             const gstAmount = calculateGST(totalDiscountedPrice);
             const Total = totalDiscountedPrice + discountOnProduct + totalDiscount + shipmentCharges;
@@ -1023,8 +1027,8 @@
             //document.getElementById('finalTotalPrice').value = totalDiscountedPrice.toFixed(2);
             document.getElementById('finalShipmentCharges').value = shipmentCharges.toFixed(2);
             document.getElementById('finalTotalDiscount').value = totalDiscount.toFixed(2);
-            if(Total != finalTotal){
-                document.getElementById('saved').innerHTML = `You saved <span style="font-weight: bold; color: green;">${( isInternational ? `$${((Total - finalTotal) * USD_EXCHANGE_RATE).toFixed(2)}` : `₹${(Total - finalTotal).toFixed(2)}`)} </span>`;
+            if (Total != finalTotal) {
+                document.getElementById('saved').innerHTML = `You saved <span style="font-weight: bold; color: green;">${(isInternational ? `$${((Total - finalTotal) * USD_EXCHANGE_RATE).toFixed(2)}` : `₹${(Total - finalTotal).toFixed(2)}`)} </span>`;
             }
         }
 
@@ -1053,7 +1057,7 @@
                 totalDiscount = parseFloat(discountAmountInput.value) || 0;
                 discountAppliedAt = 'invoice';
                 selectedProducts.forEach(product => (product.discount = 0)); // Reset product-level discounts
-               
+
             } else if (type === 'product') {
                 totalDiscount = 0; // Reset invoice-level discount
                 discountAppliedAt = 'product';
@@ -1152,16 +1156,16 @@
         function calculateAndUpdateGST() {
             const baseAmount = parseFloat($('#deliveryPartnerSelect').val()) || 0;
             const gstPercentage = parseFloat($('#gst').val()) || 18;
-            
+
             // Calculate GST amount
             const gstAmount = (baseAmount * gstPercentage) / 100;
-            
+
             // Calculate final amount including GST
             const finalAmount = baseAmount + gstAmount;
-            
+
             // Update the GST charges input
             $('#gstCharges').val(gstAmount.toFixed(2));
-            
+
             // Update the final shipment charges
             $('#shipmentChargesModal').val(finalAmount.toFixed(2));
         }
@@ -1173,7 +1177,7 @@
             const pickup = ($(selectedOption.element).data('pickup') || '').toLowerCase();
             const delivery = ($(selectedOption.element).data('delivery') || '').toLowerCase();
             const cod = ($(selectedOption.element).data('cod') || '').toLowerCase();
-            
+
             $('#shipmentChargesModal').val(selectedCost);
             calculateAndUpdateGST();
             /*
@@ -1194,7 +1198,7 @@
         });
 
         // Event Listener for GST percentage changes
-        $('#gst').on('input', function() {
+        $('#gst').on('input', function () {
             calculateAndUpdateGST();
         });
 
@@ -1293,7 +1297,7 @@
                 if (pincode.length === 6) {
                     fetchCityStateByPincode(pincode);
                 } else {
-                    
+
                 }
             });
 
@@ -1309,13 +1313,13 @@
                             updateProductTable(); // Recalculate total after removing a product
                             syncCheckboxes();
                         } else {
-                            
+
                             alert('City and State not found for the given Pincode.');
                         }
                     },
                     error: function () {
                         console.error('Error fetching city and state for the pincode.');
-                        
+
                     }
                 });
             }
