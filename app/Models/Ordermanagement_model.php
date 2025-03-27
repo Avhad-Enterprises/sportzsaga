@@ -55,7 +55,8 @@ class Ordermanagement_model extends Model
         'igst',
         'customer_gstin',
         'shipping_amount',
-        'is_draft'
+        'is_draft',
+        'address_information'
     ];
 
     public function getorders()
