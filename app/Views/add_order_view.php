@@ -143,6 +143,8 @@
                     <input type="hidden" id="cgst" name="cgst" value="0" />
                     <input type="hidden" id="sgst" name="sgst" value="0" />
                     <input type="hidden" id="igst" name="igst" value="0" />
+                    <input type="hidden" id="finalTotalPrice" name="final_total" value="1250">
+
 
 
                     <div class="mb-3 d-flex justify-content-end">
@@ -695,7 +697,7 @@
         const partialCodAmount = 300; // Fixed Partial COD amount
         const paymentMethodSelect = document.getElementById("paymentMethodSelect");
         const refNoInput = document.getElementById("ref_no");
-        const razorpayModal = new bootstrap.Modal(document.getElementById('razorpayModal'));
+
         const INTERNATIONAL_SHIPPING_SURCHARGE = 1000; // ₹1000 per product
         const USD_EXCHANGE_RATE = 0.012; // Example rate: 1 INR = 0.012 USD
         const internationalCheckbox = document.getElementById('internationalOrder');
@@ -709,73 +711,96 @@
         let shipmentCharges = 0; // Variable for shipment charges
         let discountAppliedAt = null;
 
-        // Add this JavaScript code
-        document.getElementById('newcollectionsview').addEventListener('submit', function (e) {
-            e.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newcollectionsview');
+            const paymentMethodSelect = document.getElementById('paymentMethodSelect');
+            const razorpayModal = new bootstrap.Modal(document.getElementById('razorpayModal'), {
+                backdrop: 'static',
+                keyboard: false
+            });
 
-            // Check if any products are selected
-            const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
-            const customer = document.querySelectorAll('input[name="order-customer-name"]');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            if (selectedProducts.length === 0) {
-                alert('Please select at least one product before publishing the order.');
-                return false;
-            }
-            // If products are selected, proceed with form submission
-            this.submit();
-        });
+                const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
+                const customer = document.querySelector('[name="order-customer-name"]').value;
 
-        const draftFormBtn = document.getElementById('draftFormBtn');
-        const draftForm = document.getElementById('newcollectionsview');
-
-        $('#draftFormBtn').on('click', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(document.getElementById('newcollectionsview'));
-
-            fetch('<?= base_url(); ?>ordermanagement/savedraftorder', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'  // Mark as AJAX request
+                if (!customer) {
+                    alert('Please select a customer.');
+                    return false;
                 }
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.status === 'success') {
-                        alert(data.message || 'Draft saved successfully.');
-                        if (data.redirect) {
-                            window.location.href = data.redirect;
-                        }
-                    } else {
-                        alert(data.message || 'Failed to save draft order.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An error occurred while saving the draft.');
-                });
-        });
 
+                if (selectedProducts.length === 0) {
+                    alert('Please select at least one product.');
+                    return false;
+                }
 
-        paymentMethodSelect.addEventListener("change", function () {
-            if (paymentMethodSelect.value === "link") {
-                refNoInput.style.display = "none";
-                refNoInput.required = false;
-                refNoInput.value = "";
-            } else if (paymentMethodSelect.value === "cash") {
-                refNoInput.style.display = "none";
-                refNoInput.required = false;
-                refNoInput.value = "";
-            } else {
-                refNoInput.style.display = "block";
-                refNoInput.required = true;
-            }
+                const paymentMethod = paymentMethodSelect.value;
+                if (paymentMethod === 'link') {
+                    // Show modal (optional UI)
+                    razorpayModal.show();
+
+                    // Create order via backend to get Razorpay Order ID
+                    const formData = new FormData(form);
+                    fetch('<?= base_url('ordermanagement/publishorder') ?>', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                // Proceed with Razorpay Payment
+                                const razorpayOptions = {
+                                    key: "<?= 'rzp_test_HNDDo4TA783qRj' ?>",
+                                    amount: data.amount, // Amount in paisa
+                                    currency: "INR",
+                                    name: "Order Payment",
+                                    description: "Payment for Order #" + data.order_id,
+                                    order_id: data.razorpay_order_id,
+                                    handler: function (response) {
+                                        // Add Razorpay response to form before submitting
+                                        const rzpFields = {
+                                            rzp_payment_id: response.razorpay_payment_id,
+                                            rzp_order_id: response.razorpay_order_id,
+                                            rzp_signature: response.razorpay_signature
+                                        };
+                                        for (const key in rzpFields) {
+                                            const input = document.createElement('input');
+                                            input.type = 'hidden';
+                                            input.name = key;
+                                            input.value = rzpFields[key];
+                                            form.appendChild(input);
+                                        }
+
+                                        razorpayModal.hide();
+                                        form.submit();
+                                    },
+                                    prefill: {
+                                        name: document.getElementById('orderCustomerPhone').value || "Customer",
+                                        email: document.getElementById('orderCustomerEmail').value || "email@example.com",
+                                        contact: document.getElementById('orderCustomerPhone').value || "9999999999"
+                                    },
+                                    theme: {
+                                        color: "#3399cc"
+                                    }
+                                };
+                                const rzp = new Razorpay(razorpayOptions);
+                                rzp.open();
+                            } else {
+                                razorpayModal.hide();
+                                alert('Failed to initialize Razorpay payment. Please try again.');
+                            }
+                        })
+                        .catch(err => {
+                            razorpayModal.hide();
+                            alert('Something went wrong: ' + err.message);
+                        });
+
+                } else {
+                    // For other payment methods, proceed with normal submit
+                    form.submit();
+                }
+            });
         });
 
 
@@ -1310,7 +1335,7 @@
                         if (data.city && data.state) {
                             $('#orderCustomerCity').val(data.city);
                             $('#orderCustomerState').val(data.state);
-                            updateProductTable(); // Recalculate total after removing a product
+                            updateProductTable();
                             syncCheckboxes();
                         } else {
 
@@ -1339,7 +1364,7 @@
         // Apply total discount for custom option
         applyDiscountBtn.addEventListener('click', () => {
             const discountCode = discountCodeInput.value.trim();
-            const discountType = discountOptionSelect.value; // 'auto' or 'custom'
+            const discountType = discountOptionSelect.value;
             if (discountType === 'auto' || discountType === 'custom') {
                 applyDiscount('invoice');
             }
@@ -1382,11 +1407,11 @@
                                 totalDiscount = discountValue;
                             }
 
-                            totalDiscountApplied = true; // Mark that the total discount has been applied
+                            totalDiscountApplied = true;
                             alert(`Custom discount applied: ₹${totalDiscount}`);
-                            updateProductTable(); // Recalculate total price with the discount applied
+                            updateProductTable();
                         } else {
-                            alert(data.message); // Show error message if discount code is invalid
+                            alert(data.message);
                         }
                     })
                     .catch(error => {
@@ -1415,21 +1440,20 @@
                     totalDiscount = discountValue;
                 }
 
-                totalDiscountApplied = true; // Mark that the discount is applied
+                totalDiscountApplied = true;
                 alert(`Automatic discount applied: ₹${totalDiscount}`);
-                updateProductTable(); // Recalculate total price with the discount applied
+                updateProductTable();
             }
         });
 
-        // Initial setup: call toggleDiscountFields when the page loads to ensure correct initial state
         toggleDiscountFields();
-        syncCheckboxes(); // Ensure checkboxes are in sync on page load
+        syncCheckboxes();
     });
 </script>
 
 <script>
     $(document).ready(function () {
-        let duplicateCount = 1; // Counter for duplicate forms
+        let duplicateCount = 1;
 
         // Detect if the page is refreshed
         const isPageReloaded = (performance.navigation.type === 1);
@@ -1457,8 +1481,8 @@
             var totalPrice = $('#totalPrice').text();
 
             // Store form data and summary data
-            sessionStorage.setItem('originalFormData', JSON.stringify(formData)); // Original form backup
-            sessionStorage.setItem('originalTableData', tableData); // Original table backup
+            sessionStorage.setItem('originalFormData', JSON.stringify(formData));
+            sessionStorage.setItem('originalTableData', tableData);
             sessionStorage.setItem('originalDiscountOnProduct', discountOnProduct);
             sessionStorage.setItem('originalTotalDiscountApplied', totalDiscountApplied);
             sessionStorage.setItem('originalShipmentCharges', shipmentCharges);
@@ -1471,19 +1495,19 @@
             sessionStorage.setItem('duplicatedTotalDiscountApplied', totalDiscountApplied);
             sessionStorage.setItem('duplicatedShipmentCharges', shipmentCharges);
             sessionStorage.setItem('duplicatedTotalPrice', totalPrice);
-            sessionStorage.setItem('duplicateCount', duplicateCount + 1); // Increment counter
+            sessionStorage.setItem('duplicateCount', duplicateCount + 1);
 
             // Redirect to the same route
-            window.location.href = window.location.href + "?duplicate=" + duplicateCount; // Pass duplicate count in query
+            window.location.href = window.location.href + "?duplicate=" + duplicateCount;
         });
 
         // On page load, check if original or duplicated data is present
         if (duplicateNumber) {
             // Load duplicated form
-            duplicateCount = parseInt(duplicateNumber); // Update duplicate count
+            duplicateCount = parseInt(duplicateNumber);
             loadFormData('duplicated');
-            addDuplicateTitle(duplicateNumber); // Add duplicate title
-            addBackToFirstFormButton(); // Add a "Back to First Form" button
+            addDuplicateTitle(duplicateNumber);
+            addBackToFirstFormButton();
         } else if (sessionStorage.getItem('originalFormData')) {
             // Load original form data (if returning from a duplicate)
             loadFormData('original');
@@ -1560,7 +1584,7 @@
             }
         });
     });
-
+    
 </script>
 
 <style>
@@ -1679,6 +1703,69 @@
             }
         });
     });
+</script>
+
+
+<!--------------------------------------------------------------------------------- For Net Banking ---------------------------------------------------------------------------------------------->
+
+<script>
+    document.getElementById('newcollectionsview').addEventListener('submit', function (e) {
+        e.preventDefault(); // Stop form from submitting by default
+
+        const paymentMethod = document.getElementById('paymentMethodSelect').value;
+
+        if (paymentMethod === 'bank') {
+            const amount = parseFloat(document.getElementById('finalTotalPrice').value || 0) * 100; // in paisa
+
+            const razorpayOptions = {
+                key: "rzp_test_HNDDo4TA783qRj", // Your Razorpay test/live key
+                amount: amount.toFixed(0),
+                currency: "INR",
+                name: "Spotzsaaga Enterprises",
+                description: "Order Payment",
+                image: "https://storage.googleapis.com/mkv_imagesbackend/blogs/main_images/sagalogo.png",
+                handler: function (response) {
+                    // Add Razorpay fields to the form
+                    const form = document.getElementById('newcollectionsview');
+                    const fields = {
+                        rzp_payment_id: response.razorpay_payment_id,
+                        rzp_order_id: response.razorpay_order_id || '',
+                        rzp_signature: response.razorpay_signature || ''
+                    };
+                    for (const key in fields) {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = key;
+                        input.value = fields[key];
+                        form.appendChild(input);
+                    }
+
+                    // Submit the form after payment success
+                    form.submit();
+                },
+                prefill: {
+                    name: document.getElementById('orderCustomerPhone').value || "Customer",
+                    email: document.getElementById('orderCustomerEmail').value || "test@example.com",
+                    contact: document.getElementById('orderCustomerPhone').value || "9999999999"
+                },
+                theme: {
+                    color: "#3399cc"
+                },
+                modal: {
+                    ondismiss: function () {
+                        alert("Payment cancelled.");
+                    }
+                }
+            };
+
+            const rzp = new Razorpay(razorpayOptions);
+            rzp.open();
+        } else {
+            // If not bank payment, allow normal form submission
+            this.submit();
+        }
+    });
+
 </script>
 
 

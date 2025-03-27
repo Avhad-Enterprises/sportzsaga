@@ -134,7 +134,7 @@
             </div>
             
             <?php if($order_data['payment_method'] === "link"): ?>
-                <p>Here is Payment Link : <?= "https://avhadenterprises.com/admin/sportzsaga/ordermanagement/checkout/".$order_data['order_id']?></p>
+                <p>Here is Payment Link : <?= "http://localhost/sportzsaga/ordermanagement/checkout/".$order_data['order_id']?></p>
             <?php endif; ?>
 
             <p>Your order is now being processed, and we’ll update you as it moves through each stage. Have questions? Just hit reply or contact us at <a href="mailto:sportsaaga@gmail.com">sportsaaga@gmail.com</a>.</p>

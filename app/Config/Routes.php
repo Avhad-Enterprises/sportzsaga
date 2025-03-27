@@ -405,6 +405,7 @@ $routes->get('getCityStateByPincode/(:num)', 'Ordermanagement::getCityStateByPin
 $routes->post('orders/import', 'Ordermanagement::import');
 $routes->get('orders/export', 'Ordermanagement::export');
 $routes->post('ordermanagement/create_razorpay_order', 'Ordermanagement::createRazorpayOrder');
+$routes->post('discount/applyDiscount', 'Ordermanagement::applyDiscount');
 
 
 // Bluedart Management
