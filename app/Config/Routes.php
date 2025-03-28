@@ -326,6 +326,7 @@ $routes->get('vendors', 'brands::vendors');
 
 // Products Controller
 $routes->get('admin-products', 'Products');
+
 $routes->get('admin-products/deleteproduct/(:num)', 'Products::deleteproduct/$1');
 $routes->get('admin-products/editproduct/(:num)', 'Products::editproduct/$1');
 $routes->get('admin-products/admin-products_logs/(:num)', 'Products::product_logs/$1');
