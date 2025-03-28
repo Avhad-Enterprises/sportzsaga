@@ -178,10 +178,8 @@
                                     <textarea class="form-control validate-required resizable-textarea"
                                         data-error-message-required="Meta Description is required!"
                                         name="product-short-description"
-                                        maxlength="160"
                                         placeholder="Required example textarea"
                                         id="metaDescription"></textarea>
-                                    <small id="charCounter" class="form-text text-muted">160 characters</small>
                                 </div>
 
                                 <div class="form-group">
@@ -245,8 +243,8 @@
                                     </div>
                                     <div class="col-md">
                                         <div class="form-group">
-                                            <label>Compare at Price <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="Compare at Price"
+                                            <label> MRP <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
+                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="MRP"
                                                 class="form-control validate-required">
                                         </div>
                                     </div>
@@ -626,7 +624,7 @@
                                         id="preorder-date"
                                         data-conditional-field="#preorder-tag"
                                         data-conditional-value="yes"
-                                        data-error-message-required="Preorder Date is required." />
+                                        data-error-message-required="Preorder Date is required."/>
                                 </div>
                             </div>
 
@@ -662,11 +660,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
 

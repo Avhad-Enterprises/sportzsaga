@@ -301,6 +301,7 @@ class Products extends BaseController
 
         return view('addnew_products_view', $data);
     }
+    
 
     public function check_sku()
     {

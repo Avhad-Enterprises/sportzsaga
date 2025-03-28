@@ -269,4 +269,13 @@
 
 </body>
 
+<script>
+    function confirmProductDelete(product_id) {
+        if (confirm("Are you sure you want to delete this product?")) {
+            window.location.href = "admin-products/deleteproduct/" + product_id;
+        }
+    }
+
+</script>
+
 </html>
