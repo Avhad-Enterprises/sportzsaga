@@ -283,7 +283,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Product Title</th>
-                                                        <th>Cost Price</th>
+                                                        <th>Selling Price</th>
                                                         <th>Product Image</th>
                                                     </tr>
                                                 </thead>
@@ -320,7 +320,7 @@
                                                         </div>
                                                     </th>
                                                     <th>Product Title</th>
-                                                    <th>Cost Price</th>
+                                                    <th>Selling Price</th>
                                                     <th>Product Image</th>
                                                 </tr>
                                             </thead>
@@ -655,14 +655,13 @@
                     <option value="does_not_contain">Does not contain</option>
                     <option value="is_not_equal_to">Is not equal to</option>
                 `);
-                } else if (field === 'cost_price') {
+                } else if (field === 'selling_price') {
                     operatorSelect.append(`
                     <option value="is_equal_to">Is equal to</option>
                     <option value="is_greater_than">Is greater than</option>
                     <option value="is_less_than">Is less than</option>
                     <option value="is_not_equal_to">Is not equal to</option>
-                    <option value="is_between">Is between</option>
-                    <option value="is_not_between">Is not between</option>
+                    
                 `);
                 } else if (field === 'product_tags') {
                     operatorSelect.append(`
@@ -681,12 +680,11 @@
                 // Load values for the selected field
                 $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function(data) {
                     data.forEach(function(item) {
-                        if (field === 'cost_price') {
-                            if (field === 'cost_price') {
-                                // Add default value options for cost_price                        
+                        if (field === 'selling_price') {
+                            if (field === 'selling_price') {
+                                // Add default value options for selling_price                        
                                 valueSelect.append(`
-                                <option value="500-1000">500-1000</option>
-                                <option value="5-10">5-10</option>
+                                
                             `);
                                 valueSelect.append(`<option value="${item[field]}">${item[field]}</option>`);
                             } else {
@@ -773,7 +771,7 @@
                                 tableBody.append(`
                                 <tr class="selected-product-item" draggable="true">
                                     <td>${product.product_title}</td>
-                                    <td>${product.cost_price}</td>
+                                    <td>${product.selling_price}</td>
                                     <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
                                 </tr>
                             `);
@@ -1149,9 +1147,9 @@
                             automatedProducts = response.products;
                             automatedProducts.forEach(function(product) {
                                 tableBody.append(`
-                                <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
+                                <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.selling_price}" data-created="${product.created_at}">
                                     <td>${product.product_title}</td>
-                                    <td>${product.cost_price}</td>
+                                    <td>${product.selling_price}</td>
                                     <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
                                 </tr>
                             `);
@@ -1196,9 +1194,9 @@
                         automatedProducts = response.products;
                         automatedProducts.forEach(function(product) {
                             tableBody.append(`
-                            <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.cost_price}" data-created="${product.created_at}">
+                            <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.selling_price}" data-created="${product.created_at}">
                                 <td>${product.product_title}</td>
-                                <td>${product.cost_price}</td>
+                                <td>${product.selling_price}</td>
                                 <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
                             </tr>
                         `);
@@ -1323,8 +1321,6 @@
 
 
 
-
-
         function createTagSelector() {
             var options = $('#product_tags option').filter(function() {
                 return !selectedTags.some(tag => tag.value === $(this).val());
@@ -1407,7 +1403,7 @@
                                 </div>                                
                             </td>
                             <td>${product.product_title}</td>
-                            <td>${product.cost_price}</td>
+                            <td>${product.selling_price}</td>
                             <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
                         </tr>
                     `);

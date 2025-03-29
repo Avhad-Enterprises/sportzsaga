@@ -919,7 +919,7 @@ class Products extends BaseController
         // Fetch all users
         $data['users'] = $userModel->findAll();
 
-        $data['fields'] = ['product_title', 'product_tags', 'cost_price'];
+        $data['fields'] = ['product_title', 'product_tags', 'selling_price'];
         return view('addnew_collections_view', $data);
     }
 
@@ -1183,7 +1183,7 @@ class Products extends BaseController
         $data['sortOrder'] = $sortOrder; // Pass the sort order to the view
 
         // Define the available fields
-        $data['fields'] = ['product_title', 'product_tags', 'cost_price'];
+        $data['fields'] = ['product_title', 'product_tags', 'selling_price'];
 
         // Load users for the publish_for dropdown
         $usersModel = new Registerusers_model();
