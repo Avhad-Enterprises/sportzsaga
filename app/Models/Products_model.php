@@ -273,10 +273,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
@@ -465,10 +465,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
@@ -562,10 +562,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
