@@ -646,6 +646,7 @@ class onlinestoremodal extends Model
             ->getResultArray();
     }
 
+
     public function getsingleblogchange($singleblog_id)
     {
         $result = $this->db->table('singleblog_data')
@@ -655,14 +656,12 @@ class onlinestoremodal extends Model
             ->getRow();
 
         if ($result && !empty($result->change_log)) {
-            $changeLog = json_decode($result->change_log, true); // Decode correctly
-
-            // Ensure it's an array and sort it by 'timestamp' in descending order
+            $changeLog = json_decode($result->change_log, true);
             if (is_array($changeLog)) {
                 usort($changeLog, function ($a, $b) {
                     $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
                     $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
-                    return $timeB - $timeA; // Descending order
+                    return $timeB - $timeA;
                 });
             }
 
@@ -680,6 +679,7 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
 
     public function getcollectionchange($collection_id)
     {
@@ -716,6 +716,7 @@ class onlinestoremodal extends Model
             ->getResultArray();
     }
 
+
     public function getproductchange($product_id)
     {
         $result = $this->db->table('product_setting')
@@ -742,6 +743,7 @@ class onlinestoremodal extends Model
         return [];
     }
 
+
     public function getpolicieshistory()
     {
         return $this->db->table('policies')
@@ -749,6 +751,7 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
 
     public function getpolicieschange($policies_id)
     {
@@ -785,6 +788,7 @@ class onlinestoremodal extends Model
             ->getResultArray();
     }
 
+
     public function getfooterchange($Footer_id)
     {
         $result = $this->db->table('footer_data')
@@ -807,9 +811,9 @@ class onlinestoremodal extends Model
 
             return $changeLog;
         }
-
         return [];
     }
+
 
     public function getheaderhistory()
     {

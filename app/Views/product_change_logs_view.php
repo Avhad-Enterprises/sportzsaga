@@ -37,43 +37,57 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i
+                                class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i
+                                class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
+                                aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i
+                                class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i
+                                class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -111,7 +125,8 @@
                                 <div class="timeline">
                                     <?php if (!empty($updates)): ?>
                                         <?php foreach ($updates as $update): ?>
-                                            <?php if (!isset($update['changes']['updated_at']['new']) || !isset($update['changes']['updated_by']['new'])) continue; ?>
+                                            <?php if (!isset($update['changes']['updated_at']['new']) && !isset($update['changes']['updated_by']['new']))
+                                                continue; ?>
 
                                             <div class="timeline-item mb-3"> <!-- Added margin-bottom for better spacing -->
                                                 <div class="timeline-badge">
@@ -122,20 +137,30 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">product Updated</h5>
                                                             <p class="card-text">
-                                                                <strong>Updated By:</strong> <?= htmlspecialchars($update['changes']['updated_by']['new'] ?? 'N/A') ?> <br>
-                                                                <strong>Updated At:</strong> <?= isset($update['changes']['updated_at']['new']) ? date('d M Y h:i A', strtotime($update['changes']['updated_at']['new'])) : 'N/A' ?>
+                                                                <strong>Updated By:</strong>
+                                                                <?= htmlspecialchars($update['updated_by'] ?? ($update['changes']['updated_by']['new'] ?? 'N/A')) ?>
+
+                                                                <br>
+                                                                <strong>Updated At:</strong>
+                                                                <?= isset($update['changes']['updated_at']['new']) ? date('d M Y h:i A', strtotime($update['changes']['updated_at']['new'])) : 'N/A' ?>
 
                                                             </p>
                                                             <h6 class="card-subtitle mt-2">Changes:</h6>
                                                             <ul class="mb-0">
                                                                 <?php if (!empty($update['changes'])): ?>
                                                                     <?php foreach ($update['changes'] as $field => $change): ?>
+                                                                        <?php if (in_array($field, ['updated_by', 'updated_at']))
+                                                                            continue; ?>
                                                                         <li>
                                                                             <strong><?= ucfirst(str_replace('_', ' ', $field)) ?>:</strong>
-                                                                            <span class="text-muted"><?= htmlspecialchars($change['old']) ?></span> →
-                                                                            <span class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                            <span
+                                                                                class="text-muted"><?= htmlspecialchars($change['old']) ?></span>
+                                                                            →
+                                                                            <span
+                                                                                class="text-success"><?= htmlspecialchars($change['new']) ?></span>
                                                                         </li>
                                                                     <?php endforeach; ?>
+
                                                                 <?php else: ?>
                                                                     <li>No changes recorded.</li>
                                                                 <?php endif; ?>

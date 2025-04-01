@@ -748,6 +748,7 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $data['collections'] = $model->getcollectionsdata();
+        //print_r($data);exit();
         return view('collections_view', $data);
     }
 

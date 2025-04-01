@@ -66,7 +66,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
 
    $routes->get('blogs/deleteblog/(:num)', 'Blogs::deleteblog/$1');
    $routes->get('blog_logs_view', 'Blogs::bloglogs');
-   $routes->get('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
+   $routes->post('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
 
    $routes->get('blogs/editblog/(:num)', 'Blogs::editblog/$1');
    $routes->post('blogs/updateblogdata/(:num)', 'Blogs::updateblogdata/$1');
@@ -507,8 +507,8 @@ $routes->post('customer_segment/savesegmentdata', 'CatalogController::savesegmen
 $routes->get('customer_segment_view', 'CatalogController::viewcustomersegment');
 $routes->get('customer_segments/editsegment/(:num)', 'CatalogController::editsegment/$1');
 $routes->post('customer_segment/updatesegment/(:num)', 'CatalogController::updatesegment/$1');
-$routes->get('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
-$routes->get('customer_segment/restore/(:num)', 'CatalogController::restoresegment/$1');
+$routes->post('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->post('customer_segment/restore/(:num)', 'CatalogController::restoreSegment/$1');
 $routes->get('customersegment_logs_view', 'CatalogController::customersegmentlogs');
 $routes->get('customersegment/customersegment_logs/(:num)', 'CatalogController::customersegment_logs/$1');
 
@@ -699,8 +699,8 @@ $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1')
 
 $routes->get('Carousel2/Carousel2_history/(:num)', 'Store::Carousel2_history/$1');
 $routes->get('online_store/online_store_history', 'Store::online_store_history');
-$routes->get('home-collection/collection_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
-$routes->get('home-collection/collection_change_logs/', 'Store::home_collection_change_logs');
+$routes->get('home-collection/collection_os_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
+$routes->get('home-collection/collection_os_change_logs/', 'Store::home_collection_change_logs');
 $routes->get('logo/logo_history/(:num)', 'Store::logo_history/$1');
 $routes->get('image/image_history/(:num)', 'Store::image_history/$1');
 $routes->get('home_blog/home_blog_history/(:num)', 'Store::home_blog_history/$1');

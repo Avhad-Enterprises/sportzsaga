@@ -1204,56 +1204,52 @@ class CatalogController extends Controller
 
     public function deletesegment($segment_id)
     {
-        $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
+        $segmentModel = new CustomerSegmentModel();
         $session = session();
         $deletedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
 
-        // Check if the segment exists
         $segment = $segmentModel->find($segment_id);
         if (!$segment) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
 
-        // Prepare data for soft delete
         $data = [
             'is_deleted' => 1,
             'deleted_by' => $deletedBy,
             'deleted_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Update the segment instead of hard delete
         if ($segmentModel->updateCustomersegment($segment_id, $data)) {
-            return redirect()->to('customer_segment_view')->with('success', 'Deleted successfully!');
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Segment deleted successfully.']);
         } else {
-            return redirect()->to('customer_segment_view')->with('error', 'Segment not deleted!');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete segment.']);
         }
     }
+
 
     // Restore function for soft-deleted segments
     public function restoreSegment($segment_id)
     {
-        $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
-
-        // Check if the segment exists
+        $segmentModel = new CustomerSegmentModel();
+    
         $segment = $segmentModel->find($segment_id);
         if (!$segment) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
-
-        // Prepare data for restoring
+    
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
             'deleted_at' => null,
         ];
-
-        // Restore the segment
+    
         if ($segmentModel->updateCustomersegment($segment_id, $data)) {
-            return redirect()->to('customer_segment_view')->with('success', 'Segment restored successfully.');
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Segment restored successfully.']);
         } else {
-            return redirect()->to('customer_segment_view')->with('error', 'Failed to restore segment.');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to restore segment.']);
         }
     }
+    
 
     public function company_logs($companyId)
     {
