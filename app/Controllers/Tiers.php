@@ -41,6 +41,7 @@ class Tiers extends BaseController
         }
     }
 
+    
     public function edit_tier_1($id)
     {
         $model = new tiersmodel();

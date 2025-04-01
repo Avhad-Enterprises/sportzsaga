@@ -38,6 +38,7 @@ class Giftcard extends BaseController
         return view('addnew_giftcard_view', $data);
     }
 
+    
     public function publishGiftCard()
     {
         $giftCardModel = new GiftModel();

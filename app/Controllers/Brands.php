@@ -13,11 +13,6 @@ class Brands extends BaseController
         return view('brand_view', $data);
     }
 
-    public function addbrand()
-    {
-        return view('add_brand_view');
-    }
-
     public function publishbrand()
     {
         $model = new brands_model();
@@ -42,6 +37,11 @@ class Brands extends BaseController
         return redirect()->to('brands');
     }
 
+    public function addbrand()
+    {
+        return view('add_brand_view');
+    }
+
     public function editbrand($brand_id)
     {
         $model = new brands_model();
@@ -53,7 +53,8 @@ class Brands extends BaseController
     {
         $model = new brands_model();
         $model->deletebrand($brand_id);
-        return redirect()->to('brands')->with('success', 'Brand deleted successfully.');;
+        return redirect()->to('brands')->with('success', 'Brand deleted successfully.');
+        ;
     }
 
     public function updatetedbrand($brand_id)
@@ -85,6 +86,7 @@ class Brands extends BaseController
 
         $model->updatetedbrand($brand_id, $data);
 
-        return redirect()->to('brands')->with('success', 'Brand updated successfully.');;
+        return redirect()->to('brands')->with('success', 'Brand updated successfully.');
+        ;
     }
 }
