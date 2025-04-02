@@ -722,7 +722,6 @@ class CatalogController extends Controller
     {
         $companyModel = new CompanyModel();
 
-        // Prepare data for restoring
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
@@ -730,11 +729,13 @@ class CatalogController extends Controller
         ];
 
         if ($companyModel->updateCompanyStatus($id, $data)) {
-            return redirect()->to('company_view')->with('success', 'Restored successfully!');
+            return $this->response->setJSON(['success' => true]);
         } else {
-            return redirect()->to('company_view')->with('error', 'Failed to restore.');
+            return $this->response->setJSON(['success' => false]);
         }
     }
+
+
 
     public function companylogs()
     {
@@ -1231,25 +1232,25 @@ class CatalogController extends Controller
     public function restoreSegment($segment_id)
     {
         $segmentModel = new CustomerSegmentModel();
-    
+
         $segment = $segmentModel->find($segment_id);
         if (!$segment) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
-    
+
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
             'deleted_at' => null,
         ];
-    
+
         if ($segmentModel->updateCustomersegment($segment_id, $data)) {
             return $this->response->setJSON(['status' => 'success', 'message' => 'Segment restored successfully.']);
         } else {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to restore segment.']);
         }
     }
-    
+
 
     public function company_logs($companyId)
     {

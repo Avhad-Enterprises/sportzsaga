@@ -30,10 +30,7 @@ class Home extends BaseController
 
     public function publishDiscountCode()
     {
-        $model = new Discountcode();
-        $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
-        $userName = $session->get('admin_name'); // Get logged-in user's name
+        $model = new discountcode();
 
         // Get POST data
         $title = $this->request->getPost('title');
@@ -68,6 +65,7 @@ class Home extends BaseController
             'prefix' => $prefix,
             'suffix' => $suffix,
             'codeLength' => $codelength,
+            'code' => $code,
             'discount_type' => $discountType,
             'discountValue' => $discountValue,
             'minimumPurchaseRequirement' => $minimumPurchaseRequirement,
@@ -78,9 +76,8 @@ class Home extends BaseController
             'discountStatus' => $discountStatus,
             'auto_expiration_notification' => $autoExpirationNotification,
             'notification_period' => $notificationPeriod,
-            'added_by' => $userName . ' (' . $userId . ')', // Store admin name and ID
-            'created_at' => date('Y-m-d H:i:s'),
         ];
+
 
         try {
             $model->db->transStart();
@@ -114,6 +111,7 @@ class Home extends BaseController
             log_message('error', 'Exception occurred: ' . $e->getMessage());
             return redirect()->back()->withInput()->with('error', 'Failed to insert discount code. Please try again.');
         }
+
     }
 
     private function generateExcelFile($codes, $title)
