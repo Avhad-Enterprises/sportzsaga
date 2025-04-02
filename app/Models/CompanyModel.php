@@ -42,7 +42,7 @@ class CompanyModel extends Model
     {
         return $this->db->table('companies')->where('id', $id)->update($data);
     }
-
+    
     public function getAlllogscompany()
     {
         return $this->db->table('companies')->where('is_deleted', 1)->get()->getResultArray();

@@ -3105,3 +3105,30 @@
     }
   }
 </script>
+
+
+
+<!------------------------------------------------------------------ Company ----------------------------------------------------------------------------->
+<script>
+  function companyRestore(id) {
+        if (confirm("Are you sure you want to restore this company?")) {
+            fetch(`${base_url}restorecompany/${id}`, {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Company restored successfully.');
+                    location.reload();
+                } else {
+                    alert('Failed to restore company.');
+                }
+            })
+            .catch(error => {
+                console.error('Restore error:', error);
+                alert('An error occurred while restoring.');
+            });
+        }
+    }
+
+</script>

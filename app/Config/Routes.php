@@ -222,7 +222,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('companies/edit_company/(:num)', 'CatalogController::editcompany/$1');
    $routes->post('company/update_company/(:num)', 'CatalogController::update_company/$1');
    $routes->get('companies/deletecompany/(:num)', 'CatalogController::deleteCompany/$1');
-   $routes->get('restorecompany/(:num)', 'CatalogController::restoreCompany/$1');
+   $routes->post('restoreCompany/(:num)', 'CatalogController::restoreCompany/$1');
    $routes->get('company_logs_view', 'CatalogController::companylogs');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
@@ -720,3 +720,27 @@ $routes->get('checkoutpage/checkoutpage_history/(:num)', 'Store::checkout_histor
 $routes->get('trackingpage/trackingpage_history/(:num)', 'Store::tracking_history/$1');
 $routes->get('error_page/error_page_history/(:num)', 'Store::errorpage_history/$1');
 $routes->get('team_members/team_member_history/(:num)', 'Store::team_history/$1');
+
+
+
+
+
+
+
+//Analytics
+$routes->get('analytics', 'Analytics::index');
+$routes->get('analytics/visits_overview', 'Analytics::VisitsOverview');
+$routes->get('analytics/visitor-trends', 'Analytics::visitorTrends');
+$routes->post('analytics/export_visitors', 'Analytics::export_visitors');
+
+$routes->get('analytics/desktop_visits_overview', 'Analytics::DesktopVisitsOverview');
+$routes->post('analytics/export_desktop_visitors', 'Analytics::export_desktop_visitors');
+
+$routes->get('analytics/mobile_visits_overview', 'Analytics::MobileVisitsOverview');
+$routes->post('analytics/export_mobile_visitors', 'Analytics::export_mobile_visitors');
+
+$routes->get('analytics/tablet_visits_overview', 'Analytics::TabletVisitsOverview');
+$routes->post('analytics/export_tablet_visitors', 'Analytics::export_tablet_visitors');
+
+$routes->get('analytics/New_visits_overview', 'Analytics::NewVisitsOverview');
+$routes->get('analytics/returning_visits_overview', 'Analytics::ReturningVisitsOverview');
