@@ -80,6 +80,7 @@ class Registerusers_model extends Model
         'deleted_at',
         'added_by',
         'agent_status',
+        'address_information'
     ];
     protected $useTimestamps = true;
 
@@ -346,5 +347,68 @@ class Registerusers_model extends Model
             ->where('user_id', $userId)      // Assuming 'id' is the primary key
             ->get()
             ->getRowArray();
+    }
+
+
+
+    public function getChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('users')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
+
+    public function getEmployeeChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('users')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
+
+    public function getChangeLog($userId)
+    {
+        return $this->select('change_log')->where('user_id', $userId)->get()->getRowArray()['change_log'] ?? null;
     }
 }

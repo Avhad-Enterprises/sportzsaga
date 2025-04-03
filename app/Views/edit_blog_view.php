@@ -107,6 +107,17 @@
                             <button value="submit" class="btn btn-primary btn-lg">Update</button>
                         </div>
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>Blogs/Blogs_logs/<?= $post['blog_id'] ?>"
+                                class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="View Blog Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                            </a>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="pd-20 card-box mb-30">
@@ -122,10 +133,21 @@
                                             This feild can't be Empty
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Quote</label>
+                                        <input class="form-control" value="<?= $post['blog_quote'] ?>" name="blog-quote" type="text" placeholder="Have a Nice Day" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            This feild can't be Empty
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control" name="blog-description" required><?= $post['blog_description'] ?></textarea>
-                                        <small>Min 400-600 Words</small>
+                                        <textarea class="form-control resizable-textarea newline-enabled" name="blog-description" required><?= $post['blog_description'] ?></textarea>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -134,9 +156,10 @@
                                         </div>
                                     </div>
                                     <div id="main-content-container">
-                                        <textarea id="editor" name="blog-main-content"><?= $post['main_description'] ?></textarea>
+                                        <textarea id="editor" class="resizable-textarea newline-enabled" name="blog-main-content"><?= $post['main_description'] ?></textarea>
                                     </div>
                                 </div>
+
 
                                 <?php $maxSections = 10; ?>
                                 <div id="blog-sections">
@@ -158,13 +181,17 @@
 
                                                 <div class="form-group">
                                                     <label for="section_image_<?= $i ?>">Section Image <?= $i ?></label>
-                                                    <input type="file" class="form-control-file form-control height-auto" id="section_image_<?= $i ?>" name="section_image_<?= $i ?>">
+                                                    <input type="file" class="form-control-file form-control height-auto" id="section_image_<?= $i ?>" name="section_image_<?= $i ?>" onchange="previewSectionImage(event, <?= $i ?>)">
                                                     <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</small>
-
-                                                    <?php if (!empty($post['section_image_' . $i])) : ?>
-                                                        <img src="<?= $post['section_image_' . $i] ?>" alt="Section Image <?= $i ?>" width="500px" style="margin: 16px;">
-                                                        <input type="hidden" name="current_section_image_<?= $i ?>" value="<?= esc($post['section_image_' . $i]) ?>">
-                                                    <?php endif; ?>
+                                                    <div class="pre-img" id="section-image-preview-container-<?= $i ?>" style="position: relative; margin-top: 10px;">
+                                                        <?php if (!empty($post['section_image_' . $i])) : ?>
+                                                            <img id="section-image-preview-<?= $i ?>" src="<?= esc($post['section_image_' . $i]) ?>" alt="Section Image <?= $i ?>" width="500">
+                                                            <i class="fa-solid fa-circle-xmark" style="color: #ffffff; position: absolute; top: 10px; right: 10px; cursor: pointer;" onclick="removeSectionImage(<?= $i ?>)"></i>
+                                                        <?php else : ?>
+                                                            <img id="section-image-preview-<?= $i ?>" src="" alt="Section Image Preview" width="500" style="display: none;">
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <input type="hidden" name="current_section_image_<?= $i ?>" value="<?= esc($post['section_image_' . $i]) ?>">
                                                 </div>
                                             </div>
                                         <?php endif; ?>
@@ -172,50 +199,8 @@
                                 </div>
 
                                 <!-- Button to add more sections -->
-                                <button type="button" id="add-section" class="btn btn-primary my-3">Add</button>
+                                <button type="button" id="add-section-btn" class="btn btn-primary my-3">+ Add Section</button>
 
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        let maxSections = <?= $maxSections ?>;
-
-                                        // Calculate the current number of sections by counting the number of existing .section-container divs
-                                        let sectionCount = document.querySelectorAll('.section-container').length;
-
-                                        document.getElementById('add-section').addEventListener('click', function() {
-                                            // Only add new sections if we're below the max limit
-                                            if (sectionCount < maxSections) {
-                                                sectionCount++; // Increment section count for the next section
-
-                                                const newSectionHTML = `
-                                                    <div class="pd-20 card-box mb-30 section-container" data-section-number="${sectionCount}">
-                                                        <p class="text-blue mb-30">Blog Subsections</p>
-                                                        <div class="form-group">
-                                                            <label for="section_title_${sectionCount}">Title ${sectionCount}</label>
-                                                            <input class="form-control" type="text" id="section_title_${sectionCount}" name="section_title_${sectionCount}" placeholder="Enter title ${sectionCount}">
-                                                            <small>Max 70 characters, Min 10 characters</small>
-                                                        </div>
-                                
-                                                        <div class="form-group">
-                                                            <label for="section_description_${sectionCount}">Description ${sectionCount}</label>
-                                                            <textarea class="form-control" id="section_description_${sectionCount}" name="section_description_${sectionCount}" placeholder="Enter description ${sectionCount}"></textarea>
-                                                            <small>Max 150 characters, Min 110 characters</small>
-                                                        </div>
-                                
-                                                        <div class="form-group">
-                                                            <label for="section_image_${sectionCount}">Section Image ${sectionCount}</label>
-                                                            <input type="file" class="form-control-file form-control height-auto" id="section_image_${sectionCount}" name="section_image_${sectionCount}">
-                                                            <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</small>
-                                                        </div>
-                                                    </div>`;
-
-                                                // Append the new section to the #blog-sections div
-                                                document.getElementById('blog-sections').insertAdjacentHTML('beforeend', newSectionHTML);
-                                            } else {
-                                                alert(`You can add up to ${maxSections} sections.`);
-                                            }
-                                        });
-                                    });
-                                </script>
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue mb-30">Add Meta Fields</p>
@@ -362,8 +347,6 @@
         </div>
     </div>
 
-    <!-- Page Main Content End -->
-
     <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -393,114 +376,6 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("saveCategoryBtn").addEventListener("click", function() {
-                var categoryName = document.getElementById("category_name").value.trim();
-                var categoryValue = document.getElementById("category_value").value.trim();
-
-                if (categoryName && categoryValue) {
-                    $.ajax({
-                        url: "<?= base_url('blogs/add-category') ?>",
-                        method: "POST",
-                        data: {
-                            category_name: categoryName,
-                            category_value: categoryValue
-                        },
-                        dataType: "json",
-                        success: function(response) {
-                            if (response.success) {
-                                var newOption = new Option(response.name, response.value);
-                                document.getElementById("service_category").add(newOption);
-                                document.getElementById("service_category").value = response.value;
-
-                                $("#categoryModal").modal("hide");
-                                document.getElementById("categoryForm").reset();
-                            } else {
-                                alert(response.message);
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error("Category AJAX Error:", xhr.responseText);
-                            alert("An error occurred while adding the category.");
-                        }
-                    });
-                } else {
-                    alert("Please fill in both fields.");
-                }
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("addNewOption").addEventListener("click", function(event) {
-                event.preventDefault();
-
-                var tagName = $.trim($("#newOptionText").val());
-                var tagValue = $.trim($("#newOptionValue").val());
-
-                if (tagName === "" || tagValue === "") {
-                    alert("Please enter both Tag Name and Tag Value.");
-                    return;
-                }
-
-                console.log("Submitting tag:", tagName, tagValue);
-
-                $.ajax({
-                    url: "<?= base_url('blogs/add_new_tag') ?>",
-                    type: "POST",
-                    data: {
-                        tag_name: tagName,
-                        tag_value: tagValue,
-                        "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        console.log("AJAX Response:", response);
-
-                        if (response.status === "success") {
-                            $(".custom-select-tags").append('<option value="' + tagValue + '" selected>' + tagName + '</option>');
-                            $(".custom-select-tags").trigger("change");
-
-                            $("#multiSelectModal").modal("hide");
-
-                            $("#newOptionText").val("");
-                            $("#newOptionValue").val("");
-
-                            alert("Tag added successfully!");
-                        } else {
-                            alert(response.message || "Failed to add tag. Please try again.");
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", xhr.responseText);
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-            if ($.fn.select2) {
-                $(".custom-select2").select2({
-                    placeholder: "Select tags",
-                    allowClear: true
-                });
-            }
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let tagNameInput = document.getElementById("newOptionText");
-            let tagValueInput = document.getElementById("newOptionValue");
-
-            tagNameInput.addEventListener("input", function() {
-                let tagName = tagNameInput.value.trim().toLowerCase();
-                let tagValue = tagName.replace(/\s+/g, "-");
-                tagValueInput.value = tagValue;
-            });
-        });
-    </script>
 
     <!-- Modal to Add New Tag -->
     <div class="modal fade" id="multiSelectModal" tabindex="-1" role="dialog" aria-labelledby="multiSelectModalLabel" aria-hidden="true">
@@ -532,86 +407,211 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("addNewOption").addEventListener("click", function(event) {
-                event.preventDefault();
-
-                var tagName = $.trim($("#newOptionText").val());
-                var tagValue = $.trim($("#newOptionValue").val());
-
-                if (tagName === "" || tagValue === "") {
-                    alert("Please enter both Tag Name and Tag Value.");
-                    return;
-                }
-
-                console.log("Submitting tag:", tagName, tagValue);
-
-                $.ajax({
-                    url: "<?= base_url('blogs/add_new_tag') ?>",
-                    type: "POST",
-                    data: {
-                        tag_name: tagName,
-                        tag_value: tagValue,
-                        "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        console.log("AJAX Response:", response);
-
-                        if (response.status === "success") {
-                            $(".custom-select-tags").append('<option value="' + tagValue + '" selected>' + tagName + '</option>');
-                            $(".custom-select-tags").trigger("change");
-
-                            $("#multiSelectModal").modal("hide");
-
-                            $("#newOptionText").val("");
-                            $("#newOptionValue").val("");
-
-                            alert("Tag added successfully!");
-                        } else {
-                            alert(response.message || "Failed to add tag. Please try again.");
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", xhr.responseText);
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-            if ($.fn.select2) {
-                $(".custom-select2").select2({
-                    placeholder: "Select tags",
-                    allowClear: true
-                });
-            }
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let tagNameInput = document.getElementById("newOptionText");
-            let tagValueInput = document.getElementById("newOptionValue");
-
-            tagNameInput.addEventListener("input", function() {
-                let tagName = tagNameInput.value.trim().toLowerCase();
-                let tagValue = tagName.replace(/\s+/g, "-");
-                tagValueInput.value = tagValue;
-            });
-        });
-    </script>
+    <!-- Page Main Content End -->
 
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
     <!-- Footer View End -->
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("saveCategoryBtn").addEventListener("click", function() {
+            var categoryName = document.getElementById("category_name").value.trim();
+            var categoryValue = document.getElementById("category_value").value.trim();
+
+            if (categoryName && categoryValue) {
+                $.ajax({
+                    url: "<?= base_url('blogs/add-category') ?>",
+                    method: "POST",
+                    data: {
+                        category_name: categoryName,
+                        category_value: categoryValue
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.success) {
+                            var newOption = new Option(response.name, response.value);
+                            document.getElementById("service_category").add(newOption);
+                            document.getElementById("service_category").value = response.value;
+
+                            $("#categoryModal").modal("hide");
+                            document.getElementById("categoryForm").reset();
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Category AJAX Error:", xhr.responseText);
+                        alert("An error occurred while adding the category.");
+                    }
+                });
+            } else {
+                alert("Please fill in both fields.");
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let tagNameInput = document.getElementById("newOptionText");
+        let tagValueInput = document.getElementById("newOptionValue");
+
+        tagNameInput.addEventListener("input", function() {
+            let tagName = tagNameInput.value.trim().toLowerCase();
+            let tagValue = tagName.replace(/\s+/g, "-");
+            tagValueInput.value = tagValue;
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("addNewOption").addEventListener("click", function(event) {
+            event.preventDefault();
+
+            var tagName = $.trim($("#newOptionText").val());
+            var tagValue = $.trim($("#newOptionValue").val());
+
+            if (tagName === "" || tagValue === "") {
+                alert("Please enter both Tag Name and Tag Value.");
+                return;
+            }
+
+            console.log("Submitting tag:", tagName, tagValue);
+
+            $.ajax({
+                url: "<?= base_url('blogs/add_new_tag') ?>",
+                type: "POST",
+                data: {
+                    tag_name: tagName,
+                    tag_value: tagValue,
+                    "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
+                },
+                dataType: "json",
+                success: function(response) {
+                    console.log("AJAX Response:", response);
+
+                    if (response.status === "success") {
+                        $(".custom-select-tags").append('<option value="' + tagValue + '" selected>' + tagName + '</option>');
+                        $(".custom-select-tags").trigger("change");
+
+                        $("#multiSelectModal").modal("hide");
+
+                        $("#newOptionText").val("");
+                        $("#newOptionValue").val("");
+
+                        alert("Tag added successfully!");
+                    } else {
+                        alert(response.message || "Failed to add tag. Please try again.");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error:", xhr.responseText);
+                    alert("Error: " + xhr.responseText);
+                }
+            });
+        });
+
+        if ($.fn.select2) {
+            $(".custom-select2").select2({
+                placeholder: "Select tags",
+                allowClear: true
+            });
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let tagNameInput = document.getElementById("newOptionText");
+        let tagValueInput = document.getElementById("newOptionValue");
+
+        tagNameInput.addEventListener("input", function() {
+            let tagName = tagNameInput.value.trim().toLowerCase();
+            let tagValue = tagName.replace(/\s+/g, "-");
+            tagValueInput.value = tagValue;
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const maxSections = <?= $maxSections ?>;
+        let sectionCount = document.querySelectorAll('.section-container').length; // Get the current number of sections
+
+        // Add new section functionality
+        document.getElementById('add-section-btn').addEventListener('click', function() {
+            if (sectionCount < maxSections) {
+                sectionCount++; // Increment the section count
+                const newSection = document.createElement('div');
+                newSection.classList.add('pd-20', 'card-box', 'mb-30', 'section-container');
+                newSection.dataset.sectionNumber = sectionCount;
+                newSection.innerHTML = `
+                    <p class="text-blue mb-30">Blog Subsections</p>
+                    <div class="form-group">
+                        <label for="section_title_${sectionCount}">Title ${sectionCount}</label>
+                        <input class="form-control" type="text" id="section_title_${sectionCount}" name="section_title_${sectionCount}" placeholder="Enter title ${sectionCount}">
+                        <small>Max 70 characters, Min 10 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="section_description_${sectionCount}">Description ${sectionCount}</label>
+                        <textarea class="form-control" id="section_description_${sectionCount}" name="section_description_${sectionCount}" placeholder="Enter description ${sectionCount}"></textarea>
+                        <small>Max 150 characters, Min 110 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="section_image_${sectionCount}">Section Image ${sectionCount}</label>
+                        <input type="file" class="form-control-file form-control height-auto" id="section_image_${sectionCount}" name="section_image_${sectionCount}" onchange="previewSectionImage(event, ${sectionCount})">
+                        <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</small>
+                        <div class="pre-img" id="section-image-preview-container-${sectionCount}" style="position: relative; margin-top: 10px;">
+                            <img id="section-image-preview-${sectionCount}" src="" alt="Section Image Preview" width="500" style="display: none;">
+                            <i class="fa-solid fa-circle-xmark" style="color: #ffffff; position: absolute; top: 10px; right: 10px; cursor: pointer; display: none;" onclick="removeSectionImage(${sectionCount})"></i>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('blog-sections').appendChild(newSection);
+            } else {
+                alert(`You can add up to ${maxSections} sections.`);
+            }
+        });
+    });
+
+    // Function to preview the section image
+    function previewSectionImage(event, sectionNumber) {
+        const file = event.target.files[0];
+        const preview = document.getElementById(`section-image-preview-${sectionNumber}`);
+        const removeIcon = document.querySelector(`#section-image-preview-container-${sectionNumber} .fa-circle-xmark`);
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                removeIcon.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    // Function to remove the section image
+    function removeSectionImage(sectionNumber) {
+        const preview = document.getElementById(`section-image-preview-${sectionNumber}`);
+        const removeIcon = document.querySelector(`#section-image-preview-container-${sectionNumber} .fa-circle-xmark`);
+        const input = document.getElementById(`section_image_${sectionNumber}`);
+        preview.src = '';
+        preview.style.display = 'none';
+        removeIcon.style.display = 'none';
+        input.value = '';
+    }
+</script>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </html>

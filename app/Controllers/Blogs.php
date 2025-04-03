@@ -68,26 +68,24 @@ class Blogs extends BaseController
     {
         $blogModel = new blogs_model();
 
-        // Check if the blog exists
         $blog = $blogModel->find($blog_id);
         if (!$blog) {
-            return redirect()->to('admin_blogs')->with('error', 'Blog not found.');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Blog not found.']);
         }
 
-        // Prepare data for restoring
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
             'deleted_at' => null,
         ];
 
-        // Restore the blog
         if ($blogModel->updateblog($blog_id, $data)) {
-            return redirect()->to('admin_blogs')->with('success', 'Blog restored successfully.');
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Blog restored successfully.']);
         } else {
-            return redirect()->to('admin_blogs')->with('error', 'Failed to restore blog.');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to restore blog.']);
         }
     }
+
 
 
     public function bloglogs()
@@ -102,19 +100,16 @@ class Blogs extends BaseController
     public function addnewblog()
     {
         $model = new Blogs_model();
-        $tagModel = new TagModel();       // Load the TagModel to fetch tags
-        $userModel = new Registerusers_model();    // Load the UsersModel to fetch users
+        $tagModel = new TagModel();
+        $userModel = new Registerusers_model();
         $controlmodel = new Controls_model();
         $catmodel = new CategoryModel();
-        $data['categories'] = $catmodel->getAllCategories();
 
+
+        $data['categories'] = $catmodel->getAllCategories();
         $data['image'] = $model->getallimages();
         $data['sheader'] = $controlmodel->getMenusecondaryLinks();
-
-        // Fetch all tags
         $data['tags'] = $tagModel->findAll();
-
-        // Fetch all users
         $data['users'] = $userModel->findAll();
 
         return view('addnew_blog_view', $data);
@@ -332,6 +327,7 @@ class Blogs extends BaseController
             'blog_metatitle' => $this->request->getPost('blog-meta-title'),
             'blog_metadescription' => $this->request->getPost('blog-meta-description'),
             'blog_metaurl' => $this->request->getPost('blog-meta-url'),
+            'blog_quote' => $this->request->getPost('blog-quote'),
         ];
 
         // Handle section images
@@ -579,5 +575,30 @@ class Blogs extends BaseController
         }
 
         return redirect()->back();
+    }
+
+
+    public function Blogs_logs($blogId)
+    {
+        $blogModel = new blogs_model();
+
+        // Get the blog post details
+        $post = $blogModel->find($blogId);
+
+        if (!$post) {
+            return redirect()->to('blogs')->with('error', 'Blog post not found');
+        }
+
+        // Get the change logs for this blog
+        $updates = $blogModel->getBlogChangeLogs($blogId);
+
+        $data = [
+            'title' => 'Blog Update History',
+            'post' => $post,
+            'updates' => $updates
+        ];
+
+        // Return the view with the data
+        return view('edit_blog_logs_view', $data);
     }
 }

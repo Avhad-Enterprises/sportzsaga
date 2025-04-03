@@ -245,28 +245,7 @@
         </div>
     </div>
 
-    <script>
-        function confirmSegmentDelete(segmentId) {
-            if (confirm("Are you sure you want to delete this segment?")) {
-                $.ajax({
-                    url: "<?= base_url('customer_segment/deletesegment/') ?>" + segmentId, // Update the correct URL
-                    type: "POST",
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status === "success") {
-                            alert(response.message);
-                            location.reload(); // Reload the page to reflect changes
-                        } else {
-                            alert(response.message);
-                        }
-                    },
-                    error: function() {
-                        alert("Error deleting segment. Please try again.");
-                    }
-                });
-            }
-        }
-    </script>
+  
 
 
 </body>

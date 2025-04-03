@@ -273,10 +273,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
@@ -465,10 +465,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
@@ -562,10 +562,10 @@ class Products_model extends Model
                 $builder->orderBy('product_title', 'DESC');
                 break;
             case 'priceHigh':
-                $builder->orderBy('cost_price', 'DESC');
+                $builder->orderBy('selling_price', 'DESC');
                 break;
             case 'priceLow':
-                $builder->orderBy('cost_price', 'ASC');
+                $builder->orderBy('selling_price', 'ASC');
                 break;
             case 'newest':
                 $builder->orderBy('created_at', 'DESC');
@@ -656,5 +656,36 @@ class Products_model extends Model
         return $this->db->table('product_reviews')
             ->where('status', 0)
             ->countAllResults();
+    }
+
+
+    public function getProductLogs($product_id)
+    {
+        $this->select('change_log');
+        $this->where('product_id', $product_id);
+        $query = $this->get();
+
+        if ($query->getNumRows() > 0) {
+            $row = $query->getRowArray();
+
+            // Decode JSON safely
+            $decoded_logs = json_decode($row['change_log'], true);
+
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                log_message('error', 'JSON Decode Error: ' . json_last_error_msg());
+                return []; // Return empty array to prevent breaking the view
+            }
+
+            if (is_array($decoded_logs) && !empty($decoded_logs)) {
+                // Sort the logs in descending order based on timestamp
+                usort($decoded_logs, function ($a, $b) {
+                    return strtotime($b['timestamp']) - strtotime($a['timestamp']);
+                });
+
+                return $decoded_logs; // Return the sorted array
+            }
+        }
+
+        return []; // Return an empty array if no logs exist
     }
 }

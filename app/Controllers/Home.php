@@ -30,10 +30,7 @@ class Home extends BaseController
 
     public function publishDiscountCode()
     {
-        $model = new Discountcode();
-        $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
-        $userName = $session->get('admin_name'); // Get logged-in user's name
+        $model = new discountcode();
 
         // Get POST data
         $title = $this->request->getPost('title');
@@ -68,6 +65,7 @@ class Home extends BaseController
             'prefix' => $prefix,
             'suffix' => $suffix,
             'codeLength' => $codelength,
+            'code' => $code,
             'discount_type' => $discountType,
             'discountValue' => $discountValue,
             'minimumPurchaseRequirement' => $minimumPurchaseRequirement,
@@ -78,9 +76,8 @@ class Home extends BaseController
             'discountStatus' => $discountStatus,
             'auto_expiration_notification' => $autoExpirationNotification,
             'notification_period' => $notificationPeriod,
-            'added_by' => $userName . ' (' . $userId . ')', // Store admin name and ID
-            'created_at' => date('Y-m-d H:i:s'),
         ];
+
 
         try {
             $model->db->transStart();
@@ -114,6 +111,7 @@ class Home extends BaseController
             log_message('error', 'Exception occurred: ' . $e->getMessage());
             return redirect()->back()->withInput()->with('error', 'Failed to insert discount code. Please try again.');
         }
+
     }
 
     private function generateExcelFile($codes, $title)
@@ -167,7 +165,6 @@ class Home extends BaseController
         // Load the model
         $discountCodeModel = new discountcode();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Fetch existing discount code data
         $existingDiscountCode = $discountCodeModel->find($id);
@@ -199,6 +196,8 @@ class Home extends BaseController
             'randomization_option' => $this->request->getPost('randomization_option') ? 1 : 0,
             'randomization_range' => $this->request->getPost('randomization_range'),
             'code_deactivation' => $this->request->getPost('code_deactivation') ? 1 : 0,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         // ✅ Track changes
@@ -221,7 +220,7 @@ class Home extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -429,4 +428,81 @@ class Home extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException('File not found');
         }
     }
+
+
+
+
+
+
+
+
+    public function discountcode_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_discount_logs_view', ['updates' => []]); // No discount ID provided
+        }
+
+        // Fetch discount code details
+        $query = $db->table('discountcode')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_discount_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_discount_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_discount_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getDiscountCodeChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('discountcode')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
+
 }
+
+
+

@@ -546,7 +546,7 @@ class Customerservice extends Controller
                 // ✅ Gmail IMAP Configuration
                 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
                 $username = 'adityapatil93564@gmail.com';
-                $password = 'tbhz kenk gsgj lzjs'; // Use App Password, NOT your Gmail password
+                $password = 'tbhz kenk gsgj lzjs';
 
                 $inbox = imap_open($hostname, $username, $password);
                 if (!$inbox) {

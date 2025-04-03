@@ -134,16 +134,7 @@
                                     Add New
                                 </a>
                             </div>
-                            <!-- <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>importfromexcel" role="button">
-                                    Import
-                                </a>
-                            </div>
-                            <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>exporttoexcel" role="button">
-                                    Export To Excel
-                                </a>
-                            </div> -->
+
                             <!-- Logs Button (conditional) -->
                             <div class="dropdown">
                                 <a class="btn btn-success fw-bold" href="<?= base_url('giftcard_deleted') ?>"
@@ -151,7 +142,6 @@
                                     Logs
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </div>

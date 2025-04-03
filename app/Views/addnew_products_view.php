@@ -137,7 +137,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Products Details</p>
+                                <p class="text-blue">Products Details <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></p>
                                 <div class="form-group">
                                     <label>Products Title</label>
                                     <input class="form-control validate-required validate-minLength" data-error-message-required="Title is required!" data-min-length="60" name="product-name" type="text" placeholder="Name of the Product">
@@ -146,13 +146,13 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label>Secondary Title</label>
+                                            <label>Secondary Title <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <input class="form-control validate-required validate-minLength" data-error-message-required="Secondary Title is required!" minlength="30" name="second-name" type="text" placeholder="Secondary Title">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label>Size</label>
+                                            <label>Size <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <input class="form-control validate-required" data-error-message-required="Size is required!" name="product-size" type="text" placeholder="Size">
                                         </div>
                                     </div>
@@ -174,24 +174,22 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="validationTextarea" class="form-label">Short/Meta Description</label>
+                                    <label for="validationTextarea" class="form-label">Short/Meta Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <textarea class="form-control validate-required resizable-textarea"
                                         data-error-message-required="Meta Description is required!"
                                         name="product-short-description"
-                                        maxlength="160"
                                         placeholder="Required example textarea"
                                         id="metaDescription"></textarea>
-                                    <small id="charCounter" class="form-text text-muted">160 characters</small>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="quillEditor" class="form-label">Product Description</label>
+                                    <label for="quillEditor" class="form-label">Product Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <div id="quillEditor" style="height: 300px; border: 1px solid #ccc;"></div>
                                     <textarea class="form-control resizable-textarea" id="product-description" name="product-description" style="display: none;"></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Primary Image</label>
+                                    <label>Primary Image <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <div class="dropzone-area">
                                         <div class="file-upload-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload" width="24"
@@ -234,19 +232,19 @@
                                 <p class="text-blue">Price</p>
                                 <div class="row">
                                     <div class="col-md">
-                                        <label>Cost Price</label>
+                                        <label>Cost Price <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                         <input type="number" name="cost-price" data-error-message-required="Enter Cost Price!" placeholder="Cost Price"
                                             class="form-control validate-required">
                                     </div>
                                     <div class="col-md">
-                                        <label>Selling Price</label>
+                                        <label>Selling Price <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                         <input type="number" name="selling-price" data-error-message-required="Enter Selling Price!" placeholder="Selling Price"
                                             class="form-control validate-required">
                                     </div>
                                     <div class="col-md">
                                         <div class="form-group">
-                                            <label>Compare at Price</label>
-                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="Compare at Price"
+                                            <label> MRP <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
+                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="MRP"
                                                 class="form-control validate-required">
                                         </div>
                                     </div>
@@ -255,7 +253,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>SKU</label>
+                                            <label>SKU <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <input type="text" name="sku" placeholder="SKU" data-error-message-required="Enter Unique SKU!" class="form-control validate-required">
                                             <div id="sku-error"></div>
                                         </div>
@@ -269,7 +267,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Inventory</label>
+                                            <label>Inventory <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <input type="number" id="total-inventory" data-error-message-required="Inventory!" name="total_inventory"
                                                 placeholder="Total Inventory" class="form-control validate-required">
                                             <small>Total Inventory</small>
@@ -284,7 +282,7 @@
                                     <!-- Tier-1 Dropdown -->
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label>Tier-1</label>
+                                            <label>Tier-1 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <select class="form-control validate-required" data-error-message-required="Enter Tier 1" name="tier-1" id="tier-1"
                                                 style="width: 100%; height: 38px;">
                                                 <option value="">Select</option>
@@ -299,7 +297,7 @@
                                     <!-- Tier-2 Dropdown -->
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label>Tier-2</label>
+                                            <label>Tier-2 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <select class="form-control" name="tier-2" id="tier-2"
                                                 style="width: 100%; height: 38px;" disabled>
                                                 <option value="">Select</option>
@@ -310,7 +308,7 @@
                                     <!-- Tier-3 Dropdown -->
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label>Tier-3</label>
+                                            <label>Tier-3 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <select class="form-control" name="tier-3" id="tier-3"
                                                 style="width: 100%; height: 38px;" disabled>
                                                 <option value="">Select</option>
@@ -320,7 +318,7 @@
 
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label>Tier-4</label>
+                                            <label>Tier-4 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                             <select class="form-control" name="tier-4" id="tier-4"
                                                 style="width: 100%; height: 38px;" disabled>
                                                 <option value="">Select</option>
@@ -534,28 +532,28 @@
 
                                 <!-- length Number Field -->
                                 <div class="form-group mr-2">
-                                    <label for="length">Enter Length (cm)</label>
+                                    <label for="length">Enter Length (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <input type="number" name="length" id="length" value=""
                                         class="form-control validate-required"
                                         data-error-message-required="Enter length.">
                                 </div>
                                 <!-- breadth Number Field -->
                                 <div class="form-group mr-2">
-                                    <label for="breadth">Enter Breadth (cm)</label>
+                                    <label for="breadth">Enter Breadth (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <input type="number" name="breadth" id="breadth" value=""
                                         class="form-control validate-required"
                                         data-error-message-required="Enter breadth.">
                                 </div>
                                 <!-- height Number Field -->
                                 <div class="form-group mr-2">
-                                    <label for="height">Enter Height (cm)</label>
+                                    <label for="height">Enter Height (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <input type="number" name="height" id="height" value=""
                                         class="form-control validate-required"
                                         data-error-message-required="Enter height.">
                                 </div>
                                 <!-- Weight Number Field -->
                                 <div class="form-group mr-2">
-                                    <label for="weight">Enter Weight (Kg)</label>
+                                    <label for="weight">Enter Weight (Kg) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
                                     <input type="number" name="weight" id="weight" value=""
                                         class="form-control validate-required"
                                         data-error-message-required="Enter Weight.">
@@ -626,7 +624,7 @@
                                         id="preorder-date"
                                         data-conditional-field="#preorder-tag"
                                         data-conditional-value="yes"
-                                        data-error-message-required="Preorder Date is required." />
+                                        data-error-message-required="Preorder Date is required."/>
                                 </div>
                             </div>
 
@@ -662,11 +660,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
 
@@ -1014,38 +1010,6 @@
             const currentLength = $(this).val().length;
             $('#charCounter').text(`${currentLength}/${maxLength} characters`);
         });
-    });
-</script>
-
-<script>
-    let colorIndex = 1;
-
-    document.getElementById('add-color-option').addEventListener('click', function() {
-        const colorOptionsContainer = document.getElementById('color-options');
-        const newColorOption = document.createElement('div');
-        newColorOption.classList.add('row', 'color-option');
-        newColorOption.dataset.index = colorIndex;
-
-        newColorOption.innerHTML = `
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Color Name</label>
-                    <input class="form-control" name="colors[${colorIndex}][name]" type="text" placeholder="Color Name" required>
-                    <div class="valid-feedback">Looks good!</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Color Image</label>
-                    <input type="file" class="form-control image-input" name="colors[${colorIndex}][image]" accept="image/*" required>
-                    <img class="image-preview" src="#" alt="Image Preview">
-                    <div class="valid-feedback">Looks good!</div>
-                </div>
-            </div>
-        `;
-
-        colorOptionsContainer.appendChild(newColorOption);
-        colorIndex++;
     });
 </script>
 

@@ -173,7 +173,6 @@
                                                     onclick="return confirm('Are you sure?');">Delete</a>
                                             <?php endif; ?>
                                         </td>
-
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

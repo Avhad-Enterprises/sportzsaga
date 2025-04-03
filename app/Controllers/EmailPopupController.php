@@ -15,34 +15,38 @@ class EmailPopupController extends ResourceController
         $id = 1; // Always update ID 1
 
         if ($request->isAJAX()) {
-            // Retrieve user ID from session
+            // Retrieve user details from session
             $session = session();
-            $userId = $session->get('user_id');
+            $userId = strval($session->get('user_id'));
+            $userName = $session->get('admin_name') ?? $session->get('user_name');
+            $updatedBy = !empty($userName) ? "$userName ($userId)" : "User ID ($userId)";
 
             // Initialize Google Cloud Storage
             $storage = new StorageClient([
                 'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
                 'projectId' => 'peak-tide-441609-r1',
             ]);
-
-            $bucketName = 'sportzsaga_imgs';
-            $bucket = $storage->bucket($bucketName);
+            $bucket = $storage->bucket('sportzsaga_imgs');
 
             // Fetch existing record
             $existingData = $model->find($id);
 
-            // Check if a new image is uploaded
+            // Handle Image Upload (Google Cloud Storage)
             $imageFile = $request->getFile('email_pop_up_image');
             if ($imageFile && $imageFile->isValid() && !$imageFile->hasMoved()) {
-                $imageName = 'email_popup/' . uniqid() . '_' . $imageFile->getClientName();
-                $object = $bucket->upload(
-                    fopen($imageFile->getTempName(), 'r'),
-                    [
+                try {
+                    $imageName = 'email_popup/' . uniqid() . '_' . $imageFile->getClientName();
+                    $bucket->upload(fopen($imageFile->getTempName(), 'r'), [
                         'name' => $imageName,
                         'predefinedAcl' => 'publicRead',
-                    ]
-                );
-                $imagePath = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $imageName);
+                    ]);
+
+                    $imagePath = sprintf('https://storage.googleapis.com/%s/%s', $bucket->name(), $imageName);
+                    log_message('info', 'Image uploaded successfully: ' . $imagePath);
+                } catch (\Exception $e) {
+                    log_message('error', 'Error uploading image: ' . $e->getMessage());
+                    return $this->response->setJSON(['status' => 'error', 'message' => 'Image upload failed.']);
+                }
             } else {
                 $imagePath = $existingData ? $existingData['email_pop_up_image'] : '';
             }
@@ -50,10 +54,10 @@ class EmailPopupController extends ResourceController
             // Prepare new data
             $data = [
                 'email_pop_up_image' => $imagePath,
-                'email_pop_up_mail_title' => $request->getPost('email_pop_up_mail_title'),
-                'email_pop_up_mail_text' => $request->getPost('email_pop_up_mail_text'),
-                'email_pop_up_mail_linktext' => $request->getPost('email_pop_up_mail_linktext'),
-                'email_pop_up_description' => $request->getPost('email_pop_up_description'),
+                'email_pop_up_mail_title' => trim($request->getPost('email_pop_up_mail_title')),
+                'email_pop_up_mail_text' => trim($request->getPost('email_pop_up_mail_text')),
+                'email_pop_up_mail_linktext' => trim($request->getPost('email_pop_up_mail_linktext')),
+                'email_pop_up_description' => trim($request->getPost('email_pop_up_description')),
             ];
 
             // Track only changed fields
@@ -71,46 +75,43 @@ class EmailPopupController extends ResourceController
 
                 if (!empty($changedFields)) {
                     // Fetch and decode existing change log
-                    $existingChangeLog = !empty($existingData['change_log']) ? json_decode($existingData['change_log'], true) : [];
+                    $existingChangeLog = json_decode($existingData['change_log'] ?? '[]', true);
                     if (!is_array($existingChangeLog)) {
                         $existingChangeLog = [];
                     }
 
                     // Append only changed fields to change log
-                    $newChange = [
-                        'changes' => $changedFields,
-                        'updated_by' => $userId,
+                    $existingChangeLog[] = [
+                        'updated_by' => $updatedBy,
                         'timestamp' => date('Y-m-d H:i:s'),
+                        'changes' => $changedFields,
                     ];
-                    $existingChangeLog[] = $newChange;
 
-                    // Store updated change log
-                    $data['change_log'] = json_encode($existingChangeLog);
-                } else {
-                    return $this->response->setJSON(['status' => 'info', 'message' => 'No changes detected.']);
+                    $data['change_log'] = json_encode($existingChangeLog, JSON_UNESCAPED_SLASHES);
+
+                    // Update existing record
+                    if ($model->update($id, $data)) {
+                        return $this->response->setJSON(['status' => 'success', 'message' => 'Data updated successfully!']);
+                    } else {
+                        return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to update data.']);
+                    }
                 }
 
-                // Update existing record
-                $updateStatus = $model->update($id, $data);
-            } else {
-                // Insert new record with ID = 1
-                $data['id'] = $id;
-                $data['change_log'] = json_encode([
-                    [
-                        'changes' => $data,
-                        'updated_by' => $userId,
-                        'timestamp' => date('Y-m-d H:i:s'),
-                    ]
-                ]);
-
-                $updateStatus = $model->insert($data);
+                return $this->response->setJSON(['status' => 'info', 'message' => 'No changes detected.']);
             }
 
-            // Prepare JSON response
-            if ($updateStatus !== false) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Data saved successfully!']);
+            // Insert new record if not found
+            $data['id'] = $id;
+            $data['change_log'] = json_encode([[
+                'updated_by' => $updatedBy,
+                'timestamp' => date('Y-m-d H:i:s'),
+                'changes' => $data,
+            ]], JSON_UNESCAPED_SLASHES);
+
+            if ($model->insert($data)) {
+                return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully!']);
             } else {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to save data.']);
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to insert data.']);
             }
         }
 

@@ -36,43 +36,57 @@
                 <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
                 <div class="sidebar-radio-group pb-10 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="" />
+                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-1" checked="" />
                         <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2" />
+                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-2" />
                         <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
+                            value="icon-style-3" />
+                        <label class="custom-control-label" for="sidebaricon-3"><i
+                                class="fa fa-angle-double-right"></i></label>
                     </div>
                 </div>
 
                 <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
                 <div class="sidebar-radio-group pb-30 mb-10">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-1" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-1"><i
+                                class="ion-minus-round"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-2" />
+                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
+                                aria-hidden="true"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3" />
+                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-3" />
                         <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-4" checked="" />
+                        <label class="custom-control-label" for="sidebariconlist-4"><i
+                                class="icon-copy dw dw-next-2"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-5" />
+                        <label class="custom-control-label" for="sidebariconlist-5"><i
+                                class="dw dw-fast-forward-1"></i></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6" />
+                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
+                            value="icon-list-style-6" />
                         <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
                     </div>
                 </div>
@@ -98,46 +112,62 @@
             <div class="min-height-200px">
                 <!-- Default Basic Forms Start -->
                 <div class="">
-                <div class="clearfix mb-3">
-                    <div class="pull-left d-flex align-items-center">
-                        <!-- Back Button -->
-                        <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
-                            <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
-                        </button>
-                        <h4 class="h4 mb-0">Add New Blog</h4>
+                    <div class="clearfix mb-3">
+                        <div class="pull-left d-flex align-items-center">
+                            <!-- Back Button -->
+                            <button type="button" class="btn btn-secondary mr-3" onclick="goBack()">
+                                <i class="fa fa-arrow-left"></i> <!-- Back Arrow Icon -->
+                            </button>
+                            <h4 class="h4 mb-0">Add New Blog</h4>
+                        </div>
                     </div>
-                </div>
 
                 </div>
                 <div class="pd-20 card-box mb-30">
-                 
-                    <?php foreach ($tier_4 as $tier) : ?>
-                        <form id="edittierform" method="post" action="<?= base_url('tiers/update_tier_4/' . $tier['tier_4_id']) ?>" enctype="multipart/form-data" class="needs-validation" novalidate>
+
+                    <?php foreach ($tier_4 as $tier): ?>
+
+
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>tiers/logs_tier4/<?= $tier['tier_4_id'] ?>"
+                                class="btn btn-outline-secondary px-3 py-2 rounded-circle shadow-sm" data-toggle="tooltip"
+                                data-placement="top" title="View Inventory Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </a>
+                        </div>
+
+                        <form id="edittierform" method="post"
+                            action="<?= base_url('tiers/update_tier_4/' . $tier['tier_4_id']) ?>"
+                            enctype="multipart/form-data" class="needs-validation" novalidate>
                             <input type="hidden" name="tier_3_id" value="<?= $tier['tier_3_id'] ?>">
-                            
+
                             <div class="form-group row">
                                 <div class="col-sm">
                                     <label>Tier Name</label>
-                                    <input class="form-control" id="tier_name" name="tier_name" value="<?= $tier['tier_name'] ?>" type="text" placeholder="Name" required>
+                                    <input class="form-control" id="tier_name" name="tier_name"
+                                        value="<?= $tier['tier_name'] ?>" type="text" placeholder="Name" required>
                                     <div class="valid-feedback">Looks good!</div>
                                     <div class="invalid-feedback">This field can't be Empty</div>
                                 </div>
-                                
+
                                 <div class="col-sm">
                                     <label>Tier Value</label>
-                                    <input class="form-control" id="tier_value" name="tier_value" value="<?= $tier['tier_value'] ?>" type="text" placeholder="Value" readonly required>
+                                    <input class="form-control" id="tier_value" name="tier_value"
+                                        value="<?= $tier['tier_value'] ?>" type="text" placeholder="Value" readonly
+                                        required>
                                     <div class="valid-feedback">Looks good!</div>
                                     <div class="invalid-feedback">This field can't be Empty</div>
                                 </div>
-                                
+
                                 <div class="col-sm">
                                     <label for="link">Link</label>
-                                    <input type="text" class="form-control" id="link" name="tier_link" value="<?= $tier['tier_4_link'] ?>" placeholder="Link" readonly required>
+                                    <input type="text" class="form-control" id="link" name="tier_link"
+                                        value="<?= $tier['tier_4_link'] ?>" placeholder="Link" readonly required>
                                     <div class="valid-feedback">Looks good!</div>
                                     <div class="invalid-feedback">This field can't be Empty</div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <button value="submit" class="btn btn-primary btn-lg">Update</button>
                             </div>
@@ -152,12 +182,12 @@
         <?= $this->include('footer_view') ?>
         <!-- Footer View End -->
 
-    <script>
-        function goBack() {
-            // Redirects to the previous page in browser history
-            window.history.back();
-        }
-    </script>
+        <script>
+            function goBack() {
+                // Redirects to the previous page in browser history
+                window.history.back();
+            }
+        </script>
 
 </body>
 

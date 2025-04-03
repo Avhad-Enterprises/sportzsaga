@@ -121,19 +121,20 @@
                         <!-- Buttons Row -->
                         <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
                             <!-- Add Inventory Button -->
-                            <a class="btn btn-primary fw-bold mr-2" href="<?= base_url('inventory/create') ?>"
+                            <a class="btn btn-primary fw-bold mr-3" href="<?= base_url('inventory/create') ?>"
                                 role="button">
                                 Add Inventory
                             </a>
 
-                            <a class="btn btn-success fw-bold" href="<?= base_url('inventory_deleted') ?>"
+                            <!-- Logs Button -->
+                            <a class="btn btn-success fw-bold mr-3" href="<?= base_url('inventory_deleted') ?>"
                                 role="button">
                                 Logs
                             </a>
 
                             <!-- Import Inventory Button (conditional) -->
                             <?php if ($canImport): ?>
-                                <button type="button" class="btn btn-primary mr-2" data-toggle="modal"
+                                <button type="button" class="btn btn-primary mr-3" data-toggle="modal"
                                     data-target="#importModal">
                                     Import Inventory
                                 </button>
@@ -144,6 +145,7 @@
                                 <a href="<?= base_url('inventory/export') ?>" class="btn btn-success">Export Inventory</a>
                             <?php endif; ?>
                         </div>
+
                     </div>
                 </div>
 

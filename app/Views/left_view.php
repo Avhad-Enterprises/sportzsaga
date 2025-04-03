@@ -22,11 +22,19 @@
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
                         </li>
+                        
                         <li class="dropdown">
                             <a href="<?= base_url(); ?>permissions_view" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-tags-fill"></span><span class="mtext">User Access</span>
                             </a>
                         </li>
+
+                        <li class="dropdown">
+                            <a href="<?= base_url(); ?>analytics" class="no-chevron dropdown-toggle">
+                                <span class="micon bi bi-bar-chart-line"></span><span class="mtext">Analytics</span>
+                            </a>
+                        </li>
+
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
                                 <span class="micon bi bi-person-circle"></span><span class="mtext">Users</span>
@@ -38,9 +46,11 @@
                                 <li><a href="<?= base_url(); ?>customer_segment_view">Customer Segment</a></li>
                             </ul>
                         </li>
+
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
-                                <span class="micon bi bi-gear-wide-connected"></span><span class="mtext">Customer Service</span>
+                                <span class="micon bi bi-gear-wide-connected"></span><span class="mtext">Customer
+                                    Service</span>
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>
@@ -143,7 +153,7 @@
                             </a>
                         </li>-->
 
-                        
+
                     <?php elseif ($accountType === 'employee'): ?>
                         <li class="dropdown">
                             <a href="<?= base_url(); ?>dashboard" class="no-chevron dropdown-toggle">
@@ -161,7 +171,8 @@
                         </li>
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
-                                <span class="micon bi bi-gear-wide-connected"></span><span class="mtext">Customer Service</span>
+                                <span class="micon bi bi-gear-wide-connected"></span><span class="mtext">Customer
+                                    Service</span>
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>

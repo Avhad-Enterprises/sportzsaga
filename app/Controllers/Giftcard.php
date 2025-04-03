@@ -38,6 +38,7 @@ class Giftcard extends BaseController
         return view('addnew_giftcard_view', $data);
     }
 
+    
     public function publishGiftCard()
     {
         $giftCardModel = new GiftModel();
@@ -192,7 +193,6 @@ class Giftcard extends BaseController
     {
         $model = new GiftModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
 
         // Fetch the existing gift card data before updating
         $existingGiftCard = $model->find($gift_card_id);
@@ -228,7 +228,7 @@ class Giftcard extends BaseController
             'restrictions' => $this->request->getPost('restrictions') ?? $existingGiftCard['restrictions'],
             'creation_date' => $this->request->getPost('creation_date') ?? $existingGiftCard['creation_date'],
             'expiration_date' => $this->request->getPost('expiration_date') ?? $existingGiftCard['expiration_date'],
-            'updated_by' => $userId,
+            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
@@ -252,7 +252,7 @@ class Giftcard extends BaseController
 
             // Append new change log entry
             $existingChangeLog[] = [
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
@@ -351,6 +351,70 @@ class Giftcard extends BaseController
     }
 
 
+    public function giftcard_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
 
+        if ($id === null) {
+            return view('edit_giftcard_logs_view', ['updates' => []]); // No gift card ID provided
+        }
+
+        // Fetch gift card details
+        $query = $db->table('giftcards')->select('change_log')->where('gift_card_id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_giftcard_logs_view', ['updates' => []]); // Return empty if decoding fails
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                // Extract only numeric keys (0, 1, 2, ...)
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_giftcard_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_giftcard_logs_view', ['updates' => []]); // No logs found
+    }
+
+
+    public function getGiftCardChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('giftcards')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return []; // Return empty array if decoding fails
+            }
+
+            $updates = [];
+
+            // Extract only the indexed updates (0, 1, 2, ...)
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['updated_at'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+        return [];
+    }
 
 }

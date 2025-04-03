@@ -122,6 +122,17 @@
                             </button>
                         </div>
 
+                        <div class="d-flex justify-content-end">
+                            <a href="<?= base_url() ?>admin-products/admin-products_logs/<?= $product['product_id'] ?>"
+                                class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="View Product Logs">
+                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                            </a>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="pd-20 card-box mb-30">

@@ -258,7 +258,7 @@ class CatalogController extends Controller
         $catalogModel = new CatalogModel();
         $productModel = new \App\Models\ProductModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+
 
         // Fetch existing catalog data before update
         $existingCatalog = $catalogModel->find($id);
@@ -275,7 +275,7 @@ class CatalogController extends Controller
                 'discount_value' => (float) ($this->request->getPost('discount_value') ?? 0),
                 'overall_adjustment' => $this->request->getPost('overall_adjustment') ?? '',
                 'status' => $this->request->getPost('status') ?? 'inactive',
-                'updated_by' => $userId,
+                'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
 
@@ -384,7 +384,7 @@ class CatalogController extends Controller
 
                 // Append new change log entry
                 $existingChangeLog[] = [
-                    'updated_by' => $userId,
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -459,6 +459,82 @@ class CatalogController extends Controller
 
         return redirect()->to('catalog_view')->with('success', 'Catalog restored successfully.');
     }
+
+
+
+
+    public function catalog_change_logs($id = null)
+    {
+        $db = \Config\Database::connect();
+
+        if ($id === null) {
+            return view('edit_catalog_logs_view', ['updates' => []]); // No catalog ID provided
+        }
+
+        $query = $db->table('catalogs')->select('change_log')->where('id', $id)->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return view('edit_catalog_logs_view', ['updates' => []]);
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = [
+                        'updated_by' => $log['updated_by'] ?? 'Unknown',
+                        'updated_at' => $log['timestamp'],
+                        'changes' => $log['changes'] ?? [],
+                    ];
+                }
+            }
+
+            return view('edit_catalog_logs_view', ['updates' => $updates]);
+        }
+
+        return view('edit_catalog_logs_view', ['updates' => []]);
+    }
+
+
+
+    public function getCatalogChangeLogs()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('catalogs')->select('change_log')->get();
+        $row = $query->getRow();
+
+        if ($row) {
+            $decodedData = json_decode($row->change_log, true);
+
+            if (!is_array($decodedData)) {
+                return [];
+            }
+
+            $updates = [];
+
+            foreach ($decodedData as $key => $log) {
+                if (is_numeric($key) && isset($log['timestamp'])) {
+                    $updates[] = $log;
+                }
+            }
+
+            return $updates;
+        }
+
+        return [];
+    }
+
+
+
+
+
+
+
+
 
 
 
@@ -646,7 +722,6 @@ class CatalogController extends Controller
     {
         $companyModel = new CompanyModel();
 
-        // Prepare data for restoring
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
@@ -654,11 +729,13 @@ class CatalogController extends Controller
         ];
 
         if ($companyModel->updateCompanyStatus($id, $data)) {
-            return redirect()->to('company_view')->with('success', 'Restored successfully!');
+            return $this->response->setJSON(['success' => true]);
         } else {
-            return redirect()->to('company_view')->with('error', 'Failed to restore.');
+            return $this->response->setJSON(['success' => false]);
         }
     }
+
+
 
     public function companylogs()
     {
@@ -1128,54 +1205,103 @@ class CatalogController extends Controller
 
     public function deletesegment($segment_id)
     {
-        $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
+        $segmentModel = new CustomerSegmentModel();
         $session = session();
         $deletedBy = $session->get('admin_name') . ' (' . $session->get('user_id') . ')';
 
-        // Check if the segment exists
         $segment = $segmentModel->find($segment_id);
         if (!$segment) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
 
-        // Prepare data for soft delete
         $data = [
             'is_deleted' => 1,
             'deleted_by' => $deletedBy,
             'deleted_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Update the segment instead of hard delete
         if ($segmentModel->updateCustomersegment($segment_id, $data)) {
-            return redirect()->to('customer_segment_view')->with('success', 'Deleted successfully!');
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Segment deleted successfully.']);
         } else {
-            return redirect()->to('customer_segment_view')->with('error', 'Segment not deleted!');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete segment.']);
         }
     }
+
 
     // Restore function for soft-deleted segments
     public function restoreSegment($segment_id)
     {
-        $segmentModel = new CustomerSegmentModel(); // Load the Segment Model
+        $segmentModel = new CustomerSegmentModel();
 
-        // Check if the segment exists
         $segment = $segmentModel->find($segment_id);
         if (!$segment) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Segment not found.']);
         }
 
-        // Prepare data for restoring
         $data = [
             'is_deleted' => 0,
             'deleted_by' => null,
             'deleted_at' => null,
         ];
 
-        // Restore the segment
         if ($segmentModel->updateCustomersegment($segment_id, $data)) {
-            return redirect()->to('customer_segment_view')->with('success', 'Segment restored successfully.');
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Segment restored successfully.']);
         } else {
-            return redirect()->to('customer_segment_view')->with('error', 'Failed to restore segment.');
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to restore segment.']);
         }
+    }
+
+
+    public function company_logs($companyId)
+    {
+        $companyModel = new \App\Models\CompanyModel();
+
+        // Get the company details
+        $company = $companyModel->find($companyId);
+
+        if (!$company) {
+            return redirect()->to('company')->with('error', 'Company not found');
+        }
+
+        // Get the change logs for this company
+        $updates = $companyModel->getCompanyChangeLogs($companyId);
+
+        $data = [
+            'title' => 'Company Update History',
+            'company' => $company,
+            'updates' => $updates
+        ];
+
+        // Return the view with the data
+        return view('edit_company_logs_view', $data);
+    }
+
+    public function customersegment_logs($segmentId)
+    {
+        $model = new CustomerSegmentModel();
+        $changeLogJson = $model->getChangeLog($segmentId);
+
+        if (!empty($changeLogJson)) {
+            // Decode the JSON string
+            $changeLogArray = json_decode($changeLogJson, true);
+            $updates = [];
+
+            if (is_array($changeLogArray)) {
+                // Convert nested changes into an indexed array
+                foreach ($changeLogArray as $key => $log) {
+                    if (is_array($log) && isset($log['updated_at'], $log['updated_by'])) {
+                        $updates[] = $log;
+                    }
+                }
+                // Sort updates by timestamp (latest first)
+                usort($updates, function ($a, $b) {
+                    return strtotime($b['updated_at']) - strtotime($a['updated_at']);
+                });
+            }
+        } else {
+            $updates = [];
+        }
+
+        return view('edit_customersegment_logs_view', ['updates' => $updates]);
     }
 }

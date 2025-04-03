@@ -409,4 +409,725 @@ class onlinestoremodal extends Model
             ->get()
             ->getResultArray();
     }
+
+    public function getHomecarousel2()
+    {
+        return $this->db->table('home_carousel2')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getChangeLog($carousel_id)
+    {
+        $result = $this->db->table('home_carousel2')
+            ->select('change_log')
+            ->where('id', $carousel_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+
+    public function getMarquees()
+    {
+        return $this->db->table('marquee_texts')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getHomeCollections()
+    {
+        return $this->db->table('home_collection')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getlogohistory()
+    {
+        return $this->db->table('home_logo')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getLogochange($logo_id)
+    {
+        $result = $this->db->table('home_logo')
+            ->select('change_log')
+            ->where('id', $logo_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+    public function getimagehistory()
+    {
+        return $this->db->table('home_image')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getimagechange($image_id)
+    {
+        $result = $this->db->table('home_image')
+            ->select('change_log')
+            ->where('id', $image_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+    public function gethome_bloghistory()
+    {
+        return $this->db->table('home_blog')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function gethome_blogchange($home_blog_id)
+    {
+        $result = $this->db->table('home_blog')
+            ->select('change_log')
+            ->where('id', $home_blog_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getblog1history()
+    {
+        return $this->db->table('blog_settings')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getblog1change($blog1_id)
+    {
+        $result = $this->db->table('blog_settings')
+            ->select('change_log')
+            ->where('id', $blog1_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+
+    public function getblog2history()
+    {
+        return $this->db->table('onlinestore_blogs')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getblog2change($blog2_id)
+    {
+        $result = $this->db->table('onlinestore_blogs')
+            ->select('change_log')
+            ->where('id', $blog2_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+
+    public function getsinglebloghistory()
+    {
+        return $this->db->table('singleblog_data')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getsingleblogchange($singleblog_id)
+    {
+        $result = $this->db->table('singleblog_data')
+            ->select('change_log')
+            ->where('id', $singleblog_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true);
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA;
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getcollectionhistory()
+    {
+        return $this->db->table('os_collections')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getcollectionchange($collection_id)
+    {
+        $result = $this->db->table('os_collections')
+            ->select('change_log')
+            ->where('id', $collection_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getproducthistory()
+    {
+        return $this->db->table('product_setting')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getproductchange($product_id)
+    {
+        $result = $this->db->table('product_setting')
+            ->select('change_log')
+            ->where('id', $product_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getpolicieshistory()
+    {
+        return $this->db->table('policies')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getpolicieschange($policies_id)
+    {
+        $result = $this->db->table('policies')
+            ->select('change_log')
+            ->where('id', $policies_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getfooterhistory()
+    {
+        return $this->db->table('footer_data')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+
+    public function getfooterchange($Footer_id)
+    {
+        $result = $this->db->table('footer_data')
+            ->select('change_log')
+            ->where('id', $Footer_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+        return [];
+    }
+
+
+    public function getheaderhistory()
+    {
+        return $this->db->table('header_pages')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getheaderchange($Header_id)
+    {
+        $result = $this->db->table('header_pages')
+            ->select('change_log')
+            ->where('id', $Header_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getemailhistory()
+    {
+        return $this->db->table('email_pop_up')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getemailchange($email_id)
+    {
+        $result = $this->db->table('email_pop_up')
+            ->select('change_log')
+            ->where('id', $email_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getabouthistory()
+    {
+        return $this->db->table('aboutpage')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getaboutchange($about_id)
+    {
+        $result = $this->db->table('aboutpage')
+            ->select('change_log')
+            ->where('id', $about_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getcontacthistory()
+    {
+        return $this->db->table('contactpage')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getcontactchange($contact_id)
+    {
+        $result = $this->db->table('contactpage')
+            ->select('change_log')
+            ->where('id', $contact_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getcartpagehistory()
+    {
+        return $this->db->table('cartpage')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getcartpagechange($cart_id)
+    {
+        $result = $this->db->table('cartpage')
+            ->select('change_log')
+            ->where('id', $cart_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function getcheckouthistory()
+    {
+        return $this->db->table('checkoutpage')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getcheckoutchange($checkout_id)
+    {
+        $result = $this->db->table('checkoutpage')
+            ->select('change_log')
+            ->where('id', $checkout_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+    public function gettrackinghistory()
+    {
+        return $this->db->table('trackingpage')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function gettrackingchange($tracking_id)
+    {
+        $result = $this->db->table('trackingpage')
+            ->select('change_log')
+            ->where('id', $tracking_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+    public function get404pagehistory()
+    {
+        return $this->db->table('error_page')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function get404pagechange($error_id)
+    {
+        $result = $this->db->table('error_page')
+            ->select('change_log')
+            ->where('id', $error_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+    public function getour_teamhistory()
+    {
+        return $this->db->table('team_members')
+            ->orderBy('updated_at', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getour_teamchange($team_id)
+    {
+        $result = $this->db->table('team_members')
+            ->select('change_log')
+            ->where('id', $team_id)
+            ->get()
+            ->getRow();
+
+        if ($result && !empty($result->change_log)) {
+            $changeLog = json_decode($result->change_log, true); // Decode correctly
+
+            // Ensure it's an array and sort it by 'timestamp' in descending order
+            if (is_array($changeLog)) {
+                usort($changeLog, function ($a, $b) {
+                    $timeA = isset($a['timestamp']) ? strtotime($a['timestamp']) : 0;
+                    $timeB = isset($b['timestamp']) ? strtotime($b['timestamp']) : 0;
+                    return $timeB - $timeA; // Descending order
+                });
+            }
+
+            return $changeLog;
+        }
+
+        return [];
+    }
+
+
+
+
 }

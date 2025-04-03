@@ -257,6 +257,16 @@
                                                                     <h4 class="text-blue h5 mb-20">
                                                                         Edit Your Personal Settings
                                                                     </h4>
+                                                                    <div class="d-flex justify-content-end">
+                                                                        <a href="<?= base_url() ?>update_profile/profile_logs/<?= $user['user_id'] ?>"
+                                                                            class="btn btn-outline-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                                                                            style="width: 32px; height: 32px;"
+                                                                            data-toggle="tooltip"
+                                                                            data-placement="top"
+                                                                            title="View profile Logs">
+                                                                            <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+                                                                        </a>
+                                                                    </div>
                                                                     <div class="form-group">
                                                                         <label>Full Name</label>
                                                                         <input class="form-control form-control-lg" name="name" value="<?= set_value('name', $user['name']) ?>" type="text" />

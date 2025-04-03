@@ -119,6 +119,15 @@
                     <form id="editbundleform" method="post"
                         action="<?= base_url() ?>bundle/updateproductcollection/<?= $bundle['bundle_id'] ?>">
                         
+
+                            <div class="d-flex justify-content-end">
+                                <a href="<?= base_url() ?>bundle/bundle_product_logs/<?= $bundle['bundle_id'] ?>" 
+                                    class="btn btn-outline-primary px-3 py-2 rounded-circle shadow-sm"
+                                    data-toggle="tooltip" data-placement="top" title="View Bundle Line Logs">
+                                    <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                                </a>
+                            </div>
+
                             <div class="form-group row">
                                 <div class="col-sm">
                                     <label for="bundle_name">Title</label>

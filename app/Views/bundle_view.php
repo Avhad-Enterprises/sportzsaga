@@ -54,8 +54,7 @@
                                     Add New
                                 </a>
                             </div>
-                            <div class="dropdown">
-                                <!-- Import Button (conditional) -->
+                        <!--    <div class="dropdown">
                                 <?php if ($canImport): ?>
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>bundles/import"
                                         role="button">
@@ -63,15 +62,14 @@
                                     </a>
                                 <?php endif; ?>
                             </div>
-                            <div class="dropdown">
-                                <!-- Export Button (conditional) -->
+                            <div class="dropdown">                               
                                 <?php if ($canExport): ?>
                                     <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>bundles/exporttoexcel"
                                         role="button">
                                         Export To Excel
                                     </a>
                                 <?php endif; ?>
-                            </div>
+                            </div>-->
 
                             <!-- Logs Button (conditional) -->
                             <?php if ($canLogs): ?>
@@ -136,7 +134,7 @@
                                                     <i class="dw dw-more"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                                  
                                                     <a class="dropdown-item"
                                                         href="<?= base_url('BundleController/edit/' . $bundle['bundle_id']); ?>"><i
                                                             class="dw dw-edit2"></i> Edit</a>
