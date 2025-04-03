@@ -100,12 +100,12 @@ class Blogs extends BaseController
     public function addnewblog()
     {
         $model = new Blogs_model();
-        $tagModel = new TagModel();   
-        $userModel = new Registerusers_model();    
+        $tagModel = new TagModel();
+        $userModel = new Registerusers_model();
         $controlmodel = new Controls_model();
         $catmodel = new CategoryModel();
-        
-        
+
+
         $data['categories'] = $catmodel->getAllCategories();
         $data['image'] = $model->getallimages();
         $data['sheader'] = $controlmodel->getMenusecondaryLinks();
@@ -327,6 +327,7 @@ class Blogs extends BaseController
             'blog_metatitle' => $this->request->getPost('blog-meta-title'),
             'blog_metadescription' => $this->request->getPost('blog-meta-description'),
             'blog_metaurl' => $this->request->getPost('blog-meta-url'),
+            'blog_quote' => $this->request->getPost('blog-quote'),
         ];
 
         // Handle section images
