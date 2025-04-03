@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -384,6 +384,18 @@ $routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
 $routes->get('collection/collection_logs/(:num)', 'Products::collection_change_logs/$1');
 $routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs');
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
+
+//Preferences Controller
+$routes->get('online_store/preferences', 'Preference::index');
+// Setting Controller
+$routes->post('online_store/preferences/g-tag/update/(:num)', 'Preference::updateGtag/$1');
+$routes->get('setting/site-meta/edit/(:num)', 'SiteMeta::edit/$1');
+$routes->post('setting/site-meta/update/(:num)', 'SiteMeta::update/$1');
+$routes->get('setting/upload-logo', 'SiteLogo::edit');
+$routes->post('setting/update-logo', 'SiteLogo::update');
+$routes->post('setting/robots-txt/update', 'RobotsTxt::update');
+$routes->post('setting/footer-description/update', 'RobotsTxt::update_footer_description');
+
 
 // Order Management
 $routes->get('ordermanagement', 'Ordermanagement');

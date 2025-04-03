@@ -381,7 +381,7 @@ class Products_model extends Model
 
         // Create a Pager instance
         $pager = service('pager');
-        $pager->setPath('collections/view/' . $this->request->uri->getSegment(3)); // Adjust this to match your route
+        $pager->setPath('collections/view/' . $this->request->uri->getSegment(3));
         $pager = $pager->makeLinks($page, $perPage, $total, 'default_full');
 
         return [
@@ -606,7 +606,7 @@ class Products_model extends Model
         return $query->getResultArray();
     }
 
-    public function addNewCollectiondata($data) //
+    public function addNewCollectiondata($data)
     {
         $builder = $this->db->table('collection');
         $builder->insert($data);

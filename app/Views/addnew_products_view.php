@@ -123,7 +123,7 @@
                 <!-- Default Basic Forms Start -->
 
 
-                <form action="<?= base_url(); ?>admin-products/publishproduct" method="post" id="AddnewProductsForm" class="validate-form" enctype="multipart/form-data">
+                <form action="<?= base_url('admin-products/publishproduct'); ?>" method="post" id="AddnewProductsForm" class="validate-form" enctype="multipart/form-data">
 
                     <div class="mb-3 d-flex justify-content-between">
                         <a href="javascript:void(0);" class="mx-2" onclick="goBack()">
@@ -183,9 +183,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="quillEditor" class="form-label">Product Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <div id="quillEditor" style="height: 300px; border: 1px solid #ccc;"></div>
-                                    <textarea class="form-control resizable-textarea" id="product-description" name="product-description" style="display: none;"></textarea>
+                                    <label for="product-description">Product Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
+                                    <textarea class="form-control resizable-textarea"  id="editor" name="product-description"></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -226,6 +225,32 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <div class="form-group">
+                                    <p class="text-blue">Bullet Points</p>
+                                    <div class="mb-20">
+                                        <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Add Tags</label>
+                                    <div class="input-group">
+                                        <select class="custom-select2 custom-select-products form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
+                                            <optgroup label="Available Products">
+                                                <?php foreach ($tags as $tag): ?>
+                                                    <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
+                                                <?php endforeach; ?>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="pd-20 card-box mb-30">
@@ -624,42 +649,11 @@
                                         id="preorder-date"
                                         data-conditional-field="#preorder-tag"
                                         data-conditional-value="yes"
-                                        data-error-message-required="Preorder Date is required."/>
+                                        data-error-message-required="Preorder Date is required." />
                                 </div>
                             </div>
 
-                            <div class="pd-20 card-box mb-30">
-                                <div class="form-group">
-                                    <p class="text-blue">Bullet Points</p>
-                                    <div class="mb-20">
-                                        <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" />
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="pd-20 card-box mb-30">
-                                <div class="form-group">
-                                    <label>Add Tags</label>
-                                    <div class="input-group">
-                                        <?php if (!empty($tags)): ?>
-                                            <select class="custom-select2 custom-select-products form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
-                                                <optgroup label="Available Products">
-                                                    <?php foreach ($tags as $tag): ?>
-                                                        <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
-                                                    <?php endforeach; ?>
-                                                </optgroup>
-                                            </select>
-                                        <?php else: ?>
-                                            <p class="text-danger">No tags available</p>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </form>
