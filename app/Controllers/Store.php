@@ -846,7 +846,7 @@ class Store extends BaseController
                 'subscribe_btn' => $this->request->getPost('subscribe_btn'),
                 'blogs_title' => $this->request->getPost('blogs_title'),
                 'blogs' => $this->request->getPost('blogs'),
-                'updated_by' =>  $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+                'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
 
             ];
 
@@ -895,7 +895,7 @@ class Store extends BaseController
             if (!empty($changes)) {
                 $oldChangeLog = json_decode($existingData['change_log'] ?? '[]', true) ?? [];
                 $oldChangeLog[] = [
-                    'updated_by' =>  $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
+                    'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                     'timestamp' => date('Y-m-d H:i:s'),
                     'changes' => $changes
                 ];
@@ -2143,38 +2143,43 @@ class Store extends BaseController
         $db = \Config\Database::connect();
 
         if ($id === null) {
-            return view('collection_change_logs', ['updates' => []]); // No bundle ID provided
+            return view('collection_os_change_logs', ['updates' => []]);
         }
 
-        // Fetch bundle details
         $query = $db->table('home_collection')->select('change_log')->where('id', $id)->get();
         $row = $query->getRow();
 
-        if ($row) {
+        if ($row && !empty($row->change_log)) {
             $decodedData = json_decode($row->change_log, true);
 
-            if (!is_array($decodedData)) {
-                return view('collection_change_logs', ['updates' => []]); // Return empty if decoding fails
-            }
+            if (is_array($decodedData)) {
+                $updates = [];
 
-            $updates = [];
+                foreach ($decodedData as $log) {
+                    if (isset($log['timestamp'])) {
+                        // Manually wrap old/new into a 'changes' array with a label
+                        $changes = [
+                            'home_collection_items' => [
+                                'old' => $log['old'] ?? '',
+                                'new' => $log['new'] ?? '',
+                            ]
+                        ];
 
-            foreach ($decodedData as $key => $log) {
-                // Extract only numeric keys (0, 1, 2, ...)
-                if (is_numeric($key) && isset($log['timestamp'])) {
-                    $updates[] = [
-                        'updated_by' => $log['updated_by'] ?? 'Unknown',
-                        'updated_at' => $log['timestamp'], // Fix: Use 'timestamp' instead of 'updated_at'
-                        'changes' => $log['changes'] ?? [],
-                    ];
+                        $updates[] = [
+                            'updated_by' => $log['updated_by'] ?? 'Unknown',
+                            'updated_at' => $log['timestamp'],
+                            'changes' => $changes,
+                        ];
+                    }
                 }
-            }
 
-            return view('collection_change_logs', ['updates' => $updates]);
+                return view('collection_os_change_logs', ['updates' => $updates]);
+            }
         }
 
-        return view('collection_change_logs', ['updates' => []]); // No logs found
+        return view('collection_os_change_logs', ['updates' => []]);
     }
+
 
 
     public function gethome_collectionChangeLogs()

@@ -29,8 +29,9 @@ class CustomerSegmentModel extends Model
 
     public function updateCustomersegment($id, $data)
     {
-        return $this->db->table('customer_segments')->where('segment_id', $id)->update($data);
+        return $this->where('segment_id', $id)->set($data)->update();
     }
+
 
     public function getAlllogsegment()
     {
@@ -42,5 +43,5 @@ class CustomerSegmentModel extends Model
     {
         return $this->select('change_log')->where('segment_id', $segmentId)->get()->getRowArray()['change_log'] ?? null;
     }
-    
+
 }

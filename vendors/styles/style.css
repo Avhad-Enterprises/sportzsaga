@@ -5818,7 +5818,7 @@ red {
 
 .resizable-textarea {
     resize: vertical;
-    overflow: auto;
+    overflow-y: auto;
     width: 100%;
     max-height: 400px;
     min-height: 100px;
@@ -7032,4 +7032,100 @@ textarea {
 .select2-results__option[aria-selected=true] {
     background-color: #6c757d !important;
     color: white !important;
+}
+
+
+
+
+
+/* Analyctics */
+.AnalycticschartsSli {
+    padding: 18px 0;
+    width: 100%;
+    height: 452px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+    scrollbar-width: none;
+}
+
+.AnalycticschartsSli::-webkit-scrollbar {
+    display: none;
+}
+
+.AnalycticschartBox {
+    flex-shrink: 0;
+    width: 670px;
+    height: 400px;
+    margin-right: 15px;
+    background: #fff;
+    border-radius: 14px;
+}
+
+.ChartTitles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FullChartView {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.FullChartView h4 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#visitorLineChart {
+    width: 100% !important;
+}
+
+.DatesFilter {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.DatesFilter i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.ExportBtnAna {
+    padding: 10px 20px;
+    background-color: #e3e3e3;
+    color: #000;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.ExportBtnAna i {
+    margin-right: 10px;
+}
+
+.ChartFilterbtn button {
+    border: none;
+    background: none;
+}
+
+.ChartFilterbtn {
+    padding: 6px 12px;
+    background-color: #e3e3e3;
+    color: #000;
+    border-radius: 9px;
+    text-decoration: none;
 }

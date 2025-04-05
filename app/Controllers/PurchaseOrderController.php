@@ -29,7 +29,6 @@ class PurchaseOrderController extends Controller
         $session = session();
         $userId = $session->get('user_id');
 
-        // Fetch user permissions for Purchase Orders
         $db = \Config\Database::connect();
         $permissions = $db->table('user_permissions')
             ->select('action')

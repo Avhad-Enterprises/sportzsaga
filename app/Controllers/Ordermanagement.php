@@ -2531,6 +2531,11 @@ class Ordermanagement extends BaseController
         return json_decode($response, true);
     }
 
+
+
+
+
+    
     private function sendOrderConfirmationWhatsApp($recipient, $name, $orderData, $productDetails)
     {
         $url = 'https://api.dotpe.in/api/comm/public/enterprise/v1/wa/send';

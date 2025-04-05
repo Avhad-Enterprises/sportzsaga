@@ -46,156 +46,147 @@ class InventoryController extends BaseController
                 'sku' => $product['sku'] ?? '',
                 'inner_barcode' => $product['barcode'] ?? '',
                 'length' => $product['length'] ?? '',
-                'width' => $product['width'] ?? '',
                 'height' => $product['height'] ?? '',
                 'breadth' => $product['breadth'] ?? '',
-                'outer_barcode' => $product['outer_barcode'] ?? '',
             ]);
         }
 
         return $this->response->setJSON(['error' => 'Product not found']);
     }
 
-
-
     public function store()
     {
         $inventoryModel = new InventoryModel();
         $session = session();
 
-        // Get logged-in user details
         $userId = $session->get('user_id');
-        $adminName = $session->get('admin_name'); // Assuming admin_name exists in session
-        $addedBy = $adminName . ' (' . $userId . ')'; // Format: "Admin Name (UserID)"
+        $adminName = $session->get('admin_name');
+        $addedBy = "{$adminName} ({$userId})";
 
-        // Collecting data from the form
         $productId = $this->request->getPost('product_id');
         $warehouseIds = $this->request->getPost('warehouse_ids');
         $inventoryCounts = $this->request->getPost('inventory_counts');
-        $storageLocations = $this->request->getPost('storage_locations');
-        $sku = $this->request->getPost('sku');
-        $innerBarcode = $this->request->getPost('inner_barcode');
-        $outerBarcode = $this->request->getPost('outer_barcode');
-        $length = $this->request->getPost('length');
-        $width = $this->request->getPost('width');
-        $height = $this->request->getPost('height');
-        $breadth = $this->request->getPost('breadth');
-        $category = $this->request->getPost('category');
-        $brandName = $this->request->getPost('brand_name');
-        $supplier = $this->request->getPost('supplier');
-        $supplierItemCode = $this->request->getPost('supplier_item_code');
-        $baseUnit = $this->request->getPost('base_unit');
-        $layer = $this->request->getPost('layer');
-        $pallet = $this->request->getPost('pallet');
-        $manufacturer = $this->request->getPost('manufacturer');
-        $manufacturerLocation = $this->request->getPost('manufacturer_location');
-        $stockQuantity = $this->request->getPost('stock_quantity');
-        $reorderLevel = $this->request->getPost('reorder_level');
-        $safetyStock = $this->request->getPost('safety_stock');
-        $singleUnitPrice = $this->request->getPost('single_unit_price');
-        $casePrice = $this->request->getPost('case_price');
-        $compareAtPrice = $this->request->getPost('compare_at_price');
-        $batchNumber = $this->request->getPost('batch_number');
-        $lotNumber = $this->request->getPost('lot_number');
-        $manufacturingDate = $this->request->getPost('manufacturing_date');
-        $expirationDate = $this->request->getPost('expiration_date');
-        $vatGst = $this->request->getPost('vat_gst');
-        $stateGst = $this->request->getPost('state_gst');
-        $customDuty = $this->request->getPost('custom_duty');
-        $origin = $this->request->getPost('origin');
-        $customLabels = $this->request->getPost('custom_labels');
-        $fifoLifo = $this->request->getPost('fifo_lifo');
-        $stockRotation = $this->request->getPost('stock_rotation');
+        $stockReductionRule = $this->request->getPost('stock_reduction_rule');
+        $stockThreshold = $this->request->getPost('stock_threshold');
+        $stockPriorities = $this->request->getPost('stock_priorities') ?? [];
+        $fallbackWarehouseId = $this->request->getPost('fallback_warehouse_id');
 
-        // Validation check
         if (!$productId || empty($warehouseIds) || empty($inventoryCounts)) {
             return redirect()->back()->with('error', 'Please fill out all required fields.');
         }
 
-        // Loop through warehouses and save data for each
-        foreach ($warehouseIds as $index => $warehouseId) {
-            $data = [
-                'product_id' => $productId,
-                'warehouse_id' => $warehouseId,
-                'inventory_count' => $inventoryCounts[$index],
-                'storage_location' => $storageLocations[$index] ?? null,
-                'sku' => $sku,
-                'inner_barcode' => $innerBarcode,
-                'outer_barcode' => $outerBarcode,
-                'length' => $length,
-                'width' => $width,
-                'height' => $height,
-                'breadth' => $breadth,
-                'category' => $category,
-                'brand_name' => $brandName,
-                'supplier' => $supplier,
-                'supplier_item_code' => $supplierItemCode,
-                'base_unit' => $baseUnit,
-                'layer' => $layer,
-                'pallet' => $pallet,
-                'manufacturer' => $manufacturer,
-                'manufacturer_location' => $manufacturerLocation,
-                'stock_quantity' => $stockQuantity,
-                'reorder_level' => $reorderLevel,
-                'safety_stock' => $safetyStock,
-                'single_unit_price' => $singleUnitPrice,
-                'case_price' => $casePrice,
-                'compare_at_price' => $compareAtPrice,
-                'batch_number' => $batchNumber,
-                'lot_number' => $lotNumber,
-                'manufacturing_date' => $manufacturingDate,
-                'expiration_date' => $expirationDate,
-                'vat_gst' => $vatGst,
-                'state_gst' => $stateGst,
-                'custom_duty' => $customDuty,
-                'origin' => $origin,
-                'custom_labels' => $customLabels,
-                'fifo_lifo' => $fifoLifo,
-                'stock_rotation' => $stockRotation,
-                'added_by' => $addedBy, // ✅ Store who added this inventory
-                'created_at' => date('Y-m-d H:i:s'), // ✅ Timestamp
-            ];
+        // Validate fallback warehouse for proximity/hybrid rules
+        if (in_array($stockReductionRule, ['proximity', 'hybrid']) && empty($fallbackWarehouseId)) {
+            return redirect()->back()->with('error', 'Please select a fallback warehouse for Proximity or Hybrid rules.');
+        }
 
-            $inventoryModel->insert($data);
+        // Common data for all warehouses
+        $commonData = array_filter([
+            'product_id' => $productId,
+            'sku' => $this->request->getPost('sku'),
+            'inner_barcode' => $this->request->getPost('inner_barcode'),
+            'outer_barcode' => $this->request->getPost('outer_barcode'),
+            'length' => $this->request->getPost('length'),
+            'width' => $this->request->getPost('width'),
+            'height' => $this->request->getPost('height'),
+            'breadth' => $this->request->getPost('breadth'),
+            'category' => $this->request->getPost('category'),
+            'brand_name' => $this->request->getPost('brand_name'),
+            'supplier' => $this->request->getPost('supplier'),
+            'supplier_item_code' => $this->request->getPost('supplier_item_code'),
+            'base_unit' => $this->request->getPost('base_unit'),
+            'layer' => $this->request->getPost('layer'),
+            'pallet' => $this->request->getPost('pallet'),
+            'manufacturer' => $this->request->getPost('manufacturer'),
+            'manufacturer_location' => $this->request->getPost('manufacturer_location'),
+            'stock_quantity' => $this->request->getPost('stock_quantity'),
+            'reorder_level' => $this->request->getPost('reorder_level'),
+            'safety_stock' => $this->request->getPost('safety_stock'),
+            'single_unit_price' => $this->request->getPost('single_unit_price'),
+            'case_price' => $this->request->getPost('case_price'),
+            'compare_at_price' => $this->request->getPost('compare_at_price'),
+            'batch_number' => $this->request->getPost('batch_number'),
+            'lot_number' => $this->request->getPost('lot_number'),
+            'manufacturing_date' => $this->request->getPost('manufacturing_date'),
+            'expiration_date' => $this->request->getPost('expiration_date'),
+            'vat_gst' => $this->request->getPost('vat_gst'),
+            'state_gst' => $this->request->getPost('state_gst'),
+            'custom_duty' => $this->request->getPost('custom_duty'),
+            'origin' => $this->request->getPost('origin'),
+            'custom_labels' => $this->request->getPost('custom_labels'),
+            'fifo_lifo' => $this->request->getPost('fifo_lifo'),
+            'stock_rotation' => $this->request->getPost('stock_rotation'),
+            'stock_reduction_rule' => $stockReductionRule,
+            'stock_threshold' => $stockReductionRule === 'hybrid' ? (int) $stockThreshold : null,
+            'fallback_warehouse_id' => in_array($stockReductionRule, ['proximity', 'hybrid']) ? (int) $fallbackWarehouseId : null,
+            'added_by' => $addedBy,
+            'created_at' => date('Y-m-d H:i:s'),
+        ], fn($value) => $value !== null && $value !== '');
+
+        $storageLocations = $this->request->getPost('storage_locations') ?? [];
+        foreach ($warehouseIds as $index => $warehouseId) {
+            $data = array_merge($commonData, [
+                'warehouse_id' => $warehouseId,
+                'inventory_count' => (int) $inventoryCounts[$index],
+                'storage_location' => $storageLocations[$index] ?? null,
+                'priority' => !empty($stockPriorities[$index]) ? (int) $stockPriorities[$index] : null,
+            ]);
+
+            $existingInventory = $inventoryModel->where('product_id', $productId)
+                ->where('warehouse_id', $warehouseId)
+                ->first();
+
+            if ($existingInventory) {
+                $data['stock_quantity'] = $existingInventory['stock_quantity'] + $data['inventory_count'];
+                $inventoryModel->update($existingInventory['id'], $data);
+            } else {
+                $data['stock_quantity'] = $data['inventory_count'];
+                $inventoryModel->insert($data);
+            }
         }
 
         return redirect()->to('inventory_list_view')->with('success', 'Inventory saved successfully.');
     }
 
-
-
     public function inventoryList()
     {
-        $db = \Config\Database::connect();
-        $session = session();
-        $userId = $session->get('user_id');
+        $inventoryModel = new InventoryModel();
+        $productModel = new Products_model();
+        $warehouseModel = new WarehouseModel();
 
-        // Check user permissions for delete, import, and export actions
-        $permissions = $db->table('user_permissions')
-            ->select('action')
-            ->where('user_id', $userId)
-            ->where('table_name', 'inventory')
-            ->get()
-            ->getResultArray();
+        // Fetch all inventory records with related product and warehouse data
+        $inventoryData = $inventoryModel->select('inventory.*, products.product_title as product_title, warehouses.name as warehouse_name, warehouses.location as warehouse_location')
+            ->join('products', 'products.product_id = inventory.product_id', 'left')
+            ->join('warehouses', 'warehouses.id = inventory.warehouse_id', 'left')
+            ->findAll();
 
-        $userPermissions = array_column($permissions, 'action');
+        // Group inventory data by product_id
+        $groupedInventory = [];
+        foreach ($inventoryData as $inventory) {
+            $productId = $inventory['product_id'];
+            if (!isset($groupedInventory[$productId])) {
+                $groupedInventory[$productId] = [
+                    'product_id' => $productId,
+                    'product_title' => $inventory['product_title'],
+                    'warehouses' => [],
+                ];
+            }
+            $groupedInventory[$productId]['warehouses'][] = [
+                'id' => $inventory['id'],
+                'warehouse_name' => $inventory['warehouse_name'],
+                'warehouse_location' => $inventory['warehouse_location'],
+                'stock_quantity' => $inventory['stock_quantity'],
+                'stock_reduction_rule' => $inventory['stock_reduction_rule'],
+                'fallback_warehouse_id' => $inventory['fallback_warehouse_id'],
+            ];
+        }
 
-        // Fetch inventory data **only where is_deleted = 0**
-        $query = $db->table('inventory i')
-            ->select('i.id, p.product_id, p.product_title, i.sku, i.stock_quantity, i.category, i.supplier, w.name as warehouse_name, w.location as warehouse_location')
-            ->join('products p', 'p.product_id = i.product_id', 'inner')
-            ->join('warehouses w', 'w.id = i.warehouse_id', 'inner')
-            ->where('i.is_deleted', 0) // ✅ Only fetch records where is_deleted = 0
-            ->get();
-
-        $data['inventoryData'] = $query->getResultArray();
-        $data['canDelete'] = in_array('delete', $userPermissions);
-        $data['canImport'] = in_array('import', $userPermissions);
-        $data['canExport'] = in_array('export', $userPermissions);
+        // Convert to indexed array for the view
+        $data['inventoryData'] = array_values($groupedInventory);
+        $data['canDelete'] = true;
 
         return view('inventory_list_view', $data);
     }
-
 
     public function exportCSV()
     {
@@ -658,5 +649,4 @@ class InventoryController extends BaseController
         }
         return [];
     }
-
 }

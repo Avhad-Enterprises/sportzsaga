@@ -22,7 +22,7 @@ class BlogCommentModel extends Model
     
     protected $useTimestamps = true;
     
-    public function insertcomment()
+    public function insertcomment($data)
     {
         return $this->insert($data);
     }

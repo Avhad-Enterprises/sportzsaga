@@ -442,25 +442,26 @@
                 // Allow form submission
             });
         });
+
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const date1 = document.getElementById('date1'); // Start Date
-            const date2 = document.getElementById('date2'); // End Date
-            const startDateError = document.getElementById('startDate-error'); // Start Date Error
-            const endDateError = document.getElementById('endDate-error'); // End Date Error
+        document.addEventListener('DOMContentLoaded', function () {
+            const date1 = document.getElementById('date1');  // Start Date
+            const date2 = document.getElementById('date2');  // End Date
+            const startDateError = document.getElementById('startDate-error');  // Start Date Error
+            const endDateError = document.getElementById('endDate-error');  // End Date Error
 
             // Set the minimum start date to today
             const today = new Date().toISOString().split('T')[0];
-            date1.setAttribute('min', today); // Ensuring the start date is not before today
+            date1.setAttribute('min', today);  // Ensuring the start date is not before today
 
             // Add event listeners for date validation
 
             // For the Start Date Change
-            date1.addEventListener('change', function() {
-                const startDate = new Date(date1.value); // Get the start date
-                const endDate = new Date(date2.value); // Get the end date
+            date1.addEventListener('change', function () {
+                const startDate = new Date(date1.value);  // Get the start date
+                const endDate = new Date(date2.value);  // Get the end date
 
                 // Clear previous errors
                 startDateError.textContent = '';
@@ -469,14 +470,14 @@
                 // Validate if end date is already filled
                 if (date2.value && endDate <= startDate) {
                     endDateError.textContent = 'End date must be after the start date.';
-                    date2.value = ''; // Reset invalid end date
+                    date2.value = '';  // Reset invalid end date
                 }
             });
 
             // For the End Date Change
-            date2.addEventListener('change', function() {
-                const startDate = new Date(date1.value); // Get the start date
-                const endDate = new Date(date2.value); // Get the end date
+            date2.addEventListener('change', function () {
+                const startDate = new Date(date1.value);  // Get the start date
+                const endDate = new Date(date2.value);  // Get the end date
 
                 // Clear previous error
                 endDateError.textContent = '';
@@ -484,14 +485,14 @@
                 // Validate if the end date is after the start date
                 if (endDate <= startDate) {
                     endDateError.textContent = 'End date must be after the start date.';
-                    date2.value = ''; // Reset invalid end date
+                    date2.value = '';  // Reset invalid end date
                 }
             });
         });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const startDateInput = document.getElementById("date1");
             const endDateInput = document.getElementById("date2");
             const discountStatusInput = document.getElementById("discountstatus");

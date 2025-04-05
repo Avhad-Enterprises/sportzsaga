@@ -414,7 +414,6 @@ class Products extends BaseController
             'compare_at_price' => trim($this->request->getPost('compare-at-price')),
             'sku' => trim($this->request->getPost('sku')),
             'barcode' => trim($this->request->getPost('barcode')),
-            'inventory' => trim($this->request->getPost('total_inventory')),
             'length' => $length,
             'breadth' => $breadth,
             'height' => $height,
@@ -560,7 +559,6 @@ class Products extends BaseController
             'selling_price' => $this->request->getPost('selling-price'),
             'compare_at_price' => $this->request->getPost('compare-at-price'),
             'sku' => $this->request->getPost('sku'),
-            'inventory' => $this->request->getPost('total_inventory'),
             'length' => $length,
             'breadth' => $breadth,
             'height' => $height,
@@ -750,6 +748,7 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $data['collections'] = $model->getcollectionsdata();
+        //print_r($data);exit();
         return view('collections_view', $data);
     }
 

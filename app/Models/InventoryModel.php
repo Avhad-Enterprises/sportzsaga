@@ -48,6 +48,8 @@ class InventoryModel extends Model
         'custom_labels',
         'fifo_lifo',
         'stock_rotation',
+        'stock_reduction_rule',
+        'stock_threshold',
         'created_at',
         'updated_at',
         'is_deleted',

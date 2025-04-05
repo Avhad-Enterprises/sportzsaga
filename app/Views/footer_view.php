@@ -86,30 +86,51 @@
   });
 </script>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/41.4.1/classic/ckeditor.js"></script>
+<!-- Include CKEditor 5 Classic (Latest Version) -->
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', function() {
     ClassicEditor
       .create(document.querySelector('#editor'), {
-        toolbar: [
-          'heading', '|',
-          'bold', 'italic', 'underline', 'link', '|',
-          'bulletedList', 'numberedList', 'blockQuote', '|',
-          'undo', 'redo', 'imageUpload', 'insertTable', 'mediaEmbed', '|',
-          'codeBlock', 'htmlEmbed'
-        ],
-        placeholder: 'Write the product description here...'
+        enterMode: 'p',
+        shiftEnterMode: 'br',
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'undo', 'redo'],
       })
       .then(editor => {
-        console.log('Editor initialized', editor);
+        console.log('CKEditor initialized successfully:', editor);
+
+        editor.editing.view.document.on('enter', (evt, data) => {
+          console.log('Enter key pressed');
+        });
+
+        editor.keystrokes.set('Enter', (data, cancel) => {
+          console.log('Forcing Enter behavior');
+          editor.execute('enter');
+          cancel();
+        });
       })
       .catch(error => {
-        console.error('There was a problem initializing the editor:', error);
+        console.error('CKEditor initialization failed:', error);
       });
   });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const textareas = document.querySelectorAll('textarea.newline-enabled');
+
+    textareas.forEach(textarea => {
+      textarea.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          this.value += '\n';
+          console.log('Enter pressed in textarea:', this.name);
+        }
+      });
+    });
+  });
+</script>
 
 <script>
   function fetchTrackingUpdates() {
@@ -243,8 +264,12 @@
   }
 </script>
 
+
+
+
+<!------------------------------------------------------------ Blogs---------------------------------------------------------------------------->
 <script>
-  function confirmbblogDelete(blog_id) {
+  function blogDelete(blog_id) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -260,6 +285,31 @@
     });
   }
 </script>
+
+
+<script>
+  function blogRestore(blogId) {
+    if (confirm("Are you sure you want to restore this blog?")) {
+      $.ajax({
+        url: "<?= base_url('blogs/restore/') ?>" + blogId,
+        type: "POST",
+        dataType: "json",
+        success: function(response) {
+          if (response.status === "success") {
+            alert(response.message);
+            location.reload();
+          } else {
+            alert(response.message || "Failed to restore.");
+          }
+        },
+        error: function() {
+          alert("Error restoring blog. Please try again.");
+        }
+      });
+    }
+  }
+</script>
+
 
 <script>
   function confirmbstoryDelete(blog_id) {
@@ -1117,12 +1167,12 @@
       });
 
       $('#totalPrice').text('₹' + totalPrice.toFixed(2));
-      $('#totalPrice').data('original-total', totalPrice); // Store the original total before discount
+      $('#totalPrice').data('original-total', totalPrice);
     }
 
     confirmSelectionBtn.addEventListener('click', () => {
       updateProductTable();
-      $('#productModal').modal('hide'); // Hide the modal
+      $('#productModal').modal('hide');
     });
   });
 </script>
@@ -1201,109 +1251,6 @@
     colorOptionsContainer.appendChild(newColorOption);
     colorIndex++;
   });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sectionsContainer = document.getElementById('sections-container');
-    const addSectionBtn = document.getElementById('add-section-btn');
-    let sectionCount = 1;
-
-    // Initialize Quill for the first section
-    initializeQuill(sectionCount);
-
-    addSectionBtn.addEventListener('click', function() {
-      if (sectionCount >= 10) {
-        alert('You can only add up to 10 sections.');
-        return;
-      }
-
-      sectionCount++;
-      const newSection = document.createElement('div');
-      newSection.classList.add('form-section');
-      newSection.id = 'section-' + sectionCount;
-      newSection.innerHTML = `
-                <div class="form-group">
-                    <label>Title ${sectionCount}</label>
-                    <input class="form-control" type="text" name="section_title[]" placeholder="Title ${sectionCount}">
-                    <i>
-                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">Max 70 chars, Min 10 chars, Exclude %, &, $, Avoid 'Free', 'Sale', 'Best'</p>
-                    </i>
-                </div>
-
-                <div class="form-group">
-                    <label>Description ${sectionCount}</label>
-                    <div id="editor-${sectionCount}" class="quill-editor"></div>
-                    <input type="hidden" name="section_description[]" id="description-${sectionCount}">
-                    <i>
-                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">No contact info, Exclude emails, phones, links</p>
-                    </i>
-                </div>
-
-                <div class="form-group">
-                    <label>Section Image ${sectionCount}</label>
-                    <input type="file" class="form-control-file form-control height-auto" name="section_image[]" onchange="previewSectionImage(event, ${sectionCount})">
-                    <i>
-                        <p style="font-size: 12px; margin-left:10px; margin-top:5px">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</p>
-                    </i>
-                    <div id="image-preview-container-${sectionCount}" style="position: relative; display: none;">
-                        <img id="image-preview-${sectionCount}" src="#" alt="Image Preview" style="width: 100%; max-width: 500px;">
-                        <button type="button" onclick="removeSectionImage(${sectionCount})" style="position: absolute; top: 5px; right: 5px; border: none; background: transparent; cursor: pointer;">
-                            <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
-                        </button>
-                    </div>
-                </div>
-            `;
-      sectionsContainer.appendChild(newSection);
-
-      // Initialize Quill for the new section
-      initializeQuill(sectionCount);
-    });
-
-    function initializeQuill(count) {
-      const quill = new Quill(`#editor-${count}`, {
-        theme: 'snow',
-        modules: {
-          toolbar: [
-            ['bold', 'italic', 'underline'], // toggled buttons
-            [{
-              'list': 'ordered'
-            }, {
-              'list': 'bullet'
-            }],
-            ['clean'] // remove formatting button
-          ]
-        }
-      });
-
-      // Handle the hidden input value
-      quill.on('text-change', function() {
-        const descriptionInput = document.getElementById(`description-${count}`);
-        descriptionInput.value = quill.root.innerHTML; // Store HTML content in the hidden input
-      });
-    }
-  });
-
-  // Preview and remove image functions
-  function previewSectionImage(event, sectionId) {
-    const reader = new FileReader();
-    reader.onload = function() {
-      const imagePreview = document.getElementById(`image-preview-${sectionId}`);
-      const previewContainer = document.getElementById(`image-preview-container-${sectionId}`);
-      imagePreview.src = reader.result;
-      previewContainer.style.display = 'inline-block';
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-
-  function removeSectionImage(sectionId) {
-    const imageInput = document.querySelector(`#section-${sectionId} input[type='file']`);
-    const imagePreview = document.getElementById(`image-preview-${sectionId}`);
-    const previewContainer = document.getElementById(`image-preview-container-${sectionId}`);
-    imageInput.value = ''; // Clear the file input
-    imagePreview.src = '#'; // Reset the image preview
-    previewContainer.style.display = 'none'; // Hide the container
-  }
 </script>
 
 <script>
@@ -3025,5 +2972,80 @@
         window.location.href = restoreUrl;
       }
     });
+  }
+</script>
+
+
+
+<!---------------------------------------------------- Customer Segment Soft Delete Script ----------------------------------------------------->
+<script>
+  function customersegmentDelete(segmentId) {
+    if (confirm("Are you sure you want to delete this segment?")) {
+      $.ajax({
+        url: "<?= base_url('customer_segment/deletesegment/') ?>" + segmentId, // Update the correct URL
+        type: "POST",
+        dataType: "json",
+        success: function(response) {
+          if (response.status === "success") {
+            alert(response.message);
+            location.reload(); // Reload the page to reflect changes
+          } else {
+            alert(response.message);
+          }
+        },
+        error: function() {
+          alert("Error deleting segment. Please try again.");
+        }
+      });
+    }
+  }
+</script>
+
+<script>
+  function customersegmentRestore(segmentId) {
+    if (confirm("Are you sure you want to restore this segment?")) {
+      $.ajax({
+        url: "<?= base_url('customer_segment/restore/') ?>" + segmentId,
+        type: "POST",
+        dataType: "json",
+        success: function(response) {
+          if (response.status === "success") {
+            alert(response.message);
+            location.reload();
+          } else {
+            alert(response.message);
+          }
+        },
+        error: function() {
+          alert("Error restoring segment. Please try again.");
+        }
+      });
+    }
+  }
+</script>
+
+
+
+<!------------------------------------------------------------------ Company ----------------------------------------------------------------------------->
+<script>
+  function companyRestore(id) {
+    if (confirm("Are you sure you want to restore this company?")) {
+      fetch(`${base_url}restorecompany/${id}`, {
+          method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Company restored successfully.');
+            location.reload();
+          } else {
+            alert('Failed to restore company.');
+          }
+        })
+        .catch(error => {
+          console.error('Restore error:', error);
+          alert('An error occurred while restoring.');
+        });
+    }
   }
 </script>
