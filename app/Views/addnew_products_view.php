@@ -265,14 +265,6 @@
                                                 class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Inventory <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input type="number" id="total-inventory" data-error-message-required="Inventory!" name="total_inventory"
-                                                placeholder="Total Inventory" class="form-control validate-required">
-                                            <small>Total Inventory</small>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

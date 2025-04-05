@@ -256,13 +256,6 @@
                                                 <input type="text" name="barcode" value="<?= $product['barcode'] ?>" placeholder="Enter Barcode" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Inventory</label>
-                                                <input type="number" id="total-inventory" value="<?= $product['inventory'] ?>" name="total_inventory" placeholder="Total Inventory" data-error-message-required="Inventory!" class="form-control validate-required">
-                                                <small>Total Inventory</small>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
