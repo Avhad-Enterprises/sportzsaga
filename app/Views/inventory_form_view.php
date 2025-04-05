@@ -177,6 +177,27 @@
                             </div>
 
                             <div class="pd-20 card-box mb-30">
+                                <h5 class="mb-30">Inventory Conditions</h5>
+                                <!-- Condition Type -->
+                                <div class="clearfix row">
+                                    <div class="pull-left col-md-4">
+                                        <p class="text-blue">Select</p>
+                                    </div>
+                                    <div class="col-md-8 row">
+                                        <div class="custom-control col custom-radio mb-5">
+                                            <input type="radio" id="customRadio4" name="selectMethod" class="custom-control-input" value="automated" checked>
+                                            <label class="custom-control-label" for="customRadio4">Automated</label>
+                                        </div>
+                                        <div class="custom-control col custom-radio mb-5">
+                                            <input type="radio" id="customRadio5" name="selectMethod" class="custom-control-input" value="manual">
+                                            <label class="custom-control-label" for="customRadio5">Manual</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Manual Stock Reduction Rules -->
+                            <div class="pd-20 card-box mb-30" id="manual_section" style="display: none;">
                                 <h5 class="mb-30">Add Stock <i class="fa-solid fa-star-of-life" style="color:rgb(223 0 0); font-size: 8px;"></i></h5>
 
                                 <!-- Rule Type Selection -->
@@ -191,16 +212,16 @@
                                     <small class="text-muted">Choose how stock should be reduced across warehouses.</small>
                                 </div>
 
-                                <!-- Hybrid Rule Threshold (Hidden unless Hybrid is selected) -->
+                                <!-- Hybrid Rule Threshold -->
                                 <div id="hybrid_threshold" class="form-group mb-3" style="display: none;">
                                     <label for="stock_threshold">Stock Threshold for Proximity (Hybrid Rule)</label>
                                     <input type="number" name="stock_threshold" id="stock_threshold" class="form-control" min="0" value="50">
                                     <small class="text-muted">Minimum stock required in the closest warehouse to use proximity rule (e.g., 50 units).</small>
                                 </div>
 
-                                <!-- Fallback Warehouse (Hidden unless Proximity or Hybrid is selected) -->
+                                <!-- Fallback Warehouse -->
                                 <div id="fallback_warehouse" class="form-group mb-3" style="display: none;">
-                                    <label for="fallback_warehouse_id">Fallback Warehouse (For UnsServiceable Pincodes)</label>
+                                    <label for="fallback_warehouse_id">Fallback Warehouse (For Unserviceable Pincodes)</label>
                                     <select name="fallback_warehouse_id" id="fallback_warehouse_id" class="form-control">
                                         <option value="">Select a Fallback Warehouse</option>
                                         <?php foreach ($warehouses as $warehouse): ?>
@@ -251,10 +272,195 @@
                                         <strong>Priority Rules:</strong> Lower numbers (e.g., Priority 1) are used first. Shown only for Priority-Based and Hybrid rules (max <?= $warehouseCount ?> priorities).
                                         <br><strong>Proximity Rules:</strong> Uses warehouse pincode and customer pincode from order. Falls back to selected warehouse if pincode isn’t serviceable.
                                         <br><strong>Stock-Level Rules:</strong> Reduces from warehouse with highest stock first.
-                                        <br><strong>Hybrid Rules:</strong> Uses proximity if stock exceeds threshold; otherwise, falls back to priority. Uses selected fallback warehouse if pincode isn’t serviceable.
+                                        <br><strong>Hybrid Rules:</strong> Uses proximity if stock exceeds threshold; otherwise, falls back to priority.
                                     </small>
                                 </div>
                             </div>
+
+                            <!-- Automated Stock Reduction Rules -->
+                            <div class="pd-20 card-box mb-30" id="automated_section" style="display: block;">
+                                <h5 class="mb-30">Automated Stock Reduction Rules</h5>
+
+                                <!-- Fallback Warehouse (Always visible for Automated) -->
+                                <div class="form-group mb-3">
+                                    <label for="auto_fallback_warehouse_id">Fallback Warehouse (For Unserviceable Pincodes)</label>
+                                    <select name="fallback_warehouse_id" id="auto_fallback_warehouse_id" class="form-control" required>
+                                        <option value="">Select a Fallback Warehouse</option>
+                                        <?php foreach ($warehouses as $warehouse): ?>
+                                            <option value="<?= esc($warehouse['id']) ?>"><?= esc($warehouse['name']) ?> (<?= esc($warehouse['pincode']) ?>)</option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <small class="text-muted">Choose a warehouse to use if conditions cannot be applied or pincode is unserviceable.</small>
+                                </div>
+
+                                <!-- Condition Builder -->
+                                <div id="condition_builder">
+                                    <div class="form-group mb-3 condition-row" data-index="0">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select name="conditions[0][field]" class="form-control condition-field">
+                                                    <option value="stock_count">Stock Count</option>
+                                                    <option value="expiry_date">Expiry Date</option>
+                                                    <option value="pincode">Pincode Distance</option>
+                                                    <option value="availability">Availability</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <select name="conditions[${conditionIndex}][operator]" class="form-control condition-operator">
+                                                    <option value=">">Greater Than</option>
+                                                    <option value="<">Less Than</option>
+                                                    <option value="=">Equal To</option>
+                                                    <option value=">=">Greater Than or Equal To</option>
+                                                    <option value="<=">Less Than or Equal To</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="text" name="conditions[0][value]" class="form-control condition-value" placeholder="Value">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <select name="conditions[0][logic]" class="form-control condition-logic" disabled>
+                                                    <option value="and">AND</option>
+                                                    <option value="or">OR</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-success add-condition">+</button>
+                                                <button type="button" class="btn btn-danger remove-condition" style="display: none;">-</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Warehouse Name</th>
+                                            <th>Location</th>
+                                            <th>Pincode</th>
+                                            <th>Inventory Count</th>
+                                            <th>Stock Reduction Priority (Auto-Set)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($warehouses as $warehouse): ?>
+                                            <tr>
+                                                <td>
+                                                    <?= esc($warehouse['name']) ?>
+                                                    <input type="hidden" name="warehouse_ids[]" value="<?= esc($warehouse['id']) ?>">
+                                                </td>
+                                                <td><?= esc($warehouse['location']) ?></td>
+                                                <td><?= esc($warehouse['pincode']) ?></td>
+                                                <td>
+                                                    <input type="number" name="inventory_counts[]" class="form-control inventory-count" required min="0">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="stock_priorities[]" class="form-control stock-priority" readonly>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                                <div class="mt-3">
+                                    <small class="text-muted">
+                                        <strong>Automated Rules:</strong> Priorities are set automatically based on conditions (e.g., Stock Count > 100 AND Expiry Date < 2025-12-31).
+                                            <br><strong>Conditions:</strong> Combine Stock Count, Expiry Date, Pincode Distance, and Availability with AND/OR logic.
+                                            <br><strong>Fallback:</strong> Used if conditions fail or pincode is unserviceable.
+                                    </small>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const automatedSection = document.getElementById('automated_section');
+                                    const manualSection = document.getElementById('manual_section');
+                                    const selectMethodRadios = document.querySelectorAll('input[name="selectMethod"]');
+                                    const conditionBuilder = document.getElementById('condition_builder');
+
+                                    // Toggle sections based on radio selection
+                                    selectMethodRadios.forEach(radio => {
+                                        radio.addEventListener('change', function() {
+                                            automatedSection.style.display = this.value === 'automated' ? 'block' : 'none';
+                                            manualSection.style.display = this.value === 'manual' ? 'block' : 'none';
+                                            if (this.value === 'manual') toggleManualElements();
+                                        });
+                                    });
+
+                                    // Manual section logic
+                                    function toggleManualElements() {
+                                        const ruleSelect = document.getElementById('stock_reduction_rule');
+                                        const hybridThreshold = document.getElementById('hybrid_threshold');
+                                        const fallbackWarehouse = document.getElementById('fallback_warehouse');
+                                        const priorityHeader = document.getElementById('priority_header');
+                                        const priorityCells = document.querySelectorAll('.priority_cell');
+                                        const priorities = document.querySelectorAll('.stock-priority');
+
+                                        const rule = ruleSelect.value;
+                                        const showPriority = rule === 'priority' || rule === 'hybrid';
+                                        const showFallback = rule === 'proximity' || rule === 'hybrid';
+
+                                        hybridThreshold.style.display = rule === 'hybrid' ? 'block' : 'none';
+                                        priorityHeader.style.display = showPriority ? '' : 'none';
+                                        priorityCells.forEach(cell => cell.style.display = showPriority ? '' : 'none');
+                                        fallbackWarehouse.style.display = showFallback ? 'block' : 'none';
+
+                                        if (!showPriority) priorities.forEach(select => select.value = '');
+                                    }
+
+                                    document.getElementById('stock_reduction_rule').addEventListener('change', toggleManualElements);
+
+                                    // Condition builder logic
+                                    let conditionIndex = 0;
+                                    conditionBuilder.addEventListener('click', function(e) {
+                                        if (e.target.classList.contains('add-condition')) {
+                                            conditionIndex++;
+                                            const newRow = document.createElement('div');
+                                            newRow.className = 'form-group mb-3 condition-row';
+                                            newRow.dataset.index = conditionIndex;
+                                            newRow.innerHTML = `
+                <div class="row">
+                    <div class="col-md-3">
+                        <select name="conditions[${conditionIndex}][field]" class="form-control condition-field">
+                            <option value="stock_count">Stock Count</option>
+                            <option value="expiry_date">Expiry Date</option>
+                            <option value="pincode">Pincode Distance</option>
+                            <option value="availability">Availability</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select name="conditions[${conditionIndex}][operator]" class="form-control condition-operator">
+    <option value=">">Greater Than</option>
+    <option value="<">Less Than</option>
+    <option value="=">Equal To</option>
+    <option value=">=">Greater Than or Equal To</option>
+    <option value="<=">Less Than or Equal To</option>
+</select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="conditions[${conditionIndex}][value]" class="form-control condition-value" placeholder="Value">
+                    </div>
+                    <div class="col-md-2">
+                        <select name="conditions[${conditionIndex}][logic]" class="form-control condition-logic">
+                            <option value="and">AND</option>
+                            <option value="or">OR</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger remove-condition">-</button>
+                    </div>
+                </div>
+            `;
+                                            conditionBuilder.appendChild(newRow);
+                                            document.querySelectorAll('.condition-row')[0].querySelector('.condition-logic').disabled = true;
+                                        } else if (e.target.classList.contains('remove-condition')) {
+                                            e.target.closest('.condition-row').remove();
+                                            if (conditionBuilder.children.length === 1) {
+                                                conditionBuilder.querySelector('.condition-logic').disabled = true;
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+
 
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
@@ -356,7 +562,7 @@
                                         <div class="form-group">
                                             <label for="manufacturer_location">Location of Manufacturer</label>
                                             <input type="text" id="manufacturer_location" name="manufacturer_location"
-                                                class="form-control" placeholder="Manufacturer Location" >
+                                                class="form-control" placeholder="Manufacturer Location">
                                         </div>
                                     </div>
                                 </div>
@@ -368,8 +574,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single_unit_price">Single Unit Price</label>
-                                            <input type="number" id="single_unit_price" name="single_unit_price" class="form-control"
-                                                >
+                                            <input type="number" id="single_unit_price" name="single_unit_price" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
