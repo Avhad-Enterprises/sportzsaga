@@ -143,9 +143,13 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>online_store" class="no-chevron dropdown-toggle">
+                            <a href="javascript:;" class="dropdown-toggle">
                                 <span class="micon bi bi-shop"></span><span class="mtext">Online Store</span>
                             </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url(); ?>online_store">Online Store</a></li>
+                                <li><a href="<?= base_url(); ?>online_store/preferences">Preferences</a></li>
+                            </ul>
                         </li>
                         <!-- <li class="dropdown">
                             <a href="<?= base_url(); ?>getUserEventsdata" class="no-chevron dropdown-toggle">

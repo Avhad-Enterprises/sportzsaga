@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -385,6 +385,18 @@ $routes->get('collection/collection_logs/(:num)', 'Products::collection_change_l
 $routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs');
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
 
+//Preferences Controller
+$routes->get('online_store/preferences', 'Preference::index');
+// Setting Controller
+$routes->post('online_store/preferences/g-tag/update/(:num)', 'Preference::updateGtag/$1');
+$routes->get('setting/site-meta/edit/(:num)', 'SiteMeta::edit/$1');
+$routes->post('setting/site-meta/update/(:num)', 'SiteMeta::update/$1');
+$routes->get('setting/upload-logo', 'SiteLogo::edit');
+$routes->post('setting/update-logo', 'SiteLogo::update');
+$routes->post('setting/robots-txt/update', 'RobotsTxt::update');
+$routes->post('setting/footer-description/update', 'RobotsTxt::update_footer_description');
+
+
 // Order Management
 $routes->get('ordermanagement', 'Ordermanagement');
 $routes->get('ordermanagement/deleteorder/(:num)', 'Ordermanagement::deleteorder/$1');
@@ -720,12 +732,6 @@ $routes->get('checkoutpage/checkoutpage_history/(:num)', 'Store::checkout_histor
 $routes->get('trackingpage/trackingpage_history/(:num)', 'Store::tracking_history/$1');
 $routes->get('error_page/error_page_history/(:num)', 'Store::errorpage_history/$1');
 $routes->get('team_members/team_member_history/(:num)', 'Store::team_history/$1');
-
-
-
-
-
-
 
 //Analytics
 $routes->get('analytics', 'Analytics::index');

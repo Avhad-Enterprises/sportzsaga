@@ -39,8 +39,6 @@ class Store extends BaseController
         return view('online_store');
     }
 
-
-
     public function online_store_logs()
     {
         $db = db_connect();

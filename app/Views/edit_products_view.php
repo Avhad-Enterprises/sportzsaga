@@ -222,6 +222,43 @@
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
+                                    <div class="form-group">
+                                        <p class="text-blue">Bullet Points</p>
+                                        <div class="mb-20">
+                                            <?php
+                                            $bulletPointsArray = json_decode($bullet_points, true) ?? [];
+                                            $bulletPointsValue = implode(',', array_filter($bulletPointsArray, 'trim'));
+                                            ?>
+                                            <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" value="<?= esc($bulletPointsValue); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Add Tags</label>
+                                        <div class="input-group">
+                                            <?php
+                                            $selectedTags = json_decode($product['product_tags'], true);
+                                            ?>
+                                            <select class="custom-select2 custom-select-tags form-control" name="product-tags[]" multiple="multiple" style="width: 70%">
+                                                <optgroup label="Available Tags">
+                                                    <?php foreach ($tags as $tag): ?>
+                                                        <option value="<?= esc($tag['tag_value']) ?>"
+                                                            <?= (!empty($selectedTags) && in_array($tag['tag_value'], $selectedTags)) ? 'selected' : '' ?>>
+                                                            <?= esc($tag['tag_name']) ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="pd-20 card-box mb-30">
                                     <p class="text-blue">Product Prices</p>
                                     <div class="row">
                                         <div class="col-md">
@@ -588,50 +625,6 @@
                                                 </label>
                                                 <input type="text" placeholder="Label" class="form-control" name="product_label" value="<?= $product['label'] ?>" style="width: 100%; height: 38px;">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Bullet Points Section -->
-                                <div class="pd-20 card-box mb-30">
-                                    <div class="form-group">
-                                        <p class="text-blue">Bullet Points</p>
-                                        <div class="mb-20">
-                                            <?php
-                                            $bulletPointsArray = json_decode($bullet_points, true) ?? [];
-                                            $bulletPointsValue = implode(',', array_filter($bulletPointsArray, 'trim'));
-                                            ?>
-                                            <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" value="<?= esc($bulletPointsValue); ?>" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="pd-20 card-box mb-30">
-                                    <div class="form-group">
-                                        <label>Add Tags</label>
-                                        <div class="input-group">
-                                            <?php
-                                            $selectedTags = json_decode($product['product_tags'], true);
-                                            ?>
-                                            <?php if (!empty($tags)): ?>
-                                                <select class="custom-select2 custom-select-tags form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
-                                                    <optgroup label="Available Tags">
-                                                        <?php foreach ($tags as $tag): ?>
-                                                            <option value="<?= esc($tag['tag_value']) ?>"
-                                                                <?= (!empty($selectedTags) && in_array($tag['tag_value'], $selectedTags)) ? 'selected' : '' ?>>
-                                                                <?= esc($tag['tag_name']) ?>
-                                                            </option>
-                                                        <?php endforeach; ?>
-                                                    </optgroup>
-                                                </select>
-                                            <?php else: ?>
-                                                <p class="text-danger">No tags available</p>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>

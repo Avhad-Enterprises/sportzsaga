@@ -293,7 +293,7 @@ class Products extends BaseController
         $data['users'] = $userModel->findAll();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch All Products
         $allProducts = $model->getproductsdata();
@@ -398,12 +398,15 @@ class Products extends BaseController
         $productsTags = $this->request->getPost('product-tags');
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
 
+        // Product Description
+        $productDescription = $this->request->getPost('product-description');
+
         // Prepare product data for insertion
         $data = [
             'product_title' => trim($this->request->getPost('product-name')),
             'amz_product_id' => trim($this->request->getPost('amz_product_id')),
             'secondary_title' => trim($this->request->getPost('second-name')),
-            'product_description' => trim($this->request->getPost('product-description')),
+            'product_description' => $productDescription,
             'short_description' => trim($this->request->getPost('product-short-description')),
             'product_status' => trim($this->request->getPost('product-status')),
             'cost_price' => trim($this->request->getPost('cost-price')),
@@ -440,8 +443,8 @@ class Products extends BaseController
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
             'bullet_points' => $bulletPointsJson,
-            'added_by' => $userId, // Store the user who added it
-            'created_at' => date('Y-m-d H:i:s') // Store creation timestamp
+            'added_by' => $userId,
+            'created_at' => date('Y-m-d H:i:s')
         ];
 
         // Insert the new product into the database
@@ -460,7 +463,7 @@ class Products extends BaseController
         $tagModel = new TagModel();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
@@ -505,12 +508,11 @@ class Products extends BaseController
         return view('edit_products_view', $data);
     }
 
-
     public function updateProduct($id)
     {
         $model = new Products_model();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         // Fetch the existing product
         $existingProduct = $model->find($id);
@@ -961,7 +963,7 @@ class Products extends BaseController
         return $this->response->setJSON($products);
     }
 
-    public function getProductsByConditions() //
+    public function getProductsByConditions()
     {
         try {
             $conditions = json_decode($this->request->getPost('conditions'), true);
@@ -989,7 +991,7 @@ class Products extends BaseController
         $this->logger->info('publishCollection method called');
 
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         $storage = new StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
