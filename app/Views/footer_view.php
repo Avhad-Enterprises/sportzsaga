@@ -3049,3 +3049,11 @@
     }
   }
 </script>
+
+<!-- Footer View End -->
+<script>
+  function goBack() {
+    // Redirects to the previous page in browser history
+    window.history.back();
+  }
+</script>

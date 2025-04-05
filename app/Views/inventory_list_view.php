@@ -136,16 +136,12 @@
                                 role="button">
                                 Add Inventory
                             </a>
-
                             <!-- Logs Button -->
                             <a class="btn btn-success fw-bold mr-3" href="<?= base_url('inventory_deleted') ?>"
                                 role="button">
                                 Logs
                             </a>
-
-                            
                         </div>
-
                     </div>
                 </div>
 

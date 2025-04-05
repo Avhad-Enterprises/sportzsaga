@@ -121,6 +121,7 @@
                                             <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn2">Logo and Favicon</button>
                                             <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn3">Robots.txt</button>
                                             <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn4">Google Analytics</button>
+                                            <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn6">Warehouse</button>
                                         </div>
                                     </div>
                                 </div>
@@ -290,6 +291,82 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="content" id="content6" style="display:none;">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="title">
+                                                        <h4>Warehouse List</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 text-right blogs-imex">
+                                                    <div class="dropdown">
+                                                        <a class="btn btn-primary fw-bold" href="<?= base_url('warehouse/create'); ?>" role="button">
+                                                            Add
+                                                        </a>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a class="btn btn-primary dropdown-toggle" href="#" role="button"
+                                                            data-toggle="dropdown">
+                                                            More Options
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item"
+                                                                href="<?= base_url('warehouse/logs') ?>">View Logs</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Warehouse Table -->
+                                            <div class="pb-20" style="margin-top: 20px;">
+                                                <table class="table hover table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="table-plus">ID</th>
+                                                            <th>Warehouse Name</th>
+                                                            <th>Contact Number</th>
+                                                            <th>Opening Hours</th>
+                                                            <th>Status</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php foreach ($warehouses as $warehouse): ?>
+                                                            <tr>
+                                                                <td class="table-plus"><?= $warehouse['id'] ?></td>
+                                                                <td><a href="<?= base_url('warehouse/edit/' . $warehouse['id']) ?>"><?= $warehouse['name'] ?></a></td>
+                                                                <td><?= $warehouse['contact_number'] ?></td>
+                                                                <td>
+                                                                    <?php
+                                                                    $openingHours = $warehouse['opening_hours'];
+                                                                    list($opening, $closing) = explode(' to ', $openingHours);
+                                                                    $openingTime = date('h:i A', strtotime($opening));
+                                                                    $closingTime = date('h:i A', strtotime($closing));
+                                                                    echo $openingTime . ' to ' . $closingTime;
+                                                                    ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php if ($warehouse['status'] === 'active'): ?>
+                                                                        <span class="badge badge-success"><?= ucfirst($warehouse['status']) ?></span>
+                                                                    <?php else: ?>
+                                                                        <span class="badge badge-danger"><?= ucfirst($warehouse['status']) ?></span>
+                                                                    <?php endif; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <a class="dropdown-item text-danger" href="<?= base_url('warehouse/delete/' . $warehouse['id']) ?>"
+                                                                        onclick="return confirm('Are you sure you want to delete this warehouse?');">
+                                                                        <i class="dw dw-delete-3"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                 </div>

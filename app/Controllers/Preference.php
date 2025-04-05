@@ -8,6 +8,7 @@ use App\Models\SiteLogoModel;
 use App\Models\RobotsTxtModel;
 use App\Models\FooterPagesModel;
 use App\Models\GanalyticsModel;
+use App\Models\WarehouseModel;
 
 class Preference extends BaseController
 {
@@ -17,11 +18,13 @@ class Preference extends BaseController
         $siteLogoModel = new SiteLogoModel();
         $robotsTxtModel = new RobotsTxtModel();
         $ganalyticsModel = new GanalyticsModel();
+        $warehouseModel = new WarehouseModel();
         $data['robots_content'] = $robotsTxtModel->first();
         $data['logos'] = $siteLogoModel->first();
         $data['meta'] = $siteMetaModel->GetMetaFeilds();
         $analytics = $ganalyticsModel->first();
         $data['analytics'] = $analytics ? [$analytics] : [];
+        $data['warehouses'] = $warehouseModel->findAll();
         return view('preferences_view', $data);
     }
 

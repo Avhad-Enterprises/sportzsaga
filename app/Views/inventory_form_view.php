@@ -112,6 +112,7 @@
 
                 <!-- Inventory Form -->
                 <form id="addInventoryForm" method="post" action="<?= base_url('inventory/store') ?>">
+                    
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <div class="">
                             <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
@@ -250,7 +251,7 @@
                                                     <?= esc($warehouse['name']) ?>
                                                     <input type="hidden" name="warehouse_ids[]" value="<?= esc($warehouse['id']) ?>">
                                                 </td>
-                                                <td><?= esc($warehouse['location']) ?></td>
+                                                <td><?= esc($warehouse['address']) ?></td>
                                                 <td><?= esc($warehouse['pincode']) ?></td>
                                                 <td>
                                                     <input type="number" name="inventory_counts[]" class="form-control inventory-count" required min="0">
@@ -348,7 +349,7 @@
                                                     <?= esc($warehouse['name']) ?>
                                                     <input type="hidden" name="warehouse_ids[]" value="<?= esc($warehouse['id']) ?>">
                                                 </td>
-                                                <td><?= esc($warehouse['location']) ?></td>
+                                                <td><?= esc($warehouse['address']) ?></td>
                                                 <td><?= esc($warehouse['pincode']) ?></td>
                                                 <td>
                                                     <input type="number" name="inventory_counts[]" class="form-control inventory-count" required min="0">
@@ -569,30 +570,6 @@
                             </div>
 
                             <div class="pd-20 card-box mb-30">
-                                <h5 class="mb-30">Pricing and Valuation</h5>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="single_unit_price">Single Unit Price</label>
-                                            <input type="number" id="single_unit_price" name="single_unit_price" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="case_price">Case Price</label>
-                                            <input type="number" id="case_price" name="case_price" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="compare_at_price">Compare-at Price</label>
-                                            <input type="number" id="compare_at_price" name="compare_at_price" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pd-20 card-box mb-30">
                                 <h5 class="mb-30">Lot and Batch Tracking</h5>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -660,28 +637,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="pd-20 card-box mb-30">
-                                <h5 class="mb-30">Compliance and Taxation</h5>
-                                <div class="form-group">
-                                    <label for="vat_gst">GST Details</label>
-                                    <input type="text" id="vat_gst" name="vat_gst" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="state_gst">State-Wise GST</label>
-                                    <input type="text" id="state_gst" name="state_gst" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="custom_duty">Customs Duty</label>
-                                    <input type="text" id="custom_duty" name="custom_duty" class="form-control">
-                                </div>
-                            </div>
-                            <div class="pd-20 card-box mb-30">
-                                <h5 class="mb-30">Custom Attributes <i class="fa-solid fa-star-of-life" style="color:rgb(223 0 0); font-size: 8px;"></i></h5>
-                                <div class="form-group">
-                                    <label for="custom_labels">Custom Labels</label>
-                                    <input type="text" id="custom_labels" name="custom_labels" class="form-control">
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                     </div>
 

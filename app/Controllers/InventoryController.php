@@ -155,7 +155,7 @@ class InventoryController extends BaseController
         $warehouseModel = new WarehouseModel();
 
         // Fetch all inventory records with related product and warehouse data
-        $inventoryData = $inventoryModel->select('inventory.*, products.product_title as product_title, warehouses.name as warehouse_name, warehouses.location as warehouse_location')
+        $inventoryData = $inventoryModel->select('inventory.*, products.product_title as product_title, warehouses.name as warehouse_name, warehouses.address as warehouse_location')
             ->join('products', 'products.product_id = inventory.product_id', 'left')
             ->join('warehouses', 'warehouses.id = inventory.warehouse_id', 'left')
             ->findAll();

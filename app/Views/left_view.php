@@ -22,7 +22,7 @@
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
                         </li>
-                        
+
                         <li class="dropdown">
                             <a href="<?= base_url(); ?>permissions_view" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-tags-fill"></span><span class="mtext">User Access</span>
@@ -254,10 +254,5 @@
                 </ul>
             </ul>
         </div>
-    </div>
-    <div class="sidebar-footer">
-        <a href="<?= base_url(); ?>setting" class="btn btn-primary btn-block">
-            <span class="micon bi bi-gear"></span> <span class="mtext">Settings</span>
-        </a>
     </div>
 </div>

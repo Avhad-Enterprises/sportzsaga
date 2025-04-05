@@ -395,6 +395,13 @@ $routes->get('setting/upload-logo', 'SiteLogo::edit');
 $routes->post('setting/update-logo', 'SiteLogo::update');
 $routes->post('setting/robots-txt/update', 'RobotsTxt::update');
 $routes->post('setting/footer-description/update', 'RobotsTxt::update_footer_description');
+//warehouse controller
+$routes->get('warehouses', 'Setting::index');
+$routes->get('warehouse/create', 'WarehouseController::Createwarehouse');
+$routes->post('warehouse/store', 'WarehouseController::store');
+$routes->get('warehouse/edit/(:num)', 'WarehouseController::editwarehouse/$1');
+$routes->post('warehouse/update/(:num)', 'WarehouseController::updatewarehouse/$1');
+$routes->get('warehouse/delete/(:num)', 'WarehouseController::delete/$1');
 
 
 // Order Management
