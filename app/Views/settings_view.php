@@ -138,6 +138,7 @@
                                     <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn2">Tecnical SEO</button>
                                     <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn3">Logo and Favicon</button>
                                     <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn4">Robots.txt</button>
+                                    <button type="button" class="btn btn-outline-secondary custom-btn mb-1 fw-bold" id="btn5">Warehouse</button>
                                 </div>
                             </div>
                         </div>

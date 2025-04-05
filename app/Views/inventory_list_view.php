@@ -2,6 +2,17 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
+<style>
+    .table-sm th,
+    .table-sm td {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .table-sm {
+        margin-bottom: 0;
+    }
+</style>
 
 <body>
 
@@ -132,18 +143,7 @@
                                 Logs
                             </a>
 
-                            <!-- Import Inventory Button (conditional) -->
-                            <?php if ($canImport): ?>
-                                <button type="button" class="btn btn-primary mr-3" data-toggle="modal"
-                                    data-target="#importModal">
-                                    Import Inventory
-                                </button>
-                            <?php endif; ?>
-
-                            <!-- Export Inventory Button (conditional) -->
-                            <?php if ($canExport): ?>
-                                <a href="<?= base_url('inventory/export') ?>" class="btn btn-success">Export Inventory</a>
-                            <?php endif; ?>
+                            
                         </div>
 
                     </div>
@@ -160,35 +160,51 @@
                                 <tr>
                                     <th>Product ID</th>
                                     <th>Product Title</th>
-
-                                    <th>Warehouse Name</th>
-                                    <th>Warehouse Location</th>
-
+                                    <th>Warehouse Details</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($inventoryData as $inventory): ?>
+                                <?php foreach ($inventoryData as $product): ?>
                                     <tr>
-                                        <td><?= $inventory['product_id'] ?></td>
-                                        <td><?= $inventory['product_title'] ?></td>
-
-                                        <td><?= $inventory['warehouse_name'] ?></td>
-                                        <td><?= $inventory['warehouse_location'] ?></td>
-
+                                        <td><?= esc($product['product_id']) ?></td>
+                                        <td><?= esc($product['product_title']) ?></td>
                                         <td>
-                                            <!-- Edit Button -->
-                                            <a href="<?= base_url('inventory/edit/' . $inventory['id']) ?>"
-                                                class="btn btn-sm btn-warning">Edit</a>
-
-                                            <!-- Delete Button (only visible if user has permission) -->
-                                            <?php if ($canDelete): ?>
-                                                <a href="<?= base_url('inventory/delete/' . $inventory['id']) ?>"
-                                                    class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Are you sure?');">Delete</a>
-                                            <?php endif; ?>
+                                            <table class="table table-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Warehouse Name</th>
+                                                        <th>Location</th>
+                                                        <th>Stock</th> <!-- Optional -->
+                                                        <th>Priority</th> <!-- Optional -->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($product['warehouses'] as $warehouse): ?>
+                                                        <tr>
+                                                            <td><?= esc($warehouse['warehouse_name']) ?></td>
+                                                            <td><?= esc($warehouse['warehouse_location']) ?></td>
+                                                            <td><?= esc($warehouse['stock_quantity']) ?></td>
+                                                            <td><?= esc($warehouse['stock_reduction_rule']) ?></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
                                         </td>
-
+                                        <td>
+                                            <!-- Edit/Delete actions per warehouse -->
+                                            <?php foreach ($product['warehouses'] as $warehouse): ?>
+                                                <div class="mb-2">
+                                                    <a href="<?= base_url('inventory/edit/' . $warehouse['id']) ?>"
+                                                        class="btn btn-sm btn-warning">Edit</a>
+                                                    <?php if ($canDelete): ?>
+                                                        <a href="<?= base_url('inventory/delete/' . $warehouse['id']) ?>"
+                                                            class="btn btn-sm btn-danger"
+                                                            onclick="return confirm('Are you sure?');">Delete</a>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

@@ -173,7 +173,7 @@
                                     <div class="col-md-4 form-group">
                                         <label for="inventory_count">Inventory Count</label>
                                         <input type="number" name="inventory_count" id="inventory_count"
-                                            class="form-control" value="<?= $inventory['inventory_count'] ?>">
+                                            class="form-control" value="<?= $inventory['stock_quantity'] ?>">
                                     </div>
                                 <?php endif; ?>
                                 <!-- Storage Location -->
