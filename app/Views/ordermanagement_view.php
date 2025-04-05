@@ -165,6 +165,7 @@
                                     <th>Delivery Price</th>
                                     <th>Return </th> <!-- New Column -->
                                     <th>Discount</th>
+                                    <th>Payment Status</th>
                                     <th class="datatable-nosort">Actions</th>
                                 </tr>
                             </thead>
@@ -257,6 +258,8 @@
                                                     ? $order['vendors'][0]['discount'] . '%' 
                                                     : '0%') ?>
                                         </td>
+
+                                        <td><?= $order['payment_status'] ?></td>
 
 
                                         <td>

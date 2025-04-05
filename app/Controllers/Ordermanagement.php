@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Models\Ordermanagement_model;
 use App\Models\Products_model;
 use App\Models\Registerusers_model;
+use App\Models\discountcode;
 use Picqer\Barcode\BarcodeGeneratorPNG;
 use App\Models\Footer_model;
 use App\Models\SocialMediaLinks_model;
@@ -20,10 +21,10 @@ class Ordermanagement extends BaseController
     {
         $session = session();
         $model = new Ordermanagement_model();
-        $pincodeModel = new PincodeModel(); // Your pincode_mapping table model
-        $userModel = new Registerusers_model(); // Assuming you have a UserModel for fetching user info
+        $pincodeModel = new PincodeModel();
+        $userModel = new Registerusers_model(); 
 
-        // Check the admin type
+
         if ($session->get('admin_type') == 'seller') {
             $seller_id = $session->get('user_id');
             $orders = $model->getordersbyseller($seller_id);
@@ -31,34 +32,31 @@ class Ordermanagement extends BaseController
             $orders = $model->getorders();
         }
 
-        // For each order, fetch vendors based on the pincode with specific conditions
+        
         foreach ($orders as &$order) {
-            $pincode = $order['pincode']; // Ensure 'pincode' exists in the order data
+            $pincode = $order['pincode']; 
 
-            // Fetch vendors where pickup, delivery, and cod are 'Y'
+        
             $vendors = $pincodeModel->where('area_pincode', $pincode)
-                ->where('pickup', 'Y')  // Filter for 'Y' in pickup
-                ->where('delivery', 'Y') // Filter for 'Y' in delivery
-                ->where('cod', 'Y')     // Filter for 'Y' in cod
+                ->where('pickup', 'Y')  
+                ->where('delivery', 'Y') 
+                ->where('cod', 'Y')    
                 ->findAll();
 
-            // Attach the vendors to each order
             foreach ($vendors as &$vendor) {
-                // Fetch the delivery cost and discount for the vendor
                 $vendorDetails = $pincodeModel->where('delivery_partner', $vendor['delivery_partner'])
                     ->where('area_pincode', $pincode)
                     ->first();
-                $vendor['cost'] = $vendorDetails['cost'] ?? 0; // Default cost to 0 if not set
-                $vendor['discount'] = $vendorDetails['discount'] ?? 0; // Default discount to 0 if not set
+                $vendor['cost'] = $vendorDetails['cost'] ?? 0;
+                $vendor['discount'] = $vendorDetails['discount'] ?? 0;
             }
 
 
-            $order['vendors'] = $vendors; // Attach the vendors to each order
+            $order['vendors'] = $vendors;
 
-            // Fetch customer information (user name or user ID)
             if (!empty($order['user_id'])) {
-                $customer = $userModel->find($order['user_id']); // Fetch the user by user_id
-                $order['customer'] = $customer ? $customer['name'] : 'No Name'; // Add the customer's name to the order
+                $customer = $userModel->find($order['user_id']); 
+                $order['customer'] = $customer ? $customer['name'] : 'No Name'; 
             }
         }
 
@@ -101,12 +99,6 @@ class Ordermanagement extends BaseController
         $full_address = $this->request->getPost('customer-address');
         $Customergstin = $this->request->getPost('customergstin');
 
-        /*
-        $full_address = $address_line1;
-        if (!empty($address_line2)) {
-            $full_address .= ', ' . $address_line2;
-        }
-        */
 
         $data = [
             'name' => $name,
@@ -120,7 +112,6 @@ class Ordermanagement extends BaseController
             'seller_gst_number' => $Customergstin,
         ];
 
-        // Insert the new customer into the database
         if ($model->insert($data)) {
             return redirect()->to('ordermanagement/addneworder')->with('success', 'Customer added successfully!');
         } else {
@@ -131,7 +122,6 @@ class Ordermanagement extends BaseController
     public function getCityStateByPincode($pincode)
     {
 
-        // Replace with your preferred pincode API URL
         $apiUrl = "https://api.postalpincode.in/pincode/{$pincode}";
         $response = file_get_contents($apiUrl);
         $data = json_decode($response, true);
@@ -146,9 +136,6 @@ class Ordermanagement extends BaseController
         }
     }
 
-    ///code for generating all invoices////
-
-
     public function generateInvoice($orderId)
     {
         $orderModel = new Ordermanagement_model();
@@ -159,17 +146,14 @@ class Ordermanagement extends BaseController
         $pdf = $invoiceGenerator->generateInvoice($orderId);
 
         if ($pdf) {
-            // Set proper headers for PDF output
             header('Content-Type: application/pdf');
             header('Content-Disposition: inline; filename="order-invoice-' . $orderId . '.pdf"');
             header('Cache-Control: private, max-age=0, must-revalidate');
             header('Pragma: public');
 
-            // Output the PDF directly to the browser
             echo $pdf->Output('order-invoice-' . $orderId . '.pdf', 'S');
             exit;
         } else {
-            // Return JSON error response
             header('Content-Type: application/json');
             echo json_encode(['error' => 'Order not found']);
             exit;
@@ -197,7 +181,10 @@ class Ordermanagement extends BaseController
         $userModel = new Registerusers_model();
         $email = \Config\Services::email();
 
-        // Get form data
+        $rzp_payment_id = $this->request->getPost('rzp_payment_id');
+        $rzp_order_id = $this->request->getPost('rzp_order_id');
+        $rzp_signature = $this->request->getPost('rzp_signature');
+
         $customer_id = $this->request->getPost('order-customer-name');
         $pincode = $this->request->getPost('pincode');
         $city = $this->request->getPost('order-city');
@@ -207,14 +194,21 @@ class Ordermanagement extends BaseController
         $payment_method = $this->request->getPost('payment-method');
         $payment_status = $this->request->getPost('payment-status');
         $payment_ref = $this->request->getPost('ref_no');
+
+       
+        if ($payment_method === 'bank' && $rzp_payment_id) {
+            $payment_status = 'Paid';
+            $payment_ref = $rzp_payment_id;
+        }
+
         $selected_products = $this->request->getPost('selected_products');
         $quantities = $this->request->getPost('modal_quantity');
         $discount_type = $this->request->getPost('discount_type');
         $discount_value = $this->request->getPost('discount_value');
         $discount_reason = $this->request->getPost('discount_reason');
-        $discount_values = $this->request->getPost('product_discount'); // Discounts per product
+        $discount_values = $this->request->getPost('product_discount');
         $product_values = $this->request->getPost('product_price');
-        $total_discount_amount = floatval($this->request->getPost('final_total_discount')); // Global discount
+        $total_discount_amount = floatval($this->request->getPost('final_total_discount'));
         $shipping_option = $this->request->getPost('shipping_option');
         $shipping_amount = floatval($this->request->getPost('final_shipment_charges'));
         $order_tags = $this->request->getPost('order-tags');
@@ -229,9 +223,7 @@ class Ordermanagement extends BaseController
         $currency = strtoupper($this->request->getPost('currency'));
         $country = strtoupper($this->request->getPost('country'));
 
-
-
-        $customer = $userModel->find($customer_id);
+        $customer = $userModel->where('user_id', $customer_id)->first();
         if (!$customer) {
             session()->setFlashdata('error', 'Customer not found.');
             return redirect()->back()->withInput();
@@ -242,11 +234,9 @@ class Ordermanagement extends BaseController
                 ->with('message', 'Products not found.');
         }
 
-
         if ($payment_method === 'link') {
-            $orderId = $this->savedraftorder(); // Save the order as a draft
+            $orderId = $this->savedraftorder();
 
-            // Check if we got a numeric ID back (success) or if it was a JSON response
             if (is_numeric($orderId)) {
                 $order_data = $orderModel->getOrderdetail($orderId);
                 $product_details = json_decode($order_data['product_details'], true);
@@ -265,8 +255,6 @@ class Ordermanagement extends BaseController
         $product_titles = [];
         $product_details = [];
         $product_shipment_details = [];
-        $product_quantities = [];
-        $product_sizes = [];
         $seller_ids = [];
 
         foreach ($selected_products as $product_id) {
@@ -280,19 +268,16 @@ class Ordermanagement extends BaseController
 
             $product_titles[] = $product['product_title'] . ' x ' . $quantity;
             $seller_ids[] = $product['seller_id'];
-            //$product_price = isset($product_values[$product_id]) ? floatval($product_values[$product_id]) : 0;
             $product_price = $product['selling_price'];
             if ($is_international) {
                 $product_price += 1000;
             }
             $subtotal = $product_price * $quantity;
-            //$total_amount += $subtotal;
-            // Calculate discount for the product
             $product_discount = isset($discount_values[$product_id]) ? floatval($discount_values[$product_id]) : 0;
             $discounted_price = max(0, $product_price - $product_discount);
 
             if ($total_discount_amount > 0) {
-                $product_discount = 0; // Neglect product-level discount if global discount exists
+                $product_discount = 0;
             }
 
             $total_amount_before_discount += $subtotal;
@@ -300,7 +285,6 @@ class Ordermanagement extends BaseController
                 $total_amount_before_discount += ($is_international ? 1300 : 300);
             }
             $total_discount += $product_discount * $quantity;
-
 
             $product_details[] = [
                 'product_id' => $product_id,
@@ -330,19 +314,14 @@ class Ordermanagement extends BaseController
             ];
         }
 
-        // Add global discount and shipping charges
         $total_discount += $total_discount_amount;
-        //$final_total_amount = $total_amount_before_discount - $total_discount + $shipping_amount;
         $final_total_amount = $this->request->getPost('final_total_price');
 
         $product_titles_str = json_encode($product_titles);
         $concatenated_seller_id = implode(', ', array_unique($seller_ids));
 
         if ($is_international) {
-            // Convert final amount to USD
-            $usd_total = $final_total_amount * 0.012; // Using same rate as frontend
-
-            // Reset GST values
+            $usd_total = $final_total_amount * 0.012;
             $cgst = 0;
             $sgst = 0;
             $igst = 0;
@@ -401,14 +380,9 @@ class Ordermanagement extends BaseController
             $order_id = $orderModel->getInsertID();
             $order_data['order_id'] = $order_id;
 
-            // Create order shipments
             $orderModel->createOrderShipment($order_data, $product_shipment_details);
 
-            // Send Order Confirmation Email
             $this->sendOrderConfirmationEmail($customer_email ?? $customer['email'], $customer['name'], $order_data, $product_details, $order_id);
-
-            // Send WhatsApp Message
-            //$this->sendOrderConfirmationWhatsApp($customer_phone ?? $customer['phone_no'], $customer['name'], $order_data, $product_details);
 
             session()->setFlashdata('success', 'Order published successfully.');
             return redirect()->to(base_url('ordermanagement'));
@@ -425,14 +399,13 @@ class Ordermanagement extends BaseController
 
         $order = $orderModel->find($order_id);
         if (!$order || $order['is_draft'] != 1) {
-            return redirect()->to(base_url('ordermanagement'))->with('error', 'Invalid or non-draft order.');
+            return redirect()->to(base_url('404'))->with('error', 'Invalid or non-draft order.');
         }
 
         $customer = $userModel->find($order['user_id']);
         if (!$customer) {
-            return redirect()->to(base_url('ordermanagement'))->with('error', 'Customer not found.');
+            return redirect()->to(base_url('404'))->with('error', 'Customer not found.');
         }
-
 
         $data = [
             'order' => $order,
@@ -461,11 +434,11 @@ class Ordermanagement extends BaseController
             'payment_status' => $data['payment_status'],
             'received' => $data['payment_status'] === "partial_cod" ? $order['total_amount'] * 0.3 : ($data['payment_status'] === "Paid" ? $order['total_amount'] : 0),
             'balance' => $data['payment_status'] === "partial_cod" ? $order['total_amount'] * 0.7 : ($data['payment_status'] === "Paid" ? 0 : $order['total_amount']),
-            'customer' =>  $data['customer_details']['name'],
-            'customer_email' =>  $data['customer_details']['email'],
-            'customer_phone' =>  $data['customer_details']['phone'],
-            'pincode' =>  $data['customer_details']['pincode'],
-            'customer_address' =>  $data['customer_details']['address'],
+            'customer' => $data['customer_details']['name'],
+            'customer_email' => $data['customer_details']['email'],
+            'customer_phone' => $data['customer_details']['phone'],
+            'pincode' => $data['customer_details']['pincode'],
+            'customer_address' => $data['customer_details']['address'],
         ];
 
         if ($data['payment_status'] === 'Paid') {
@@ -485,7 +458,6 @@ class Ordermanagement extends BaseController
     {
 
 
-        // Set JSON response header
         $this->response->setContentType('application/json');
 
         $orderModel = new Ordermanagement_model();
@@ -493,7 +465,6 @@ class Ordermanagement extends BaseController
         $userModel = new Registerusers_model();
         $email = \Config\Services::email();
 
-        // Get form data
         $customer_id = $this->request->getPost('order-customer-name');
         $pincode = $this->request->getPost('pincode');
         $city = $this->request->getPost('order-city');
@@ -508,9 +479,9 @@ class Ordermanagement extends BaseController
         $discount_type = $this->request->getPost('discount_type');
         $discount_value = $this->request->getPost('discount_value');
         $discount_reason = $this->request->getPost('discount_reason');
-        $discount_values = $this->request->getPost('product_discount'); // Discounts per product
+        $discount_values = $this->request->getPost('product_discount');
         $product_values = $this->request->getPost('product_price');
-        $total_discount_amount = floatval($this->request->getPost('final_total_discount')); // Global discount
+        $total_discount_amount = floatval($this->request->getPost('final_total_discount'));
         $shipping_option = $this->request->getPost('shipping_option');
         $shipping_amount = floatval($this->request->getPost('final_shipment_charges'));
         $order_tags = $this->request->getPost('order-tags');
@@ -526,8 +497,6 @@ class Ordermanagement extends BaseController
         $country = strtoupper($this->request->getPost('country'));
 
 
-
-
         $customer = $userModel->find($customer_id);
         if (!$customer) {
             return $this->response->setJSON([
@@ -541,8 +510,6 @@ class Ordermanagement extends BaseController
                 'message' => 'Products not found.'
             ]);
         }
-
-
 
 
         $total_amount_before_discount = 0;
@@ -567,18 +534,17 @@ class Ordermanagement extends BaseController
             $product_titles[] = $product['product_title'] . ' x ' . $quantity;
             $seller_ids[] = $product['seller_id'];
             $product_price = isset($product_values[$product_id]) ? floatval($product_values[$product_id]) : $product['selling_price'];
-            //$product_price = ;
+       
             if ($is_international) {
                 $product_price += 1000;
             }
             $subtotal = $product_price * $quantity;
-            //$total_amount += $subtotal;
-            // Calculate discount for the product
+          
             $product_discount = isset($discount_values[$product_id]) ? floatval($discount_values[$product_id]) : 0;
             $discounted_price = max(0, $product_price - $product_discount);
 
             if ($total_discount_amount > 0) {
-                $product_discount = 0; // Neglect product-level discount if global discount exists
+                $product_discount = 0;
             }
 
             $total_amount_before_discount += $subtotal;
@@ -616,19 +582,19 @@ class Ordermanagement extends BaseController
             ];
         }
 
-        // Add global discount and shipping charges
+
         $total_discount += $total_discount_amount;
-        //$final_total_amount = $total_amount_before_discount - $total_discount + $shipping_amount;
+    
         $final_total_amount = $this->request->getPost('final_total_price');
 
         $product_titles_str = json_encode($product_titles);
         $concatenated_seller_id = implode(', ', array_unique($seller_ids));
 
         if ($is_international) {
-            // Convert final amount to USD
-            $usd_total = $final_total_amount * 0.012; // Using same rate as frontend
+       
+            $usd_total = $final_total_amount * 0.012;
 
-            // Reset GST values
+        
             $cgst = 0;
             $sgst = 0;
             $igst = 0;
@@ -684,8 +650,6 @@ class Ordermanagement extends BaseController
         log_message('debug', 'Data received for draft: ' . json_encode($this->request->getPost(), JSON_PRETTY_PRINT));
 
         try {
-            // Your existing code for processing order data...
-            // [Keep all your existing order data processing logic here]
 
             $insertId = $orderModel->insert($order_data);
 
@@ -717,8 +681,6 @@ class Ordermanagement extends BaseController
     }
 
 
-
-
     private function generateOrderNumber($orderModel)
     {
         $lastOrder = $orderModel->orderBy('order_number', 'DESC')->first();
@@ -729,14 +691,14 @@ class Ordermanagement extends BaseController
 
     public function getOrderDetails($id)
     {
-        // Load the OrderModel
+    
         $orderModel = new Ordermanagement_model();
 
         try {
-            // Fetch the order details from the database
+          
             $order = $orderModel->find($id);
 
-            // Check if the order exists
+         
             if (!$order) {
                 return $this->response->setStatusCode(404)->setJSON([
                     'status' => 'error',
@@ -744,20 +706,18 @@ class Ordermanagement extends BaseController
                 ]);
             }
 
-            // Decode the product details (assumes JSON in `product_details` column)
             if (!empty($order['product_details'])) {
                 $order['product_details'] = json_decode($order['product_details'], true);
             } else {
                 $order['product_details'] = [];
             }
-
-            // Send the response as JSON
+            
             return $this->response->setStatusCode(200)->setJSON([
                 'status' => 'success',
                 'order' => $order,
             ]);
         } catch (\Exception $e) {
-            // Handle exceptions
+          
             return $this->response->setStatusCode(500)->setJSON([
                 'status' => 'error',
                 'message' => 'An error occurred while fetching order details.',
@@ -773,20 +733,16 @@ class Ordermanagement extends BaseController
         $userModel = new Registerusers_model();
         $pincodeModel = new PincodeModel();
 
-        // Fetch existing order data
         $order = $orderModel->getOrderdetail($id);
         if (!$order) {
             session()->setFlashdata('error', 'Order not found.');
             return redirect()->back();
         }
-        // Decode product details JSON
         $order['product_details'] = json_decode($order['product_details'], true);
 
-        // Fetch all products
         $products = $productsModel->findAll();
         $totalDiscountSum = 0;
         foreach ($products as $product) {
-            // Fetch saved product details from the order data if they exist
             $existingProduct = null;
             foreach ($order['product_details'] as $orderProduct) {
                 if ($orderProduct['product_id'] == $product['product_id']) {
@@ -795,22 +751,17 @@ class Ordermanagement extends BaseController
                 }
             }
 
-            $savedQuantity = $existingProduct['quantity'] ?? 1; // Default quantity is 1
-            $savedDiscount = $existingProduct['discount'] ?? 0; // Calculate per-item discount
-            $totalDiscountForProduct = $savedDiscount; // Total discount for the product
+            $savedQuantity = $existingProduct['quantity'] ?? 1; 
+            $savedDiscount = $existingProduct['discount'] ?? 0; 
+            $totalDiscountForProduct = $savedDiscount; 
 
-            $totalDiscountSum += $totalDiscountForProduct; // Add product discount to the total discount sum
+            $totalDiscountSum += $totalDiscountForProduct; 
 
         }
 
-
-        // Fetch all customers
         $users = $userModel->findAll();
         $delivery_partner = $pincodeModel->findAll();
 
-
-
-        // Pass data to the view
         $data = [
             'order' => $order,
             'products' => $products,
@@ -829,14 +780,12 @@ class Ordermanagement extends BaseController
         $productsModel = new Products_model();
         $userModel = new Registerusers_model();
 
-        // Get existing order data
         $existingOrder = $orderModel->find($id);
         if (!$existingOrder) {
             session()->setFlashdata('error', 'Order not found.');
             return redirect()->back();
         }
 
-        // Get form data (same as in publishorder)
         $customer_id = $this->request->getPost('order-customer-name');
         $pincode = $this->request->getPost('pincode');
         $city = $this->request->getPost('order-city');
@@ -869,7 +818,6 @@ class Ordermanagement extends BaseController
         $country = strtoupper($this->request->getPost('country'));
 
 
-        // Validate customer
         $customer = $userModel->find($customer_id);
         if (!$customer) {
             session()->setFlashdata('error', 'Customer not found.');
@@ -883,7 +831,6 @@ class Ordermanagement extends BaseController
             ]);
         }
 
-        // Process products and calculate totals
         $total_amount_before_discount = 0;
         $total_discount = 0;
         $product_titles = [];
@@ -902,7 +849,7 @@ class Ordermanagement extends BaseController
             $product_titles[] = $product['product_title'] . ' x ' . $quantity;
             $seller_ids[] = $product['seller_id'];
             $product_price = isset($product_values[$product_id]) ? floatval($product_values[$product_id]) : 0;
-            //$product_price = $product['selling_price'];
+        
             if ($is_international) {
                 $product_price += 1000;
             }
@@ -912,7 +859,7 @@ class Ordermanagement extends BaseController
             $discounted_price = max(0, $product_price - $product_discount);
 
             if ($total_discount_amount > 0) {
-                $product_discount = 0; // Neglect product-level discount if global discount exists
+                $product_discount = 0; 
             }
             $total_amount_before_discount += $subtotal;
             $total_discount += $product_discount * $quantity;
@@ -945,9 +892,8 @@ class Ordermanagement extends BaseController
             ];
         }
 
-        // Calculate final totals
         $total_discount += $total_discount_amount;
-        //$final_total_amount = $total_amount_before_discount - $total_discount + $shipping_amount;
+      
         $final_total_amount = $this->request->getPost('final_total_price');
 
         $product_titles_str = json_encode($product_titles);
@@ -955,10 +901,9 @@ class Ordermanagement extends BaseController
 
 
         if ($is_international) {
-            // Convert final amount to USD
-            $usd_total = $final_total_amount * 0.012; // Using same rate as frontend
+        
+            $usd_total = $final_total_amount * 0.012; 
 
-            // Reset GST values
             $cgst = 0;
             $sgst = 0;
             $igst = 0;
@@ -966,9 +911,7 @@ class Ordermanagement extends BaseController
 
 
         if ($payment_method === 'link') {
-            $orderId = $this->savedraftorder(); // Save the order as a draft
-
-            // Check if we got a numeric ID back (success) or if it was a JSON response
+            $orderId = $this->savedraftorder(); 
             if (is_numeric($orderId)) {
                 $order_data = $orderModel->getOrderdetail($orderId);
                 $product_details = json_decode($order_data['product_details'], true);
@@ -1024,14 +967,11 @@ class Ordermanagement extends BaseController
             'customer_gstin' => $customergstin ?? 0
         ];
 
-        // Start transaction
         $db = \Config\Database::connect();
         $db->transStart();
 
         try {
-            // Update order
             if ($orderModel->update($id, $order_data)) {
-                // Update shipments
                 $orderModel->updateOrderShipments($id, $existingOrder['order_number'], $order_data, $product_shipment_details);
 
                 $db->transCommit();
@@ -1060,7 +1000,6 @@ class Ordermanagement extends BaseController
         $filePath = $file->getTempName();
         $fileData = file($filePath, FILE_IGNORE_NEW_LINES);
 
-        // Skip header row
         array_shift($fileData);
 
         $orderModel = new Ordermanagement_model();
@@ -1069,28 +1008,24 @@ class Ordermanagement extends BaseController
 
         $errors = [];
         $successCount = 0;
-        // Group orders by order-id
         $groupedOrders = [];
         foreach ($fileData as $line) {
             $orderDetails = explode("\t", $line);
-            $orderNumber = $orderDetails[0] ?? ''; // order-id is first column
+            $orderNumber = $orderDetails[0] ?? '';
             if (!isset($groupedOrders[$orderNumber])) {
                 $groupedOrders[$orderNumber] = [];
             }
             $groupedOrders[$orderNumber][] = $orderDetails;
         }
 
-        // Process each order
         foreach ($groupedOrders as $orderNumber => $orderLines) {
 
-            // Check if order already exists
             if ($orderModel->checkAmazonOrderExists($orderNumber)) {
                 $errors[] = "Order number '$orderNumber' already exists in the database.";
                 continue;
             }
 
 
-            // Get common order details from first line
             $firstLine = $orderLines[0];
 
             $order_num = $this->generateOrderNumber($orderModel);
@@ -1175,25 +1110,7 @@ class Ordermanagement extends BaseController
                         'sku' => $product['sku'] ?? '',
                         'hsn' => $product['hsn'] ?? ''
                     ];
-                }
-                /*else {
-                    // If product not found, still add basic info
-                    $product_titles[] = $product_name . ' x ' . $quantity;
-                    
-                    // Add basic product details
-                    $product_details[] = [
-                        'product_id' => null,
-                        'product_title' => $product_name,
-                        'product_image' => '',
-                        'selling_price' => 0,
-                        'quantity' => $quantity,
-                        'subtotal' => 0,
-                        'discount' => 0,
-                        'discounted_price' => 0,
-                        'sku' => $sku ?? '',
-                        'hsn' => ''
-                    ];
-                }*/
+                }           
             }
 
             // Parse dates
@@ -1366,7 +1283,11 @@ class Ordermanagement extends BaseController
     }
 
 
-    //////////////////////////////////////////////////bluedart//////////////////////////////////////////////////
+
+
+
+
+//<!---------------------------------------------------------------------------------------------- Blue Dart --------------------------------------------------------------------------->
 
     public function bluedart_management()
     {
@@ -1525,12 +1446,14 @@ class Ordermanagement extends BaseController
                         "Count" => 1, // Each entry represents one package
                     ];
                 }, json_decode($shipment['length'], true), json_decode($shipment['breadth'], true), json_decode($shipment['height'], true))
-                : [[
-                    "Length" => $shipment['length'],
-                    "Breadth" => $shipment['breadth'],
-                    "Height" => $shipment['height'],
-                    "Count" => 1, // Single package
-                ]];
+                : [
+                    [
+                        "Length" => $shipment['length'],
+                        "Breadth" => $shipment['breadth'],
+                        "Height" => $shipment['height'],
+                        "Count" => 1, // Single package
+                    ]
+                ];
 
             // Validate dimensions count against no_of_packages
             if (count($dimensions) !== $no_of_packages) {
@@ -2608,6 +2531,11 @@ class Ordermanagement extends BaseController
         return json_decode($response, true);
     }
 
+
+
+
+
+    
     private function sendOrderConfirmationWhatsApp($recipient, $name, $orderData, $productDetails)
     {
         $url = 'https://api.dotpe.in/api/comm/public/enterprise/v1/wa/send';
@@ -2626,9 +2554,9 @@ class Ordermanagement extends BaseController
 
         // Template parameters matching {{1}}, {{2}}, {{3}}
         $templateParams = [
-            (string)$orderData['order_number'], // Order ID as string
-            (string)$itemsOrderedStr,          // Items Ordered as string
-            (string)$orderData['total_amount'] // Total Amount as string
+            (string) $orderData['order_number'], // Order ID as string
+            (string) $itemsOrderedStr,          // Items Ordered as string
+            (string) $orderData['total_amount'] // Total Amount as string
         ];
 
         // Payload for DotPe API
@@ -2760,4 +2688,27 @@ class Ordermanagement extends BaseController
             'updated_shipments' => $updatedShipments
         ]);
     }
+
+
+    public function applyDiscount()
+    {
+        $discountCode = $this->request->getPost('discountCode');
+
+        $model = new discountcode();
+        $discount = $model->where('code', $discountCode)->where('discountstatus', 1)->first();
+
+        if ($discount) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'discountAmount' => $discount['discountValue'] // or 'percent' depending on how you store it
+            ]);
+        }
+
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Invalid or inactive discount code.'
+        ]);
+    }
+
+
 }

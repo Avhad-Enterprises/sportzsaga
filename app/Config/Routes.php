@@ -66,7 +66,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
 
    $routes->get('blogs/deleteblog/(:num)', 'Blogs::deleteblog/$1');
    $routes->get('blog_logs_view', 'Blogs::bloglogs');
-   $routes->get('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
+   $routes->post('blogs/restore/(:num)', 'Blogs::restoreBlog/$1');
 
    $routes->get('blogs/editblog/(:num)', 'Blogs::editblog/$1');
    $routes->post('blogs/updateblogdata/(:num)', 'Blogs::updateblogdata/$1');
@@ -222,7 +222,7 @@ $routes->group('', ['filter' => 'super_admin_or_employee'], function ($routes) {
    $routes->get('companies/edit_company/(:num)', 'CatalogController::editcompany/$1');
    $routes->post('company/update_company/(:num)', 'CatalogController::update_company/$1');
    $routes->get('companies/deletecompany/(:num)', 'CatalogController::deleteCompany/$1');
-   $routes->get('restorecompany/(:num)', 'CatalogController::restoreCompany/$1');
+   $routes->post('restoreCompany/(:num)', 'CatalogController::restoreCompany/$1');
    $routes->get('company_logs_view', 'CatalogController::companylogs');
    $routes->post('company/importCSV', 'CatalogController::importCSV');
    $routes->get('company/exportCSV', 'CatalogController::exportCSV');
@@ -326,6 +326,7 @@ $routes->get('vendors', 'brands::vendors');
 
 // Products Controller
 $routes->get('admin-products', 'Products');
+
 $routes->get('admin-products/deleteproduct/(:num)', 'Products::deleteproduct/$1');
 $routes->get('admin-products/editproduct/(:num)', 'Products::editproduct/$1');
 $routes->get('admin-products/admin-products_logs/(:num)', 'Products::product_logs/$1');
@@ -404,6 +405,9 @@ $routes->get('getCustomerDetails', 'Ordermanagement::getCustomerDetails');
 $routes->get('getCityStateByPincode/(:num)', 'Ordermanagement::getCityStateByPincode/$1');
 $routes->post('orders/import', 'Ordermanagement::import');
 $routes->get('orders/export', 'Ordermanagement::export');
+$routes->post('ordermanagement/create_razorpay_order', 'Ordermanagement::createRazorpayOrder');
+$routes->post('discount/applyDiscount', 'Ordermanagement::applyDiscount');
+
 
 // Bluedart Management
 $routes->get('bluedart_management', 'Ordermanagement::bluedart_management');
@@ -503,8 +507,8 @@ $routes->post('customer_segment/savesegmentdata', 'CatalogController::savesegmen
 $routes->get('customer_segment_view', 'CatalogController::viewcustomersegment');
 $routes->get('customer_segments/editsegment/(:num)', 'CatalogController::editsegment/$1');
 $routes->post('customer_segment/updatesegment/(:num)', 'CatalogController::updatesegment/$1');
-$routes->get('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
-$routes->get('customer_segment/restore/(:num)', 'CatalogController::restoresegment/$1');
+$routes->post('customer_segment/deletesegment/(:num)', 'CatalogController::deletesegment/$1');
+$routes->post('customer_segment/restore/(:num)', 'CatalogController::restoreSegment/$1');
 $routes->get('customersegment_logs_view', 'CatalogController::customersegmentlogs');
 $routes->get('customersegment/customersegment_logs/(:num)', 'CatalogController::customersegment_logs/$1');
 
@@ -695,8 +699,8 @@ $routes->get('online_store/restore_marquee/(:num)', 'Store::restore_marquee/$1')
 
 $routes->get('Carousel2/Carousel2_history/(:num)', 'Store::Carousel2_history/$1');
 $routes->get('online_store/online_store_history', 'Store::online_store_history');
-$routes->get('home-collection/collection_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
-$routes->get('home-collection/collection_change_logs/', 'Store::home_collection_change_logs');
+$routes->get('home-collection/collection_os_change_logs/(:num)', 'Store::home_collection_change_logs/$1');
+$routes->get('home-collection/collection_os_change_logs/', 'Store::home_collection_change_logs');
 $routes->get('logo/logo_history/(:num)', 'Store::logo_history/$1');
 $routes->get('image/image_history/(:num)', 'Store::image_history/$1');
 $routes->get('home_blog/home_blog_history/(:num)', 'Store::home_blog_history/$1');
@@ -716,3 +720,27 @@ $routes->get('checkoutpage/checkoutpage_history/(:num)', 'Store::checkout_histor
 $routes->get('trackingpage/trackingpage_history/(:num)', 'Store::tracking_history/$1');
 $routes->get('error_page/error_page_history/(:num)', 'Store::errorpage_history/$1');
 $routes->get('team_members/team_member_history/(:num)', 'Store::team_history/$1');
+
+
+
+
+
+
+
+//Analytics
+$routes->get('analytics', 'Analytics::index');
+$routes->get('analytics/visits_overview', 'Analytics::VisitsOverview');
+$routes->get('analytics/visitor-trends', 'Analytics::visitorTrends');
+$routes->post('analytics/export_visitors', 'Analytics::export_visitors');
+
+$routes->get('analytics/desktop_visits_overview', 'Analytics::DesktopVisitsOverview');
+$routes->post('analytics/export_desktop_visitors', 'Analytics::export_desktop_visitors');
+
+$routes->get('analytics/mobile_visits_overview', 'Analytics::MobileVisitsOverview');
+$routes->post('analytics/export_mobile_visitors', 'Analytics::export_mobile_visitors');
+
+$routes->get('analytics/tablet_visits_overview', 'Analytics::TabletVisitsOverview');
+$routes->post('analytics/export_tablet_visitors', 'Analytics::export_tablet_visitors');
+
+$routes->get('analytics/New_visits_overview', 'Analytics::NewVisitsOverview');
+$routes->get('analytics/returning_visits_overview', 'Analytics::ReturningVisitsOverview');

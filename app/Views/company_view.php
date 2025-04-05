@@ -117,7 +117,8 @@
                         </div>
                         <div class="col-md-6 col-sm-12 text-right blogs-imex">
                             <div class="dropdown">
-                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>add_new_company" role="button">
+                                <a class="btn btn-primary fw-bold" href="<?= base_url(); ?>add_new_company"
+                                    role="button">
                                     Add New
                                 </a>
                             </div>
@@ -131,9 +132,8 @@
                                 </a>
                             </div>
                             <div class="dropdown">
-                                <a class="btn btn-success" href="<?= base_url('company_logs_view'); ?>"
-                                    role="button">
-                                   Logs
+                                <a class="btn btn-success" href="<?= base_url('company_logs_view'); ?>" role="button">
+                                    Logs
                                 </a>
                             </div>
                         </div>
@@ -176,7 +176,8 @@
                                                     <a class="dropdown-item"
                                                         href="<?= base_url(); ?>companies/edit_company/<?= $company['id'] ?>"><i
                                                             class="dw dw-edit2"></i> Edit</a>
-                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="companyDelete(<?= $company['id'] ?>)">
+                                                    <a class="dropdown-item" href="javascript:void(0);"
+                                                        onclick="companyDelete(<?= $company['id'] ?>)">
                                                         <i class="dw dw-delete-3"></i> Delete
                                                     </a>
                                                 </div>
@@ -191,7 +192,8 @@
                 <!-- Page Content End -->
 
                 <!-- Import Company Modal -->
-                <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel" aria-hidden="true">
+                <div class="modal fade" id="importCompanyModal" tabindex="-1" aria-labelledby="importCompanyModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -200,14 +202,17 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="<?= base_url('company/importCSV'); ?>" method="post" enctype="multipart/form-data">
+                            <form action="<?= base_url('company/importCSV'); ?>" method="post"
+                                enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label for="csv_file" class="form-label">Select CSV File</label>
-                                        <input type="file" name="csv_file" id="csv_file" class="form-control" accept=".csv" required>
+                                        <input type="file" name="csv_file" id="csv_file" class="form-control"
+                                            accept=".csv" required>
                                     </div>
                                     <div class="alert alert-info">
-                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following headers:
+                                        <strong>CSV Format:</strong> Ensure your CSV file contains the following
+                                        headers:
                                         <ul>
                                             <li><code>company_name</code>, <code>user_ids</code>, <code>tags</code>,
                                                 <code>street</code>, <code>city</code>, <code>state</code>,
@@ -235,7 +240,7 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Get the Import button
             var importButton = document.getElementById("openImportModal");
 
@@ -243,10 +248,18 @@
             var importModal = new bootstrap.Modal(document.getElementById("importCompanyModal"));
 
             // Open modal when button is clicked
-            importButton.addEventListener("click", function() {
+            importButton.addEventListener("click", function () {
                 importModal.show();
             });
         });
+    </script>
+
+    <script>
+        function companyDelete(id) {
+            if (confirm("Are you sure you want to delete this company?")) {
+                window.location.href = "<?= base_url('companies/deletecompany/') ?>" + id;
+            }
+        }
     </script>
 
 </body>

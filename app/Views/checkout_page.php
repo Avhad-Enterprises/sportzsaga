@@ -1,306 +1,161 @@
-<!-- Head View Start -->
-<?= $this->include('head_view') ?>
-<!-- Head View End -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | Spotzsaaga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .checkout-container {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
 <body>
-    <!-- Header View Start -->
-    <?= $this->include('header_view') ?>
-    <!-- Header View End -->
 
-    <div class="right-sidebar">
-        <div class="sidebar-title">
-            <h3 class="weight-600 font-16 text-blue">
-                Layout Settings
-                <span class="btn-block font-weight-400 font-12">User Interface Settings</span>
-            </h3>
-            <div class="close-sidebar" data-toggle="right-sidebar-close">
-                <i class="icon-copy ion-close-round"></i>
-            </div>
-        </div>
-        <div class="right-sidebar-body customscroll">
-            <div class="right-sidebar-body-content">
-                <h4 class="weight-600 font-18 pb-10">Header Background</h4>
-                <div class="sidebar-btn-group pb-30 mb-10">
-                    <a href="javascript:void(0);" class="btn btn-outline-primary header-white active">White</a>
-                    <a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Dark</a>
-                </div>
-
-                <h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
-                <div class="sidebar-btn-group pb-30 mb-10">
-                    <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light">White</a>
-                    <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
-                </div>
-
-                <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
-                <div class="sidebar-radio-group pb-10 mb-10">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-2" />
-                        <label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input"
-                            value="icon-style-3" />
-                        <label class="custom-control-label" for="sidebaricon-3"><i
-                                class="fa fa-angle-double-right"></i></label>
-                    </div>
-                </div>
-
-                <h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
-                <div class="sidebar-radio-group pb-30 mb-10">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-1" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-1"><i
-                                class="ion-minus-round"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-2" />
-                        <label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o"
-                                aria-hidden="true"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-3" />
-                        <label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-4" checked="" />
-                        <label class="custom-control-label" for="sidebariconlist-4"><i
-                                class="icon-copy dw dw-next-2"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-5" />
-                        <label class="custom-control-label" for="sidebariconlist-5"><i
-                                class="dw dw-fast-forward-1"></i></label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input"
-                            value="icon-list-style-6" />
-                        <label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
-                    </div>
-                </div>
-
-                <div class="reset-options pt-30 text-center">
-                    <button class="btn btn-danger" id="reset-settings">
-                        Reset Settings
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header View Start -->
-    <?= $this->include('left_view') ?>
-    <!-- Header View End -->
-
-    <div class="mobile-menu-overlay"></div>
-
-    <!-- Page Main Content Start -->
-    <div class="main-container">
-
-    <div class="page-header">
+    <div class="container my-5 checkout-container">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <div class="title">
-                    <h1>Checkout</h1>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 text-right blogs-imex">                
-                <div class="col d-flex justify-content-end">
-                    <img src="https://storage.googleapis.com/mkv_imagesbackend/blogs/main_images/sagalogo.png" width="70px" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 ">
-            <div class="pd-20 card-box mb-30">
-                <h6>Customer Details</h6>
-                <hr>
+            <div class="col-md-6">
+                <h4 class="section-title">Customer Details</h4>
                 <form>
-                    <div class="form-group">                    
-                        <label for="customerName">Name</label>
-                            <input type="text" class="form-control" Value="<?= $order['customer'] ?>" id="customerName" name="name" required>
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" class="form-control" value="<?= $order['customer'] ?>" >
                     </div>
-                    <div class="form-group">
-                        <label for="customerEmail">Email</label>
-                        <input type="text" class="form-control" Value="<?= $order['customer_email'] ?>" id="customerEmail" name="email" required>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" value="<?= $order['customer_email'] ?>" >
                     </div>
-                    <div class="form-group">
-                        <label for="customerPhone">Phone</label>
-                        <input type="text" class="form-control"  Value="<?= $order['customer_phone'] ?>" id="customerPhone" name="phone" required>
+                    <div class="mb-3">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" value="<?= $order['customer_phone'] ?>" >
                     </div>
-                    <div class="form-group">
-                        <label for="customerPin">Pincode</label>
-                        <input type="text" class="form-control"  Value="<?= $order['pincode'] ?>" id="customerPin" name="pincode" required>
+                    <div class="mb-3">
+                        <label>Pincode</label>
+                        <input type="text" class="form-control" value="<?= $order['pincode'] ?>" >
                     </div>
-                    <div class="form-group">
-                        <label for="customerAddress">Address</label>
-                        <textarea class="form-control" id="customerAddress" name="address" rows="3"
-                                    required><?= $order['customer_address'] ?></textarea>
-                    </div>                    
-                </form>               
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <textarea class="form-control" rows="3" ><?= $order['customer_address'] ?></textarea>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="col-md-8">
-            <div class="pd-20 card-box mb-30 ">
-                <h4>Order Summary</h4>
-                <br>
-                <table class="table">
+
+            <div class="col-md-6">
+                <h4 class="section-title">Order Summary</h4>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Price/Unit</th>
-                            <th>Discount</th>
-                            <th>Quantity</th>
+                            <th>Qty</th>
+                            <th>Price</th>
                             <th>Subtotal</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($products as $product): ?>
                             <tr>
-                                <td><strong><?= $product['product_title'] ?></strong></td>
-                                <td>₹<?= $product['selling_price'] ?><?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['selling_price'] * 0.012) : '' ?></td>
-                                <td>₹<?= ($product['discount']/$product['quantity']) ?><?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? (($product['discount']/$product['quantity']) * 0.012) : '' ?></td>
+                                <td><?= $product['product_title'] ?></td>
                                 <td><?= $product['quantity'] ?></td>
-                                <td>₹<?= $product['discounted_price'] ?><?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($product['discounted_price'] * 0.012) : '' ?></td>
+                                <td>₹<?= $product['selling_price'] ?></td>
+                                <td>₹<?= $product['discounted_price'] ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">Discount</th>
+                            <td>₹<?= $order['discount_amount'] ?></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Shipping</th>
+                            <td>₹<?= $order['shipping_amount'] ?></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Total</th>
+                            <td><strong>₹<?= $total_amount ?></strong></td>
+                        </tr>
+                    </tfoot>
                 </table>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                    </div>
-
-                    <div class="col-6">                       
-                        <div class="pd-20 card">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <p>Discount:</p>
-                                    <p>Shipping charges:</p>
-                                    <p><strong>Total Amount:</strong></p>
-                                    <?php if ($order['payment_status'] === 'partial_cod'): ?>
-                                        <p>Partial COD Amount: </p>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col text-right">
-                                    <p> ₹<?= $order['discount_amount'] ?><?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($order['discount_amount'] * 0.012) : '' ?></p>
-                                    <p> ₹<?= $order['shipping_amount'] ?><?= $order['is_international_order'] == 1 ? ' / $' : '' ?> <?= $order['is_international_order'] == 1 ? ($order['shipping_amount'] * 0.012) : '' ?></p>
-                                    <p><strong> <?= $order['currency'] === 'INR' ? '₹' : '$' ?><?= $total_amount ?> </strong></p>
-                                    <?php if ($order['payment_status'] === 'partial_cod'): ?>
-                                        <p> <?= $order['currency'] === 'INR' ? '₹' : '$' ?><?= $partial_cod_amount ?></p>
-                                    <?php endif; ?>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
             </div>
+        </div>
+
+        <hr class="my-4">
+
+        <h4 class="section-title">Payment</h4>
+        <div class="text-center">
+            <img src="https://www.ecommerce-nation.com/wp-content/uploads/2019/02/razorpay.webp" height="200">
+            <br><br>
+            <button id="payButton" class="btn btn-success btn-lg">
+                Pay ₹<?= ($order['payment_status'] === 'partial_cod' ? $partial_cod_amount : $total_amount) ?>
+            </button>
         </div>
     </div>
 
-    <div class="pd-20 card-box mb-30">
-        <h5>Payment</h5>
-        <hr>
-        <div class="row">
-            <div class="col-3">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link btn active" id="v-pills-razorpay-tab" data-toggle="pill" data-target="#v-pills-razorpay" type="button" role="tab" aria-controls="v-pills-razorpay" aria-selected="true">RazorPay</a>
-                <a class="nav-link btn" id="v-pills-cashfree-tab" data-toggle="pill" data-target="#v-pills-cashfree" type="button" role="tab" aria-controls="v-pills-cashfree" aria-selected="false">Cashfree</a>
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-razorpay" role="tabpanel" aria-labelledby="v-pills-razorpay-tab" >
-                        <img style="height:300px" src="https://www.ecommerce-nation.com/wp-content/uploads/2019/02/razorpay.webp">
-                        <div class="text-right" >
-                            <a class="btn btn-primary" id="payButton">Pay <?= $order['currency'] === 'INR' ? '₹' : '$' ?><?= ($order['payment_status'] === 'partial_cod' ? $partial_cod_amount : $total_amount) ?></a>
-                        </div> 
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-cashfree" role="tabpanel" aria-labelledby="v-pills-cashfree-tab"  >
-                        <img style="height:300px"  src="https://img-cdn.thepublive.com/fit-in/1280x960/filters:format(webp)/entrackr/media/post_attachments/wp-content/uploads/2024/01/Cashfree-image.jpg">
-                        <div class="text-right" >
-                            <a class="btn btn-primary" >Comming Soon...</a>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         document.getElementById('payButton').addEventListener('click', function () {
-            const paymentStatus = "<?= $order['payment_status'] ?>";
-            const amountToPay = paymentStatus === 'partial_cod'
-                ? <?= $partial_cod_amount ?> * 100
-                : <?= $total_amount ?> * 100;
-                
-            const customerDetails = {
-                name: document.getElementById('customerName').value,
-                email: document.getElementById('customerEmail').value,
-                phone: document.getElementById('customerPhone').value,
-                pincode: document.getElementById('customerPin').value,
-                address: document.getElementById('customerAddress').value,
-            };
+            const amountToPay = <?= $order['payment_status'] === 'partial_cod' ? $partial_cod_amount : $total_amount ?> * 100;
 
             const options = {
-                key: 'rzp_test_HNDDo4TA783qRj', // Replace with your Razorpay Key
+                key: 'rzp_test_HNDDo4TA783qRj',
                 amount: amountToPay.toFixed(0),
                 currency: "<?= $order['currency'] ?>",
                 name: "Spotzsaaga Enterprises",
                 description: "Order Payment",
                 image: "https://storage.googleapis.com/mkv_imagesbackend/blogs/main_images/sagalogo.png",
                 handler: function (response) {
-                    alert("Payment successful! Transaction ID: " + response.razorpay_payment_id);
-
-                    // Update payment status and reference
                     fetch('<?= base_url("ordermanagement/updatePaymentStatus") ?>', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             order_id: <?= $order['order_id'] ?>,
                             payment_ref: response.razorpay_payment_id,
-                            payment_status: paymentStatus === 'partial_cod' ? 'partial_cod' : 'Paid',
-                            customer_details: customerDetails,
-                        }),
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            if (data.status === 'success') {
-                                window.location.href = "<?= base_url('ordermanagement') ?>";
-                            } else {
-                                alert('Failed to update payment status.');
+                            payment_status: "Paid",
+                            customer_details: {
+                                name: "<?= $order['customer'] ?>",
+                                email: "<?= $order['customer_email'] ?>",
+                                phone: "<?= $order['customer_phone'] ?>",
+                                address: "<?= $order['customer_address'] ?>",
+                                pincode: "<?= $order['pincode'] ?>",
                             }
                         })
-                        .catch(err => console.error(err));
+                    }).then(res => res.json()).then(data => {
+                        if (data.status === 'success') {
+                            window.location.href = "<?= base_url('thank-you') ?>";
+                        } else {
+                            alert("Payment update failed.");
+                        }
+                    }).catch(err => console.error(err));
                 },
                 modal: {
                     ondismiss: function () {
-                        alert("Payment canceled by user.");
-                    },
-                },
+                        alert("Payment was cancelled.");
+                    }
+                }
             };
 
             const razorpay = new Razorpay(options);
             razorpay.open();
         });
     </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
-<!-- Footer View Start -->
-<?= $this->include('footer_view') ?>
-<!-- Footer View End -->
+
 </html>

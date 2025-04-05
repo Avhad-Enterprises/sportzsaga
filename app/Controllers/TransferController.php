@@ -18,13 +18,8 @@ class TransferController extends Controller
     }
     public function create()
     {
-        // Load the required models
-        $productModel = new Products_model(); // Ensure this is your Product Model
-
-        // Fetch all products
+        $productModel = new Products_model(); 
         $products = $productModel->findAll();
-
-        // Pass products to the view
         $data = [
             'products' => $products
         ];
@@ -37,11 +32,7 @@ class TransferController extends Controller
         $db = db_connect();
         $session = session();
         $userId = $session->get('user_id');
-
-        // Fetch only active (non-deleted) transfer records
         $transfers = $transferModel->where('is_deleted', 0)->findAll();
-
-        // Fetch user's permissions for transfers
         $permissions = $db->table('user_permissions')
             ->select('action')
             ->where('user_id', $userId)
@@ -50,11 +41,9 @@ class TransferController extends Controller
             ->getResultArray();
 
         $allowedActions = array_column($permissions, 'action');
-
-        // Pass data to the view
         $data = [
             'transferData' => $transfers,
-            'canDelete' => in_array('delete', $allowedActions), // Check if the user can delete
+            'canDelete' => in_array('delete', $allowedActions), 
         ];
 
         return view('transfer_inventory_view', $data);
@@ -65,18 +54,14 @@ class TransferController extends Controller
     {
         $transferModel = new TransferModel();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
-
-        // Initialize Google Cloud Storage client
+        $userId = $session->get('user_id'); 
         $storage = new \Google\Cloud\Storage\StorageClient([
-            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', // Path to service account key
-            'projectId' => 'peak-tide-441609-r1', // Replace with your project ID
+            'keyFilePath' => WRITEPATH . 'public/mkvgsc.json', 
+            'projectId' => 'peak-tide-441609-r1', 
         ]);
 
         $bucketName = 'mkv_imagesbackend';
         $bucket = $storage->bucket($bucketName);
-
-        // Prepare file uploads
         $uploadedImages = [];
         $fileFields = ['digital_signature', 'additional_documents'];
 
@@ -86,12 +71,10 @@ class TransferController extends Controller
             if ($file && $file->isValid() && !$file->hasMoved()) {
                 $fileName = 'transfers/' . uniqid() . '_' . $file->getClientName();
                 $fileTempPath = $file->getTempName();
-
-                // Upload to Google Cloud Storage
                 $object = $bucket->upload(
                     fopen($fileTempPath, 'r'),
                     [
-                        'name' => $fileName, // Adjust folder structure as needed
+                        'name' => $fileName, 
                         'predefinedAcl' => 'publicRead',
                     ]
                 );
@@ -102,7 +85,6 @@ class TransferController extends Controller
             }
         }
 
-        // Collect form data
         $data = [
             'giver' => $this->request->getPost('giver'),
             'receiver' => $this->request->getPost('receiver'),
@@ -124,13 +106,12 @@ class TransferController extends Controller
             'lot_number' => $this->request->getPost('lot_number'),
             'insurance' => $this->request->getPost('insurance'),
             'checks' => is_array($this->request->getPost('checks')) ? implode(',', $this->request->getPost('checks')) : null,
-            'digital_signature' => $uploadedImages['digital_signature'], // Link from Google Cloud Storage
-            'additional_documents' => $uploadedImages['additional_documents'], // Link from Google Cloud Storage
-            'added_by' => $userId, // Save the user who added the entry
-            'added_at' => date('Y-m-d H:i:s') // Timestamp when added
+            'digital_signature' => $uploadedImages['digital_signature'], 
+            'additional_documents' => $uploadedImages['additional_documents'], 
+            'added_by' => $userId,
+            'added_at' => date('Y-m-d H:i:s') 
         ];
 
-        // Insert data into the database
         if ($transferModel->insert($data)) {
             return redirect()->to('transfer_inventory_view')->with('success', 'Transfer Inventory saved successfully!');
         } else {
@@ -141,19 +122,16 @@ class TransferController extends Controller
     public function edit($id)
     {
         $transferModel = new TransferModel();
-        $productModel = new Products_model(); // For fetching products
+        $productModel = new Products_model(); 
         $db = db_connect();
         $session = session();
         $userId = $session->get('user_id');
 
-        // Fetch the transfer record
         $transfer = $transferModel->find($id);
 
         if (!$transfer) {
             return redirect()->to('/transfer')->with('error', 'Transfer record not found.');
         }
-
-        // Fetch user permissions for the "transfer" table
         $permissions = $db->table('user_permissions')
             ->select('column_name')
             ->where('user_id', $userId)
@@ -163,15 +141,11 @@ class TransferController extends Controller
             ->getResultArray();
 
         $allowedFields = array_column($permissions, 'column_name');
-
-        // Fetch all products for the dropdown
         $products = $productModel->findAll();
-
-        // Pass data to the view
         $data = [
             'transfer' => $transfer,
             'products' => $products,
-            'allowedFields' => $allowedFields, // Pass the allowed fields to the view
+            'allowedFields' => $allowedFields, 
         ];
 
         return view('edit_transfer', $data);
@@ -183,15 +157,12 @@ class TransferController extends Controller
         $transferModel = new TransferModel();
         $session = session();
 
-
-        // Fetch existing transfer data
         $transfer = $transferModel->find($id);
 
         if (!$transfer) {
             return redirect()->to('transfer_inventory_view')->with('error', 'Transfer record not found.');
         }
 
-        // Prepare data for update
         $newData = [
             'giver' => $this->request->getPost('giver'),
             'receiver' => $this->request->getPost('receiver'),
@@ -214,7 +185,6 @@ class TransferController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Handle file uploads for digital_signature and additional_documents
         if ($file = $this->request->getFile('digital_signature')) {
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getRandomName();
@@ -231,7 +201,6 @@ class TransferController extends Controller
             }
         }
 
-        // ✅ Track changes
         $changes = [];
         foreach ($newData as $key => $value) {
             if ($transfer[$key] != $value) {
@@ -243,23 +212,18 @@ class TransferController extends Controller
         }
 
         if (!empty($changes)) {
-            // Retrieve existing change log
             $existingChangeLog = json_decode($transfer['change_log'] ?? '[]', true);
             if (!is_array($existingChangeLog)) {
                 $existingChangeLog = [];
             }
-
-            // Append new change log entry
             $existingChangeLog[] = [
                 'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'changes' => $changes
             ];
 
-            // Store changes in JSON format
             $newData['change_log'] = json_encode($existingChangeLog);
 
-            // Update the transfer data
             if ($transferModel->update($id, $newData)) {
                 return redirect()->to('transfer_inventory_view')->with('success', 'Transfer record updated successfully.');
             } else {
@@ -274,7 +238,7 @@ class TransferController extends Controller
     public function delete($id)
     {
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id'); 
         $transferModel = new TransferModel();
 
         // Fetch existing transfer entry

@@ -29,26 +29,20 @@ class SingleBlogController extends Controller
             $tags = $this->request->getPost('tags');
             $popularPosts = $this->request->getPost('popular_posts');
 
-            // Validate input
             if (empty($pageTitle)) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Page title is required']);
             }
 
-            // Define the fixed ID to update
-            $fixedId = 3; // Replace with your desired ID
-
-            // Database connection
+            $fixedId = 3; 
             $db = db_connect();
             $builder = $db->table('singleblog_data');
 
-            // Get existing record
             $existingRecord = $builder->where('id', $fixedId)->get()->getRowArray();
 
             if (!$existingRecord) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Record not found.']);
             }
 
-            // Prepare change log
             $changes = [];
             $fieldsToCheck = [
                 'page_title' => $pageTitle,
@@ -66,7 +60,6 @@ class SingleBlogController extends Controller
                 }
             }
 
-            // Initialize update data
             $updateData = [
                 'page_title' => $pageTitle,
                 'related_blogs' => $relatedBlogs,
@@ -75,14 +68,12 @@ class SingleBlogController extends Controller
             ];
 
             if (!empty($changes)) {
-                // Fetch and decode existing change log
                 $existingChangeLog = !empty($existingRecord['change_log']) ? json_decode($existingRecord['change_log'], true) : [];
                 if (!is_array($existingChangeLog)) {
                     $existingChangeLog = [];
                 }
 
-                // Append new change entry
-                $updatedBy = "Aditya Patil (201)"; // Replace with dynamic user if needed
+                $updatedBy = "Aditya Patil (201)"; 
                 $timestamp = date('Y-m-d H:i:s');
 
                 $newChange = [
@@ -92,10 +83,9 @@ class SingleBlogController extends Controller
                 ];
 
                 $existingChangeLog[] = $newChange;
-                $updateData['change_log'] = json_encode($existingChangeLog); // Merge with update data
+                $updateData['change_log'] = json_encode($existingChangeLog);
             }
 
-            // Update the record with new data + change log
             $builder->where('id', $fixedId)->update($updateData);
 
             return $this->response->setJSON(['success' => true, 'message' => 'Data updated successfully.']);

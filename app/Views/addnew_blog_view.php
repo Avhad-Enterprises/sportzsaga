@@ -124,7 +124,7 @@
             <div class="min-height-200px">
                 <!-- Default Basic Forms Start -->
 
-                <form id="NewEditblogform" method="post" action="<?= base_url() ?>blogs/publishmyblog" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <form id="NewEditblogform" method="post" action="<?= base_url() ?>blogs/publishmyblog" enctype="multipart/form-data">
                     <div class="mb-3 d-flex justify-content-between">
                         <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
                         <button value="submit" class="btn btn-primary btn-lg">
@@ -146,8 +146,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label>Quote</label>
+                                    <input class="form-control" name="blog-quote" type="text" placeholder="Have a Nice Day" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        This feild can't be Empty
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control resizable-textarea" name="blog-description" maxlength="150" required></textarea>
+                                    <textarea class="form-control resizable-textarea newline-enabled" name="blog-description" maxlength="150" required></textarea>
                                     <small>Max 150 Characters</small>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -158,7 +168,7 @@
                                 </div>
                                 <div id="main-content-container">
                                     <label>Content</label>
-                                    <textarea class="form-control resizable-textarea editor" id="editor" name="blog-main-content"></textarea>
+                                    <textarea class="form-control resizable-textarea" id="editor" name="blog-main-content"></textarea>
                                 </div>
                             </div>
 
@@ -178,16 +188,17 @@
 
                                         <div class="form-group">
                                             <label>Section Image</label>
-                                            <input type="file" class="form-control-file form-control height-auto" name="section_image[]">
+                                            <input type="file" class="form-control-file form-control height-auto" name="section_image[]" onchange="previewImage(event, this)">
+                                            <div class="image-preview-container">
+                                                <img id="image-preview-1" src="" alt="Image Preview" style="display:none; margin-top: 10px; max-width: 100%; height: auto;">
+                                            </div>
                                             <i>
                                                 <p style="font-size: 12px; margin-left:10px; margin-top:5px">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</p>
                                             </i>
                                         </div>
                                     </div>
                                 </div>
-
                                 <button type="button" id="add-section-btn" class="btn btn-primary">+ Add Section</button>
-
                             </div>
 
                             <div class="pd-20 card-box mb-30">
@@ -516,6 +527,7 @@
         <!-- Footer View End -->
 
 </body>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const sectionsContainer = document.getElementById('sections-container');
@@ -529,6 +541,7 @@
             }
 
             sectionCount++;
+
             const newSection = document.createElement('div');
             newSection.classList.add('form-section');
             newSection.id = 'section-' + sectionCount;
@@ -551,15 +564,31 @@
 
                 <div class="form-group">
                     <label>Section Image ${sectionCount}</label>
-                    <input type="file" class="form-control-file form-control height-auto" name="section_image[]">
+                    <input type="file" class="form-control-file form-control height-auto" name="section_image[]" onchange="previewImage(event, this)">
+                    <div class="image-preview-container">
+                        <img id="image-preview-${sectionCount}" src="" alt="Image Preview" style="display:none; margin-top: 10px; max-width: 100%; height: auto;">
+                    </div>
                     <i>
                         <p style="font-size: 12px; margin-left:10px; margin-top:5px">Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 720 x 560 px.</p>
                     </i>
                 </div>
             `;
+
             sectionsContainer.appendChild(newSection);
         });
     });
+
+    function previewImage(event, inputElement) {
+        const sectionId = inputElement.closest('.form-section').id.split('-')[1];
+        const imagePreview = document.getElementById('image-preview-' + sectionId);
+
+        const reader = new FileReader();
+        reader.onload = function() {
+            imagePreview.src = reader.result;
+            imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
 </script>
 
 <script>
@@ -675,7 +704,7 @@
         titleInput.addEventListener('input', function() {
             if (titleInput.value.trim() !== "") {
                 const slug = generateSlug(titleInput.value);
-                metaUrlInput.value = `https://www.sprotzsaga.in/${slug}`;
+                metaUrlInput.value = `https://www.sprotzsaga.in/blogs/${slug}`;
 
                 if (serpUrl) {
                     serpUrl.textContent = metaUrlInput.value; // Update SERP preview if needed

@@ -143,6 +143,8 @@
                     <input type="hidden" id="cgst" name="cgst" value="0" />
                     <input type="hidden" id="sgst" name="sgst" value="0" />
                     <input type="hidden" id="igst" name="igst" value="0" />
+                    <input type="hidden" id="finalTotalPrice" name="final_total" value="1250">
+
 
 
                     <div class="mb-3 d-flex justify-content-end">
@@ -160,11 +162,13 @@
                             <div class="pd-20 card-box mb-30">
                                 <div class="row d-flex p-3 justify-content-between">
                                     <p class="text-blue mb-30">Product's Info</p>
-                                    
+
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="internationalOrder" name="is_international_order">
-                                            <label class="custom-control-label" for="internationalOrder"><strong>International Order</strong></label>
+                                            <input type="checkbox" class="custom-control-input" id="internationalOrder"
+                                                name="is_international_order">
+                                            <label class="custom-control-label"
+                                                for="internationalOrder"><strong>International Order</strong></label>
                                         </div>
                                     </div>
                                 </div>
@@ -211,8 +215,7 @@
                                                 </div>
                                                 <div class="form-group" id="modalProductList">
                                                     <?php foreach ($products as $index => $product): ?>
-                                                        <div class="custom-control custom-checkbox product-item"
-                                                            style="<?= $index >= 5 ? 'display:none;' : '' ?>">
+                                                        <div class="custom-control custom-checkbox product-item">
                                                             <input type="checkbox"
                                                                 class="custom-control-input modal-product-checkbox"
                                                                 id="modalProduct<?= $product['product_id'] ?>"
@@ -375,13 +378,16 @@
                                 </div>
 
                                 <!-- Shipment Modal -->
-                                
-                                <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog" aria-labelledby="shipmentModalLabel" aria-hidden="true">
+
+                                <div class="modal fade" id="shipmentModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="shipmentModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <h5 class="modal-title" id="shipmentModalLabel">Add Shipment Charges
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">×</span>
                                                 </button>
                                             </div>
@@ -390,11 +396,10 @@
                                                 <select id="deliveryPartnerSelect" class="form-control">
                                                     <option value="">-- Select a Delivery Partner --</option>
                                                     <?php foreach ($delivery_partner as $partner): ?>
-                                                        <option 
-                                                            value="<?= $partner['cost'] ?>" 
-                                                            data-pincode="<?= $partner['area_pincode'] ?>" 
-                                                            data-pickup="<?= $partner['pickup'] ?>" 
-                                                            data-delivery="<?= $partner['delivery'] ?>" 
+                                                        <option value="<?= $partner['cost'] ?>"
+                                                            data-pincode="<?= $partner['area_pincode'] ?>"
+                                                            data-pickup="<?= $partner['pickup'] ?>"
+                                                            data-delivery="<?= $partner['delivery'] ?>"
                                                             data-cod="<?= $partner['cod'] ?>">
                                                             <?= $partner['delivery_partner'] ?> - ₹<?= $partner['cost'] ?>
                                                         </option>
@@ -407,16 +412,20 @@
                                                     </div>
                                                     <div class="col">
                                                         <label for="gstCharges">GST value (₹):</label>
-                                                        <input type="number" readonly id="gstCharges" class="form-control" value="0">
+                                                        <input type="number" readonly id="gstCharges"
+                                                            class="form-control" value="0">
                                                     </div>
                                                 </div>
 
                                                 <label for="shipmentChargesModal">Final Shipment Charges (₹):</label>
-                                                <input type="number" id="shipmentChargesModal" class="form-control" min="0" step="0.01" value="0">
+                                                <input type="number" id="shipmentChargesModal" class="form-control"
+                                                    min="0" step="0.01" value="0">
                                             </div>
                                             <div class="modal-footer d-flex justify-content-end">
-                                                <button type="button" class="btn btn-secondary me-2" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary" id="applyShipmentCharges">Apply Charges</button>
+                                                <button type="button" class="btn btn-secondary me-2"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    id="applyShipmentCharges">Apply Charges</button>
                                             </div>
                                         </div>
                                     </div>
@@ -439,15 +448,15 @@
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">CGST (6%)</th>
-                                            <td id="cgstDisplay"  class="text-right">₹0.00</td>
+                                            <td id="cgstDisplay" class="text-right">₹0.00</td>
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">SGST (6%)</th>
-                                            <td id="sgstDisplay"   class="text-right">₹0.00</td>
+                                            <td id="sgstDisplay" class="text-right">₹0.00</td>
                                         </tr>
                                         <tr>
                                             <th colspan="4" style="font-size: 14px;">IGST (12%)</th>
-                                            <td id="igstDisplay"   class="text-right">₹0.00</td>
+                                            <td id="igstDisplay" class="text-right">₹0.00</td>
                                         </tr>
 
                                         <tr>
@@ -484,12 +493,14 @@
                                             <label for="paymentMethodSelect">Select Payment Mode</label>
                                             <div class="input-group">
                                                 <select class="form-control rounded" name="payment-method"
-                                                    style="width: 100%; height: 50px;" id="paymentMethodSelect" >
+                                                    style="width: 100%; height: 50px;" id="paymentMethodSelect">
                                                     <option value="cash">Cash</option>
                                                     <option value="link">Gateway</option>
                                                     <option value="bank">Net Banking / UPI</option>
                                                 </select>
-                                                <input class="form-control" style="width: 100%; height: 50px; display:none" placeholder="Ref No" type="text" id="ref_no" name="ref_no">
+                                                <input class="form-control"
+                                                    style="width: 100%; height: 50px; display:none" placeholder="Ref No"
+                                                    type="text" id="ref_no" name="ref_no">
                                             </div>
                                         </div>
                                     </div>
@@ -554,24 +565,26 @@
                                     <input class="form-control" type="number" name="pincode" id="orderCustomerPincode">
 
                                     <label for="customer-city">City</label>
-                                    <input class="form-control" type="text" name="order-city" id="orderCustomerCity" >
+                                    <input class="form-control" type="text" name="order-city" id="orderCustomerCity">
 
                                     <label for="customer-state">State</label>
-                                    <input class="form-control" type="text" name="order-state" id="orderCustomerState" >
-                                    
+                                    <input class="form-control" type="text" name="order-state" id="orderCustomerState">
+
                                     <div style="display: none;" id="international-country">
                                         <label for="country">Country</label>
-                                        <input class="form-control" type="text" name="country" id="orderCustomerCountry" >
+                                        <input class="form-control" type="text" name="country"
+                                            id="orderCustomerCountry">
                                     </div>
 
                                     <label for="address_information">Address</label>
                                     <textarea class="form-control" name="address_information"
                                         id="orderCustomerAddress"></textarea>
 
-                                        
+
                                     <label for="order-customergstin">GSTIN</label>
-                                    <input type="text" class="form-control" id="orderCustomergstin" name="order-customergstin" >
-                            
+                                    <input type="text" class="form-control" id="orderCustomergstin"
+                                        name="order-customergstin">
+
                                 </div>
 
 
@@ -620,7 +633,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="customergstin">GSTIN</label>
-                                <input type="text" class="form-control" id="customergstin" name="customergstin" >
+                                <input type="text" class="form-control" id="customergstin" name="customergstin">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -636,7 +649,8 @@
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
         <!-- Razorpay Modal -->
-        <div class="modal fade" id="razorpayModal" tabindex="-1" role="dialog" aria-labelledby="razorpayModalLabel" aria-hidden="true">
+        <div class="modal fade" id="razorpayModal" tabindex="-1" role="dialog" aria-labelledby="razorpayModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -683,7 +697,7 @@
         const partialCodAmount = 300; // Fixed Partial COD amount
         const paymentMethodSelect = document.getElementById("paymentMethodSelect");
         const refNoInput = document.getElementById("ref_no");
-        const razorpayModal = new bootstrap.Modal(document.getElementById('razorpayModal'));
+
         const INTERNATIONAL_SHIPPING_SURCHARGE = 1000; // ₹1000 per product
         const USD_EXCHANGE_RATE = 0.012; // Example rate: 1 INR = 0.012 USD
         const internationalCheckbox = document.getElementById('internationalOrder');
@@ -696,84 +710,99 @@
         let totalDiscountApplied = false; // Flag to track if total discount is applied
         let shipmentCharges = 0; // Variable for shipment charges
         let discountAppliedAt = null;
-        
-        // Add this JavaScript code
-        document.getElementById('newcollectionsview').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Check if any products are selected
-            const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
-            const customer  = document.querySelectorAll('input[name="order-customer-name"]');
-            
-            if (selectedProducts.length === 0) {
-                alert('Please select at least one product before publishing the order.');
-                return false;
-            }
-            if (customer.length === 0) {
-                alert('Please select customer before publishing the order.');
-                return false;
-            }
-            
-            // If products are selected, proceed with form submission
-            this.submit();
-        });
 
-        const draftFormBtn = document.getElementById('draftFormBtn');
-        const draftForm = document.getElementById('newcollectionsview');
-        
-        $('#draftFormBtn').on('click', function (e) {
-            e.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newcollectionsview');
+            const paymentMethodSelect = document.getElementById('paymentMethodSelect');
+            const razorpayModal = new bootstrap.Modal(document.getElementById('razorpayModal'), {
+                backdrop: 'static',
+                keyboard: false
+            });
 
-            const formData = new FormData(document.getElementById('newcollectionsview'));
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            fetch('<?= base_url(); ?>ordermanagement/savedraftorder', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'  // Mark as AJAX request
+                const selectedProducts = document.querySelectorAll('input[name="selected_products[]"]:checked');
+                const customer = document.querySelector('[name="order-customer-name"]').value;
+
+                if (!customer) {
+                    alert('Please select a customer.');
+                    return false;
                 }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+
+                if (selectedProducts.length === 0) {
+                    alert('Please select at least one product.');
+                    return false;
                 }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    alert(data.message || 'Draft saved successfully.');
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                    }
+
+                const paymentMethod = paymentMethodSelect.value;
+                if (paymentMethod === 'link') {
+                    // Show modal (optional UI)
+                    razorpayModal.show();
+
+                    // Create order via backend to get Razorpay Order ID
+                    const formData = new FormData(form);
+                    fetch('<?= base_url('ordermanagement/publishorder') ?>', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                // Proceed with Razorpay Payment
+                                const razorpayOptions = {
+                                    key: "<?= 'rzp_test_HNDDo4TA783qRj' ?>",
+                                    amount: data.amount, // Amount in paisa
+                                    currency: "INR",
+                                    name: "Order Payment",
+                                    description: "Payment for Order #" + data.order_id,
+                                    order_id: data.razorpay_order_id,
+                                    handler: function (response) {
+                                        // Add Razorpay response to form before submitting
+                                        const rzpFields = {
+                                            rzp_payment_id: response.razorpay_payment_id,
+                                            rzp_order_id: response.razorpay_order_id,
+                                            rzp_signature: response.razorpay_signature
+                                        };
+                                        for (const key in rzpFields) {
+                                            const input = document.createElement('input');
+                                            input.type = 'hidden';
+                                            input.name = key;
+                                            input.value = rzpFields[key];
+                                            form.appendChild(input);
+                                        }
+
+                                        razorpayModal.hide();
+                                        form.submit();
+                                    },
+                                    prefill: {
+                                        name: document.getElementById('orderCustomerPhone').value || "Customer",
+                                        email: document.getElementById('orderCustomerEmail').value || "email@example.com",
+                                        contact: document.getElementById('orderCustomerPhone').value || "9999999999"
+                                    },
+                                    theme: {
+                                        color: "#3399cc"
+                                    }
+                                };
+                                const rzp = new Razorpay(razorpayOptions);
+                                rzp.open();
+                            } else {
+                                razorpayModal.hide();
+                                alert('Failed to initialize Razorpay payment. Please try again.');
+                            }
+                        })
+                        .catch(err => {
+                            razorpayModal.hide();
+                            alert('Something went wrong: ' + err.message);
+                        });
+
                 } else {
-                    alert(data.message || 'Failed to save draft order.');
+                    // For other payment methods, proceed with normal submit
+                    form.submit();
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while saving the draft.');
             });
         });
 
-
-
-
-        // Update ref_no visibility based on payment method
-        paymentMethodSelect.addEventListener("change", function () {
-            if (paymentMethodSelect.value === "link") {
-                //openRazorpayCheckout();
-                refNoInput.style.display = "none";
-                refNoInput.required = false;
-                refNoInput.value = "";
-            } else if (paymentMethodSelect.value === "cash") {
-                refNoInput.style.display = "none";
-                refNoInput.required = false;
-                refNoInput.value = "";
-            } else {
-                refNoInput.style.display = "block";
-                refNoInput.required = true;
-            }
-        });
 
         // Initialize on page load
         if (paymentMethodSelect.value !== "cash") {
@@ -792,11 +821,11 @@
                 newRow.innerHTML = `
                     <td>#</td>
                     <td>Partial COD</td>
-                    <td>${( isInternational ? `₹1300 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300')}</td>
+                    <td>${(isInternational ? `₹1300 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300')}</td>
                     <td>₹0</td>
                     <td>1</td>
-                    <td><span style="text-decoration: line-through; color: red;"> ${( isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
-                    <td><span style="font-weight: bold; color: green;"> ${( isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
+                    <td><span style="text-decoration: line-through; color: red;"> ${(isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
+                    <td><span style="font-weight: bold; color: green;"> ${(isInternational ? `₹1300.00 / $${(1300 * USD_EXCHANGE_RATE)}` : '₹300.00')}</span></td>
                     <td>
                         <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="partial_cod">Remove</button>
                     </td>
@@ -857,7 +886,7 @@
             finalTotalPriceInput.value = totalDiscountedPrice.toFixed(2);
             totalPriceEl.innerHTML = `
                 <span style="text-decoration: line-through; color: red; margin-right: 10px;">₹${(totalDiscountedPrice + (discountAppliedAt === 'invoice' ? totalDiscount : productLevelDiscount)).toFixed(2)}</span>
-                <span style="font-weight: bold; color: green;">₹${totalDiscountedPrice.toFixed(2)}  ${( isInternational ? `  /   $${(totalDiscountedPrice * USD_EXCHANGE_RATE).toFixed(2)}` : '')}</span>
+                <span style="font-weight: bold; color: green;">₹${totalDiscountedPrice.toFixed(2)}  ${(isInternational ? `  /   $${(totalDiscountedPrice * USD_EXCHANGE_RATE).toFixed(2)}` : '')}</span>
             `;
 
             // Update discount information in the footer
@@ -892,7 +921,7 @@
                     document.getElementById('igst').value = 0;
                 }
             }
-            else{
+            else {
                 if (CustomerState.value === 'Maharashtra') {
                     cgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
                     sgst = totalDiscountedPrice - (totalDiscountedPrice / 1.06);
@@ -958,7 +987,7 @@
             const isInternational = internationalCheckbox.checked;
             Internationalcurrency.style.display = isInternational ? '' : 'none';
             Internationalcountry.style.display = isInternational ? '' : 'none';
-            
+
             selectedProducts.forEach(product => {
                 let productPrice = product.price;
                 if (isInternational) {
@@ -972,17 +1001,17 @@
                 totalDiscountedPrice += subtotal;
 
                 discountOnProduct += productDiscount * productQuantity;
-                
+
 
                 const productRow = document.createElement('tr');
                 productRow.innerHTML = `
                     <td>${product.id}</td>
                     <td>${product.name}</td>
-                    <td>₹${productPrice} ${( isInternational ? ` / $${(productPrice * USD_EXCHANGE_RATE)}` : '')}</td>
-                    <td>₹${productDiscount} ${( isInternational ? ` / $${(productDiscount * USD_EXCHANGE_RATE)}` : '')}</td>
+                    <td>₹${productPrice} ${(isInternational ? ` / $${(productPrice * USD_EXCHANGE_RATE)}` : '')}</td>
+                    <td>₹${productDiscount} ${(isInternational ? ` / $${(productDiscount * USD_EXCHANGE_RATE)}` : '')}</td>
                     <td>${productQuantity}</td>
-                    <td><span style="text-decoration: line-through; color: red;">&#8377;${(productPrice * productQuantity).toFixed(2)} ${( isInternational ? ` / $${(productPrice * productQuantity * USD_EXCHANGE_RATE)}` : '')}</span></td>
-                    <td><span style="font-weight: bold; color: green;">&#8377;${subtotal.toFixed(2)} ${( isInternational ? ` / $${(subtotal * USD_EXCHANGE_RATE)}` : '')}</span></td>
+                    <td><span style="text-decoration: line-through; color: red;">&#8377;${(productPrice * productQuantity).toFixed(2)} ${(isInternational ? ` / $${(productPrice * productQuantity * USD_EXCHANGE_RATE)}` : '')}</span></td>
+                    <td><span style="font-weight: bold; color: green;">&#8377;${subtotal.toFixed(2)} ${(isInternational ? ` / $${(subtotal * USD_EXCHANGE_RATE)}` : '')}</span></td>
                     <td>
                         <button type="button" class="btn btn-danger btn-sm remove-product-btn" data-product-id="${product.id}">Remove</button>
                     </td>
@@ -990,7 +1019,7 @@
                 productTableBody.appendChild(productRow);
             });
 
-            
+
 
             const gstAmount = calculateGST(totalDiscountedPrice);
             const Total = totalDiscountedPrice + discountOnProduct + totalDiscount + shipmentCharges;
@@ -1023,8 +1052,8 @@
             //document.getElementById('finalTotalPrice').value = totalDiscountedPrice.toFixed(2);
             document.getElementById('finalShipmentCharges').value = shipmentCharges.toFixed(2);
             document.getElementById('finalTotalDiscount').value = totalDiscount.toFixed(2);
-            if(Total != finalTotal){
-                document.getElementById('saved').innerHTML = `You saved <span style="font-weight: bold; color: green;">${( isInternational ? `$${((Total - finalTotal) * USD_EXCHANGE_RATE).toFixed(2)}` : `₹${(Total - finalTotal).toFixed(2)}`)} </span>`;
+            if (Total != finalTotal) {
+                document.getElementById('saved').innerHTML = `You saved <span style="font-weight: bold; color: green;">${(isInternational ? `$${((Total - finalTotal) * USD_EXCHANGE_RATE).toFixed(2)}` : `₹${(Total - finalTotal).toFixed(2)}`)} </span>`;
             }
         }
 
@@ -1053,7 +1082,7 @@
                 totalDiscount = parseFloat(discountAmountInput.value) || 0;
                 discountAppliedAt = 'invoice';
                 selectedProducts.forEach(product => (product.discount = 0)); // Reset product-level discounts
-               
+
             } else if (type === 'product') {
                 totalDiscount = 0; // Reset invoice-level discount
                 discountAppliedAt = 'product';
@@ -1152,16 +1181,16 @@
         function calculateAndUpdateGST() {
             const baseAmount = parseFloat($('#deliveryPartnerSelect').val()) || 0;
             const gstPercentage = parseFloat($('#gst').val()) || 18;
-            
+
             // Calculate GST amount
             const gstAmount = (baseAmount * gstPercentage) / 100;
-            
+
             // Calculate final amount including GST
             const finalAmount = baseAmount + gstAmount;
-            
+
             // Update the GST charges input
             $('#gstCharges').val(gstAmount.toFixed(2));
-            
+
             // Update the final shipment charges
             $('#shipmentChargesModal').val(finalAmount.toFixed(2));
         }
@@ -1173,7 +1202,7 @@
             const pickup = ($(selectedOption.element).data('pickup') || '').toLowerCase();
             const delivery = ($(selectedOption.element).data('delivery') || '').toLowerCase();
             const cod = ($(selectedOption.element).data('cod') || '').toLowerCase();
-            
+
             $('#shipmentChargesModal').val(selectedCost);
             calculateAndUpdateGST();
             /*
@@ -1194,7 +1223,7 @@
         });
 
         // Event Listener for GST percentage changes
-        $('#gst').on('input', function() {
+        $('#gst').on('input', function () {
             calculateAndUpdateGST();
         });
 
@@ -1293,7 +1322,7 @@
                 if (pincode.length === 6) {
                     fetchCityStateByPincode(pincode);
                 } else {
-                    
+
                 }
             });
 
@@ -1306,16 +1335,16 @@
                         if (data.city && data.state) {
                             $('#orderCustomerCity').val(data.city);
                             $('#orderCustomerState').val(data.state);
-                            updateProductTable(); // Recalculate total after removing a product
+                            updateProductTable();
                             syncCheckboxes();
                         } else {
-                            
+
                             alert('City and State not found for the given Pincode.');
                         }
                     },
                     error: function () {
                         console.error('Error fetching city and state for the pincode.');
-                        
+
                     }
                 });
             }
@@ -1335,7 +1364,7 @@
         // Apply total discount for custom option
         applyDiscountBtn.addEventListener('click', () => {
             const discountCode = discountCodeInput.value.trim();
-            const discountType = discountOptionSelect.value; // 'auto' or 'custom'
+            const discountType = discountOptionSelect.value;
             if (discountType === 'auto' || discountType === 'custom') {
                 applyDiscount('invoice');
             }
@@ -1378,11 +1407,11 @@
                                 totalDiscount = discountValue;
                             }
 
-                            totalDiscountApplied = true; // Mark that the total discount has been applied
+                            totalDiscountApplied = true;
                             alert(`Custom discount applied: ₹${totalDiscount}`);
-                            updateProductTable(); // Recalculate total price with the discount applied
+                            updateProductTable();
                         } else {
-                            alert(data.message); // Show error message if discount code is invalid
+                            alert(data.message);
                         }
                     })
                     .catch(error => {
@@ -1411,21 +1440,20 @@
                     totalDiscount = discountValue;
                 }
 
-                totalDiscountApplied = true; // Mark that the discount is applied
+                totalDiscountApplied = true;
                 alert(`Automatic discount applied: ₹${totalDiscount}`);
-                updateProductTable(); // Recalculate total price with the discount applied
+                updateProductTable();
             }
         });
 
-        // Initial setup: call toggleDiscountFields when the page loads to ensure correct initial state
         toggleDiscountFields();
-        syncCheckboxes(); // Ensure checkboxes are in sync on page load
+        syncCheckboxes();
     });
 </script>
 
 <script>
     $(document).ready(function () {
-        let duplicateCount = 1; // Counter for duplicate forms
+        let duplicateCount = 1;
 
         // Detect if the page is refreshed
         const isPageReloaded = (performance.navigation.type === 1);
@@ -1453,8 +1481,8 @@
             var totalPrice = $('#totalPrice').text();
 
             // Store form data and summary data
-            sessionStorage.setItem('originalFormData', JSON.stringify(formData)); // Original form backup
-            sessionStorage.setItem('originalTableData', tableData); // Original table backup
+            sessionStorage.setItem('originalFormData', JSON.stringify(formData));
+            sessionStorage.setItem('originalTableData', tableData);
             sessionStorage.setItem('originalDiscountOnProduct', discountOnProduct);
             sessionStorage.setItem('originalTotalDiscountApplied', totalDiscountApplied);
             sessionStorage.setItem('originalShipmentCharges', shipmentCharges);
@@ -1467,19 +1495,19 @@
             sessionStorage.setItem('duplicatedTotalDiscountApplied', totalDiscountApplied);
             sessionStorage.setItem('duplicatedShipmentCharges', shipmentCharges);
             sessionStorage.setItem('duplicatedTotalPrice', totalPrice);
-            sessionStorage.setItem('duplicateCount', duplicateCount + 1); // Increment counter
+            sessionStorage.setItem('duplicateCount', duplicateCount + 1);
 
             // Redirect to the same route
-            window.location.href = window.location.href + "?duplicate=" + duplicateCount; // Pass duplicate count in query
+            window.location.href = window.location.href + "?duplicate=" + duplicateCount;
         });
 
         // On page load, check if original or duplicated data is present
         if (duplicateNumber) {
             // Load duplicated form
-            duplicateCount = parseInt(duplicateNumber); // Update duplicate count
+            duplicateCount = parseInt(duplicateNumber);
             loadFormData('duplicated');
-            addDuplicateTitle(duplicateNumber); // Add duplicate title
-            addBackToFirstFormButton(); // Add a "Back to First Form" button
+            addDuplicateTitle(duplicateNumber);
+            addBackToFirstFormButton();
         } else if (sessionStorage.getItem('originalFormData')) {
             // Load original form data (if returning from a duplicate)
             loadFormData('original');
@@ -1556,7 +1584,7 @@
             }
         });
     });
-
+    
 </script>
 
 <style>
@@ -1675,6 +1703,69 @@
             }
         });
     });
+</script>
+
+
+<!--------------------------------------------------------------------------------- For Net Banking ---------------------------------------------------------------------------------------------->
+
+<script>
+    document.getElementById('newcollectionsview').addEventListener('submit', function (e) {
+        e.preventDefault(); // Stop form from submitting by default
+
+        const paymentMethod = document.getElementById('paymentMethodSelect').value;
+
+        if (paymentMethod === 'bank') {
+            const amount = parseFloat(document.getElementById('finalTotalPrice').value || 0) * 100; // in paisa
+
+            const razorpayOptions = {
+                key: "rzp_test_HNDDo4TA783qRj", // Your Razorpay test/live key
+                amount: amount.toFixed(0),
+                currency: "INR",
+                name: "Spotzsaaga Enterprises",
+                description: "Order Payment",
+                image: "https://storage.googleapis.com/mkv_imagesbackend/blogs/main_images/sagalogo.png",
+                handler: function (response) {
+                    // Add Razorpay fields to the form
+                    const form = document.getElementById('newcollectionsview');
+                    const fields = {
+                        rzp_payment_id: response.razorpay_payment_id,
+                        rzp_order_id: response.razorpay_order_id || '',
+                        rzp_signature: response.razorpay_signature || ''
+                    };
+                    for (const key in fields) {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = key;
+                        input.value = fields[key];
+                        form.appendChild(input);
+                    }
+
+                    // Submit the form after payment success
+                    form.submit();
+                },
+                prefill: {
+                    name: document.getElementById('orderCustomerPhone').value || "Customer",
+                    email: document.getElementById('orderCustomerEmail').value || "test@example.com",
+                    contact: document.getElementById('orderCustomerPhone').value || "9999999999"
+                },
+                theme: {
+                    color: "#3399cc"
+                },
+                modal: {
+                    ondismiss: function () {
+                        alert("Payment cancelled.");
+                    }
+                }
+            };
+
+            const rzp = new Razorpay(razorpayOptions);
+            rzp.open();
+        } else {
+            // If not bank payment, allow normal form submission
+            this.submit();
+        }
+    });
+
 </script>
 
 

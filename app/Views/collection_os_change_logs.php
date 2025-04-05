@@ -8,6 +8,8 @@
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <div class="right-sidebar">
         <div class="sidebar-title">
             <h3 class="weight-600 font-16 text-blue">
@@ -108,52 +110,70 @@
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
-                <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Deleted Suppliers</h4>
-                    </div>
-                    <div class="pb-20">
-                        <table class="table hover data-table-export table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Contact</th>
-                                    <th>Email</th>
-                                    <th>Deleted At</th>
-                                    <th>Deleted By</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($suppliers)): ?>
-                                    <?php foreach ($suppliers as $supplier): ?>
-                                        <tr>
-                                            <td><?= esc($supplier['supplier_name']) ?></td>
-                                            <td><?= esc($supplier['contact_person']) ?></td>
-                                            <td><?= esc($supplier['email']) ?></td>
-                                            <td><?= esc($supplier['deleted_at'] ?? 'N/A') ?></td>
-                                            <td><?= esc($supplier['deleted_by'] ?? 'N/A') ?></td>
-                                            <td>
-                                                <a class="dropdown-item" href="javascript:void(0);"
-                                                    onclick="confirmSupplierRestore(<?= esc($supplier['id']) ?>)">
-                                                    <i class="bi bi-recycle text-success" style="font-size: 22px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="pd-20 card-box mb-30">
+                            <h4 class="text-blue mb-30">Home Collection Update Timeline</h4>
+                            <div class="timeline">
+                                <?php if (!empty($updates)): ?>
+                                    <?php foreach (array_reverse($updates) as $update): ?> <!-- Reverse array order -->
+                                        <?php if (!isset($update['updated_at']) || !isset($update['updated_by']))
+                                            continue; ?>
+                                        <!-- Skip invalid logs -->
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-badge">
+                                                <i class="fas fa-warehouse"></i>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Home Collection Updated</h5>
+                                                        <p class="card-text">
+                                                            <strong>Updated By:</strong>
+                                                            <?= htmlspecialchars($update['updated_by']) ?> <br>
+                                                            <strong>Updated At:</strong>
+                                                            <?= date('d M Y h:i A', strtotime($update['updated_at'])) ?>
+                                                        </p>
+                                                        <h6 class="card-subtitle mt-2">Changes:</h6>
+                                                        <ul class="mb-0">
+                                                            <?php if (!empty($update['changes'])): ?>
+                                                                <?php foreach ($update['changes'] as $field => $change): ?>
+                                                                    <li>
+                                                                        <strong><?= ucfirst($field) ?>:</strong>
+                                                                        <span
+                                                                            class="text-muted"><?= htmlspecialchars($change['old']) ?></span>
+                                                                        →
+                                                                        <span
+                                                                            class="text-success"><?= htmlspecialchars($change['new']) ?></span>
+                                                                    </li>
+                                                                <?php endforeach; ?>
+                                                            <?php else: ?>
+                                                                <li>No changes recorded.</li>
+                                                            <?php endif; ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>
-                                        <td colspan="6" class="text-center">No deleted suppliers found.</td>
-                                    </tr>
+                                    <p>No updates found.</p>
                                 <?php endif; ?>
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
-                <!-- Footer View Start -->
-                <?= $this->include('footer_view') ?>
-                <!-- Footer View End -->
+            </div>
+        </div>
+    </div>
 
 </body>
+
+<!-- Footer View Start -->
+<?= $this->include('footer_view') ?>
+<!-- Footer View End -->
+
+</html>
