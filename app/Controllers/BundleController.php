@@ -7,10 +7,9 @@ use App\Models\Products_model;
 use App\Models\CollectionProducts_model;
 use App\Models\ProductCollectionModel;
 use App\Models\PermissionsModel;
-use CodeIgniter\Controller;
 use Google\Cloud\Storage\StorageClient;
 
-class BundleController extends Controller
+class BundleController extends BaseController
 {
 
     // Declare the model as a property
@@ -26,12 +25,37 @@ class BundleController extends Controller
         $this->permissionsModel = new PermissionsModel();
     }
 
+    public function view()
+    {
+        $bundleModel = new \App\Models\BundleModel();
+        $permissionsModel = new \App\Models\PermissionsModel();
+
+        $userId = session()->get('user_id');
+
+        // Fetch bundles with associated products
+        $bundles = $bundleModel->getBundlesWithProducts();
+
+        // Check user permissions
+        $canDelete = $permissionsModel->hasPermission($userId, 'bundles', 'delete');
+        $canImport = $permissionsModel->hasPermission($userId, 'bundles', 'import');
+        $canExport = $permissionsModel->hasPermission($userId, 'bundles', 'export');
+        $canLogs = $permissionsModel->hasPermission($userId, 'bundles', 'logs');
+
+        // Pass data and permissions to the view
+        return view('bundle_view', [
+            'bundles' => $bundles,
+            'canDelete' => $canDelete,
+            'canImport' => $canImport,
+            'canExport' => $canExport,
+            'canLogs' => $canLogs,
+        ]);
+    }
+
     public function index()
     {
         // Load products for dropdown
         $productModel = new Products_model();
-        $data['products'] = $productModel->findAll(); // Fetch all products from the products table
-
+        $data['products'] = $productModel->findAll();
         return view('bundle_create', $data);
     }
 
@@ -112,34 +136,6 @@ class BundleController extends Controller
             return redirect()->back()->with('error', $validation->getErrors());
         }
     }
-
-
-    public function view()
-    {
-        $bundleModel = new \App\Models\BundleModel();
-        $permissionsModel = new \App\Models\PermissionsModel();
-
-        $userId = session()->get('user_id');
-
-        // Fetch bundles with associated products
-        $bundles = $bundleModel->getBundlesWithProducts();
-
-        // Check user permissions
-        $canDelete = $permissionsModel->hasPermission($userId, 'bundles', 'delete');
-        $canImport = $permissionsModel->hasPermission($userId, 'bundles', 'import');
-        $canExport = $permissionsModel->hasPermission($userId, 'bundles', 'export');
-        $canLogs = $permissionsModel->hasPermission($userId, 'bundles', 'logs'); // Check for "logs" permission
-
-        // Pass data and permissions to the view
-        return view('bundle_view', [
-            'bundles' => $bundles,
-            'canDelete' => $canDelete,
-            'canImport' => $canImport,
-            'canExport' => $canExport,
-            'canLogs' => $canLogs, // Pass the logs permission to the view
-        ]);
-    }
-
 
     // Load the Edit Bundle Form
     public function edit($id)
@@ -841,5 +837,4 @@ class BundleController extends Controller
         }
         return [];
     }
-
 }

@@ -99,17 +99,17 @@
             <div class="min-height-200px">
                 <div class="">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 mb-2">
                             <div class="title">
                                 <h4>Profile</h4>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 text-right blogs-imex mb-10">
+                        <!-- <div class="col-md-6 col-sm-12 text-right blogs-imex mb-10">
                             <a href="<?= base_url(); ?>profile/create_task" class="bg-light-blue btn text-blue weight-500">
                                 <i class="ion-plus-round"></i>
                                 Assign task
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <?php foreach ($userData as $user) : ?>
@@ -182,73 +182,19 @@
                                     <div class="tab height-100-p">
                                         <ul class="nav nav-tabs customtab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Task Timeline</a>
+                                                <a class="nav-link active" data-toggle="tab" href="#setting" role="tab">Settings</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#setting" role="tab">Settings</a>
+                                                <a class="nav-link" data-toggle="tab" href="#mystore" role="tab">Store</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#myrazorpay" role="tab">Razorpay</a>
                                             </li>
                                         </ul>
+
                                         <div class="tab-content">
-                                            <!-- Timeline Tab start -->
-                                            <div class="tab-pane fade show active" id="timeline" role="tabpanel">
-                                                <div class="pd-20">
-                                                    <div class="profile-timeline">
-                                                        <div class="timeline-container">
-                                                            <?php
-                                                            // Group tasks by month
-                                                            $tasks_by_month = [];
-                                                            foreach ($tasks as $task) {
-                                                                $month = date('F, Y', strtotime($task['created_at']));
-                                                                if (!isset($tasks_by_month[$month])) {
-                                                                    $tasks_by_month[$month] = [];
-                                                                }
-                                                                $tasks_by_month[$month][] = $task;
-                                                            }
-
-                                                            // Render tasks by month
-                                                            foreach ($tasks_by_month as $month => $tasks) {
-                                                                echo '<div class="timeline-month"><h5>' . $month . '</h5></div>';
-                                                                echo '<div class="profile-timeline-list"><ul>';
-                                                                foreach ($tasks as $task) {
-                                                                    echo '<li>';
-                                                                    // Due date with small label
-                                                                    echo '<div class="date">';
-                                                                    echo '<span>' . date('d M', strtotime($task['due_date'])) . '</span>';
-                                                                    echo '<small style="display: block; font-size: 12px;">Due Date</small>';
-                                                                    echo '</div>';
-
-                                                                    // Task name and status icon
-                                                                    echo '<div class="task-header">';
-                                                                    echo '<div class="task-name" style="display: inline-block;">';
-                                                                    echo '<i class="ion-android-alarm-clock"></i> ' . htmlspecialchars($task['task_name']);
-                                                                    echo '</div>';
-
-                                                                    // Status icon with left margin
-                                                                    echo '<div class="task-status" style="display: inline-block; margin-left: 10px;">';
-                                                                    if ($task['status'] == 'pending') {
-                                                                        echo '<i class="fa-solid fa-circle-xmark" style="color: #db0000; font-size: 16px;"></i>';
-                                                                    } elseif ($task['status'] == 'completed') {
-                                                                        echo '<i class="fa-solid fa-circle-check" style="color: #1a9e00; font-size: 16px;"></i>';
-                                                                    }
-                                                                    echo '</div>';
-                                                                    echo '</div>';
-
-                                                                    // Description and assigned_to
-                                                                    echo '<p>' . htmlspecialchars($task['description']) . '</p>';
-                                                                    echo '<div class="assigned-to">Assigned to: ' . htmlspecialchars($task['assigned_to']) . '</div>';
-
-                                                                    echo '</li>';
-                                                                }
-                                                                echo '</ul></div>';
-                                                            }
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Timeline Tab End -->
                                             <!-- Setting Tab start -->
-                                            <div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
+                                            <div class="tab-pane fade show active" id="timeline" role="tabpanel">
                                                 <div class="profile-setting">
                                                     <?php foreach ($userData as $user) : ?>
                                                         <form method="post" action="<?= base_url('update_profile/' . $user['user_id']) ?>">
@@ -453,6 +399,115 @@
 
                                                 </div>
                                             </div>
+
+                                            <div class="tab-pane fade show" id="mystore" role="tabpanel">
+                                                <div class="pd-20">
+                                                    <div class="StoreSetting">
+                                                        <form method="post" action="<?= base_url('profile/update_store') ?>">
+                                                            <ul class="profile-edit-list row">
+                                                                <li class="weight-500 col-md-6">
+                                                                    <h4 class="text-blue h5 mb-20">
+                                                                        Edit Your Store Details
+                                                                    </h4>
+
+                                                                    <!-- Shipping Threshold -->
+                                                                    <div class="form-group">
+                                                                        <label for="shipping_threshold">Shipping Threshold</label>
+                                                                        <input class="form-control form-control-lg" name="shipping_threshold" value="<?= set_value('shipping_threshold', $Storeconfig['shipping_threshold']) ?>" type="number" />
+                                                                    </div>
+
+                                                                    <!-- Shipping Charges Below Threshold -->
+                                                                    <div class="form-group">
+                                                                        <label for="shipping_charges_below_threshold">Shipping Charges Below Threshold</label>
+                                                                        <input class="form-control form-control-lg" name="shipping_charges_below_threshold" value="<?= set_value('shipping_charges_below_threshold', $Storeconfig['shipping_charges_below_threshold']) ?>" type="number" />
+                                                                    </div>
+
+                                                                    <!-- GST Rate -->
+                                                                    <div class="form-group">
+                                                                        <label for="gst_rate">GST Rate</label>
+                                                                        <input class="form-control form-control-lg" name="gst_rate" value="<?= set_value('gst_rate', $Storeconfig['gst_rate']) ?>" type="number" step="0.01" />
+                                                                    </div>
+
+                                                                    <!-- Partial COD Threshold -->
+                                                                    <div class="form-group">
+                                                                        <label for="partial_cod_threshold">Partial COD Threshold</label>
+                                                                        <input class="form-control form-control-lg" name="partial_cod_threshold" value="<?= set_value('partial_cod_threshold', $Storeconfig['partial_cod_threshold']) ?>" type="number" />
+                                                                    </div>
+
+                                                                    <!-- Partial COD Below Threshold -->
+                                                                    <div class="form-group">
+                                                                        <label for="partial_cod_below_threshold">Partial COD Below Threshold</label>
+                                                                        <input class="form-control form-control-lg" name="partial_cod_below_threshold" value="<?= set_value('partial_cod_below_threshold', $Storeconfig['partial_cod_below_threshold']) ?>" type="number" />
+                                                                    </div>
+
+                                                                    <!-- Partial COD Above Threshold -->
+                                                                    <div class="form-group">
+                                                                        <label for="partial_cod_above_threshold">Partial COD Above Threshold</label>
+                                                                        <input class="form-control form-control-lg" name="partial_cod_above_threshold" value="<?= set_value('partial_cod_above_threshold', $Storeconfig['partial_cod_above_threshold']) ?>" type="number" />
+                                                                    </div>
+
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="submit" class="btn btn-dark" value="Update" />
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </form>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane fade show" id="myrazorpay" role="tabpanel">
+                                                <div class="pd-20">
+                                                    <div class="StoreSetting">
+                                                        <form method="post" action="<?= base_url('profile/update_razorpay_config') ?>" enctype="multipart/form-data">
+                                                            <ul class="profile-edit-list row">
+                                                                <li class="weight-500 col-md-6">
+                                                                    <h4 class="text-blue h5 mb-20">Edit Razorpay Configuration</h4>
+
+                                                                    <!-- Razorpay Currency -->
+                                                                    <div class="form-group">
+                                                                        <label for="razorpay_currency">Razorpay Currency</label>
+                                                                        <input class="form-control form-control-lg" name="razorpay_currency" value="<?= set_value('razorpay_currency', $RazorpayConfig['razorpay_currency']) ?>" type="text" />
+                                                                    </div>
+
+                                                                    <!-- Razorpay Name -->
+                                                                    <div class="form-group">
+                                                                        <label for="razorpay_name">Razorpay Name</label>
+                                                                        <input class="form-control form-control-lg" name="razorpay_name" value="<?= set_value('razorpay_name', $RazorpayConfig['razorpay_name']) ?>" type="text" />
+                                                                    </div>
+
+                                                                    <!-- Razorpay Description -->
+                                                                    <div class="form-group">
+                                                                        <label for="razorpay_description">Razorpay Description</label>
+                                                                        <input class="form-control form-control-lg" name="razorpay_description" value="<?= set_value('razorpay_description', $RazorpayConfig['razorpay_description']) ?>" type="text" />
+                                                                    </div>
+
+                                                                    <!-- Razorpay Image -->
+                                                                    <div class="form-group">
+                                                                        <label for="razorpay_image">Razorpay Image URL</label>
+                                                                        <input class="form-control form-control-lg" name="razorpay_image" type="file" id="razorpay_image" onchange="previewImage(event)" />
+
+                                                                        <!-- Hidden Input for Current Image URL -->
+                                                                        <input type="hidden" name="razorpay_image_current" value="<?= set_value('razorpay_image', $RazorpayConfig['razorpay_image']) ?>">
+
+                                                                        <!-- Image Preview -->
+                                                                        <div id="image-preview-container" style="margin-top: 10px;">
+                                                                            <img id="razorpay_image_preview" src="<?= set_value('razorpay_image', $RazorpayConfig['razorpay_image']) ?>" class="p-2" alt="Razorpay Image" style="max-width: 150px; <?= $RazorpayConfig['razorpay_image'] ? 'display:block;' : 'display:none;' ?>" />
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="submit" class="btn btn-dark m-2" value="Update" />
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -460,54 +515,6 @@
                         </div>
                     </div>
 
-                    <div class="page-header">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="title">
-                                    <h4>Tasks</h4>
-                                </div>
-                            </div>
-                            <div class="card-box mb-30 col-md-12 col-sm-12">
-                                <div class="pb-20 table-wrapper table-hover">
-                                    <table class="table stripe hover nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>Task ID</th>
-                                                <th>Assigned To</th>
-                                                <th>Task Name</th>
-                                                <th>Description</th>
-                                                <th>Due Date</th>
-                                                <th>Assign Date</th>
-                                                <th>Priority</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($tasks as $task) : ?>
-                                                <tr data-toggle="modal" data-target="#taskModal<?= $task['task_id'] ?>" class="task-row">
-                                                    <td><?= $task['task_id'] ?></td>
-                                                    <td><?= $task['assigned_to_name'] ?></td>
-                                                    <td><?= $task['task_name'] ?></td>
-                                                    <td><?= $task['description'] ?></td>
-                                                    <td><?= $task['due_date'] ?></td>
-                                                    <td><?php $date = new DateTime($task['created_at']);
-                                                        echo $date->format('d-F-Y h:i A'); ?></td>
-                                                    <td><?= $task['priority_level'] ?></td>
-                                                    <td class="<?= ($task['status'] == 'pending') ? 'text-uppercase text-danger' : 'text-uppercase text-success' ?>">
-                                                        <?= ucfirst($task['status']) ?>
-                                                    </td>
-                                                    <td class="no-modal">
-                                                        <a href="<?= base_url('profile/updateTaskStatus/' . $task['task_id'] . '/completed') ?>" class="btn btn-success">Mark Completed</a>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <?php foreach ($tasks as $task) : ?>
                         <div class="modal fade" id="taskModal<?= $task['task_id'] ?>" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -869,6 +876,25 @@
                     };
                 }
             });
+        </script>
+
+        <!-- JavaScript to Preview Image -->
+        <script>
+            // Preview image before upload
+            function previewImage(event) {
+                const preview = document.getElementById('razorpay_image_preview');
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function() {
+                    preview.src = reader.result;
+                    preview.style.display = 'block';
+                };
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
         </script>
 
 </body>

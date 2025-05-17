@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\visitersmodel;
+use App\Models\AdminModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -671,5 +672,204 @@ class Analytics extends BaseController
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $writer->save('php://output');
         exit();
+    }
+
+    public function AllReportsView()
+    {
+        $adminmodel = new AdminModel();
+        $reports = $adminmodel->getAllReports();
+        $data = ['reports' => $reports];
+        return view('all_reports_view', $data);
+    }
+
+    public function generateReportsLogs()
+    {
+        $adminModel = new AdminModel();
+        $userModel = new \App\Models\Registerusers_model();
+        $logs = $adminModel->getReportLogs();
+
+        foreach ($logs as &$log) {
+            $log['created_by_name'] = $userModel->getUserNameById($log['created_by']);
+            $log['updated_by_name'] = $userModel->getUserNameById($log['updated_by']);
+            $log['deleted_by_name'] = $userModel->getUserNameById($log['deleted_by']);
+        }
+
+        $data = ['logs' => $logs];
+        return view('reports_logs_view', $data);
+    }
+
+    public function generateReportsView($reportId = null)
+    {
+        $adminModel = new AdminModel();
+        $tables = $adminModel->getSpecificTables();
+        $data = ['tables' => $tables];
+
+        if ($reportId) {
+            $report = $adminModel->getReportById($reportId);
+            if ($report) {
+                $data['report'] = $report;
+            }
+        }
+
+        return view('create_reports_view', $data);
+    }
+
+    public function saveReport()
+    {
+        $db = \Config\Database::connect();
+        $data = $this->request->getJSON(true);
+        $session = session();
+        $userId = $session->get('user_id');
+
+        $reportData = [
+            'created_by' => $userId,
+            'report_name' => $data['report_name'],
+            'table_name' => $data['table_name'],
+            'columns' => json_encode($data['columns']),
+            'filters' => !empty($data['filters']) ? json_encode($data['filters']) : null
+        ];
+
+        $builder = $db->table('saved_reports');
+        $builder->insert($reportData);
+
+        if ($db->affectedRows() > 0) {
+            return $this->response->setJSON(['success' => true, 'id' => $db->insertID()]);
+        }
+        return $this->response->setJSON(['success' => false, 'error' => 'Failed to save report']);
+    }
+
+    public function updateReport($reportId)
+    {
+        $db = \Config\Database::connect();
+        $data = $this->request->getJSON(true);
+        $session = session();
+        $userId = $session->get('user_id');
+
+        $reportData = [
+            'updated_by' => $userId,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'report_name' => $data['report_name'],
+            'table_name' => $data['table_name'],
+            'columns' => json_encode($data['columns']),
+            'filters' => !empty($data['filters']) ? json_encode($data['filters']) : null
+        ];
+
+        $builder = $db->table('saved_reports');
+        $builder->where('id', $reportId);
+        $builder->update($reportData);
+
+        if ($db->affectedRows() >= 0) {
+            return $this->response->setJSON(['success' => true]);
+        }
+        return $this->response->setJSON(['success' => false, 'error' => 'Failed to update report']);
+    }
+
+    public function deleteGReport($id)
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+
+        if (!$userId) {
+            return redirect()->to('/login')->with('error', 'You must be logged in to delete a report.');
+        }
+
+        $adminModel = new AdminModel();
+
+        $data = [
+            'is_deleted' => 1,
+            'deleted_by' => $userId,
+            'deleted_at' => date('Y-m-d H:i:s')
+        ];
+
+        $adminModel->DeleteReportsData($id, $data);
+        return redirect()->to('analytics/reports')->with('success', 'Report deleted successfully');
+    }
+
+    public function RestoreGReport($id)
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+
+        if (!$userId) {
+            return redirect()->to('/login')->with('error', 'You must be logged in to restore a report.');
+        }
+
+        $adminModel = new AdminModel();
+
+        $data = [
+            'is_deleted' => 0,
+            'deleted_by' => null,
+            'deleted_at' => null
+        ];
+
+        $adminModel->RestoreReportsData($id, $data);
+        return redirect()->back()->with('success', 'Report restored successfully');
+    }
+
+    public function getColumns($table)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->query('DESCRIBE ' . $db->escapeIdentifiers($table));
+        $columns = $builder->getResultArray();
+
+        $columnNames = [];
+        $formattedColumnNames = [];
+        $columnTypes = [];
+
+        foreach ($columns as $column) {
+            $rawColumnName = $column['Field'];
+            $formattedColumnName = ucwords(str_replace('_', ' ', $rawColumnName));
+            $rawType = strtolower($column['Type']);
+
+            if (stripos($rawType, 'varchar') !== false || stripos($rawType, 'text') !== false) {
+                $type = 'Text';
+            } elseif (stripos($rawType, 'int') !== false || stripos($rawType, 'float') !== false || stripos($rawType, 'double') !== false || stripos($rawType, 'decimal') !== false) {
+                $type = 'Number';
+            } elseif (stripos($rawType, 'tinyint(1)') !== false) {
+                $type = 'Boolean';
+            } elseif (stripos($rawType, 'date') !== false || stripos($rawType, 'time') !== false) {
+                $type = 'DateTime';
+            } elseif (stripos($rawType, 'enum') !== false || stripos($rawType, 'set') !== false) {
+                $type = 'Enum';
+                preg_match("/^enum\((.*)\)$/", $rawType, $matches);
+                $enumValues = isset($matches[1]) ? array_map('trim', explode(',', str_replace("'", "", $matches[1]))) : [];
+                $columnTypes[$rawColumnName]['enum_values'] = $enumValues;
+            } else {
+                $type = 'Text';
+            }
+
+            $columnNames[] = $rawColumnName;
+            $formattedColumnNames[] = $formattedColumnName;
+            $columnTypes[$rawColumnName] = ['type' => $type];
+            if (isset($enumValues)) {
+                $columnTypes[$rawColumnName]['enum_values'] = $enumValues;
+            }
+        }
+
+        return $this->response->setJSON([
+            'columns' => $columnNames,
+            'formattedColumns' => $formattedColumnNames,
+            'columnTypes' => $columnTypes
+        ]);
+    }
+
+    public function getReportData($table)
+    {
+        $columns = $this->request->getPost('columns');
+
+        if ($table && !empty($columns)) {
+            $db = \Config\Database::connect();
+            $builder = $db->table($table);
+            $builder->select($columns);
+            $query = $builder->get();
+            $rows = $query->getResultArray();
+
+            return $this->response->setJSON([
+                'columns' => $columns,
+                'rows' => $rows
+            ]);
+        }
+
+        return $this->response->setJSON(['error' => 'Invalid table or columns']);
     }
 }

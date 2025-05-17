@@ -767,14 +767,22 @@
                         } else {
                             let tableBody = $('#productsTable tbody');
                             tableBody.empty();
-                            response.products.forEach(function (product) {
+                            response.products.forEach(function(product) {
+                                // Parse the product_tags JSON and split them into individual tags
+                                let productTags = JSON.parse(product.product_tags || '[]');
+                                let tagsHtml = productTags.map(function(tag) {
+                                    return `<div>${tag}</div>`; // Each tag in a separate div
+                                }).join(''); // Join the tags with no space to render them
+
+                                // Append the product row with the tags displayed line by line
                                 tableBody.append(`
-                                <tr class="selected-product-item" draggable="true">
-                                    <td>${product.product_title}</td>
-                                    <td>${product.selling_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
-                                </tr>
-                            `);
+                            <tr class="selected-product-item" draggable="true">
+                                <td>${product.product_title}</td>
+                                <td>${product.selling_price}</td>
+                                <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                <td>${tagsHtml}</td> <!-- Display the tags here -->
+                            </tr>
+                        `);
                             });
                         }
                     },
@@ -785,6 +793,7 @@
                 });
             }
         }
+
 
         // Initialize the first condition and product table on page load
         $(document).ready(function () {

@@ -6,7 +6,7 @@ use CodeIgniter\Controller;
 use CodeIgniter\Session\Session;
 use App\Models\Registerusers_model;
 
-class GoogleAuth extends Controller
+class GoogleAuth extends BaseController
 {
     public function login()
     {

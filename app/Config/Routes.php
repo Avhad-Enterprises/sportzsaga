@@ -12,9 +12,9 @@ $routes->group('', ['filter' => 'super_admin'], function ($routes) {
    $routes->post('route-manager/update', 'RouteManager::update');
 });
 
-$routes->group('', ['filter' => 'employee'], function ($routes) { });
+$routes->group('', ['filter' => 'employee'], function ($routes) {});
 
-$routes->group('', ['filter' => 'seller'], function ($routes) { });
+$routes->group('', ['filter' => 'seller'], function ($routes) {});
 
 $routes->group('dashboard', ['filter' => 'superAdminViewOrEmployee'], function ($routes) {
    $routes->get('admin_blogs', 'Blogs::blogs');
@@ -270,6 +270,8 @@ $routes->post('profile/addtasks', 'Dashboard::addtasks');
 $routes->get('profile/updateTaskStatus/(:num)/(:any)', 'Dashboard::updateTaskStatus/$1/$2');
 $routes->get('profile/create_task', 'Dashboard::create_task');
 $routes->post('profile/uploadProfilePicture', 'Dashboard::uploadProfilePicture');
+$routes->post('profile/update_store', 'Dashboard::UpdateStoreSetting');
+$routes->post('profile/update_razorpay_config', 'Dashboard::UpdateRazorpayConfig');
 $routes->get('download-file', 'Home::download_file');
 $routes->get('download-user-file', 'Home::download_user_file');
 $routes->get('back-to-home', 'Home::back_to_home');
@@ -384,6 +386,25 @@ $routes->get('restorecollection/(:num)', 'Products::restorecollection/$1');
 $routes->get('collection/collection_logs/(:num)', 'Products::collection_change_logs/$1');
 $routes->get('collection/collection_logs', 'Products::getcollectionChangeLogs');
 //$routes->get('products/collectionview/(:num)', 'Products::collectionview/$1');
+
+//Preferences Controller
+$routes->get('online_store/preferences', 'Preference::index');
+// Setting Controller
+$routes->post('online_store/preferences/g-tag/update/(:num)', 'Preference::updateGtag/$1');
+$routes->get('setting/site-meta/edit/(:num)', 'SiteMeta::edit/$1');
+$routes->post('setting/site-meta/update/(:num)', 'SiteMeta::update/$1');
+$routes->get('setting/upload-logo', 'SiteLogo::edit');
+$routes->post('setting/update-logo', 'SiteLogo::update');
+$routes->post('setting/robots-txt/update', 'RobotsTxt::update');
+$routes->post('setting/footer-description/update', 'RobotsTxt::update_footer_description');
+//warehouse controller
+$routes->get('warehouses', 'Setting::index');
+$routes->get('warehouse/create', 'WarehouseController::Createwarehouse');
+$routes->post('warehouse/store', 'WarehouseController::store');
+$routes->get('warehouse/edit/(:num)', 'WarehouseController::editwarehouse/$1');
+$routes->post('warehouse/update/(:num)', 'WarehouseController::updatewarehouse/$1');
+$routes->get('warehouse/delete/(:num)', 'WarehouseController::delete/$1');
+
 
 // Order Management
 $routes->get('ordermanagement', 'Ordermanagement');
@@ -523,13 +544,12 @@ $routes->get('inventory/export', 'InventoryController::exportCSV');
 $routes->post('inventory/import', 'InventoryController::importCSV');
 $routes->get('warehouses/fetch', 'InventoryController::fetchWarehouses');
 $routes->post('product/storenewproduct', 'InventoryController::storenewproduct');
-$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1'); // Soft delete
-$routes->get('inventory_deleted', 'InventoryController::deletedInventory'); // View deleted records
-$routes->get('inventory/restore/(:num)', 'InventoryController::restore/$1'); // Restore deleted record
+$routes->get('inventory/delete/(:num)', 'InventoryController::delete/$1');
+$routes->get('inventory_deleted', 'InventoryController::deletedInventory');
+$routes->get('inventory/restore/(:num)', 'InventoryController::restore/$1');
 $routes->get('inventory/inventory_logs/(:num)', 'InventoryController::inventory_change_logs/$1');
-$routes->get('inventory/inventory_logs', 'InventoryController::inventory_change_logs'); // Default route
-
-
+$routes->get('inventory/inventory_logs', 'InventoryController::inventory_change_logs');
+$routes->post('inventory/bulk_update', 'InventoryController::bulk_update');
 
 //purchase order
 $routes->get('purchase-order/index', 'PurchaseOrderController::index');
@@ -721,26 +741,29 @@ $routes->get('trackingpage/trackingpage_history/(:num)', 'Store::tracking_histor
 $routes->get('error_page/error_page_history/(:num)', 'Store::errorpage_history/$1');
 $routes->get('team_members/team_member_history/(:num)', 'Store::team_history/$1');
 
-
-
-
-
-
-
 //Analytics
 $routes->get('analytics', 'Analytics::index');
 $routes->get('analytics/visits_overview', 'Analytics::VisitsOverview');
 $routes->get('analytics/visitor-trends', 'Analytics::visitorTrends');
 $routes->post('analytics/export_visitors', 'Analytics::export_visitors');
-
 $routes->get('analytics/desktop_visits_overview', 'Analytics::DesktopVisitsOverview');
 $routes->post('analytics/export_desktop_visitors', 'Analytics::export_desktop_visitors');
-
 $routes->get('analytics/mobile_visits_overview', 'Analytics::MobileVisitsOverview');
 $routes->post('analytics/export_mobile_visitors', 'Analytics::export_mobile_visitors');
-
 $routes->get('analytics/tablet_visits_overview', 'Analytics::TabletVisitsOverview');
 $routes->post('analytics/export_tablet_visitors', 'Analytics::export_tablet_visitors');
-
 $routes->get('analytics/New_visits_overview', 'Analytics::NewVisitsOverview');
 $routes->get('analytics/returning_visits_overview', 'Analytics::ReturningVisitsOverview');
+
+// Analytics & Reports Controller
+$routes->get('analytics/reports', 'Analytics::AllReportsView');
+$routes->get('event/getColumns/(:any)', 'Analytics::getColumns/$1');
+$routes->post('event/getReportData/(:any)', 'Analytics::getReportData/$1');
+$routes->post('event/saveReport', 'Analytics::saveReport');
+$routes->get('analytics/generate_reports', 'Analytics::generateReportsView');
+$routes->get('analytics/generate_reports/(:num)', 'Analytics::generateReportsView/$1');
+$routes->post('event/updateReport/(:num)', 'Analytics::updateReport/$1');
+$routes->get('analytics/delete-greport/(:num)', 'Analytics::deleteGReport/$1');
+$routes->get('analytics/generate_reports/restore-greport/(:num)', 'Analytics::RestoreGReport/$1');
+$routes->get('analytics/generate_reports/logs', 'Analytics::generateReportsLogs');
+$routes->post('analytics/sendEmailReport', 'Analytics::sendEmailReport');

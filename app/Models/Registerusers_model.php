@@ -411,4 +411,69 @@ class Registerusers_model extends Model
     {
         return $this->select('change_log')->where('user_id', $userId)->get()->getRowArray()['change_log'] ?? null;
     }
+
+    public function GetConfigrations()
+    {
+        // Fetch configurations from the database
+        $configurations = $this->db->table('configurations')->get()->getResultArray();
+
+        $configValues = [];
+        foreach ($configurations as $config) {
+            $configValues[$config['config_key']] = $config['config_value'];
+        }
+
+        return $configValues;
+    }
+
+    public function GetRazorpayConfig()
+    {
+        $configurations = $this->db->table('razorpay_configurations')->get()->getResultArray();
+        $razorpayConfigValues = [];
+
+        foreach ($configurations as $config) {
+            $razorpayConfigValues[$config['config_key']] = $config['config_value'];
+        }
+
+        return $razorpayConfigValues;
+    }
+
+    public function updateStoreConfig($data)
+    {
+        // Ensure required fields are passed in the $data array
+        $configKeys = [
+            'shipping_threshold',
+            'shipping_charges_below_threshold',
+            'gst_rate',
+            'partial_cod_threshold',
+            'partial_cod_below_threshold',
+            'partial_cod_above_threshold',
+            'razorpay_currency',
+            'razorpay_name',
+            'razorpay_description',
+            'razorpay_image',
+        ];
+
+        // Iterate over the config keys and update each
+        foreach ($configKeys as $key) {
+            if (isset($data[$key])) {
+                $this->db->table('configurations')->where('config_key', $key)->update(['config_value' => $data[$key]]);
+            }
+        }
+    }
+
+    public function updateRazorpayConfig($data)
+    {
+        $configKeys = [
+            'razorpay_currency',
+            'razorpay_name',
+            'razorpay_description',
+            'razorpay_image'
+        ];
+
+        foreach ($configKeys as $key) {
+            if (isset($data[$key])) {
+                $this->db->table('razorpay_configurations')->where('config_key', $key)->update(['config_value' => $data[$key]]);
+            }
+        }
+    }
 }

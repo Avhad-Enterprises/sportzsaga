@@ -11,7 +11,7 @@ use App\Models\CompanyModel;
 use App\Models\CustomerSegmentModel;
 use CodeIgniter\Controller;
 
-class CatalogController extends Controller
+class CatalogController extends BaseController
 {
     protected $permissionsModel;
 
