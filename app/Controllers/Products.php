@@ -19,12 +19,16 @@ use Google\Cloud\Storage\StorageClient;
 
 class Products extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $session = session();
+        if (!$session->get('user_id')) {
+            return redirect()->to('admin');
+        }
         $model = new Products_model();
         $data['pendingreviews'] = $model->CountpendingReviews();
 
+        // Check if the user is a seller or admin
         if ($session->get('admin_type') == 'seller') {
             $seller_id = $session->get('user_id');
             $data['products'] = $model->fetproductsbyseller($seller_id);
@@ -34,6 +38,7 @@ class Products extends BaseController
 
         return view('products_view', $data);
     }
+
 
     protected $model;
     protected $logger;
@@ -319,7 +324,7 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         // Initialize Google Cloud Storage client
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -390,10 +395,6 @@ class Products extends BaseController
             }
         }
 
-        // Prepare Bullet Points as JSON
-        $bulletPoints = $this->request->getPost('product-bullet-points');
-        $bulletPointsJson = !empty($bulletPoints) ? json_encode(array_filter(explode(',', $bulletPoints))) : null;
-
         // Fetch selected tags & convert to JSON
         $productsTags = $this->request->getPost('product-tags');
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
@@ -442,9 +443,10 @@ class Products extends BaseController
             'accessories' => $this->request->getPost('accessories-checked'),
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
-            'bullet_points' => $bulletPointsJson,
+            'bullet_points' => $this->request->getPost('bullet_points_json'),
             'added_by' => $userId,
-            'created_at' => date('Y-m-d H:i:s')
+            'created_at' => date('Y-m-d H:i:s'),
+            'expiry_date' => $this->request->getPost('expiry_date'),
         ];
 
         // Insert the new product into the database
@@ -580,6 +582,7 @@ class Products extends BaseController
             'size' => $this->request->getPost('product-size'),
             'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
+            'expiry_date' => $this->request->getPost('expiry_date'),
         ];
 
         // ✅ Handle product image upload

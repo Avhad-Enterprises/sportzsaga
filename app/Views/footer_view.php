@@ -53,6 +53,12 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>js/custom.js"></script>
 
+<!-- Tagify CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.7.0/tagify.min.css" rel="stylesheet">
+
+<!-- Tagify JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.7.0/tagify.min.js"></script>
+
 <script>
   $(document).ready(function() {
     // Function to show toast
@@ -3055,5 +3061,40 @@
   function goBack() {
     // Redirects to the previous page in browser history
     window.history.back();
+  }
+</script>
+
+<script>
+  function confirmbReportsDelete(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'delete-greport/' + id;
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmbGReportRestore(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Restore it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'restore-greport/' + id;
+      }
+    });
   }
 </script>

@@ -71,7 +71,7 @@ class Dashboard extends BaseController
                         'admin_name' => $user['name'],
                         'admin_email' => $user['email'],
                         'admin_type' => $user['account_type'],
-                        'admin_logged_in' => TRUE,
+                        'admin_logged_in' => true,
                         'profile_picture' => $profileImage,
                         'status' => 'active'
                     ];
@@ -107,7 +107,6 @@ class Dashboard extends BaseController
         }
     }
 
-
     public function restricted()
     {
         return view('restricted');
@@ -115,6 +114,10 @@ class Dashboard extends BaseController
 
     public function admindashboard()
     {
+        $session = session();
+        if (!$session->get('user_id')) {
+            return redirect()->to('admin');
+        }
         $model = new blogs_model();
         $productsmodel = new Products_model();
         $ordermodel = new Ordermanagement_model();
@@ -287,24 +290,24 @@ class Dashboard extends BaseController
         $userId = $session->get('user_id');
         $accountType = $session->get('admin_type');
 
-        if ($userId) {
-            $userModel = new Registerusers_model();
+        // Set the session timeout duration in seconds (e.g., 2 hours)
+        $sessionTimeout = 7200; // 2 hours
 
-            // ✅ Mark agent as "inactive" upon logout
-            $userModel->update($userId, ['agent_status' => 'inactive']);
-
-            // ✅ If the user is an employee, record logout time
-            if ($accountType == 'employee') {
-                $loginModel = new UserLoginsModel();
-                $loginModel->where('user_id', $userId)
-                    ->orderBy('login_time', 'DESC')
-                    ->set(['logout_time' => date('Y-m-d H:i:s')])
-                    ->limit(1)
-                    ->update();
+        // Check if the session has expired
+        $lastActivity = $session->get('last_activity_time');
+        if ($lastActivity) {
+            $currentTime = time();
+            if (($currentTime - $lastActivity) > $sessionTimeout) {
+                // Session has expired, destroy the session
+                $session->destroy();
+                return redirect()->to('admin')->with('error', 'Session has expired. Please log in again.');
             }
         }
 
-        $session->destroy(); // ✅ Destroy all session data
+        // Destroy all session data
+        $session->destroy();
+
+        // Redirect to the admin login page with a success message
         return redirect()->to('admin')->with('success', 'Logged out successfully.');
     }
 
@@ -321,9 +324,91 @@ class Dashboard extends BaseController
         $data['tasks'] = $userModel->getTasksForUser($userId, $userName);
         // Fetch warehouse locations for the seller
         $data['warehouse_locations'] = $warehouseTable->where('seller_id', $seller_id)->get()->getResultArray();
+        $data['Storeconfig'] = $userModel->GetConfigrations();
+        $data['RazorpayConfig'] = $userModel->GetRazorpayConfig();
         //$data['warehouse_locations'] = $warehouseTable->get()->getResultArray();
-
         return view('profile_view', $data);
+    }
+
+    public function UpdateStoreSetting()
+    {
+        $configModel = new Registerusers_model();
+
+        // Get the POST data for configurations
+        $data = [
+            'shipping_threshold' => $this->request->getPost('shipping_threshold'),
+            'shipping_charges_below_threshold' => $this->request->getPost('shipping_charges_below_threshold'),
+            'gst_rate' => $this->request->getPost('gst_rate'),
+            'partial_cod_threshold' => $this->request->getPost('partial_cod_threshold'),
+            'partial_cod_below_threshold' => $this->request->getPost('partial_cod_below_threshold'),
+            'partial_cod_above_threshold' => $this->request->getPost('partial_cod_above_threshold')
+        ];
+
+        // Call the method to update the store configurations
+        try {
+            $configModel->updateStoreConfig($data);
+            return redirect()->back()->with('success', 'Store Setting updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error Updating Store Settings.');
+        }
+    }
+
+    public function UpdateRazorpayConfig()
+    {
+        // Initialize the model
+        $configModel = new Registerusers_model();
+
+        // Get the POST data for Razorpay configurations
+        $data = [
+            'razorpay_currency' => $this->request->getPost('razorpay_currency'),
+            'razorpay_name' => $this->request->getPost('razorpay_name'),
+            'razorpay_description' => $this->request->getPost('razorpay_description'),
+        ];
+
+        // Handle file upload for Razorpay Image
+        $image = $this->request->getFile('razorpay_image');
+
+        if ($image && $image->isValid() && !$image->hasMoved()) {
+            // Upload to Google Cloud Storage
+            $imageName = $image->getClientName();
+            $imageTempPath = $image->getTempName();
+
+            // Google Cloud Storage Client
+            $storage = new \Google\Cloud\Storage\StorageClient([
+                'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',
+                'projectId' => 'peak-tide-441609-r1',
+            ]);
+
+            $bucketName = 'sportzsaga_imgs';
+            $bucket = $storage->bucket($bucketName);
+
+            // Upload image to Google Cloud
+            $bucket->upload(
+                fopen($imageTempPath, 'r'),
+                [
+                    'name' => 'razorpay/images/' . $imageName,
+                    'predefinedAcl' => 'publicRead',
+                ]
+            );
+
+            // Get the publicly accessible URL
+            $newImageName = sprintf('https://storage.googleapis.com/%s/razorpay/images/%s', $bucketName, $imageName);
+            $this->logger->info('Razorpay Image uploaded: ' . $newImageName);
+
+            // Add image URL to the data array
+            $data['razorpay_image'] = $newImageName;
+        } else {
+            // If no image uploaded, use the existing image URL from hidden field
+            $data['razorpay_image'] = $this->request->getPost('razorpay_image_current');
+        }
+
+        try {
+            // Update Razorpay configuration in the database
+            $configModel->updateRazorpayConfig($data);
+            return redirect()->back()->with('success', 'Razorpay configuration updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while updating Razorpay configuration: ' . $e->getMessage());
+        }
     }
 
     public function addLocation()

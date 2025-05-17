@@ -10,7 +10,7 @@ use App\Models\InstagramSchedulePostModel;
 use CodeIgniter\I18n\Time;
 use CURLFile;
 
-class InstagramController extends Controller
+class InstagramController extends BaseController
 {
     protected $instagramModel;
     protected $instagramSchedulePostModel;

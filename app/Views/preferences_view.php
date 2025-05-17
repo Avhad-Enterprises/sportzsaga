@@ -176,28 +176,12 @@
                                             <h4>Upload Logos and Favicon</h4>
                                             <div class="row">
                                                 <div class="col-md-4 text-center">
-                                                    <div class="BoxBorder" style="margin: 10px;">
-                                                        <?php if (isset($logos['navbar_logo_mobile'])): ?>
-                                                            <img src="<?= $logos['navbar_logo_mobile']; ?>" alt="Navbar Mobile Logo">
-                                                        <?php endif; ?>
-                                                    </div>
-                                                    <p>Navbar Mobile Logo</p>
-                                                </div>
-                                                <div class="col-md-4 text-center">
                                                     <div class="BoxBorder BoxBorderFavicon" style="margin: 10px;">
                                                         <?php if (isset($logos['favicon'])): ?>
                                                             <img src="<?= $logos['favicon']; ?>" alt="Favicon">
                                                         <?php endif; ?>
                                                     </div>
                                                     <p>Favicon</p>
-                                                </div>
-                                                <div class="col-md-4 text-center">
-                                                    <div class="BoxBorder" style="margin: 10px;">
-                                                        <?php if (isset($logos['footer_logo'])): ?>
-                                                            <img src="<?= $logos['footer_logo']; ?>" alt="Footer Logo">
-                                                        <?php endif; ?>
-                                                    </div>
-                                                    <p>Footer Logo</p>
                                                 </div>
                                                 <div class="col-md-4 text-center">
                                                     <div class="BoxBorder" style="margin: 10px;">

@@ -150,42 +150,134 @@ class InventoryController extends BaseController
 
     public function inventoryList()
     {
-        $inventoryModel = new InventoryModel();
         $productModel = new Products_model();
         $warehouseModel = new WarehouseModel();
+        $inventoryModel = new InventoryModel();
 
-        // Fetch all inventory records with related product and warehouse data
-        $inventoryData = $inventoryModel->select('inventory.*, products.product_title as product_title, warehouses.name as warehouse_name, warehouses.address as warehouse_location')
-            ->join('products', 'products.product_id = inventory.product_id', 'left')
-            ->join('warehouses', 'warehouses.id = inventory.warehouse_id', 'left')
-            ->findAll();
+        $products = $productModel->findAll();
+        $inventoryData = [];
 
-        // Group inventory data by product_id
-        $groupedInventory = [];
-        foreach ($inventoryData as $inventory) {
-            $productId = $inventory['product_id'];
-            if (!isset($groupedInventory[$productId])) {
-                $groupedInventory[$productId] = [
-                    'product_id' => $productId,
-                    'product_title' => $inventory['product_title'],
-                    'warehouses' => [],
+        $stocks = $inventoryModel->GetAllStockData();
+
+        foreach ($products as $product) {
+            $warehouses = $warehouseModel->findAll();
+            $productWarehouses = [];
+
+            foreach ($warehouses as $warehouse) {
+                // Fetch stock for this product in this warehouse
+                $stockRow = $inventoryModel
+                    ->where('product_id', $product['product_id'])
+                    ->where('warehouse_id', $warehouse['id'])
+                    ->first();
+
+                $productWarehouses[] = [
+                    'id' => $warehouse['id'] ?? 0,
+                    'warehouse_name' => $warehouse['name'],
+                    'warehouse_location' => $warehouse['address'],
+                    'stock_quantity' => $stockRow['stock_quantity'] ?? 0,
                 ];
             }
-            $groupedInventory[$productId]['warehouses'][] = [
-                'id' => $inventory['id'],
-                'warehouse_name' => $inventory['warehouse_name'],
-                'warehouse_location' => $inventory['warehouse_location'],
-                'stock_quantity' => $inventory['stock_quantity'],
-                'stock_reduction_rule' => $inventory['stock_reduction_rule'],
-                'fallback_warehouse_id' => $inventory['fallback_warehouse_id'],
+
+            $inventoryData[] = [
+                'product_id' => $product['product_id'],
+                'product_title' => $product['product_title'],
+                'warehouses' => $productWarehouses
             ];
         }
 
-        // Convert to indexed array for the view
-        $data['inventoryData'] = array_values($groupedInventory);
-        $data['canDelete'] = true;
+        // echo '<pre>';
+        // print_r($inventoryData);
+        // echo '</pre>';
+        // die();
 
-        return view('inventory_list_view', $data);
+        return view('inventory_list_view', [
+            'stocks' => $stocks,
+            'inventoryData' => $inventoryData,
+            'canDelete' => true
+        ]);
+    }
+
+    public function bulk_update()
+    {
+        $this->response->setHeader('Content-Type', 'application/json');
+
+        // Try getJSON first
+        $json = $this->request->getJSON(true); // true to return as array
+        $stocks = $json['stocks'] ?? null;
+
+        // Fallback to raw input if getJSON fails
+        if (empty($stocks)) {
+            $rawInput = file_get_contents('php://input');
+            $decoded = json_decode($rawInput, true);
+            $stocks = $decoded['stocks'] ?? [];
+        }
+
+        if (empty($stocks)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'No stock data provided. Raw input: ' . json_encode($rawInput)
+            ]);
+        }
+
+        $inventoryModel = new InventoryModel();
+        $successCount = 0;
+        $errors = [];
+
+        foreach ($stocks as $stock) {
+            $productId = $stock['product_id'] ?? null;
+            $warehouseId = $stock['warehouse_id'] ?? null;
+            $stockQuantity = $stock['stock_quantity'] ?? null;
+
+            // Validate input
+            if (!is_numeric($productId) || !is_numeric($warehouseId) || !is_numeric($stockQuantity) || $stockQuantity < 0) {
+                $errors[] = "Invalid data for product_id: $productId, warehouse_id: $warehouseId, stock_quantity: $stockQuantity";
+                continue;
+            }
+
+            try {
+                // Check if record exists
+                $existing = $inventoryModel
+                    ->where('product_id', $productId)
+                    ->where('warehouse_id', $warehouseId)
+                    ->first();
+
+                if ($existing) {
+                    // Update existing record
+                    $inventoryModel->update($existing['id'], [
+                        'stock_quantity' => (int)$stockQuantity // Cast to integer
+                    ]);
+                } else {
+                    // Insert new record
+                    $inventoryModel->insert([
+                        'product_id' => (int)$productId,
+                        'warehouse_id' => (int)$warehouseId,
+                        'stock_quantity' => (int)$stockQuantity
+                    ]);
+                }
+                $successCount++;
+            } catch (\Exception $e) {
+                $errors[] = "Error for product_id: $productId, warehouse_id: $warehouseId - " . $e->getMessage();
+            }
+        }
+
+        if ($successCount > 0 && empty($errors)) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => "Successfully updated $successCount stock records."
+            ]);
+        } elseif ($successCount > 0) {
+            return $this->response->setJSON([
+                'status' => 'partial_success',
+                'message' => "Updated $successCount records with " . count($errors) . " errors.",
+                'errors' => $errors
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'No records updated.',
+                'errors' => $errors
+            ]);
+        }
     }
 
     public function exportCSV()
@@ -360,38 +452,45 @@ class InventoryController extends BaseController
         $inventoryModel = new InventoryModel();
         $productModel = new Products_model();
         $warehouseModel = new WarehouseModel();
-        $db = db_connect();
         $session = session();
-        $userId = $session->get('user_id');
 
         // Fetch the inventory data by ID
-        $inventory = $inventoryModel->find($id);
+        $inventory = $inventoryModel->findStockDataId($id);
 
-        if (!$inventory) {
-            return redirect()->to(base_url('inventory'))->with('error', 'Inventory record not found.');
+        // Check if inventory data exists
+        if ($inventory) {
+            $productId = $inventory[0]['product_id'];
+            $products = $inventoryModel->GetProductdatabyid($productId);
+        } else {
+            echo "Inventory data not found.";
         }
 
-        // Fetch user permissions for inventory fields
-        $permissions = $db->table('user_permissions')
-            ->select('column_name')
-            ->where('user_id', $userId)
-            ->where('table_name', 'inventory')
-            ->where('action', 'edit')
-            ->get()
-            ->getResultArray();
-
-        $allowedFields = array_column($permissions, 'column_name');
-
-        // Fetch products and warehouses for dropdowns
-        $products = $productModel->findAll();
         $warehouses = $warehouseModel->findAll();
+        $inventoryData = [];
+
+        // Fetch stock data for the product in each warehouse
+        foreach ($warehouses as $warehouse) {
+            // Fetch stock for this product in the warehouse
+            $stockRow = $inventoryModel
+                ->where('product_id', $productId)
+                ->where('warehouse_id', $warehouse['id'])
+                ->first();
+
+            $inventoryData[] = [
+                'warehouse_id' => $warehouse['id'],
+                'warehouse_name' => $warehouse['name'],
+                'warehouse_location' => $warehouse['address'],
+                'warehouse_pincode' => $warehouse['pincode'],
+                'stock_quantity' => $stockRow['stock_quantity'] ?? 0,
+            ];
+        }
 
         // Pass data to the edit view
         $data = [
             'inventory' => $inventory,
             'products' => $products,
             'warehouses' => $warehouses,
-            'allowedFields' => array_flip($allowedFields), // Use array_flip for quick checks in the view
+            'inventoryData' => $inventoryData
         ];
 
         return view('inventory_edit_view', $data);

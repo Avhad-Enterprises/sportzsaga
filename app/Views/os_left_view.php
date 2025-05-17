@@ -3836,6 +3836,8 @@
                                 <button type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
+
+
                         <!-- List of Policies -->
                         <div class="policiesBoxContainer" id="policiesBoxContainer">
                             <?php foreach ($policies as $policy): ?>
@@ -3874,11 +3876,7 @@
 
                                             <div class="form-group">
                                                 <label for="policy_description">About Description</label>
-                                                <div class="quill-editor" data-target="policy_description">
-                                                    <?= $policy['policy_description'] ?>
-                                                </div>
-                                                <input type="hidden" value="<?= $policy['policy_description'] ?>"
-                                                    name="policy_description" id="policy_description">
+                                                <textarea id="editor" name="policy_description" class="form-control"><?= $policy['policy_description'] ?></textarea>
                                             </div>
 
                                             <!-- Link -->

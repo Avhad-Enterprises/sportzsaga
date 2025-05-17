@@ -10,7 +10,7 @@ use App\Models\SupplierModel;
 use App\Models\PermissionsModel;
 use Google\Cloud\Storage\StorageClient;
 
-class PurchaseOrderController extends Controller
+class PurchaseOrderController extends BaseController
 {
 
     protected $permissionsModel;

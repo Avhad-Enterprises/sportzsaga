@@ -27,10 +27,7 @@ class SiteLogo extends BaseController
         $data = [];
 
         $uploadedFiles = [
-            'website_logo' => $this->request->getFile('website_logo'),
             'navbar_logo' => $this->request->getFile('navbar_logo'),
-            'navbar_logo_mobile' => $this->request->getFile('navbar_logo_mobile'),
-            'footer_logo' => $this->request->getFile('footer_logo'),
             'favicon' => $this->request->getFile('favicon'),
         ];
 
@@ -39,7 +36,7 @@ class SiteLogo extends BaseController
             'projectId' => 'peak-tide-441609-r1',
         ]);
 
-        $bucketName = 'mkv_imagesbackend';
+        $bucketName = 'sportzsaga_imgs';
         $bucket = $storage->bucket($bucketName);
 
         foreach ($uploadedFiles as $key => $file) {

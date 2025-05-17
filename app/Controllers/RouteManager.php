@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 
-class RouteManager extends Controller
+class RouteManager extends BaseController
 {
     public function index()
     {

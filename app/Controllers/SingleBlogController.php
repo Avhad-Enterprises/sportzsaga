@@ -7,7 +7,7 @@ use App\Models\TagModel;
 use App\Models\SingleBlogModel;
 use CodeIgniter\Controller;
 
-class SingleBlogController extends Controller
+class SingleBlogController extends BaseController
 {
     public function edit($id)
     {

@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UserEventModel;
 
-class UserEventLogger extends Controller
+class UserEventLogger extends BaseController
 {
     public function logUserEvents()
     {

@@ -28,7 +28,7 @@
     flex-direction: column;
     max-width: 36rem;
     border: 1px solid var(--border);
-    width: 100%;
+    width: 50%;
     background: var(--dropzone-bg);
 }
 
@@ -44,9 +44,7 @@
 }
 
 .dropzone-area {
-    padding: 1rem;
     position: relative;
-    min-height: 14rem;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -154,7 +152,7 @@
 
 .image-preview img {
     display: block;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     border-radius: 5px;
     border: 1px solid #ddd;
 }

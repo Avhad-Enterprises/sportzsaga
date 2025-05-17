@@ -11,7 +11,6 @@ class SiteLogoModel extends Model
     protected $allowedFields = [
         'website_logo',
         'navbar_logo',
-        'navbar_logo_mobile',
         'footer_logo',
         'favicon',
         'updated_at',

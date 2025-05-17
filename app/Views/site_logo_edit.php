@@ -236,7 +236,6 @@
                     });
                 </script>
 
-                <!-- The form goes below this script -->
                 <form action="<?= base_url('setting/update-logo') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-8">
@@ -248,26 +247,6 @@
                                     <div id="navbar_logo_preview"></div>
                                     <?php if (isset($logos['navbar_logo'])): ?>
                                         <img src="<?= $logos['navbar_logo']; ?>" alt="Navbar Logo" width="100" style="margin-top: 10px;">
-                                    <?php endif; ?>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="navbar_logo_mobile">Navbar Logo (Mobile):</label>
-                                    <input type="file" class="form-control" name="navbar_logo_mobile" onchange="previewImage(this, 'navbar_logo_mobile_preview')">
-                                    <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 162x48 px</small>
-                                    <div id="navbar_logo_mobile_preview"></div>
-                                    <?php if (isset($logos['navbar_logo_mobile'])): ?>
-                                        <img src="<?= $logos['navbar_logo_mobile']; ?>" alt="Navbar Logo (Mobile)" width="100" style="margin-top: 10px;">
-                                    <?php endif; ?>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="footer_logo">Footer Logo:</label>
-                                    <input type="file" class="form-control" name="footer_logo" onchange="previewImage(this, 'footer_logo_preview')">
-                                    <small>Formats: JPG, PNG, JPEG, (WEBP), Recommended Size: 180x77 px</small>
-                                    <div id="footer_logo_preview"></div>
-                                    <?php if (isset($logos['footer_logo'])): ?>
-                                        <img src="<?= $logos['footer_logo']; ?>" alt="Footer Logo" width="100" style="margin-top: 10px;">
                                     <?php endif; ?>
                                 </div>
 

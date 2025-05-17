@@ -9,7 +9,7 @@ use CodeIgniter\Controller;
 use CodeIgniter\Database\BaseConnection;
 use Google\Cloud\Storage\StorageClient;
 
-class HeaderController extends Controller
+class HeaderController extends BaseController
 {
     protected $pageModel;
     protected $db;

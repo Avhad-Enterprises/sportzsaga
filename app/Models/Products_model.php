@@ -64,7 +64,8 @@ class Products_model extends Model
         'deleted_at',
         'deleted_by',
         'updated_at',
-        'added_by'
+        'added_by',
+        'expiry_date',
     ];
 
     public function getproductsdata()

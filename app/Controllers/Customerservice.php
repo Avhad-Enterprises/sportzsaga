@@ -11,7 +11,7 @@ use App\Models\TagModel;
 use DOMDocument;
 use DOMXPath;
 
-class Customerservice extends Controller
+class Customerservice extends BaseController
 {
     protected $replyModel;
     public function __construct()

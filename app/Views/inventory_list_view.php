@@ -2,18 +2,6 @@
 <?= $this->include('head_view') ?>
 <!-- Head View End -->
 
-<style>
-    .table-sm th,
-    .table-sm td {
-        padding: 0.3rem;
-        font-size: 0.9rem;
-    }
-
-    .table-sm {
-        margin-bottom: 0;
-    }
-</style>
-
 <body>
 
     <!-- Header View Start -->
@@ -120,24 +108,19 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
 
-                <!-- Page Header -->
                 <div class="page-header">
                     <div class="row">
-                        <!-- Page Title -->
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
                                 <h4>Inventory Management</h4>
                             </div>
                         </div>
-                        <!-- Buttons Row -->
                         <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
-                            <!-- Add Inventory Button -->
-                            <a class="btn btn-primary fw-bold mr-3" href="<?= base_url('inventory/create') ?>"
+                            <a class="btn btn-primary fw-bold mr-1" href="<?= base_url('inventory/create') ?>"
                                 role="button">
                                 Add Inventory
                             </a>
-                            <!-- Logs Button -->
-                            <a class="btn btn-success fw-bold mr-3" href="<?= base_url('inventory_deleted') ?>"
+                            <a class="btn btn-success fw-bold" href="<?= base_url('inventory_deleted') ?>"
                                 role="button">
                                 Logs
                             </a>
@@ -145,113 +128,174 @@
                     </div>
                 </div>
 
-                <!-- Inventory Table -->
+                <!-- Ensure jQuery is included before your script -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                <!-- Your view with updated script -->
                 <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <h4 class="text-blue h4">Inventory Details</h4>
+                    <div class="pd-20 d-flex justify-content-between align-items-center">
+                        <h4 class="text-blue h4">Stock</h4>
+                        <!-- Save button hidden by default with style -->
+                        <button type="button" id="saveAllStocks" class="btn btn-dark mx-2" style="display: none;">Save</button>
                     </div>
                     <div class="pb-20">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Product ID</th>
-                                    <th>Product Title</th>
-                                    <th>Warehouse Details</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($inventoryData as $product): ?>
+                        <form id="inventoryForm">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td><?= esc($product['product_id']) ?></td>
-                                        <td><?= esc($product['product_title']) ?></td>
-                                        <td>
-                                            <table class="table table-sm mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Warehouse Name</th>
-                                                        <th>Location</th>
-                                                        <th>Stock</th> <!-- Optional -->
-                                                        <th>Priority</th> <!-- Optional -->
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach ($product['warehouses'] as $warehouse): ?>
-                                                        <tr>
-                                                            <td><?= esc($warehouse['warehouse_name']) ?></td>
-                                                            <td><?= esc($warehouse['warehouse_location']) ?></td>
-                                                            <td><?= esc($warehouse['stock_quantity']) ?></td>
-                                                            <td><?= esc($warehouse['stock_reduction_rule']) ?></td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <!-- Edit/Delete actions per warehouse -->
-                                            <?php foreach ($product['warehouses'] as $warehouse): ?>
-                                                <div class="mb-2">
-                                                    <a href="<?= base_url('inventory/edit/' . $warehouse['id']) ?>"
-                                                        class="btn btn-sm btn-warning">Edit</a>
-                                                    <?php if ($canDelete): ?>
-                                                        <a href="<?= base_url('inventory/delete/' . $warehouse['id']) ?>"
-                                                            class="btn btn-sm btn-danger"
-                                                            onclick="return confirm('Are you sure?');">Delete</a>
-                                                    <?php endif; ?>
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </td>
+                                        <th><input type="checkbox" id="select-all" /></th>
+                                        <th>Product ID</th>
+                                        <th>Product Title</th>
+                                        <th>Warehouse</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($stocks as $stock): ?>
+                                        <?php foreach ($inventoryData as $product): ?>
+                                            <tr>
+                                                <td><input type="checkbox" class="select-product" /></td>
+                                                <td><?= esc($product['product_id']) ?></td>
+                                                <td><?= esc($product['product_title']) ?></td>
+                                                <td>
+                                                    <table class="table table-sm mb-0">
+                                                        <tbody>
+                                                            <?php foreach ($product['warehouses'] as $warehouse): ?>
+                                                                <?php
+                                                                $uniqueId = esc($product['product_id'] . '-' . $warehouse['id']);
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?= esc($warehouse['warehouse_name']) ?></td>
+                                                                    <td><?= esc($warehouse['warehouse_location']) ?></td>
+                                                                    <td>
+                                                                        <input type="number"
+                                                                            class="form-control form-control-sm stock-input"
+                                                                            min="0"
+                                                                            name="stock[<?= $uniqueId ?>]"
+                                                                            value="<?= esc($warehouse['stock_quantity']) ?>"
+                                                                            data-product-id="<?= esc($product['product_id']) ?>"
+                                                                            data-warehouse-id="<?= esc($warehouse['id']) ?>" />
+                                                                    </td>
+                                                                </tr>
+                                                            <?php endforeach; ?>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td><a href="<?= base_url('inventory/edit/' . esc($stock['id'])) ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </form>
+
                     </div>
                 </div>
 
-                <!-- Modal Structure for File Upload -->
-                <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="importModalLabel">Import Inventory</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- File Upload Form -->
-                                <form method="post" action="<?= base_url('inventory/import') ?>"
-                                    enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="csv_file">Upload CSV File</label>
-                                        <input type="file" name="csv_file" id="csv_file" class="form-control-file"
-                                            required>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Upload</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <script>
+                    $(document).ready(function() {
+                        console.log('jQuery loaded and script running');
 
-                <!-- Required Bootstrap 4 or 5 Scripts -->
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        // Function to show the Save button
+                        function showSaveButton() {
+                            $('#saveAllStocks').show();
+                        }
+
+                        // Show Save button when a stock input is clicked
+                        $('.stock-input').on('click', function() {
+                            console.log('Stock input clicked');
+                            showSaveButton();
+                        });
+
+                        // Show Save button when a stock input value changes
+                        $('.stock-input').on('input', function() {
+                            console.log('Stock input changed:', $(this).val());
+                            showSaveButton();
+                        });
+
+                        // Handle "Save All Stocks" button click
+                        $('#saveAllStocks').on('click', function() {
+                            console.log('Save All Stocks clicked');
+
+                            let stockData = [];
+                            $('.stock-input').each(function() {
+                                let productId = $(this).data('product-id');
+                                let warehouseId = $(this).data('warehouse-id');
+                                let stockQuantity = parseInt($(this).val(), 10) || 0;
+
+                                if (isNaN(stockQuantity) || stockQuantity < 0) {
+                                    console.warn('Invalid stock quantity:', stockQuantity);
+                                    return;
+                                }
+
+                                console.log('Collecting:', {
+                                    productId,
+                                    warehouseId,
+                                    stockQuantity
+                                });
+
+                                stockData.push({
+                                    product_id: parseInt(productId),
+                                    warehouse_id: parseInt(warehouseId),
+                                    stock_quantity: stockQuantity
+                                });
+                            });
+
+                            if (stockData.length === 0) {
+                                alert('No valid stock data to submit.');
+                                return;
+                            }
+
+                            $.ajax({
+                                url: '<?= base_url('inventory/bulk_update') ?>',
+                                type: 'POST',
+                                data: JSON.stringify({
+                                    stocks: stockData
+                                }),
+                                contentType: 'application/json',
+                                headers: {
+                                    'X-CSRF-TOKEN': '<?= csrf_hash() ?>'
+                                },
+                                beforeSend: function() {
+                                    $('#saveAllStocks').prop('disabled', true).text('Saving...');
+                                },
+                                success: function(response) {
+                                    console.log('Success response:', response);
+                                    if (response.status === 'success') {
+                                        alert('Stock quantities updated successfully!');
+                                        $('#saveAllStocks').hide(); // Hide button after successful save
+                                        location.reload();
+                                    } else {
+                                        alert('Error: ' + response.message);
+                                        console.log('Errors:', response.errors || 'None');
+                                    }
+                                },
+                                error: function(xhr, status, error) {
+                                    console.error('AJAX error:', xhr.responseText, status, error);
+                                    alert('An error occurred while updating stocks: ' + xhr.responseText);
+                                },
+                                complete: function() {
+                                    $('#saveAllStocks').prop('disabled', false).text('Save');
+                                }
+                            });
+                        });
+
+                        // Select all checkboxes
+                        $('#select-all').on('change', function() {
+                            $('.select-product').prop('checked', this.checked);
+                        });
+                    });
+                </script>
 
             </div>
 
         </div>
     </div>
-    </div>
 
     <!-- Footer View Start -->
     <?= $this->include('footer_view') ?>
     <!-- Footer View End -->
+
 </body>
 
 </html>

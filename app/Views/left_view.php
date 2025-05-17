@@ -30,9 +30,13 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>analytics" class="no-chevron dropdown-toggle">
+                            <a href="javascript:;" class="dropdown-toggle">
                                 <span class="micon bi bi-bar-chart-line"></span><span class="mtext">Analytics</span>
                             </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url('analytics'); ?>">Analytics</a></li>
+                                <li><a href="<?= base_url('analytics/reports'); ?>">Reports</a></li>
+                            </ul>
                         </li>
 
                         <li class="dropdown">
@@ -163,6 +167,15 @@
                             <a href="<?= base_url(); ?>dashboard" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon bi bi-bar-chart-line"></span><span class="mtext">Analytics</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url('analytics'); ?>">Analytics</a></li>
+                                <li><a href="<?= base_url('analytics/reports'); ?>">Reports</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">

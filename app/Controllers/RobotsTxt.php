@@ -6,7 +6,7 @@ use App\Models\RobotsTxtModel;
 use CodeIgniter\Controller;
 use App\Models\footermodeldes;
 
-class RobotsTxt extends Controller
+class RobotsTxt extends BaseController
 {
     protected $robotsTxtModel;
 
@@ -39,28 +39,6 @@ class RobotsTxt extends Controller
             ]);
         }
 
-        file_put_contents(WRITEPATH . 'robots.txt', $newContent);
-
         return redirect()->to('online_store/preferences')->with('success', 'robots.txt file updated successfully.');
-    }
-
-    public function update_footer_description()
-    {
-        $footerModel = new FooterModelDes();
-        $session = session();
-
-        $footerContent = $this->request->getPost('footer_content');
-
-        $updateData = [
-            'content' => $footerContent,
-            'updated_at' => date('Y-m-d H:i:s'),
-            'updated_by' => $session->get('admin_name') . '(' . $session->get('user_id') . ')',
-        ];
-
-        if ($footerModel->updateFooterContent($updateData)) {
-            return redirect()->back()->with('success', 'Footer description updated successfully.');
-        } else {
-            return redirect()->back()->with('error', 'Failed to update footer description.');
-        }
     }
 }

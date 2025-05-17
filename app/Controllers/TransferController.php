@@ -7,7 +7,7 @@ use App\Models\Products_model;
 use App\Models\PermissionsModel;
 use CodeIgniter\Controller;
 
-class TransferController extends Controller
+class TransferController extends BaseController
 {
 
     protected $permissionsModel;
