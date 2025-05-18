@@ -115,9 +115,9 @@ class Products_model extends Model
         return $this->where('product_id', $product_id)->findAll();
     }
 
-    public function updateproductdata($data, $id)
+    public function UpdateProductData($id, $newData)
     {
-        return $this->db->table('products')->where('product_id', $id)->update($data);
+        return $this->db->table('products')->where('product_id', $id)->update($newData);
     }
 
     public function updateinventorydata($product_id, $data)

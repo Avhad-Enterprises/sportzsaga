@@ -23,11 +23,11 @@
                             </a>
                         </li>
 
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a href="<?= base_url(); ?>permissions_view" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-tags-fill"></span><span class="mtext">User Access</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
@@ -58,9 +58,9 @@
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>
-                                <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
-                                <!--<li><a href="<?= base_url(); ?>email">Emails</a></li>-->
-                                <li><a href="<?= base_url(); ?>automations">Automations</a></li>
+                                <!--<li><a href="<?= base_url(); ?>statics">Statistics</a></li>
+                                <li><a href="<?= base_url(); ?>email">Emails</a></li>
+                                <li><a href="<?= base_url(); ?>automations">Automations</a></li> -->
                                 <li><a href="<?= base_url(); ?>supplier_list_view">Supplier</a></li>
                             </ul>
                         </li>
@@ -119,11 +119,6 @@
                         <li class="dropdown">
                             <a href="<?= base_url(); ?>discountcodegenerator" class="no-chevron dropdown-toggle">
                                 <span class="micon dw dw-invoice"></span><span class="mtext">Discount Code</span>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="<?= base_url(); ?>generate_report" class="no-chevron dropdown-toggle">
-                                <span class="micon bi bi-graph-up-arrow"></span><span class="mtext">Reports</span>
                             </a>
                         </li>
 
@@ -193,8 +188,8 @@
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>
-                                <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
-                                <!-- <li><a href="<?= base_url(); ?>email">Emails</a></li>  -->
+                                <!-- <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
+                                <li><a href="<?= base_url(); ?>email">Emails</a></li>  -->
                                 <li><a href="<?= base_url(); ?>automations">Automations</a></li>
                             </ul>
                         </li>
@@ -237,11 +232,6 @@
                         <li class="dropdown">
                             <a href="<?= base_url(); ?>discount_code_view" class="no-chevron dropdown-toggle">
                                 <span class="micon dw dw-invoice"></span><span class="mtext">Discount Code</span>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="<?= base_url(); ?>generate_report" class="no-chevron dropdown-toggle">
-                                <span class="micon bi bi-graph-up-arrow"></span><span class="mtext">Reports</span>
                             </a>
                         </li>
                         <li class="dropdown">

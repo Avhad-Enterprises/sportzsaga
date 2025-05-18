@@ -462,7 +462,7 @@ $routes->get('getUserEventsdata/viewdata/(:num)', 'UserEventLogger::viewdata/$1'
 //cusomer sevice Controller
 $routes->get('customer_email_view/(:num)', 'Customerservice::customerEmailView/$1');
 $routes->get('view_attachment/(:any)', 'Customerservice::view_attachment/$1');
-$routes->get('fetchEmails', 'Customerservice::fetchEmails');
+//$routes->get('fetchEmails', 'Customerservice::fetchEmails');
 $routes->get('process_new_emails', 'Customerservice::processNewEmails');
 $routes->get('statics', 'Customerservice::statics');
 $routes->get('fetchConversations', 'Customerservice::fetchConversations');

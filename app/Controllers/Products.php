@@ -446,7 +446,6 @@ class Products extends BaseController
             'bullet_points' => $this->request->getPost('bullet_points_json'),
             'added_by' => $userId,
             'created_at' => date('Y-m-d H:i:s'),
-            'expiry_date' => $this->request->getPost('expiry_date'),
         ];
 
         // Insert the new product into the database
@@ -469,6 +468,17 @@ class Products extends BaseController
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
+
+        if (!empty($data['products'])) {
+            $product = $data['products'][0]; // Assuming you're fetching one product by ID
+
+            // Decode the product_tags field (if it's in JSON format)
+            $productTags = json_decode($product['product_tags'], true);
+
+            // Add the decoded productTags to the data array to pass to the view
+            $data['productTags'] = $productTags;
+        }
+
 
         if (empty($data['products'])) {
             return redirect()->to('admin_products')->with('error', 'Product not found.');
@@ -506,6 +516,11 @@ class Products extends BaseController
         } else {
             $data['bullet_points'] = '';
         }
+
+        // echo '<pre>';
+        // print_r($data['products']);
+        // echo '</pre>';
+        // exit();
 
         return view('edit_products_view', $data);
     }
@@ -548,6 +563,16 @@ class Products extends BaseController
         $productsTags = $this->request->getPost('product-tags');
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
 
+        $delist = $this->request->getPost('delist');
+
+        $delist = $this->request->getPost('delist');
+
+        // Get current time if delist is set to 'yes'
+        $delistDate = null;
+        if ($delist == 'yes') {
+            $delistDate = date('Y-m-d H:i:s');
+        }
+
         // Prepare product data for update
         $newData = [
             'product_title' => $this->request->getPost('product-name'),
@@ -582,7 +607,9 @@ class Products extends BaseController
             'size' => $this->request->getPost('product-size'),
             'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
-            'expiry_date' => $this->request->getPost('expiry_date'),
+            'bullet_points' => $this->request->getPost('bullet_points_json'),
+            'delist' => $delist,
+            'delist_date' => $delistDate,
         ];
 
         // ✅ Handle product image upload
@@ -672,8 +699,13 @@ class Products extends BaseController
         $finalImages = array_unique(array_merge(array_diff($existingImages, $removedImages), $currentImages, $newImages));
         $newData['more_images'] = json_encode($finalImages);
 
+        // echo '<pre>';
+        // print_r($newData);
+        // echo '</pre>';
+        // exit();
+
         // Update the product in the database
-        if ($model->update($id, $newData)) {
+        if ($model->UpdateProductData($id, $newData)) {
             return redirect()->to('admin-products')->with('success', 'Product updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update product.');

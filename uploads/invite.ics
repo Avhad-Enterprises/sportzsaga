@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Asia/Kolkata
+X-LIC-LOCATION:Asia/Kolkata
+BEGIN:STANDARD
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+TZNAME:GMT+5:30
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20250514T113000
+DTEND;TZID=Asia/Kolkata:20250514T123000
+DTSTAMP:20250514T053742Z
+ORGANIZER;CN=Swapnil Sonawane:mailto:swapnilsonawane2237@gmail.com
+UID:3jjvb4t7i87tlv01csc2b55ui3@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=harshjagzap123@gmail.com;X-NUM-GUESTS=0:mailto:harshjagzap123@gmail
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=atharvrkale@gmail.com;X-NUM-GUESTS=0:mailto:atharvrkale@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=yamini.khairnar21@gmail.com;X-NUM-GUESTS=0:mailto:yamini.khairnar21
+ @gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=Swapnil Sonawane;X-NUM-GUESTS=0:mailto:swapnilsonawane2237@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=adityapatil93564@gmail.com;X-NUM-GUESTS=0:mailto:adityapatil93564@g
+ mail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/zzp-dyqj-zow
+X-MICROSOFT-CDO-OWNERAPPTID:-226876289
+CREATED:20250514T053739Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/zz
+ p-dyqj-zow\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250514T053742Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Node Discussion
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

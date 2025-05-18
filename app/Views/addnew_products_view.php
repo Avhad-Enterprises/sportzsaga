@@ -173,7 +173,7 @@
                                             style="width: 94%;"
                                             onchange="showPrimaryImagePreview(event)">
                                         <button type="button" id="add-more-btn" class="btn btn-sm btn-dark d-flex align-items-center ml-1">
-                                            <i class="fa fa-plus mr-2"></i>
+                                            <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                     <div class="image-preview" id="primary-image-preview" style="margin-top: 10px; display: none;">
@@ -182,25 +182,24 @@
                                     <small>Required Size: 990 x 1272 px.</small>
                                 </div>
 
-                                <!-- Button to trigger the visibility of the secondary image upload -->
-
-                                <!-- Container for extra image uploads -->
                                 <div id="image-upload-container" style="display: none;">
                                     <div class="row" id="image-upload-row">
-                                        <!-- Initial image upload field -->
                                         <div class="col-md-6 image-upload-row">
                                             <div class="form-group">
-                                                <div class="d-flex align-items-center flex-column">
+                                                <div class="d-flex align-items-center flex-row">
                                                     <input type="file" name="product_images[]" accept="image/*" class="form-control" onchange="previewImage(event)" />
-                                                    <div class="image-preview" style="margin-top: 10px; display: none;">
-                                                        <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
-                                                    </div>
+                                                    <button type="button" class="btn btn-sm btn-danger ml-1 remove-image">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="image-preview" style="margin-top: 10px; display: none;">
+                                                    <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <button type="button" id="add-more-images" class="btn btn-sm btn-dark d-flex align-items-center mb-3">
-                                        <i class="fa fa-plus mr-2"></i>
+                                        <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
 
@@ -465,7 +464,7 @@
                                     <div class="invalid-feedback">invalid select</div>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="custom-control custom-checkbox mb-5">
                                         <input
                                             type="checkbox"
@@ -496,7 +495,7 @@
                                             <option value="none">None</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!-- More Section Toggle -->
                                 <div class="d-flex justify-content-end">
@@ -952,6 +951,23 @@
 </script>
 
 <script>
+    // Function to preview image before upload
+    function previewImage(event) {
+        const file = event.target.files[0];
+        const previewDiv = event.target.closest(".form-group").querySelector(".image-preview");
+        const previewImg = previewDiv.querySelector("img");
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Show the preview image
+                previewImg.src = e.target.result;
+                previewDiv.style.display = 'block'; // Show preview
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         const addButton = document.getElementById("add-more-images");
         const imageUploadRow = document.getElementById("image-upload-row");
@@ -966,13 +982,14 @@
                 <div class="form-group">
                     <div class="d-flex align-items-center flex-row mb-3">
                         <input type="file" name="product_images[]" accept="image/*" class="form-control" onchange="previewImage(event)" />
+                        <!-- Minus button for removing the image field -->
                         <button type="button" class="btn btn-sm btn-danger ml-2 remove-image">
-                            <i class="fa fa-times"></i>
+                            <i class="fa fa-minus"></i>
                         </button>
                     </div>
                     <div class="image-preview" style="margin-top: 10px; display: none;">
-                            <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
-                        </div>
+                        <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
+                    </div>
                 </div>
             `;
 
@@ -985,23 +1002,6 @@
             });
         });
     });
-
-    // Function to preview image when selected
-    function previewImage(event) {
-        const file = event.target.files[0];
-        const previewDiv = event.target.closest(".form-group").querySelector(".image-preview");
-        const previewImg = previewDiv.querySelector("img");
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                // Show the preview image
-                previewImg.src = e.target.result;
-                previewDiv.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        }
-    }
 </script>
 
 <script>
@@ -1312,7 +1312,7 @@
             reader.onload = function(e) {
                 // Show the preview image
                 primaryImage.src = e.target.result;
-                preview.style.display = 'block'; // Show the preview container
+                preview.style.display = 'block';
             };
             reader.readAsDataURL(file);
         }

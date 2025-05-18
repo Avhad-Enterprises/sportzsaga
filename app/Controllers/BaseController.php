@@ -29,27 +29,21 @@ abstract class BaseController extends Controller
      */
     public function checkLogin()
     {
-        // Set the session timeout duration in seconds (e.g., 2 hours)
-        $sessionTimeout = 86400; // 2 hours
+        $sessionTimeout = 86400;
 
-        // Check if the user is logged in
         if (!$this->session->get('user_id') && !$this->session->get('admin_logged_in')) {
-            // If not logged in, redirect to login page
-            return redirect()->to('admin'); // Replace with your actual login route
+            return redirect()->to('admin');
         }
 
-        // Check if the session has expired
         $lastActivity = $this->session->get('last_activity_time');
         if ($lastActivity) {
             $currentTime = time();
             if (($currentTime - $lastActivity) > $sessionTimeout) {
-                // If the session has expired, destroy the session and redirect to login
                 $this->session->destroy();
-                return redirect()->to('admin'); // Redirect to login page
+                return redirect()->to('admin');
             }
         }
 
-        // Update the last activity time to track the session
         $this->session->set('last_activity_time', time());
     }
 }

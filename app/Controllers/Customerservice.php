@@ -392,8 +392,6 @@ class Customerservice extends BaseController
         return $cleanHtml;
     }
 
-
-
     private function decodeSubject($subject)
     {
         $subject = imap_mime_header_decode($subject);
