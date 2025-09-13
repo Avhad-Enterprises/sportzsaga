@@ -168,16 +168,26 @@
                                         <textarea id="editor" name="product-description" class="form-control"><?= $product['product_description'] ?></textarea>
                                     </div>
 
-                                    
-
                                     <div class="form-group">
                                         <label>Primary Image</label>
                                         <div class="dropzone-area">
                                             <input type="file" name="product-new-image" accept="image/*" class="" />
                                             <input type="hidden" name="product-current-image" value="<?= $product['product_image'] ?>" />
-                                            <?php if (!empty($product['product_image'])): ?>
-                                                <img src="<?= $product['product_image'] ?>" class="border-radius-500 " width="200" height="200" alt="Product Image" />
-                                            <?php endif; ?>
+                                            <div class="p-3">
+                                                <?php if (!empty($product['product_image'])): ?>
+                                                    <img src="<?= $product['product_image'] ?>" class="border-radius-500 " width="150" alt="Product Image" />
+                                                    <?php if (!empty($product['more_images'])): ?>
+                                                        <?php
+                                                        $currentImages = json_decode($product['more_images'], true);
+                                                        foreach ($currentImages as $index => $image):
+                                                        ?>
+                                                            <img src="<?= esc($image) ?>" class="" width="150" alt="Image <?= $index + 1 ?>">
+                                                        <?php endforeach; ?>
+                                                    <?php else: ?>
+                                                        <p>No current images available.</p>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                         <div class="dropzone-description">
                                             <span>Supported formats: JPEG, JPG, PNG, WEBP, Size: 505 x 650 px.</span><br>
@@ -596,12 +606,9 @@
                                                 <button class="btn btn-outline-dark btn-sm mx-1" type="button" id="add-bullet-point"><i class="fa-solid fa-plus"></i></button>
                                             </div>
                                         </div>
-
-                                        <!-- Bullet points from the database -->
                                         <div id="bullet-points-container">
                                             <?php if (!empty($product['bullet_points'])): ?>
                                                 <?php
-                                                // Decode the JSON data into an array
                                                 $bulletPoints = json_decode($product['bullet_points']);
                                                 foreach ($bulletPoints as $point):
                                                 ?>
@@ -616,42 +623,50 @@
                                                 <?php endforeach; ?>
                                             <?php endif; ?>
                                         </div>
-
                                         <input type="hidden" name="bullet_points_json" id="bullet_points_json" />
                                     </div>
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Product Features</p>
-                                    <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
-                                        <div class="form-group mr-2" style="flex: 1;">
-                                            <label for="gift_wrap" class="form-label">Gift Wrap <span><i class="fa-solid fa-gift"></i></span></label>
-                                            <select name="gift_wrap" id="gift_wrap" name="gift_wrap" class="form-control" style="width: 100%; height: 38px;">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-blue">Product Features</p>
+                                        <div id="toggleProductFea" class="d-flex">
+                                            <small>More</small>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div id="ProductfeaElements" style="display: none;">
+                                        <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
+                                            <div class="form-group mr-2" style="flex: 1;">
+                                                <label for="gift_wrap" class="form-label">Gift Wrap <span><i class="fa-solid fa-gift"></i></span></label>
+                                                <select name="gift_wrap" id="gift_wrap" name="gift_wrap" class="form-control" style="width: 100%; height: 38px;">
+                                                    <option value="">Select</option>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no" selected>No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group mr-2" id="label-field" style="flex: 1;">
+                                                <label for="label" class="form-label">Label
+                                                    <span data-bs-toggle="tooltip" data-bs-placement="top" title="Enter product label (e.g., Limited Edition, Exclusive, New, etc.)">
+                                                        <i class="fa-solid fa-circle-question"></i>
+                                                    </span>
+                                                </label>
+                                                <input type="text" placeholder="Label" class="form-control" name="product_label" value="<?= $product['label'] ?>" style="width: 100%; height: 38px;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Preorder tag</label>
+                                            <select class="form-control" id="preorder-tag" name="preorder-tag" style="width: 100%; height: 38px">
                                                 <option value="">Select</option>
-                                                <option value="yes">Yes</option>
-                                                <option value="no" selected>No</option>
+                                                <option value="yes" <?= $product['preorder_tag'] == 'yes' ? 'selected' : '' ?>>Yes</option>
+                                                <option value="no" <?= $product['preorder_tag'] == 'no' ? 'selected' : '' ?>>No</option>
                                             </select>
                                         </div>
-                                        <div class="form-group mr-2" id="label-field" style="flex: 1;">
-                                            <label for="label" class="form-label">Label
-                                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Enter product label (e.g., Limited Edition, Exclusive, New, etc.)">
-                                                    <i class="fa-solid fa-circle-question"></i>
-                                                </span>
-                                            </label>
-                                            <input type="text" placeholder="Label" class="form-control" name="product_label" value="<?= $product['label'] ?>" style="width: 100%; height: 38px;">
+                                        <div class="form-group" id="preorder-date-container" style="display: <?= $product['preorder_tag'] == 'yes' ? 'block' : 'none' ?>;">
+                                            <label>Preorder Date</label>
+                                            <input type="date" class="form-control" value="<?= $product['preorder_date'] ?>" name="preorder_date" id="preorder-date">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Preorder tag</label>
-                                        <select class="form-control" id="preorder-tag" name="preorder-tag" style="width: 100%; height: 38px">
-                                            <option value="">Select</option>
-                                            <option value="yes" <?= $product['preorder_tag'] == 'yes' ? 'selected' : '' ?>>Yes</option>
-                                            <option value="no" <?= $product['preorder_tag'] == 'no' ? 'selected' : '' ?>>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" id="preorder-date-container" style="display: <?= $product['preorder_tag'] == 'yes' ? 'block' : 'none' ?>;">
-                                        <label>Preorder Date</label>
-                                        <input type="date" class="form-control" value="<?= $product['preorder_date'] ?>" name="preorder_date" id="preorder-date">
                                     </div>
                                 </div>
 
@@ -1311,6 +1326,10 @@
     }
     document.addEventListener('DOMContentLoaded', function() {
         toggleVisibility('#toggleMore', '#moreElements');
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleVisibility('#toggleProductFea', '#ProductfeaElements');
     });
 </script>
 

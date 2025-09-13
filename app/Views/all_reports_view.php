@@ -27,20 +27,26 @@
                 <div class="col-md-4">
                     <div class="pd-20 card-box mb-30">
                         <h4 class="mb-30">Saved Reports</h4>
-                        <ul>
-                            <?php foreach ($reports as $report) : ?>
-                                <li class="SavedReportsLists d-flex justify-content-between align-items-center">
-                                    <a href="<?= base_url('analytics/generate_reports/' . $report['id']) ?>" class="SavedReports">
-                                        <?= esc($report['report_name']) ?>
-                                    </a>
-                                    <!-- Initially hidden delete icon -->
-                                    <a href="javascript:void(0);" onclick="confirmbReportsDelete(<?= $report['id'] ?>)" class="delete-icon" style="display:none;">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+
+                        <?php if (empty($reports)): ?>
+                            <p>No Reports Found</p>
+                        <?php else: ?>
+                            <ul>
+                                <?php foreach ($reports as $report) : ?>
+                                    <li class="SavedReportsLists d-flex justify-content-between align-items-center">
+                                        <a href="<?= base_url('analytics/generate_reports/' . $report['id']) ?>" class="SavedReports">
+                                            <?= esc($report['report_name']) ?>
+                                        </a>
+                                        <!-- Initially hidden delete icon -->
+                                        <a href="javascript:void(0);" onclick="confirmbReportsDelete(<?= $report['id'] ?>)" class="delete-icon" style="display:none;">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
                     </div>
+
                 </div>
             </div>
         </div>
