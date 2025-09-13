@@ -99,9 +99,7 @@
     .image-preview {
         display: none;
         margin: 25px;
-        width: 650px;
         height: auto;
-        border: 1px dotted black;
     }
 
     #dripspot-image-preview {

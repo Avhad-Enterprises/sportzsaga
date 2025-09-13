@@ -8,9 +8,13 @@ class TagModel extends Model
 {
     protected $table = 'tags'; // Table name
     protected $primaryKey = 'id'; // Primary key
-
-    // Fields that can be inserted/updated
-    protected $allowedFields = ['tag_name'];
+    protected $allowedFields = [
+        'tag_name',
+        'tag_value',
+        'type',
+        'created_at',
+        'added_by',
+    ];
 
     // Validation rules
     protected $validationRules = [
@@ -25,11 +29,9 @@ class TagModel extends Model
         ],
     ];
 
-
+    // Method to fetch all tags
     public function getTags()
     {
-        $tagModel = new TagModel();
-        $tags = $tagModel->findAll(); // Fetch all tags
-        return $this->response->setJSON($tags); // Return tags as JSON
+        return $this->findAll(); // Fetch all tags
     }
 }

@@ -22,7 +22,7 @@ class Ordermanagement extends BaseController
         $session = session();
         $model = new Ordermanagement_model();
         $pincodeModel = new PincodeModel();
-        $userModel = new Registerusers_model(); 
+        $userModel = new Registerusers_model();
 
 
         if ($session->get('admin_type') == 'seller') {
@@ -32,15 +32,15 @@ class Ordermanagement extends BaseController
             $orders = $model->getorders();
         }
 
-        
-        foreach ($orders as &$order) {
-            $pincode = $order['pincode']; 
 
-        
+        foreach ($orders as &$order) {
+            $pincode = $order['pincode'];
+
+
             $vendors = $pincodeModel->where('area_pincode', $pincode)
-                ->where('pickup', 'Y')  
-                ->where('delivery', 'Y') 
-                ->where('cod', 'Y')    
+                ->where('pickup', 'Y')
+                ->where('delivery', 'Y')
+                ->where('cod', 'Y')
                 ->findAll();
 
             foreach ($vendors as &$vendor) {
@@ -55,8 +55,8 @@ class Ordermanagement extends BaseController
             $order['vendors'] = $vendors;
 
             if (!empty($order['user_id'])) {
-                $customer = $userModel->find($order['user_id']); 
-                $order['customer'] = $customer ? $customer['name'] : 'No Name'; 
+                $customer = $userModel->find($order['user_id']);
+                $order['customer'] = $customer ? $customer['name'] : 'No Name';
             }
         }
 
@@ -195,7 +195,7 @@ class Ordermanagement extends BaseController
         $payment_status = $this->request->getPost('payment-status');
         $payment_ref = $this->request->getPost('ref_no');
 
-       
+
         if ($payment_method === 'bank' && $rzp_payment_id) {
             $payment_status = 'Paid';
             $payment_ref = $rzp_payment_id;
@@ -534,12 +534,12 @@ class Ordermanagement extends BaseController
             $product_titles[] = $product['product_title'] . ' x ' . $quantity;
             $seller_ids[] = $product['seller_id'];
             $product_price = isset($product_values[$product_id]) ? floatval($product_values[$product_id]) : $product['selling_price'];
-       
+
             if ($is_international) {
                 $product_price += 1000;
             }
             $subtotal = $product_price * $quantity;
-          
+
             $product_discount = isset($discount_values[$product_id]) ? floatval($discount_values[$product_id]) : 0;
             $discounted_price = max(0, $product_price - $product_discount);
 
@@ -584,17 +584,17 @@ class Ordermanagement extends BaseController
 
 
         $total_discount += $total_discount_amount;
-    
+
         $final_total_amount = $this->request->getPost('final_total_price');
 
         $product_titles_str = json_encode($product_titles);
         $concatenated_seller_id = implode(', ', array_unique($seller_ids));
 
         if ($is_international) {
-       
+
             $usd_total = $final_total_amount * 0.012;
 
-        
+
             $cgst = 0;
             $sgst = 0;
             $igst = 0;
@@ -691,14 +691,14 @@ class Ordermanagement extends BaseController
 
     public function getOrderDetails($id)
     {
-    
+
         $orderModel = new Ordermanagement_model();
 
         try {
-          
+
             $order = $orderModel->find($id);
 
-         
+
             if (!$order) {
                 return $this->response->setStatusCode(404)->setJSON([
                     'status' => 'error',
@@ -711,13 +711,13 @@ class Ordermanagement extends BaseController
             } else {
                 $order['product_details'] = [];
             }
-            
+
             return $this->response->setStatusCode(200)->setJSON([
                 'status' => 'success',
                 'order' => $order,
             ]);
         } catch (\Exception $e) {
-          
+
             return $this->response->setStatusCode(500)->setJSON([
                 'status' => 'error',
                 'message' => 'An error occurred while fetching order details.',
@@ -751,12 +751,11 @@ class Ordermanagement extends BaseController
                 }
             }
 
-            $savedQuantity = $existingProduct['quantity'] ?? 1; 
-            $savedDiscount = $existingProduct['discount'] ?? 0; 
-            $totalDiscountForProduct = $savedDiscount; 
+            $savedQuantity = $existingProduct['quantity'] ?? 1;
+            $savedDiscount = $existingProduct['discount'] ?? 0;
+            $totalDiscountForProduct = $savedDiscount;
 
-            $totalDiscountSum += $totalDiscountForProduct; 
-
+            $totalDiscountSum += $totalDiscountForProduct;
         }
 
         $users = $userModel->findAll();
@@ -849,7 +848,7 @@ class Ordermanagement extends BaseController
             $product_titles[] = $product['product_title'] . ' x ' . $quantity;
             $seller_ids[] = $product['seller_id'];
             $product_price = isset($product_values[$product_id]) ? floatval($product_values[$product_id]) : 0;
-        
+
             if ($is_international) {
                 $product_price += 1000;
             }
@@ -859,7 +858,7 @@ class Ordermanagement extends BaseController
             $discounted_price = max(0, $product_price - $product_discount);
 
             if ($total_discount_amount > 0) {
-                $product_discount = 0; 
+                $product_discount = 0;
             }
             $total_amount_before_discount += $subtotal;
             $total_discount += $product_discount * $quantity;
@@ -893,7 +892,7 @@ class Ordermanagement extends BaseController
         }
 
         $total_discount += $total_discount_amount;
-      
+
         $final_total_amount = $this->request->getPost('final_total_price');
 
         $product_titles_str = json_encode($product_titles);
@@ -901,8 +900,8 @@ class Ordermanagement extends BaseController
 
 
         if ($is_international) {
-        
-            $usd_total = $final_total_amount * 0.012; 
+
+            $usd_total = $final_total_amount * 0.012;
 
             $cgst = 0;
             $sgst = 0;
@@ -911,7 +910,7 @@ class Ordermanagement extends BaseController
 
 
         if ($payment_method === 'link') {
-            $orderId = $this->savedraftorder(); 
+            $orderId = $this->savedraftorder();
             if (is_numeric($orderId)) {
                 $order_data = $orderModel->getOrderdetail($orderId);
                 $product_details = json_decode($order_data['product_details'], true);
@@ -1110,7 +1109,7 @@ class Ordermanagement extends BaseController
                         'sku' => $product['sku'] ?? '',
                         'hsn' => $product['hsn'] ?? ''
                     ];
-                }           
+                }
             }
 
             // Parse dates
@@ -1287,7 +1286,7 @@ class Ordermanagement extends BaseController
 
 
 
-//<!---------------------------------------------------------------------------------------------- Blue Dart --------------------------------------------------------------------------->
+    //<!---------------------------------------------------------------------------------------------- Blue Dart --------------------------------------------------------------------------->
 
     public function bluedart_management()
     {
@@ -1570,10 +1569,6 @@ class Ordermanagement extends BaseController
                 "Profile" => [
                     "LoginID" => $seller['bluedart_login_id'],
                     "LicenceKey" => $seller['bluedart_shipping_licenceKey'],
-
-                    //"LoginID" => "BOM16100",
-                    //"LicenceKey" => "ivrh1ppfeiqukinsntpufekj66sqq3fs",
-
                     "Api_type" => "S"
                 ]
             ];
@@ -2535,7 +2530,7 @@ class Ordermanagement extends BaseController
 
 
 
-    
+
     private function sendOrderConfirmationWhatsApp($recipient, $name, $orderData, $productDetails)
     {
         $url = 'https://api.dotpe.in/api/comm/public/enterprise/v1/wa/send';
@@ -2709,6 +2704,4 @@ class Ordermanagement extends BaseController
             'message' => 'Invalid or inactive discount code.'
         ]);
     }
-
-
 }

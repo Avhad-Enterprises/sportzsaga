@@ -6,33 +6,70 @@ use CodeIgniter\Model;
 
 class AdminModel extends Model
 {
-    protected $db;
+    protected $DBGroup = 'default';
 
-    public function __construct()
+    public function getSpecificTables()
     {
-        $this->db = \Config\Database::connect();
-    }
+        $db = \Config\Database::connect();
 
-    public function getAllTableNames()
-    {
-        $query = $this->db->query("SHOW TABLES");
-        $result = $query->getResultArray();
+        // Fetching only the projects and services tables
+        $builder = $db->query('SHOW TABLES');
+        $tables = $builder->getResultArray();
 
-        // Extract table names from the result
-        $tables = [];
-        foreach ($result as $row) {
-            $tables[] = array_values($row)[0];
+        // Define allowed tables
+        $allowedTables = ['products', 'order_management', 'visitors', 'sales_test'];
+
+        $tableNames = [];
+        foreach ($tables as $table) {
+            if (in_array($table['Tables_in_' . $db->database], $allowedTables)) {
+                $tableNames[] = $table['Tables_in_' . $db->database];
+            }
         }
-        return $tables;
+
+        return $tableNames;
     }
 
-    public function getTableColumns($tableName)
+    public function getAllReports()
     {
-        return $this->db->getFieldNames($tableName);
+        $db = \Config\Database::connect();
+        $builder = $db->table('saved_reports');
+        $builder->where('is_deleted', 0);
+        $query = $builder->get();
+        return $query->getResultArray();
     }
 
-    public function fetchReportData($tableName, $selectedColumns)
+    public function getReportLogs()
     {
-        return $this->db->table($tableName)->select($selectedColumns)->get()->getResultArray();
+        $db = \Config\Database::connect();
+        $builder = $db->table('saved_reports');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+    public function getReportById($reportId)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('saved_reports');
+        $builder->select('id, report_name, table_name, columns, filters');
+        $builder->where('id', $reportId);
+        $query = $builder->get();
+        $report = $query->getRowArray();
+
+        if ($report) {
+            $report['columns'] = json_decode($report['columns'], true);
+            $report['filters'] = $report['filters'] ? json_decode($report['filters'], true) : [];
+        }
+
+        return $report;
+    }
+
+    public function DeleteReportsData($id, $data)
+    {
+        return $this->db->table('saved_reports')->where('id', $id)->update($data);
+    }
+
+    public function RestoreReportsData($id, $data)
+    {
+        return $this->db->table('saved_reports')->where('id', $id)->update($data);
     }
 }

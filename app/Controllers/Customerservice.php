@@ -11,7 +11,7 @@ use App\Models\TagModel;
 use DOMDocument;
 use DOMXPath;
 
-class Customerservice extends Controller
+class Customerservice extends BaseController
 {
     protected $replyModel;
     public function __construct()
@@ -391,8 +391,6 @@ class Customerservice extends Controller
         $cleanHtml = $dom->saveHTML();
         return $cleanHtml;
     }
-
-
 
     private function decodeSubject($subject)
     {

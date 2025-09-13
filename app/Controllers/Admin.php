@@ -3,7 +3,7 @@
 use CodeIgniter\Controller;
 use CodeIgniter\Database\Config;
 
-class Admin extends Controller
+class Admin extends BaseController
 {
     public function addFieldAjax()
     {

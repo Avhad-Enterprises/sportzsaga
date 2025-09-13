@@ -123,7 +123,7 @@
                 <!-- Default Basic Forms Start -->
 
 
-                <form action="<?= base_url(); ?>admin-products/publishproduct" method="post" id="AddnewProductsForm" class="validate-form" enctype="multipart/form-data">
+                <form action="<?= base_url('admin-products/publishproduct'); ?>" method="post" id="AddnewProductsForm" class="validate-form" enctype="multipart/form-data">
 
                     <div class="mb-3 d-flex justify-content-between">
                         <a href="javascript:void(0);" class="mx-2" onclick="goBack()">
@@ -137,22 +137,181 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Products Details <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></p>
+                                <p class="text-blue">Products Details <span class="text-danger">*</span></p>
                                 <div class="form-group">
                                     <label>Products Title</label>
                                     <input class="form-control validate-required validate-minLength" data-error-message-required="Title is required!" data-min-length="60" name="product-name" type="text" placeholder="Name of the Product">
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label>Secondary Title <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input class="form-control validate-required validate-minLength" data-error-message-required="Secondary Title is required!" minlength="30" name="second-name" type="text" placeholder="Secondary Title">
+                                <div class="form-group">
+                                    <label>Secondary Title <span class="text-danger">*</span></label>
+                                    <input class="form-control validate-required validate-minLength" data-error-message-required="Secondary Title is required!" minlength="30" name="second-name" type="text" placeholder="Secondary Title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="validationTextarea" class="form-label">Short Description <span class="text-danger">*</span></label>
+                                    <textarea class="form-control validate-required resizable-textarea"
+                                        data-error-message-required="Meta Description is required!"
+                                        name="product-short-description"
+                                        placeholder="Required example textarea"
+                                        id="metaDescription"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Primary Image <span class="text-danger">*</span></label>
+                                    <div class="d-flex">
+                                        <!-- Primary Image Upload -->
+                                        <input
+                                            type="file"
+                                            id="upload-file" name="product-image"
+                                            accept="image/*"
+                                            class="form-control validate-required validate-file validate-fileType validate-imageDimensions"
+                                            data-image-width="990"
+                                            data-image-height="1272"
+                                            data-error-message-required="Banner image is required!"
+                                            data-error-message-imageDimensions="The banner image must be exactly 990 x 1272 pixels."
+                                            style="width: 94%;"
+                                            onchange="showPrimaryImagePreview(event)">
+                                        <button type="button" id="add-more-btn" class="btn btn-sm btn-dark d-flex align-items-center ml-1">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="image-preview" id="primary-image-preview" style="margin-top: 10px; display: none;">
+                                        <img id="primary-img" src="" alt="Primary Image Preview" style="max-width: 25%; height: auto;">
+                                    </div>
+                                    <small>Required Size: 990 x 1272 px.</small>
+                                </div>
+
+                                <div id="image-upload-container" style="display: none;">
+                                    <div class="row" id="image-upload-row">
+                                        <div class="col-md-6 image-upload-row">
+                                            <div class="form-group">
+                                                <div class="d-flex align-items-center flex-row">
+                                                    <input type="file" name="product_images[]" accept="image/*" class="form-control" onchange="previewImage(event)" />
+                                                    <button type="button" class="btn btn-sm btn-danger ml-1 remove-image">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="image-preview" style="margin-top: 10px; display: none;">
+                                                    <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <button type="button" id="add-more-images" class="btn btn-sm btn-dark d-flex align-items-center mb-3">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="product-description">Product Description <span class="text-danger">*</span></label>
+                                    <textarea class="form-control resizable-textarea" id="editor" name="product-description"></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue">Price</p>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <label>Cost Price <span class="text-danger">*</span></label>
+                                        <input type="number" name="cost-price" data-error-message-required="Enter Cost Price!" placeholder="Cost Price"
+                                            class="form-control validate-required">
+                                    </div>
+                                    <div class="col-md">
+                                        <label>Selling Price <span class="text-danger">*</span></label>
+                                        <input type="number" name="selling-price" data-error-message-required="Enter Selling Price!" placeholder="Selling Price"
+                                            class="form-control validate-required">
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label> MRP <span class="text-danger">*</span></label>
+                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="MRP"
+                                                class="form-control validate-required">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>SKU <span class="text-danger">*</span></label>
+                                            <input type="text" name="sku" placeholder="SKU" data-error-message-required="Enter Unique SKU!" class="form-control validate-required">
+                                            <div id="sku-error"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Barcode</label>
+                                            <input type="text" name="barcode" placeholder="Enter Barcode"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="end_date_and_time">Amazon Product Id</label>
+                                            <input type="text" name="amz_product_id" id="amz_product_id" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue">Categorization</p>
+                                <div class="row">
+                                    <!-- Tier-1 Dropdown -->
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tier-1 <span class="text-danger">*</span></label>
+                                            <select class="form-control validate-required" data-error-message-required="Enter Tier 1" name="tier-1" id="tier-1"
+                                                style="width: 100%; height: 38px;">
+                                                <option value="">Select</option>
+                                                <?php foreach ($tiers as $tier): ?>
+                                                    <option value="<?= $tier['tier_1_id'] ?>"><?= $tier['tier_name'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tier-2 Dropdown -->
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tier-2 <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="tier-2" id="tier-2"
+                                                style="width: 100%; height: 38px;" disabled>
+                                                <option value="">Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tier-3 Dropdown -->
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tier-3 <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="tier-3" id="tier-3"
+                                                style="width: 100%; height: 38px;" disabled>
+                                                <option value="">Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tier-4 <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="tier-4" id="tier-4"
+                                                style="width: 100%; height: 38px;" disabled>
+                                                <option value="">Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label>Size <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
+                                            <label>Size <span class="text-danger">*</span></label>
                                             <input class="form-control validate-required" data-error-message-required="Size is required!" name="product-size" type="text" placeholder="Size">
                                         </div>
                                     </div>
@@ -172,185 +331,51 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="validationTextarea" class="form-label">Short/Meta Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <textarea class="form-control validate-required resizable-textarea"
-                                        data-error-message-required="Meta Description is required!"
-                                        name="product-short-description"
-                                        placeholder="Required example textarea"
-                                        id="metaDescription"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="quillEditor" class="form-label">Product Description <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <div id="quillEditor" style="height: 300px; border: 1px solid #ccc;"></div>
-                                    <textarea class="form-control resizable-textarea" id="product-description" name="product-description" style="display: none;"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Primary Image <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <div class="dropzone-area">
-                                        <div class="file-upload-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload" width="24"
-                                                height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#D4DCE6" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" />
-                                                <path d="M9 15l3 -3l3 3" />
-                                                <path d="M12 12l0 9" />
-                                            </svg>
-                                        </div>
-                                        <input
-                                            type="file"
-                                            id="upload-file" name="product-image"
-                                            accept="image/*"
-                                            class="validate-required validate-file validate-fileType validate-imageDimensions"
-                                            data-image-width="990"
-                                            data-image-height="1272"
-                                            data-error-message-required="Banner image is required!"
-                                            data-error-message-imageDimensions="The banner image must be exactly 990 x 1272 pixels.">
-                                        <p class="file-info">No Files Selected</p>
-                                        <div class="image-preview" style="margin-top: 10px;"></div>
-                                    </div>
-                                    <div class="dropzone-description">
-                                        <span>
-                                            Supported formats: JPEG, JPG, PNG, WEBP
-                                        </span>
-                                        <span>
-                                            Required Size: 990 x 1272 px.
-                                        </span>
-                                        <span>
-                                            Max file size: 400kb
-                                        </span>
-                                    </div>
-                                </div>
-
                             </div>
 
+                            <!-- SEO Section -->
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Price</p>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <label>Cost Price <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                        <input type="number" name="cost-price" data-error-message-required="Enter Cost Price!" placeholder="Cost Price"
-                                            class="form-control validate-required">
+                                <p class="text-blue">
+                                    <span class="toggle-seo-content" style="cursor: pointer; display: flex; align-items: center;">
+                                        SEO
+                                    </span>
+                                </p>
+                                <div id="seo-content" class="seo-content">
+                                    <!-- URL Field -->
+                                    <div class="form-group">
+                                        <label>URL</label>
+                                        <input type="text" class="form-control" id="url" name="url" placeholder="Enter URL">
+                                        <span id="url-feedback" class="text-danger" style="display: none;">This URL is already in use.</span>
+                                        <span id="url-available" class="text-success" style="display: none;">This URL is available.</span>
                                     </div>
-                                    <div class="col-md">
-                                        <label>Selling Price <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                        <input type="number" name="selling-price" data-error-message-required="Enter Selling Price!" placeholder="Selling Price"
-                                            class="form-control validate-required">
+
+                                    <!-- Meta-Tag Field -->
+                                    <div class="form-group">
+                                        <label>Meta Title</label>
+                                        <input type="text" class="form-control" id="meta-tag" name="meta-tag" placeholder="Enter Meta Title">
                                     </div>
-                                    <div class="col-md">
-                                        <div class="form-group">
-                                            <label> MRP <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input type="number" name="compare-at-price" data-error-message-required="Enter Compare at Price!" placeholder="MRP"
-                                                class="form-control validate-required">
-                                        </div>
+
+                                    <!-- Meta-Description Field -->
+                                    <div class="form-group">
+                                        <label>Meta Description</label>
+                                        <textarea class="form-control resizable-textarea" id="meta-description" name="meta-description" placeholder="Enter Meta Description"></textarea>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>SKU <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input type="text" name="sku" placeholder="SKU" data-error-message-required="Enter Unique SKU!" class="form-control validate-required">
-                                            <div id="sku-error"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Barcode</label>
-                                            <input type="text" name="barcode" placeholder="Enter Barcode"
-                                                class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Inventory <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <input type="number" id="total-inventory" data-error-message-required="Inventory!" name="total_inventory"
-                                                placeholder="Total Inventory" class="form-control validate-required">
-                                            <small>Total Inventory</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Categorization</p>
-                                <div class="row">
-                                    <!-- Tier-1 Dropdown -->
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <label>Tier-1 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <select class="form-control validate-required" data-error-message-required="Enter Tier 1" name="tier-1" id="tier-1"
-                                                style="width: 100%; height: 38px;">
-                                                <option value="">Select</option>
-                                                <?php foreach ($tiers as $tier): ?>
-                                                    <option value="<?= $tier['tier_1_id'] ?>"><?= $tier['tier_name'] ?>
-                                                    </option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tier-2 Dropdown -->
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <label>Tier-2 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <select class="form-control" name="tier-2" id="tier-2"
-                                                style="width: 100%; height: 38px;" disabled>
-                                                <option value="">Select</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tier-3 Dropdown -->
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <label>Tier-3 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <select class="form-control" name="tier-3" id="tier-3"
-                                                style="width: 100%; height: 38px;" disabled>
-                                                <option value="">Select</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <label>Tier-4 <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                            <select class="form-control" name="tier-4" id="tier-4"
-                                                style="width: 100%; height: 38px;" disabled>
-                                                <option value="">Select</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Add Product Images</p>
-                                <div class="row" id="image-upload-container">
-                                    <div class="col-md-6 image-upload-row">
-                                        <div class="form-group">
-                                            <div class="d-flex align-items-center flex-column mb-3">
-                                                <input type="file" name="product_images[]" accept="image/*" class="form-control" data-preview-width="800" data-preview-height="auto" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <small>Formats: JPG, PNG, JPEG, Required Size: 990 x 1272 px.</small>
-                                <button type="button" id="add-more-images" class="btn btn-sm btn-dark d-flex align-items-center">
-                                    <i class="fa fa-plus mr-2"></i> Add
-                                </button>
                             </div>
 
                             <!-- FAQ Section -->
                             <div class="pd-20 card-box mb-30">
                                 <div class="form-group">
-                                    <label for="faq_section">Product FAQs</label>
-                                    <div id="faq-section">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="faq_section">Product FAQs</label>
+                                        <div id="toggleFaqSection" class="cursor-pointer">
+                                            <small>More</small>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ Section Content (Initially Hidden) -->
+                                    <div id="faq-section" class="my-4" style="display: none;">
                                         <div class="faq-item">
                                             <label>Question</label>
                                             <input type="text" name="faq_question[]" class="form-control" placeholder="Question">
@@ -358,7 +383,10 @@
                                             <textarea name="faq_answer[]" class="resizable-textarea form-control" placeholder="Answer"></textarea>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-outline-dark mt-2" id="add-faq-btn"><i class="fa-solid fa-plus"></i></button>
+
+                                    <!-- Button to Add More FAQ Items -->
+                                    <button type="button" class="btn btn-outline-dark btn-sm mt-2" id="add-faq-btn"><i class="fa-solid fa-plus"></i></button>
+
                                 </div>
                             </div>
 
@@ -408,36 +436,6 @@
                                 </div>
                             </div> -->
 
-                            <!-- SEO Section -->
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">
-                                    <span class="toggle-seo-content" style="cursor: pointer; display: flex; align-items: center;">
-                                        SEO
-                                    </span>
-                                </p>
-                                <div id="seo-content" class="seo-content">
-                                    <!-- URL Field -->
-                                    <div class="form-group">
-                                        <label>URL</label>
-                                        <input type="text" class="form-control" id="url" name="url" placeholder="Enter URL">
-                                        <span id="url-feedback" class="text-danger" style="display: none;">This URL is already in use.</span>
-                                        <span id="url-available" class="text-success" style="display: none;">This URL is available.</span>
-                                    </div>
-
-                                    <!-- Meta-Tag Field -->
-                                    <div class="form-group">
-                                        <label>Meta Title</label>
-                                        <input type="text" class="form-control" id="meta-tag" name="meta-tag" placeholder="Enter Meta Title">
-                                    </div>
-
-                                    <!-- Meta-Description Field -->
-                                    <div class="form-group">
-                                        <label>Meta Description</label>
-                                        <textarea class="form-control resizable-textarea" id="meta-description" name="meta-description" placeholder="Enter Meta Description"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- Google SERP Preview
                             <div class="pd-20 card-box mb-30 google-serp-preview">
                                 <p class="serp-title" id="serp-title-preview">Meta Title Preview</p>
@@ -449,19 +447,12 @@
 
                         <div class="col-sm">
                             <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Amazon</p>
-                                <div class="form-group">
-                                    <label for="end_date_and_time">Amazon Product Id</label>
-                                    <input type="text" name="amz_product_id" id="amz_product_id" class="form-control">
-                                </div>
-                            </div>
-                            <div class="pd-20 card-box mb-30">
                                 <p class="text-blue">Product Publishing</p>
 
                                 <div class="form-group">
-                                    <label>Product Status</label>
+                                    <label>Status</label>
                                     <select
-                                        class="custom-select2 form-control validate-required"
+                                        class="form-control validate-required"
                                         data-error-message-required="Please select a Product Status."
                                         name="product-status"
                                         id="product-status"
@@ -473,7 +464,7 @@
                                     <div class="invalid-feedback">invalid select</div>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="custom-control custom-checkbox mb-5">
                                         <input
                                             type="checkbox"
@@ -481,26 +472,6 @@
                                             id="customCheck1" />
                                         <label class="custom-control-label" for="customCheck1">Schedule</label>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="selectOption" class="form-label">Sales Channel
-                                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="Choose where the product is sold or promoted (e.g., Web, Apps, Instagram, Facebook)">
-                                            <i class="fa-solid fa-circle-question"></i>
-                                        </span>
-                                    </label>
-                                    <select id="sale-channel" class="validate-required form-control" data-error-message-required="Please select a Sales Channel." name="sales-channel" style="width: 100%; height: 38px">
-                                        <option value="online-store">Website</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Delist</label>
-                                    <select class="custom-select2 form-control" name="delist" style="width: 100%; height: 38px">
-                                        <option value="">Select</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no" selected>No</option>
-                                    </select>
                                 </div>
 
                                 <div id="schedule-options" class="Schedule-Main" style="display: none;">
@@ -524,50 +495,117 @@
                                             <option value="none">None</option>
                                         </select>
                                     </div>
+                                </div> -->
+
+                                <!-- More Section Toggle -->
+                                <div class="d-flex justify-content-end">
+                                    <div id="toggleMore" class="cursor-pointer">
+                                        <small>More</small>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
                                 </div>
+
+                                <!-- Hidden Elements (To be shown when 'More' is clicked) -->
+                                <div id="moreElements" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="selectOption" class="form-label">Sales Channel
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Choose where the product is sold or promoted (e.g., Web, Apps, Instagram, Facebook)">
+                                                <i class="fa-solid fa-circle-question"></i>
+                                            </span>
+                                        </label>
+                                        <select id="sale-channel" class="validate-required form-control" data-error-message-required="Please select a Sales Channel."
+                                            name="sales-channel" style="width: 100%; height: 38px">
+                                            <option value="online-store">Website</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Delist</label>
+                                        <select class="form-control" name="delist" style="width: 100%; height: 38px">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no" selected>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="pd-20 card-box mb-30">
                                 <p class="text-blue">Dimensions</p>
 
-                                <!-- length Number Field -->
-                                <div class="form-group mr-2">
-                                    <label for="length">Enter Length (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <input type="number" name="length" id="length" value=""
-                                        class="form-control validate-required"
-                                        data-error-message-required="Enter length.">
+                                <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
+                                    <div class="form-group mr-2" style="flex: 1;">
+                                        <div class="form-group mr-2">
+                                            <label for="length">Enter Length (cm) <span class="text-danger">*</span></label>
+                                            <input type="number" name="length" id="length" value=""
+                                                class="form-control validate-required"
+                                                data-error-message-required="Enter length.">
+                                        </div>
+                                        <!-- breadth Number Field -->
+                                        <div class="form-group mr-2">
+                                            <label for="breadth">Enter Breadth (cm) <span class="text-danger">*</span></label>
+                                            <input type="number" name="breadth" id="breadth" value=""
+                                                class="form-control validate-required"
+                                                data-error-message-required="Enter breadth.">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mr-2" style="flex: 1;">
+                                        <!-- height Number Field -->
+                                        <div class="form-group mr-2">
+                                            <label for="height">Enter Height (cm) <span class="text-danger">*</span></label>
+                                            <input type="number" name="height" id="height" value=""
+                                                class="form-control validate-required"
+                                                data-error-message-required="Enter height.">
+                                        </div>
+                                        <!-- Weight Number Field -->
+                                        <div class="form-group mr-2">
+                                            <label for="weight">Enter Weight (Kg) <span class="text-danger">*</span></label>
+                                            <input type="number" name="weight" id="weight" value=""
+                                                class="form-control validate-required"
+                                                data-error-message-required="Enter Weight.">
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- breadth Number Field -->
-                                <div class="form-group mr-2">
-                                    <label for="breadth">Enter Breadth (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <input type="number" name="breadth" id="breadth" value=""
-                                        class="form-control validate-required"
-                                        data-error-message-required="Enter breadth.">
-                                </div>
-                                <!-- height Number Field -->
-                                <div class="form-group mr-2">
-                                    <label for="height">Enter Height (cm) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <input type="number" name="height" id="height" value=""
-                                        class="form-control validate-required"
-                                        data-error-message-required="Enter height.">
-                                </div>
-                                <!-- Weight Number Field -->
-                                <div class="form-group mr-2">
-                                    <label for="weight">Enter Weight (Kg) <i class="fa-solid fa-star-of-life" style="color: #f00000; font-size: 7px;"></i></label>
-                                    <input type="number" name="weight" id="weight" value=""
-                                        class="form-control validate-required"
-                                        data-error-message-required="Enter Weight.">
-                                </div>
-
                             </div>
 
-                            <div class="">
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Product Features</p>
+                            <div class="pd-20 card-box mb-30">
+                                <p class="text-blue"> Product Highlights </p>
+                                <div class="form-group">
+                                    <label>Add Tags</label>
+                                    <div class="d-flex align-items-center">
+                                        <input type="text" id="tags-input" name="product-tags[]" class="form-control" placeholder="Type tags" style="width: 80%">
+                                        <button type="button" class="btn btn-outline-dark btn-sm mx-1" data-toggle="modal" data-target="#multiSelectProductModal">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center">
+                                        <input type="text" class="form-control" name="product-bullet-points" placeholder="Add Bullet Points" />
+                                        <div>
+                                            <button class="btn btn-outline-dark btn-sm mx-1" id="add-bullet-point"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div id="bullet-points-container"></div>
+                                    <input type="hidden" name="bullet_points_json" id="bullet_points_json" />
+                                </div>
+                            </div>
+
+                            <div class="pd-20 card-box mb-30">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <p class="text-blue">Features</p>
+                                    <div id="toggleFeatures" class="cursor-pointer">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                </div>
+
+                                <div id="features-section" style="display: none;">
                                     <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
                                         <div class="form-group mr-2" style="flex: 1;">
                                             <label for="gift_wrap" class="form-label">Gift Wrap <span><i class="fa-solid fa-gift"></i></span></label>
-                                            <select name="gift_wrap" id="gift_wrap" name="gift_wrap" class="form-control" style="width: 100%; height: 38px;">
+                                            <select name="gift_wrap" id="gift_wrap" class="form-control" style="width: 100%; height: 38px;">
                                                 <option value="">Select</option>
                                                 <option value="yes">Yes</option>
                                                 <option value="no" selected>No</option>
@@ -589,7 +627,7 @@
                                                     <i class="fa-solid fa-circle-question"></i>
                                                 </span>
                                             </label>
-                                            <input type="text" name="label" placeholder="Label" class="form-control" name="product-label" style="width: 100%; height: 38px;">
+                                            <input type="text" name="label" placeholder="Label" class="form-control" style="width: 100%; height: 38px;">
                                         </div>
                                         <div class="form-group" id="label-color-field" style="display:none; flex: 1;">
                                             <label for="label_color" class="form-label">Label Color
@@ -600,66 +638,23 @@
                                             <input type="color" name="label_color" id="label_color" class="form-control" value="FFCF00" style="width: 100%; height: 38px;">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="pd-20 card-box mb-30">
-                                <p class="text-blue">Preorder</p>
-                                <div class="form-group">
-                                    <label>Preorder tag</label>
-                                    <select class="custom-select2 form-control validate-required" id="preorder-tag" name="preorder-tag"
-                                        data-error-message-required="Please select a Preorder Tag."
-                                        style="width: 100%; height: 38px">
-                                        <option value="">Select</option>
-                                        <option value="yes">Yes</option>
-                                        <option selected value="no">No</option>
-                                    </select>
-                                </div>
-                                <div class="form-group" id="preorder-date-container" style="display: none;">
-                                    <label>Preorder Date</label>
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        name="preorder_date"
-                                        id="preorder-date"
-                                        data-conditional-field="#preorder-tag"
-                                        data-conditional-value="yes"
-                                        data-error-message-required="Preorder Date is required."/>
-                                </div>
-                            </div>
-
-                            <div class="pd-20 card-box mb-30">
-                                <div class="form-group">
-                                    <p class="text-blue">Bullet Points</p>
-                                    <div class="mb-20">
-                                        <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" />
+                                    <div class="form-group">
+                                        <label>Preorder tag</label>
+                                        <select class="custom-select2 form-control validate-required" id="preorder-tag" name="preorder-tag"
+                                            data-error-message-required="Please select a Preorder Tag." style="width: 100%; height: 38px">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option selected value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="preorder-date-container" style="display: none;">
+                                        <label>Preorder Date</label>
+                                        <input type="date" class="form-control" name="preorder_date" id="preorder-date" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="pd-20 card-box mb-30">
-                                <div class="form-group">
-                                    <label>Add Tags</label>
-                                    <div class="input-group">
-                                        <?php if (!empty($tags)): ?>
-                                            <select class="custom-select2 custom-select-products form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
-                                                <optgroup label="Available Products">
-                                                    <?php foreach ($tags as $tag): ?>
-                                                        <option value="<?= esc($tag['tag_value']) ?>"><?= esc($tag['tag_name']) ?></option>
-                                                    <?php endforeach; ?>
-                                                </optgroup>
-                                            </select>
-                                        <?php else: ?>
-                                            <p class="text-danger">No tags available</p>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </form>
@@ -954,36 +949,61 @@
         }
     });
 </script>
+
 <script>
+    // Function to preview image before upload
+    function previewImage(event) {
+        const file = event.target.files[0];
+        const previewDiv = event.target.closest(".form-group").querySelector(".image-preview");
+        const previewImg = previewDiv.querySelector("img");
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Show the preview image
+                previewImg.src = e.target.result;
+                previewDiv.style.display = 'block'; // Show preview
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         const addButton = document.getElementById("add-more-images");
-        const container = document.getElementById("image-upload-container");
+        const imageUploadRow = document.getElementById("image-upload-row");
 
+        // Event listener for adding new image input fields
         addButton.addEventListener("click", function() {
-            // Create a new row for image upload
+            // Create a new row for image upload inside the existing row
             const newRow = document.createElement("div");
             newRow.classList.add("col-md-6", "image-upload-row");
 
             newRow.innerHTML = `
                 <div class="form-group">
-                    <div class="d-flex align-items-center mb-3">
-                        <input type="file" name="product_images[]" accept="image/*" class="form-control" data-preview-width="800" data-preview-height="auto"/>
+                    <div class="d-flex align-items-center flex-row mb-3">
+                        <input type="file" name="product_images[]" accept="image/*" class="form-control" onchange="previewImage(event)" />
+                        <!-- Minus button for removing the image field -->
                         <button type="button" class="btn btn-sm btn-danger ml-2 remove-image">
-                            <i class="fa fa-times"></i>
+                            <i class="fa fa-minus"></i>
                         </button>
+                    </div>
+                    <div class="image-preview" style="margin-top: 10px; display: none;">
+                        <img src="" alt="Image Preview" class="preview-img" style="width: 50%; height: auto;" />
                     </div>
                 </div>
             `;
 
-            container.appendChild(newRow);
+            // Append the new row inside the #image-upload-row container
+            imageUploadRow.appendChild(newRow);
 
-            // Add event listener to the remove button
+            // Add event listener to the remove button of the new row
             newRow.querySelector(".remove-image").addEventListener("click", function() {
-                container.removeChild(newRow);
+                imageUploadRow.removeChild(newRow);
             });
         });
     });
 </script>
+
 <script>
     $(document).ready(function() {
         // Hide or show the preorder date field based on the dropdown selection
@@ -1078,42 +1098,22 @@
         addFaqBtn.addEventListener('click', function() {
             const newFaqItem = document.createElement('div');
             newFaqItem.classList.add('faq-item');
+            newFaqItem.classList.add('my-4');
             newFaqItem.innerHTML = `
                 <label>FAQ #${faqCount}</label>
                 <input type="text" name="faq_question[]" class="form-control" placeholder="Question" required>
                 <label>Answer</label>
                 <textarea name="faq_answer[]" class="resizable-textarea form-control" placeholder="Answer" required></textarea>
-                `;
+                <!-- Minus Button to Remove FAQ -->
+                <button type="button" class="btn btn-outline-danger btn-sm mt-2 remove-faq"><i class="fa-solid fa-minus"></i></button>
+            `;
             faqSection.appendChild(newFaqItem);
             faqCount++;
-        });
 
-        // Variant Section Script
-        const addVariantBtn = document.getElementById('add-variant-btn');
-        const variantSection = document.getElementById('variant-section');
-        let variantCount = 1;
-
-        addVariantBtn.addEventListener('click', function() {
-            const newVariantItem = document.createElement('div');
-            newVariantItem.classList.add('variant-item');
-            newVariantItem.innerHTML = `
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Variant Name</label>
-                        <input type="text" name="variant_name[]" class="form-control" placeholder="Variant Name">
-                    </div>
-                    <div class="col-md-3">
-                        <label>Price</label>
-                        <input type="number" name="variant_price[]" class="form-control" placeholder="Price">
-                    </div>
-                    <div class="col-md-3">
-                        <label>SKU</label>
-                        <input type="number" name="product_sku[]" class="form-control" placeholder="SKU">
-                    </div>
-                </div>
-                `;
-            variantSection.appendChild(newVariantItem);
-            variantCount++;
+            // Add event listener to the remove icon for each new FAQ
+            newFaqItem.querySelector('.remove-faq').addEventListener('click', function() {
+                newFaqItem.remove(); // Remove the FAQ item when clicked
+            });
         });
     });
 </script>
@@ -1188,5 +1188,139 @@
                 $('#includesSection').fadeOut();
             }
         });
+    });
+</script>
+
+
+<script>
+    // Global function to show/hide elements based on a trigger
+    function toggleVisibility(triggerSelector, targetSelector) {
+        // Get the trigger and target elements
+        const trigger = document.querySelector(triggerSelector);
+        const target = document.querySelector(targetSelector);
+
+        // Add click event to toggle visibility
+        trigger.addEventListener('click', function() {
+            // Toggle visibility
+            if (target.style.display === 'none' || target.style.display === '') {
+                target.style.display = 'block';
+                trigger.querySelector('i').classList.remove('fa-chevron-down');
+                trigger.querySelector('i').classList.add('fa-chevron-up');
+            } else {
+                target.style.display = 'none';
+                trigger.querySelector('i').classList.remove('fa-chevron-up');
+                trigger.querySelector('i').classList.add('fa-chevron-down');
+            }
+        });
+    }
+
+    // Call the function to toggle "More" section visibility
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleVisibility('#toggleMore', '#moreElements');
+    });
+
+    // Initialize the FAQ Section Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleVisibility('#toggleFaqSection', '#faq-section');
+    });
+
+    // Initialize toggle for the "Features" section
+    toggleVisibility('#toggleFeatures', '#features-section');
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Tagify on the input element
+        var input = document.getElementById('tags-input');
+
+        // Initialize Tagify on the input
+        var tagify = new Tagify(input, {
+            whitelist: <?php echo json_encode(array_column($tags, 'tag_value')); ?>, // Pre-fill available tags from PHP
+            enforceWhitelist: true, // Only allow tags from the whitelist
+            maxTags: 10, // Max number of tags allowed
+            dropdown: {
+                enabled: 0, // Disable the dropdown (this can be set to 1 for suggestions)
+            }
+        });
+
+        // Optionally, if you need to handle tag selection changes
+        tagify.on('add', function(e) {
+            console.log("Tag added:", e.detail.data.value);
+        });
+
+        tagify.on('remove', function(e) {
+            console.log("Tag removed:", e.detail.data.value);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addBulletPointBtn = document.getElementById('add-bullet-point');
+        const bulletPointsContainer = document.getElementById('bullet-points-container');
+        const hiddenInput = document.getElementById('bullet_points_json');
+
+        let bulletPoints = [];
+
+        addBulletPointBtn.addEventListener('click', function() {
+            const newBulletPoint = document.createElement('div');
+            newBulletPoint.classList.add('d-flex', 'mb-2', 'align-items-center', 'my-2');
+
+            newBulletPoint.innerHTML = `
+                <input type="text" class="form-control" name="product-bullet-points[]" placeholder="Add Bullet Point"/>
+                <div>
+                    <button class="btn btn-outline-dark btn-sm remove-bullet-point mx-1">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            `;
+
+            bulletPointsContainer.appendChild(newBulletPoint);
+
+            const removeButton = newBulletPoint.querySelector('.remove-bullet-point');
+            removeButton.addEventListener('click', function() {
+                newBulletPoint.remove();
+                updateBulletPoints();
+            });
+
+            const bulletPointInput = newBulletPoint.querySelector('input');
+            bulletPointInput.addEventListener('input', function() {
+                updateBulletPoints();
+            });
+
+            updateBulletPoints();
+        });
+
+        function updateBulletPoints() {
+            const bulletPointInputs = document.querySelectorAll('input[name="product-bullet-points[]"]');
+            bulletPoints = Array.from(bulletPointInputs).map(input => input.value);
+
+            hiddenInput.value = JSON.stringify(bulletPoints);
+        }
+    });
+</script>
+
+<script>
+    // Function to show the preview of the Primary Image
+    function showPrimaryImagePreview(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById('primary-image-preview');
+        const primaryImage = document.getElementById('primary-img');
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Show the preview image
+                primaryImage.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    // Function to toggle the visibility of the additional image upload section
+    document.getElementById('add-more-btn').addEventListener('click', function() {
+        const container = document.getElementById('image-upload-container');
+        container.style.display = (container.style.display === 'none' || container.style.display === '') ? 'block' : 'none';
     });
 </script>

@@ -6,7 +6,7 @@ use App\Models\Products_model;
 use App\Models\RelatedProductModel;
 use CodeIgniter\Controller;
 
-class RelatedproductController extends Controller
+class RelatedproductController extends BaseController
 {
     protected $permissionsModel;
     protected $model;

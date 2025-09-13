@@ -148,7 +148,7 @@
                                         Create Shipment
                                         <span id="loader" class="loader" style="display: none;"></span>
                                     </button>
-                                    
+
                                     <button type="button" class="btn btn-success mr-2" id="saveChanges">
                                         Save
                                         <span id="saveLoader" class="loader" style="display: none;"></span>
@@ -239,39 +239,39 @@
                                                             <option value="single" <?= ($shipment['no_of_packages'] <= 1) ? 'selected' : '' ?>>Single-Package</option>
                                                             <option value="multi" <?= ($shipment['no_of_packages'] > 1) ? 'selected' : '' ?>>Multi-Package</option>
                                                         </select>
-                                                        <input type="number" 
-                                                            class="form-control num-packages" 
-                                                            name="num_packages[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            placeholder="No. of Packages" 
-                                                            min="1" 
-                                                            value="<?= $shipment['no_of_packages'] > 1 ? $shipment['no_of_packages'] : '' ?>" 
-                                                            style="<?= $shipment['no_of_packages'] > 1 ? '' : 'display: none;' ?>" 
+                                                        <input type="number"
+                                                            class="form-control num-packages"
+                                                            name="num_packages[<?= $shipment['order_shipment_id'] ?>]"
+                                                            placeholder="No. of Packages"
+                                                            min="1"
+                                                            value="<?= $shipment['no_of_packages'] > 1 ? $shipment['no_of_packages'] : '' ?>"
+                                                            style="<?= $shipment['no_of_packages'] > 1 ? '' : 'display: none;' ?>"
                                                             data-shipment-id="<?= $shipment['order_shipment_id'] ?>">
                                                     </div>
                                                 </td>
                                                 <td id="dimensions-length-<?= $shipment['order_shipment_id'] ?>">
-                                                    <?php 
+                                                    <?php
                                                     // Ensure $shipment['length'] is an array
                                                     $lengths = is_array($shipment['length']) ? $shipment['length'] : json_decode($shipment['length'], true);
 
                                                     if ($shipment['no_of_packages'] > 1 && is_array($lengths)):
                                                         foreach ($lengths as $index => $length): ?>
-                                                            <input type="number" 
-                                                                class="form-control dimension-input" 
-                                                                name="length[<?= $shipment['order_shipment_id'] ?>][]" 
-                                                                value="<?= $length ?>" 
-                                                                placeholder="Length (cm)" 
-                                                                min="0" 
-                                                                step="0.1" 
+                                                            <input type="number"
+                                                                class="form-control dimension-input"
+                                                                name="length[<?= $shipment['order_shipment_id'] ?>][]"
+                                                                value="<?= $length ?>"
+                                                                placeholder="Length (cm)"
+                                                                min="0"
+                                                                step="0.1"
                                                                 style="margin-bottom: 5px;">
-                                                        <?php endforeach; 
+                                                        <?php endforeach;
                                                     else: ?>
-                                                        <input type="number" 
-                                                            class="form-control dimension-input" 
-                                                            name="length[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            value="<?= $shipment['length'] ?>" 
-                                                            placeholder="Length (cm)" 
-                                                            min="0" 
+                                                        <input type="number"
+                                                            class="form-control dimension-input"
+                                                            name="length[<?= $shipment['order_shipment_id'] ?>]"
+                                                            value="<?= $shipment['length'] ?>"
+                                                            placeholder="Length (cm)"
+                                                            min="0"
                                                             step="0.1">
                                                     <?php endif; ?>
                                                 </td>
@@ -282,22 +282,22 @@
 
                                                     if ($shipment['no_of_packages'] > 1 && is_array($breadths)):
                                                         foreach ($breadths as $index => $breadth): ?>
-                                                            <input type="number" 
-                                                                class="form-control dimension-input" 
-                                                                name="breadth[<?= $shipment['order_shipment_id'] ?>][]" 
-                                                                value="<?= $breadth ?>" 
-                                                                placeholder="Breadth (cm)" 
-                                                                min="0" 
-                                                                step="0.1" 
+                                                            <input type="number"
+                                                                class="form-control dimension-input"
+                                                                name="breadth[<?= $shipment['order_shipment_id'] ?>][]"
+                                                                value="<?= $breadth ?>"
+                                                                placeholder="Breadth (cm)"
+                                                                min="0"
+                                                                step="0.1"
                                                                 style="margin-bottom: 5px;">
-                                                        <?php endforeach; 
+                                                        <?php endforeach;
                                                     else: ?>
-                                                        <input type="number" 
-                                                            class="form-control dimension-input" 
-                                                            name="breadth[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            value="<?= $shipment['breadth'] ?>" 
-                                                            placeholder="Breadth (cm)" 
-                                                            min="0" 
+                                                        <input type="number"
+                                                            class="form-control dimension-input"
+                                                            name="breadth[<?= $shipment['order_shipment_id'] ?>]"
+                                                            value="<?= $shipment['breadth'] ?>"
+                                                            placeholder="Breadth (cm)"
+                                                            min="0"
                                                             step="0.1">
                                                     <?php endif; ?>
                                                 </td>
@@ -309,22 +309,22 @@
 
                                                     if ($shipment['no_of_packages'] > 1 && is_array($heights)):
                                                         foreach ($heights as $index => $height): ?>
-                                                            <input type="number" 
-                                                                class="form-control dimension-input" 
-                                                                name="height[<?= $shipment['order_shipment_id'] ?>][]" 
-                                                                value="<?= $height ?>" 
-                                                                placeholder="Height (cm)" 
-                                                                min="0" 
-                                                                step="0.1" 
+                                                            <input type="number"
+                                                                class="form-control dimension-input"
+                                                                name="height[<?= $shipment['order_shipment_id'] ?>][]"
+                                                                value="<?= $height ?>"
+                                                                placeholder="Height (cm)"
+                                                                min="0"
+                                                                step="0.1"
                                                                 style="margin-bottom: 5px;">
-                                                        <?php endforeach; 
+                                                        <?php endforeach;
                                                     else: ?>
-                                                        <input type="number" 
-                                                            class="form-control dimension-input" 
-                                                            name="height[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            value="<?= $shipment['height'] ?>" 
-                                                            placeholder="Height (cm)" 
-                                                            min="0" 
+                                                        <input type="number"
+                                                            class="form-control dimension-input"
+                                                            name="height[<?= $shipment['order_shipment_id'] ?>]"
+                                                            value="<?= $shipment['height'] ?>"
+                                                            placeholder="Height (cm)"
+                                                            min="0"
                                                             step="0.1">
                                                     <?php endif; ?>
                                                 </td>
@@ -336,22 +336,22 @@
 
                                                     if ($shipment['no_of_packages'] > 1 && is_array($weights)):
                                                         foreach ($weights as $index => $weight): ?>
-                                                            <input type="number" 
-                                                                class="form-control dimension-input" 
-                                                                name="weight[<?= $shipment['order_shipment_id'] ?>][]" 
-                                                                value="<?= $weight ?>" 
-                                                                placeholder="Weight (kg)" 
-                                                                min="0" 
-                                                                step="0.1" 
+                                                            <input type="number"
+                                                                class="form-control dimension-input"
+                                                                name="weight[<?= $shipment['order_shipment_id'] ?>][]"
+                                                                value="<?= $weight ?>"
+                                                                placeholder="Weight (kg)"
+                                                                min="0"
+                                                                step="0.1"
                                                                 style="margin-bottom: 5px;">
-                                                        <?php endforeach; 
+                                                        <?php endforeach;
                                                     else: ?>
-                                                        <input type="number" 
-                                                            class="form-control dimension-input" 
-                                                            name="weight[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            value="<?= $shipment['weight'] ?>" 
-                                                            placeholder="Weight (kg)" 
-                                                            min="0" 
+                                                        <input type="number"
+                                                            class="form-control dimension-input"
+                                                            name="weight[<?= $shipment['order_shipment_id'] ?>]"
+                                                            value="<?= $shipment['weight'] ?>"
+                                                            placeholder="Weight (kg)"
+                                                            min="0"
                                                             step="0.1">
                                                     <?php endif; ?>
                                                 </td>
@@ -359,7 +359,7 @@
 
                                                 <td>
                                                     <select name="ProductCode[<?= $shipment['order_shipment_id'] ?>]" class="form-control bulk-edit" data-field="ProductCode">
-                                                        
+
                                                         <option value="E" <?= ($shipment['ProductCode'] == 'E') ? 'selected' : '' ?>>Ground</option>
                                                         <option value="A" <?= ($shipment['ProductCode'] == 'A') ? 'selected' : '' ?>>Air</option>
                                                     </select>
@@ -371,13 +371,13 @@
                                                             <option value="C" <?= ($shipment['SubProductCode'] === 'C') ? 'selected' : '' ?>>COD</option>
                                                         </select>
 
-                                                        <input type="number" 
-                                                            class="form-control collectable-amount" 
-                                                            name="collectable_amount[<?= $shipment['order_shipment_id'] ?>]" 
-                                                            placeholder="Collectable Amount" 
-                                                             
-                                                            value="<?= $shipment['SubProductCode'] === 'C' ? $shipment['collectable_amount'] : '' ?>" 
-                                                            style="<?= $shipment['SubProductCode'] === 'C' ? '' : 'display: none;' ?>" 
+                                                        <input type="number"
+                                                            class="form-control collectable-amount"
+                                                            name="collectable_amount[<?= $shipment['order_shipment_id'] ?>]"
+                                                            placeholder="Collectable Amount"
+
+                                                            value="<?= $shipment['SubProductCode'] === 'C' ? $shipment['collectable_amount'] : '' ?>"
+                                                            style="<?= $shipment['SubProductCode'] === 'C' ? '' : 'display: none;' ?>"
                                                             data-shipment-id="<?= $shipment['order_shipment_id'] ?>">
                                                     </div>
                                                 </td>
@@ -1060,7 +1060,7 @@
         function checkSelectedOrdersForNullValues() {
             let allFieldsFilled = true;
 
-            $('.Bluedartrequest-ordercheckbox:checked').each(function () {
+            $('.Bluedartrequest-ordercheckbox:checked').each(function() {
                 const shipmentId = $(this).val();
                 const packageType = $(`select[name="package_type[${shipmentId}]"]`).val();
                 const numPackages = parseInt($(`input[name="num_packages[${shipmentId}]"]`).val()) || 1;
@@ -1098,7 +1098,7 @@
 
             return allFieldsFilled;
         }
-        
+
 
         // Function to update the "Create Selected Shipment Order" button state
         function updateCreateButtonState() {
@@ -1108,12 +1108,12 @@
 
 
         // Event listener for checkbox changes
-        $(document).on('change', '.Bluedartrequest-ordercheckbox', function () {
+        $(document).on('change', '.Bluedartrequest-ordercheckbox', function() {
             updateCreateButtonState();
         });
 
         // Event listener for input field changes (for dynamically added fields)
-        $(document).on('input', '.bulk-edit, .dimension-input, .num-packages', function () {
+        $(document).on('input', '.bulk-edit, .dimension-input, .num-packages', function() {
             updateCreateButtonState();
         });
 
@@ -1122,76 +1122,84 @@
 
 
         // Modify the existing saveChanges function
-        $('#saveChanges').click(function () {
-        $('#saveLoader').show();
-        console.log('Saving changes...');
+        $('#saveChanges').click(function() {
+            $('#saveLoader').show();
+            console.log('Saving changes...');
 
-        var shipments = {};
-        $('.Bluedartrequest-ordercheckbox').each(function () {
-            var shipmentId = $(this).val();
-            var packageType = $(`select[name="package_type[${shipmentId}]"]`).val();
-            var noOfPackages = $(`input[name="num_packages[${shipmentId}]"]`).val() || 1;
+            var shipments = {};
+            $('.Bluedartrequest-ordercheckbox').each(function() {
+                var shipmentId = $(this).val();
+                var packageType = $(`select[name="package_type[${shipmentId}]"]`).val();
+                var noOfPackages = $(`input[name="num_packages[${shipmentId}]"]`).val() || 1;
 
-            if (packageType === 'multi') {
-                // Multi-package: Collect dimensions as arrays
-                shipments[shipmentId] = {
-                    pickup_location: $(`select[name="pickup_location[${shipmentId}]"]`).val(),
-                    weight: $(`input[name="weight[${shipmentId}][]"]`).map(function () { return $(this).val(); }).get(),
-                    length: $(`input[name="length[${shipmentId}][]"]`).map(function () { return $(this).val(); }).get(),
-                    breadth: $(`input[name="breadth[${shipmentId}][]"]`).map(function () { return $(this).val(); }).get(),
-                    height: $(`input[name="height[${shipmentId}][]"]`).map(function () { return $(this).val(); }).get(),
-                    ProductCode: $(`select[name="ProductCode[${shipmentId}]"]`).val(),
-                    SubProductCode: $(`select[name="SubProductCode[${shipmentId}]"]`).val(),
-                    billing_address: $(`input[name="billing_address[${shipmentId}]"]`).val(),
-                    billing_pincode: $(`input[name="billing_pincode[${shipmentId}]"]`).val(),
-                    PickupDate: $(`input[name="PickupDate[${shipmentId}]"]`).val(),
-                    collectable_amount: $(`input[name="collectable_amount[${shipmentId}]"]`).val(),
-                    ProductType: $(`select[name="ProductType[${shipmentId}]"]`).val(),
-                    no_of_packages: noOfPackages
-                };
-            } else {
-                // Single-package: Collect single values
-                shipments[shipmentId] = {
-                    pickup_location: $(`select[name="pickup_location[${shipmentId}]"]`).val(),
-                    weight: $(`input[name="weight[${shipmentId}]"]`).val(),
-                    length: $(`input[name="length[${shipmentId}]"]`).val(),
-                    breadth: $(`input[name="breadth[${shipmentId}]"]`).val(),
-                    height: $(`input[name="height[${shipmentId}]"]`).val(),
-                    ProductCode: $(`select[name="ProductCode[${shipmentId}]"]`).val(),
-                    SubProductCode: $(`select[name="SubProductCode[${shipmentId}]"]`).val(),
-                    billing_address: $(`input[name="billing_address[${shipmentId}]"]`).val(),
-                    billing_pincode: $(`input[name="billing_pincode[${shipmentId}]"]`).val(),
-                    PickupDate: $(`input[name="PickupDate[${shipmentId}]"]`).val(),
-                    collectable_amount: $(`input[name="collectable_amount[${shipmentId}]"]`).val(),
-                    ProductType: $(`select[name="ProductType[${shipmentId}]"]`).val(),
-                    no_of_packages: noOfPackages
-                };
-            }
-        });
-
-        $.ajax({
-            url: '<?= base_url('bluedart_management/saveChanges') ?>',
-            method: 'POST',
-            data: {
-                shipments: shipments
-            },
-            success: function (response) {
-                $('#saveLoader').hide();
-                console.log('Save changes response:', response);
-                if (response.status === 'success') {
-                    alert('Changes saved successfully');
-                    location.reload(); // Refresh the page to get updated data
+                if (packageType === 'multi') {
+                    // Multi-package: Collect dimensions as arrays
+                    shipments[shipmentId] = {
+                        pickup_location: $(`select[name="pickup_location[${shipmentId}]"]`).val(),
+                        weight: $(`input[name="weight[${shipmentId}][]"]`).map(function() {
+                            return $(this).val();
+                        }).get(),
+                        length: $(`input[name="length[${shipmentId}][]"]`).map(function() {
+                            return $(this).val();
+                        }).get(),
+                        breadth: $(`input[name="breadth[${shipmentId}][]"]`).map(function() {
+                            return $(this).val();
+                        }).get(),
+                        height: $(`input[name="height[${shipmentId}][]"]`).map(function() {
+                            return $(this).val();
+                        }).get(),
+                        ProductCode: $(`select[name="ProductCode[${shipmentId}]"]`).val(),
+                        SubProductCode: $(`select[name="SubProductCode[${shipmentId}]"]`).val(),
+                        billing_address: $(`input[name="billing_address[${shipmentId}]"]`).val(),
+                        billing_pincode: $(`input[name="billing_pincode[${shipmentId}]"]`).val(),
+                        PickupDate: $(`input[name="PickupDate[${shipmentId}]"]`).val(),
+                        collectable_amount: $(`input[name="collectable_amount[${shipmentId}]"]`).val(),
+                        ProductType: $(`select[name="ProductType[${shipmentId}]"]`).val(),
+                        no_of_packages: noOfPackages
+                    };
                 } else {
-                    alert('Error: ' + response.message);
+                    // Single-package: Collect single values
+                    shipments[shipmentId] = {
+                        pickup_location: $(`select[name="pickup_location[${shipmentId}]"]`).val(),
+                        weight: $(`input[name="weight[${shipmentId}]"]`).val(),
+                        length: $(`input[name="length[${shipmentId}]"]`).val(),
+                        breadth: $(`input[name="breadth[${shipmentId}]"]`).val(),
+                        height: $(`input[name="height[${shipmentId}]"]`).val(),
+                        ProductCode: $(`select[name="ProductCode[${shipmentId}]"]`).val(),
+                        SubProductCode: $(`select[name="SubProductCode[${shipmentId}]"]`).val(),
+                        billing_address: $(`input[name="billing_address[${shipmentId}]"]`).val(),
+                        billing_pincode: $(`input[name="billing_pincode[${shipmentId}]"]`).val(),
+                        PickupDate: $(`input[name="PickupDate[${shipmentId}]"]`).val(),
+                        collectable_amount: $(`input[name="collectable_amount[${shipmentId}]"]`).val(),
+                        ProductType: $(`select[name="ProductType[${shipmentId}]"]`).val(),
+                        no_of_packages: noOfPackages
+                    };
                 }
-            },
-            error: function (xhr) {
-                $('#saveLoader').hide();
-                console.error('AJAX Error:', xhr.responseText);
-                alert('An error occurred while saving changes');
-            }
+            });
+
+            $.ajax({
+                url: '<?= base_url('bluedart_management/saveChanges') ?>',
+                method: 'POST',
+                data: {
+                    shipments: shipments
+                },
+                success: function(response) {
+                    $('#saveLoader').hide();
+                    console.log('Save changes response:', response);
+                    if (response.status === 'success') {
+                        alert('Changes saved successfully');
+                        location.reload(); // Refresh the page to get updated data
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function(xhr) {
+                    $('#saveLoader').hide();
+                    console.error('AJAX Error:', xhr.responseText);
+                    alert('An error occurred while saving changes');
+                }
+            });
         });
-    });
 
 
         // Existing code for createSelectedShipments
@@ -1200,6 +1208,9 @@
             $('.Bluedartrequest-ordercheckbox:checked').each(function() {
                 selectedShipments.push($(this).val());
             });
+
+            // 👇 Add this line to debug
+            console.log("Selected shipment IDs:", selectedShipments);
 
             if (selectedShipments.length === 0) {
                 alert('Please select at least one shipment to generate a Waybill.');
@@ -1234,9 +1245,9 @@
         });
     });
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         // Handle Package Type Dropdown Change
-        $(document).on('change', '.package-type-dropdown', function () {
+        $(document).on('change', '.package-type-dropdown', function() {
             const shipmentId = $(this).data('shipment-id');
             const packageType = $(this).val();
 
@@ -1250,7 +1261,7 @@
         });
 
         // Handle Number of Packages Change
-        $(document).on('input', '.num-packages', function () {
+        $(document).on('input', '.num-packages', function() {
             const shipmentId = $(this).data('shipment-id');
             const numPackages = parseInt($(this).val()) || 1;
             generateMultiPackageFields(shipmentId, numPackages);
@@ -1293,7 +1304,7 @@
         }
 
         // Handle Payment Method Dropdown Change
-        $(document).on('change', '.payment-method-dropdown', function () {
+        $(document).on('change', '.payment-method-dropdown', function() {
             const shipmentId = $(this).data('shipment-id');
             const paymentMethod = $(this).val();
             const totalField = $(`input[name="total[${shipmentId}]"]`); // Ensure 'total' input exists
@@ -1317,7 +1328,7 @@
         });
 
         // Recalculate collectable amount on total input change for COD
-        $(document).on('input', 'input[name^="total"]', function () {
+        $(document).on('input', 'input[name^="total"]', function() {
             const shipmentId = $(this).closest('tr').find('.payment-method-dropdown').data('shipment-id');
             const paymentMethod = $(`select[name="SubProductCode[${shipmentId}]"]`).val();
             const collectableAmountField = $(`input[name="collectable_amount[${shipmentId}]"]`);
@@ -1330,7 +1341,7 @@
         });
 
         // Handle Package Type Dropdown Change (if required for additional logic)
-        $(document).on('change', '.package-type-dropdown', function () {
+        $(document).on('change', '.package-type-dropdown', function() {
             const shipmentId = $(this).data('shipment-id');
             const packageType = $(this).val();
             const numPackagesField = $(`input[name="num_packages[${shipmentId}]"]`);

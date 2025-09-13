@@ -52,8 +52,6 @@ class PermissionsModel extends Model
     }
 
 
-    
-
     /**
      * Save permissions for a user
      *
@@ -115,14 +113,4 @@ class PermissionsModel extends Model
             return false;
         }
     }
-
-
-
-
-
-
-
-
-
-
 }

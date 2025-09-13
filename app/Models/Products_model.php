@@ -10,12 +10,18 @@ class Products_model extends Model
     protected $table = 'products';
     protected $primaryKey = 'product_id';
     protected $allowedFields = [
-        'product_id',
         'amz_product_id',
+        'is_deleted',
+        'deleted_by',
+        'deleted_at',
+        'created_at',
+        'updated_at',
+        'updated_by',
         'seller_id',
         'product_title',
         'product_description',
         'short_description',
+        'bullet_points',
         'product_status',
         'cost_price',
         'selling_price',
@@ -24,10 +30,15 @@ class Products_model extends Model
         'hsn_no',
         'barcode',
         'inventory',
+        'inventory_type',
+        'multi_inventory',
         'weight',
         'length',
         'breadth',
         'height',
+        'size',
+        'accessories',
+        'accessories_includes',
         'pickup_location',
         'product_tags',
         'sales_channel',
@@ -49,6 +60,7 @@ class Products_model extends Model
         'preorder_tag',
         'preorder_date',
         'delist',
+        'delist_date',
         'url',
         'meta_tag_title',
         'meta_tag_description',
@@ -57,14 +69,10 @@ class Products_model extends Model
         'end_date_and_time',
         'recurrence',
         'publish_for',
-        'updated_by',
-        'change_log',
-        'deleted_at',
-        'is_deleted',
-        'deleted_at',
-        'deleted_by',
-        'updated_at',
-        'added_by'
+        'faqs',
+        'product_variant',
+        'added_by',
+        'change_log'
     ];
 
     public function getproductsdata()
@@ -114,9 +122,9 @@ class Products_model extends Model
         return $this->where('product_id', $product_id)->findAll();
     }
 
-    public function updateproductdata($data, $id)
+    public function UpdateProductData($id, $newData)
     {
-        return $this->db->table('products')->where('product_id', $id)->update($data);
+        return $this->db->table('products')->where('product_id', $id)->update($newData);
     }
 
     public function updateinventorydata($product_id, $data)
@@ -381,7 +389,7 @@ class Products_model extends Model
 
         // Create a Pager instance
         $pager = service('pager');
-        $pager->setPath('collections/view/' . $this->request->uri->getSegment(3)); // Adjust this to match your route
+        $pager->setPath('collections/view/' . $this->request->uri->getSegment(3));
         $pager = $pager->makeLinks($page, $perPage, $total, 'default_full');
 
         return [
@@ -606,7 +614,7 @@ class Products_model extends Model
         return $query->getResultArray();
     }
 
-    public function addNewCollectiondata($data) //
+    public function addNewCollectiondata($data)
     {
         $builder = $this->db->table('collection');
         $builder->insert($data);

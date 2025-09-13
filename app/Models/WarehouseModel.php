@@ -8,6 +8,18 @@ class WarehouseModel extends Model
 {
     protected $table = 'warehouses';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'location'];
+    protected $allowedFields = [
+        'name',
+        'pincode',
+        'manager',
+        'storage_capacity',
+        'floor_area',
+        'pallet_capacity',
+        'address',
+        'status',
+        'contact_number',
+        'email',
+        'opening_hours',
+    ];
     protected $useTimestamps = true;
 }

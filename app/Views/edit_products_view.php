@@ -155,42 +155,6 @@
                                                     value="<?= $product['secondary_title'] ?>">
                                             </div>
                                         </div>
-
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label>Size</label>
-                                                <input class="form-control validate-required"
-                                                    data-error-message-required="Size is required!"
-                                                    name="product-size"
-                                                    type="text"
-                                                    placeholder="Size"
-                                                    value="<?= $product['size'] ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md">
-                                            <div class="form-group">
-                                                <label>Accessories</label>
-                                                <div class="custom-control custom-checkbox mb-5">
-                                                    <input type="checkbox" name="accessories-checked" class="custom-control-input" id="customCheck1-1" value="<?= $product['accessories'] ?>"
-                                                        <?= isset($product['accessories']) && $product['accessories'] == 1 ? 'checked' : '' ?>>
-                                                    <label class="custom-control-label" for="customCheck1-1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Includes Field (Hidden if Accessories is not checked) -->
-                                        <div class="col-md-8" id="includesSection" style="display: <?= isset($product['accessories']) && $product['accessories'] == 1 ? 'block' : 'none' ?>;">
-                                            <div class="form-group">
-                                                <label>Includes</label>
-                                                <input class="form-control validate-required"
-                                                    data-error-message-required="Include is required!"
-                                                    name="product-include"
-                                                    type="text"
-                                                    placeholder="Include Accessories"
-                                                    value="<?= isset($product['accessories_includes']) ? esc($product['accessories_includes']) : '' ?>">
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="form-group">
@@ -209,9 +173,21 @@
                                         <div class="dropzone-area">
                                             <input type="file" name="product-new-image" accept="image/*" class="" />
                                             <input type="hidden" name="product-current-image" value="<?= $product['product_image'] ?>" />
-                                            <?php if (!empty($product['product_image'])): ?>
-                                                <img src="<?= $product['product_image'] ?>" class="border-radius-500 " width="200" height="200" alt="Product Image" />
-                                            <?php endif; ?>
+                                            <div class="p-3">
+                                                <?php if (!empty($product['product_image'])): ?>
+                                                    <img src="<?= $product['product_image'] ?>" class="border-radius-500 " width="150" alt="Product Image" />
+                                                    <?php if (!empty($product['more_images'])): ?>
+                                                        <?php
+                                                        $currentImages = json_decode($product['more_images'], true);
+                                                        foreach ($currentImages as $index => $image):
+                                                        ?>
+                                                            <img src="<?= esc($image) ?>" class="" width="150" alt="Image <?= $index + 1 ?>">
+                                                        <?php endforeach; ?>
+                                                    <?php else: ?>
+                                                        <p>No current images available.</p>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                         <div class="dropzone-description">
                                             <span>Supported formats: JPEG, JPG, PNG, WEBP, Size: 505 x 650 px.</span><br>
@@ -258,9 +234,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Inventory</label>
-                                                <input type="number" id="total-inventory" value="<?= $product['inventory'] ?>" name="total_inventory" placeholder="Total Inventory" data-error-message-required="Inventory!" class="form-control validate-required">
-                                                <small>Total Inventory</small>
+                                                <label for="end_date_and_time">Amazon Product Id</label>
+                                                <input type="text" name="amz_product_id" id="amz_product_id" value="<?= $product['amz_product_id'] ?>" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -328,7 +303,43 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Size</label>
+                                                <input class="form-control validate-required"
+                                                    data-error-message-required="Size is required!"
+                                                    name="product-size"
+                                                    type="text"
+                                                    placeholder="Size"
+                                                    value="<?= $product['size'] ?>">
+                                            </div>
+                                        </div>
 
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label>Accessories</label>
+                                                <div class="custom-control custom-checkbox mb-5">
+                                                    <input type="checkbox" name="accessories-checked" class="custom-control-input" id="customCheck1-1" value="<?= $product['accessories'] ?>"
+                                                        <?= isset($product['accessories']) && $product['accessories'] == 1 ? 'checked' : '' ?>>
+                                                    <label class="custom-control-label" for="customCheck1-1"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Includes Field (Hidden if Accessories is not checked) -->
+                                        <div class="col-md-8" id="includesSection" style="display: <?= isset($product['accessories']) && $product['accessories'] == 1 ? 'block' : 'none' ?>;">
+                                            <div class="form-group">
+                                                <label>Includes</label>
+                                                <input class="form-control validate-required"
+                                                    data-error-message-required="Include is required!"
+                                                    name="product-include"
+                                                    type="text"
+                                                    placeholder="Include Accessories"
+                                                    value="<?= isset($product['accessories_includes']) ? esc($product['accessories_includes']) : '' ?>">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -362,6 +373,40 @@
                                     </div>
                                 </div>
 
+                                <div class="pd-20 card-box mb-30">
+                                    <!-- SERP Preview -->
+                                    <div class="serp-preview mb-30">
+                                        <p class="serp-title toggle-seo-content" id="serp-title-preview"><?= $product['meta_tag_title'] ?>
+                                            <i class="fa fa-chevron-down ml-2" id="toggle-icon"></i>
+                                        </p>
+                                        <p class="serp-url" id="serp-url-preview"><?= base_url('products/' . $product['url']) ?></p>
+                                        <p class="serp-description" id="serp-description-preview"><?= $product['meta_tag_description'] ?></p>
+                                    </div>
+                                    <p class="text-blue">
+
+                                    </p>
+                                    <div id="seo-content" class="seo-content">
+                                        <!-- URL Field -->
+                                        <div class="form-group">
+                                            <label>URL</label>
+                                            <input type="text" value="<?= $product['url'] ?>" class="form-control seo-input" name="url" id="seo-url" placeholder="sample-url">
+                                            <span id="seo-url-feedback" class="text-danger" style="display: none;">This URL is already in use.</span>
+                                            <span id="seo-url-available" class="text-success" style="display: none;">This URL is available.</span>
+                                        </div>
+
+                                        <!-- Meta-Tag Field -->
+                                        <div class="form-group">
+                                            <label>Meta Title</label>
+                                            <input type="text" value="<?= $product['meta_tag_title'] ?>" class="form-control seo-input" name="meta-tag" id="seo-title" placeholder="sample-meta-tag">
+                                        </div>
+
+                                        <!-- Meta-Description Field -->
+                                        <div class="form-group">
+                                            <label>Meta Description</label>
+                                            <textarea class="form-control resizable-textarea seo-input" name="meta-description" id="seo-description"><?= $product['meta_tag_description'] ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue">Add New Images</p>
@@ -441,56 +486,14 @@
                                     </div>
                                 </div> -->
 
-                                <div class="pd-20 card-box mb-30">
-                                    <!-- SERP Preview -->
-                                    <div class="serp-preview mb-30">
-                                        <p class="serp-title toggle-seo-content" id="serp-title-preview"><?= $product['meta_tag_title'] ?>
-                                            <i class="fa fa-chevron-down ml-2" id="toggle-icon"></i>
-                                        </p>
-                                        <p class="serp-url" id="serp-url-preview"><?= base_url('products/' . $product['url']) ?></p>
-                                        <p class="serp-description" id="serp-description-preview"><?= $product['meta_tag_description'] ?></p>
-                                    </div>
-                                    <p class="text-blue">
-
-                                    </p>
-                                    <div id="seo-content" class="seo-content">
-                                        <!-- URL Field -->
-                                        <div class="form-group">
-                                            <label>URL</label>
-                                            <input type="text" value="<?= $product['url'] ?>" class="form-control seo-input" name="url" id="seo-url" placeholder="sample-url">
-                                            <span id="seo-url-feedback" class="text-danger" style="display: none;">This URL is already in use.</span>
-                                            <span id="seo-url-available" class="text-success" style="display: none;">This URL is available.</span>
-                                        </div>
-
-                                        <!-- Meta-Tag Field -->
-                                        <div class="form-group">
-                                            <label>Meta Title</label>
-                                            <input type="text" value="<?= $product['meta_tag_title'] ?>" class="form-control seo-input" name="meta-tag" id="seo-title" placeholder="sample-meta-tag">
-                                        </div>
-
-                                        <!-- Meta-Description Field -->
-                                        <div class="form-group">
-                                            <label>Meta Description</label>
-                                            <textarea class="form-control resizable-textarea seo-input" name="meta-description" id="seo-description"><?= $product['meta_tag_description'] ?></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
 
                             <div class="col-sm">
                                 <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Amazon</p>
-                                    <div class="form-group">
-                                        <label for="end_date_and_time">Amazon Product Id</label>
-                                        <input type="text" name="amz_product_id" id="amz_product_id" value="<?= $product['amz_product_id'] ?>" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pd-20 card-box mb-30">
                                     <p class="text-blue">Product Publishing</p>
                                     <div class="form-group">
                                         <label>Product Status</label>
-                                        <select class="custom-select2 form-control validate-required"
+                                        <select class="form-control validate-required"
                                             data-error-message-required="Please select a Product Status."
                                             id="product-status" name="product-status" style="width: 100%; height: 38px">
                                             <option value="">Select Status</option>
@@ -498,86 +501,142 @@
                                             <option value="inactive" <?= $product['product_status'] == 'inactive' ? 'selected' : '' ?>>Inactive</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="selectOption" class="form-label">Sales Channel
-                                            <span data-bs-toggle="tooltip" data-bs-placement="top" title="Choose where the product is sold or promoted (e.g., Web, Apps, Instagram, Facebook)">
-                                                <i class="fa-solid fa-circle-question"></i>
-                                            </span>
-                                        </label>
-                                        <select id="sale-channel" class="validate-required form-control" data-error-message-required="Please select a Sales Channel." name="sales-channel" style="width: 100%; height: 38px">
-                                            <option value="online-store" <?= $product['sales_channel'] == 'online-store' ? 'selected' : '' ?>>Website</option>
-                                        </select>
+
+                                    <!-- More Section Toggle -->
+                                    <div class="d-flex justify-content-end">
+                                        <div id="toggleMore" class="cursor-pointer">
+                                            <small>More</small>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hidden Elements (To be shown when 'More' is clicked) -->
+                                    <div id="moreElements" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="selectOption" class="form-label">Sales Channel
+                                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Choose where the product is sold or promoted (e.g., Web, Apps, Instagram, Facebook)">
+                                                    <i class="fa-solid fa-circle-question"></i>
+                                                </span>
+                                            </label>
+                                            <select id="sale-channel" class="validate-required form-control" data-error-message-required="Please select a Sales Channel." name="sales-channel" style="width: 100%; height: 38px">
+                                                <option value="online-store" <?= $product['sales_channel'] == 'online-store' ? 'selected' : '' ?>>Website</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Delist</label>
+                                            <select class="form-control" name="delist" style="width: 100%; height: 38px">
+                                                <option value="">Select</option>
+                                                <option value="yes" <?= $product['delist'] == 'yes' ? 'selected' : '' ?>>Yes</option>
+                                                <option value="no" <?= $product['delist'] == 'no' ? 'selected' : '' ?>>No</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="pd-20 card-box mb-30">
                                     <p class="text-blue">Dimensions</p>
-                                    <div class="form-group mr-2">
-                                        <label for="length">Enter length (cm)</label>
-                                        <input
-                                            type="number"
-                                            name="length_num"
-                                            id="length"
-                                            value="<?= $product['length'] ?>"
-                                            class="form-control"
-                                            required
-                                            min="0"
-                                            step="0.01"
-                                            placeholder="Enter length">
-                                        <div class="valid-feedback">Looks good!</div>
-                                        <div class="invalid-feedback">Please enter a valid length.</div>
-                                    </div>
-                                    <div class="form-group mr-2">
-                                        <label for="breadth">Enter breadth (cm)</label>
-                                        <input
-                                            type="number"
-                                            name="breadth_num"
-                                            id="breadth"
-                                            value="<?= $product['breadth'] ?>"
-                                            class="form-control"
-                                            required
-                                            min="0"
-                                            step="0.01"
-                                            placeholder="Enter breadth">
-                                        <div class="valid-feedback">Looks good!</div>
-                                        <div class="invalid-feedback">Please enter a valid breadth.</div>
-                                    </div>
-                                    <div class="form-group mr-2">
-                                        <label for="height">Enter height (cm)</label>
-                                        <input
-                                            type="number"
-                                            name="height_num"
-                                            id="height"
-                                            value="<?= $product['height'] ?>"
-                                            class="form-control"
-                                            required
-                                            min="0"
-                                            step="0.01"
-                                            placeholder="Enter height">
-                                        <div class="valid-feedback">Looks good!</div>
-                                        <div class="invalid-feedback">Please enter a valid height.</div>
-                                    </div>
-                                    <div class="form-group mr-2">
-                                        <label for="weight">Enter Weight (Kg)</label>
-                                        <input
-                                            type="number"
-                                            name="weight_num"
-                                            id="weight"
-                                            value="<?= $product['weight'] ?>"
-                                            class="form-control"
-                                            required
-                                            min="0"
-                                            step="0.01"
-                                            placeholder="Enter weight">
-                                        <div class="valid-feedback">Looks good!</div>
-                                        <div class="invalid-feedback">Please enter a valid weight.</div>
-                                    </div>
 
+                                    <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
+                                        <div class="form-group mr-2" style="flex: 1;">
+                                            <div class="form-group mr-2">
+                                                <label for="length">Enter Length (cm) <span class="text-danger">*</span></label>
+                                                <input type="number" name="length" id="length" value="<?= $product['length'] ?>"
+                                                    class="form-control validate-required"
+                                                    data-error-message-required="Enter length.">
+                                            </div>
+                                            <!-- breadth Number Field -->
+                                            <div class="form-group mr-2">
+                                                <label for="breadth">Enter Breadth (cm) <span class="text-danger">*</span></label>
+                                                <input type="number" name="breadth" id="breadth" value="<?= $product['breadth'] ?>"
+                                                    class="form-control validate-required"
+                                                    data-error-message-required="Enter breadth.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group mr-2" style="flex: 1;">
+                                            <!-- height Number Field -->
+                                            <div class="form-group mr-2">
+                                                <label for="height">Enter Height (cm) <span class="text-danger">*</span></label>
+                                                <input type="number" name="height" id="height" value="<?= $product['height'] ?>"
+                                                    class="form-control validate-required"
+                                                    data-error-message-required="Enter height.">
+                                            </div>
+                                            <!-- Weight Number Field -->
+                                            <div class="form-group mr-2">
+                                                <label for="weight">Enter Weight (Kg) <span class="text-danger">*</span></label>
+                                                <input type="number" name="weight" id="weight" value="<?= $product['weight'] ?>"
+                                                    class="form-control validate-required"
+                                                    data-error-message-required="Enter Weight.">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="">
-                                    <div class="pd-20 card-box mb-30">
+                                <div class="pd-20 card-box mb-30">
+                                    <p class="text-blue"> Product Highlights </p>
+
+                                    <div class="form-group">
+                                        <label>Add Tags</label>
+                                        <div class="mb-1 d-flex flex-row">
+                                            <?php
+                                            $selectedTags = json_decode($product['product_tags'], true);
+                                            ?>
+                                            <select class="custom-select2 custom-select-tags form-control" name="product-tags[]" multiple="multiple" style="width: 70%">
+                                                <optgroup label="Available Tags">
+                                                    <?php foreach ($tags as $tag): ?>
+                                                        <option value="<?= esc($tag['tag_value']) ?>"
+                                                            <?= (!empty($selectedTags) && in_array($tag['tag_value'], $selectedTags)) ? 'selected' : '' ?>>
+                                                            <?= esc($tag['tag_name']) ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#multiSelectProductModal">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" class="form-control" name="product-bullet-points" placeholder="Add Bullet Points" />
+                                            <div>
+                                                <button class="btn btn-outline-dark btn-sm mx-1" type="button" id="add-bullet-point"><i class="fa-solid fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                        <div id="bullet-points-container">
+                                            <?php if (!empty($product['bullet_points'])): ?>
+                                                <?php
+                                                $bulletPoints = json_decode($product['bullet_points']);
+                                                foreach ($bulletPoints as $point):
+                                                ?>
+                                                    <div class="d-flex mb-2 align-items-center my-2">
+                                                        <input type="text" class="form-control" name="product-bullet-points[]" value="<?= esc($point) ?>" placeholder="Add Bullet Point" />
+                                                        <div>
+                                                            <button class="btn btn-outline-dark btn-sm remove-bullet-point mx-1">
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <input type="hidden" name="bullet_points_json" id="bullet_points_json" />
+                                    </div>
+                                </div>
+
+                                <div class="pd-20 card-box mb-30">
+                                    <div class="d-flex justify-content-between">
                                         <p class="text-blue">Product Features</p>
+                                        <div id="toggleProductFea" class="d-flex">
+                                            <small>More</small>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div id="ProductfeaElements" style="display: none;">
                                         <div class="d-flex justify-content-between align-items-center" style="max-width: 100%;">
                                             <div class="form-group mr-2" style="flex: 1;">
                                                 <label for="gift_wrap" class="form-label">Gift Wrap <span><i class="fa-solid fa-gift"></i></span></label>
@@ -596,66 +655,18 @@
                                                 <input type="text" placeholder="Label" class="form-control" name="product_label" value="<?= $product['label'] ?>" style="width: 100%; height: 38px;">
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <!-- Bullet Points Section -->
-                                <div class="pd-20 card-box mb-30">
-                                    <div class="form-group">
-                                        <p class="text-blue">Bullet Points</p>
-                                        <div class="mb-20">
-                                            <?php
-                                            $bulletPointsArray = json_decode($bullet_points, true) ?? [];
-                                            $bulletPointsValue = implode(',', array_filter($bulletPointsArray, 'trim'));
-                                            ?>
-                                            <input type="text" class="form-control" data-role="tagsinput" id="product-bullet-points" name="product-bullet-points" placeholder="Add Bullet Points" value="<?= esc($bulletPointsValue); ?>" />
+                                        <div class="form-group">
+                                            <label>Preorder tag</label>
+                                            <select class="form-control" id="preorder-tag" name="preorder-tag" style="width: 100%; height: 38px">
+                                                <option value="">Select</option>
+                                                <option value="yes" <?= $product['preorder_tag'] == 'yes' ? 'selected' : '' ?>>Yes</option>
+                                                <option value="no" <?= $product['preorder_tag'] == 'no' ? 'selected' : '' ?>>No</option>
+                                            </select>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="pd-20 card-box mb-30">
-                                    <div class="form-group">
-                                        <label>Add Tags</label>
-                                        <div class="input-group">
-                                            <?php
-                                            $selectedTags = json_decode($product['product_tags'], true);
-                                            ?>
-                                            <?php if (!empty($tags)): ?>
-                                                <select class="custom-select2 custom-select-tags form-control" name="product-tags[]" multiple="multiple" style="width: 80%">
-                                                    <optgroup label="Available Tags">
-                                                        <?php foreach ($tags as $tag): ?>
-                                                            <option value="<?= esc($tag['tag_value']) ?>"
-                                                                <?= (!empty($selectedTags) && in_array($tag['tag_value'], $selectedTags)) ? 'selected' : '' ?>>
-                                                                <?= esc($tag['tag_name']) ?>
-                                                            </option>
-                                                        <?php endforeach; ?>
-                                                    </optgroup>
-                                                </select>
-                                            <?php else: ?>
-                                                <p class="text-danger">No tags available</p>
-                                            <?php endif; ?>
+                                        <div class="form-group" id="preorder-date-container" style="display: <?= $product['preorder_tag'] == 'yes' ? 'block' : 'none' ?>;">
+                                            <label>Preorder Date</label>
+                                            <input type="date" class="form-control" value="<?= $product['preorder_date'] ?>" name="preorder_date" id="preorder-date">
                                         </div>
-                                        <div class="input-group-append">
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#multiSelectProductModal">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="pd-20 card-box mb-30">
-                                    <p class="text-blue">Preorder</p>
-                                    <div class="form-group">
-                                        <label>Preorder tag</label>
-                                        <select class="custom-select2 form-control" id="preorder-tag" name="preorder-tag" style="width: 100%; height: 38px">
-                                            <option value="">Select</option>
-                                            <option value="yes" <?= $product['preorder_tag'] == 'yes' ? 'selected' : '' ?>>Yes</option>
-                                            <option value="no" <?= $product['preorder_tag'] == 'no' ? 'selected' : '' ?>>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" id="preorder-date-container" style="display: <?= $product['preorder_tag'] == 'yes' ? 'block' : 'none' ?>;">
-                                        <label>Preorder Date</label>
-                                        <input type="date" class="form-control" value="<?= $product['preorder_date'] ?>" name="preorder_date" id="preorder-date">
                                     </div>
                                 </div>
 
@@ -1293,5 +1304,89 @@
                 faqCount = remainingFaqs.length;
             }
         });
+    });
+</script>
+
+<script>
+    function toggleVisibility(triggerSelector, targetSelector) {
+        const trigger = document.querySelector(triggerSelector);
+        const target = document.querySelector(targetSelector);
+
+        trigger.addEventListener('click', function() {
+            if (target.style.display === 'none' || target.style.display === '') {
+                target.style.display = 'block';
+                trigger.querySelector('i').classList.remove('fa-chevron-down');
+                trigger.querySelector('i').classList.add('fa-chevron-up');
+            } else {
+                target.style.display = 'none';
+                trigger.querySelector('i').classList.remove('fa-chevron-up');
+                trigger.querySelector('i').classList.add('fa-chevron-down');
+            }
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleVisibility('#toggleMore', '#moreElements');
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleVisibility('#toggleProductFea', '#ProductfeaElements');
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addBulletPointBtn = document.getElementById('add-bullet-point');
+        const bulletPointsContainer = document.getElementById('bullet-points-container');
+        const hiddenInput = document.getElementById('bullet_points_json');
+
+        let bulletPoints = [];
+
+        // Add event listener for the "Add Bullet Point" button
+        addBulletPointBtn.addEventListener('click', function() {
+            const newBulletPoint = document.createElement('div');
+            newBulletPoint.classList.add('d-flex', 'mb-2', 'align-items-center', 'my-2');
+
+            newBulletPoint.innerHTML = `
+                <input type="text" class="form-control" name="product-bullet-points[]" placeholder="Add Bullet Point"/>
+                <div>
+                    <button class="btn btn-outline-dark btn-sm remove-bullet-point mx-1">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            `;
+
+            bulletPointsContainer.appendChild(newBulletPoint);
+
+            // Event listener for removing bullet points
+            const removeButton = newBulletPoint.querySelector('.remove-bullet-point');
+            removeButton.addEventListener('click', function() {
+                newBulletPoint.remove();
+                updateBulletPoints();
+            });
+
+            // Event listener for the input field to update bullet points in the hidden field
+            const bulletPointInput = newBulletPoint.querySelector('input');
+            bulletPointInput.addEventListener('input', function() {
+                updateBulletPoints();
+            });
+
+            updateBulletPoints();
+        });
+
+        // Function to update the bullet points in the hidden input field (JSON format)
+        function updateBulletPoints() {
+            const bulletPointInputs = document.querySelectorAll('input[name="product-bullet-points[]"]');
+            bulletPoints = Array.from(bulletPointInputs).map(input => input.value);
+
+            // Update the hidden input field with the JSON string of bullet points
+            hiddenInput.value = JSON.stringify(bulletPoints);
+        }
+
+        // If there are pre-existing bullet points (from the database), populate them
+        <?php if (!empty($product['bullet_points'])): ?>
+            <?php foreach ($bulletPoints as $point): ?>
+                updateBulletPoints();
+            <?php endforeach; ?>
+        <?php endif; ?>
     });
 </script>

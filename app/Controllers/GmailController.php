@@ -6,7 +6,7 @@ use CodeIgniter\Controller;
 use Google\Client;
 use Google\Service\Gmail;
 
-class GmailController extends Controller
+class GmailController extends BaseController
 {
     private $client;
 

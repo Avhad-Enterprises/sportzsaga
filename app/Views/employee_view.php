@@ -217,7 +217,7 @@
                                 <?php foreach ($employes as $employe) : ?>
                                     <tr>
                                         <td class="table-plus"><?= $employe['user_id'] ?></td>
-                                        <td><a  class="b_line" href="<?= base_url() ?>employee/editempolyee/<?= $employe['user_id'] ?>"><?= $employe['name'] ?></a></td>
+                                        <td><a class="b_line" href="<?= base_url() ?>employee/editempolyee/<?= $employe['user_id'] ?>"><?= $employe['name'] ?></a></td>
                                         <td><?= $employe['email'] ?></td>
                                         <td><?= $employe['phone_no'] ?></td>
                                         <td>

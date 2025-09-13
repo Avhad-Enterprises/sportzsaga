@@ -19,12 +19,16 @@ use Google\Cloud\Storage\StorageClient;
 
 class Products extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $session = session();
+        if (!$session->get('user_id')) {
+            return redirect()->to('admin');
+        }
         $model = new Products_model();
         $data['pendingreviews'] = $model->CountpendingReviews();
 
+        // Check if the user is a seller or admin
         if ($session->get('admin_type') == 'seller') {
             $seller_id = $session->get('user_id');
             $data['products'] = $model->fetproductsbyseller($seller_id);
@@ -34,6 +38,7 @@ class Products extends BaseController
 
         return view('products_view', $data);
     }
+
 
     protected $model;
     protected $logger;
@@ -293,7 +298,7 @@ class Products extends BaseController
         $data['users'] = $userModel->findAll();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch All Products
         $allProducts = $model->getproductsdata();
@@ -301,7 +306,7 @@ class Products extends BaseController
 
         return view('addnew_products_view', $data);
     }
-    
+
 
     public function check_sku()
     {
@@ -319,7 +324,7 @@ class Products extends BaseController
     {
         $model = new Products_model();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         // Initialize Google Cloud Storage client
         $storage = new \Google\Cloud\Storage\StorageClient([
@@ -390,20 +395,19 @@ class Products extends BaseController
             }
         }
 
-        // Prepare Bullet Points as JSON
-        $bulletPoints = $this->request->getPost('product-bullet-points');
-        $bulletPointsJson = !empty($bulletPoints) ? json_encode(array_filter(explode(',', $bulletPoints))) : null;
-
         // Fetch selected tags & convert to JSON
         $productsTags = $this->request->getPost('product-tags');
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
+
+        // Product Description
+        $productDescription = $this->request->getPost('product-description');
 
         // Prepare product data for insertion
         $data = [
             'product_title' => trim($this->request->getPost('product-name')),
             'amz_product_id' => trim($this->request->getPost('amz_product_id')),
             'secondary_title' => trim($this->request->getPost('second-name')),
-            'product_description' => trim($this->request->getPost('product-description')),
+            'product_description' => $productDescription,
             'short_description' => trim($this->request->getPost('product-short-description')),
             'product_status' => trim($this->request->getPost('product-status')),
             'cost_price' => trim($this->request->getPost('cost-price')),
@@ -411,7 +415,6 @@ class Products extends BaseController
             'compare_at_price' => trim($this->request->getPost('compare-at-price')),
             'sku' => trim($this->request->getPost('sku')),
             'barcode' => trim($this->request->getPost('barcode')),
-            'inventory' => trim($this->request->getPost('total_inventory')),
             'length' => $length,
             'breadth' => $breadth,
             'height' => $height,
@@ -440,9 +443,9 @@ class Products extends BaseController
             'accessories' => $this->request->getPost('accessories-checked'),
             'accessories_includes' => $this->request->getPost('product-include'),
             'size' => $this->request->getPost('product-size'),
-            'bullet_points' => $bulletPointsJson,
-            'added_by' => $userId, // Store the user who added it
-            'created_at' => date('Y-m-d H:i:s') // Store creation timestamp
+            'bullet_points' => $this->request->getPost('bullet_points_json'),
+            'added_by' => $userId,
+            'created_at' => date('Y-m-d H:i:s'),
         ];
 
         // Insert the new product into the database
@@ -461,10 +464,21 @@ class Products extends BaseController
         $tagModel = new TagModel();
 
         // Fetch all tags
-        $data['tags'] = $tagModel->where('tag_name', 'Products')->findAll();
+        $data['tags'] = $tagModel->where('type', 'Products')->findAll();
 
         // Fetch product details
         $data['products'] = $model->editproductmodel($id);
+
+        if (!empty($data['products'])) {
+            $product = $data['products'][0]; // Assuming you're fetching one product by ID
+
+            // Decode the product_tags field (if it's in JSON format)
+            $productTags = json_decode($product['product_tags'], true);
+
+            // Add the decoded productTags to the data array to pass to the view
+            $data['productTags'] = $productTags;
+        }
+
 
         if (empty($data['products'])) {
             return redirect()->to('admin_products')->with('error', 'Product not found.');
@@ -503,15 +517,19 @@ class Products extends BaseController
             $data['bullet_points'] = '';
         }
 
+        // echo '<pre>';
+        // print_r($data['products']);
+        // echo '</pre>';
+        // exit();
+
         return view('edit_products_view', $data);
     }
-
 
     public function updateProduct($id)
     {
         $model = new Products_model();
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         // Fetch the existing product
         $existingProduct = $model->find($id);
@@ -545,6 +563,16 @@ class Products extends BaseController
         $productsTags = $this->request->getPost('product-tags');
         $productsTagsJson = !empty($productsTags) ? json_encode($productsTags) : json_encode([]);
 
+        $delist = $this->request->getPost('delist');
+
+        $delist = $this->request->getPost('delist');
+
+        // Get current time if delist is set to 'yes'
+        $delistDate = null;
+        if ($delist == 'yes') {
+            $delistDate = date('Y-m-d H:i:s');
+        }
+
         // Prepare product data for update
         $newData = [
             'product_title' => $this->request->getPost('product-name'),
@@ -558,7 +586,6 @@ class Products extends BaseController
             'selling_price' => $this->request->getPost('selling-price'),
             'compare_at_price' => $this->request->getPost('compare-at-price'),
             'sku' => $this->request->getPost('sku'),
-            'inventory' => $this->request->getPost('total_inventory'),
             'length' => $length,
             'breadth' => $breadth,
             'height' => $height,
@@ -580,6 +607,9 @@ class Products extends BaseController
             'size' => $this->request->getPost('product-size'),
             'updated_by' => $session->get('admin_name') . ' (' . $session->get('user_id') . ')',
             'updated_at' => date('Y-m-d H:i:s'),
+            'bullet_points' => $this->request->getPost('bullet_points_json'),
+            'delist' => $delist,
+            'delist_date' => $delistDate,
         ];
 
         // ✅ Handle product image upload
@@ -669,8 +699,13 @@ class Products extends BaseController
         $finalImages = array_unique(array_merge(array_diff($existingImages, $removedImages), $currentImages, $newImages));
         $newData['more_images'] = json_encode($finalImages);
 
+        // echo '<pre>';
+        // print_r($newData);
+        // echo '</pre>';
+        // exit();
+
         // Update the product in the database
-        if ($model->update($id, $newData)) {
+        if ($model->UpdateProductData($id, $newData)) {
             return redirect()->to('admin-products')->with('success', 'Product updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update product.');
@@ -963,7 +998,7 @@ class Products extends BaseController
         return $this->response->setJSON($products);
     }
 
-    public function getProductsByConditions() //
+    public function getProductsByConditions()
     {
         try {
             $conditions = json_decode($this->request->getPost('conditions'), true);
@@ -991,7 +1026,7 @@ class Products extends BaseController
         $this->logger->info('publishCollection method called');
 
         $session = session();
-        $userId = $session->get('user_id'); // Get logged-in user ID
+        $userId = $session->get('user_id');
 
         $storage = new StorageClient([
             'keyFilePath' => WRITEPATH . 'public/mkvgsc.json',

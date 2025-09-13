@@ -3,8 +3,6 @@
 <!-- Head View End -->
 
 <body>
-
-
     <!-- Header View Start -->
     <?= $this->include('header_view') ?>
     <!-- Header View End -->
@@ -509,7 +507,7 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
 
         const collectionTitleInput = document.querySelector('input[name="collection-name"]');
         const collectionDescriptionInput = document.querySelector('textarea[name="collection-description"]');
@@ -524,13 +522,13 @@
                 .replace(/^-+|-+$/g, '');
         }
 
-        collectionTitleInput.addEventListener('input', function () {
+        collectionTitleInput.addEventListener('input', function() {
             const title = collectionTitleInput.value;
             metacollectionTitleInput.value = title;
             metacollectionUrlInput.value = generateSlug(title);
         });
 
-        collectionDescriptionInput.addEventListener('input', function () {
+        collectionDescriptionInput.addEventListener('input', function() {
             const description = collectionDescriptionInput.value;
             metacollectionDescriptionInput.value = description;
         });
@@ -544,7 +542,7 @@
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         let conditionCount = 0;
         const baseUrl = '<?= base_url() ?>';
 
@@ -588,7 +586,7 @@
         function initializeSelect2(index) {
             $(`.condition-row[data-index="${index}"] .condition-value`).select2({
                 tags: true,
-                createTag: function (params) {
+                createTag: function(params) {
                     return {
                         id: params.term,
                         text: params.term,
@@ -596,7 +594,7 @@
                     }
                 },
                 language: {
-                    noResults: function () {
+                    noResults: function() {
                         return "Type to add a custom value";
                     }
                 },
@@ -609,17 +607,17 @@
         }
 
         function reinitializeAllSelect2() {
-            $('.condition-value').each(function (index) {
+            $('.condition-value').each(function(index) {
                 $(this).select2('destroy');
                 initializeSelect2(index);
             });
         }
 
-        $(window).on('load', function () {
+        $(window).on('load', function() {
             reinitializeAllSelect2();
         });
 
-        $('#addCondition').click(function () {
+        $('#addCondition').click(function() {
             let lastField = $('.condition-field').last().val();
             addCondition(lastField);
             updateProductTable();
@@ -627,7 +625,7 @@
 
 
         // Event listener for removing a condition
-        $(document).on('click', '.remove-condition', function () {
+        $(document).on('click', '.remove-condition', function() {
             $(this).closest('.condition-row').remove();
             console.log('Condition removed, updating product table');
             updateProductTable();
@@ -635,7 +633,7 @@
 
 
 
-        $(document).on('change', '.condition-field', function () {
+        $(document).on('change', '.condition-field', function() {
             let row = $(this).closest('.condition-row');
             let field = $(this).val();
             let operatorSelect = row.find('.condition-operator');
@@ -678,8 +676,8 @@
                 }
 
                 // Load values for the selected field
-                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function (data) {
-                    data.forEach(function (item) {
+                $.get(`${baseUrl}getDistinctFieldValues?field=${field}`, function(data) {
+                    data.forEach(function(item) {
                         if (field === 'selling_price') {
                             if (field === 'selling_price') {
                                 // Add default value options for selling_price                        
@@ -702,7 +700,7 @@
             }
         });
 
-        $(document).on('change', '.condition-operator', function () {
+        $(document).on('change', '.condition-operator', function() {
             let row = $(this).closest('.condition-row');
             let operator = $(this).val();
             let valueSelect = row.find('.condition-value');
@@ -716,7 +714,7 @@
             }
         });
 
-        $(document).on('select2:open', '.condition-value', function () {
+        $(document).on('select2:open', '.condition-value', function() {
             let row = $(this).closest('.condition-row');
             let operator = row.find('.condition-operator').val();
 
@@ -727,7 +725,7 @@
             }
         });
 
-        $(document).on('select2:select', '.condition-value', function (e) {
+        $(document).on('select2:select', '.condition-value', function(e) {
             updateProductTable();
         });
 
@@ -735,7 +733,7 @@
 
         function updateProductTable() {
             let conditions = [];
-            $('.condition-row').each(function () {
+            $('.condition-row').each(function() {
                 let field = $(this).find('.condition-field').val();
                 let operator = $(this).find('.condition-operator').val();
                 let value = $(this).find('.condition-value').val();
@@ -760,25 +758,33 @@
                         conditionType: conditionType
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.error) {
                             console.error('Error:', response.error);
                             alert('An error occurred while fetching products. Please check the console for details.');
                         } else {
                             let tableBody = $('#productsTable tbody');
                             tableBody.empty();
-                            response.products.forEach(function (product) {
+                            response.products.forEach(function(product) {
+                                // Parse the product_tags JSON and split them into individual tags
+                                let productTags = JSON.parse(product.product_tags || '[]');
+                                let tagsHtml = productTags.map(function(tag) {
+                                    return `<div>${tag}</div>`; // Each tag in a separate div
+                                }).join(''); // Join the tags with no space to render them
+
+                                // Append the product row with the tags displayed line by line
                                 tableBody.append(`
-                                <tr class="selected-product-item" draggable="true">
-                                    <td>${product.product_title}</td>
-                                    <td>${product.selling_price}</td>
-                                    <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
-                                </tr>
-                            `);
+                            <tr class="selected-product-item" draggable="true">
+                                <td>${product.product_title}</td>
+                                <td>${product.selling_price}</td>
+                                <td><img src="${baseUrl}uploads/${product.product_image}" alt="${product.product_title}" width="50" height="50"></td>
+                                <td>${tagsHtml}</td> <!-- Display the tags here -->
+                            </tr>
+                        `);
                             });
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
                         alert('An error occurred while fetching products. Please check the console for details.');
                     }
@@ -786,8 +792,9 @@
             }
         }
 
+
         // Initialize the first condition and product table on page load
-        $(document).ready(function () {
+        $(document).ready(function() {
             console.log('Page loaded, initializing first condition and product table');
             addCondition();
             updateProductTable();
@@ -795,13 +802,13 @@
 
         // Load existing conditions if editing
         <?php if (isset($collection_id)): ?>
-            $.get(`${baseUrl}getConditions/${collection_id}`, function (data) {
+            $.get(`${baseUrl}getConditions/${collection_id}`, function(data) {
                 if (data.conditions) {
-                    data.conditions.forEach(function (condition) {
+                    data.conditions.forEach(function(condition) {
                         addCondition();
                         let row = $('.condition-row').last();
                         row.find('.condition-field').val(condition.field).trigger('change');
-                        setTimeout(function () {
+                        setTimeout(function() {
                             row.find('.condition-operator').val(condition.operator);
                             row.find('.condition-value').val(condition.value);
                         }, 500);
@@ -814,13 +821,13 @@
             });
         <?php endif; ?>
 
-        $('#newcollectionsview').submit(function (e) {
+        $('#newcollectionsview').submit(function(e) {
             e.preventDefault();
             let formData = new FormData(this);
 
             // Add conditions to formData
             let conditions = [];
-            $('.condition-row').each(function () {
+            $('.condition-row').each(function() {
                 let condition = {
                     field: $(this).find('.condition-field').val(),
                     operator: $(this).find('.condition-operator').val(),
@@ -840,7 +847,7 @@
                 processData: false,
                 contentType: false,
                 dataType: 'json',
-                success: function (response) {
+                success: function(response) {
                     if (response.success) {
                         alert('Collection saved successfully!');
                         window.location.href = `${baseUrl}editcollections/${response.collection_id}`;
@@ -848,7 +855,7 @@
                         alert('Error: ' + (response.error || 'Unknown error occurred'));
                     }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error('AJAX Error:', status, error);
                     alert('An error occurred while saving the collection. Please check the console for details.');
                 }
@@ -856,7 +863,7 @@
         });
     });
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         let selectedProducts = [];
         let automatedProducts = [];
         let sortableInstance = null;
@@ -877,7 +884,7 @@
                 }
                 sortableInstance = new Sortable(selectedProductsElement, {
                     animation: 150,
-                    onEnd: function () {
+                    onEnd: function() {
                         updateProductOrder('manual');
                     }
                 });
@@ -899,7 +906,7 @@
                 }
                 sortableTableInstance = new Sortable(productsTableBody, {
                     animation: 150,
-                    onEnd: function () {
+                    onEnd: function() {
                         updateProductOrder('automated');
                     }
                 });
@@ -915,11 +922,11 @@
             let productIds;
 
             if (section === 'manual') {
-                productIds = $('#selectedProducts .selected-product-item').map(function () {
+                productIds = $('#selectedProducts .selected-product-item').map(function() {
                     return $(this).data('id');
                 }).get();
             } else if (section === 'automated') {
-                productIds = $('#productsTable tbody tr').map(function () {
+                productIds = $('#productsTable tbody tr').map(function() {
                     return $(this).data('id');
                 }).get();
             }
@@ -942,7 +949,7 @@
                 return;
             }
 
-            items.sort(function (a, b) {
+            items.sort(function(a, b) {
                 const aData = $(a).data();
                 const bData = $(b).data();
 
@@ -970,13 +977,13 @@
             });
 
             container.empty();
-            $.each(items, function (_, item) {
+            $.each(items, function(_, item) {
                 container.append(item);
             });
         }
 
         // Handle sorting for manual section
-        $('#sortProducts').change(function () {
+        $('#sortProducts').change(function() {
             const sortBy = $(this).val();
             const $container = $('#selectedProducts');
             const $items = $container.children('.selected-product-item').get();
@@ -1000,7 +1007,7 @@
 
 
         // Handle sorting for automated section
-        $('#sortProductsAutomated').change(function () {
+        $('#sortProductsAutomated').change(function() {
             const sortBy = $(this).val();
             const $container = $('#productsTable tbody');
             const $items = $container.children('tr').get();
@@ -1064,7 +1071,7 @@
         }
 
         // Handle product checkbox change (Manual section)
-        $(document).on('change', '.product-checkbox', function () {
+        $(document).on('change', '.product-checkbox', function() {
             const $row = $(this).closest('tr');
             const productId = $(this).val();
             const productTitle = $row.find('td:nth-child(2)').text();
@@ -1082,7 +1089,7 @@
         });
 
         // Handle product removal (Manual section)
-        $(document).on('click', '.remove-product', function () {
+        $(document).on('click', '.remove-product', function() {
             const productId = $(this).data('id');
             $(`#productstable input[value="${productId}"]`).prop('checked', false);
             removeProductFromSelection(productId);
@@ -1108,7 +1115,7 @@
             showLoader(); // Show loader before making the AJAX call
 
             let conditions = [];
-            $('.condition-row').each(function () {
+            $('.condition-row').each(function() {
                 let condition = {
                     field: $(this).find('.condition-field').val(),
                     operator: $(this).find('.condition-operator').val(),
@@ -1134,7 +1141,7 @@
                         sortBy: $('#sortProductsAutomated').val()
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         console.log('Server response:', response);
                         let tableBody = $('#productsTable tbody');
                         tableBody.empty();
@@ -1145,7 +1152,7 @@
                         } else if (response.products && Array.isArray(response.products) && response.products.length > 0) {
                             console.log('Products found:', response.products.length);
                             automatedProducts = response.products;
-                            automatedProducts.forEach(function (product) {
+                            automatedProducts.forEach(function(product) {
                                 tableBody.append(`
                                 <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.selling_price}" data-created="${product.created_at}">
                                     <td>${product.product_title}</td>
@@ -1162,7 +1169,7 @@
                         }
                         hideLoader(); // Hide loader after processing the response
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
                         let tableBody = $('#productsTable tbody');
                         tableBody.empty();
@@ -1184,7 +1191,7 @@
                 url: `${baseUrl}getAllProducts`,
                 type: 'GET',
                 dataType: 'json',
-                success: function (response) {
+                success: function(response) {
                     console.log('All products response:', response);
                     let tableBody = $('#productsTable tbody');
                     tableBody.empty();
@@ -1192,7 +1199,7 @@
                     if (response.products && Array.isArray(response.products) && response.products.length > 0) {
                         console.log('All products found:', response.products.length);
                         automatedProducts = response.products;
-                        automatedProducts.forEach(function (product) {
+                        automatedProducts.forEach(function(product) {
                             tableBody.append(`
                             <tr class="selected-product-item" data-id="${product.product_id}" data-title="${product.product_title}" data-price="${product.selling_price}" data-created="${product.created_at}">
                                 <td>${product.product_title}</td>
@@ -1209,7 +1216,7 @@
                     }
                     hideLoader(); // Hide loader after processing the response
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error('AJAX Error when fetching all products:', status, error);
                     let tableBody = $('#productsTable tbody');
                     tableBody.empty();
@@ -1219,7 +1226,7 @@
             });
         }
 
-        $('input[name="selectMethod"]').change(function () {
+        $('input[name="selectMethod"]').change(function() {
             if ($(this).val() === 'automated') {
                 $('#automatedSection').show();
                 $('#manualSection').hide();
@@ -1237,7 +1244,7 @@
         initSortableTable();
 
         // Event listeners for condition changes
-        $(document).on('change', '.condition-field, .condition-operator, .condition-value, input[name="conditionType"]', function () {
+        $(document).on('change', '.condition-field, .condition-operator, .condition-value, input[name="conditionType"]', function() {
             console.log('Condition changed, updating product table');
             updateProductTable();
         });
@@ -1247,12 +1254,12 @@
             const selectedMethod = $('input[name="selectMethod"]:checked').val();
 
             if (selectedMethod === 'manual') {
-                const manualProductIds = $('#selectedProducts .selected-product-item').map(function () {
+                const manualProductIds = $('#selectedProducts .selected-product-item').map(function() {
                     return $(this).data('id');
                 }).get();
                 sortbyInput.value = JSON.stringify(manualProductIds);
             } else if (selectedMethod === 'automated') {
-                const automatedProductIds = $('#productsTable tbody tr').map(function () {
+                const automatedProductIds = $('#productsTable tbody tr').map(function() {
                     return $(this).data('id');
                 }).get();
                 sortbyInput.value = JSON.stringify(automatedProductIds);
@@ -1267,13 +1274,13 @@
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         var baseUrl = '<?= base_url() ?>';
         var selectedTags = [];
         var selectedProducts = [];
 
         // Toggle between automated and manual method
-        $('input[name="selectMethod"]').change(function () {
+        $('input[name="selectMethod"]').change(function() {
             var method = $(this).val();
             if (method === 'automated') {
                 $('#automatedSection').show();
@@ -1293,7 +1300,7 @@
             }
         });
 
-        $('#product_tags').change(function () {
+        $('#product_tags').change(function() {
             var selectedTag = $(this).val();
             if (selectedTag && !selectedTags.some(tag => tag.value === selectedTag)) {
                 selectedTags.push({
@@ -1308,7 +1315,7 @@
             }
         });
 
-        $('#addTagButton').click(function () {
+        $('#addTagButton').click(function() {
             var operatorHtml = `
             <select class="badge badge-pill tag-operator">
                 <option selected value="AND">AND</option>
@@ -1322,7 +1329,7 @@
 
 
         function createTagSelector() {
-            var options = $('#product_tags option').filter(function () {
+            var options = $('#product_tags option').filter(function() {
                 return !selectedTags.some(tag => tag.value === $(this).val());
             }).clone();
 
@@ -1336,7 +1343,7 @@
             return select[0].outerHTML;
         }
 
-        $(document).on('change', '.new-tag-selector', function () {
+        $(document).on('change', '.new-tag-selector', function() {
             var selectedTag = $(this).val();
             var operator = $(this).prev('.tag-operator').val();
             if (selectedTag && !selectedTags.some(tag => tag.value === selectedTag)) {
@@ -1363,7 +1370,7 @@
             $('#selectedTags').html(tagsHtml);
         }
 
-        $(document).on('click', '.remove-tag', function () {
+        $(document).on('click', '.remove-tag', function() {
             var index = $(this).data('index');
             selectedTags.splice(index, 1);
             updateSelectedTags();
@@ -1374,7 +1381,7 @@
             }
         });
 
-        $(document).on('change', '.tag-operator', function () {
+        $(document).on('change', '.tag-operator', function() {
             var index = $(this).closest('.selected-tag').index();
             selectedTags[index].operator = $(this).val();
             updateProductTable();
@@ -1391,9 +1398,9 @@
                 url: baseUrl + 'getAllProducts',
                 method: 'GET',
                 dataType: 'json',
-                success: function (response) {
+                success: function(response) {
                     productsTableBody.empty();
-                    $.each(response, function (index, product) {
+                    $.each(response, function(index, product) {
                         productsTableBody.append(`
                         <tr>
                             <td class=" dt-body-center">
@@ -1409,15 +1416,15 @@
                     `);
                     });
                 },
-                complete: function () {
+                complete: function() {
                     loader.hide();
                 }
             });
         }
 
-        $('#searchProducts').on('input', function () {
+        $('#searchProducts').on('input', function() {
             var searchTerm = $(this).val().toLowerCase();
-            $('#productstable tbody tr').each(function () {
+            $('#productstable tbody tr').each(function() {
                 var title = $(this).find('td:nth-child(2)').text().toLowerCase();
                 $(this).toggle(title.includes(searchTerm));
                 $('#productsTableSection').show();
@@ -1425,7 +1432,7 @@
         });
 
         // Handle individual checkbox change
-        $(document).on('change', '.product-checkbox', function () {
+        $(document).on('change', '.product-checkbox', function() {
             var productId = $(this).val();
             var productTitle = $(this).closest('tr').find('td:nth-child(2)').text();
             var productPrice = $(this).closest('tr').find('td:nth-child(3)').text();
@@ -1474,7 +1481,7 @@
         }
 
         // Remove selected products individually when clicking the remove button
-        $(document).on('click', '.remove-product', function () {
+        $(document).on('click', '.remove-product', function() {
             var productId = $(this).data('id');
             selectedProducts = selectedProducts.filter(product => product.id !== productId);
 
@@ -1485,13 +1492,13 @@
         });
 
         // Handle 'select all' checkbox change
-        $('#select_all').change(function () {
+        $('#select_all').change(function() {
             var isChecked = $(this).prop('checked');
             var visibleCheckboxes = $('#productstable tbody tr:visible .product-checkbox');
 
             visibleCheckboxes.prop('checked', isChecked);
 
-            visibleCheckboxes.each(function () {
+            visibleCheckboxes.each(function() {
                 var productId = $(this).val();
                 var productTitle = $(this).closest('tr').find('td:nth-child(2)').text();
                 var productPrice = $(this).closest('tr').find('td:nth-child(3)').text();
@@ -1508,7 +1515,7 @@
         });
 
         // Handle product removal when clicking the remove button
-        $(document).on('click', '.remove-product', function () {
+        $(document).on('click', '.remove-product', function() {
             var productId = $(this).data('id');
 
             // Uncheck the corresponding checkbox
@@ -1534,11 +1541,11 @@
 
 
 <script>
-    document.getElementById('collout_image').addEventListener('change', function (event) {
+    document.getElementById('collout_image').addEventListener('change', function(event) {
         let file = event.target.files[0]; // Get selected file
         if (file) {
             let reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 let preview = document.getElementById('collout_image_preview');
                 preview.src = e.target.result;
                 preview.style.display = 'block';

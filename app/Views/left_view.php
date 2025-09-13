@@ -22,17 +22,21 @@
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
                         </li>
-                        
-                        <li class="dropdown">
+
+                        <!-- <li class="dropdown">
                             <a href="<?= base_url(); ?>permissions_view" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-tags-fill"></span><span class="mtext">User Access</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>analytics" class="no-chevron dropdown-toggle">
+                            <a href="javascript:;" class="dropdown-toggle">
                                 <span class="micon bi bi-bar-chart-line"></span><span class="mtext">Analytics</span>
                             </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url('analytics'); ?>">Analytics</a></li>
+                                <li><a href="<?= base_url('analytics/reports'); ?>">Reports</a></li>
+                            </ul>
                         </li>
 
                         <li class="dropdown">
@@ -54,9 +58,9 @@
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>
-                                <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
-                                <!--<li><a href="<?= base_url(); ?>email">Emails</a></li>-->
-                                <li><a href="<?= base_url(); ?>automations">Automations</a></li>
+                                <!--<li><a href="<?= base_url(); ?>statics">Statistics</a></li>
+                                <li><a href="<?= base_url(); ?>email">Emails</a></li>
+                                <li><a href="<?= base_url(); ?>automations">Automations</a></li> -->
                                 <li><a href="<?= base_url(); ?>supplier_list_view">Supplier</a></li>
                             </ul>
                         </li>
@@ -117,11 +121,6 @@
                                 <span class="micon dw dw-invoice"></span><span class="mtext">Discount Code</span>
                             </a>
                         </li>
-                        <li class="dropdown">
-                            <a href="<?= base_url(); ?>generate_report" class="no-chevron dropdown-toggle">
-                                <span class="micon bi bi-graph-up-arrow"></span><span class="mtext">Reports</span>
-                            </a>
-                        </li>
 
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
@@ -143,9 +142,13 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>online_store" class="no-chevron dropdown-toggle">
+                            <a href="javascript:;" class="dropdown-toggle">
                                 <span class="micon bi bi-shop"></span><span class="mtext">Online Store</span>
                             </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url(); ?>online_store">Online Store</a></li>
+                                <li><a href="<?= base_url(); ?>online_store/preferences">Preferences</a></li>
+                            </ul>
                         </li>
                         <!-- <li class="dropdown">
                             <a href="<?= base_url(); ?>getUserEventsdata" class="no-chevron dropdown-toggle">
@@ -159,6 +162,15 @@
                             <a href="<?= base_url(); ?>dashboard" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon bi bi-bar-chart-line"></span><span class="mtext">Analytics</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="<?= base_url('analytics'); ?>">Analytics</a></li>
+                                <li><a href="<?= base_url('analytics/reports'); ?>">Reports</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
@@ -176,8 +188,8 @@
                             </a>
                             <ul class="submenu">
                                 <li><a href="<?= base_url(); ?>fetchConversations">Customer Service</a></li>
-                                <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
-                                <!-- <li><a href="<?= base_url(); ?>email">Emails</a></li>  -->
+                                <!-- <li><a href="<?= base_url(); ?>statics">Statistics</a></li>
+                                <li><a href="<?= base_url(); ?>email">Emails</a></li>  -->
                                 <li><a href="<?= base_url(); ?>automations">Automations</a></li>
                             </ul>
                         </li>
@@ -223,11 +235,6 @@
                             </a>
                         </li>
                         <li class="dropdown">
-                            <a href="<?= base_url(); ?>generate_report" class="no-chevron dropdown-toggle">
-                                <span class="micon bi bi-graph-up-arrow"></span><span class="mtext">Reports</span>
-                            </a>
-                        </li>
-                        <li class="dropdown">
                             <a href="<?= base_url(); ?>ordermanagement" class="no-chevron dropdown-toggle">
                                 <span class="micon bi bi-bag-dash-fill"></span><span class="mtext">Orders</span>
                             </a>
@@ -250,10 +257,5 @@
                 </ul>
             </ul>
         </div>
-    </div>
-    <div class="sidebar-footer">
-        <a href="<?= base_url(); ?>setting" class="btn btn-primary btn-block">
-            <span class="micon bi bi-gear"></span> <span class="mtext">Settings</span>
-        </a>
     </div>
 </div>
